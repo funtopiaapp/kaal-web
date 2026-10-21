@@ -287,7 +287,12 @@ function wireCheckIns(root = $('#main')) {
   root.querySelectorAll('.checkin [data-kept]').forEach(b => b.onclick = () => {
     const card = b.closest('.checkin'), kept = b.dataset.kept === '1';
     answerVrat(card.dataset.vrat, kept);
-    if (kept) card.remove(); else card.querySelector('.answers').outerHTML = `<div class="small muted">${esc(t('vj.gentle'))}</div>`;
+    if (kept) card.remove();
+    else {
+      // The kind line for a moment, then the card goes, as it does when kept.
+      card.querySelector('.answers').outerHTML = `<div class="small muted">${esc(t('vj.gentle'))}</div>`;
+      setTimeout(() => { card.classList.add('leaving'); setTimeout(() => card.remove(), 300); }, 2000);
+    }
   });
 }
 function celebrate(key, count, run, year) {
@@ -306,6 +311,42 @@ function celebrate(key, count, run, year) {
   const tick = () => { if (i < count) { n.textContent = ++i; setTimeout(tick, still ? 0 : 90); } };
   setTimeout(tick, still ? 0 : 400);
 }
+// The vrat calendar: a star on each day kept, a moon where it was not this
+// time, a dashed ring where it is unanswered.
+let vcMonth = null, vcFilter = null;
+async function vratCalendar() {
+  const m = vcMonth || today().slice(0, 8) + '01';
+  const [y, mo] = m.split('-').map(Number);
+  const dim = new Date(Date.UTC(y, mo, 0)).getUTCDate();
+  const last = `${y}-${pad(mo)}-${pad(dim)}`;
+  const entries = await vratDays(m, last < today() ? last : today());
+  for (const id of Object.keys(S.vratLog)) {
+    const [key, date] = id.split('|');
+    if (date.startsWith(m.slice(0, 7)) && !entries.some(e => e.id === id)) entries.push({ key, date, id });
+  }
+  entries.sort((a, b) => a.date < b.date ? -1 : a.date > b.date ? 1 : 0);
+  const shown = entries.filter(e => !vcFilter || e.key === vcFilter);
+  const keys = [...new Set([...S.vrats, ...Object.keys(S.vratLog).map(id => id.split('|')[0])])];
+  const wd = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].map(k => {
+    const n = name('weekdays', k); if (lang() === 'en') return n.slice(0, 3);
+    for (const x of ['వారం', 'ವಾರ', 'वार', 'கிழமை', 'ആഴ്ച', 'વાર', 'বার', 'ବାର']) if (n.endsWith(x) && n.length > x.length) return n.slice(0, -x.length);
+    return n;
+  });
+  let cells = '<div class="vc"></div>'.repeat(parse(m).getUTCDay());
+  for (let n = 1; n <= dim; n++) {
+    const d = `${y}-${pad(mo)}-${pad(n)}`, here = shown.filter(e => e.date === d).map(e => S.vratLog[e.id]);
+    const kept = here.includes(true);
+    cells += `<div class="vc ${kept ? 'kept' : here.length ? 'vrat' : ''} ${d === today() ? 'today' : ''}"><b>${n}</b><span>${kept ? '<span class="gold">★</span>' : here.includes(false) ? '☾' : here.length ? '◌' : ''}</span></div>`;
+  }
+  const mark = a => a === true ? '<span class="gold">★</span>' : a === false ? '☾' : '◌';
+  return `<div class="card"><p class="label">${esc(t('vj.calendar'))}</p>
+    <div class="dayhead" style="margin:0"><div class="nav"><button class="arrow" data-vc="-1">‹</button><b class="serif" style="font-size:20px">${esc(new Intl.DateTimeFormat(locale(), { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(m)))}</b><button class="arrow" data-vc="1">›</button></div></div>
+    ${keys.length > 1 ? `<div class="vc-chips"><button class="pill ${!vcFilter ? 'on' : ''}" data-vf="">${esc(t('f.all'))}</button>${keys.map(k => `<button class="pill ${vcFilter === k ? 'on' : ''}" data-vf="${esc(k)}">${esc(recName(k))}</button>`).join('')}</div>` : ''}
+    <div class="grid">${wd.map(w => `<div class="wd">${esc(w)}</div>`).join('')}${cells}</div>
+    <p class="gold" style="font-weight:700">★ ${esc(t('vj.monthKept', shown.filter(e => S.vratLog[e.id] === true).length))}</p>
+    ${shown.map(e => `<div class="list-row"><div class="grow">${esc(recName(e.key))}<div class="small muted">${esc(greg(e.date, { day: 'numeric', month: 'short', year: 'numeric' }))}</div></div><span style="font-size:20px">${mark(S.vratLog[e.id])}</span></div>`).join('')}</div>`;
+}
+
 async function viewVrats() {
   loading();
   const choices = pack.dailySignificance.filter((r, i, a) => a.findIndex(x => x.key === r.key) === i);
@@ -320,12 +361,17 @@ async function viewVrats() {
     ${recent.length ? `<div class="card"><p class="label">${esc(t('vj.recent'))}</p>${recent.reverse().map(v => `<div class="list-row"><div class="grow">${esc(recName(v.key))}<div class="small muted">${esc(greg(v.date, { day: 'numeric', month: 'short', year: 'numeric' }))}</div></div>
         <button class="btn soft" data-mark="${esc(v.id)}" data-to="1" title="${esc(t('vj.kept'))}">★</button><button class="btn soft" data-mark="${esc(v.id)}" data-to="0" title="${esc(t('vj.notThisTime'))}">☾</button>
         <span style="width:28px;text-align:center;font-size:20px">${icon(S.vratLog[v.id])}</span></div>`).join('')}<p class="small muted">${esc(t('vj.recentNote'))}</p></div>` : ''}
+    ${await vratCalendar()}
     <div class="card"><p class="label">${esc(t('v.title'))}</p>${choices.map(r => `<label class="list-row" style="cursor:pointer"><div class="grow"><b>${esc(recName(r.key))}</b><div class="small muted">${esc(text(r.content?.summary))}</div></div>
         <input type="checkbox" data-v="${esc(r.key)}" ${S.vrats.includes(r.key) ? 'checked' : ''}></label>`).join('')}<p class="small muted">${esc(t('v.note'))}</p></div>`;
   $('#main').querySelectorAll('[data-v]').forEach(c => c.onchange = () => {
     S.vrats = S.vrats.filter(k => k !== c.dataset.v); if (c.checked) S.vrats.push(c.dataset.v); save(); viewVrats();
   });
   $('#main').querySelectorAll('[data-mark]').forEach(b => b.onclick = () => { answerVrat(b.dataset.mark, b.dataset.to === '1'); viewVrats(); });
+  $('#main').querySelectorAll('[data-vc]').forEach(b => b.onclick = () => {
+    const d = parse(vcMonth || today().slice(0, 8) + '01'); d.setUTCMonth(d.getUTCMonth() + +b.dataset.vc, 1); vcMonth = ymd(d); viewVrats();
+  });
+  $('#main').querySelectorAll('[data-vf]').forEach(b => b.onclick = () => { vcFilter = b.dataset.vf || null; viewVrats(); });
 }
 
 // ---------------------------------------------------------------- festival page
