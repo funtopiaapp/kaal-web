@@ -16,11 +16,11 @@ const CULTURES = [
 ];
 const LIGHT = ['kaal', 'ivory', 'rose', 'sage'], DARK = ['kaal-dark', 'night', 'charcoal', 'peacock'];
 const TABS = [['today', 'tab.today'], ['calendar', 'tab.calendar'], ['festivals', 'tab.festivals'], ['muhurtham', 'tab.muhurtham'],
-  ['birthstar', 'bs.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
+  ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
 
 // ---------------------------------------------------------------- state
 const saved = (() => { try { return JSON.parse(localStorage.getItem('kaal-web') || '{}'); } catch { return {}; } })();
-const S = Object.assign({ culture: '', native: false, home: null, theme: 'system', light: 'kaal', dark: 'kaal-dark', people: [] }, saved);
+const S = Object.assign({ culture: '', native: false, home: null, theme: 'system', light: 'kaal', dark: 'kaal-dark', people: [], vrats: [], vratLog: {} }, saved);
 function save() { try { localStorage.setItem('kaal-web', JSON.stringify(S)); } catch {} }
 
 let STR = {}, pack = null, packJson = '', tab = 'today', dayDate = null, monthDate = null;
@@ -166,6 +166,7 @@ async function render() {
     if (tab === 'festivals') return await viewFestivals();
     if (tab === 'muhurtham') return viewMuhurtham();
     if (tab === 'birthstar') return viewBirthStar();
+    if (tab === 'vrats') return await viewVrats();
     if (tab === 'people') return await viewPeople();
     if (tab === 'settings') return viewSettings();
   } catch (e) { $('#main').innerHTML = `<div class="card">${esc(t('c.error', e.message))}</div>`; }
@@ -195,9 +196,11 @@ async function viewDay() {
   };
   const [tv, td] = limb(p.tithis, 'tithis'), [nv, nd] = limb(p.nakshatras, 'nakshatras'), [yv, yd] = limb(p.yogas, 'yogas'), [kv, kd] = limb(p.karanas, 'karanas');
   const fests = p.occurrences.filter(o => !o.recurring).map(o => ({ o, f: pack.festivals.find(f => f.id === o.id) })).filter(x => x.f && !x.f.hidden);
-  const recs = [...new Set(p.occurrences.filter(o => o.recurring && !pack.dailySignificance.find(r => r.key === o.id)?.optIn).map(o => o.id))];
+  const recs = [...new Set(p.occurrences.filter(o => o.recurring && (!pack.dailySignificance.find(r => r.key === o.id)?.optIn || S.vrats.includes(o.id))).map(o => o.id))];
   const people = await peopleOn(d);
+  const checkIns = d === today() ? await vratCheckIns() : [];
   $('#main').innerHTML = `
+    ${checkIns.slice(0, 3).map(checkInCard).join('')}
     <div class="dayhead"><div class="nav"><button class="arrow" data-shift="-1" aria-label="Previous day">‹</button>
       <div><h1 class="serif">${esc(cultureDate(p.solar, p.lunar))}</h1><div class="muted">${esc(greg(d))}</div><div class="small muted">${esc(yearLabel(p.year))}</div>
       <div class="small muted">📍 ${esc(t('f.forPlace', S.home.name))}</div></div>
@@ -220,10 +223,109 @@ async function viewDay() {
     <button class="btn soft block noprint" onclick="window.print()">🖨 ${esc(t('pdf.share'))}</button>`;
   $('#main').querySelectorAll('[data-shift]').forEach(b => b.onclick = () => { dayDate = addDays(d, +b.dataset.shift); tab = 'today'; viewDay(); });
   $('#main').querySelector('[data-today]')?.addEventListener('click', () => { dayDate = null; viewDay(); });
+  wireCheckIns();
   wireFestivals();
 }
 function wireFestivals(root = $('#main')) {
   root.querySelectorAll('[data-f]').forEach(el => el.onclick = () => festivalSheet(el.dataset.f, el.dataset.d));
+}
+
+// ---------------------------------------------------------------- vrat journal
+// As on iOS (Core/VratJournal.swift): after each vrat the user keeps, Kaal
+// asks how it went, and every one kept adds a star.
+async function vratDays(from, to) {
+  if (!S.vrats.length) return [];
+  const out = [];
+  for (let d = from; d <= to; d = addDays(d, 1)) {
+    const p = await day(d).catch(() => null);
+    for (const k of [...new Set((p?.occurrences || []).filter(o => o.recurring && S.vrats.includes(o.id)).map(o => o.id))].sort()) out.push({ key: k, date: d, id: `${k}|${d}` });
+  }
+  return out;
+}
+// When a vrat is over: the Ekadashi at its parana, a Sankashti after moonrise,
+// a Pradosh after the evening worship, night vrats at the next sunrise, the rest an hour after sunset.
+async function vratCloses(v) {
+  const k = v.key;
+  if (k.includes('ekadashi')) {
+    const p = await engine({ op: 'parana', handle: await cal(+v.date.slice(0, 4)), date: v.date }).catch(() => null);
+    if (p) return p.start;
+  }
+  const d = await day(v.date).catch(() => null); if (!d) return null;
+  if (k.includes('ekadashi') || k.includes('shivaratri') || k === 'kalashtami' || k === 'theipirai-ashtami') return d.nextSunrise + 1800;
+  if (k.startsWith('sank') && d.moonrise && d.moonrise > d.sunset) return d.moonrise + 1800;
+  if (k.startsWith('pradosh')) return d.sunset + 9000;
+  return d.sunset + 3600;
+}
+async function vratCheckIns() {
+  const now = Date.now() / 1000, out = [];
+  for (const v of await vratDays(addDays(today(), -7), today())) {
+    if (S.vratLog[v.id] !== undefined) continue;
+    const c = await vratCloses(v); if (c && c <= now) out.push(v);
+  }
+  return out;
+}
+const vratsKept = (key, year) => Object.entries(S.vratLog).filter(([id, kept]) => kept && (!key || id.split('|')[0] === key) && (!year || id.split('|')[1].startsWith(year))).length;
+function vratRun(key) {
+  let n = 0;
+  for (const [, kept] of Object.entries(S.vratLog).filter(([id]) => id.startsWith(key + '|')).sort((a, b) => a[0] < b[0] ? 1 : -1)) { if (!kept) break; n++; }
+  return n;
+}
+function answerVrat(id, kept) {
+  if (kept === null) delete S.vratLog[id]; else S.vratLog[id] = kept;
+  save();
+  if (kept) { const key = id.split('|')[0]; celebrate(key, vratsKept(key), vratRun(key), vratsKept(key, today().slice(0, 4))); }
+}
+function checkInCard(v) {
+  const r = pack.dailySignificance.find(r => r.key === v.key);
+  const steps = r?.content?.howTo ? (r.content.howTo[lang()] ?? r.content.howTo.en ?? []) : [];
+  return `<div class="card checkin" data-vrat="${esc(v.id)}"><div><b>🌙 ${esc(t('vj.ask', recName(v.key)))}</b>
+    ${v.date !== today() ? `<div class="small muted">${esc(greg(v.date, { day: 'numeric', month: 'short', year: 'numeric' }))}</div>` : ''}</div>
+    ${steps.length ? `<details><summary class="small">${esc(t('vj.rules'))}</summary><ul class="small">${steps.map(s => `<li>${esc(s)}</li>`).join('')}</ul></details>` : ''}
+    <div class="answers"><button class="btn" data-kept="1">★ ${esc(t('vj.kept'))}</button><button class="btn soft" data-kept="0">${esc(t('vj.notThisTime'))}</button></div></div>`;
+}
+function wireCheckIns(root = $('#main')) {
+  root.querySelectorAll('.checkin [data-kept]').forEach(b => b.onclick = () => {
+    const card = b.closest('.checkin'), kept = b.dataset.kept === '1';
+    answerVrat(card.dataset.vrat, kept);
+    if (kept) card.remove(); else card.querySelector('.answers').outerHTML = `<div class="small muted">${esc(t('vj.gentle'))}</div>`;
+  });
+}
+function celebrate(key, count, run, year) {
+  const o = document.createElement('div'); o.className = 'celebrate';
+  const sparks = Array.from({ length: 12 }, (_, i) => `<i style="--a:${i * 30}deg;--c:${i % 3 ? 'var(--gold)' : 'var(--accent)'}">★</i>`).join('');
+  o.innerHTML = `<div class="cel-card" role="dialog" aria-modal="true"><div class="cel-star">${sparks}<span>★</span></div>
+    <h2 class="serif">${esc(t('vj.done'))}</h2><div class="cel-count">${Math.max(0, count - 10)}</div>
+    <div><b>${esc(t('vj.keptOf', recName(key)))}</b></div>
+    <div class="cel-pills">${run > 1 ? `<span class="pill">🔥 ${esc(t('vj.run', run))}</span>` : ''}<span class="pill">📅 ${esc(t('vj.year', year))}</span></div>
+    <button class="btn">${esc(t('c.done'))}</button></div>`;
+  const close = () => { o.classList.add('out'); setTimeout(() => o.remove(), 220); };
+  o.onclick = e => { if (e.target === o || e.target.tagName === 'BUTTON') close(); };
+  document.body.appendChild(o);
+  const n = o.querySelector('.cel-count'); let i = +n.textContent;
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const tick = () => { if (i < count) { n.textContent = ++i; setTimeout(tick, still ? 0 : 90); } };
+  setTimeout(tick, still ? 0 : 400);
+}
+async function viewVrats() {
+  loading();
+  const choices = pack.dailySignificance.filter((r, i, a) => a.findIndex(x => x.key === r.key) === i);
+  const recent = [];
+  for (const v of await vratDays(addDays(today(), -30), today())) { const c = await vratCloses(v); if (c && c <= Date.now() / 1000) recent.push(v); }
+  const icon = a => a === true ? '<span class="gold">★</span>' : a === false ? '☾' : '◌';
+  $('#main').innerHTML = `<div class="card"><p class="label">${esc(t('vj.title'))}</p>
+      ${S.vrats.length ? `<div class="journal-head"><span class="gold big">★</span><div><div class="big">${vratsKept()}</div><div class="small muted">${esc(t('vj.total'))}</div></div>
+        <div class="small muted" style="margin-left:auto">${esc(t('vj.year', vratsKept(null, today().slice(0, 4))))}</div></div>
+        ${S.vrats.filter(k => vratsKept(k)).map(k => `<div class="row"><span>${esc(recName(k))}</span><span class="v">${vratRun(k) > 1 ? `<small style="display:inline">${esc(t('vj.run', vratRun(k)))} · </small>` : ''}<span class="gold">★ ${vratsKept(k)}</span></span></div>`).join('')}
+        <p class="small muted">${esc(t('vj.askBody'))}</p>` : `<p class="small muted">${esc(t('vj.empty'))}</p>`}</div>
+    ${recent.length ? `<div class="card"><p class="label">${esc(t('vj.recent'))}</p>${recent.reverse().map(v => `<div class="list-row"><div class="grow">${esc(recName(v.key))}<div class="small muted">${esc(greg(v.date, { day: 'numeric', month: 'short', year: 'numeric' }))}</div></div>
+        <button class="btn soft" data-mark="${esc(v.id)}" data-to="1" title="${esc(t('vj.kept'))}">★</button><button class="btn soft" data-mark="${esc(v.id)}" data-to="0" title="${esc(t('vj.notThisTime'))}">☾</button>
+        <span style="width:28px;text-align:center;font-size:20px">${icon(S.vratLog[v.id])}</span></div>`).join('')}<p class="small muted">${esc(t('vj.recentNote'))}</p></div>` : ''}
+    <div class="card"><p class="label">${esc(t('v.title'))}</p>${choices.map(r => `<label class="list-row" style="cursor:pointer"><div class="grow"><b>${esc(recName(r.key))}</b><div class="small muted">${esc(text(r.content?.summary))}</div></div>
+        <input type="checkbox" data-v="${esc(r.key)}" ${S.vrats.includes(r.key) ? 'checked' : ''}></label>`).join('')}<p class="small muted">${esc(t('v.note'))}</p></div>`;
+  $('#main').querySelectorAll('[data-v]').forEach(c => c.onchange = () => {
+    S.vrats = S.vrats.filter(k => k !== c.dataset.v); if (c.checked) S.vrats.push(c.dataset.v); save(); viewVrats();
+  });
+  $('#main').querySelectorAll('[data-mark]').forEach(b => b.onclick = () => { answerVrat(b.dataset.mark, b.dataset.to === '1'); viewVrats(); });
 }
 
 // ---------------------------------------------------------------- festival page
