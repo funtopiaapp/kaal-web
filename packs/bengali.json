@@ -790,6 +790,186 @@
     "en": "Meen",
     "bn": "মীন"
    }
+  },
+  "grahas": {
+   "sun": {
+    "en": "Sun",
+    "bn": "সূর্য"
+   },
+   "moon": {
+    "en": "Moon",
+    "bn": "চন্দ্র"
+   },
+   "mars": {
+    "en": "Mars",
+    "bn": "মঙ্গল"
+   },
+   "mercury": {
+    "en": "Mercury",
+    "bn": "বুধ"
+   },
+   "jupiter": {
+    "en": "Jupiter",
+    "bn": "বৃহস্পতি"
+   },
+   "venus": {
+    "en": "Venus",
+    "bn": "শুক্র"
+   },
+   "saturn": {
+    "en": "Saturn",
+    "bn": "শনি"
+   },
+   "rahu": {
+    "en": "Rahu",
+    "bn": "রাহু"
+   },
+   "ketu": {
+    "en": "Ketu",
+    "bn": "কেতু"
+   }
+  },
+  "grahaShort": {
+   "sun": {
+    "en": "Su",
+    "bn": "সূ"
+   },
+   "moon": {
+    "en": "Mo",
+    "bn": "চ"
+   },
+   "mars": {
+    "en": "Ma",
+    "bn": "ম"
+   },
+   "mercury": {
+    "en": "Me",
+    "bn": "বু"
+   },
+   "jupiter": {
+    "en": "Ju",
+    "bn": "বৃ"
+   },
+   "venus": {
+    "en": "Ve",
+    "bn": "শু"
+   },
+   "saturn": {
+    "en": "Sa",
+    "bn": "শ"
+   },
+   "rahu": {
+    "en": "Ra",
+    "bn": "রা"
+   },
+   "ketu": {
+    "en": "Ke",
+    "bn": "কে"
+   },
+   "lagna": {
+    "en": "As",
+    "bn": "ল"
+   }
+  },
+  "yoginis": {
+   "mangala": {
+    "en": "Mangala",
+    "bn": "মঙ্গলা"
+   },
+   "pingala": {
+    "en": "Pingala",
+    "bn": "পিঙ্গলা"
+   },
+   "dhanya": {
+    "en": "Dhanya",
+    "bn": "ধান্যা"
+   },
+   "bhramari": {
+    "en": "Bhramari",
+    "bn": "ভ্রামরী"
+   },
+   "bhadrika": {
+    "en": "Bhadrika",
+    "bn": "ভদ্রিকা"
+   },
+   "ulka": {
+    "en": "Ulka",
+    "bn": "উল্কা"
+   },
+   "siddha": {
+    "en": "Siddha",
+    "bn": "সিদ্ধা"
+   },
+   "sankata": {
+    "en": "Sankata",
+    "bn": "সঙ্কটা"
+   }
+  },
+  "vargas": {
+   "d1": {
+    "en": "Rasi",
+    "bn": "রাশি"
+   },
+   "d2": {
+    "en": "Hora",
+    "bn": "হোরা"
+   },
+   "d3": {
+    "en": "Drekkana",
+    "bn": "দ্রেষ্কাণ"
+   },
+   "d4": {
+    "en": "Chaturthamsa",
+    "bn": "চতুর্থাংশ"
+   },
+   "d7": {
+    "en": "Saptamsa",
+    "bn": "সপ্তাংশ"
+   },
+   "d9": {
+    "en": "Navamsa",
+    "bn": "নবাংশ"
+   },
+   "d10": {
+    "en": "Dasamsa",
+    "bn": "দশাংশ"
+   },
+   "d12": {
+    "en": "Dwadasamsa",
+    "bn": "দ্বাদশাংশ"
+   },
+   "d16": {
+    "en": "Shodasamsa",
+    "bn": "ষোডশাংশ"
+   },
+   "d20": {
+    "en": "Vimsamsa",
+    "bn": "বিংশাংশ"
+   },
+   "d24": {
+    "en": "Chaturvimsamsa",
+    "bn": "চতুর্বিংশাংশ"
+   },
+   "d27": {
+    "en": "Saptavimsamsa",
+    "bn": "সপ্তবিংশাংশ"
+   },
+   "d30": {
+    "en": "Trimsamsa",
+    "bn": "ত্রিংশাংশ"
+   },
+   "d40": {
+    "en": "Khavedamsa",
+    "bn": "খবেদাংশ"
+   },
+   "d45": {
+    "en": "Akshavedamsa",
+    "bn": "অক্ষবেদাংশ"
+   },
+   "d60": {
+    "en": "Shashtiamsa",
+    "bn": "ষষ্ট্যংশ"
+   }
   }
  },
  "display": {

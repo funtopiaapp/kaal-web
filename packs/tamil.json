@@ -790,6 +790,186 @@
     "en": "Meenam",
     "ta": "மீனம்"
    }
+  },
+  "grahas": {
+   "sun": {
+    "en": "Sun",
+    "ta": "சூரியன்"
+   },
+   "moon": {
+    "en": "Moon",
+    "ta": "சந்திரன்"
+   },
+   "mars": {
+    "en": "Mars",
+    "ta": "செவ்வாய்"
+   },
+   "mercury": {
+    "en": "Mercury",
+    "ta": "புதன்"
+   },
+   "jupiter": {
+    "en": "Jupiter",
+    "ta": "குரு"
+   },
+   "venus": {
+    "en": "Venus",
+    "ta": "சுக்கிரன்"
+   },
+   "saturn": {
+    "en": "Saturn",
+    "ta": "சனி"
+   },
+   "rahu": {
+    "en": "Rahu",
+    "ta": "ராகு"
+   },
+   "ketu": {
+    "en": "Ketu",
+    "ta": "கேது"
+   }
+  },
+  "grahaShort": {
+   "sun": {
+    "en": "Su",
+    "ta": "சூ"
+   },
+   "moon": {
+    "en": "Mo",
+    "ta": "சந்"
+   },
+   "mars": {
+    "en": "Ma",
+    "ta": "செ"
+   },
+   "mercury": {
+    "en": "Me",
+    "ta": "பு"
+   },
+   "jupiter": {
+    "en": "Ju",
+    "ta": "கு"
+   },
+   "venus": {
+    "en": "Ve",
+    "ta": "சு"
+   },
+   "saturn": {
+    "en": "Sa",
+    "ta": "ச"
+   },
+   "rahu": {
+    "en": "Ra",
+    "ta": "ரா"
+   },
+   "ketu": {
+    "en": "Ke",
+    "ta": "கே"
+   },
+   "lagna": {
+    "en": "As",
+    "ta": "ல"
+   }
+  },
+  "yoginis": {
+   "mangala": {
+    "en": "Mangala",
+    "ta": "மங்களா"
+   },
+   "pingala": {
+    "en": "Pingala",
+    "ta": "பிங்களா"
+   },
+   "dhanya": {
+    "en": "Dhanya",
+    "ta": "தான்யா"
+   },
+   "bhramari": {
+    "en": "Bhramari",
+    "ta": "பிராமரி"
+   },
+   "bhadrika": {
+    "en": "Bhadrika",
+    "ta": "பத்ரிகா"
+   },
+   "ulka": {
+    "en": "Ulka",
+    "ta": "உல்கா"
+   },
+   "siddha": {
+    "en": "Siddha",
+    "ta": "சித்தா"
+   },
+   "sankata": {
+    "en": "Sankata",
+    "ta": "சங்கடா"
+   }
+  },
+  "vargas": {
+   "d1": {
+    "en": "Rasi",
+    "ta": "ராசி"
+   },
+   "d2": {
+    "en": "Hora",
+    "ta": "ஹோரை"
+   },
+   "d3": {
+    "en": "Drekkana",
+    "ta": "திரேக்காணம்"
+   },
+   "d4": {
+    "en": "Chaturthamsa",
+    "ta": "சதுர்த்தாம்சம்"
+   },
+   "d7": {
+    "en": "Saptamsa",
+    "ta": "சப்தாம்சம்"
+   },
+   "d9": {
+    "en": "Navamsa",
+    "ta": "நவாம்சம்"
+   },
+   "d10": {
+    "en": "Dasamsa",
+    "ta": "தசாம்சம்"
+   },
+   "d12": {
+    "en": "Dwadasamsa",
+    "ta": "துவாதசாம்சம்"
+   },
+   "d16": {
+    "en": "Shodasamsa",
+    "ta": "ஷோடசாம்சம்"
+   },
+   "d20": {
+    "en": "Vimsamsa",
+    "ta": "விம்சாம்சம்"
+   },
+   "d24": {
+    "en": "Chaturvimsamsa",
+    "ta": "சதுர்விம்சாம்சம்"
+   },
+   "d27": {
+    "en": "Saptavimsamsa",
+    "ta": "சப்தவிம்சாம்சம்"
+   },
+   "d30": {
+    "en": "Trimsamsa",
+    "ta": "திரிம்சாம்சம்"
+   },
+   "d40": {
+    "en": "Khavedamsa",
+    "ta": "கவேதாம்சம்"
+   },
+   "d45": {
+    "en": "Akshavedamsa",
+    "ta": "அக்ஷவேதாம்சம்"
+   },
+   "d60": {
+    "en": "Shashtiamsa",
+    "ta": "ஷஷ்டியாம்சம்"
+   }
   }
  },
  "display": {

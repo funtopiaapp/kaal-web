@@ -16,7 +16,7 @@ const CULTURES = [
 ];
 const LIGHT = ['kaal', 'ivory', 'rose', 'sage'], DARK = ['kaal-dark', 'night', 'charcoal', 'peacock'];
 const TABS = [['today', 'tab.today'], ['calendar', 'tab.calendar'], ['festivals', 'tab.festivals'], ['muhurtham', 'tab.muhurtham'],
-  ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
+  ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['temples', 'tm.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
 
 // ---------------------------------------------------------------- state
 const saved = (() => { try { return JSON.parse(localStorage.getItem('kaal-web') || '{}'); } catch { return {}; } })();
@@ -49,13 +49,16 @@ const ymd = d => `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getU
 const parse = s => { const [y, m, d] = s.split('-').map(Number); return new Date(Date.UTC(y, m - 1, d, 12)); };
 const addDays = (s, n) => { const d = parse(s); d.setUTCDate(d.getUTCDate() + n); return ymd(d); };
 const daysBetween = (a, b) => Math.round((parse(b) - parse(a)) / 86400000);
-function today() {
-  const p = new Intl.DateTimeFormat('en-CA', { timeZone: S.home?.tz || undefined, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
-  return p;
+function today(tz = S.home?.tz) {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: tz || undefined, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
 }
+// The calendar can be looked at for another city without changing home:
+// monthPlace for the month grid, dayPlace for a day opened from it.
+let monthPlace = null, dayPlace = null;
+const here = () => dayPlace || S.home;
 const greg = (s, opts = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) =>
   new Intl.DateTimeFormat(locale(), { ...opts, timeZone: 'UTC' }).format(parse(s));
-const clock = u => new Intl.DateTimeFormat(locale(), { hour: 'numeric', minute: '2-digit', timeZone: S.home.tz }).format(new Date(u * 1000));
+const clock = u => new Intl.DateTimeFormat(locale(), { hour: 'numeric', minute: '2-digit', timeZone: here().tz }).format(new Date(u * 1000));
 const span = w => `${clock(w.start)} – ${clock(w.end)}`;
 function tithiKey(n) {
   const k = ['pratipada', 'dvitiya', 'tritiya', 'chaturthi', 'panchami', 'shashthi', 'saptami', 'ashtami', 'navami', 'dashami', 'ekadashi', 'dvadashi', 'trayodashi', 'chaturdashi'];
@@ -73,15 +76,16 @@ function yearLabel(y) {
 const tithiName = n => (n === 15 || n === 30 ? '' : name('paksha', n < 15 ? 'shukla' : 'krishna') + ' ') + name('tithis', tithiKey(n));
 
 // ---------------------------------------------------------------- engine
-async function cal(year) {
-  if (!handles.has(year)) handles.set(year, engine({ op: 'open', year, location: S.home, pack: packJson }).then(r => r.handle));
-  return handles.get(year);
+async function cal(year, place = S.home) {
+  const key = `${place.id}|${place.latitude}|${year}`;
+  if (!handles.has(key)) handles.set(key, engine({ op: 'open', year, location: place, pack: packJson }).then(r => r.handle));
+  return handles.get(key);
 }
 async function resetCalendars() {
   for (const h of handles.values()) h.then(handle => engine({ op: 'close', handle })).catch(() => {});
   handles.clear();
 }
-const day = async s => engine({ op: 'day', handle: await cal(+s.slice(0, 4)), date: s });
+const day = async (s, place = S.home) => engine({ op: 'day', handle: await cal(+s.slice(0, 4), place), date: s });
 async function upcoming(from, days) {
   const to = addDays(from, days); const out = [];
   for (let y = +from.slice(0, 4); y <= +to.slice(0, 4); y++) {
@@ -145,7 +149,7 @@ function shell() {
   $('#badge').textContent = c ? `☀ ${c.native} · ${c.en} ▾` : '';
   $('#badge').onclick = () => { tab = 'settings'; render(); };
   $('#tabs').innerHTML = TABS.map(([id, k]) => `<button data-tab="${id}" class="${id === tab ? 'on' : ''}">${esc(t(k))}</button>`).join('');
-  $('#tabs').querySelectorAll('button').forEach(b => b.onclick = () => { tab = b.dataset.tab; if (tab === 'today') dayDate = null; render(); });
+  $('#tabs').querySelectorAll('button').forEach(b => b.onclick = () => { tab = b.dataset.tab; if (tab === 'today') { dayDate = null; dayPlace = null; } render(); });
   $('#foot').textContent = t('s.attribution');
 }
 function loading() { $('#main').innerHTML = `<div class="loading"><div class="ring"><i></i></div><div class="muted">${esc(t('o.tagline'))}</div></div>`; }
@@ -167,6 +171,8 @@ async function render() {
     if (tab === 'muhurtham') return viewMuhurtham();
     if (tab === 'birthstar') return viewBirthStar();
     if (tab === 'vrats') return await viewVrats();
+    if (tab === 'jathakam') return await viewJathakam();
+    if (tab === 'temples') return await viewTemples();
     if (tab === 'people') return await viewPeople();
     if (tab === 'settings') return viewSettings();
   } catch (e) { $('#main').innerHTML = `<div class="card">${esc(t('c.error', e.message))}</div>`; }
@@ -186,8 +192,8 @@ function onboarding() {
 async function viewDay() {
   const d = dayDate || today();
   loading();
-  const p = await day(d);
-  const prev = await day(addDays(d, -1)).catch(() => null);
+  const p = await day(d, here());
+  const prev = dayPlace ? null : await day(addDays(d, -1)).catch(() => null);
   const parana = prev && prev.occurrences.some(o => o.id === 'ekadashi') ? await engine({ op: 'parana', handle: await cal(+addDays(d, -1).slice(0, 4)), date: addDays(d, -1) }) : null;
   const limb = (list, table) => {
     if (!list?.length) return ['–', ''];
@@ -198,12 +204,12 @@ async function viewDay() {
   const fests = p.occurrences.filter(o => !o.recurring).map(o => ({ o, f: pack.festivals.find(f => f.id === o.id) })).filter(x => x.f && !x.f.hidden);
   const recs = [...new Set(p.occurrences.filter(o => o.recurring && (!pack.dailySignificance.find(r => r.key === o.id)?.optIn || S.vrats.includes(o.id))).map(o => o.id))];
   const people = await peopleOn(d);
-  const checkIns = d === today() ? await vratCheckIns() : [];
+  const checkIns = d === today() && !dayPlace ? await vratCheckIns() : [];
   $('#main').innerHTML = `
     ${checkIns.slice(0, 3).map(checkInCard).join('')}
     <div class="dayhead"><div class="nav"><button class="arrow" data-shift="-1" aria-label="Previous day">‹</button>
       <div><h1 class="serif">${esc(cultureDate(p.solar, p.lunar))}</h1><div class="muted">${esc(greg(d))}</div><div class="small muted">${esc(yearLabel(p.year))}</div>
-      <div class="small muted">📍 ${esc(t('f.forPlace', S.home.name))}</div></div>
+      <div class="small muted">📍 ${esc(t('f.forPlace', here().name))}</div></div>
       <button class="arrow" data-shift="1" aria-label="Next day">›</button></div>
       ${d !== today() ? `<button class="btn soft noprint" data-today>${esc(t('day.jumpToday'))}</button>` : ''}</div>
     ${fests.length || recs.length || people.length ? `<p class="label">${esc(t('day.observances'))}</p>` : ''}
@@ -374,6 +380,153 @@ async function viewVrats() {
   $('#main').querySelectorAll('[data-vf]').forEach(b => b.onclick = () => { vcFilter = b.dataset.vf || null; viewVrats(); });
 }
 
+// ---------------------------------------------------------------- jathakam
+// As on iOS (Views/JatakamViews.swift): the chart and its vargas in South,
+// North or East Indian style, three dasha systems, and the family's dasha
+// sandhis. Charts only, no reading.
+let jkSection = 0, jkPerson = null, jkVarga = 1, jkSystem = 'vimshottari', jkAhead = true, jkSpan = 20;
+const jkCache = new Map();
+const births = () => S.people.filter(p => p.kind !== 'remembrance' && p.place);
+async function jataka(p) {
+  const key = `${p.id}|${p.date}|${p.minutes}|${p.place.latitude}`;
+  if (!jkCache.has(key)) jkCache.set(key, engine({ op: 'jataka', date: p.date, minutes: p.minutes ?? undefined, location: p.place }));
+  return jkCache.get(key);
+}
+const SIGNS = ['mesha', 'vrishabha', 'mithuna', 'karka', 'simha', 'kanya', 'tula', 'vrishchika', 'dhanu', 'makara', 'kumbha', 'meena'];
+const GCOL = { sun: '#E08A2E', moon: '#8FA7C4', mars: '#C6453A', mercury: '#3E9B5C', jupiter: '#E2B53A', venus: '#D58AB4', saturn: '#3D4F8F', rahu: '#6E6A63', ketu: '#9A6B45' };
+const chartStyle = () => S.chartStyle || ({ tamil: 'south', malayalam: 'south', telugu: 'south', kannada: 'south', bengali: 'east', odia: 'east' }[S.culture] || 'north');
+const vargaName = n => `D${n} · ${name('vargas', 'd' + n)}`;
+const dLabel = u => new Intl.DateTimeFormat(locale(), { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(u * 1000));
+function periodName(p, system) {
+  if (system === 'yogini') return `${name('yoginis', p.key)} · ${name('grahas', p.lord)}`;
+  if (system === 'chara') return name('rashis', p.key);
+  return name('grahas', p.key);
+}
+function chartSvg(style, lagna, first, placements, retro, title) {
+  const W = 100, lines = [], spots = [];
+  const L = (a, b, c, d) => lines.push(`<line x1="${a * W}" y1="${b * W}" x2="${c * W}" y2="${d * W}"/>`);
+  if (style === 'south') { for (const f of [0.25, 0.75]) { L(f, 0, f, 1); L(0, f, 1, f); } L(0.5, 0, 0.5, 0.25); L(0.5, 0.75, 0.5, 1); L(0, 0.5, 0.25, 0.5); L(0.75, 0.5, 1, 0.5); }
+  if (style === 'north') { L(0, 0, 1, 1); L(1, 0, 0, 1); L(0.5, 0, 1, 0.5); L(1, 0.5, 0.5, 1); L(0.5, 1, 0, 0.5); L(0, 0.5, 0.5, 0); }
+  if (style === 'east') { const a = 1 / 3, b = 2 / 3; L(a, 0, a, 1); L(b, 0, b, 1); L(0, a, 1, a); L(0, b, 1, b); L(0, 0, a, a); L(1, 0, b, a); L(0, 1, a, b); L(1, 1, b, b); }
+  const cellS = [[0, 1], [0, 2], [0, 3], [1, 3], [2, 3], [3, 3], [3, 2], [3, 1], [3, 0], [2, 0], [1, 0], [0, 0]];
+  const N = [[.5, .25], [.25, .1], [.1, .25], [.25, .5], [.1, .75], [.25, .9], [.5, .75], [.75, .9], [.9, .75], [.75, .5], [.9, .25], [.75, .1]];
+  const E = [[.5, .167], [.222, .111], [.111, .222], [.167, .5], [.111, .778], [.222, .889], [.5, .833], [.778, .889], [.889, .778], [.833, .5], [.889, .222], [.778, .111]];
+  for (let i = 0; i < 12; i++) {
+    const sign = style === 'north' ? SIGNS[(SIGNS.indexOf(first) + i) % 12] : SIGNS[i];
+    const items = placements.filter(([, sg]) => sg === sign).map(([g]) => esc(name('grahaShort', g)) + (retro.has(g) ? 'ᴿ' : ''));
+    if (lagna === sign) items.unshift(`<b class="as">${esc(name('grahaShort', 'lagna'))}</b>`);
+    let x, y, w;
+    if (style === 'south') { const [r, c] = cellS[i]; x = (c + .5) / 4; y = (r + .5) / 4; w = .23; }
+    else if (style === 'north') { [x, y] = N[i]; w = [0, 3, 6, 9].includes(i) ? .24 : .16; }
+    else { [x, y] = E[i]; w = [0, 3, 6, 9].includes(i) ? .3 : .15; }
+    const num = style === 'north' ? `<div class="sn">${SIGNS.indexOf(sign) + 1}</div>` : '';
+    spots.push(`<foreignObject x="${(x - w / 2) * W}" y="${(y - .1) * W}" width="${w * W}" height="${.2 * W}"><div xmlns="http://www.w3.org/1999/xhtml" class="spot">${num}${items.join(' ')}</div></foreignObject>`);
+  }
+  const t = style === 'north' ? '' : `<text x="50" y="51" text-anchor="middle" class="ct">${esc(title)}</text>`;
+  return `<svg class="chart" viewBox="0 0 100 100" role="img" aria-label="${esc(title)}"><rect x="0" y="0" width="100" height="100" rx="2"/>${lines.join('')}${t}${spots.join('')}</svg>`;
+}
+function running(ps, now) { const p = ps.find(x => now >= x.start && now < x.end); return p ? [p, ...running(p.children || [], now)] : []; }
+function dashaTree(ps, system, now, depth) {
+  return ps.map(p => {
+    const isNow = now >= p.start && now < p.end, kids = p.children || [];
+    const head = `<span class="bar" style="background:${system === 'chara' ? 'var(--gold)' : GCOL[p.lord || p.key]}"></span><span class="grow"><b class="${isNow ? 'now' : ''}">${esc(periodName(p, system))}</b><span class="small muted"> ${esc(dLabel(p.start))} – ${esc(dLabel(p.end))}</span></span>`;
+    return kids.length ? `<details class="dasha d${depth}" ${isNow ? 'open' : ''}><summary>${head}</summary>${dashaTree(kids, system, now, depth + 1)}</details>`
+      : `<div class="dasha d${depth} leaf">${head}</div>`;
+  }).join('');
+}
+async function viewJathakam() {
+  loading();
+  const ps = births(), now = Date.now() / 1000;
+  const person = ps.find(p => p.id === jkPerson) || ps[0];
+  let body = '';
+  if (jkSection < 2) {
+    body += `<div class="card"><p class="label">${esc(t('jk.whose'))}</p><div style="display:flex;gap:8px"><select id="jkp">${ps.map(p => `<option value="${p.id}" ${p === person ? 'selected' : ''}>${esc(p.name)}</option>`).join('')}</select>
+      <button class="btn soft" data-add>＋</button>${person ? `<button class="btn soft" data-edit>${esc(t('c.edit'))}</button>` : ''}</div>
+      ${person ? `<div class="small muted" style="margin-top:6px">${esc(greg(person.date, { day: 'numeric', month: 'short', year: 'numeric' }))}${person.minutes != null ? ` · ${pad(Math.floor(person.minutes / 60))}:${pad(person.minutes % 60)}` : ''} · ${esc(person.place.name)}</div>` : `<p class="small muted">${esc(t('jk.noFamily'))}</p>`}</div>`;
+  }
+  const j = person && jkSection < 2 ? await jataka(person) : null;
+  if (j && !j.timeKnown) body += `<div class="banner">${esc(t('jk.noTime'))}</div>`;
+  if (j && jkSection === 0) {
+    const v = j.vargas.find(x => x.number === jkVarga) || j.vargas[0];
+    const retro = new Set(j.grahas.filter(g => g.retrograde).map(g => g.graha));
+    const moon = j.grahas.find(g => g.graha === 'moon').sign;
+    const dm = d => `${Math.floor(d)}°${pad(Math.floor((d % 1) * 60))}′`;
+    const row = (n, g) => `<div class="row"><span>${esc(n)}${g.retrograde ? ' ᴿ' : ''}</span><span class="v">${esc(name('rashis', g.sign))} ${dm(g.degrees)}<small>${esc(name('nakshatras', g.nakshatra))} · ${esc(t('bs.pada', g.pada))}</small></span></div>`;
+    body += `<div class="chart-tools"><select id="jkv">${j.vargas.map(x => `<option value="${x.number}" ${x.number === v.number ? 'selected' : ''}>${esc(vargaName(x.number))}</option>`).join('')}</select>
+      <select id="jks">${['south', 'north', 'east'].map(st => `<option value="${st}" ${chartStyle() === st ? 'selected' : ''}>${esc(t('jk.' + st))}</option>`).join('')}</select></div>
+      ${chartSvg(chartStyle(), v.lagna, v.lagna || moon, v.signs, retro, vargaName(v.number))}
+      ${v.number === 1 ? `<div class="card"><p class="label">${esc(t('jk.grahas'))}</p>${j.lagna ? row(t('bs.lagna'), j.lagna) : ''}${j.grahas.map(g => row(name('grahas', g.graha), g)).join('')}
+        <div class="small muted">ᴿ ${esc(t('jk.retro'))} · Lahiri ${j.ayanamsa.toFixed(4)}°</div></div>` : ''}`;
+  }
+  if (j && jkSection === 1) {
+    const d = jkSystem === 'yogini' ? j.yogini : jkSystem === 'chara' && j.chara ? j.chara : j.vimshottari;
+    const sys = d === j.vimshottari ? 'vimshottari' : jkSystem;
+    const first = d.periods.find(p => p.key === d.atBirth) || d.periods[0];
+    const m = Math.round(d.balanceYears * 12);
+    body += `<div class="seg" style="margin-bottom:12px">${['vimshottari', 'yogini', ...(j.chara ? ['chara'] : [])].map(x => `<button data-sys="${x}" class="${sys === x ? 'on' : ''}">${esc(t('jk.' + x))}</button>`).join('')}</div>
+      <div class="card"><div>${esc(t('jk.atBirth', periodName(first, sys), t('jk.ym', Math.floor(m / 12), m % 12)))}</div>
+        <div class="now">${esc(t('jk.running', running(d.periods, now).map(p => periodName(p, sys)).join(' › ')))}</div></div>
+      <div class="dashas">${dashaTree(d.periods, sys, now, 0)}</div>`;
+  }
+  if (jkSection === 2) {
+    const fam = []; for (const p of ps) fam.push([p, await jataka(p)]);
+    const Y = 31557600, from = jkAhead ? now : now - jkSpan * Y, to = jkAhead ? now + jkSpan * Y : now;
+    const sandhis = [];
+    for (const [p, jj] of fam) { const ms = jj.vimshottari.periods; for (let i = 1; i < ms.length; i++) if (ms[i].start >= from && ms[i].start < to) sandhis.push({ p, a: ms[i - 1], b: ms[i], s: ms[i - 1].children.at(-1).start, e: ms[i].children[0].end }); }
+    sandhis.sort((x, y) => jkAhead ? x.b.start - y.b.start : y.b.start - x.b.start);
+    const pct = u => ((Math.min(Math.max(u, from), to) - from) / (to - from) * 100).toFixed(2);
+    body += `<div style="display:flex;gap:8px;align-items:center"><div class="seg" style="flex:1"><button data-ahead="1" class="${jkAhead ? 'on' : ''}">${esc(t('jk.ahead'))}</button><button data-ahead="0" class="${!jkAhead ? 'on' : ''}">${esc(t('jk.past'))}</button></div>
+      <select id="jkspan" style="width:auto">${[10, 20, 40].map(n => `<option value="${n}" ${n === jkSpan ? 'selected' : ''}>${esc(t('jk.span', n))}</option>`).join('')}</select></div>
+      <p class="small muted">${esc(t('jk.sandhiNote'))}</p>
+      ${!fam.length ? `<div class="card"><p>${esc(t('jk.noFamily'))}</p><button class="btn" data-add>＋ ${esc(t('m.addProfile'))}</button></div>` : `
+      <div class="card"><div class="small muted" style="display:flex;justify-content:space-between"><span>${esc(dLabel(from))}</span><span>${esc(dLabel(to))}</span></div>
+        ${fam.map(([p, jj]) => `<div style="margin-top:10px"><b>${esc(p.name)}</b><div class="tl">${jj.vimshottari.periods.filter(m => m.end > from && m.start < to).map(m => `<span class="seg-m" style="left:${pct(m.start)}%;width:${(pct(m.end) - pct(m.start)).toFixed(2)}%;background:${GCOL[m.key]}">${pct(m.end) - pct(m.start) > 6 ? esc(name('grahaShort', m.key)) : ''}</span>`).join('')}
+          ${sandhis.filter(x => x.p === p).map(x => `<span class="band" style="left:${pct(x.s)}%;width:${Math.max(.8, pct(x.e) - pct(x.s)).toFixed(2)}%"></span>`).join('')}</div></div>`).join('')}</div>
+      ${sandhis.length ? `<div class="card"><p class="label">${esc(t('jk.sandhi'))}</p>${sandhis.map(x => `<div class="list-row"><div class="grow"><b>${esc(x.p.name)}</b><div><span style="color:${GCOL[x.a.key]}">●</span> ${esc(name('grahas', x.a.key))} → <span style="color:${GCOL[x.b.key]}">●</span> ${esc(name('grahas', x.b.key))}</div><div class="small muted">${esc(dLabel(x.s))} – ${esc(dLabel(x.e))}</div></div><b style="color:var(--accent)">${esc(dLabel(x.b.start))}</b></div>`).join('')}</div>` : ''}
+      <button class="btn soft" data-add>＋ ${esc(t('m.addProfile'))}</button>`}`;
+  }
+  $('#main').innerHTML = `<div class="seg" style="margin-bottom:14px">${['jk.chart', 'jk.dasha', 'jk.family'].map((k, i) => `<button data-jk="${i}" class="${jkSection === i ? 'on' : ''}">${esc(t(k))}</button>`).join('')}</div>${body}<p class="small muted">${esc(t('jk.chartNote'))}</p>`;
+  const q = x => $('#main').querySelector(x), qa = x => $('#main').querySelectorAll(x);
+  qa('[data-jk]').forEach(b => b.onclick = () => { jkSection = +b.dataset.jk; viewJathakam(); });
+  q('#jkp')?.addEventListener('change', e => { jkPerson = e.target.value; viewJathakam(); });
+  q('#jkv')?.addEventListener('change', e => { jkVarga = +e.target.value; viewJathakam(); });
+  q('#jks')?.addEventListener('change', e => { S.chartStyle = e.target.value; save(); viewJathakam(); });
+  q('#jkspan')?.addEventListener('change', e => { jkSpan = +e.target.value; viewJathakam(); });
+  qa('[data-sys]').forEach(b => b.onclick = () => { jkSystem = b.dataset.sys; viewJathakam(); });
+  qa('[data-ahead]').forEach(b => b.onclick = () => { jkAhead = b.dataset.ahead === '1'; viewJathakam(); });
+  qa('[data-add]').forEach(b => b.onclick = () => personEditor(null, '', rec => { jkPerson = rec.id; viewJathakam(); }));
+  q('[data-edit]')?.addEventListener('click', () => personEditor(person, '', () => viewJathakam()));
+}
+
+// ---------------------------------------------------------------- temples
+// Major temples by deity (content/src/temples.json); deities from the
+// user's vrats lead. Only confirmed official addresses are ever linked.
+let TEMPLES = null, tmDeity = null;
+function deityForVrat(k) {
+  if (['ekadashi', 'purnima', 'pournami', 'satyanarayan', 'guruvar'].some(x => k.includes(x))) return 'vishnu';
+  if (['pradosh', 'shivaratri', 'somvar', 'somavara', 'thingal', 'kalashtami', 'theipirai'].some(x => k.includes(x))) return 'shiva';
+  if (k.startsWith('sank') || k.includes('vinayaka')) return 'ganesha';
+  if (k.includes('shashti') || k.includes('karthigai')) return 'murugan';
+  if (k.includes('hanuman')) return 'hanuman';
+  if (k.includes('shani')) return 'shani';
+  if (['santoshi', 'velli', 'durgashtami'].some(x => k.includes(x))) return 'devi';
+  return null;
+}
+async function viewTemples() {
+  TEMPLES ??= await (await fetch('temples.json')).json();
+  const yours = [...new Set(S.vrats.map(deityForVrat).filter(Boolean))];
+  const order = [...yours, ...TEMPLES.deities.filter(d => !yours.includes(d))];
+  const chosen = tmDeity || order[0];
+  const card = x => `<div class="card temple"><h2 class="serif">${esc(x.name)}</h2><div class="small muted">📍 ${esc(x.place)}</div><p>${esc(x.about)}</p>
+    ${x.donate ? `<a class="btn block" href="${esc(x.donate)}" target="_blank" rel="noopener">♥ ${esc(t('tm.donate'))}</a>` : `<p class="small muted">${esc(t('tm.noLink'))}</p>`}
+    <div class="links">${x.site && x.site !== x.donate ? `<a href="${esc(x.site)}" target="_blank" rel="noopener">🌐 ${esc(t('tm.site'))}</a>` : ''}
+    <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x.name + ', ' + x.place)}" target="_blank" rel="noopener">🗺 ${esc(t('tm.directions'))}</a></div></div>`;
+  $('#main').innerHTML = `${yours.length ? `<p class="label">${esc(t('tm.yours'))}</p>` : ''}
+    <div class="vc-chips">${order.map(d => `<button class="pill ${d === chosen ? 'on' : ''}" data-deity="${d}">${yours.includes(d) ? '☾ ' : ''}${esc(t('deity.' + d))}</button>`).join('')}</div>
+    ${TEMPLES.temples.filter(x => x.deity === chosen).map(card).join('')}<p class="small muted">${esc(t('tm.note'))}</p>`;
+  $('#main').querySelectorAll('[data-deity]').forEach(b => b.onclick = () => { tmDeity = b.dataset.deity; viewTemples(); });
+}
+
 // ---------------------------------------------------------------- festival page
 async function festivalSheet(id, date) {
   const f = pack.festivals.find(x => x.id === id); if (!f) return;
@@ -402,7 +555,8 @@ async function viewMonth() {
   loading();
   const [y, mo] = m.split('-').map(Number);
   const last = `${y}-${pad(mo)}-${pad(new Date(Date.UTC(y, mo, 0)).getUTCDate())}`;
-  const cells = await engine({ op: 'month', handle: await cal(y), from: m, to: last });
+  const place = monthPlace || S.home;
+  const cells = await engine({ op: 'month', handle: await cal(y, place), from: m, to: last });
   const solar = pack.display.primary === 'solar';
   const head = [...new Set(cells.map(c => solar ? name('solarMonths', c.solar?.month) : (c.lunar?.adhika ? name('adhika', 'adhika') + ' ' : '') + name('lunarMonths', c.lunar?.month)))].join(' – ');
   const wd = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].map(k => {
@@ -410,7 +564,7 @@ async function viewMonth() {
     for (const s of ['వారం', 'ವಾರ', 'वार', 'கிழமை', 'ആഴ്ച', 'વાર', 'বার', 'ବାର']) if (n.endsWith(s) && n.length > s.length) return n.slice(0, -s.length);
     return n;
   });
-  const lead = parse(m).getUTCDay(), td = today();
+  const lead = parse(m).getUTCDay(), td = today(place.tz);
   const marked = ['ekadashi', 'purnima', 'pournami', 'amavasya', 'amavasai', 'karuthavavu'];
   const items = [];
   const grid = cells.map(c => {
@@ -423,7 +577,9 @@ async function viewMonth() {
       <div>${fs.length ? `<span class="dot ${major ? 'major' : ''}"></span>` : ''}${special ? '<span class="dot hollow"></span>' : ''}</div></div>`;
   }).join('');
   $('#main').innerHTML = `<div class="dayhead"><div class="nav"><button class="arrow" data-m="-1">‹</button>
-      <div><h1 class="serif" style="font-size:24px">${esc(head)}</h1><div class="muted">${esc(new Intl.DateTimeFormat(locale(), { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(m)))}</div></div>
+      <div><h1 class="serif" style="font-size:24px">${esc(head)}</h1><div class="muted">${esc(new Intl.DateTimeFormat(locale(), { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(m)))}</div>
+      <select class="placechip noprint" aria-label="${esc(t('cal.location'))}"><option value="home" ${!monthPlace ? 'selected' : ''}>📍 ${esc(S.home.name)}</option>
+        ${monthPlace ? `<option value="other" selected>📍 ${esc(monthPlace.name)}</option>` : ''}<option value="pick">${esc(t('cal.other'))}</option></select></div>
       <button class="arrow" data-m="1">›</button></div></div>
     <div class="grid">${wd.map(w => `<div class="wd">${esc(w)}</div>`).join('')}${'<div class="cell empty"></div>'.repeat(lead)}${grid}</div>
     <p class="small muted" style="margin-top:10px"><span class="dot major"></span> ${esc(t('f.major'))} &nbsp; <span class="dot"></span> ${esc(t('tab.festivals'))} &nbsp; <span class="dot hollow"></span> ${['ekadashi', 'purnima', 'amavasya'].map(k => esc(name('tithis', k))).join(' · ')}</p>
@@ -433,7 +589,13 @@ async function viewMonth() {
   $('#main').querySelectorAll('[data-m]').forEach(b => b.onclick = () => {
     const d = parse(m); d.setUTCMonth(d.getUTCMonth() + +b.dataset.m, 1); monthDate = ymd(d); viewMonth();
   });
-  $('#main').querySelectorAll('[data-day]').forEach(c => c.onclick = () => { dayDate = c.dataset.day; tab = 'today'; render(); });
+  $('#main').querySelectorAll('[data-day]').forEach(c => c.onclick = () => { dayDate = c.dataset.day; dayPlace = monthPlace; tab = 'today'; render(); });
+  $('#main').querySelector('.placechip').onchange = e => {
+    if (e.target.value === 'home') { monthPlace = null; viewMonth(); }
+    else if (e.target.value === 'pick') {
+      const o = sheet(`<h2 class="serif">${esc(t('cal.other'))}</h2><div id="mp"></div>`, o => placePicker(o.querySelector('#mp'), p => { monthPlace = p; o.remove(); viewMonth(); }));
+    }
+  };
   wireFestivals();
 }
 function festRow(f, date) {

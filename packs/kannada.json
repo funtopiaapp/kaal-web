@@ -785,6 +785,186 @@
     "en": "Meena",
     "kn": "ಮೀನ"
    }
+  },
+  "grahas": {
+   "sun": {
+    "en": "Sun",
+    "kn": "ಸೂರ್ಯ"
+   },
+   "moon": {
+    "en": "Moon",
+    "kn": "ಚಂದ್ರ"
+   },
+   "mars": {
+    "en": "Mars",
+    "kn": "ಕುಜ"
+   },
+   "mercury": {
+    "en": "Mercury",
+    "kn": "ಬುಧ"
+   },
+   "jupiter": {
+    "en": "Jupiter",
+    "kn": "ಗುರು"
+   },
+   "venus": {
+    "en": "Venus",
+    "kn": "ಶುಕ್ರ"
+   },
+   "saturn": {
+    "en": "Saturn",
+    "kn": "ಶನಿ"
+   },
+   "rahu": {
+    "en": "Rahu",
+    "kn": "ರಾಹು"
+   },
+   "ketu": {
+    "en": "Ketu",
+    "kn": "ಕೇತು"
+   }
+  },
+  "grahaShort": {
+   "sun": {
+    "en": "Su",
+    "kn": "ಸೂ"
+   },
+   "moon": {
+    "en": "Mo",
+    "kn": "ಚಂ"
+   },
+   "mars": {
+    "en": "Ma",
+    "kn": "ಕು"
+   },
+   "mercury": {
+    "en": "Me",
+    "kn": "ಬು"
+   },
+   "jupiter": {
+    "en": "Ju",
+    "kn": "ಗು"
+   },
+   "venus": {
+    "en": "Ve",
+    "kn": "ಶು"
+   },
+   "saturn": {
+    "en": "Sa",
+    "kn": "ಶ"
+   },
+   "rahu": {
+    "en": "Ra",
+    "kn": "ರಾ"
+   },
+   "ketu": {
+    "en": "Ke",
+    "kn": "ಕೇ"
+   },
+   "lagna": {
+    "en": "As",
+    "kn": "ಲ"
+   }
+  },
+  "yoginis": {
+   "mangala": {
+    "en": "Mangala",
+    "kn": "ಮಂಗಳಾ"
+   },
+   "pingala": {
+    "en": "Pingala",
+    "kn": "ಪಿಂಗಳಾ"
+   },
+   "dhanya": {
+    "en": "Dhanya",
+    "kn": "ಧಾನ್ಯಾ"
+   },
+   "bhramari": {
+    "en": "Bhramari",
+    "kn": "ಭ್ರಾಮರೀ"
+   },
+   "bhadrika": {
+    "en": "Bhadrika",
+    "kn": "ಭದ್ರಿಕಾ"
+   },
+   "ulka": {
+    "en": "Ulka",
+    "kn": "ಉಲ್ಕಾ"
+   },
+   "siddha": {
+    "en": "Siddha",
+    "kn": "ಸಿದ್ಧಾ"
+   },
+   "sankata": {
+    "en": "Sankata",
+    "kn": "ಸಂಕಟಾ"
+   }
+  },
+  "vargas": {
+   "d1": {
+    "en": "Rasi",
+    "kn": "ರಾಶಿ"
+   },
+   "d2": {
+    "en": "Hora",
+    "kn": "ಹೋರಾ"
+   },
+   "d3": {
+    "en": "Drekkana",
+    "kn": "ದ್ರೇಷ್ಕಾಣ"
+   },
+   "d4": {
+    "en": "Chaturthamsa",
+    "kn": "ಚತುರ್ಥಾಂಶ"
+   },
+   "d7": {
+    "en": "Saptamsa",
+    "kn": "ಸಪ್ತಾಂಶ"
+   },
+   "d9": {
+    "en": "Navamsa",
+    "kn": "ನವಾಂಶ"
+   },
+   "d10": {
+    "en": "Dasamsa",
+    "kn": "ದಶಾಂಶ"
+   },
+   "d12": {
+    "en": "Dwadasamsa",
+    "kn": "ದ್ವಾದಶಾಂಶ"
+   },
+   "d16": {
+    "en": "Shodasamsa",
+    "kn": "ಷೋಡಶಾಂಶ"
+   },
+   "d20": {
+    "en": "Vimsamsa",
+    "kn": "ವಿಂಶಾಂಶ"
+   },
+   "d24": {
+    "en": "Chaturvimsamsa",
+    "kn": "ಚತುರ್ವಿಂಶಾಂಶ"
+   },
+   "d27": {
+    "en": "Saptavimsamsa",
+    "kn": "ಸಪ್ತವಿಂಶಾಂಶ"
+   },
+   "d30": {
+    "en": "Trimsamsa",
+    "kn": "ತ್ರಿಂಶಾಂಶ"
+   },
+   "d40": {
+    "en": "Khavedamsa",
+    "kn": "ಖವೇದಾಂಶ"
+   },
+   "d45": {
+    "en": "Akshavedamsa",
+    "kn": "ಅಕ್ಷವೇದಾಂಶ"
+   },
+   "d60": {
+    "en": "Shashtiamsa",
+    "kn": "ಷಷ್ಟ್ಯಂಶ"
+   }
   }
  },
  "display": {

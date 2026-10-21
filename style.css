@@ -129,6 +129,23 @@ footer.foot { max-width: 760px; margin: 0 auto; padding: 0 16px 40px; font-size:
 @keyframes spark { 0% { opacity: 1; transform: rotate(var(--a)) translateY(0) scale(.4); } 100% { opacity: 0; transform: rotate(var(--a)) translateY(-120px) scale(1.2); } }
 @media (prefers-reduced-motion: reduce) { .celebrate, .cel-card, .cel-star span, .cel-star i { animation: none; } }
 
+.placechip { margin-top: 6px; border: 0; border-radius: 999px; padding: 4px 12px; background: var(--soft); color: var(--accent); font-weight: 700; font-size: 13px; width: auto; }
+
+.chart { width: 100%; max-width: 520px; display: block; margin: 0 auto 14px; background: var(--card); border-radius: 12px; }
+.chart rect { fill: none; stroke: var(--muted); stroke-width: .3; } .chart line { stroke: var(--muted); stroke-width: .25; }
+.chart .ct { font-size: 3.4px; fill: var(--muted); font-weight: 600; }
+.chart .spot { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; font-size: 3.3px; font-weight: 600; line-height: 1.25; color: var(--ink); }
+.chart .spot .sn { font-size: 2.8px; color: var(--muted); font-weight: 400; } .chart .spot .as { color: var(--accent); }
+.chart-tools { display: flex; gap: 8px; margin-bottom: 10px; } .chart-tools select { flex: 1; }
+.dasha { margin: 6px 0; } .dasha > summary, .dasha.leaf { list-style: none; display: flex; gap: 10px; align-items: center; padding: 8px 12px; border-radius: 12px; background: var(--card); cursor: pointer; }
+.dasha.d1 > summary, .dasha.d1.leaf, .dasha.d2.leaf { background: var(--sunken); } .dasha details, .dasha .dasha { margin-left: 14px; }
+.dasha summary::-webkit-details-marker { display: none; } .dasha .bar { width: 4px; align-self: stretch; border-radius: 2px; }
+.dasha .grow { flex: 1; } .dasha b.now, .now { color: var(--accent); font-weight: 700; }
+.tl { position: relative; height: 30px; margin-top: 4px; border-radius: 6px; overflow: hidden; background: var(--sunken); }
+.tl .seg-m { position: absolute; top: 2px; bottom: 2px; color: #fff; font-size: 11px; font-weight: 800; display: grid; place-items: center; border-right: 1px solid var(--card); }
+.tl .band { position: absolute; top: 0; bottom: 0; border: 1.5px dashed var(--ink); border-radius: 4px; }
+.temple h2 { margin: 0 0 4px; font-size: 21px; } .temple .links { display: flex; gap: 18px; margin-top: 10px; font-weight: 700; } .temple a.btn { text-decoration: none; margin-top: 4px; }
+
 @media print {
   header.top, nav.tabs, .noprint, footer.foot { display: none !important; }
   body { background: #fff; color: #000; }
