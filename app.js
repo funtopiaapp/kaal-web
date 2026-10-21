@@ -9,6 +9,10 @@ const CULTURES = [
   { id: 'telugu', en: 'Telugu', native: 'తెలుగు' },
   { id: 'kannada', en: 'Kannada', native: 'ಕನ್ನಡ' },
   { id: 'north-indian', en: 'North Indian', native: 'उत्तर भारतीय' },
+  { id: 'gujarati', en: 'Gujarati', native: 'ગુજરાતી' },
+  { id: 'marathi', en: 'Marathi', native: 'मराठी' },
+  { id: 'bengali', en: 'Bengali', native: 'বাংলা' },
+  { id: 'odia', en: 'Odia', native: 'ଓଡ଼ିଆ' },
 ];
 const LIGHT = ['kaal', 'ivory', 'rose', 'sage'], DARK = ['kaal-dark', 'night', 'charcoal', 'peacock'];
 const TABS = [['today', 'tab.today'], ['calendar', 'tab.calendar'], ['festivals', 'tab.festivals'], ['muhurtham', 'tab.muhurtham'],
@@ -102,7 +106,12 @@ async function places() {
 async function searchPlaces(q) {
   q = q.trim().toLowerCase(); if (q.length < 2) return [];
   const all = await places();
-  return all.filter(p => p.name.toLowerCase().startsWith(q) || p.ascii.startsWith(q) || p.alts.split('|').some(a => a.startsWith(q))).slice(0, 20);
+  // A place's own name first, then an exact alternate name, then prefixes (as kaal-core's search).
+  const rank = p => p.name.toLowerCase() === q || p.ascii === q ? 0 : p.alts.split('|').includes(q) ? 1
+    : p.name.toLowerCase().startsWith(q) || p.ascii.startsWith(q) || p.alts.split('|').some(a => a.startsWith(q)) ? 2 : 3;
+  const out = [[], [], []];
+  for (const p of all) { const r = rank(p); if (r < 3) out[r].push(p); }
+  return out.flat().slice(0, 20);
 }
 async function nearest(lat, lon) {
   const all = await places(); let best = null, bd = 1e9;
@@ -250,7 +259,7 @@ async function viewMonth() {
   const head = [...new Set(cells.map(c => solar ? name('solarMonths', c.solar?.month) : (c.lunar?.adhika ? name('adhika', 'adhika') + ' ' : '') + name('lunarMonths', c.lunar?.month)))].join(' – ');
   const wd = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].map(k => {
     const n = name('weekdays', k); if (lang() === 'en') return n.slice(0, 3);
-    for (const s of ['వారం', 'ವಾರ', 'वार', 'கிழமை', 'ആഴ്ച']) if (n.endsWith(s) && n.length > s.length) return n.slice(0, -s.length);
+    for (const s of ['వారం', 'ವಾರ', 'वार', 'கிழமை', 'ആഴ്ച', 'વાર', 'বার', 'ବାର']) if (n.endsWith(s) && n.length > s.length) return n.slice(0, -s.length);
     return n;
   });
   const lead = parse(m).getUTCDay(), td = today();

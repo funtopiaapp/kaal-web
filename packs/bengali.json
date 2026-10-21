@@ -1,0 +1,2751 @@
+{
+ "schemaVersion": 1,
+ "culture": "bengali",
+ "packVersion": 1,
+ "language": "bn",
+ "calendarSystem": "solar",
+ "lunarMonthSystem": "amanta",
+ "solarDayRule": {
+  "type": "next-day"
+ },
+ "era": "bangabda",
+ "solarDayPlace": {
+  "latitude": 22.57,
+  "longitude": 88.36,
+  "utcOffsetMinutes": 330
+ },
+ "names": {
+  "solarMonths": {
+   "mesha": {
+    "en": "Boishakh",
+    "bn": "বৈশাখ"
+   },
+   "vrishabha": {
+    "en": "Joishtho",
+    "bn": "জ্যৈষ্ঠ"
+   },
+   "mithuna": {
+    "en": "Asharh",
+    "bn": "আষাঢ়"
+   },
+   "karka": {
+    "en": "Srabon",
+    "bn": "শ্রাবণ"
+   },
+   "simha": {
+    "en": "Bhadro",
+    "bn": "ভাদ্র"
+   },
+   "kanya": {
+    "en": "Ashwin",
+    "bn": "আশ্বিন"
+   },
+   "tula": {
+    "en": "Kartik",
+    "bn": "কার্তিক"
+   },
+   "vrishchika": {
+    "en": "Ogrohayon",
+    "bn": "অগ্রহায়ণ"
+   },
+   "dhanu": {
+    "en": "Poush",
+    "bn": "পৌষ"
+   },
+   "makara": {
+    "en": "Magh",
+    "bn": "মাঘ"
+   },
+   "kumbha": {
+    "en": "Falgun",
+    "bn": "ফাল্গুন"
+   },
+   "meena": {
+    "en": "Choitro",
+    "bn": "চৈত্র"
+   }
+  },
+  "lunarMonths": {
+   "chaitra": {
+    "en": "Choitro",
+    "bn": "চৈত্র"
+   },
+   "vaishakha": {
+    "en": "Boishakh",
+    "bn": "বৈশাখ"
+   },
+   "jyeshtha": {
+    "en": "Joishtho",
+    "bn": "জ্যৈষ্ঠ"
+   },
+   "ashadha": {
+    "en": "Asharh",
+    "bn": "আষাঢ়"
+   },
+   "shravana": {
+    "en": "Srabon",
+    "bn": "শ্রাবণ"
+   },
+   "bhadrapada": {
+    "en": "Bhadro",
+    "bn": "ভাদ্র"
+   },
+   "ashvin": {
+    "en": "Ashwin",
+    "bn": "আশ্বিন"
+   },
+   "kartika": {
+    "en": "Kartik",
+    "bn": "কার্তিক"
+   },
+   "margashirsha": {
+    "en": "Ogrohayon",
+    "bn": "অগ্রহায়ণ"
+   },
+   "pausha": {
+    "en": "Poush",
+    "bn": "পৌষ"
+   },
+   "magha": {
+    "en": "Magh",
+    "bn": "মাঘ"
+   },
+   "phalguna": {
+    "en": "Falgun",
+    "bn": "ফাল্গুন"
+   }
+  },
+  "nakshatras": {
+   "ashwini": {
+    "en": "Ashwini",
+    "bn": "অশ্বিনী"
+   },
+   "bharani": {
+    "en": "Bharani",
+    "bn": "ভরণী"
+   },
+   "krittika": {
+    "en": "Krittika",
+    "bn": "কৃত্তিকা"
+   },
+   "rohini": {
+    "en": "Rohini",
+    "bn": "রোহিণী"
+   },
+   "mrigashira": {
+    "en": "Mrigashira",
+    "bn": "মৃগশিরা"
+   },
+   "ardra": {
+    "en": "Ardra",
+    "bn": "আর্দ্রা"
+   },
+   "punarvasu": {
+    "en": "Punarvasu",
+    "bn": "পুনর্বসু"
+   },
+   "pushya": {
+    "en": "Pushya",
+    "bn": "পুষ্য"
+   },
+   "ashlesha": {
+    "en": "Ashlesha",
+    "bn": "আশ্লেষা"
+   },
+   "magha": {
+    "en": "Magha",
+    "bn": "মঘা"
+   },
+   "purva_phalguni": {
+    "en": "Purva Phalguni",
+    "bn": "পূর্বা ফাল্গুনী"
+   },
+   "uttara_phalguni": {
+    "en": "Uttara Phalguni",
+    "bn": "উত্তরা ফাল্গুনী"
+   },
+   "hasta": {
+    "en": "Hasta",
+    "bn": "হস্ত"
+   },
+   "chitra": {
+    "en": "Chitra",
+    "bn": "চিত্রা"
+   },
+   "swati": {
+    "en": "Swati",
+    "bn": "স্বাতি"
+   },
+   "vishakha": {
+    "en": "Vishakha",
+    "bn": "বিশাখা"
+   },
+   "anuradha": {
+    "en": "Anuradha",
+    "bn": "অনুরাধা"
+   },
+   "jyeshtha": {
+    "en": "Jyeshtha",
+    "bn": "জ্যেষ্ঠা"
+   },
+   "mula": {
+    "en": "Mula",
+    "bn": "মূল"
+   },
+   "purva_ashadha": {
+    "en": "Purva Ashadha",
+    "bn": "পূর্বাষাঢ়া"
+   },
+   "uttara_ashadha": {
+    "en": "Uttara Ashadha",
+    "bn": "উত্তরাষাঢ়া"
+   },
+   "shravana": {
+    "en": "Shravana",
+    "bn": "শ্রবণ"
+   },
+   "dhanishta": {
+    "en": "Dhanishta",
+    "bn": "ধনিষ্ঠা"
+   },
+   "shatabhisha": {
+    "en": "Shatabhisha",
+    "bn": "শতভিষা"
+   },
+   "purva_bhadrapada": {
+    "en": "Purva Bhadrapada",
+    "bn": "পূর্বা ভাদ্রপদ"
+   },
+   "uttara_bhadrapada": {
+    "en": "Uttara Bhadrapada",
+    "bn": "উত্তরা ভাদ্রপদ"
+   },
+   "revati": {
+    "en": "Revati",
+    "bn": "রেবতী"
+   }
+  },
+  "tithis": {
+   "pratipada": {
+    "en": "Pratipad",
+    "bn": "প্রতিপদ"
+   },
+   "dvitiya": {
+    "en": "Dwitiya",
+    "bn": "দ্বিতীয়া"
+   },
+   "tritiya": {
+    "en": "Tritiya",
+    "bn": "তৃতীয়া"
+   },
+   "chaturthi": {
+    "en": "Chaturthi",
+    "bn": "চতুর্থী"
+   },
+   "panchami": {
+    "en": "Panchami",
+    "bn": "পঞ্চমী"
+   },
+   "shashthi": {
+    "en": "Shashthi",
+    "bn": "ষষ্ঠী"
+   },
+   "saptami": {
+    "en": "Saptami",
+    "bn": "সপ্তমী"
+   },
+   "ashtami": {
+    "en": "Ashtami",
+    "bn": "অষ্টমী"
+   },
+   "navami": {
+    "en": "Nabami",
+    "bn": "নবমী"
+   },
+   "dashami": {
+    "en": "Dashami",
+    "bn": "দশমী"
+   },
+   "ekadashi": {
+    "en": "Ekadashi",
+    "bn": "একাদশী"
+   },
+   "dvadashi": {
+    "en": "Dwadashi",
+    "bn": "দ্বাদশী"
+   },
+   "trayodashi": {
+    "en": "Trayodashi",
+    "bn": "ত্রয়োদশী"
+   },
+   "chaturdashi": {
+    "en": "Chaturdashi",
+    "bn": "চতুর্দশী"
+   },
+   "purnima": {
+    "en": "Purnima",
+    "bn": "পূর্ণিমা"
+   },
+   "amavasya": {
+    "en": "Amabasya",
+    "bn": "অমাবস্যা"
+   }
+  },
+  "weekdays": {
+   "sunday": {
+    "en": "Robibar",
+    "bn": "রবিবার"
+   },
+   "monday": {
+    "en": "Sombar",
+    "bn": "সোমবার"
+   },
+   "tuesday": {
+    "en": "Mongolbar",
+    "bn": "মঙ্গলবার"
+   },
+   "wednesday": {
+    "en": "Budhbar",
+    "bn": "বুধবার"
+   },
+   "thursday": {
+    "en": "Brihaspatibar",
+    "bn": "বৃহস্পতিবার"
+   },
+   "friday": {
+    "en": "Shukrobar",
+    "bn": "শুক্রবার"
+   },
+   "saturday": {
+    "en": "Shonibar",
+    "bn": "শনিবার"
+   }
+  },
+  "paksha": {
+   "shukla": {
+    "en": "Shukla Paksha",
+    "bn": "শুক্লপক্ষ"
+   },
+   "krishna": {
+    "en": "Krishna Paksha",
+    "bn": "কৃষ্ণপক্ষ"
+   }
+  },
+  "yogas": {
+   "vishkambha": {
+    "en": "Vishkambha",
+    "bn": "বিষ্কম্ভ"
+   },
+   "priti": {
+    "en": "Priti",
+    "bn": "প্রীতি"
+   },
+   "ayushman": {
+    "en": "Ayushman",
+    "bn": "আয়ুষ্মান"
+   },
+   "saubhagya": {
+    "en": "Saubhagya",
+    "bn": "সৌভাগ্য"
+   },
+   "shobhana": {
+    "en": "Shobhana",
+    "bn": "শোভন"
+   },
+   "atiganda": {
+    "en": "Atiganda",
+    "bn": "অতিগণ্ড"
+   },
+   "sukarma": {
+    "en": "Sukarma",
+    "bn": "সুকর্মা"
+   },
+   "dhriti": {
+    "en": "Dhriti",
+    "bn": "ধৃতি"
+   },
+   "shula": {
+    "en": "Shula",
+    "bn": "শূল"
+   },
+   "ganda": {
+    "en": "Ganda",
+    "bn": "গণ্ড"
+   },
+   "vriddhi": {
+    "en": "Vriddhi",
+    "bn": "বৃদ্ধি"
+   },
+   "dhruva": {
+    "en": "Dhruva",
+    "bn": "ধ্রুব"
+   },
+   "vyaghata": {
+    "en": "Vyaghata",
+    "bn": "ব্যাঘাত"
+   },
+   "harshana": {
+    "en": "Harshana",
+    "bn": "হর্ষণ"
+   },
+   "vajra": {
+    "en": "Vajra",
+    "bn": "বজ্র"
+   },
+   "siddhi": {
+    "en": "Siddhi",
+    "bn": "সিদ্ধি"
+   },
+   "vyatipata": {
+    "en": "Vyatipata",
+    "bn": "ব্যতীপাত"
+   },
+   "variyan": {
+    "en": "Variyan",
+    "bn": "বরীয়ান"
+   },
+   "parigha": {
+    "en": "Parigha",
+    "bn": "পরিঘ"
+   },
+   "shiva": {
+    "en": "Shiva",
+    "bn": "শিব"
+   },
+   "siddha": {
+    "en": "Siddha",
+    "bn": "সিদ্ধ"
+   },
+   "sadhya": {
+    "en": "Sadhya",
+    "bn": "সাধ্য"
+   },
+   "shubha": {
+    "en": "Shubha",
+    "bn": "শুভ"
+   },
+   "shukla": {
+    "en": "Shukla",
+    "bn": "শুক্ল"
+   },
+   "brahma": {
+    "en": "Brahma",
+    "bn": "ব্রহ্ম"
+   },
+   "indra": {
+    "en": "Indra",
+    "bn": "ইন্দ্র"
+   },
+   "vaidhriti": {
+    "en": "Vaidhriti",
+    "bn": "বৈধৃতি"
+   }
+  },
+  "karanas": {
+   "bava": {
+    "en": "Bava",
+    "bn": "বব"
+   },
+   "balava": {
+    "en": "Balava",
+    "bn": "বালব"
+   },
+   "kaulava": {
+    "en": "Kaulava",
+    "bn": "কৌলব"
+   },
+   "taitila": {
+    "en": "Taitila",
+    "bn": "তৈতিল"
+   },
+   "garaja": {
+    "en": "Garaja",
+    "bn": "গর"
+   },
+   "vanija": {
+    "en": "Vanija",
+    "bn": "বণিজ"
+   },
+   "vishti": {
+    "en": "Vishti",
+    "bn": "বিষ্টি"
+   },
+   "shakuni": {
+    "en": "Shakuni",
+    "bn": "শকুনি"
+   },
+   "chatushpada": {
+    "en": "Chatushpada",
+    "bn": "চতুষ্পদ"
+   },
+   "naga": {
+    "en": "Naga",
+    "bn": "নাগ"
+   },
+   "kimstughna": {
+    "en": "Kimstughna",
+    "bn": "কিংস্তুঘ্ন"
+   }
+  },
+  "samvatsaras": {
+   "prabhava": {
+    "en": "Prabhava",
+    "bn": "প্রভব"
+   },
+   "vibhava": {
+    "en": "Vibhava",
+    "bn": "বিভব"
+   },
+   "shukla": {
+    "en": "Shukla",
+    "bn": "শুক্ল"
+   },
+   "pramoduta": {
+    "en": "Pramoduta",
+    "bn": "প্রমোদ"
+   },
+   "prajotpatti": {
+    "en": "Prajotpatti",
+    "bn": "প্রজাপতি"
+   },
+   "angirasa": {
+    "en": "Angirasa",
+    "bn": "অঙ্গিরা"
+   },
+   "shrimukha": {
+    "en": "Shrimukha",
+    "bn": "শ্রীমুখ"
+   },
+   "bhava": {
+    "en": "Bhava",
+    "bn": "ভাব"
+   },
+   "yuva": {
+    "en": "Yuva",
+    "bn": "যুবা"
+   },
+   "dhatu": {
+    "en": "Dhatu",
+    "bn": "ধাতা"
+   },
+   "ishvara": {
+    "en": "Ishvara",
+    "bn": "ঈশ্বর"
+   },
+   "bahudhanya": {
+    "en": "Bahudhanya",
+    "bn": "বহুধান্য"
+   },
+   "pramathi": {
+    "en": "Pramathi",
+    "bn": "প্রমাথী"
+   },
+   "vikrama": {
+    "en": "Vikrama",
+    "bn": "বিক্রম"
+   },
+   "vrisha": {
+    "en": "Vrisha",
+    "bn": "বৃষ"
+   },
+   "chitrabhanu": {
+    "en": "Chitrabhanu",
+    "bn": "চিত্রভানু"
+   },
+   "svabhanu": {
+    "en": "Svabhanu",
+    "bn": "স্বভানু"
+   },
+   "tarana": {
+    "en": "Tarana",
+    "bn": "তারণ"
+   },
+   "parthiva": {
+    "en": "Parthiva",
+    "bn": "পার্থিব"
+   },
+   "vyaya": {
+    "en": "Vyaya",
+    "bn": "ব্যয়"
+   },
+   "sarvajit": {
+    "en": "Sarvajit",
+    "bn": "সর্বজিত্"
+   },
+   "sarvadhari": {
+    "en": "Sarvadhari",
+    "bn": "সর্বধারী"
+   },
+   "virodhi": {
+    "en": "Virodhi",
+    "bn": "বিরোধী"
+   },
+   "vikriti": {
+    "en": "Vikriti",
+    "bn": "বিকৃতি"
+   },
+   "khara": {
+    "en": "Khara",
+    "bn": "খর"
+   },
+   "nandana": {
+    "en": "Nandana",
+    "bn": "নন্দন"
+   },
+   "vijaya": {
+    "en": "Vijaya",
+    "bn": "বিজয়"
+   },
+   "jaya": {
+    "en": "Jaya",
+    "bn": "জয়"
+   },
+   "manmatha": {
+    "en": "Manmatha",
+    "bn": "মন্মথ"
+   },
+   "durmukhi": {
+    "en": "Durmukhi",
+    "bn": "দুর্মুখ"
+   },
+   "hevilambi": {
+    "en": "Hevilambi",
+    "bn": "হেমলম্বী"
+   },
+   "vilambi": {
+    "en": "Vilambi",
+    "bn": "বিলম্বী"
+   },
+   "vikari": {
+    "en": "Vikari",
+    "bn": "বিকারী"
+   },
+   "sharvari": {
+    "en": "Sharvari",
+    "bn": "শার্বরী"
+   },
+   "plava": {
+    "en": "Plava",
+    "bn": "প্লব"
+   },
+   "shubhakrit": {
+    "en": "Shubhakrit",
+    "bn": "শুভকৃত্"
+   },
+   "shobhakrit": {
+    "en": "Shobhakrit",
+    "bn": "শোভন"
+   },
+   "krodhi": {
+    "en": "Krodhi",
+    "bn": "ক্রোধী"
+   },
+   "vishvavasu": {
+    "en": "Vishvavasu",
+    "bn": "বিশ্বাবসু"
+   },
+   "parabhava": {
+    "en": "Parabhava",
+    "bn": "পরাভব"
+   },
+   "plavanga": {
+    "en": "Plavanga",
+    "bn": "প্লবঙ্গ"
+   },
+   "kilaka": {
+    "en": "Kilaka",
+    "bn": "কীলক"
+   },
+   "saumya": {
+    "en": "Saumya",
+    "bn": "সৌম্য"
+   },
+   "sadharana": {
+    "en": "Sadharana",
+    "bn": "সাধারণ"
+   },
+   "virodhikrit": {
+    "en": "Virodhikrit",
+    "bn": "বিরোধকৃত্"
+   },
+   "paridhavi": {
+    "en": "Paridhavi",
+    "bn": "পরিধাবী"
+   },
+   "pramadicha": {
+    "en": "Pramadicha",
+    "bn": "প্রমাদী"
+   },
+   "ananda": {
+    "en": "Ananda",
+    "bn": "আনন্দ"
+   },
+   "rakshasa": {
+    "en": "Rakshasa",
+    "bn": "রাক্ষস"
+   },
+   "nala": {
+    "en": "Nala",
+    "bn": "নল"
+   },
+   "pingala": {
+    "en": "Pingala",
+    "bn": "পিঙ্গল"
+   },
+   "kalayukti": {
+    "en": "Kalayukti",
+    "bn": "কালয়ুক্ত"
+   },
+   "siddharthi": {
+    "en": "Siddharthi",
+    "bn": "সিদ্ধার্থী"
+   },
+   "raudri": {
+    "en": "Raudri",
+    "bn": "রৌদ্র"
+   },
+   "durmati": {
+    "en": "Durmati",
+    "bn": "দুর্মতি"
+   },
+   "dundubhi": {
+    "en": "Dundubhi",
+    "bn": "দুন্দুভী"
+   },
+   "rudhirodgari": {
+    "en": "Rudhirodgari",
+    "bn": "রুধিরোদ্গারী"
+   },
+   "raktakshi": {
+    "en": "Raktakshi",
+    "bn": "রক্তাক্ষী"
+   },
+   "krodhana": {
+    "en": "Krodhana",
+    "bn": "ক্রোধন"
+   },
+   "akshaya": {
+    "en": "Akshaya",
+    "bn": "ক্ষয়"
+   }
+  },
+  "eras": {
+   "bangabda": {
+    "en": "Bangabda",
+    "bn": "বঙ্গাব্দ"
+   }
+  },
+  "adhika": {
+   "adhika": {
+    "en": "Mal (Adhik)",
+    "bn": "মল"
+   }
+  },
+  "rashis": {
+   "mesha": {
+    "en": "Mesh",
+    "bn": "মেষ"
+   },
+   "vrishabha": {
+    "en": "Vrishabh",
+    "bn": "বৃষভ"
+   },
+   "mithuna": {
+    "en": "Mithun",
+    "bn": "মিথুন"
+   },
+   "karka": {
+    "en": "Kark",
+    "bn": "কর্ক"
+   },
+   "simha": {
+    "en": "Singh",
+    "bn": "সিংহ"
+   },
+   "kanya": {
+    "en": "Kanya",
+    "bn": "কন্যা"
+   },
+   "tula": {
+    "en": "Tula",
+    "bn": "তুলা"
+   },
+   "vrishchika": {
+    "en": "Vrishchik",
+    "bn": "বৃশ্চিক"
+   },
+   "dhanu": {
+    "en": "Dhanu",
+    "bn": "ধনু"
+   },
+   "makara": {
+    "en": "Makar",
+    "bn": "মকর"
+   },
+   "kumbha": {
+    "en": "Kumbh",
+    "bn": "কুম্ভ"
+   },
+   "meena": {
+    "en": "Meen",
+    "bn": "মীন"
+   }
+  }
+ },
+ "display": {
+  "primary": "solar",
+  "nameEn": "Bengali",
+  "nameNative": "বাংলা",
+  "newYear": "pohela-boishakh",
+  "referencePlace": "Kolkata"
+ },
+ "festivals": [
+  {
+   "id": "poush-sankranti",
+   "names": {
+    "en": "Poush Sankranti (Pithe Parbon)",
+    "bn": "পৌষ সংক্রান্তি"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "makara",
+    "day": 1,
+    "dayRule": {
+     "type": "sunset"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Sun enters Makara: the harvest festival that marks the start of Uttarayana, the Sun's northward journey."
+    },
+    "traditions": {
+     "en": "Families wake early for a bath, many in a river, and offer water to the Sun. Sesame and jaggery sweets (til-gud, gajak, rewari) are made and shared, and khichdi is cooked and given away. Kites fill the sky in Gujarat and Rajasthan, where the day is Uttarayan. In Punjab the evening before is Lohri; in Tamil Nadu the same day is Thai Pongal and in Assam it is Magh Bihu. Giving warm clothes, blankets and grain to those who need them is a common part of the day."
+    },
+    "story": {
+     "en": "The story told for this day is of the Sun god, Surya, visiting his son Shani. The two had long been distant, and Surya's journey into Makara, the sign Shani rules, is remembered as a father setting aside old differences to see his son. Shani is said to have welcomed him with black sesame, the only thing he had, and Surya accepted it gladly. That is why sesame is at the heart of the day's food and gifts. The day is also remembered in the Mahabharata: Bhishma, who could choose the moment of his passing, waited on his bed of arrows for Uttarayana to begin. And many tell that on this day the Ganga, following King Bhagiratha, reached the sea at Ganga Sagar, where a great bathing fair is held every year."
+    },
+    "howTo": {
+     "en": [
+      "The day before, make til-gud laddoos or buy gajak and rewari, and soak rice and moong dal for khichdi.",
+      "Wake before sunrise and bathe; add a few sesame seeds to the bath water if your family does.",
+      "Offer water to the rising Sun from a copper vessel, facing east.",
+      "Cook khichdi and share it, along with sesame sweets, with neighbours and anyone who visits.",
+      "Set aside grain, sesame, a blanket or warm clothes to give to someone who needs them.",
+      "Spend the afternoon outdoors: fly kites in Gujarat and Rajasthan, or visit family elsewhere.",
+      "Greet elders with til-gud; in Maharashtra the words are 'til-gul ghya, god god bola' (take sweets and speak sweetly)."
+     ]
+    },
+    "greeting": {
+     "en": "May the Sun's new journey bring warmth to your home. Happy Makar Sankranti!"
+    }
+   }
+  },
+  {
+   "id": "saraswati-puja-bn",
+   "names": {
+    "en": "Saraswati Puja",
+    "bn": "সরস্বতী পূজা"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "magha",
+    "tithi": 5
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-WB"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The fifth day of bright Magha, welcoming spring and honouring Saraswati, goddess of learning and the arts."
+    },
+    "traditions": {
+     "en": "Yellow is the colour of the day, for the mustard fields in bloom: people wear yellow, and cook yellow sweet rice, kesari halwa or boondi. Saraswati is worshipped at home, in schools and in music and dance schools, with books, pens and instruments placed before her. In Bengal and Odisha, Saraswati Puja is a major festival for students. Many families choose this day for a young child's first letters, called Vidyarambh or Akshar Abhyas. In Punjab and Rajasthan, people fly kites."
+    },
+    "story": {
+     "en": "The story told for this day is of creation itself. When Brahma first made the world, it is said, everything was in place but silent: no sound, no speech, no music. He sprinkled water from his kamandalu, and from it rose a radiant goddess holding a veena, a book and a string of beads. She played, and the rivers began to murmur, the wind to rustle and living beings to speak. Brahma named her Saraswati, she who flows, and Vak, speech itself. Vasant Panchami is kept as her day of appearance. Another telling links the day to Kamadeva, god of love, and to the arrival of spring, when the fields turn yellow and the koel begins to sing."
+    },
+    "howTo": {
+     "en": [
+      "Clean the puja space and set up a picture or idol of Saraswati on a yellow or white cloth.",
+      "Wear yellow if you can, and keep yellow flowers such as marigolds ready.",
+      "In the morning (the purvahna, before midday), light a lamp and incense before her.",
+      "Place books, notebooks, pens and musical instruments near her; many families do not study or play from them for the rest of the day.",
+      "Offer yellow sweets, fruit and flowers, and recite or play a Saraswati vandana ('Ya kundendu tusharahara dhavala').",
+      "If a child is starting to learn, guide their hand to write their first letters on a slate or in rice.",
+      "Share the prasad and spend the afternoon outdoors, enjoying the first days of spring."
+     ]
+    },
+    "greeting": {
+     "en": "May Saraswati fill your days with learning, music and light. Happy Vasant Panchami!"
+    }
+   }
+  },
+  {
+   "id": "maha-shivaratri-bn",
+   "names": {
+    "en": "Shivaratri",
+    "bn": "শিবরাত্রি"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "magha",
+    "tithi": 29,
+    "observance": {
+     "kala": "nishita"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-WB"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The great night of Shiva, kept with fasting, night-long worship and the chanting of 'Om Namah Shivaya'."
+    },
+    "traditions": {
+     "en": "Devotees fast through the day, some taking only fruit and milk, and stay awake through the night. Temples hold four worships (prahara puja) across the night, bathing the Shiva linga in milk, curd, honey, ghee and water and offering bilva leaves. At home, families chant 'Om Namah Shivaya', read or listen to Shiva stories and sing bhajans. In Tamil Nadu temples hold the night's four abhishekams; in Kerala, the Aluva riverbank fills with people keeping vigil; in the North, kanwariyas carry Ganga water to Shiva temples. The fast is broken the next morning."
+    },
+    "story": {
+     "en": "Several stories are told for this night. In one, when the gods and asuras churned the ocean for nectar, a deadly poison, Halahala, rose first and threatened every living thing. Shiva drank it to protect the world, and Parvati held his throat so it would not go further; his throat turned blue, and he is called Neelakantha. The gods kept awake all night to watch over him, and devotees keep that vigil still. Another story tells of a hunter lost in the forest at night who climbed a bilva tree to stay safe. Restless, he plucked leaves and dropped them, not knowing a Shiva linga stood below; by morning he had kept a night's worship without meaning to, and his heart was changed. Many also remember this as the night of Shiva and Parvati's wedding."
+    },
+    "howTo": {
+     "en": [
+      "Decide how you will fast: a full fast, fruit and milk, or one simple meal; elders, children and anyone unwell often keep a light version.",
+      "Gather bilva leaves, milk, water, curd, honey, flowers and a lamp.",
+      "In the evening, bathe and visit a Shiva temple, or set up a small linga or picture at home.",
+      "Bathe the linga with water and milk, offer bilva leaves and flowers, and light the lamp.",
+      "Chant 'Om Namah Shivaya', read the Shiva Purana or listen to bhajans; many keep awake through the four quarters of the night.",
+      "The night's main worship is at Nishita, around midnight; the app's day view shows the time.",
+      "Break the fast the next morning after a bath and a short prayer, with simple food."
+     ]
+    },
+    "greeting": {
+     "en": "Om Namah Shivaya. Peaceful wishes on Maha Shivaratri."
+    }
+   }
+  },
+  {
+   "id": "dol-purnima",
+   "names": {
+    "en": "Dol Jatra (Dol Purnima)",
+    "bn": "দোলযাত্রা"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "phalguna",
+    "tithi": 15
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-WB"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Phalguna Purnima: Dol Jatra, when Krishna and Radha are swung in a decorated palanquin and Bengal plays with abir.",
+     "bn": "ফাল্গুনী পূর্ণিমা: দোলযাত্রা, সাজানো দোলায় রাধাকৃষ্ণকে দোলানো হয় আর আবির খেলা হয়।"
+    },
+    "traditions": {
+     "en": "In the morning images of Radha and Krishna are placed on a swing (dol), smeared with abir and taken round in procession with kirtan. Then friends and neighbours play with coloured powder, and sweets like malpua and mathha are shared. The day is also the birth anniversary of Sri Chaitanya Mahaprabhu, celebrated at Mayapur and Nabadwip. At Santiniketan it is Basanta Utsav, with songs and dances to welcome spring.",
+     "bn": "সকালে রাধাকৃষ্ণকে দোলায় বসিয়ে আবির মাখিয়ে কীর্তন সহকারে শোভাযাত্রা হয়। তারপর বন্ধু-প্রতিবেশীরা আবির খেলে, আর মালপোয়া, মঠের মতো মিষ্টি ভাগ করে খাওয়া হয়। এই দিনটি শ্রীচৈতন্য মহাপ্রভুর আবির্ভাব তিথিও, মায়াপুর ও নবদ্বীপে মহা সমারোহে পালিত হয়। শান্তিনিকেতনে এ দিন বসন্ত উৎসব, গানে-নাচে বসন্তকে বরণ।"
+    }
+   }
+  },
+  {
+   "id": "rama-navami-bn",
+   "names": {
+    "en": "Ram Navami",
+    "bn": "রামনবমী"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "chaitra",
+    "tithi": 9,
+    "observance": {
+     "kala": "madhyahna"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The birth of Rama, on the ninth day of bright Chaitra, at midday."
+    },
+    "traditions": {
+     "en": "Temples and homes celebrate Rama's birth at midday, the hour he is said to have been born, with a small cradle holding an image of baby Rama rocked to songs. Many people fast until noon or through the day. The Ramayana or Ramcharitmanas is read, sometimes over all nine days of Navratri, finishing today. Processions (shobha yatras) carry images of Rama, Sita, Lakshmana and Hanuman through towns, and Ayodhya draws large crowds. Panakam (a jaggery and pepper drink) and kosambari are offered in the South, and in the North a sweet called panjiri is shared."
+    },
+    "story": {
+     "en": "King Dasharatha of Ayodhya ruled well but had no children. On the advice of the sage Vasishtha, a great yajna was performed, and from its fire came a bowl of sweet payasam, which the king shared among his three queens. In time Kausalya gave birth to Rama on the ninth day of bright Chaitra, at midday; Kaikeyi to Bharata; and Sumitra to the twins Lakshmana and Shatrughna. Tradition remembers Rama as Maryada Purushottama, the one who kept to what was right even when it cost him most: he gave up his throne and went to the forest for fourteen years to keep his father's word. Ram Navami celebrates his birth and the life he went on to live."
+    },
+    "howTo": {
+     "en": [
+      "Clean the puja space and decorate a small cradle or a picture of Rama with flowers.",
+      "Keep a fast through the morning if your family does; fruit and milk are usual.",
+      "Prepare panjiri, payasam or kheer, fruit and tulsi leaves for the offering.",
+      "Check the madhyahna (midday) time in the day view; that is the hour of Rama's birth.",
+      "At midday, light a lamp, rock the cradle gently, sing 'Bhaye prakat kripala' or another birth song, and offer the food.",
+      "Read a passage from the Ramayana or Ramcharitmanas, or listen to it together.",
+      "Share the prasad, break the fast with a simple meal, and join a local procession if there is one."
+     ]
+    },
+    "greeting": {
+     "en": "Jai Shri Ram! Warm wishes on Ram Navami."
+    }
+   }
+  },
+  {
+   "id": "pohela-boishakh",
+   "names": {
+    "en": "Pohela Boishakh (Bengali New Year)",
+    "bn": "পয়লা বৈশাখ"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "mesha",
+    "day": 1
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-WB"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Boishakh 1: Pohela Boishakh, the Bengali New Year and the first day of the new Bangabda.",
+     "bn": "১ বৈশাখ: পয়লা বৈশাখ, বাংলা নববর্ষ, নতুন বঙ্গাব্দের প্রথম দিন।"
+    },
+    "traditions": {
+     "en": "Bengalis greet each other with 'Shubho Noboborsho', wear new clothes, often white and red, and visit the temple in the morning. Traders open a new red-bound account book, the haal khata, after a puja at Kalighat or Dakshineswar, and invite customers in for sweets. Homes cook a festive meal, and there are processions, songs and fairs across the city and the villages.",
+     "bn": "সবাই 'শুভ নববর্ষ' বলে একে অপরকে শুভেচ্ছা জানায়, নতুন জামা পরে, প্রায়ই লাল-সাদা, আর সকালে মন্দিরে যায়। ব্যবসায়ীরা কালীঘাট বা দক্ষিণেশ্বরে পুজো দিয়ে লাল মলাটের নতুন খাতা, হালখাতা, খোলেন এবং খদ্দেরদের মিষ্টিমুখ করান। বাড়িতে উৎসবের রান্না হয়, আর শহরে-গ্রামে শোভাযাত্রা, গান আর মেলা বসে।"
+    },
+    "howTo": {
+     "en": [
+      "Bathe early and wear new clothes.",
+      "Visit the temple and greet elders with a pranam.",
+      "Traders: open the haal khata after a puja.",
+      "Share sweets and a festive meal."
+     ],
+     "bn": [
+      "ভোরে স্নান করে নতুন জামা পরুন।",
+      "মন্দিরে যান, গুরুজনদের প্রণাম করুন।",
+      "ব্যবসায়ীরা: পুজো দিয়ে হালখাতা খুলুন।",
+      "মিষ্টি আর উৎসবের খাওয়াদাওয়া ভাগ করে নিন।"
+     ]
+    }
+   }
+  },
+  {
+   "id": "akshaya-tritiya-bn",
+   "names": {
+    "en": "Akshaya Tritiya",
+    "bn": "অক্ষয় তৃতীয়া"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "vaishakha",
+    "tithi": 3,
+    "observance": {
+     "minCoverMinutes": 144,
+     "fallback": "begins",
+     "kala": "morning"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The third day of bright Vaishakha, traditionally favoured for new beginnings and for giving."
+    },
+    "traditions": {
+     "en": "'Akshaya' means 'that which does not diminish', and the day is traditionally seen as good for starting things: a business, a house, a course of study, a marriage. Many families buy a little gold or silver, and many more give: water and cooling drinks, fans, umbrellas, grain and clothes, since it falls in the hot season. Vishnu and Lakshmi are worshipped, and in Odisha the building of the chariots for the Puri Rath Yatra begins today. Parashurama Jayanti falls on or near the same day, and Jain families break the year-long varshi tapa fast with sugarcane juice."
+    },
+    "story": {
+     "en": "Several stories meet on this day. In one, Krishna's childhood friend Sudama, a poor Brahmin, walked to Dwarka to see him, carrying only a little beaten rice (poha) tied in a cloth as a gift. Krishna embraced him, ate the poha with delight, and sent him home without Sudama asking for anything; when Sudama returned, his family's hardship had ended. In another, during the Pandavas' exile, Krishna gave Draupadi the Akshaya Patra, a vessel that never ran empty until she had eaten, so no guest at their door went hungry. Tradition also holds that the Treta Yuga began on this day, that the Ganga descended to earth, and that Vyasa began dictating the Mahabharata to Ganesha."
+    },
+    "howTo": {
+     "en": [
+      "In the morning, bathe and offer a lamp, flowers and tulsi to Vishnu and Lakshmi at home.",
+      "Offer something simple and cooling: barley, sattu, cucumber, jaggery water or panakam.",
+      "If you were planning to start something, a course, a savings plan or a small venture, many families choose today to begin.",
+      "Give something in the spirit of the day: water or buttermilk to passers-by, an umbrella, a fan, grain or clothes.",
+      "If your family buys gold or silver, keep it small and meaningful; the giving matters more in the tradition.",
+      "Share a simple meal, and if you can, feed a guest or someone who needs it."
+     ]
+    },
+    "greeting": {
+     "en": "May what you begin today grow steadily. Happy Akshaya Tritiya!"
+    }
+   }
+  },
+  {
+   "id": "rabindra-jayanti",
+   "names": {
+    "en": "Rabindra Jayanti (25 Boishakh)",
+    "bn": "পঁচিশে বৈশাখ"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "mesha",
+    "day": 25
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-WB"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "25 Boishakh: the birth anniversary of Rabindranath Tagore, kept by the Bengali calendar.",
+     "bn": "পঁচিশে বৈশাখ: বাংলা ক্যালেন্ডার অনুযায়ী রবীন্দ্রনাথ ঠাকুরের জন্মজয়ন্তী।"
+    },
+    "traditions": {
+     "en": "Bengal remembers Tagore with his own songs and poems. Mornings begin with prabhat pheri, processions singing Rabindra sangeet; schools, neighbourhoods and Jorasanko Thakurbari, his birthplace in Kolkata, hold recitals, dance-dramas and readings. At Santiniketan, Visva-Bharati keeps the day with its own traditions.",
+     "bn": "বাঙালি রবীন্দ্রনাথকে স্মরণ করে তাঁরই গান আর কবিতায়। সকালে রবীন্দ্রসংগীত গেয়ে প্রভাতফেরি হয়; স্কুলে, পাড়ায় আর কলকাতার জোড়াসাঁকো ঠাকুরবাড়িতে আবৃত্তি, নৃত্যনাট্য আর পাঠের আসর বসে। শান্তিনিকেতনে বিশ্বভারতী নিজস্ব রীতিতে দিনটি পালন করে।"
+    }
+   }
+  },
+  {
+   "id": "buddha-purnima-bn",
+   "names": {
+    "en": "Buddha Purnima",
+    "bn": "বুদ্ধ পূর্ণিমা"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "vaishakha",
+    "tithi": 15
+   },
+   "tier": "regional",
+   "holidayIn": [
+    "IN-WB"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The full moon of Vaishakha, remembering the birth, enlightenment and passing of the Buddha."
+    },
+    "traditions": {
+     "en": "Buddhists and many Hindus mark the day with visits to viharas and temples, offerings of flowers, candles and incense, and readings of the Buddha's teachings. At Bodh Gaya, Sarnath and Kushinagar, pilgrims gather in large numbers. Many people keep the day vegetarian, give food and water, and some release caged birds. Hindu tradition counts the Buddha among the avatars of Vishnu, and Satyanarayan katha is held in many homes on this full moon."
+    },
+    "story": {
+     "en": "Prince Siddhartha was born in the Lumbini garden to Queen Mayadevi, on the full moon of Vaishakha. Raised in comfort, he left the palace as a young man after seeing old age, illness and death for the first time, and set out to understand suffering. After years of searching he sat beneath a pipal tree at Bodh Gaya and resolved not to rise until he understood. On the full moon of Vaishakha he attained enlightenment and became the Buddha, the awakened one. He spent the rest of his life teaching the middle way. Tradition holds that his passing, at Kushinagar, also fell on this full moon."
+    },
+    "howTo": {
+     "en": [
+      "Keep the day simple and vegetarian.",
+      "Light a lamp or candle and offer flowers before an image of the Buddha, or visit a vihara.",
+      "Read or listen to a passage of the Buddha's teaching, such as the Dhammapada, and sit quietly for a while.",
+      "Give food, water or help to someone who needs it."
+     ]
+    },
+    "greeting": {
+     "en": "Peaceful wishes on Buddha Purnima."
+    }
+   }
+  },
+  {
+   "id": "ganga-puja",
+   "names": {
+    "en": "Ganga Puja (Dashahara)",
+    "bn": "গঙ্গা পূজা"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "jyeshtha",
+    "tithi": 10,
+    "adhika": "prefer"
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Jyeshtha Shukla Dashami: the day the Ganga descended from heaven to earth."
+    },
+    "traditions": {
+     "en": "Pilgrims bathe in the Ganga at Haridwar, Rishikesh, Prayagraj, Varanasi and Garhmukteshwar, and the evening aartis on the ghats are among the largest of the year. Ten is the number of the day: people offer ten kinds of flowers, ten lamps, and give ten items in charity, such as fruit, fans, water pots and grain. Kites are flown in some towns, and sherbet and water are given out in the summer heat. In a year with an adhika Jyeshtha, many almanacs place it in the adhika month."
+    },
+    "story": {
+     "en": "King Sagara's sixty thousand sons had been reduced to ashes by the sage Kapila's gaze, and only the waters of the Ganga, then flowing in heaven, could give them peace. Generations of their descendants tried and failed to bring her down, until King Bhagiratha kept such a long tapas that Brahma agreed. But the force of the Ganga falling from heaven would have shattered the earth. Bhagiratha prayed to Shiva, who caught her in his matted hair and let her flow gently down in streams. She followed Bhagiratha's chariot across the plains to the sea, and gave peace to his ancestors. That descent is remembered on Jyeshtha Shukla Dashami, and 'Bhagiratha's effort' still means an untiring one."
+    },
+    "howTo": {
+     "en": [
+      "Bathe at the Ganga if you can, or at home with a little Ganga water.",
+      "Offer ten flowers or ten lamps to the river or to a vessel of Ganga water.",
+      "Give ten items to those in need: water, fruit, a fan, grain, sherbet, clothes.",
+      "In the evening, watch or join a Ganga aarti, and float a lamp if you are at a ghat."
+     ]
+    },
+    "greeting": {
+     "en": "Har Har Gange! Wishes on Ganga Dussehra."
+    }
+   }
+  },
+  {
+   "id": "jamai-shashti",
+   "names": {
+    "en": "Jamai Shashti",
+    "bn": "জামাইষষ্ঠী"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "jyeshtha",
+    "tithi": 6
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Jyeshtha Shukla Shashthi: mothers-in-law welcome their sons-in-law home and pray to Ma Shashthi for the family.",
+     "bn": "জ্যৈষ্ঠ শুক্লা ষষ্ঠী: শাশুড়িরা জামাইকে বাড়িতে আপ্যায়ন করেন এবং পরিবারের জন্য মা ষষ্ঠীর কাছে প্রার্থনা করেন।"
+    },
+    "traditions": {
+     "en": "The mother-in-law worships Shashthi, the goddess who watches over children, and keeps a fast. When the son-in-law arrives with his wife she fans him with a palm-leaf fan dipped in water, ties a yellow thread on his wrist and serves an elaborate meal: hilsa and prawns, rice, mangoes and lychees of the season, and a spread of sweets. Gifts are exchanged on both sides.",
+     "bn": "শাশুড়ি সন্তানদের রক্ষাকর্ত্রী মা ষষ্ঠীর পুজো করেন ও উপবাস রাখেন। স্ত্রীকে নিয়ে জামাই এলে জলে ভেজানো তালপাতার পাখায় বাতাস করেন, হাতে হলুদ সুতো বাঁধেন আর ঘটা করে খাওয়ান: ইলিশ, চিংড়ি, ভাত, মরশুমের আম-লিচু আর হরেক রকম মিষ্টি। দুই তরফেই উপহার দেওয়া-নেওয়া হয়।"
+    }
+   }
+  },
+  {
+   "id": "ratha-jatra-bn",
+   "names": {
+    "en": "Rath Jatra",
+    "bn": "রথযাত্রা"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashadha",
+    "tithi": 2
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Ashadha Shukla Dwitiya: Jagannath, Balabhadra and Subhadra ride their chariots through Puri."
+    },
+    "traditions": {
+     "en": "In Puri, the three deities are brought out of the Jagannath temple and placed on three huge wooden chariots, built new every year. After the king of Puri sweeps the chariots with a golden broom (chhera pahanra), thousands of devotees pull them with ropes along the Bada Danda to the Gundicha temple, where the deities stay for a week before the return journey. Rath yatras are held in towns and cities around the world. At home, people watch the broadcast, offer khichdi and sweets, and sing bhajans."
+    },
+    "story": {
+     "en": "The story told is that Jagannath's chariot journey is a visit to his aunt's home at the Gundicha temple, his birthplace, where he stays for nine days. A popular telling adds that Lakshmi, left behind, comes looking for him and, finding him away with his siblings, breaks a piece of his chariot in mild displeasure, and that on his return he has to win her over with sweets before the temple doors open to him. The chariots are pulled by anyone who comes, with no distinction of caste or status, and it is said that the deities come out of the temple once a year so that everyone can see them."
+    },
+    "howTo": {
+     "en": [
+      "Join a rath yatra in your town, or watch the Puri procession.",
+      "At home, offer khichdi, fruit and a sweet to a picture of Jagannath.",
+      "Light a lamp and sing or listen to Jagannath bhajans.",
+      "Share the prasad, and if you join a procession, take a turn pulling the rope."
+     ]
+    },
+    "greeting": {
+     "en": "Jai Jagannath! Wishes on the Rath Yatra."
+    }
+   }
+  },
+  {
+   "id": "guru-purnima-bn",
+   "names": {
+    "en": "Guru Purnima",
+    "bn": "গুরু পূর্ণিমা"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashadha",
+    "tithi": 15
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The full moon of Ashadha, for honouring teachers, remembering Vyasa."
+    },
+    "traditions": {
+     "en": "Students visit and thank their teachers, and disciples gather at ashrams and with their spiritual guides. Music and dance students offer flowers and a performance to their gurus. Many families honour parents and elders as their first teachers. Ashrams hold Vyasa puja, and the day begins the four months of chaturmas, when wandering monks stay in one place for the monsoon. Buddhists remember it as the day the Buddha gave his first teaching at Sarnath."
+    },
+    "story": {
+     "en": "Guru Purnima is the birthday of Veda Vyasa, born to the sage Parashara and Satyavati on an island in the Yamuna. Tradition credits him with dividing the one Veda into four so that it could be learned, composing the Mahabharata, and compiling the Puranas, which is why he is honoured as the teacher of teachers and the day is also called Vyasa Purnima. Yogic tradition adds that on this full moon Shiva, the Adiyogi, sat facing south and began to teach the first seven disciples, the Saptarishis, becoming the first guru."
+    },
+    "howTo": {
+     "en": [
+      "Think of the teachers who shaped you: at school, in music or a craft, at home, or on a spiritual path.",
+      "Visit or call one of them to thank them; take flowers, fruit or a small gift if you visit.",
+      "At home, light a lamp before a picture of Vyasa, your guru or your family deity, and offer flowers.",
+      "Touch the feet of your parents and elders, your first teachers.",
+      "Spend a little time studying or practising something you have learned, in your teacher's honour."
+     ]
+    },
+    "greeting": {
+     "en": "With gratitude to every teacher. Happy Guru Purnima!"
+    }
+   }
+  },
+  {
+   "id": "jhulan-purnima",
+   "names": {
+    "en": "Jhulan Purnima (Rakhi)",
+    "bn": "ঝুলন পূর্ণিমা"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "shravana",
+    "tithi": 15
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Shravana Purnima: sisters tie a rakhi on their brothers' wrists, and brothers promise to stand by them."
+    },
+    "traditions": {
+     "en": "In the morning sisters prepare a thali with a rakhi, roli, rice, a lamp and sweets. They apply a tilak to their brother's forehead, tie the rakhi on his right wrist, wave the lamp and feed him a sweet; the brother gives a gift and a promise of support. Cousins and friends tie rakhis too, and sisters far away post them. Rakhi is tied outside the Bhadra period, which the day view shows. In Maharashtra the same full moon is Narali Purnima, when fishing communities offer coconuts to the sea, and in the South it is Avani Avittam, when the sacred thread is renewed."
+    },
+    "story": {
+     "en": "Many stories are told. In the Mahabharata, Krishna cut his finger, and Draupadi tore a strip from her sari to bind it; Krishna promised to repay the kindness, and did so when he protected her honour in the Kaurava court. In another, the asura king Bali had kept Vishnu as his doorkeeper, and Lakshmi, wanting him home, tied a thread on Bali's wrist as a sister and asked for her husband back as her gift; Bali gladly agreed. A story from history tells of Rani Karnavati of Mewar sending a rakhi to the emperor Humayun to ask for help. In all of them, the thread is a promise of care between people who choose to stand by one another."
+    },
+    "howTo": {
+     "en": [
+      "Choose rakhis, and buy or make sweets the day before; post rakhis early for siblings far away.",
+      "Check the day view for the Bhadra period, and plan the ceremony after it ends.",
+      "Prepare a thali: rakhi, roli or kumkum, rice, a small lamp and sweets.",
+      "The brother sits facing east; the sister applies a tilak, tilts a few grains of rice on it, and ties the rakhi on his right wrist.",
+      "She waves the lamp, feeds him a sweet, and he gives her a gift and his blessing or promise.",
+      "Call or video-call siblings you cannot meet, and share a meal with the family."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Raksha Bandhan to every brother and sister!"
+    }
+   }
+  },
+  {
+   "id": "janmashtami-bn",
+   "names": {
+    "en": "Janmashtami",
+    "bn": "জন্মাষ্টমী"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "shravana",
+    "tithi": 23
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-WB"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The birth of Krishna, kept with a fast and a midnight celebration."
+    },
+    "traditions": {
+     "en": "Devotees fast through the day and gather at midnight, the hour of Krishna's birth, to bathe an image of baby Krishna (Laddu Gopal) in milk and curd, dress him and rock him in a decorated cradle while singing bhajans. Homes and temples set up jhankis, scenes from his life, and children dress up as Krishna and Radha. Mathura and Vrindavan celebrate for days. In Maharashtra, the next day is Dahi Handi, when human pyramids climb to break pots of curd hung high, as young Krishna stole butter. The fast is broken after midnight with makhan-mishri and panjiri."
+    },
+    "story": {
+     "en": "King Kamsa of Mathura was told that the eighth child of his sister Devaki would end his rule, so he imprisoned her and her husband Vasudeva. Krishna was born at midnight in that prison, on the eighth day of the dark fortnight, under Rohini nakshatra, in a storm. The story goes that the guards fell asleep and the chains and doors opened. Vasudeva carried the baby in a basket through the flooded Yamuna, which parted for them, with the serpent Shesha spreading his hoods over the child against the rain. In Gokul he exchanged Krishna for the newborn daughter of Nanda and Yashoda, who raised Krishna as their own. He grew up among the cowherds, beloved for his mischief, his flute, and his care for everyone around him."
+    },
+    "howTo": {
+     "en": [
+      "Decorate a small cradle and set up an image of baby Krishna (Laddu Gopal); make a jhanki if you like.",
+      "Fast through the day: many take fruit and milk; elders and children often keep it light.",
+      "Prepare panchamrit (milk, curd, ghee, honey, sugar), makhan-mishri, panjiri and tulsi leaves.",
+      "Sing bhajans and read the story of Krishna's birth in the evening.",
+      "Check the day view for the Nishita time around midnight; at that moment bathe the image with panchamrit, dress it and place it in the cradle.",
+      "Rock the cradle, sing 'Nand ke anand bhayo', and offer the food and tulsi.",
+      "Share the prasad and break the fast."
+     ]
+    },
+    "greeting": {
+     "en": "Jai Shri Krishna! Happy Janmashtami."
+    }
+   }
+  },
+  {
+   "id": "vishwakarma-puja-bn",
+   "names": {
+    "en": "Vishwakarma Puja",
+    "bn": "বিশ্বকর্মা পূজা"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "kanya",
+    "day": 1,
+    "dayRule": {
+     "type": "sunset"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Kanya Sankranti: honouring Vishwakarma, the divine architect, and the tools of every trade."
+    },
+    "traditions": {
+     "en": "Factories, workshops, offices and homes honour Vishwakarma on the day the Sun enters Kanya. Machines and tools are cleaned, decorated with flowers and given a rest, and an image of Vishwakarma riding his elephant is worshipped. Workers and owners share a meal together. Kite-flying fills the skies in Bengal, Bihar and Jharkhand. Engineers, craftspeople, drivers and artisans of every kind celebrate it."
+    },
+    "story": {
+     "en": "Vishwakarma is remembered as the architect of the gods. The stories credit him with building Indra's heaven, the golden city of Lanka, Krishna's Dwarka, the Pandavas' Indraprastha and the weapons of the gods, including Shiva's trident and Vishnu's discus. He is the patron of all who make and build, and the day reminds people to honour the tools, machines and skills that their livelihoods depend on."
+    },
+    "howTo": {
+     "en": [
+      "Clean your tools, machines, vehicle or work desk, and decorate them with flowers.",
+      "Set up a picture of Vishwakarma and light a lamp; offer flowers, fruit and sweets.",
+      "Give the tools a rest for the day if you can.",
+      "Share a meal with the people you work with."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Vishwakarma Puja to everyone who builds and makes!"
+    }
+   }
+  },
+  {
+   "id": "mahalaya-bn",
+   "names": {
+    "en": "Mahalaya",
+    "bn": "মহালয়া"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "bhadrapada",
+    "tithi": 30,
+    "observance": {
+     "kala": "aparahna"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-WB"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The new moon that closes the fortnight of the ancestors, the day before Navarathiri."
+    },
+    "traditions": {
+     "en": "Families offer tarpanam to all their ancestors at the sea, rivers or at home, feed people and give food and clothes. It is one of the three great days of remembrance in the Tamil year, with Aadi and Thai Amavasai. The next day, Navarathiri begins and the kolu dolls are set out."
+    },
+    "story": {
+     "en": "As the last day of the fortnight granted to Karna, Mahalaya Amavasai gathers in every ancestor the family wishes to remember, including those whose day is not known. It also opens the season of the Goddess: tradition holds that as the ancestors depart, the Goddess arrives for the nine nights."
+    },
+    "howTo": {
+     "en": [
+      "In the afternoon (aparahna; see the day view), offer water with black sesame, facing south, naming all your ancestors.",
+      "Cook a simple meal and set a portion out for crows.",
+      "Give food, clothes or grain to someone in need.",
+      "In the evening, begin preparing the kolu steps for Navarathiri."
+     ]
+    },
+    "greeting": {
+     "en": "Remembering our ancestors on Mahalaya Amavasai."
+    }
+   }
+  },
+  {
+   "id": "durga-puja-bn",
+   "names": {
+    "en": "Durga Puja (Shashthi, Bodhon)",
+    "bn": "দুর্গাপূজা · ষষ্ঠী"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 6,
+    "observance": {
+     "prefer": "last"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-WB"
+   ],
+   "durationDays": 5,
+   "variations": [
+    "When Shashthi holds at two sunrises, Bengal keeps Bodhon on the second, the eve of Saptami (as on 17 October 2026)."
+   ],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Durga Puja: from Shashthi to Dashami in Ashvin, the Goddess comes home with her children, the great festival of Bengal and Odisha.",
+     "bn": "দুর্গাপূজা: আশ্বিনের ষষ্ঠী থেকে দশমী, সন্তানদের নিয়ে মা দুর্গা বাপের বাড়ি আসেন; বাংলার শ্রেষ্ঠ উৎসব।"
+    },
+    "traditions": {
+     "en": "On Shashthi evening the Goddess is awakened (bodhon) under a bel tree, and the next dawn the nabapatrika, nine plants bound as one, is bathed and installed. Ashtami brings the pushpanjali, flower offerings by the whole neighbourhood, and the sandhi puja at the junction of Ashtami and Navami with 108 lamps and lotuses. On Dashami married women play sindoor khela before the immersion. Pandals, many of them works of art, are open day and night, with bhog, dhunuchi dances and new clothes for every day. In Odisha the Goddess is worshipped in pandals and at Shakti shrines such as Cuttack's Chandi temple, with silver-filigree (chandi medha) decorations.",
+     "bn": "ষষ্ঠীর সন্ধ্যায় বেলগাছের তলায় দেবীর বোধন হয়, পরদিন ভোরে নবপত্রিকা স্নান করিয়ে প্রতিষ্ঠা করা হয়। অষ্টমীতে পাড়াশুদ্ধ মানুষের পুষ্পাঞ্জলি, আর অষ্টমী-নবমীর সন্ধিক্ষণে ১০৮ প্রদীপ ও পদ্মে সন্ধিপুজো। দশমীতে বিসর্জনের আগে বিবাহিতা মেয়েরা সিঁদুর খেলেন। দিনরাত খোলা থাকে মণ্ডপ, অনেকগুলিই শিল্পকর্ম; ভোগ, ধুনুচি নাচ আর রোজ নতুন জামা।"
+    }
+   }
+  },
+  {
+   "id": "maha-saptami",
+   "names": {
+    "en": "Maha Saptami",
+    "bn": "মহাসপ্তমী"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 7
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-WB"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Ashvin Shukla Saptami: the first full day of Durga Puja, when the nabapatrika is bathed at dawn and installed beside the Goddess.",
+     "bn": "আশ্বিন শুক্লা সপ্তমী: দুর্গাপূজার প্রথম পূর্ণ দিন; ভোরে নবপত্রিকা স্নান করিয়ে দেবীর পাশে প্রতিষ্ঠা।"
+    },
+    "traditions": {
+     "en": "Before sunrise the nabapatrika, a plantain plant bound with eight others and dressed in a red-bordered saree (popularly 'kola bou'), is carried to the river or pond, bathed and installed beside Ganesha. The prana pratishtha of the Goddess follows, and the pandals fill with visitors from the evening on.",
+     "bn": "সূর্যোদয়ের আগে নবপত্রিকা, আরও আটটি গাছের সঙ্গে বাঁধা কলাগাছ, লালপাড় শাড়ি পরানো যাকে লোকে 'কলাবউ' বলে, নদী বা পুকুরে নিয়ে গিয়ে স্নান করিয়ে গণেশের পাশে প্রতিষ্ঠা করা হয়। তারপর দেবীর প্রাণপ্রতিষ্ঠা, আর সন্ধে থেকে মণ্ডপে মণ্ডপে ভিড়।"
+    }
+   }
+  },
+  {
+   "id": "maha-ashtami-bn",
+   "names": {
+    "en": "Maha Ashtami",
+    "bn": "মহাষ্টমী"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 8
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-WB"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The eighth day of Navratri: Durga as Mahagauri, with kanya puja and Sandhi puja."
+    },
+    "traditions": {
+     "en": "Many families hold kanya puja today, inviting nine young girls (and often a young boy as Bhairav) home to be honoured as the Goddess, with their feet washed and a meal of puri, black chana and halwa. In Bengal, Durga Ashtami is one of the main days of Durga Puja, with the pushpanjali offering of flowers in the morning and the Sandhi puja at the moment Ashtami ends and Navami begins, lit by 108 lamps."
+    },
+    "story": {
+     "en": "In the Devi Mahatmya, the fierce demons Chanda and Munda were sent against the Goddess, and from her brow emerged Chamunda, who overcame them. The Sandhi puja marks the moment, at the junction of Ashtami and Navami, when the battle reached its height. The kanya puja honours the Goddess as she is present in every young girl, and on Ashtami she is worshipped as Mahagauri, radiant and calm after her long tapas."
+    },
+    "howTo": {
+     "en": [
+      "Cook puri, black chana and halwa in the morning.",
+      "Invite young girls of the family or neighbourhood; wash their feet, apply a tilak and tie a red thread on their wrists.",
+      "Serve them the meal, give a small gift, and touch their feet for their blessing.",
+      "Worship Mahagauri with flowers and an aarti."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Durga Ashtami! Jai Mata Di."
+    }
+   }
+  },
+  {
+   "id": "maha-navami-bn",
+   "names": {
+    "en": "Maha Navami",
+    "bn": "মহানবমী"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 9
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-WB"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The ninth day of Navratri: Durga as Siddhidatri, the day before Vijayadashami."
+    },
+    "traditions": {
+     "en": "Navratri's final worship is kept today with a havan in many homes, and kanya puja for those who keep it on Navami. In the South, Ayudha Puja falls today: tools, vehicles, books and instruments are cleaned, decorated and worshipped. In Bengal it is the last full day of Durga Puja, with the Navami bhog."
+    },
+    "story": {
+     "en": "On Navami the Goddess is worshipped as Siddhidatri, the giver of accomplishment, said in the Devi Purana to be the form from which even Shiva received his powers. In the story of Mahishasura, the ninth day is the last before the final victory, and the worship of weapons and tools today remembers the instruments the gods gave Durga for her battle."
+    },
+    "howTo": {
+     "en": [
+      "Worship Siddhidatri with flowers and an aarti, and perform a small havan if your family does.",
+      "Hold kanya puja if you keep it on Navami.",
+      "Clean and decorate your tools, books, instruments or vehicle, and honour them.",
+      "Prepare to end the fast and conclude the Navratri worship."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Maha Navami!"
+    }
+   }
+  },
+  {
+   "id": "bijoya-dashami",
+   "names": {
+    "en": "Bijoya Dashami",
+    "bn": "বিজয়া দশমী"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 10
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-WB"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The tenth day: the Goddess's victory, and the day children begin learning."
+    },
+    "traditions": {
+     "en": "The books and instruments set before Saraswati are taken back with a short worship, and the first thing read or played that morning is a prayer or a lesson. Young children are initiated into learning (Vidyarambham): an elder or a teacher holds the child's finger and writes the first letters, in Tamil 'Hari Sri' or 'a', and in Kerala 'Hari Sri Ganapataye Namah', in a plate of rice. Music and dance students begin new lessons. In Kerala, Vidyarambham is held at temples such as Thunchan Parambu and Kollur Mookambika, and in Tamil Nadu at Koothanur's Saraswati temple."
+    },
+    "story": {
+     "en": "On the tenth day the Goddess overcame Mahishasura after nine days of battle, and the gods rejoiced; 'Vijaya' means victory. In the Ramayana, Rama defeated Ravana on this day after worshipping the Goddess. Because victory over ignorance is the truest one, the day is held the best of the year for beginning to learn: whatever is begun on Vijayadashami is begun with the Goddess of learning's blessing."
+    },
+    "howTo": {
+     "en": [
+      "In the morning, do a short puja and take back the books and instruments from before Saraswati.",
+      "Read a prayer or a page, write something, or play a few notes before anything else.",
+      "If a child is starting to learn, sit them on an elder's lap and guide their finger to write the first letters in a plate of rice.",
+      "Begin a new lesson or course you have been planning.",
+      "Take down the kolu if you set one up, keeping one doll lying down as a gentle goodbye till next year."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Vijayadashami! May every new beginning be blessed."
+    }
+   }
+  },
+  {
+   "id": "kojagari-lakshmi-puja",
+   "names": {
+    "en": "Kojagari Lakshmi Puja",
+    "bn": "কোজাগরী লক্ষ্মীপূজা"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 15,
+    "observance": {
+     "kala": "nishita"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-WB"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The autumn full moon of Ashvin: kheer under the moonlight, and Kojagari Lakshmi worship."
+    },
+    "traditions": {
+     "en": "On the brightest full moon of the year, families cook rice kheer and leave it out in the moonlight for some hours, then eat it as prasad. Many stay awake into the night, singing and playing games, and in Bengal and Odisha Lakshmi is worshipped as Kojagari Lakshmi. In Braj, the night is remembered as the night of Krishna's Raas Leela with the gopis."
+    },
+    "story": {
+     "en": "'Kojagari' comes from 'ko jagarti', who is awake? The story told is that on this night Lakshmi walks the earth asking that question, and visits the homes where people are awake and lamps are lit. Braj tradition remembers it as the night Krishna played his flute in the forest and the gopis came to dance the Maha Raas with him, each feeling that Krishna danced with her alone. The moon is said to be full in all sixteen of its kalas, and its light especially gentle, which is why the kheer is left out to take it in."
+    },
+    "howTo": {
+     "en": [
+      "Cook rice kheer in the evening.",
+      "After moonrise, cover it with a thin cloth and leave it on a terrace or balcony in the moonlight for a few hours.",
+      "Light lamps and worship Lakshmi, or Radha-Krishna, with flowers and an aarti.",
+      "Stay up with family for a while, then share the kheer as prasad."
+     ]
+    },
+    "greeting": {
+     "en": "Wishing you a bright, peaceful Sharad Purnima."
+    }
+   }
+  },
+  {
+   "id": "kali-puja",
+   "names": {
+    "en": "Kali Puja",
+    "bn": "কালীপূজা"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 30,
+    "observance": {
+     "kala": "nishita"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-WB"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Kartika Amavasya night: Bengal worships Ma Kali while the rest of India keeps Diwali's Lakshmi Puja.",
+     "bn": "কার্তিক অমাবস্যার রাত: দেশের বাকি অংশ যখন দীপাবলির লক্ষ্মীপূজা করে, বাংলা তখন মা কালীর আরাধনা করে।"
+    },
+    "traditions": {
+     "en": "The puja is performed through the night of the new moon, at home, in neighbourhood pandals and at the great Kali temples: Kalighat, Dakshineswar, Tarapith. Homes are lit with rows of lamps and candles, and the evening before, on Bhoot Chaturdashi, fourteen lamps are lit and fourteen leafy greens (choddo shaak) are eaten in memory of the ancestors.",
+     "bn": "অমাবস্যার রাত জুড়ে পুজো হয়, বাড়িতে, পাড়ার মণ্ডপে আর কালীঘাট, দক্ষিণেশ্বর, তারাপীঠের মতো বড় কালীমন্দিরে। বাড়ি সাজে প্রদীপ আর মোমবাতির সারিতে, আর আগের দিন ভূত চতুর্দশীতে পূর্বপুরুষদের স্মরণে চোদ্দ প্রদীপ জ্বালানো হয় ও চোদ্দ শাক খাওয়া হয়।"
+    }
+   }
+  },
+  {
+   "id": "bhai-phonta",
+   "names": {
+    "en": "Bhai Phonta",
+    "bn": "ভাইফোঁটা"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "kartika",
+    "tithi": 2
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-WB"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Kartika Shukla Dwitiya: sisters welcome their brothers home, the last day of Diwali."
+    },
+    "traditions": {
+     "en": "Brothers visit their sisters' homes, where the sister applies a tilak to his forehead, waves a lamp, feeds him sweets and a meal she has cooked, and prays for his long life; he gives her a gift. It is Bhau Beej in Maharashtra, Bhai Phonta in Bengal and Bhai Tika in Nepal. Sisters who cannot meet their brothers pray for them, and many call or video-call."
+    },
+    "story": {
+     "en": "The story told is of Yamuna and her brother Yama. Yamuna had long asked her brother to visit, but he was always busy. On Kartika Shukla Dwitiya he finally came. Delighted, she welcomed him with a tilak and an aarti, cooked his favourite food and fed him with her own hands. Moved, Yama asked what she wished for, and she asked that every brother who visits his sister on this day and receives her tilak be blessed with a long life. Yama granted it, and the day is also called Yama Dwitiya."
+    },
+    "howTo": {
+     "en": [
+      "Invite your brother home, or plan to visit your sister; call siblings who are far away.",
+      "Prepare a thali with roli, rice, a lamp, sweets and a coconut or dry fruit.",
+      "At aparahna (afternoon; see the day view), seat your brother, apply the tilak, wave the lamp and feed him a sweet.",
+      "Serve a meal you have cooked; the brother gives a gift and his blessing."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Bhai Dooj to every brother and sister!"
+    }
+   }
+  },
+  {
+   "id": "jagaddhatri-puja",
+   "names": {
+    "en": "Jagaddhatri Puja",
+    "bn": "জগদ্ধাত্রী পূজা"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "kartika",
+    "tithi": 9
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Kartika Shukla Navami: the worship of Jagaddhatri, 'holder of the world', famous at Chandannagar and Krishnanagar.",
+     "bn": "কার্তিক শুক্লা নবমী: জগদ্ধাত্রী পূজা, চন্দননগর ও কৃষ্ণনগরে বিখ্যাত।"
+    },
+    "traditions": {
+     "en": "Jagaddhatri, a form of Durga seated on a lion with an elephant beneath, is worshipped with Saptami, Ashtami and Navami rites compressed into one day in most places. Chandannagar's celebration is famous for its towering images and light displays, and Krishnanagar for its procession of images on the final night.",
+     "bn": "সিংহবাহিনী, পায়ের তলায় হাতি, দুর্গারই এক রূপ জগদ্ধাত্রীর পুজো বেশিরভাগ জায়গায় সপ্তমী, অষ্টমী, নবমীর আচার একদিনে সেরে হয়। চন্দননগরের পুজো বিশাল প্রতিমা আর আলোকসজ্জার জন্য বিখ্যাত, কৃষ্ণনগর শেষ রাতের প্রতিমা শোভাযাত্রার জন্য।"
+    }
+   }
+  },
+  {
+   "id": "chhath-bn",
+   "names": {
+    "en": "Chhath Puja",
+    "bn": "ছট পূজা"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "kartika",
+    "tithi": 6,
+    "observance": {
+     "kala": "aparahna"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Bihar's four-day worship of the Sun and Chhathi Maiya, with offerings at sunset and sunrise from the water."
+    },
+    "traditions": {
+     "en": "Chhath is among the most demanding observances. On the first day (Nahay Khay) the vratis, mostly women, bathe and eat one simple meal; on the second (Kharna) they fast all day and break it at night with kheer of jaggery and rice; then they fast without water for some thirty-six hours. On the third evening families walk to rivers and ponds carrying bamboo baskets of thekua, fruit and sugarcane, and the vratis stand in the water to offer arghya to the setting Sun, singing Chhath songs. Before dawn on the fourth day they return to offer to the rising Sun, and then break the fast. It is kept by Bihar, Jharkhand, eastern Uttar Pradesh and the Nepal Terai, and their communities everywhere."
+    },
+    "story": {
+     "en": "Chhath honours Surya, who sustains all life, and Chhathi Maiya, the goddess said to be his sister, who watches over children. Stories trace it to the Ramayana, when Sita and Rama are said to have kept a fast for the Sun on returning to Ayodhya, and to the Mahabharata, where Karna, son of Surya, stood in water every day offering to the Sun, and Draupadi kept the vrat during the Pandavas' hard times. It is unusual in honouring the setting Sun as well as the rising one: a reminder, people say, that whoever has stood by you through the day deserves thanks at its end too."
+    },
+    "howTo": {
+     "en": [
+      "Clean the house thoroughly; the whole observance is kept with great care for purity.",
+      "Day one (Nahay Khay): bathe and eat one sattvic meal, traditionally rice, chana dal and lauki.",
+      "Day two (Kharna): fast all day; at night prepare and eat gur-kheer and roti, then begin the waterless fast.",
+      "Day three: prepare thekua and arrange bamboo baskets with fruit, sugarcane and a lamp; at sunset, stand in the water and offer arghya to the setting Sun.",
+      "Day four: before dawn, return to the water and offer arghya to the rising Sun, then break the fast with prasad.",
+      "If you are not a vrati, help carry the baskets, sing Chhath songs, and share the prasad."
+     ]
+    },
+    "greeting": {
+     "en": "Jai Chhathi Maiya! Warm wishes on Chhath Puja."
+    }
+   }
+  }
+ ],
+ "dailySignificance": [
+  {
+   "key": "ekadashi",
+   "names": {
+    "en": "Ekadashi",
+    "bn": "একাদশী"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 11,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "The eleventh day of each fortnight, kept by many with a fast and prayer to Vishnu."
+    },
+    "traditions": {
+     "en": "Ekadashi comes twice a month. Those who keep it avoid grains and beans for the day, some eating fruit and milk, some keeping a stricter fast, and spend time in prayer, reading or chanting Vishnu's names. The fast is broken the next morning, during Dvadashi; the parana time is shown in almanacs. People who are unwell, pregnant, elderly or on medication keep a gentle version, which tradition fully accepts."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free supper the evening before.",
+      "On Ekadashi, avoid grains and beans; take fruit, milk or vrat food.",
+      "Light a lamp before Vishnu and offer tulsi.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Ekadashi fasting rules"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "ekadashi",
+   "names": {
+    "en": "Ekadashi",
+    "bn": "একাদশী"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 26,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "The eleventh day of each fortnight, kept by many with a fast and prayer to Vishnu."
+    },
+    "traditions": {
+     "en": "Ekadashi comes twice a month. Those who keep it avoid grains and beans for the day, some eating fruit and milk, some keeping a stricter fast, and spend time in prayer, reading or chanting Vishnu's names. The fast is broken the next morning, during Dvadashi; the parana time is shown in almanacs. People who are unwell, pregnant, elderly or on medication keep a gentle version, which tradition fully accepts."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free supper the evening before.",
+      "On Ekadashi, avoid grains and beans; take fruit, milk or vrat food.",
+      "Light a lamp before Vishnu and offer tulsi.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Ekadashi fasting rules"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "purnima",
+   "names": {
+    "en": "Purnima",
+    "bn": "পূর্ণিমা"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 15
+   },
+   "content": {
+    "summary": {
+     "en": "The full moon, a day for worship, Satyanarayan katha and giving."
+    },
+    "traditions": {
+     "en": "Each full moon is kept by many families with a morning bath, worship of Vishnu, and in the evening the Satyanarayan katha with sheera prasad. Some keep a fast until moonrise and offer water to the Moon. Giving food or clothes is valued on the full moon. Many festivals fall on Purnima: Holi, Guru Purnima, Raksha Bandhan and Sharad Purnima among them."
+    },
+    "howTo": {
+     "en": [
+      "Bathe in the morning and light a lamp before Vishnu.",
+      "Hold or listen to the Satyanarayan katha in the evening if your family does.",
+      "Offer water to the rising Moon.",
+      "Give food or clothes to someone in need."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Purnima"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "amavasya",
+   "names": {
+    "en": "Amavasya",
+    "bn": "অমাবস্যা"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 30
+   },
+   "content": {
+    "summary": {
+     "en": "The new moon, a day for remembering ancestors with water and sesame."
+    },
+    "traditions": {
+     "en": "On the new moon many families offer tarpan, water with black sesame, to their ancestors, give food to those in need, and feed cows, crows or dogs. Some keep a fast. It is traditionally a quiet day, and many prefer to begin new ventures on other days. When the new moon falls on a Monday it is Somvati Amavasya, and on a Saturday, Shani Amavasya."
+    },
+    "howTo": {
+     "en": [
+      "In the morning, bathe and offer water with black sesame, facing south, naming your ancestors.",
+      "Give food to someone in need, and feed a cow, crow or dog.",
+      "Light a lamp in the evening."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Amavasya"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "pradosh",
+   "names": {
+    "en": "Pradosh Vrat",
+    "bn": "প্রদোষ"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 13,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "The thirteenth day, kept at dusk for Shiva."
+    },
+    "traditions": {
+     "en": "Twice a month, on Trayodashi, devotees of Shiva fast through the day and worship him in the pradosh kaal, the hour and a half around sunset, with bel leaves, milk and a lamp. It is named for its weekday: Som Pradosh on Monday, Shani Pradosh on Saturday. Temples hold abhishekam, and Nandi is honoured too."
+    },
+    "howTo": {
+     "en": [
+      "Fast through the day if you keep the vrat.",
+      "At pradosh (around sunset; see the day view), offer water, milk and bel leaves to Shiva and light a lamp.",
+      "Chant 'Om Namah Shivaya', then break the fast."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Pradosh Vrat"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "pradosh",
+   "names": {
+    "en": "Pradosh Vrat",
+    "bn": "প্রদোষ"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 28,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "The thirteenth day, kept at dusk for Shiva."
+    },
+    "traditions": {
+     "en": "Twice a month, on Trayodashi, devotees of Shiva fast through the day and worship him in the pradosh kaal, the hour and a half around sunset, with bel leaves, milk and a lamp. It is named for its weekday: Som Pradosh on Monday, Shani Pradosh on Saturday. Temples hold abhishekam, and Nandi is honoured too."
+    },
+    "howTo": {
+     "en": [
+      "Fast through the day if you keep the vrat.",
+      "At pradosh (around sunset; see the day view), offer water, milk and bel leaves to Shiva and light a lamp.",
+      "Chant 'Om Namah Shivaya', then break the fast."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Pradosh Vrat"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "satyanarayan-puja",
+   "names": {
+    "en": "Satyanarayan Puja",
+    "bn": "সত্যনারায়ণ পূজা"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 15
+   },
+   "content": {
+    "summary": {
+     "en": "The full-moon puja to Vishnu as Satyanarayan, with the katha and sheera prasad."
+    },
+    "traditions": {
+     "en": "Many families perform the Satyanarayan puja on Purnima, and on any day of thanksgiving: a new home, a wedding, a child's milestone. Vishnu is worshipped as Satyanarayan, the Lord of truth, with tulsi, panchamrit and a prasad of sheera or panjiri. The five chapters of the katha are read, and family and neighbours are invited to share the prasad."
+    },
+    "howTo": {
+     "en": [
+      "Set up a small altar with a banana-leaf canopy, a kalash and Vishnu's picture.",
+      "Offer tulsi, panchamrit, fruit and a sheera or panjiri prasad.",
+      "Read the five chapters of the katha, then the aarti.",
+      "Share the prasad with everyone present."
+     ]
+    }
+   },
+   "sources": [
+    "Skanda Purana, Reva Khanda (Satyanarayan katha)",
+    "Drik Panchang, Satyanarayan Puja"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "somvar-vrat",
+   "names": {
+    "en": "Somvar vrat (Monday)",
+    "bn": "সোমবারের ব্রত"
+   },
+   "rule": {
+    "type": "weekday",
+    "weekday": "monday"
+   },
+   "content": {
+    "summary": {
+     "en": "Monday, kept for Shiva and Parvati."
+    },
+    "traditions": {
+     "en": "Monday is Shiva's day, and many keep it with a fast until evening, water or milk poured over a Shiva linga, bel leaves and white flowers, and the chant Om Namah Shivaya. Some keep sixteen Mondays (Solah Somvar) as a vow; the Mondays of Sawan are especially loved. The Somvar katha is read or heard in the evening before the fast is broken."
+    },
+    "howTo": {
+     "en": [
+      "Fast until evening, or take fruit and milk.",
+      "Pour water or milk over a Shiva linga and offer bel leaves.",
+      "Chant Om Namah Shivaya.",
+      "Read the Somvar katha in the evening, then break the fast."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Somwar Vrat"
+   ],
+   "optIn": true
+  },
+  {
+   "key": "shani-vrat",
+   "names": {
+    "en": "Shani vrat (Saturday)",
+    "bn": "শনিবারের ব্রত"
+   },
+   "rule": {
+    "type": "weekday",
+    "weekday": "saturday"
+   },
+   "content": {
+    "summary": {
+     "en": "Saturday, Shani's day, kept with a simple meal, a sesame-oil lamp and giving to others."
+    },
+    "traditions": {
+     "en": "Saturday is Shani's day. Those who keep the Saturday vrat eat once, simply, often after sunset; light a lamp of sesame oil at a Shani shrine or under a peepal tree; and offer black sesame and blue or dark flowers. Giving food, oil or clothes to people who need them is at the heart of the day. Shani is honoured as the teacher of patience and fairness, and the vrat is kept as a weekly practice of steadiness and service. In Tamil Nadu the Saturdays of Purattasi are kept for Perumal as well."
+    },
+    "howTo": {
+     "en": [
+      "Keep the day simple: one meal, often after sunset.",
+      "Light a sesame-oil lamp at a Shani shrine or under a peepal tree.",
+      "Offer black sesame and a dark flower.",
+      "Give food, oil or clothing to someone who needs it."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Shaniwar Vrat"
+   ],
+   "optIn": true
+  }
+ ],
+ "personal": {
+  "birthday": {
+   "basis": "tithi",
+   "observance": {
+    "kala": "sunrise"
+   }
+  },
+  "remembrance": {
+   "basis": "tithi",
+   "observance": {
+    "kala": "aparahna"
+   }
+  }
+ },
+ "muhurtham": {
+  "events": [
+   {
+    "id": "marriage",
+    "names": {
+     "en": "Marriage",
+     "bn": "বিবাহ"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "magha",
+     "uttara_phalguni",
+     "hasta",
+     "swati",
+     "anuradha",
+     "mula",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     22
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidSolarMonths": [
+     "simha",
+     "dhanu",
+     "meena"
+    ]
+   },
+   {
+    "id": "engagement",
+    "names": {
+     "en": "Engagement",
+     "bn": "পাকা দেখা (বাগদান)"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "magha",
+     "uttara_phalguni",
+     "hasta",
+     "swati",
+     "anuradha",
+     "mula",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     22
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidSolarMonths": [
+     "simha",
+     "dhanu",
+     "meena"
+    ]
+   },
+   {
+    "id": "griha-pravesham",
+    "names": {
+     "en": "Housewarming",
+     "bn": "গৃহপ্রবেশ"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "uttara_phalguni",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidSolarMonths": [
+     "simha",
+     "dhanu",
+     "meena"
+    ]
+   },
+   {
+    "id": "bhoomi-puja",
+    "names": {
+     "en": "Foundation (Bhoomi Puja)",
+     "bn": "ভূমিপূজা"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidSolarMonths": [
+     "simha",
+     "dhanu",
+     "meena"
+    ]
+   },
+   {
+    "id": "property",
+    "names": {
+     "en": "Buying property",
+     "bn": "সম্পত্তি কেনা"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "anuradha",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ]
+   },
+   {
+    "id": "vehicle",
+    "names": {
+     "en": "Buying a vehicle",
+     "bn": "যানবাহন কেনা"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ]
+   },
+   {
+    "id": "business",
+    "names": {
+     "en": "Starting a business",
+     "bn": "ব্যবসা শুরু"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ]
+   },
+   {
+    "id": "naming",
+    "names": {
+     "en": "Naming ceremony",
+     "bn": "নামকরণ"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidAdhika": false,
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "annaprashana",
+    "names": {
+     "en": "First rice",
+     "bn": "অন্নপ্রাশন (মুখেভাত)"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "vidyarambham",
+    "names": {
+     "en": "Start of learning",
+     "bn": "হাতেখড়ি (বিদ্যারম্ভ)"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "ardra",
+     "punarvasu",
+     "pushya",
+     "purva_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "mula",
+     "purva_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "purva_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidJanmaNakshatra": false
+   }
+  ],
+  "sources": [
+   "Muhurta Chintamani (Daivajna Rama), vivaha, griha-pravesha, yatra and samskara prakaranas",
+   "Kerala Jyothisham practice: Karkidakam avoided for marriage and griha pravesham",
+   "Tamil panchangam practice: Aadi, Purattasi and Margazhi avoided for marriage",
+   "North Indian panchangam practice: kharmas, Chaturmas and Pitru Paksha"
+  ]
+ }
+}
