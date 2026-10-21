@@ -1,0 +1,3420 @@
+{
+ "schemaVersion": 1,
+ "culture": "malayalam",
+ "packVersion": 1,
+ "language": "ml",
+ "calendarSystem": "solar",
+ "lunarMonthSystem": "amanta",
+ "solarDayRule": {
+  "type": "daytime-fraction",
+  "fraction": 0.6
+ },
+ "era": "kollavarsham",
+ "solarDayPlace": {
+  "latitude": 8.88,
+  "longitude": 76.59,
+  "utcOffsetMinutes": 330
+ },
+ "names": {
+  "solarMonths": {
+   "mesha": {
+    "en": "Medam",
+    "ml": "മേടം"
+   },
+   "vrishabha": {
+    "en": "Edavam",
+    "ml": "ഇടവം"
+   },
+   "mithuna": {
+    "en": "Mithunam",
+    "ml": "മിഥുനം"
+   },
+   "karka": {
+    "en": "Karkidakam",
+    "ml": "കർക്കിടകം"
+   },
+   "simha": {
+    "en": "Chingam",
+    "ml": "ചിങ്ങം"
+   },
+   "kanya": {
+    "en": "Kanni",
+    "ml": "കന്നി"
+   },
+   "tula": {
+    "en": "Thulam",
+    "ml": "തുലാം"
+   },
+   "vrishchika": {
+    "en": "Vrischikam",
+    "ml": "വൃശ്ചികം"
+   },
+   "dhanu": {
+    "en": "Dhanu",
+    "ml": "ധനു"
+   },
+   "makara": {
+    "en": "Makaram",
+    "ml": "മകരം"
+   },
+   "kumbha": {
+    "en": "Kumbham",
+    "ml": "കുംഭം"
+   },
+   "meena": {
+    "en": "Meenam",
+    "ml": "മീനം"
+   }
+  },
+  "lunarMonths": {
+   "chaitra": {
+    "en": "Chaitra",
+    "ml": "ചൈത്രം"
+   },
+   "vaishakha": {
+    "en": "Vaishakha",
+    "ml": "വൈശാഖം"
+   },
+   "jyeshtha": {
+    "en": "Jyeshtha",
+    "ml": "ജ്യേഷ്ഠം"
+   },
+   "ashadha": {
+    "en": "Ashadha",
+    "ml": "ആഷാഢം"
+   },
+   "shravana": {
+    "en": "Shravana",
+    "ml": "ശ്രാവണം"
+   },
+   "bhadrapada": {
+    "en": "Bhadrapada",
+    "ml": "ഭാദ്രപദം"
+   },
+   "ashvin": {
+    "en": "Ashvin",
+    "ml": "ആശ്വിനം"
+   },
+   "kartika": {
+    "en": "Kartika",
+    "ml": "കാർത്തികം"
+   },
+   "margashirsha": {
+    "en": "Margashirsha",
+    "ml": "മാർഗ്ഗശീർഷം"
+   },
+   "pausha": {
+    "en": "Pausha",
+    "ml": "പൗഷം"
+   },
+   "magha": {
+    "en": "Magha",
+    "ml": "മാഘം"
+   },
+   "phalguna": {
+    "en": "Phalguna",
+    "ml": "ഫാൽഗുനം"
+   }
+  },
+  "nakshatras": {
+   "ashwini": {
+    "en": "Ashwathi",
+    "ml": "അശ്വതി"
+   },
+   "bharani": {
+    "en": "Bharani",
+    "ml": "ഭരണി"
+   },
+   "krittika": {
+    "en": "Karthika",
+    "ml": "കാർത്തിക"
+   },
+   "rohini": {
+    "en": "Rohini",
+    "ml": "രോഹിണി"
+   },
+   "mrigashira": {
+    "en": "Makayiram",
+    "ml": "മകയിരം"
+   },
+   "ardra": {
+    "en": "Thiruvathira",
+    "ml": "തിരുവാതിര"
+   },
+   "punarvasu": {
+    "en": "Punartham",
+    "ml": "പുണർതം"
+   },
+   "pushya": {
+    "en": "Pooyam",
+    "ml": "പൂയം"
+   },
+   "ashlesha": {
+    "en": "Ayilyam",
+    "ml": "ആയില്യം"
+   },
+   "magha": {
+    "en": "Makam",
+    "ml": "മകം"
+   },
+   "purva_phalguni": {
+    "en": "Pooram",
+    "ml": "പൂരം"
+   },
+   "uttara_phalguni": {
+    "en": "Uthram",
+    "ml": "ഉത്രം"
+   },
+   "hasta": {
+    "en": "Atham",
+    "ml": "അത്തം"
+   },
+   "chitra": {
+    "en": "Chithira",
+    "ml": "ചിത്തിര"
+   },
+   "swati": {
+    "en": "Chothi",
+    "ml": "ചോതി"
+   },
+   "vishakha": {
+    "en": "Vishakham",
+    "ml": "വിശാഖം"
+   },
+   "anuradha": {
+    "en": "Anizham",
+    "ml": "അനിഴം"
+   },
+   "jyeshtha": {
+    "en": "Thrikketta",
+    "ml": "തൃക്കേട്ട"
+   },
+   "mula": {
+    "en": "Moolam",
+    "ml": "മൂലം"
+   },
+   "purva_ashadha": {
+    "en": "Pooradam",
+    "ml": "പൂരാടം"
+   },
+   "uttara_ashadha": {
+    "en": "Uthradam",
+    "ml": "ഉത്രാടം"
+   },
+   "shravana": {
+    "en": "Thiruvonam",
+    "ml": "തിരുവോണം"
+   },
+   "dhanishta": {
+    "en": "Avittam",
+    "ml": "അവിട്ടം"
+   },
+   "shatabhisha": {
+    "en": "Chathayam",
+    "ml": "ചതയം"
+   },
+   "purva_bhadrapada": {
+    "en": "Pooruruttathi",
+    "ml": "പൂരുരുട്ടാതി"
+   },
+   "uttara_bhadrapada": {
+    "en": "Uthrattathi",
+    "ml": "ഉത്രട്ടാതി"
+   },
+   "revati": {
+    "en": "Revathi",
+    "ml": "രേവതി"
+   }
+  },
+  "tithis": {
+   "pratipada": {
+    "en": "Prathama",
+    "ml": "പ്രഥമ"
+   },
+   "dvitiya": {
+    "en": "Dwitheeya",
+    "ml": "ദ്വിതീയ"
+   },
+   "tritiya": {
+    "en": "Thritheeya",
+    "ml": "തൃതീയ"
+   },
+   "chaturthi": {
+    "en": "Chathurthi",
+    "ml": "ചതുർത്ഥി"
+   },
+   "panchami": {
+    "en": "Panchami",
+    "ml": "പഞ്ചമി"
+   },
+   "shashthi": {
+    "en": "Shashti",
+    "ml": "ഷഷ്ഠി"
+   },
+   "saptami": {
+    "en": "Sapthami",
+    "ml": "സപ്തമി"
+   },
+   "ashtami": {
+    "en": "Ashtami",
+    "ml": "അഷ്ടമി"
+   },
+   "navami": {
+    "en": "Navami",
+    "ml": "നവമി"
+   },
+   "dashami": {
+    "en": "Dashami",
+    "ml": "ദശമി"
+   },
+   "ekadashi": {
+    "en": "Ekadashi",
+    "ml": "ഏകാദശി"
+   },
+   "dvadashi": {
+    "en": "Dwadashi",
+    "ml": "ദ്വാദശി"
+   },
+   "trayodashi": {
+    "en": "Thrayodashi",
+    "ml": "ത്രയോദശി"
+   },
+   "chaturdashi": {
+    "en": "Chathurdashi",
+    "ml": "ചതുർദശി"
+   },
+   "purnima": {
+    "en": "Pournami",
+    "ml": "പൗർണ്ണമി"
+   },
+   "amavasya": {
+    "en": "Amavasi",
+    "ml": "അമാവാസി"
+   }
+  },
+  "weekdays": {
+   "sunday": {
+    "en": "Njayar",
+    "ml": "ഞായർ"
+   },
+   "monday": {
+    "en": "Thinkal",
+    "ml": "തിങ്കൾ"
+   },
+   "tuesday": {
+    "en": "Chovva",
+    "ml": "ചൊവ്വ"
+   },
+   "wednesday": {
+    "en": "Budhan",
+    "ml": "ബുധൻ"
+   },
+   "thursday": {
+    "en": "Vyazham",
+    "ml": "വ്യാഴം"
+   },
+   "friday": {
+    "en": "Velli",
+    "ml": "വെള്ളി"
+   },
+   "saturday": {
+    "en": "Shani",
+    "ml": "ശനി"
+   }
+  },
+  "paksha": {
+   "shukla": {
+    "en": "Shukla Paksham",
+    "ml": "ശുക്ലപക്ഷം"
+   },
+   "krishna": {
+    "en": "Krishna Paksham",
+    "ml": "കൃഷ്ണപക്ഷം"
+   }
+  },
+  "yogas": {
+   "vishkambha": {
+    "en": "Vishkambha",
+    "ml": "വിഷ്കംഭം"
+   },
+   "priti": {
+    "en": "Priti",
+    "ml": "പ്രീതി"
+   },
+   "ayushman": {
+    "en": "Ayushman",
+    "ml": "ആയുഷ്മാൻ"
+   },
+   "saubhagya": {
+    "en": "Saubhagya",
+    "ml": "സൗഭാഗ്യം"
+   },
+   "shobhana": {
+    "en": "Shobhana",
+    "ml": "ശോഭനം"
+   },
+   "atiganda": {
+    "en": "Atiganda",
+    "ml": "അതിഗണ്ഡം"
+   },
+   "sukarma": {
+    "en": "Sukarma",
+    "ml": "സുകർമ്മം"
+   },
+   "dhriti": {
+    "en": "Dhriti",
+    "ml": "ധൃതി"
+   },
+   "shula": {
+    "en": "Shula",
+    "ml": "ശൂലം"
+   },
+   "ganda": {
+    "en": "Ganda",
+    "ml": "ഗണ്ഡം"
+   },
+   "vriddhi": {
+    "en": "Vriddhi",
+    "ml": "വൃദ്ധി"
+   },
+   "dhruva": {
+    "en": "Dhruva",
+    "ml": "ധ്രുവം"
+   },
+   "vyaghata": {
+    "en": "Vyaghata",
+    "ml": "വ്യാഘാതം"
+   },
+   "harshana": {
+    "en": "Harshana",
+    "ml": "ഹർഷണം"
+   },
+   "vajra": {
+    "en": "Vajra",
+    "ml": "വജ്രം"
+   },
+   "siddhi": {
+    "en": "Siddhi",
+    "ml": "സിദ്ധി"
+   },
+   "vyatipata": {
+    "en": "Vyatipata",
+    "ml": "വ്യതീപാതം"
+   },
+   "variyan": {
+    "en": "Variyan",
+    "ml": "വരീയാൻ"
+   },
+   "parigha": {
+    "en": "Parigha",
+    "ml": "പരിഘം"
+   },
+   "shiva": {
+    "en": "Shiva",
+    "ml": "ശിവം"
+   },
+   "siddha": {
+    "en": "Siddha",
+    "ml": "സിദ്ധം"
+   },
+   "sadhya": {
+    "en": "Sadhya",
+    "ml": "സാദ്ധ്യം"
+   },
+   "shubha": {
+    "en": "Shubha",
+    "ml": "ശുഭം"
+   },
+   "shukla": {
+    "en": "Shukla",
+    "ml": "ശുക്ലം"
+   },
+   "brahma": {
+    "en": "Brahma",
+    "ml": "ബ്രഹ്മം"
+   },
+   "indra": {
+    "en": "Indra",
+    "ml": "ഐന്ദ്രം"
+   },
+   "vaidhriti": {
+    "en": "Vaidhriti",
+    "ml": "വൈധൃതി"
+   }
+  },
+  "karanas": {
+   "bava": {
+    "en": "Bava",
+    "ml": "ബവം"
+   },
+   "balava": {
+    "en": "Balava",
+    "ml": "ബാലവം"
+   },
+   "kaulava": {
+    "en": "Kaulava",
+    "ml": "കൗലവം"
+   },
+   "taitila": {
+    "en": "Taitila",
+    "ml": "തൈതിലം"
+   },
+   "garaja": {
+    "en": "Garaja",
+    "ml": "ഗരജ"
+   },
+   "vanija": {
+    "en": "Vanija",
+    "ml": "വണിജ"
+   },
+   "vishti": {
+    "en": "Vishti",
+    "ml": "വിഷ്ടി"
+   },
+   "shakuni": {
+    "en": "Shakuni",
+    "ml": "ശകുനി"
+   },
+   "chatushpada": {
+    "en": "Chatushpada",
+    "ml": "ചതുഷ്പാദം"
+   },
+   "naga": {
+    "en": "Naga",
+    "ml": "നാഗം"
+   },
+   "kimstughna": {
+    "en": "Kimstughna",
+    "ml": "കിംസ്തുഘ്നം"
+   }
+  },
+  "eras": {
+   "kollavarsham": {
+    "en": "Kollavarsham",
+    "ml": "കൊല്ലവർഷം"
+   }
+  },
+  "adhika": {
+   "adhika": {
+    "en": "Adhika",
+    "ml": "അധിക"
+   }
+  },
+  "rashis": {
+   "mesha": {
+    "en": "Medam",
+    "ml": "മേടം"
+   },
+   "vrishabha": {
+    "en": "Edavam",
+    "ml": "ഇടവം"
+   },
+   "mithuna": {
+    "en": "Mithunam",
+    "ml": "മിഥുനം"
+   },
+   "karka": {
+    "en": "Karkidakam",
+    "ml": "കർക്കടകം"
+   },
+   "simha": {
+    "en": "Chingam",
+    "ml": "ചിങ്ങം"
+   },
+   "kanya": {
+    "en": "Kanni",
+    "ml": "കന്നി"
+   },
+   "tula": {
+    "en": "Thulam",
+    "ml": "തുലാം"
+   },
+   "vrishchika": {
+    "en": "Vrischikam",
+    "ml": "വൃശ്ചികം"
+   },
+   "dhanu": {
+    "en": "Dhanu",
+    "ml": "ധനു"
+   },
+   "makara": {
+    "en": "Makaram",
+    "ml": "മകരം"
+   },
+   "kumbha": {
+    "en": "Kumbham",
+    "ml": "കുംഭം"
+   },
+   "meena": {
+    "en": "Meenam",
+    "ml": "മീനം"
+   }
+  }
+ },
+ "display": {
+  "primary": "solar",
+  "nameEn": "Malayalam",
+  "nameNative": "മലയാളം",
+  "newYear": "chingam-1",
+  "referencePlace": "Kollam"
+ },
+ "festivals": [
+  {
+   "id": "makaravilakku",
+   "names": {
+    "en": "Makaravilakku",
+    "ml": "മകരവിളക്ക്"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "makara",
+    "day": 1,
+    "dayRule": {
+     "type": "sunset"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Makara Sankranti at Sabarimala: the Makarajyothi and the end of the pilgrimage season.",
+     "ml": "ശബരിമലയിലെ മകരസംക്രമം: മകരജ്യോതിയും തീർത്ഥാടനകാലത്തിന്റെ സമാപനവും."
+    },
+    "traditions": {
+     "en": "At Sabarimala, the Thiruvabharanam, the sacred ornaments of Ayyappa, are brought in procession from Pandalam and adorn the deity at dusk on Makara Sankranti. As the deeparadhana is performed, the Makaravilakku is seen on the Ponnambalamedu hill, and the Makarajyothi star rises; lakhs of pilgrims, who have kept the forty-one-day vratham, gather. Across Kerala, homes light lamps and pray to Ayyappa.",
+     "ml": "ശബരിമലയിൽ, പന്തളത്തു നിന്ന് ഘോഷയാത്രയായി കൊണ്ടുവരുന്ന തിരുവാഭരണം മകരസംക്രമ സന്ധ്യയിൽ അയ്യപ്പന് ചാർത്തുന്നു. ദീപാരാധനയ്ക്കൊപ്പം പൊന്നമ്പലമേട്ടിൽ മകരവിളക്ക് തെളിയുകയും മകരജ്യോതി നക്ഷത്രം ഉദിക്കുകയും ചെയ്യുന്നു; നാല്പത്തിയൊന്നു ദിവസത്തെ വ്രതമെടുത്ത ലക്ഷക്കണക്കിനു ഭക്തർ ഒത്തുകൂടുന്നു. കേരളമെമ്പാടും വീടുകളിൽ വിളക്കു കൊളുത്തി അയ്യപ്പനോട് പ്രാർത്ഥിക്കുന്നു."
+    },
+    "story": {
+     "en": "Ayyappa, born of Shiva and of Vishnu in his Mohini form, was found as an infant by the King of Pandalam on the banks of the Pampa, wearing a bell around his neck, and raised as Manikandan. As a young man he went into the forest, overcame the demoness Mahishi, and chose to sit in meditation at Sabarimala. The king built the temple there, and the ornaments he made for his son are the Thiruvabharanam carried each year. Pilgrims, whatever their background, are all called 'Swami' on the journey, and Ayyappa is seen in each of them.",
+     "ml": "ശിവനിൽ നിന്നും മോഹിനീരൂപത്തിലുള്ള വിഷ്ണുവിൽ നിന്നും ജനിച്ച അയ്യപ്പനെ, കഴുത്തിൽ മണി കെട്ടിയ നിലയിൽ പമ്പാതീരത്ത് പന്തളം രാജാവ് കണ്ടെത്തി മണികണ്ഠനായി വളർത്തി. യുവാവായപ്പോൾ അദ്ദേഹം കാട്ടിൽ പോയി മഹിഷിയെ നിഗ്രഹിച്ച്, ശബരിമലയിൽ ധ്യാനത്തിലിരിക്കാൻ തീരുമാനിച്ചു. രാജാവ് അവിടെ ക്ഷേത്രം പണിതു; മകനായി അദ്ദേഹം ഉണ്ടാക്കിയ ആഭരണങ്ങളാണ് എല്ലാ വർഷവും കൊണ്ടുവരുന്ന തിരുവാഭരണം. ഏതു പശ്ചാത്തലക്കാരായാലും തീർത്ഥാടകരെല്ലാം യാത്രയിൽ 'സ്വാമി' എന്ന് വിളിക്കപ്പെടുന്നു; ഓരോരുത്തരിലും അയ്യപ്പനെ കാണുന്നു."
+    },
+    "howTo": {
+     "en": [
+      "Light the nilavilakku at dusk and chant 'Swamiye Saranam Ayyappa'.",
+      "Watch the Makaravilakku broadcast from Sabarimala if you are not there.",
+      "Make a simple payasam or aravana-style sweet as an offering.",
+      "If a family member has made the pilgrimage, welcome them home and share the prasadam they bring."
+     ],
+     "ml": [
+      "സന്ധ്യയ്ക്ക് നിലവിളക്കു കൊളുത്തി 'സ്വാമിയേ ശരണമയ്യപ്പാ' ജപിക്കുക.",
+      "ശബരിമലയിലില്ലെങ്കിൽ മകരവിളക്ക് സംപ്രേക്ഷണം കാണുക.",
+      "ലളിതമായ പായസമോ അരവണ പോലുള്ള മധുരമോ നിവേദിക്കുക.",
+      "കുടുംബത്തിൽ ആരെങ്കിലും മലയ്ക്കു പോയിട്ടുണ്ടെങ്കിൽ അവരെ സ്വീകരിച്ച് അവർ കൊണ്ടുവരുന്ന പ്രസാദം പങ്കിടുക."
+     ]
+    },
+    "greeting": {
+     "en": "Swamiye Saranam Ayyappa! Makaravilakku greetings.",
+     "ml": "സ്വാമിയേ ശരണമയ്യപ്പാ! മകരവിളക്ക് ആശംസകൾ."
+    }
+   }
+  },
+  {
+   "id": "thai-pooyam",
+   "names": {
+    "en": "Thai Pooyam",
+    "ml": "തൈപ്പൂയം"
+   },
+   "rule": {
+    "type": "nakshatra-in-solar-month",
+    "month": "makara",
+    "nakshatra": "pushya",
+    "observance": {
+     "minCoverMinutes": 144,
+     "fallback": "begins",
+     "kala": "morning"
+    },
+    "nearTithi": 15
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Pooyam star in Makaram near the full moon: Subrahmanya's festival in Kerala, with kavadi.",
+     "ml": "മകരമാസത്തിലെ പൗർണ്ണമിയോടടുത്ത പൂയം: കാവടിയാട്ടത്തോടെ സുബ്രഹ്മണ്യന്റെ ഉത്സവം."
+    },
+    "traditions": {
+     "en": "Subrahmanya temples in Kerala, at Haripad, Kidangoor, Ullannoor and Koodalmanikyam's region among others, celebrate with kavadiyattam, the dance of devotees carrying decorated kavadis, to drums and nadaswaram. Devotees keep a vratham beforehand and carry milk or panchamritam for the abhishekam.",
+     "ml": "കേരളത്തിലെ സുബ്രഹ്മണ്യക്ഷേത്രങ്ങളിൽ, ഹരിപ്പാട്, കിടങ്ങൂർ, ഉള്ളന്നൂർ തുടങ്ങിയവയിൽ, ചെണ്ടയുടെയും നാദസ്വരത്തിന്റെയും താളത്തിൽ അലങ്കരിച്ച കാവടികളുമായി ഭക്തർ ആടുന്ന കാവടിയാട്ടം. ഭക്തർ മുൻകൂട്ടി വ്രതമെടുത്ത് അഭിഷേകത്തിന് പാലോ പഞ്ചാമൃതമോ കൊണ്ടുപോകുന്നു."
+    },
+    "story": {
+     "en": "The story told is that on Thai Pooyam Parvati gave Subrahmanya her Vel to face the asura Surapadman. The kavadi recalls Idumban, who carried two hills on a pole across his shoulders for the sage Agastya and found young Murugan standing on one of them; Murugan blessed him and promised to welcome all who come carrying a kavadi.",
+     "ml": "തൈപ്പൂയത്തിൽ ശൂരപത്മനെ നേരിടാൻ പാർവ്വതി സുബ്രഹ്മണ്യന് തന്റെ വേൽ നൽകി എന്നാണ് കഥ. അഗസ്ത്യമുനിക്കായി രണ്ടു മലകൾ തോളിൽ കാവടിയായി ചുമന്ന ഇടുമ്പനെ കാവടി ഓർമ്മിപ്പിക്കുന്നു; ഒരു മലയിൽ ബാലനായ മുരുകൻ നിൽക്കുന്നതു കണ്ടു; മുരുകൻ അവനെ അനുഗ്രഹിച്ച്, കാവടിയുമായി വരുന്ന എല്ലാവരെയും സ്വീകരിക്കുമെന്നു വാക്കു നൽകി."
+    },
+    "howTo": {
+     "en": [
+      "Keep a vegetarian vratham for some days beforehand if your family does.",
+      "Visit a Subrahmanya temple to see the kavadiyattam.",
+      "At home, offer milk, panchamritam and flowers to Subrahmanya with a lamp."
+     ],
+     "ml": [
+      "പതിവുണ്ടെങ്കിൽ ഏതാനും ദിവസം മുമ്പേ സസ്യാഹാര വ്രതമെടുക്കുക.",
+      "കാവടിയാട്ടം കാണാൻ സുബ്രഹ്മണ്യക്ഷേത്രം സന്ദർശിക്കുക.",
+      "വീട്ടിൽ വിളക്കു കൊളുത്തി സുബ്രഹ്മണ്യന് പാൽ, പഞ്ചാമൃതം, പൂവ് എന്നിവ അർപ്പിക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Thai Pooyam!",
+     "ml": "തൈപ്പൂയ ആശംസകൾ!"
+    }
+   }
+  },
+  {
+   "id": "maha-shivaratri-ml",
+   "names": {
+    "en": "Shivarathri",
+    "ml": "ശിവരാത്രി"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "magha",
+    "tithi": 29,
+    "observance": {
+     "kala": "nishita"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-KL"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)",
+    "Government of Kerala public holidays 2026 gazette (Onmanorama, 29 Oct 2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The great night of Shiva, kept with fasting, night-long worship and the chanting of 'Om Namah Shivaya'.",
+     "ml": "ശിവന്റെ മഹാരാത്രി: ഉപവാസം, രാത്രി മുഴുവൻ ആരാധന, 'ഓം നമഃ ശിവായ' ജപം."
+    },
+    "traditions": {
+     "en": "Devotees fast through the day, some taking only fruit and milk, and stay awake through the night. Temples hold four worships (prahara puja) across the night, bathing the Shiva linga in milk, curd, honey, ghee and water and offering bilva leaves. At home, families chant 'Om Namah Shivaya', read or listen to Shiva stories and sing bhajans. In Tamil Nadu temples hold the night's four abhishekams; in Kerala, the Aluva riverbank fills with people keeping vigil; in the North, kanwariyas carry Ganga water to Shiva temples. The fast is broken the next morning.",
+     "ml": "ഭക്തർ പകൽ മുഴുവൻ ഉപവസിക്കുന്നു, ചിലർ പഴവും പാലും മാത്രം കഴിക്കുന്നു, രാത്രി മുഴുവൻ ഉറക്കമൊഴിയുന്നു. ക്ഷേത്രങ്ങളിൽ രാത്രിയുടെ നാലു യാമങ്ങളിലും പൂജ നടക്കുന്നു: ശിവലിംഗത്തിന് പാൽ, തൈര്, തേൻ, നെയ്യ്, ജലം എന്നിവ കൊണ്ട് അഭിഷേകവും കൂവളത്തില അർച്ചനയും. ആലുവ മണപ്പുറത്ത് ആയിരങ്ങൾ ഉറക്കമൊഴിഞ്ഞ് ശിവരാത്രി ആചരിക്കുന്നു; പിറ്റേന്ന് രാവിലെ പിതൃതർപ്പണവും നടക്കുന്നു. വീടുകളിൽ 'ഓം നമഃ ശിവായ' ജപവും ശിവകഥകളും. പിറ്റേന്ന് രാവിലെ വ്രതം അവസാനിപ്പിക്കുന്നു."
+    },
+    "story": {
+     "en": "Several stories are told for this night. In one, when the gods and asuras churned the ocean for nectar, a deadly poison, Halahala, rose first and threatened every living thing. Shiva drank it to protect the world, and Parvati held his throat so it would not go further; his throat turned blue, and he is called Neelakantha. The gods kept awake all night to watch over him, and devotees keep that vigil still. Another story tells of a hunter lost in the forest at night who climbed a bilva tree to stay safe. Restless, he plucked leaves and dropped them, not knowing a Shiva linga stood below; by morning he had kept a night's worship without meaning to, and his heart was changed. Many also remember this as the night of Shiva and Parvati's wedding.",
+     "ml": "ഈ രാത്രിക്കു പല കഥകളുണ്ട്. ഒന്നിൽ, ദേവന്മാരും അസുരന്മാരും അമൃതിനായി പാലാഴി കടഞ്ഞപ്പോൾ ആദ്യം ഉയർന്നത് ഹാലാഹലം എന്ന വിഷമായിരുന്നു; അത് എല്ലാ ജീവികൾക്കും ആപത്തായി. ലോകത്തെ രക്ഷിക്കാൻ ശിവൻ അതു കുടിച്ചു; വിഷം താഴേക്കിറങ്ങാതെ പാർവ്വതി കണ്ഠം പിടിച്ചു. കണ്ഠം നീലയായി; അദ്ദേഹം നീലകണ്ഠൻ എന്നറിയപ്പെട്ടു. ദേവന്മാർ രാത്രി മുഴുവൻ ഉറങ്ങാതെ കാവലിരുന്നു; ആ ഉറക്കമൊഴിയൽ ഭക്തർ ഇന്നും തുടരുന്നു. മറ്റൊരു കഥ, രാത്രി കാട്ടിൽ വഴിതെറ്റിയ ഒരു വേടൻ സുരക്ഷയ്ക്കായി കൂവളമരത്തിൽ കയറിയതാണ്. അസ്വസ്ഥനായി അവൻ ഇലകൾ പറിച്ചിട്ടുകൊണ്ടിരുന്നു; താഴെ ശിവലിംഗമുണ്ടെന്ന് അറിഞ്ഞില്ല. പുലരുമ്പോഴേക്കും അറിയാതെ രാത്രി മുഴുവൻ പൂജ നടന്നു; അവന്റെ മനസ്സു മാറി."
+    },
+    "howTo": {
+     "en": [
+      "Decide how you will fast: a full fast, fruit and milk, or one simple meal; elders, children and anyone unwell often keep a light version.",
+      "Gather bilva leaves, milk, water, curd, honey, flowers and a lamp.",
+      "In the evening, bathe and visit a Shiva temple, or set up a small linga or picture at home.",
+      "Bathe the linga with water and milk, offer bilva leaves and flowers, and light the lamp.",
+      "Chant 'Om Namah Shivaya', read the Shiva Purana or listen to bhajans; many keep awake through the four quarters of the night.",
+      "The night's main worship is at Nishita, around midnight; the app's day view shows the time.",
+      "Break the fast the next morning after a bath and a short prayer, with simple food."
+     ],
+     "ml": [
+      "വ്രതം എങ്ങനെയെന്ന് തീരുമാനിക്കുക: പൂർണ്ണ ഉപവാസം, പഴവും പാലും, അല്ലെങ്കിൽ ഒരു നേരം ലഘുഭക്ഷണം; പ്രായമായവരും കുട്ടികളും അസുഖമുള്ളവരും ലഘുവ്രതമാണ് പതിവ്.",
+      "കൂവളത്തില, പാൽ, ജലം, തൈര്, തേൻ, പൂക്കൾ, വിളക്ക് എന്നിവ ഒരുക്കുക.",
+      "വൈകുന്നേരം കുളിച്ച് ശിവക്ഷേത്രത്തിൽ പോകുക, അല്ലെങ്കിൽ വീട്ടിൽ ചെറിയ ലിംഗമോ ചിത്രമോ വയ്ക്കുക.",
+      "ലിംഗത്തിൽ ജലവും പാലും അഭിഷേകം ചെയ്ത്, കൂവളവും പൂവും അർപ്പിച്ച്, വിളക്കു കൊളുത്തുക.",
+      "'ഓം നമഃ ശിവായ' ജപിക്കുക, ശിവപുരാണം വായിക്കുക അല്ലെങ്കിൽ ഭജന കേൾക്കുക; പലരും രാത്രിയുടെ നാലു യാമങ്ങളും ഉറങ്ങാതിരിക്കുന്നു.",
+      "രാത്രിയിലെ പ്രധാന പൂജ അർദ്ധരാത്രിയിലെ നിശീഥകാലത്താണ്; സമയം ദിവസവിവരത്തിലുണ്ട്.",
+      "പിറ്റേന്ന് രാവിലെ കുളിച്ച് ചെറിയ പ്രാർത്ഥനയ്ക്കു ശേഷം ലഘുഭക്ഷണത്തോടെ വ്രതം അവസാനിപ്പിക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "Om Namah Shivaya. Peaceful wishes on Maha Shivaratri.",
+     "ml": "ഓം നമഃ ശിവായ. മഹാശിവരാത്രി ആശംസകൾ."
+    }
+   }
+  },
+  {
+   "id": "attukal-pongala",
+   "names": {
+    "en": "Attukal Pongala",
+    "ml": "ആറ്റുകാൽ പൊങ്കാല"
+   },
+   "rule": {
+    "type": "nakshatra-in-solar-month",
+    "month": "kumbha",
+    "nakshatra": "purva_phalguni",
+    "observance": {
+     "kala": "madhyahna"
+    },
+    "nearTithi": 15
+   },
+   "tier": "regional",
+   "holidayIn": [
+    "IN-KL"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Kumbham's Pooram: lakhs of women cook pongala for Attukal Amma along Thiruvananthapuram's streets.",
+     "ml": "കുംഭത്തിലെ പൂരം: തിരുവനന്തപുരത്തെ തെരുവുകളിൽ ലക്ഷക്കണക്കിനു സ്ത്രീകൾ ആറ്റുകാലമ്മയ്ക്ക് പൊങ്കാലയിടുന്നു."
+    },
+    "traditions": {
+     "en": "On the ninth day of the Attukal temple festival, women set up small hearths of three bricks along kilometres of Thiruvananthapuram's roads and cook pongala, rice, jaggery and coconut in new clay pots, all at once when the temple's hearth is lit. It is among the largest gatherings of women in the world. At the set time, priests sprinkle holy water on the pots, and the offering is taken home. Neighbours open their homes to strangers who come to cook.",
+     "ml": "ആറ്റുകാൽ ക്ഷേത്രോത്സവത്തിന്റെ ഒൻപതാം ദിവസം തിരുവനന്തപുരത്തെ കിലോമീറ്ററുകൾ നീളുന്ന വഴികളിൽ മൂന്നു കല്ലുകൊണ്ടുള്ള അടുപ്പുകൂട്ടി, ക്ഷേത്രത്തിലെ പണ്ടാര അടുപ്പിൽ തീ പകരുന്ന നിമിഷം എല്ലാവരും ഒരുമിച്ച് പുതുമൺകലത്തിൽ അരി, ശർക്കര, തേങ്ങ ചേർത്ത് പൊങ്കാലയിടുന്നു. ലോകത്തിലെ ഏറ്റവും വലിയ സ്ത്രീകൂട്ടായ്മകളിലൊന്ന്. നിശ്ചിത സമയത്ത് പൂജാരിമാർ കലങ്ങളിൽ തീർത്ഥം തളിക്കുന്നു; നിവേദ്യം വീട്ടിലേക്കു കൊണ്ടുപോകുന്നു. പൊങ്കാലയിടാനെത്തുന്ന അപരിചിതർക്കായി അയൽക്കാർ വീടുകൾ തുറന്നുകൊടുക്കുന്നു."
+    },
+    "story": {
+     "en": "Attukal Amma is identified with Kannaki, the heroine of the Tamil epic Silappathikaram. Her husband Kovalan was wrongly accused of theft in Madurai and put to death; Kannaki, holding her anklet as proof of his innocence, confronted the king and proved him wrong. On her way to Kodungallur, the story goes, she rested at Attukal as a young girl, and an elder of the family there gave her water and shelter; she later appeared to him and asked to be honoured there. The pongala is the offering of women who see in her strength, truth and care.",
+     "ml": "തമിഴ് ഇതിഹാസമായ ചിലപ്പതികാരത്തിലെ നായികയായ കണ്ണകിയായാണ് ആറ്റുകാലമ്മ കരുതപ്പെടുന്നത്. മധുരയിൽ ഭർത്താവ് കോവലനെ മോഷണക്കുറ്റം തെറ്റായി ആരോപിച്ച് വധിച്ചു; നിരപരാധിത്വത്തിന്റെ തെളിവായി ചിലമ്പുമായി കണ്ണകി രാജാവിനെ നേരിട്ട് തെറ്റു തെളിയിച്ചു. കൊടുങ്ങല്ലൂരിലേക്കുള്ള യാത്രയിൽ ഒരു ബാലികയായി ആറ്റുകാലിൽ വിശ്രമിച്ചെന്നും, അവിടത്തെ ഒരു കാരണവർ വെള്ളവും അഭയവും നൽകിയെന്നും, പിന്നീട് സ്വപ്നത്തിൽ വന്ന് അവിടെ കുടിയിരുത്തണമെന്ന് ആവശ്യപ്പെട്ടെന്നുമാണ് കഥ. അവരിൽ കരുത്തും സത്യവും കരുതലും കാണുന്ന സ്ത്രീകളുടെ നിവേദ്യമാണ് പൊങ്കാല."
+    },
+    "howTo": {
+     "en": [
+      "Buy a new clay pot, rice, jaggery, coconut, firewood or coconut fronds, and three bricks.",
+      "Find a spot along the roads near Attukal the day before, or join a local temple's pongala in your town.",
+      "Bathe early, wear fresh clothes, and set up your hearth.",
+      "When the temple announces the lighting, light your hearth and cook the pongala.",
+      "Wait for the holy water to be sprinkled at the appointed time, then take the offering home and share it."
+     ],
+     "ml": [
+      "പുതുമൺകലം, അരി, ശർക്കര, തേങ്ങ, വിറകോ ഓലമടലോ, മൂന്നു ഇഷ്ടിക എന്നിവ വാങ്ങുക.",
+      "തലേന്ന് ആറ്റുകാലിനടുത്ത് വഴിയരികിൽ സ്ഥലം കണ്ടെത്തുക, അല്ലെങ്കിൽ നാട്ടിലെ ക്ഷേത്രത്തിലെ പൊങ്കാലയിൽ പങ്കുചേരുക.",
+      "നേരത്തെ കുളിച്ച് ശുഭ്രവസ്ത്രം ധരിച്ച് അടുപ്പു കൂട്ടുക.",
+      "ക്ഷേത്രത്തിൽ നിന്ന് അറിയിപ്പു വരുമ്പോൾ അടുപ്പു കത്തിച്ച് പൊങ്കാല തയ്യാറാക്കുക.",
+      "നിശ്ചിത സമയത്ത് തീർത്ഥം തളിക്കുന്നതു വരെ കാത്തിരുന്ന്, നിവേദ്യം വീട്ടിൽ കൊണ്ടുപോയി പങ്കിടുക."
+     ]
+    },
+    "greeting": {
+     "en": "Attukal Pongala greetings to every woman cooking today.",
+     "ml": "ഇന്ന് പൊങ്കാലയിടുന്ന എല്ലാവർക്കും ആശംസകൾ."
+    }
+   }
+  },
+  {
+   "id": "painkuni-uthram",
+   "names": {
+    "en": "Painkuni Uthram",
+    "ml": "പൈങ്കുനി ഉത്രം"
+   },
+   "rule": {
+    "type": "nakshatra-in-solar-month",
+    "month": "meena",
+    "nakshatra": "uttara_phalguni",
+    "occurrence": "last"
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Uthram star in Meenam: the day of Subrahmanya's wedding and Sastha's birth.",
+     "ml": "മീനമാസത്തിലെ ഉത്രം: സുബ്രഹ്മണ്യന്റെ തിരുകല്യാണവും ശാസ്താവിന്റെ ജനനവും."
+    },
+    "traditions": {
+     "en": "Subrahmanya temples celebrate the divine wedding with Deivanai, and Sabarimala's annual festival ends with the aarattu on Painkuni Uthram, since Ayyappa is said to have been born on this star. Many Sastha and family temples hold their festivals. Devotees carry kavadi and offer milk.",
+     "ml": "സുബ്രഹ്മണ്യക്ഷേത്രങ്ങളിൽ ദേവയാനിയുമായുള്ള തിരുകല്യാണം ആഘോഷിക്കുന്നു; അയ്യപ്പൻ ഈ നക്ഷത്രത്തിൽ ജനിച്ചുവെന്നതിനാൽ ശബരിമലയിലെ ഉത്സവം പൈങ്കുനി ഉത്രത്തിൽ ആറാട്ടോടെ സമാപിക്കുന്നു. പല ശാസ്താ ക്ഷേത്രങ്ങളിലും കുടുംബക്ഷേത്രങ്ങളിലും ഉത്സവം. ഭക്തർ കാവടിയെടുക്കുകയും പാൽ അർപ്പിക്കുകയും ചെയ്യുന്നു."
+    },
+    "story": {
+     "en": "After Murugan overcame Surapadman, Indra gave him his daughter Deivanai in marriage, and the wedding is remembered on this star. Kerala tradition also holds Painkuni Uthram as the birthday of Ayyappa, Dharma Sastha, which is why Sabarimala's festival culminates today with the holy bath in the Pampa.",
+     "ml": "ശൂരപത്മനെ ജയിച്ച ശേഷം ഇന്ദ്രൻ തന്റെ മകൾ ദേവയാനിയെ മുരുകന് വിവാഹം ചെയ്തുകൊടുത്തു; ആ വിവാഹം ഈ നക്ഷത്രത്തിൽ ഓർമ്മിക്കപ്പെടുന്നു. ധർമ്മശാസ്താവായ അയ്യപ്പന്റെ ജന്മനക്ഷത്രമായും കേരളപാരമ്പര്യം പൈങ്കുനി ഉത്രത്തെ കരുതുന്നു; അതിനാലാണ് ശബരിമല ഉത്സവം ഇന്ന് പമ്പയിലെ ആറാട്ടോടെ സമാപിക്കുന്നത്."
+    },
+    "howTo": {
+     "en": [
+      "Visit a Subrahmanya, Sastha or family temple.",
+      "At home, light a lamp and offer milk, fruit and flowers.",
+      "Chant 'Swamiye Saranam Ayyappa' or a Subrahmanya prayer."
+     ],
+     "ml": [
+      "സുബ്രഹ്മണ്യ, ശാസ്താ അല്ലെങ്കിൽ കുടുംബക്ഷേത്രം സന്ദർശിക്കുക.",
+      "വീട്ടിൽ വിളക്കു കൊളുത്തി പാൽ, പഴം, പൂവ് എന്നിവ അർപ്പിക്കുക.",
+      "'സ്വാമിയേ ശരണമയ്യപ്പാ' അല്ലെങ്കിൽ സുബ്രഹ്മണ്യ പ്രാർത്ഥന ജപിക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "Painkuni Uthram greetings!",
+     "ml": "പൈങ്കുനി ഉത്രം ആശംസകൾ!"
+    }
+   }
+  },
+  {
+   "id": "rama-navami-ml",
+   "names": {
+    "en": "Sree Rama Navami",
+    "ml": "ശ്രീരാമനവമി"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "chaitra",
+    "tithi": 9,
+    "observance": {
+     "kala": "madhyahna"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The birth of Rama, on the ninth day of bright Chaitra.",
+     "ml": "ചൈത്ര ശുക്ല നവമിയിൽ ശ്രീരാമന്റെ ജന്മദിനം."
+    },
+    "traditions": {
+     "en": "Rama's birth is celebrated at midday with a small cradle, songs and readings of the Ramayana. In Tamil Nadu, temples and homes offer panakam, a cooling drink of jaggery, dry ginger and cardamom, neer mor (spiced buttermilk) and kosumalli, a salad of soaked moong dal and cucumber, given out to everyone in the summer heat. Many homes hold Rama Navami bhajans for nine days. In Kerala, the Adhyatma Ramayanam is read, and temples such as Triprayar celebrate.",
+     "ml": "ശ്രീരാമന്റെ ജനനം ഉച്ചയ്ക്ക് ചെറിയ തൊട്ടിലും പാട്ടുകളും രാമായണ പാരായണവുമായി ആഘോഷിക്കുന്നു. പാനകം (ശർക്കര, ചുക്ക്, ഏലക്കായ ചേർത്ത പാനീയം), സംഭാരം എന്നിവ നിവേദിച്ച് വേനലിൽ എല്ലാവർക്കും നൽകുന്നു. അദ്ധ്യാത്മരാമായണം പാരായണം ചെയ്യുന്നു; തൃപ്രയാർ പോലുള്ള ക്ഷേത്രങ്ങളിൽ വിശേഷാൽ പൂജകൾ നടക്കുന്നു."
+    },
+    "story": {
+     "en": "King Dasharatha of Ayodhya performed a great yajna for children, and from its fire came a bowl of payasam, which he shared among his three queens. Kausalya gave birth to Rama at midday on the ninth day of bright Chaitra; Kaikeyi to Bharata; and Sumitra to Lakshmana and Shatrughna. Rama grew to be remembered as the one who kept to what was right even when it cost him most, leaving his throne for fourteen years in the forest to keep his father's word. Rama Navami celebrates his birth and his example.",
+     "ml": "അയോദ്ധ്യയിലെ ദശരഥ മഹാരാജാവ് സന്താനലാഭത്തിനായി മഹായാഗം നടത്തി; യാഗാഗ്നിയിൽ നിന്ന് ഒരു പായസപാത്രം ഉയർന്നു; അദ്ദേഹം അത് മൂന്നു രാജ്ഞിമാർക്കും പങ്കിട്ടു. ചൈത്ര ശുക്ല നവമിയിൽ ഉച്ചയ്ക്ക് കൗസല്യ രാമനെ പ്രസവിച്ചു; കൈകേയി ഭരതനെ; സുമിത്ര ലക്ഷ്മണനെയും ശത്രുഘ്നനെയും. ഏറ്റവും പ്രയാസമേറിയ സമയത്തും ധർമ്മം കൈവിടാത്തവനായി, പിതാവിന്റെ വാക്കു പാലിക്കാൻ രാജ്യം ഉപേക്ഷിച്ച് പതിനാലു വർഷം വനവാസം ചെയ്തവനായി രാമൻ ഓർമ്മിക്കപ്പെടുന്നു. രാമനവമി ആ ജനനവും ജീവിതമാതൃകയും ആഘോഷിക്കുന്നു."
+    },
+    "howTo": {
+     "en": [
+      "Decorate a picture of Rama, Sita, Lakshmana and Hanuman with flowers.",
+      "Prepare panakam, neer mor and kosumalli.",
+      "At midday (the madhyahna time in the day view), light a lamp, offer the food and tulsi, and sing a Rama bhajan or read from the Ramayana.",
+      "Share the panakam and neer mor with everyone who visits, and with passers-by in the heat."
+     ],
+     "ml": [
+      "ശ്രീരാമൻ, സീത, ലക്ഷ്മണൻ, ഹനുമാൻ ചിത്രം പൂക്കൾ കൊണ്ട് അലങ്കരിക്കുക.",
+      "പാനകവും സംഭാരവും തയ്യാറാക്കുക.",
+      "ഉച്ചയ്ക്ക് (ദിവസവിവരത്തിലെ മദ്ധ്യാഹ്ന സമയം) വിളക്കു കൊളുത്തി, നിവേദ്യവും തുളസിയും അർപ്പിച്ച്, രാമനാമം ജപിക്കുകയോ രാമായണം വായിക്കുകയോ ചെയ്യുക.",
+      "വരുന്നവർക്കും വഴിയാത്രക്കാർക്കും പാനകവും സംഭാരവും നൽകുക."
+     ]
+    },
+    "greeting": {
+     "en": "Jai Shri Ram! Happy Rama Navami.",
+     "ml": "ശ്രീരാമനവമി ആശംസകൾ!"
+    }
+   }
+  },
+  {
+   "id": "vishu",
+   "names": {
+    "en": "Vishu",
+    "ml": "വിഷു"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "mesha",
+    "day": 1,
+    "dayRule": {
+     "type": "sunrise"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-KL"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)",
+    "Government of Kerala public holidays 2026 gazette (Onmanorama, 29 Oct 2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Medam 1: Kerala's spring new year, beginning with the Vishukkani at dawn.",
+     "ml": "മേടം 1: വിഷുക്കണിയോടെ തുടങ്ങുന്ന കേരളത്തിന്റെ വസന്തോത്സവം."
+    },
+    "traditions": {
+     "en": "The night before, the eldest woman of the house arranges the Vishukkani in a bell-metal uruli: rice, golden cucumber (kani vellari), raw mango, jackfruit, coconut, golden konna (Indian laburnum) flowers, a gold ornament, coins, a mirror, a lit nilavilakku, a holy text and an image of Krishna. At dawn each person is led blindfolded to see it first. Elders give Vishukkaineettam, coins or notes, to children and others. Children burst crackers, and the meal is the Vishu sadya, with Vishu kanji and Vishu katta in some regions.",
+     "ml": "തലേന്നു രാത്രി വീട്ടിലെ മുതിർന്ന സ്ത്രീ ഓട്ടുരുളിയിൽ വിഷുക്കണി ഒരുക്കുന്നു: അരി, കണിവെള്ളരി, മാങ്ങ, ചക്ക, തേങ്ങ, കണിക്കൊന്നപ്പൂ, സ്വർണ്ണാഭരണം, നാണയങ്ങൾ, വാൽക്കണ്ണാടി, കത്തിച്ച നിലവിളക്ക്, ഗ്രന്ഥം, കൃഷ്ണവിഗ്രഹം. പുലർച്ചെ ഓരോരുത്തരെയും കണ്ണുപൊത്തി കൊണ്ടുവന്ന് ആദ്യം കണി കാണിക്കുന്നു. മുതിർന്നവർ കുട്ടികൾക്കും മറ്റുള്ളവർക്കും വിഷുക്കൈനീട്ടം നൽകുന്നു. കുട്ടികൾ പടക്കം പൊട്ടിക്കുന്നു; ഉച്ചയ്ക്ക് വിഷുസദ്യ, ചിലയിടങ്ങളിൽ വിഷുക്കഞ്ഞിയും വിഷുക്കട്ടയും."
+    },
+    "story": {
+     "en": "Vishu marks the Sun's entry into Medam, the first sign, close to the spring equinox, and so was once the start of the year in Kerala. The kani is the heart of it: the belief that what one sees first in the new year sets its tone, so the first sight is of abundance, light and Krishna. One story told is that Krishna overcame Narakasura on this day; another, that Ravana, while he ruled, never let the Sun rise directly over Lanka, and Vishu remembers the Sun's free rising after his defeat.",
+     "ml": "സൂര്യൻ ആദ്യ രാശിയായ മേടത്തിൽ പ്രവേശിക്കുന്നതിനെ, വസന്ത വിഷുവത്തോടടുത്ത്, വിഷു കുറിക്കുന്നു; അതിനാൽ പണ്ട് കേരളത്തിൽ വർഷാരംഭമായിരുന്നു. കണിയാണ് ഇതിന്റെ ഹൃദയം: പുതുവർഷത്തിൽ ആദ്യം കാണുന്നത് വർഷത്തിന്റെ ഭാവം നിശ്ചയിക്കുന്നു എന്ന വിശ്വാസം; അതിനാൽ ആദ്യ കാഴ്ച സമൃദ്ധിയും വെളിച്ചവും കൃഷ്ണനുമാകുന്നു. കൃഷ്ണൻ നരകാസുരനെ ജയിച്ചത് ഈ ദിവസമാണെന്നും, രാവണന്റെ ഭരണകാലത്ത് ലങ്കയ്ക്കു മുകളിൽ സൂര്യൻ നേരെ ഉദിച്ചിരുന്നില്ലെന്നും, അദ്ദേഹത്തിന്റെ പരാജയത്തിനു ശേഷം സൂര്യൻ സ്വതന്ത്രമായി ഉദിച്ചതിന്റെ ഓർമ്മയാണ് വിഷുവെന്നും കഥകളുണ്ട്."
+    },
+    "howTo": {
+     "en": [
+      "The evening before, gather the kani items, and arrange them in an uruli before Krishna with the nilavilakku ready.",
+      "Before dawn, the eldest woman lights the lamp and leads each person, eyes closed, to open them before the kani.",
+      "Elders give Vishukkaineettam to children and to younger members of the household.",
+      "Bathe, wear new clothes, and visit a temple; Guruvayur and Sabarimala are crowded.",
+      "Make the Vishu sadya and share it; let the children burst a few crackers safely."
+     ],
+     "ml": [
+      "തലേന്നു വൈകുന്നേരം കണിവസ്തുക്കൾ ശേഖരിച്ച്, നിലവിളക്കൊരുക്കി, കൃഷ്ണനു മുന്നിൽ ഉരുളിയിൽ ഒരുക്കിവയ്ക്കുക.",
+      "പുലരും മുമ്പ് മുതിർന്ന സ്ത്രീ വിളക്കു കൊളുത്തി, ഓരോരുത്തരെയും കണ്ണടച്ച് കൊണ്ടുവന്ന് കണിക്കു മുന്നിൽ കണ്ണു തുറപ്പിക്കുന്നു.",
+      "മുതിർന്നവർ കുട്ടികൾക്കും ഇളയവർക്കും വിഷുക്കൈനീട്ടം നൽകുന്നു.",
+      "കുളിച്ച് പുതുവസ്ത്രം ധരിച്ച് ക്ഷേത്രദർശനം; ഗുരുവായൂരും ശബരിമലയും തിരക്കിലാകും.",
+      "വിഷുസദ്യ ഒരുക്കി പങ്കിടുക; കുട്ടികൾ സുരക്ഷിതമായി പടക്കം പൊട്ടിക്കട്ടെ."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Vishu! May your year begin with a beautiful kani.",
+     "ml": "എല്ലാവർക്കും ഐശ്വര്യപൂർണ്ണമായ വിഷു ആശംസകൾ!"
+    }
+   }
+  },
+  {
+   "id": "thrissur-pooram",
+   "names": {
+    "en": "Thrissur Pooram",
+    "ml": "തൃശ്ശൂർ പൂരം"
+   },
+   "rule": {
+    "type": "nakshatra-in-solar-month",
+    "month": "mesha",
+    "nakshatra": "purva_phalguni",
+    "observance": {
+     "kala": "madhyahna"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Pooram star in Medam: Thrissur's festival of caparisoned elephants, percussion and fireworks.",
+     "ml": "മേടമാസത്തിലെ പൂരം നക്ഷത്രം: നെറ്റിപ്പട്ടം കെട്ടിയ ആനകളും മേളവും വെടിക്കെട്ടുമായി തൃശ്ശൂർ പൂരം."
+    },
+    "traditions": {
+     "en": "Around the Vadakkumnathan temple, the two rival groups, Paramekkavu and Thiruvambady, bring out rows of caparisoned elephants and face each other in the Thekkinkadu ground. The Ilanjithara melam, a percussion ensemble of hundreds of drummers, plays for hours, and the kudamattam, the rapid changing of colourful parasols atop the elephants, delights the crowds. The night ends with fireworks, and the next day the deities take leave of each other (upacharam cholli piriyal). People of all faiths come to see it.",
+     "ml": "വടക്കുന്നാഥക്ഷേത്രത്തിനു ചുറ്റും, പാറമേക്കാവും തിരുവമ്പാടിയും എന്ന രണ്ടു വിഭാഗങ്ങൾ നെറ്റിപ്പട്ടം കെട്ടിയ ആനനിരകളുമായി തേക്കിൻകാട് മൈതാനത്ത് മുഖാമുഖം നിൽക്കുന്നു. നൂറുകണക്കിനു വാദ്യക്കാരുടെ ഇലഞ്ഞിത്തറമേളം മണിക്കൂറുകൾ നീളുന്നു; ആനപ്പുറത്തെ വർണ്ണക്കുടകൾ മാറ്റുന്ന കുടമാറ്റം ജനക്കൂട്ടത്തെ ആവേശം കൊള്ളിക്കുന്നു. രാത്രി വെടിക്കെട്ട്; പിറ്റേന്ന് ദേവതകൾ ഉപചാരം ചൊല്ലിപ്പിരിയുന്നു. എല്ലാ മതക്കാരും കാണാനെത്തുന്നു."
+    },
+    "story": {
+     "en": "Thrissur Pooram was begun about two hundred years ago by Raja Rama Varma, Sakthan Thampuran of Kochi. The story told is that the smaller temples around Thrissur, turned away from the Arattupuzha festival by rain one year, appealed to him, and he brought them together into a single great festival at the Vadakkumnathan temple, organised around two groups. The rivalry between Paramekkavu and Thiruvambady has been a friendly one ever since, each trying to outdo the other in elephants, percussion and parasols.",
+     "ml": "ഏകദേശം ഇരുനൂറു വർഷം മുമ്പ് കൊച്ചി രാജാവായ ശക്തൻ തമ്പുരാൻ (രാമവർമ്മ) തുടങ്ങിയതാണ് തൃശ്ശൂർ പൂരം. ഒരു വർഷം മഴ കാരണം ആറാട്ടുപുഴ പൂരത്തിൽ പങ്കെടുക്കാനാകാതെ മടങ്ങേണ്ടിവന്ന തൃശ്ശൂരിനു ചുറ്റുമുള്ള ചെറുക്ഷേത്രങ്ങൾ അദ്ദേഹത്തോടു പരാതിപ്പെട്ടു; അദ്ദേഹം അവയെ ഒരുമിപ്പിച്ച് രണ്ടു വിഭാഗങ്ങളായി വടക്കുന്നാഥ സന്നിധിയിൽ ഒരു മഹോത്സവമാക്കി എന്നാണ് കഥ. അന്നുമുതൽ ആനകളിലും മേളത്തിലും കുടകളിലും പരസ്പരം മത്സരിക്കുന്ന സൗഹൃദമത്സരമാണ് പാറമേക്കാവും തിരുവമ്പാടിയും തമ്മിൽ."
+    },
+    "howTo": {
+     "en": [
+      "If you are in Thrissur, plan to reach the Thekkinkadu ground early for the Ilanjithara melam and the kudamattam in the evening.",
+      "Watch the live broadcast if you are away.",
+      "Keep a safe distance from the elephants and crowds, and follow the organisers' instructions."
+     ],
+     "ml": [
+      "തൃശ്ശൂരിലുണ്ടെങ്കിൽ ഇലഞ്ഞിത്തറമേളത്തിനും വൈകുന്നേരത്തെ കുടമാറ്റത്തിനും നേരത്തെ തേക്കിൻകാട് മൈതാനത്തെത്തുക.",
+      "ദൂരെയാണെങ്കിൽ തത്സമയ സംപ്രേക്ഷണം കാണുക.",
+      "ആനകളിൽ നിന്നും ജനക്കൂട്ടത്തിൽ നിന്നും സുരക്ഷിത അകലം പാലിച്ച്, സംഘാടകരുടെ നിർദ്ദേശങ്ങൾ പിന്തുടരുക."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Thrissur Pooram!",
+     "ml": "പൂരാശംസകൾ!"
+    }
+   }
+  },
+  {
+   "id": "akshaya-tritiya-ml",
+   "names": {
+    "en": "Akshaya Thritheeya",
+    "ml": "അക്ഷയതൃതീയ"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "vaishakha",
+    "tithi": 3,
+    "observance": {
+     "minCoverMinutes": 144,
+     "fallback": "begins",
+     "kala": "morning"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The third day of bright Vaishakha, traditionally favoured for new beginnings and for giving.",
+     "ml": "വൈശാഖ ശുക്ല തൃതീയ: പുതിയ തുടക്കങ്ങൾക്കും ദാനത്തിനും പരമ്പരാഗതമായി ശുഭമായി കരുതുന്ന ദിവസം."
+    },
+    "traditions": {
+     "en": "'Akshaya' means 'that which does not diminish', and the day is traditionally seen as good for starting things: a business, a house, a course of study, a marriage. Many families buy a little gold or silver, and many more give: water and cooling drinks, fans, umbrellas, grain and clothes, since it falls in the hot season. Vishnu and Lakshmi are worshipped, and in Odisha the building of the chariots for the Puri Rath Yatra begins today. Parashurama Jayanti falls on or near the same day, and Jain families break the year-long varshi tapa fast with sugarcane juice.",
+     "ml": "'അക്ഷയ' എന്നാൽ 'കുറയാത്തത്'; പുതിയ കാര്യങ്ങൾ തുടങ്ങാൻ നല്ല ദിവസമായി പരമ്പരാഗതമായി കരുതപ്പെടുന്നു: വ്യാപാരം, വീട്, പഠനം, വിവാഹം. പല കുടുംബങ്ങളും അല്പം സ്വർണ്ണമോ വെള്ളിയോ വാങ്ങുന്നു; അതിലേറെപ്പേർ ദാനം ചെയ്യുന്നു: വേനൽക്കാലമായതിനാൽ വെള്ളം, സംഭാരം, വിശറി, കുട, അരി, വസ്ത്രം. വിഷ്ണുവിനെയും ലക്ഷ്മിയെയും ആരാധിക്കുന്നു. പരശുരാമ ജയന്തിയും ഈ ദിവസത്തോടടുത്താണ്; കേരളത്തിന്റെ ഐതിഹ്യവുമായി ബന്ധമുള്ള പരശുരാമനെ ഈ ദിവസം പ്രത്യേകം ഓർക്കുന്നു."
+    },
+    "story": {
+     "en": "Several stories meet on this day. In one, Krishna's childhood friend Sudama, a poor Brahmin, walked to Dwarka to see him, carrying only a little beaten rice (poha) tied in a cloth as a gift. Krishna embraced him, ate the poha with delight, and sent him home without Sudama asking for anything; when Sudama returned, his family's hardship had ended. In another, during the Pandavas' exile, Krishna gave Draupadi the Akshaya Patra, a vessel that never ran empty until she had eaten, so no guest at their door went hungry. Tradition also holds that the Treta Yuga began on this day, that the Ganga descended to earth, and that Vyasa began dictating the Mahabharata to Ganesha.",
+     "ml": "ഈ ദിവസത്തിൽ പല കഥകളും ഒത്തുചേരുന്നു. ഒന്നിൽ, കൃഷ്ണന്റെ ബാല്യകാല സുഹൃത്തായ ദരിദ്രബ്രാഹ്മണൻ കുചേലൻ ഒരു തുണിയിൽ കെട്ടിയ അല്പം അവൽ മാത്രം സമ്മാനമായെടുത്ത് ദ്വാരകയിലേക്കു നടന്നു. കൃഷ്ണൻ അദ്ദേഹത്തെ ആലിംഗനം ചെയ്ത്, അവൽ സന്തോഷത്തോടെ കഴിച്ച്, കുചേലൻ ഒന്നും ചോദിക്കാതെ തന്നെ യാത്രയാക്കി; വീട്ടിലെത്തിയപ്പോൾ കുടുംബത്തിന്റെ ദാരിദ്ര്യം മാറിയിരുന്നു. മറ്റൊന്നിൽ, വനവാസകാലത്ത് കൃഷ്ണൻ ദ്രൗപദിക്ക് അക്ഷയപാത്രം നൽകി; വാതിൽക്കലെത്തിയ ഒരു അതിഥിയും വിശന്നു മടങ്ങിയില്ല. ത്രേതായുഗം ഈ ദിവസം തുടങ്ങിയെന്നും പരമ്പര പറയുന്നു."
+    },
+    "howTo": {
+     "en": [
+      "In the morning, bathe and offer a lamp, flowers and tulsi to Vishnu and Lakshmi at home.",
+      "Offer something simple and cooling: barley, sattu, cucumber, jaggery water or panakam.",
+      "If you were planning to start something, a course, a savings plan or a small venture, many families choose today to begin.",
+      "Give something in the spirit of the day: water or buttermilk to passers-by, an umbrella, a fan, grain or clothes.",
+      "If your family buys gold or silver, keep it small and meaningful; the giving matters more in the tradition.",
+      "Share a simple meal, and if you can, feed a guest or someone who needs it."
+     ],
+     "ml": [
+      "രാവിലെ കുളിച്ച്, വീട്ടിൽ വിഷ്ണുവിനും ലക്ഷ്മിക്കും വിളക്കും പൂവും തുളസിയും അർപ്പിക്കുക.",
+      "ലളിതവും തണുപ്പുള്ളതുമായ നിവേദ്യം: പാനകം, സംഭാരം, ശർക്കര, വെള്ളരിക്ക.",
+      "എന്തെങ്കിലും പുതുതായി തുടങ്ങാൻ ആലോചിക്കുന്നുണ്ടെങ്കിൽ, പഠനമോ സമ്പാദ്യമോ ചെറിയ സംരംഭമോ, പല കുടുംബങ്ങളും ഇന്നത്തെ ദിവസം തിരഞ്ഞെടുക്കുന്നു.",
+      "ദിവസത്തിന്റെ ഭാവത്തിൽ എന്തെങ്കിലും നൽകുക: വഴിയാത്രക്കാർക്ക് വെള്ളമോ സംഭാരമോ, കുട, വിശറി, അരി അല്ലെങ്കിൽ വസ്ത്രം.",
+      "കുടുംബം സ്വർണ്ണം വാങ്ങുന്നുണ്ടെങ്കിൽ, ചെറുതും അർത്ഥപൂർണ്ണവുമാക്കുക; പാരമ്പര്യത്തിൽ ദാനമാണ് പ്രധാനം.",
+      "ലളിതമായ ഭക്ഷണം പങ്കിടുക; കഴിയുമെങ്കിൽ ഒരു അതിഥിക്കോ ആവശ്യക്കാർക്കോ ഭക്ഷണം നൽകുക."
+     ]
+    },
+    "greeting": {
+     "en": "May what you begin today grow steadily. Happy Akshaya Tritiya!",
+     "ml": "ഇന്നു തുടങ്ങുന്നതു നിരന്തരം വളരട്ടെ. അക്ഷയതൃതീയ ആശംസകൾ!"
+    }
+   }
+  },
+  {
+   "id": "sankara-jayanthi-ml",
+   "names": {
+    "en": "Sree Sankara Jayanthi",
+    "ml": "ശ്രീശങ്കര ജയന്തി"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "vaishakha",
+    "tithi": 5
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Vaishakha Shukla Panchami: the birth of Adi Shankaracharya.",
+     "ml": "വൈശാഖ ശുക്ല പഞ്ചമി: ആദിശങ്കരന്റെ ജന്മദിനം."
+    },
+    "traditions": {
+     "en": "Mathas and temples associated with Shankara, at Kalady in Kerala, his birthplace, at Sringeri, Kanchi, Dwarka, Puri and Joshimath, hold special worship, recitations of his works, and processions. Many people read or chant his hymns: the Bhaja Govindam, Soundarya Lahari, Kanakadhara Stotram, or his short works on Advaita.",
+     "ml": "ശങ്കരന്റെ ജന്മസ്ഥലമായ കാലടിയിലും ശൃംഗേരി, കാഞ്ചി, ദ്വാരക, പുരി, ജോഷിമഠ് എന്നിവിടങ്ങളിലെ മഠങ്ങളിലും ക്ഷേത്രങ്ങളിലും വിശേഷാൽ പൂജകൾ, കൃതികളുടെ പാരായണം, ഘോഷയാത്രകൾ എന്നിവ നടക്കുന്നു. പലരും ഭജഗോവിന്ദം, സൗന്ദര്യലഹരി, കനകധാരാസ്തോത്രം തുടങ്ങിയ കൃതികൾ ജപിക്കുന്നു."
+    },
+    "story": {
+     "en": "Shankara was born at Kalady, on the banks of the Purna (Periyar) river in Kerala, to Shivaguru and Aryamba. The story told is that as a boy he wished to become a sannyasi, but his widowed mother would not agree. One day while he bathed in the river, a crocodile caught his foot, and he called out that he could only be freed if she let him renounce; she agreed, the crocodile let go, and he left, promising to be with her at the end of her life, as he was. In a short life he walked the length of India, wrote commentaries on the Upanishads, the Gita and the Brahma Sutras, and founded the four mathas, teaching Advaita, the oneness of the self and Brahman.",
+     "ml": "കേരളത്തിൽ പൂർണ്ണാനദിയുടെ (പെരിയാർ) തീരത്തുള്ള കാലടിയിൽ ശിവഗുരുവിനും ആര്യാംബയ്ക്കും ശങ്കരൻ ജനിച്ചു. ബാലനായിരിക്കെ സന്യാസം സ്വീകരിക്കാൻ ആഗ്രഹിച്ചെങ്കിലും വിധവയായ അമ്മ സമ്മതിച്ചില്ല. ഒരു ദിവസം പുഴയിൽ കുളിക്കുമ്പോൾ ഒരു മുതല കാലിൽ പിടിച്ചു; സന്യാസത്തിന് അനുവദിച്ചാൽ മാത്രമേ മോചനമുള്ളൂ എന്ന് അദ്ദേഹം വിളിച്ചുപറഞ്ഞു; അമ്മ സമ്മതിച്ചു, മുതല വിട്ടു. അമ്മയുടെ അന്ത്യകാലത്ത് കൂടെയുണ്ടാകുമെന്ന് വാക്കു കൊടുത്ത് അദ്ദേഹം പുറപ്പെട്ടു; അങ്ങനെ തന്നെ ചെയ്തു. ഹ്രസ്വമായ ജീവിതത്തിൽ ഭാരതം മുഴുവൻ നടന്ന്, ഉപനിഷത്തുകൾക്കും ഗീതയ്ക്കും ബ്രഹ്മസൂത്രത്തിനും ഭാഷ്യം രചിച്ച്, നാലു മഠങ്ങൾ സ്ഥാപിച്ച്, ആത്മാവും ബ്രഹ്മവും ഒന്നാണെന്ന അദ്വൈതം പഠിപ്പിച്ചു."
+    },
+    "howTo": {
+     "en": [
+      "Light a lamp before a picture of Adi Shankara.",
+      "Read or chant one of his works: Bhaja Govindam is a good, short place to start.",
+      "If you can, visit a Shankara matha or temple, or join an online recitation."
+     ],
+     "ml": [
+      "ആദിശങ്കരന്റെ ചിത്രത്തിനു മുന്നിൽ വിളക്കു കൊളുത്തുക.",
+      "അദ്ദേഹത്തിന്റെ ഒരു കൃതി വായിക്കുകയോ ജപിക്കുകയോ ചെയ്യുക: തുടങ്ങാൻ ഭജഗോവിന്ദം നല്ലതാണ്.",
+      "കഴിയുമെങ്കിൽ കാലടിയോ ഒരു ശങ്കരമഠമോ സന്ദർശിക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "Remembering Adi Shankaracharya on his Jayanthi.",
+     "ml": "ശങ്കരജയന്തി ആശംസകൾ."
+    }
+   }
+  },
+  {
+   "id": "narasimha-jayanthi-ml",
+   "names": {
+    "en": "Narasimha Jayanthi",
+    "ml": "നരസിംഹ ജയന്തി"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "vaishakha",
+    "tithi": 14,
+    "observance": {
+     "prefer": "last",
+     "kala": "sunset"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Vaishakha Shukla Chaturdashi at dusk: the appearance of Narasimha to protect Prahlada.",
+     "ml": "വൈശാഖ ശുക്ല ചതുർദശി സന്ധ്യ: പ്രഹ്ലാദനെ രക്ഷിക്കാൻ നരസിംഹാവതാരം."
+    },
+    "traditions": {
+     "en": "Narasimha temples in Kerala, among them Thuravoor, Kadavallur and Thrikkakara's shrine, hold special evening worship, and devotees keep a fast until dusk. Panakam and fruit are offered and shared, and the story of Prahlada is read at home.",
+     "ml": "തുറവൂർ ഉൾപ്പെടെയുള്ള നരസിംഹക്ഷേത്രങ്ങളിൽ വിശേഷാൽ സന്ധ്യാപൂജ; ഭക്തർ സന്ധ്യ വരെ ഉപവസിക്കുന്നു. പാനകവും പഴവും നിവേദിച്ച് പങ്കിടുന്നു; വീടുകളിൽ പ്രഹ്ലാദന്റെ കഥ വായിക്കുന്നു."
+    },
+    "story": {
+     "en": "Hiranyakashipu had won a boon that he could be killed neither by man nor beast, neither by day nor night, neither indoors nor outdoors. He demanded worship, but his young son Prahlada would not give up his devotion to Vishnu. When the king, mocking, struck a pillar and asked if Vishnu was there, Vishnu stepped out of it as Narasimha, half man and half lion, and at twilight, on the threshold, ended the king's rule. Then, still fierce, he was calmed by Prahlada's gentle prayer.",
+     "ml": "മനുഷ്യനോ മൃഗമോ, പകലോ രാത്രിയോ, അകത്തോ പുറത്തോ തന്നെ വധിക്കാനാകില്ലെന്ന വരം ഹിരണ്യകശിപു നേടിയിരുന്നു. അയാൾ സ്വയം പൂജ ആവശ്യപ്പെട്ടു; എന്നാൽ ബാലനായ മകൻ പ്രഹ്ലാദൻ വിഷ്ണുഭക്തി ഉപേക്ഷിച്ചില്ല. പരിഹസിച്ചുകൊണ്ട് രാജാവ് ഒരു തൂണിലടിച്ച് വിഷ്ണു അവിടെയുണ്ടോ എന്നു ചോദിച്ചപ്പോൾ, പാതി മനുഷ്യനും പാതി സിംഹവുമായ നരസിംഹമായി വിഷ്ണു അതിൽ നിന്നു പുറത്തുവന്നു; സന്ധ്യാസമയത്ത് ഉമ്മറപ്പടിയിൽ രാജാവിന്റെ ഭരണം അവസാനിപ്പിച്ചു. പിന്നെയും ഉഗ്രനായിരുന്ന നരസിംഹം പ്രഹ്ലാദന്റെ സൗമ്യമായ പ്രാർത്ഥനയാൽ ശാന്തനായി."
+    },
+    "howTo": {
+     "en": [
+      "Keep a fast through the day if your family does.",
+      "At dusk, light the nilavilakku before Narasimha or Vishnu and offer panakam and fruit.",
+      "Read Prahlada's story, and break the fast."
+     ],
+     "ml": [
+      "പതിവുണ്ടെങ്കിൽ പകൽ മുഴുവൻ ഉപവസിക്കുക.",
+      "സന്ധ്യയ്ക്ക് നരസിംഹനോ വിഷ്ണുവിനോ മുന്നിൽ നിലവിളക്കു കൊളുത്തി പാനകവും പഴവും നിവേദിക്കുക.",
+      "പ്രഹ്ലാദന്റെ കഥ വായിച്ച് വ്രതം അവസാനിപ്പിക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "Narasimha Jayanthi greetings.",
+     "ml": "നരസിംഹജയന്തി ആശംസകൾ."
+    }
+   }
+  },
+  {
+   "id": "chitra-pournami-ml",
+   "names": {
+    "en": "Chitra Pournami",
+    "ml": "ചിത്രാ പൗർണ്ണമി"
+   },
+   "rule": {
+    "type": "tithi-in-solar-month",
+    "month": "mesha",
+    "tithi": 15
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The full moon of Chithirai, Chitragupta's day and a night of moonlit gatherings.",
+     "ml": "മേടമാസത്തിലെ പൗർണ്ണമി: ചിത്രഗുപ്തന്റെ ദിവസം, നിലാവിലെ കൂട്ടായ്മയുടെ രാത്രി."
+    },
+    "traditions": {
+     "en": "Chitragupta, who keeps the record of every life's actions, is worshipped, especially at the Chitragupta temple in Kanchipuram, and families reflect on their own conduct. In Madurai, the Chithirai festival reaches its height with Kallazhagar entering the Vaigai river. At Thiruvannamalai, lakhs walk the girivalam around the hill under the full moon. Families also take food out to riverbanks and terraces and eat together in the moonlight (nila soru).",
+     "ml": "ഓരോ ജീവിതത്തിന്റെയും കർമ്മങ്ങൾ രേഖപ്പെടുത്തുന്ന ചിത്രഗുപ്തനെ ആരാധിക്കുന്നു; കുടുംബങ്ങൾ സ്വന്തം പെരുമാറ്റത്തെക്കുറിച്ച് ചിന്തിക്കുന്നു. തമിഴ്നാട്ടിലെ തിരുവണ്ണാമലയിൽ പൗർണ്ണമി നിലാവിൽ ലക്ഷങ്ങൾ ഗിരിവലം നടത്തുന്നു. പല ദേവീക്ഷേത്രങ്ങളിലും വിശേഷാൽ പൂജകളുണ്ട്; കുടുംബങ്ങൾ നിലാവത്ത് ഒത്തുകൂടി ഭക്ഷണം പങ്കിടുന്നു."
+    },
+    "story": {
+     "en": "The story told is of Chitragupta's birth: Brahma, having created the world, sat in meditation, and from his body arose a figure holding a pen and palm leaves, named Chitragupta, 'hidden picture', whose task is to record every action fairly, so that each person's life is seen as it truly was. On Chitra Pournami people remember him and look honestly at their own year. The full moon of Chithirai is also said to be when Indra, having erred, found peace by worshipping Shiva at Madurai.",
+     "ml": "ചിത്രഗുപ്തന്റെ ജനനകഥ: ലോകം സൃഷ്ടിച്ച ശേഷം ബ്രഹ്മാവ് ധ്യാനത്തിലിരുന്നു; അദ്ദേഹത്തിന്റെ ശരീരത്തിൽ നിന്ന് എഴുത്താണിയും ഓലയുമേന്തിയ ഒരാൾ ഉയർന്നുവന്നു; ചിത്രഗുപ്തൻ, 'മറഞ്ഞ ചിത്രം'. ഓരോരുത്തരുടെയും ജീവിതം യഥാർത്ഥത്തിൽ എങ്ങനെയായിരുന്നോ അങ്ങനെ കാണപ്പെടാൻ, ഓരോ കർമ്മവും നീതിയോടെ രേഖപ്പെടുത്തുകയാണ് അദ്ദേഹത്തിന്റെ ജോലി. ചിത്രാപൗർണ്ണമിയിൽ ആളുകൾ അദ്ദേഹത്തെ ഓർത്ത് സ്വന്തം വർഷത്തെ സത്യസന്ധമായി നോക്കുന്നു."
+    },
+    "howTo": {
+     "en": [
+      "In the evening, light a lamp and offer a simple meal, rice, payasam and fruit, to Chitragupta with a pen and notebook beside the picture, as many families do.",
+      "Take a quiet moment to look back on the year's actions honestly.",
+      "If you are near Thiruvannamalai, consider the girivalam walk; otherwise visit a temple.",
+      "Eat dinner outdoors with family in the moonlight."
+     ],
+     "ml": [
+      "വൈകുന്നേരം വിളക്കു കൊളുത്തി ലളിതമായ ഭക്ഷണം നിവേദിക്കുക.",
+      "വർഷത്തിലെ കർമ്മങ്ങളെ സത്യസന്ധമായി തിരിഞ്ഞുനോക്കാൻ ശാന്തമായ ഒരു നിമിഷം കണ്ടെത്തുക.",
+      "ഒരു ക്ഷേത്രം സന്ദർശിക്കുക.",
+      "കുടുംബത്തോടൊപ്പം നിലാവത്ത് പുറത്തിരുന്ന് അത്താഴം കഴിക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Chitra Pournami!",
+     "ml": "ചിത്രാപൗർണ്ണമി ആശംസകൾ!"
+    }
+   }
+  },
+  {
+   "id": "ramayana-masam",
+   "names": {
+    "en": "Karkidakam begins (Ramayana Masam)",
+    "ml": "രാമായണ മാസാരംഭം"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "karka",
+    "day": 1
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 31,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Karkidakam, the Ramayana month: the Adhyatma Ramayanam read aloud at home every evening.",
+     "ml": "കർക്കിടകം, രാമായണമാസം: എല്ലാ സന്ധ്യകളിലും വീടുകളിൽ അദ്ധ്യാത്മരാമായണ പാരായണം."
+    },
+    "traditions": {
+     "en": "Through the monsoon month of Karkidakam, Kerala homes read Thunchath Ezhuthachan's Adhyatma Ramayanam Kilippattu aloud at dusk before the nilavilakku, finishing the whole work by the month's end. Temples hold readings too. Many families take Karkidaka kanji, a medicinal rice gruel with herbs, and Ayurvedic care, as the rains are seen as a time to rest and restore. Some visit the four temples of Rama and his brothers, the Nalambalam, in a single day.",
+     "ml": "കർക്കിടകമാസം മുഴുവൻ കേരളത്തിലെ വീടുകളിൽ സന്ധ്യയ്ക്ക് നിലവിളക്കിനു മുന്നിൽ തുഞ്ചത്ത് എഴുത്തച്ഛന്റെ അദ്ധ്യാത്മരാമായണം കിളിപ്പാട്ട് ഉറക്കെ വായിക്കുന്നു; മാസാവസാനത്തോടെ മുഴുവൻ പൂർത്തിയാക്കുന്നു. ക്ഷേത്രങ്ങളിലും പാരായണം. മഴക്കാലം വിശ്രമത്തിനും ആരോഗ്യപുനഃസ്ഥാപനത്തിനുമുള്ള കാലമായതിനാൽ പല കുടുംബങ്ങളും ഔഷധക്കൂട്ടുകൾ ചേർത്ത കർക്കിടകക്കഞ്ഞിയും ആയുർവേദ പരിചരണവും സ്വീകരിക്കുന്നു. ശ്രീരാമന്റെയും സഹോദരന്മാരുടെയും നാലു ക്ഷേത്രങ്ങൾ ഒരു ദിവസം കൊണ്ട് ദർശിക്കുന്ന നാലമ്പല ദർശനവും."
+    },
+    "story": {
+     "en": "Karkidakam was traditionally the hardest month in Kerala: heavy rain, little work and scarce food, called 'panja masam', the month of want. Families turned to the Ramayana for steadiness, reading of Rama's patience through exile and loss. Thunchath Ezhuthachan, the father of the Malayalam language, wrote the Adhyatma Ramayanam in the voice of a parrot (kili) telling the story, in simple Malayalam everyone could read, and his work is what Kerala reads in this month.",
+     "ml": "പരമ്പരാഗതമായി കേരളത്തിലെ ഏറ്റവും പ്രയാസമുള്ള മാസമായിരുന്നു കർക്കിടകം: കനത്ത മഴ, കുറഞ്ഞ പണി, കുറഞ്ഞ ഭക്ഷണം; 'പഞ്ഞമാസം'. സ്ഥൈര്യത്തിനായി കുടുംബങ്ങൾ രാമായണത്തിലേക്കു തിരിഞ്ഞു, വനവാസത്തിലും നഷ്ടങ്ങളിലും രാമന്റെ ക്ഷമ വായിച്ചു. മലയാളഭാഷയുടെ പിതാവായ തുഞ്ചത്ത് എഴുത്തച്ഛൻ ഒരു കിളി കഥ പറയുന്ന രീതിയിൽ, എല്ലാവർക്കും വായിക്കാവുന്ന ലളിത മലയാളത്തിൽ അദ്ധ്യാത്മരാമായണം രചിച്ചു; ഈ മാസം കേരളം വായിക്കുന്നത് അതാണ്."
+    },
+    "howTo": {
+     "en": [
+      "Light the nilavilakku at dusk each evening of Karkidakam.",
+      "Read a portion of the Adhyatma Ramayanam aloud, aiming to finish by the month's end; the family can take turns.",
+      "Try Karkidaka kanji once a week, made with medicinal herbs.",
+      "If you can, visit the Nalambalam temples on a single day."
+     ],
+     "ml": [
+      "കർക്കിടകത്തിലെ എല്ലാ സന്ധ്യകളിലും നിലവിളക്കു കൊളുത്തുക.",
+      "മാസാവസാനത്തോടെ പൂർത്തിയാക്കാൻ ലക്ഷ്യമിട്ട് അദ്ധ്യാത്മരാമായണത്തിന്റെ ഒരു ഭാഗം ഉറക്കെ വായിക്കുക; കുടുംബാംഗങ്ങൾക്ക് മാറിമാറി വായിക്കാം.",
+      "ആഴ്ചയിലൊരിക്കൽ ഔഷധക്കൂട്ടു ചേർത്ത കർക്കിടകക്കഞ്ഞി കഴിക്കുക.",
+      "കഴിയുമെങ്കിൽ ഒരു ദിവസം നാലമ്പലദർശനം നടത്തുക."
+     ]
+    },
+    "greeting": {
+     "en": "Ramayana Masam greetings.",
+     "ml": "രാമായണമാസ ആശംസകൾ."
+    }
+   }
+  },
+  {
+   "id": "karkidaka-vavu",
+   "names": {
+    "en": "Karkidaka Vavu",
+    "ml": "കർക്കിടക വാവ്"
+   },
+   "rule": {
+    "type": "tithi-in-solar-month",
+    "month": "karka",
+    "tithi": 30
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-KL"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)",
+    "Government of Kerala public holidays 2026 gazette (Onmanorama, 29 Oct 2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The new moon of Karkidakam: Kerala's great day of vavu bali, offerings for ancestors.",
+     "ml": "കർക്കിടകമാസത്തിലെ അമാവാസി: പിതൃക്കൾക്കായി വാവുബലി അർപ്പിക്കുന്ന ദിവസം."
+    },
+    "traditions": {
+     "en": "Before dawn, lakhs gather at riverbanks and beaches, Aluva Manappuram, Varkala Papanasam, Thirunelli, Thiruvallam and Shanghumukham, to offer bali tharpanam: rice balls, sesame, flowers and water offered to the ancestors under a priest's guidance, after a bath and with a fast from the night before. At home, the family prepares a simple meal and offers a portion for crows. It is a public holiday in Kerala.",
+     "ml": "പുലരും മുമ്പ് ലക്ഷക്കണക്കിനുപേർ ആലുവ മണപ്പുറം, വർക്കല പാപനാശം, തിരുനെല്ലി, തിരുവല്ലം, ശംഖുമുഖം തുടങ്ങിയ പുഴക്കടവുകളിലും കടൽത്തീരങ്ങളിലും ഒത്തുകൂടി, തലേന്നു രാത്രി മുതൽ ഒരിക്കലെടുത്ത്, കുളിച്ച്, കർമ്മിയുടെ നിർദ്ദേശപ്രകാരം ബലിതർപ്പണം നടത്തുന്നു: ചോറുരുള, എള്ള്, പൂവ്, ജലം. വീട്ടിൽ ലളിതമായ ഭക്ഷണം ഒരുക്കി ഒരു പങ്ക് കാക്കയ്ക്കു നൽകുന്നു. കേരളത്തിൽ പൊതു അവധിയാണ്."
+    },
+    "story": {
+     "en": "Karkidakam, the heart of the monsoon, is the month of the Ramayana in Kerala and a time of reflection. Its new moon is held as the day the ancestors are closest, at the start of the Sun's southward course. The idea is simple and old: families remember those who came before by name, and offer them food and water, as the ancestors once fed them.",
+     "ml": "മഴക്കാലത്തിന്റെ ഹൃദയമായ കർക്കിടകം കേരളത്തിൽ രാമായണമാസവും ആത്മപരിശോധനയുടെ കാലവുമാണ്. സൂര്യന്റെ ദക്ഷിണായനാരംഭത്തിൽ, ഇതിലെ അമാവാസി പിതൃക്കൾ ഏറ്റവും അടുത്തുവരുന്ന ദിവസമായി കരുതപ്പെടുന്നു. ആശയം ലളിതവും പഴയതുമാണ്: മുൻതലമുറക്കാരെ പേരു ചൊല്ലി ഓർക്കുക, അവർ ഒരിക്കൽ നമ്മെ ഊട്ടിയതുപോലെ അവർക്ക് അന്നവും ജലവും നൽകുക."
+    },
+    "howTo": {
+     "en": [
+      "Eat only one meal (orikkal) the day before, if your family does.",
+      "Before dawn, bathe at a river or the sea where bali is offered, and offer the tharpanam with a priest; or offer water and sesame at home facing south, naming your ancestors.",
+      "At home, cook a simple vegetarian meal and set a portion out for crows first.",
+      "Give food to someone in need."
+     ],
+     "ml": [
+      "പതിവുണ്ടെങ്കിൽ തലേന്ന് ഒരിക്കലെടുക്കുക.",
+      "പുലരും മുമ്പ് ബലിയിടുന്ന പുഴക്കടവിലോ കടൽത്തീരത്തോ കുളിച്ച് കർമ്മിയുടെ സഹായത്തോടെ തർപ്പണം ചെയ്യുക; അല്ലെങ്കിൽ വീട്ടിൽ തെക്കോട്ടു തിരിഞ്ഞ് പിതൃക്കളുടെ പേരു ചൊല്ലി എള്ളും ജലവും അർപ്പിക്കുക.",
+      "വീട്ടിൽ ലളിതമായ സസ്യാഹാരം ഒരുക്കി ആദ്യം ഒരു പങ്ക് കാക്കയ്ക്കു വയ്ക്കുക.",
+      "ആവശ്യമുള്ള ഒരാൾക്ക് ഭക്ഷണം നൽകുക."
+     ]
+    },
+    "greeting": {
+     "en": "In remembrance, on Karkidaka Vavu.",
+     "ml": "കർക്കിടകവാവ്: പിതൃസ്മരണയോടെ."
+    }
+   }
+  },
+  {
+   "id": "guru-purnima-ml",
+   "names": {
+    "en": "Guru Poornima",
+    "ml": "ഗുരു പൂർണ്ണിമ"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashadha",
+    "tithi": 15
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The full moon of Ashadha, for honouring teachers, remembering Vyasa.",
+     "ml": "ആഷാഢ പൗർണ്ണമി: ഗുരുക്കന്മാരെ ആദരിക്കുന്ന ദിവസം, വ്യാസന്റെ ഓർമ്മയിൽ."
+    },
+    "traditions": {
+     "en": "Students visit and thank their teachers, and disciples gather at ashrams and with their spiritual guides. Music and dance students offer flowers and a performance to their gurus. Many families honour parents and elders as their first teachers. Ashrams hold Vyasa puja, and the day begins the four months of chaturmas, when wandering monks stay in one place for the monsoon. Buddhists remember it as the day the Buddha gave his first teaching at Sarnath.",
+     "ml": "വിദ്യാർത്ഥികൾ ഗുരുക്കന്മാരെ സന്ദർശിച്ച് നന്ദി പറയുന്നു; ശിഷ്യർ ആശ്രമങ്ങളിൽ ആത്മീയ ഗുരുവിനടുത്ത് ഒത്തുകൂടുന്നു. സംഗീത-നൃത്ത വിദ്യാർത്ഥികൾ ഗുരുവിന് പൂക്കളും അവതരണവും സമർപ്പിക്കുന്നു. പല കുടുംബങ്ങളും മാതാപിതാക്കളെയും മുതിർന്നവരെയും ആദ്യഗുരുക്കന്മാരായി ആദരിക്കുന്നു. ആശ്രമങ്ങളിൽ വ്യാസപൂജ നടക്കുന്നു; സന്യാസിമാർ മഴക്കാലത്ത് ഒരിടത്തു താമസിക്കുന്ന ചാതുർമാസ്യവും ഇന്നു തുടങ്ങുന്നു."
+    },
+    "story": {
+     "en": "Guru Purnima is the birthday of Veda Vyasa, born to the sage Parashara and Satyavati on an island in the Yamuna. Tradition credits him with dividing the one Veda into four so that it could be learned, composing the Mahabharata, and compiling the Puranas, which is why he is honoured as the teacher of teachers and the day is also called Vyasa Purnima. Yogic tradition adds that on this full moon Shiva, the Adiyogi, sat facing south and began to teach the first seven disciples, the Saptarishis, becoming the first guru.",
+     "ml": "ഗുരുപൂർണ്ണിമ വേദവ്യാസന്റെ ജന്മദിനമാണ്; യമുനയിലെ ഒരു ദ്വീപിൽ പരാശര മഹർഷിക്കും സത്യവതിക്കും അദ്ദേഹം ജനിച്ചു. ഒന്നായിരുന്ന വേദത്തെ പഠിക്കാനെളുപ്പത്തിൽ നാലായി പകുത്തതും, മഹാഭാരതം രചിച്ചതും, പുരാണങ്ങൾ സമാഹരിച്ചതും അദ്ദേഹമാണെന്ന് പാരമ്പര്യം; അതിനാൽ ഗുരുക്കന്മാരുടെ ഗുരുവായി അദ്ദേഹം ആദരിക്കപ്പെടുന്നു, ഈ ദിവസം വ്യാസപൂർണ്ണിമ എന്നും അറിയപ്പെടുന്നു. ഇതേ പൗർണ്ണമിയിൽ ആദിയോഗിയായ ശിവൻ തെക്കോട്ടു തിരിഞ്ഞിരുന്ന് സപ്തർഷികളെ പഠിപ്പിച്ചു തുടങ്ങി, ആദ്യ ഗുരുവായി എന്ന് യോഗപാരമ്പര്യവും പറയുന്നു."
+    },
+    "howTo": {
+     "en": [
+      "Think of the teachers who shaped you: at school, in music or a craft, at home, or on a spiritual path.",
+      "Visit or call one of them to thank them; take flowers, fruit or a small gift if you visit.",
+      "At home, light a lamp before a picture of Vyasa, your guru or your family deity, and offer flowers.",
+      "Touch the feet of your parents and elders, your first teachers.",
+      "Spend a little time studying or practising something you have learned, in your teacher's honour."
+     ],
+     "ml": [
+      "നിങ്ങളെ രൂപപ്പെടുത്തിയ ഗുരുക്കന്മാരെ ഓർക്കുക: വിദ്യാലയത്തിൽ, സംഗീതത്തിലോ കലയിലോ, വീട്ടിൽ, ആത്മീയവഴിയിൽ.",
+      "അവരിലൊരാളെ സന്ദർശിക്കുകയോ വിളിക്കുകയോ ചെയ്ത് നന്ദി പറയുക; സന്ദർശിക്കുമ്പോൾ പൂവോ പഴമോ ചെറുസമ്മാനമോ കൊണ്ടുപോകുക.",
+      "വീട്ടിൽ വ്യാസന്റെയോ ഗുരുവിന്റെയോ കുലദേവതയുടെയോ ചിത്രത്തിനു മുന്നിൽ വിളക്കു കൊളുത്തി പൂവർപ്പിക്കുക.",
+      "ആദ്യഗുരുക്കന്മാരായ മാതാപിതാക്കളുടെയും മുതിർന്നവരുടെയും കാൽ തൊട്ടു വന്ദിക്കുക.",
+      "ഗുരുവിന്റെ ആദരസൂചകമായി, പഠിച്ചതെന്തെങ്കിലും അല്പനേരം പരിശീലിക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "With gratitude to every teacher. Happy Guru Purnima!",
+     "ml": "എല്ലാ ഗുരുക്കന്മാർക്കും നന്ദിയോടെ. ഗുരുപൂർണ്ണിമ ആശംസകൾ!"
+    }
+   }
+  },
+  {
+   "id": "chingam-1",
+   "names": {
+    "en": "Malayalam New Year (Chingam 1)",
+    "ml": "ചിങ്ങം 1"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "simha",
+    "day": 1
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Chingam 1: the Malayalam New Year, the first day of the Kollavarsham.",
+     "ml": "ചിങ്ങം 1: മലയാള പുതുവർഷം, കൊല്ലവർഷത്തിന്റെ ആദ്യ ദിവസം."
+    },
+    "traditions": {
+     "en": "As Karkidakam's monsoon gives way to the bright month of Chingam, families bathe early, wear new or fresh clothes and visit temples, Guruvayur and Sabarimala among them, where the doors open for the new month. It is also Karshaka Dinam, Farmers' Day in Kerala, when farmers are honoured. The month of Onam has begun, and the mood is of a fresh start.",
+     "ml": "കർക്കിടകത്തിലെ പെരുമഴ മാറി ചിങ്ങത്തിന്റെ തെളിച്ചം വരുമ്പോൾ, കുടുംബങ്ങൾ നേരത്തെ കുളിച്ച്, പുതുവസ്ത്രമോ ശുഭ്രവസ്ത്രമോ ധരിച്ച് ക്ഷേത്രദർശനം നടത്തുന്നു; ഗുരുവായൂരിലും ശബരിമലയിലും മാസപൂജയ്ക്ക് നട തുറക്കുന്നു. ഇത് കർഷകദിനം കൂടിയാണ്; കർഷകരെ ആദരിക്കുന്നു. ഓണത്തിന്റെ മാസം തുടങ്ങി; പുതിയ തുടക്കത്തിന്റെ ഉത്സാഹം."
+    },
+    "story": {
+     "en": "The Kollavarsham, the Malayalam era, began in 825 CE. The story told is that it was founded in Kollam, the old port city, by a gathering of scholars, and it has counted Kerala's years ever since. Chingam was chosen to open the year because the harvest is near and the rains have eased. Under Kerala's solar calendar, the month begins when the Sun enters Simha, the sign of Chingam.",
+     "ml": "മലയാള വർഷമായ കൊല്ലവർഷം എ.ഡി. 825-ൽ ആരംഭിച്ചു. പഴയ തുറമുഖനഗരമായ കൊല്ലത്ത് പണ്ഡിതന്മാരുടെ ഒരു സഭ ഇത് സ്ഥാപിച്ചു എന്നാണ് പറയപ്പെടുന്നത്; അന്നുമുതൽ കേരളത്തിന്റെ വർഷങ്ങൾ അതുകൊണ്ടാണ് എണ്ണുന്നത്. കൊയ്ത്ത് അടുത്തുവരികയും മഴ ശമിക്കുകയും ചെയ്യുന്നതിനാൽ ചിങ്ങം വർഷാരംഭമായി. സൂര്യൻ ചിങ്ങം രാശിയിൽ (സിംഹം) പ്രവേശിക്കുമ്പോൾ മാസം തുടങ്ങുന്നു."
+    },
+    "howTo": {
+     "en": [
+      "Bathe early and wear fresh clothes.",
+      "Light the nilavilakku at dawn and pray at home or visit a temple.",
+      "Greet family and friends for the new year, and thank a farmer if you know one.",
+      "Begin planning for Onam: the pookalam starts on Atham."
+     ],
+     "ml": [
+      "നേരത്തെ കുളിച്ച് ശുഭ്രവസ്ത്രം ധരിക്കുക.",
+      "പുലർച്ചെ നിലവിളക്കു കൊളുത്തി വീട്ടിൽ പ്രാർത്ഥിക്കുകയോ ക്ഷേത്രം സന്ദർശിക്കുകയോ ചെയ്യുക.",
+      "കുടുംബത്തിനും സുഹൃത്തുക്കൾക്കും പുതുവർഷാശംസകൾ നേരുക; പരിചയമുള്ള ഒരു കർഷകന് നന്ദി പറയുക.",
+      "ഓണത്തിനായി ഒരുങ്ങിത്തുടങ്ങുക: അത്തം മുതൽ പൂക്കളം."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Malayalam New Year! Puthuvalsara ashamsakal.",
+     "ml": "പുതുവത്സരാശംസകൾ! ചിങ്ങപ്പുലരി ആശംസകൾ."
+    }
+   }
+  },
+  {
+   "id": "atham",
+   "names": {
+    "en": "Atham (Onam begins)",
+    "ml": "അത്തം"
+   },
+   "rule": {
+    "type": "nakshatra-before",
+    "to": "onam",
+    "nakshatra": "hasta",
+    "observance": {
+     "kala": "madhyahna"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Atham, the first of the ten days of Onam, when the first pookalam is laid.",
+     "ml": "ഓണത്തിന്റെ പത്തു ദിവസങ്ങളിൽ ആദ്യത്തേതായ അത്തം; ആദ്യ പൂക്കളം ഇടുന്ന ദിവസം."
+    },
+    "traditions": {
+     "en": "From Atham to Thiruvonam, a pookalam, a floral carpet, is laid each morning in the front yard, growing by one ring of flowers each day. On Atham it is small, often only yellow thumba and mukkutti flowers. Thrippunithura holds the Athachamayam, a grand procession that opens the Onam season. Swings go up, and shopping and cooking for Onam begin.",
+     "ml": "അത്തം മുതൽ തിരുവോണം വരെ ഓരോ ദിവസവും രാവിലെ മുറ്റത്ത് പൂക്കളം ഇടുന്നു; ഓരോ ദിവസവും ഒരു നിര കൂടി വലുതാകുന്നു. അത്തത്തിന് ചെറുതാണ്, പലപ്പോഴും തുമ്പയും മുക്കുറ്റിയും മാത്രം. തൃപ്പൂണിത്തുറയിൽ ഓണക്കാലത്തിന് തുടക്കം കുറിക്കുന്ന അത്തച്ചമയ ഘോഷയാത്ര. ഊഞ്ഞാലുകൾ ഉയരുന്നു; ഓണത്തിനുള്ള ഒരുക്കങ്ങൾ തുടങ്ങുന്നു."
+    },
+    "story": {
+     "en": "The ten days count down to Thiruvonam, the day King Mahabali is said to visit his people. Atham, the Hasta star, opens the welcome: just as a household cleans and decorates for an honoured guest, Kerala's homes begin their flower carpets to show that all is well for the king's return. Athachamayam remembers the Kochi kings' procession on this day, when the king went out to meet his people.",
+     "ml": "മഹാബലി തന്റെ പ്രജകളെ സന്ദർശിക്കാനെത്തുന്ന തിരുവോണത്തിലേക്കുള്ള പത്തു ദിവസത്തെ എണ്ണൽ അത്തത്തിൽ തുടങ്ങുന്നു. ആദരണീയനായ അതിഥിക്കായി വീട് ഒരുക്കുംപോലെ, രാജാവിന്റെ വരവിന് എല്ലാം നന്നായിരിക്കുന്നു എന്നു കാണിക്കാൻ കേരളത്തിലെ വീടുകൾ പൂക്കളം തുടങ്ങുന്നു. കൊച്ചി രാജാക്കന്മാർ ഈ ദിവസം പ്രജകളെ കാണാൻ നടത്തിയ ഘോഷയാത്രയുടെ ഓർമ്മയാണ് അത്തച്ചമയം."
+    },
+    "howTo": {
+     "en": [
+      "Clean the front yard and smooth a round patch of earth, traditionally plastered with cow dung.",
+      "Gather flowers in the morning: thumba, mukkutti and whatever grows nearby.",
+      "Lay a small first ring of the pookalam.",
+      "Plan the next nine days: each day add a ring and a new colour."
+     ],
+     "ml": [
+      "മുറ്റം വൃത്തിയാക്കി, വട്ടത്തിൽ നിലം ഒരുക്കുക (പരമ്പരാഗതമായി ചാണകം മെഴുകി).",
+      "രാവിലെ പൂക്കൾ ശേഖരിക്കുക: തുമ്പ, മുക്കുറ്റി, ചുറ്റും വിരിയുന്നവ.",
+      "പൂക്കളത്തിന്റെ ആദ്യ ചെറിയ നിര ഇടുക.",
+      "അടുത്ത ഒൻപതു ദിവസം ഓരോ നിരയും പുതിയ നിറവും ചേർക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Atham! The Onam countdown begins.",
+     "ml": "അത്തം ആശംസകൾ! ഓണം വരവായി."
+    }
+   }
+  },
+  {
+   "id": "uthradam",
+   "names": {
+    "en": "Uthradam (First Onam)",
+    "ml": "ഉത്രാടം"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "onam",
+    "offsetDays": -1
+   },
+   "tier": "regional",
+   "holidayIn": [
+    "IN-KL"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)",
+    "Government of Kerala public holidays 2026 gazette (Onmanorama, 29 Oct 2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Uthradam, First Onam: the eve of Thiruvonam, the day of last-minute preparations.",
+     "ml": "ഉത്രാടം, ഒന്നാം ഓണം: തിരുവോണത്തിന്റെ തലേന്ന്, ഒരുക്കങ്ങളുടെ ദിവസം."
+    },
+    "traditions": {
+     "en": "Uthradam is the busiest day of Onam: the 'Uthrada paachil', the rush for vegetables, bananas, flowers and new clothes, fills every market. Homes finish preparing for the sadya, and the pookalam is at its largest. In the evening, families light lamps and in some homes clay images of Thrikkakkarappan (Vamana) are placed in the yard to welcome Mahabali.",
+     "ml": "ഓണത്തിലെ ഏറ്റവും തിരക്കുള്ള ദിവസം: പച്ചക്കറിക്കും ഏത്തക്കായയ്ക്കും പൂവിനും ഓണക്കോടിക്കുമുള്ള 'ഉത്രാടപ്പാച്ചിൽ' എല്ലാ ചന്തകളിലും. വീടുകൾ സദ്യയ്ക്കുള്ള ഒരുക്കങ്ങൾ പൂർത്തിയാക്കുന്നു; പൂക്കളം ഏറ്റവും വലുതാകുന്നു. വൈകുന്നേരം വിളക്കു കൊളുത്തുന്നു; മഹാബലിയെ വരവേൽക്കാൻ പല വീടുകളിലും മുറ്റത്ത് മണ്ണുകൊണ്ടുള്ള തൃക്കാക്കരയപ്പനെ (വാമനൻ) പ്രതിഷ്ഠിക്കുന്നു."
+    },
+    "story": {
+     "en": "Mahabali, it is said, arrives on Uthradam night, to see his people on Thiruvonam. Families make sure all is ready, so that the king will find his land happy and every home with enough. The clay Thrikkakkarappan figures remember Vamana, Vishnu's form at the Thrikkakara temple, who is honoured alongside Mahabali.",
+     "ml": "ഉത്രാടരാത്രിയിൽ മഹാബലി എത്തി, തിരുവോണത്തിന് പ്രജകളെ കാണുന്നു എന്നാണ് വിശ്വാസം. രാജാവ് തന്റെ നാട് സന്തുഷ്ടമായും ഓരോ വീടും നിറഞ്ഞതായും കാണാൻ കുടുംബങ്ങൾ എല്ലാം ഒരുക്കുന്നു. മണ്ണുകൊണ്ടുള്ള തൃക്കാക്കരയപ്പൻ, തൃക്കാക്കര ക്ഷേത്രത്തിലെ വിഷ്ണുരൂപമായ വാമനനെ ഓർമ്മിപ്പിക്കുന്നു; മഹാബലിയോടൊപ്പം അദ്ദേഹവും ആദരിക്കപ്പെടുന്നു."
+    },
+    "howTo": {
+     "en": [
+      "Finish shopping: vegetables for the sadya, bananas, banana leaves, flowers and Onakkodi.",
+      "Prepare what you can in advance: banana chips, sharkara upperi, pickles and payasam ingredients.",
+      "Make the pookalam its largest.",
+      "In the evening, light lamps and place Thrikkakkarappan figures in the yard if your family does."
+     ],
+     "ml": [
+      "ഷോപ്പിങ് പൂർത്തിയാക്കുക: സദ്യയ്ക്കുള്ള പച്ചക്കറി, ഏത്തക്കായ, ഇല, പൂവ്, ഓണക്കോടി.",
+      "മുൻകൂട്ടി ചെയ്യാവുന്നവ ഒരുക്കുക: ഉപ്പേരി, ശർക്കരവരട്ടി, അച്ചാർ, പായസത്തിനുള്ള സാധനങ്ങൾ.",
+      "പൂക്കളം ഏറ്റവും വലുതാക്കുക.",
+      "വൈകുന്നേരം വിളക്കു കൊളുത്തി, പതിവുണ്ടെങ്കിൽ മുറ്റത്ത് തൃക്കാക്കരയപ്പനെ വയ്ക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Uthradam! Onam is here.",
+     "ml": "ഉത്രാടം ആശംസകൾ! ഓണം വന്നെത്തി."
+    }
+   }
+  },
+  {
+   "id": "onam",
+   "names": {
+    "en": "Thiruvonam",
+    "ml": "തിരുവോണം"
+   },
+   "rule": {
+    "type": "nakshatra-in-solar-month",
+    "month": "simha",
+    "nakshatra": "shravana",
+    "observance": {
+     "kala": "madhyahna"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-KL"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)",
+    "Government of Kerala public holidays 2026 gazette (Onmanorama, 29 Oct 2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Thiruvonam: Kerala's great festival, welcoming King Mahabali home with a pookalam and the sadya.",
+     "ml": "തിരുവോണം: കേരളത്തിന്റെ മഹോത്സവം; പൂക്കളവും സദ്യയുമായി മാവേലിയെ വരവേൽക്കുന്ന ദിവസം."
+    },
+    "traditions": {
+     "en": "Every home lays its finest pookalam, families wear new clothes (Onakkodi, often the cream-and-gold kasavu), and the day centres on the Onasadya: twenty-odd dishes served on a banana leaf, rice, sambar, parippu, avial, thoran, olan, kalan, pachadi, kichadi, erissery, pappadam, banana chips, pickles and several payasams. The afternoon is for games and play: Onakkalikal, thiruvathirakali and pulikali (tiger dancers) in Thrissur, and the snake-boat races of the season. Kerala's people celebrate it together, across communities, as their own festival.",
+     "ml": "ഓരോ വീടും ഏറ്റവും മനോഹരമായ പൂക്കളം ഇടുന്നു; കുടുംബാംഗങ്ങൾ ഓണക്കോടി, പലപ്പോഴും കസവു മുണ്ടും സാരിയും, ധരിക്കുന്നു. ദിവസത്തിന്റെ കേന്ദ്രം ഓണസദ്യ: വാഴയിലയിൽ ഇരുപതിലേറെ വിഭവങ്ങൾ, ചോറ്, സാമ്പാർ, പരിപ്പ്, അവിയൽ, തോരൻ, ഓലൻ, കാളൻ, പച്ചടി, കിച്ചടി, എരിശ്ശേരി, പപ്പടം, ഉപ്പേരി, അച്ചാറുകൾ, പലതരം പായസം. ഉച്ചകഴിഞ്ഞ് ഓണക്കളികൾ, തിരുവാതിരക്കളി, തൃശ്ശൂരിലെ പുലിക്കളി, വള്ളംകളി. എല്ലാ സമുദായക്കാരും ഒരുമിച്ച് സ്വന്തം ഉത്സവമായി ആഘോഷിക്കുന്നു."
+    },
+    "story": {
+     "en": "Long ago, the story goes, Kerala was ruled by Mahabali, an asura king so just and generous that his people lived as equals, with no lies, no theft and no want: 'Maveli naadu vaneedum kaalam, maanusharellarum onnupole', when Maveli ruled, all people were alike. The gods, worried by his growing power, asked Vishnu for help. Vishnu came to Mahabali's yajna as Vamana, a small brahmin boy, and asked for three steps of land. Mahabali agreed; Vamana grew vast and covered the earth and sky in two steps, and Mahabali offered his own head for the third. Moved by his generosity, Vishnu sent him to rule the underworld, and granted that he could return once a year to see his people. Thiruvonam is that visit.",
+     "ml": "പണ്ട് കേരളം ഭരിച്ചിരുന്നത് നീതിമാനും ഉദാരമതിയുമായ അസുരചക്രവർത്തി മഹാബലിയായിരുന്നു; പ്രജകൾ തുല്യരായി, കള്ളവും ചതിയും ഇല്ലാതെ, ദാരിദ്ര്യമില്ലാതെ ജീവിച്ചു: 'മാവേലി നാടു വാണീടും കാലം, മാനുഷരെല്ലാരുമൊന്നുപോലെ'. അദ്ദേഹത്തിന്റെ വളരുന്ന ശക്തിയിൽ ആശങ്കപ്പെട്ട ദേവന്മാർ വിഷ്ണുവിന്റെ സഹായം തേടി. വിഷ്ണു വാമനൻ എന്ന ചെറിയ ബ്രാഹ്മണബാലനായി മഹാബലിയുടെ യാഗത്തിലെത്തി മൂന്നടി മണ്ണ് ചോദിച്ചു. മഹാബലി സമ്മതിച്ചു; വാമനൻ വളർന്ന് രണ്ടടികൊണ്ട് ഭൂമിയും ആകാശവും അളന്നു; മൂന്നാമത്തേതിന് മഹാബലി സ്വന്തം ശിരസ്സ് കാട്ടിക്കൊടുത്തു. ആ ഉദാരതയിൽ പ്രസാദിച്ച വിഷ്ണു അദ്ദേഹത്തെ പാതാളം ഭരിക്കാൻ അയച്ചു; വർഷത്തിലൊരിക്കൽ പ്രജകളെ കാണാൻ വരാൻ അനുവാദവും നൽകി. ആ സന്ദർശനമാണ് തിരുവോണം."
+    },
+    "howTo": {
+     "en": [
+      "Wake early, bathe, and lay the day's pookalam, the biggest of the ten.",
+      "Wear new clothes; give Onakkodi to family members if that is your custom.",
+      "Light the nilavilakku, and offer a small portion of the meal to Thrikkakkarappan or at the family altar.",
+      "Serve the sadya at midday on banana leaves, in the traditional order, and eat together, sitting on the floor if you can.",
+      "Spend the afternoon with family: games, swings, songs, and calling relatives far away.",
+      "Invite a neighbour or someone alone for the meal; Onam is about no one being left out."
+     ],
+     "ml": [
+      "നേരത്തെ ഉണർന്ന് കുളിച്ച്, പത്തിൽ ഏറ്റവും വലിയ പൂക്കളം ഇടുക.",
+      "ഓണക്കോടി ധരിക്കുക; പതിവുണ്ടെങ്കിൽ കുടുംബാംഗങ്ങൾക്ക് ഓണക്കോടി നൽകുക.",
+      "നിലവിളക്കു കൊളുത്തി, തൃക്കാക്കരയപ്പനോ പൂജാമുറിയിലോ ഭക്ഷണത്തിന്റെ ഒരു പങ്ക് നിവേദിക്കുക.",
+      "ഉച്ചയ്ക്ക് വാഴയിലയിൽ ക്രമപ്രകാരം സദ്യ വിളമ്പി, കഴിയുമെങ്കിൽ നിലത്തിരുന്ന്, ഒരുമിച്ചു കഴിക്കുക.",
+      "ഉച്ചകഴിഞ്ഞ് കുടുംബത്തോടൊപ്പം: കളികൾ, ഊഞ്ഞാൽ, പാട്ട്, ദൂരെയുള്ള ബന്ധുക്കളെ വിളിക്കൽ.",
+      "ഒറ്റയ്ക്കുള്ള ഒരു അയൽക്കാരനെയോ ആരെയെങ്കിലുമോ സദ്യയ്ക്കു ക്ഷണിക്കുക; ആരും മാറ്റിനിർത്തപ്പെടാത്തതാണ് ഓണം."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Onam! May Maveli find your home full of joy.",
+     "ml": "എല്ലാവർക്കും ഹൃദയം നിറഞ്ഞ ഓണാശംസകൾ!"
+    }
+   }
+  },
+  {
+   "id": "avittam",
+   "names": {
+    "en": "Avittam (Third Onam)",
+    "ml": "അവിട്ടം"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "onam",
+    "offsetDays": 1
+   },
+   "tier": "regional",
+   "holidayIn": [
+    "IN-KL"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)",
+    "Government of Kerala public holidays 2026 gazette (Onmanorama, 29 Oct 2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Avittam, Third Onam: the day after Thiruvonam, when Mahabali takes his leave.",
+     "ml": "അവിട്ടം, മൂന്നാം ഓണം: മഹാബലി യാത്രയാകുന്ന, തിരുവോണത്തിന്റെ പിറ്റേന്ന്."
+    },
+    "traditions": {
+     "en": "Families relax and visit relatives, often eating the leftover sadya as 'pazhayadi' and making a fresh payasam. In Thrissur the Pulikali, tiger dancers with painted bodies, parades through the streets around this time. The pookalam is cleared, and the clay Thrikkakkarappan figures are taken down. At Aranmula, Thiruvona Thoni carries offerings to the temple, and the Uthrattathi boat race follows later in the month.",
+     "ml": "കുടുംബങ്ങൾ വിശ്രമിക്കുകയും ബന്ധുക്കളെ സന്ദർശിക്കുകയും ചെയ്യുന്നു; പലപ്പോഴും സദ്യയുടെ ബാക്കി കഴിച്ച് പുതിയ പായസം ഉണ്ടാക്കുന്നു. ഈ ദിവസങ്ങളിൽ തൃശ്ശൂരിൽ പുലിക്കളി. പൂക്കളം മാറ്റുന്നു; തൃക്കാക്കരയപ്പനെ എടുത്തുമാറ്റുന്നു. ആറന്മുളയിൽ തിരുവോണത്തോണി, പിന്നീട് ഉത്രട്ടാതി വള്ളംകളി."
+    },
+    "story": {
+     "en": "Having seen that his people are happy, Mahabali begins his journey back. The day carries a gentle sadness and contentment: the king has come, found his land as he left it, and goes home reassured, to return next year.",
+     "ml": "തന്റെ പ്രജകൾ സന്തുഷ്ടരാണെന്ന് കണ്ട് മഹാബലി മടക്കയാത്ര തുടങ്ങുന്നു. ദിവസത്തിന് മൃദുവായ ഒരു വിഷാദവും സംതൃപ്തിയുമുണ്ട്: രാജാവ് വന്നു, നാട് വിട്ടുപോയതുപോലെ കണ്ടു, സമാധാനത്തോടെ മടങ്ങുന്നു, അടുത്ത വർഷം വീണ്ടും വരാൻ."
+    },
+    "howTo": {
+     "en": [
+      "Visit relatives and friends you could not see on Thiruvonam.",
+      "Make a fresh payasam and share it.",
+      "Clear the pookalam respectfully, and return the flowers to the earth.",
+      "Watch the pulikali or a boat race if one is near."
+     ],
+     "ml": [
+      "തിരുവോണത്തിന് കാണാനാകാത്ത ബന്ധുക്കളെയും സുഹൃത്തുക്കളെയും സന്ദർശിക്കുക.",
+      "പുതിയ പായസം ഉണ്ടാക്കി പങ്കിടുക.",
+      "പൂക്കളം ആദരവോടെ മാറ്റി, പൂക്കൾ മണ്ണിലേക്ക് തിരികെ നൽകുക.",
+      "സമീപത്ത് പുലിക്കളിയോ വള്ളംകളിയോ ഉണ്ടെങ്കിൽ കാണുക."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Third Onam!",
+     "ml": "മൂന്നാം ഓണാശംസകൾ!"
+    }
+   }
+  },
+  {
+   "id": "chathayam",
+   "names": {
+    "en": "Chathayam (Fourth Onam)",
+    "ml": "ചതയം"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "onam",
+    "offsetDays": 2
+   },
+   "tier": "regional",
+   "holidayIn": [
+    "IN-KL"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)",
+    "Government of Kerala public holidays 2026 gazette (Onmanorama, 29 Oct 2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Chathayam, Fourth Onam, and Sree Narayana Guru Jayanthi in most years.",
+     "ml": "ചതയം, നാലാം ഓണം; മിക്ക വർഷങ്ങളിലും ശ്രീനാരായണഗുരു ജയന്തി."
+    },
+    "traditions": {
+     "en": "The Onam season closes with Chathayam. Most years it is also Sree Narayana Guru Jayanthi, the birthday of the social reformer and saint, celebrated across Kerala with processions, meetings and the recitation of his works, especially at Sivagiri in Varkala. People remember his teaching of 'one caste, one religion, one God for humanity'.",
+     "ml": "ചതയത്തോടെ ഓണക്കാലം സമാപിക്കുന്നു. മിക്ക വർഷങ്ങളിലും ഇത് സാമൂഹിക പരിഷ്കർത്താവും ഗുരുവുമായ ശ്രീനാരായണഗുരുവിന്റെ ജയന്തിയുമാണ്; കേരളമെമ്പാടും ഘോഷയാത്രകളും സമ്മേളനങ്ങളും, പ്രത്യേകിച്ച് വർക്കല ശിവഗിരിയിൽ, കൃതികളുടെ പാരായണവും. 'ഒരു ജാതി, ഒരു മതം, ഒരു ദൈവം മനുഷ്യന്' എന്ന ഉപദേശം ഓർമ്മിക്കപ്പെടുന്നു."
+    },
+    "story": {
+     "en": "Sree Narayana Guru was born in 1855 at Chempazhanthy, on the Chathayam star of Chingam. A scholar of Sanskrit and Malayalam, he spent his life opening temples, schools and hearts to people of every community. In 1888 at Aruvippuram he consecrated a Shiva idol himself, a quiet but powerful act, and told those who questioned him that he had consecrated 'our Shiva'. His words still guide many: 'Educate to be free; organise to be strong.'",
+     "ml": "1855-ൽ ചെമ്പഴന്തിയിൽ ചിങ്ങമാസത്തിലെ ചതയം നക്ഷത്രത്തിൽ ശ്രീനാരായണഗുരു ജനിച്ചു. സംസ്കൃതത്തിലും മലയാളത്തിലും പണ്ഡിതനായ അദ്ദേഹം എല്ലാ സമുദായക്കാർക്കുമായി ക്ഷേത്രങ്ങളും വിദ്യാലയങ്ങളും ഹൃദയങ്ങളും തുറന്നുകൊടുക്കാൻ ജീവിതം സമർപ്പിച്ചു. 1888-ൽ അരുവിപ്പുറത്ത് അദ്ദേഹം സ്വയം ശിവപ്രതിഷ്ഠ നടത്തി; ചോദ്യം ചെയ്തവരോട് 'നമ്മുടെ ശിവനെയാണ്' പ്രതിഷ്ഠിച്ചതെന്ന് പറഞ്ഞു. 'വിദ്യകൊണ്ട് സ്വതന്ത്രരാകുക, സംഘടനകൊണ്ട് ശക്തരാകുക' എന്ന വാക്കുകൾ ഇന്നും വഴികാട്ടുന്നു."
+    },
+    "howTo": {
+     "en": [
+      "Read a few verses of Guru's works, such as the Daiva Dasakam, a short prayer for all.",
+      "Join a local Jayanthi gathering or procession, or visit Sivagiri.",
+      "Share the last of the Onam sweets with family."
+     ],
+     "ml": [
+      "ഗുരുവിന്റെ കൃതികളിൽ നിന്ന്, ഉദാഹരണത്തിന് എല്ലാവർക്കുമുള്ള ചെറിയ പ്രാർത്ഥനയായ ദൈവദശകം, ഏതാനും വരികൾ ചൊല്ലുക.",
+      "പ്രാദേശിക ജയന്തി ആഘോഷത്തിലോ ഘോഷയാത്രയിലോ പങ്കെടുക്കുക, അല്ലെങ്കിൽ ശിവഗിരി സന്ദർശിക്കുക.",
+      "ഓണപ്പലഹാരങ്ങളുടെ ബാക്കി കുടുംബത്തോടൊപ്പം പങ്കിടുക."
+     ]
+    },
+    "greeting": {
+     "en": "Fourth Onam and Sree Narayana Guru Jayanthi greetings.",
+     "ml": "നാലാം ഓണാശംസകളും ശ്രീനാരായണഗുരു ജയന്തി ആശംസകളും."
+    }
+   }
+  },
+  {
+   "id": "ashtami-rohini",
+   "names": {
+    "en": "Ashtami Rohini (Sreekrishna Jayanthi)",
+    "ml": "അഷ്ടമിരോഹിണി"
+   },
+   "rule": {
+    "type": "tithi-in-solar-month",
+    "month": "simha",
+    "tithi": 23,
+    "observance": {
+     "kala": "nishita"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-KL"
+   ],
+   "durationDays": 1,
+   "variations": [
+    "Kerala keeps Sreekrishna Jayanthi on the Krishna Ashtami that falls in Chingam, so in some years (2025) it comes a lunar month after the North's Janmashtami."
+   ],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)",
+    "Government of Kerala public holidays 2026 gazette (Onmanorama, 29 Oct 2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Sreekrishna Jayanthi in Kerala: Krishna's birth, kept on the Krishna Ashtami of Chingam.",
+     "ml": "ശ്രീകൃഷ്ണജയന്തി: ചിങ്ങമാസത്തിലെ കൃഷ്ണാഷ്ടമിയിൽ ശ്രീകൃഷ്ണന്റെ ജനനം."
+    },
+    "traditions": {
+     "en": "Kerala's Krishna temples, Guruvayur above all, Ambalappuzha and Thrichambaram, are crowded from dawn. Shobha Yatras fill the streets in the afternoon, with children dressed as Krishna and Radha. Devotees fast and break it after midnight; homes make unniyappam, palada, and the famous Ambalappuzha paal payasam is remembered. Bhagavatam readings and Krishna bhajans continue through the night.",
+     "ml": "കേരളത്തിലെ കൃഷ്ണക്ഷേത്രങ്ങൾ, എല്ലാറ്റിനുമുപരി ഗുരുവായൂർ, അമ്പലപ്പുഴ, തൃച്ചംബരം, പുലർച്ചെ മുതൽ തിരക്കിലാകുന്നു. ഉച്ചകഴിഞ്ഞ് കൃഷ്ണ-രാധ വേഷമിട്ട കുട്ടികളുമായി ശോഭായാത്രകൾ. ഭക്തർ ഉപവസിച്ച് അർദ്ധരാത്രിക്കു ശേഷം വ്രതം മുറിക്കുന്നു; വീടുകളിൽ ഉണ്ണിയപ്പം, പാലട; അമ്പലപ്പുഴ പാൽപ്പായസം പ്രസിദ്ധം. രാത്രി മുഴുവൻ ഭാഗവതപാരായണവും കൃഷ്ണഭജനകളും."
+    },
+    "story": {
+     "en": "Krishna was born at midnight in King Kamsa's prison at Mathura, the eighth child of Devaki and Vasudeva, on the Ashtami of the waning moon under Rohini nakshatra, which is why Kerala calls the day Ashtami Rohini. The chains fell open and Vasudeva carried the baby across the flooded Yamuna to Gokul, to be raised by Nanda and Yashoda. Kerala keeps the festival within the solar month of Chingam, so in some years it comes a lunar month after the North's Janmashtami.",
+     "ml": "മഥുരയിൽ കംസന്റെ തടവറയിൽ, ദേവകിയുടെയും വസുദേവരുടെയും എട്ടാമത്തെ കുഞ്ഞായി, കൃഷ്ണപക്ഷ അഷ്ടമിയിൽ രോഹിണി നക്ഷത്രത്തിൽ അർദ്ധരാത്രി ശ്രീകൃഷ്ണൻ ജനിച്ചു; അതിനാലാണ് കേരളം ഈ ദിവസത്തെ അഷ്ടമിരോഹിണി എന്നു വിളിക്കുന്നത്. ചങ്ങലകൾ അഴിഞ്ഞു; വസുദേവർ കുഞ്ഞിനെ പ്രളയമായൊഴുകുന്ന യമുന കടത്തി ഗോകുലത്തിൽ നന്ദന്റെയും യശോദയുടെയും അടുത്തെത്തിച്ചു. കേരളം ഈ ഉത്സവം ചിങ്ങമാസത്തിനുള്ളിൽ ആഘോഷിക്കുന്നതിനാൽ ചില വർഷങ്ങളിൽ ഉത്തരേന്ത്യയിലെ ജന്മാഷ്ടമിയേക്കാൾ ഒരു ചാന്ദ്രമാസം കഴിഞ്ഞാണ് വരുന്നത്."
+    },
+    "howTo": {
+     "en": [
+      "Keep a fast through the day, fruit and milk if you prefer.",
+      "Make unniyappam and palada or paal payasam, and keep butter and tulsi ready.",
+      "Join or watch a Shobha Yatra in the afternoon; dress the children as Krishna if they like.",
+      "In the evening, light the nilavilakku before Krishna and read the Bhagavatam's tenth book or sing bhajans.",
+      "At midnight (the Nishita time in the day view), offer the food, butter and tulsi, then break the fast."
+     ],
+     "ml": [
+      "പകൽ മുഴുവൻ ഉപവസിക്കുക, വേണമെങ്കിൽ പഴവും പാലും.",
+      "ഉണ്ണിയപ്പവും പാലടയോ പാൽപ്പായസമോ ഉണ്ടാക്കി, വെണ്ണയും തുളസിയും ഒരുക്കുക.",
+      "ഉച്ചകഴിഞ്ഞ് ശോഭായാത്രയിൽ പങ്കെടുക്കുകയോ കാണുകയോ ചെയ്യുക; കുട്ടികൾക്ക് ഇഷ്ടമെങ്കിൽ കൃഷ്ണവേഷം.",
+      "വൈകുന്നേരം കൃഷ്ണനു മുന്നിൽ നിലവിളക്കു കൊളുത്തി ഭാഗവതം ദശമസ്കന്ധം വായിക്കുകയോ ഭജന പാടുകയോ ചെയ്യുക.",
+      "അർദ്ധരാത്രി (ദിവസവിവരത്തിലെ നിശീഥ സമയം) നിവേദ്യവും വെണ്ണയും തുളസിയും അർപ്പിച്ച് വ്രതം അവസാനിപ്പിക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Ashtami Rohini! Hare Krishna.",
+     "ml": "എല്ലാവർക്കും ശ്രീകൃഷ്ണജയന്തി ആശംസകൾ!"
+    }
+   }
+  },
+  {
+   "id": "vinayaka-chathurthi-ml",
+   "names": {
+    "en": "Vinayaka Chathurthi",
+    "ml": "വിനായക ചതുർത്ഥി"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "bhadrapada",
+    "tithi": 4,
+    "observance": {
+     "kala": "madhyahna"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Ganesha's birthday in Kerala, with the ashta dravya ganapathi homam and modakam.",
+     "ml": "കേരളത്തിൽ വിനായക ചതുർത്ഥി: അഷ്ടദ്രവ്യ ഗണപതിഹോമവും മോദകവും."
+    },
+    "traditions": {
+     "en": "Kerala's Ganapathi temples, Pazhavangadi in Thiruvananthapuram, Kottarakkara and Madhur, hold the ashta dravya maha ganapathi homam at dawn, with eight offerings including coconut, jaggery and banana, and appams and modakams are offered. Many homes perform a small homam or puja, and public Ganesha idols are taken out for immersion in coastal towns. The day's sweet is kozhukatta or modakam.",
+     "ml": "കേരളത്തിലെ ഗണപതിക്ഷേത്രങ്ങളിൽ, തിരുവനന്തപുരം പഴവങ്ങാടി, കൊട്ടാരക്കര, മധൂർ, പുലർച്ചെ തേങ്ങ, ശർക്കര, പഴം തുടങ്ങിയ എട്ടു ദ്രവ്യങ്ങളോടെ അഷ്ടദ്രവ്യ മഹാഗണപതിഹോമം; ഉണ്ണിയപ്പവും മോദകവും നിവേദിക്കുന്നു. പല വീടുകളിലും ചെറിയ ഹോമമോ പൂജയോ; തീരദേശപട്ടണങ്ങളിൽ ഗണേശവിഗ്രഹ നിമജ്ജന ഘോഷയാത്രകൾ. ദിവസത്തിന്റെ മധുരം കൊഴുക്കട്ട അല്ലെങ്കിൽ മോദകം."
+    },
+    "story": {
+     "en": "Parvati shaped a child from the turmeric paste of her bath and set him at her door. Shiva, coming home, was stopped by the boy, who did not know him, and struck off his head; then, to console Parvati, gave him an elephant's head and brought him back as Ganapati, to be worshipped first before every undertaking. At Kottarakkara, the story is told that the master sculptor Perunthachan, building a Shiva temple, carved a small Ganapati from a jackfruit-wood chip, and it was installed there and loved above the main deity.",
+     "ml": "പാർവ്വതി കുളിക്കുമ്പോഴത്തെ മഞ്ഞളിൽ നിന്ന് ഒരു കുഞ്ഞിനെ രൂപപ്പെടുത്തി വാതിൽക്കൽ കാവൽ നിർത്തി. വീട്ടിലെത്തിയ ശിവനെ അദ്ദേഹത്തെ അറിയാത്ത ബാലൻ തടഞ്ഞു; ശിവൻ ബാലന്റെ ശിരസ്സ് ഛേദിച്ചു; പിന്നെ പാർവ്വതിയെ ആശ്വസിപ്പിക്കാൻ ആനത്തല ചേർത്ത് ജീവൻ നൽകി ഗണപതിയാക്കി, എല്ലാ കാര്യങ്ങൾക്കും മുമ്പ് ആദ്യം പൂജിക്കപ്പെടുമെന്നും പറഞ്ഞു. കൊട്ടാരക്കരയിൽ, ശിവക്ഷേത്രം പണിയുകയായിരുന്ന പെരുന്തച്ചൻ പ്ലാവിൻ കഷണത്തിൽ കൊത്തിയ ചെറിയ ഗണപതി അവിടെ പ്രതിഷ്ഠിക്കപ്പെട്ട് പ്രധാന പ്രതിഷ്ഠയേക്കാൾ പ്രിയങ്കരനായി എന്നു കഥ."
+    },
+    "howTo": {
+     "en": [
+      "Make modakam or kozhukatta and unniyappam.",
+      "Visit a Ganapathi temple for the morning homam, or perform a simple puja at home.",
+      "At midday (madhyahna; see the day view), offer the sweets, a coconut and karuka grass to Ganapati with a lamp.",
+      "Avoid looking at the Moon that night, as tradition asks."
+     ],
+     "ml": [
+      "മോദകമോ കൊഴുക്കട്ടയും ഉണ്ണിയപ്പവും ഉണ്ടാക്കുക.",
+      "രാവിലത്തെ ഹോമത്തിന് ഗണപതിക്ഷേത്രം സന്ദർശിക്കുക, അല്ലെങ്കിൽ വീട്ടിൽ ലളിതമായ പൂജ ചെയ്യുക.",
+      "ഉച്ചയ്ക്ക് (മദ്ധ്യാഹ്നം; ദിവസവിവരത്തിൽ) വിളക്കു കൊളുത്തി ഗണപതിക്ക് മധുരപലഹാരങ്ങളും തേങ്ങയും കറുകയും അർപ്പിക്കുക.",
+      "പാരമ്പര്യമനുസരിച്ച് അന്നു രാത്രി ചന്ദ്രനെ നോക്കാതിരിക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Vinayaka Chathurthi!",
+     "ml": "വിനായക ചതുർത്ഥി ആശംസകൾ!"
+    }
+   }
+  },
+  {
+   "id": "navarathri-ml",
+   "names": {
+    "en": "Navarathri",
+    "ml": "നവരാത്രി"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 1
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 9,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Navarathri in Kerala: nine nights for Saraswati and the Goddess, ending in Vidyarambham.",
+     "ml": "കേരളത്തിലെ നവരാത്രി: സരസ്വതിക്കും ദേവിക്കുമായി ഒൻപതു രാത്രികൾ, വിദ്യാരംഭത്തിൽ സമാപനം."
+    },
+    "traditions": {
+     "en": "In Kerala, Navarathri is above all Saraswati's festival. Temples hold music festivals: the Navarathri Mandapam in Thiruvananthapuram hosts nine nights of classical concerts, and the Saraswati temples at Panachikkad and Kollur Mookambika draw large crowds. On Durgashtami evening books and instruments are placed for puja (pooja vaypu), and study rests until Vijayadashami.",
+     "ml": "കേരളത്തിൽ നവരാത്രി പ്രധാനമായും സരസ്വതിയുടെ ഉത്സവമാണ്. ക്ഷേത്രങ്ങളിൽ സംഗീതോത്സവങ്ങൾ: തിരുവനന്തപുരത്തെ നവരാത്രി മണ്ഡപത്തിൽ ഒൻപതു രാത്രി ശാസ്ത്രീയസംഗീത കച്ചേരികൾ; പനച്ചിക്കാട്, കൊല്ലൂർ മൂകാംബിക സരസ്വതീക്ഷേത്രങ്ങളിൽ വലിയ തിരക്ക്. ദുർഗ്ഗാഷ്ടമി സന്ധ്യയ്ക്ക് പുസ്തകങ്ങളും ഉപകരണങ്ങളും പൂജയ്ക്കു വയ്ക്കുന്നു; വിജയദശമി വരെ പഠനം വിശ്രമിക്കുന്നു."
+    },
+    "story": {
+     "en": "For nine nights the Goddess fought Mahishasura, and on the tenth she overcame him. Kerala's tradition joins this to Saraswati: the nights move from strength to wisdom, and the arts and learning are honoured as the Goddess's own gifts. The Navarathri concerts in Thiruvananthapuram were begun by Maharaja Swathi Thirunal, the composer-king of Travancore, whose kritis are still sung there.",
+     "ml": "ഒൻപതു രാത്രി ദേവി മഹിഷാസുരനുമായി യുദ്ധം ചെയ്തു; പത്താം നാൾ ജയിച്ചു. കേരളപാരമ്പര്യം ഇതിനെ സരസ്വതിയുമായി ചേർക്കുന്നു: രാത്രികൾ ശക്തിയിൽ നിന്ന് ജ്ഞാനത്തിലേക്കു നീങ്ങുന്നു; കലയും വിദ്യയും ദേവിയുടെ സമ്മാനങ്ങളായി ആദരിക്കപ്പെടുന്നു. തിരുവനന്തപുരത്തെ നവരാത്രി സംഗീതോത്സവം തുടങ്ങിയത് തിരുവിതാംകൂറിലെ സംഗീതജ്ഞനായ മഹാരാജാവ് സ്വാതി തിരുനാളാണ്; അദ്ദേഹത്തിന്റെ കൃതികൾ ഇന്നും അവിടെ പാടുന്നു."
+    },
+    "howTo": {
+     "en": [
+      "Light the nilavilakku each evening and pray to the Goddess.",
+      "Attend or listen to a Navarathri concert.",
+      "On Durgashtami evening, place books, pens and instruments before Saraswati for the pooja vaypu.",
+      "Take them back with prayer on Vijayadashami morning."
+     ],
+     "ml": [
+      "എല്ലാ സന്ധ്യകളിലും നിലവിളക്കു കൊളുത്തി ദേവിയെ പ്രാർത്ഥിക്കുക.",
+      "നവരാത്രി സംഗീതക്കച്ചേരിയിൽ പങ്കെടുക്കുകയോ കേൾക്കുകയോ ചെയ്യുക.",
+      "ദുർഗ്ഗാഷ്ടമി സന്ധ്യയ്ക്ക് പുസ്തകങ്ങളും പേനകളും ഉപകരണങ്ങളും സരസ്വതിക്കു മുന്നിൽ പൂജയ്ക്കു വയ്ക്കുക.",
+      "വിജയദശമി രാവിലെ പ്രാർത്ഥനയോടെ അവ എടുക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Navarathri!",
+     "ml": "നവരാത്രി ആശംസകൾ!"
+    }
+   }
+  },
+  {
+   "id": "durgashtami",
+   "names": {
+    "en": "Durgashtami (Pooja Vaypu)",
+    "ml": "ദുർഗ്ഗാഷ്ടമി (പൂജവയ്പ്പ്)"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 8
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Durgashtami: the evening of pooja vaypu, when books and tools are placed before Saraswati.",
+     "ml": "ദുർഗ്ഗാഷ്ടമി: പുസ്തകങ്ങളും ഉപകരണങ്ങളും സരസ്വതിക്കു മുന്നിൽ പൂജയ്ക്കു വയ്ക്കുന്ന സന്ധ്യ."
+    },
+    "traditions": {
+     "en": "In the evening, families place books, notebooks, musical instruments and the tools of their trade before Saraswati and the Goddess, decorated with flowers, and light the lamp. From then until Vijayadashami morning, no studying or work with those things is done, and they are worshipped as the Goddess's own. Schools and offices often close for the days that follow.",
+     "ml": "സന്ധ്യയ്ക്ക് കുടുംബങ്ങൾ പുസ്തകങ്ങളും നോട്ടുപുസ്തകങ്ങളും സംഗീതോപകരണങ്ങളും തൊഴിലുപകരണങ്ങളും പൂക്കൾ കൊണ്ടലങ്കരിച്ച് സരസ്വതിക്കും ദേവിക്കും മുന്നിൽ വച്ച് വിളക്കു കൊളുത്തുന്നു. അന്നുമുതൽ വിജയദശമി രാവിലെ വരെ അവ കൊണ്ടുള്ള പഠനമോ ജോലിയോ ഇല്ല; ദേവിയുടേതായി അവ പൂജിക്കപ്പെടുന്നു. തുടർന്നുള്ള ദിവസങ്ങളിൽ വിദ്യാലയങ്ങളും ഓഫീസുകളും പലപ്പോഴും അവധിയാകും."
+    },
+    "story": {
+     "en": "The eighth day of the Goddess's battle with Mahishasura is when she took her fiercest form as Durga. Placing the instruments of learning and work before her is a way of offering them back to their source for a few days: everything one knows and does is received as her gift, and on Vijayadashami it is taken up again with fresh purpose.",
+     "ml": "മഹിഷാസുരനുമായുള്ള ദേവിയുടെ യുദ്ധത്തിന്റെ എട്ടാം ദിവസമാണ് ദേവി ഏറ്റവും ഉഗ്രമായ ദുർഗ്ഗാരൂപം ധരിച്ചത്. വിദ്യയുടെയും തൊഴിലിന്റെയും ഉപകരണങ്ങൾ ദേവിക്കു മുന്നിൽ വയ്ക്കുന്നത് ഏതാനും ദിവസത്തേക്ക് അവയെ ഉറവിടത്തിലേക്കു തിരികെ സമർപ്പിക്കലാണ്: അറിയുന്നതും ചെയ്യുന്നതുമെല്ലാം ദേവിയുടെ സമ്മാനമായി സ്വീകരിക്കുന്നു; വിജയദശമിയിൽ പുതിയ ലക്ഷ്യത്തോടെ വീണ്ടും എടുക്കുന്നു."
+    },
+    "howTo": {
+     "en": [
+      "Clean the puja space and set up a picture of Saraswati or the Goddess.",
+      "In the evening, arrange books, instruments and tools before her with flowers, and light the nilavilakku.",
+      "Pray, and leave them there until Vijayadashami morning."
+     ],
+     "ml": [
+      "പൂജാസ്ഥലം വൃത്തിയാക്കി സരസ്വതിയുടെയോ ദേവിയുടെയോ ചിത്രം വയ്ക്കുക.",
+      "സന്ധ്യയ്ക്ക് പുസ്തകങ്ങളും ഉപകരണങ്ങളും പൂക്കളോടെ ദേവിക്കു മുന്നിൽ ഒരുക്കി നിലവിളക്കു കൊളുത്തുക.",
+      "പ്രാർത്ഥിച്ച്, വിജയദശമി രാവിലെ വരെ അവ അവിടെ വയ്ക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "Durgashtami greetings.",
+     "ml": "ദുർഗ്ഗാഷ്ടമി ആശംസകൾ."
+    }
+   }
+  },
+  {
+   "id": "mahanavami",
+   "names": {
+    "en": "Mahanavami",
+    "ml": "മഹാനവമി"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 9
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-KL"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)",
+    "Government of Kerala public holidays 2026 gazette (Onmanorama, 29 Oct 2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Mahanavami: the day of rest for books and tools, and of the Goddess's worship.",
+     "ml": "മഹാനവമി: പുസ്തകങ്ങൾക്കും ഉപകരണങ്ങൾക്കും വിശ്രമവും ദേവീപൂജയും."
+    },
+    "traditions": {
+     "en": "With books and tools resting before the Goddess, Mahanavami is a quiet day of worship and family time; it is a public holiday in Kerala. Ayudha puja is performed for vehicles and machines, and temples hold special pujas. Many families visit Saraswati temples.",
+     "ml": "പുസ്തകങ്ങളും ഉപകരണങ്ങളും ദേവിക്കു മുന്നിൽ വിശ്രമിക്കുമ്പോൾ, മഹാനവമി ആരാധനയുടെയും കുടുംബസമയത്തിന്റെയും ശാന്തമായ ദിവസമാണ്; കേരളത്തിൽ പൊതു അവധി. വാഹനങ്ങൾക്കും യന്ത്രങ്ങൾക്കും ആയുധപൂജ; ക്ഷേത്രങ്ങളിൽ വിശേഷാൽ പൂജകൾ. പല കുടുംബങ്ങളും സരസ്വതീക്ഷേത്രങ്ങൾ സന്ദർശിക്കുന്നു."
+    },
+    "story": {
+     "en": "On the ninth day the Goddess's battle nears its end, and the weapons the gods gave her are honoured. In Kerala the day carries the idea that the hands and mind also need rest: the tools of one's life are offered to the Goddess, and one day without them is a reminder of what they give.",
+     "ml": "ഒൻപതാം ദിവസം ദേവിയുടെ യുദ്ധം അവസാനത്തോടടുക്കുന്നു; ദേവന്മാർ നൽകിയ ആയുധങ്ങൾ ആദരിക്കപ്പെടുന്നു. കൈകൾക്കും മനസ്സിനും വിശ്രമം വേണം എന്ന ആശയമാണ് കേരളത്തിൽ ഈ ദിവസത്തിന്: ജീവിതത്തിലെ ഉപകരണങ്ങൾ ദേവിക്കു സമർപ്പിക്കുന്നു; അവയില്ലാത്ത ഒരു ദിവസം അവ നൽകുന്നതെന്തെന്ന് ഓർമ്മിപ്പിക്കുന്നു."
+    },
+    "howTo": {
+     "en": [
+      "Keep the books and tools before the Goddess; do not study or work with them today.",
+      "Perform ayudha puja for vehicles and machines with sandal paste and flowers.",
+      "Light the nilavilakku at dusk and pray."
+     ],
+     "ml": [
+      "പുസ്തകങ്ങളും ഉപകരണങ്ങളും ദേവിക്കു മുന്നിൽ തന്നെ വയ്ക്കുക; ഇന്ന് അവ ഉപയോഗിക്കാതിരിക്കുക.",
+      "വാഹനങ്ങൾക്കും യന്ത്രങ്ങൾക്കും ചന്ദനവും പൂവും കൊണ്ട് ആയുധപൂജ ചെയ്യുക.",
+      "സന്ധ്യയ്ക്ക് നിലവിളക്കു കൊളുത്തി പ്രാർത്ഥിക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "Mahanavami greetings.",
+     "ml": "മഹാനവമി ആശംസകൾ."
+    }
+   }
+  },
+  {
+   "id": "vijayadashami-ml",
+   "names": {
+    "en": "Vijayadashami (Vidyarambham)",
+    "ml": "വിജയദശമി (വിദ്യാരംഭം)"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 10
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-KL"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)",
+    "Government of Kerala public holidays 2026 gazette (Onmanorama, 29 Oct 2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The tenth day: the Goddess's victory, and the day children begin learning.",
+     "ml": "പത്താം ദിവസം: ദേവിയുടെ വിജയം, കുട്ടികൾ അക്ഷരം കുറിക്കുന്ന ദിവസം."
+    },
+    "traditions": {
+     "en": "The books and instruments set before Saraswati are taken back with a short worship, and the first thing read or played that morning is a prayer or a lesson. Young children are initiated into learning (Vidyarambham): an elder or a teacher holds the child's finger and writes the first letters, in Tamil 'Hari Sri' or 'a', and in Kerala 'Hari Sri Ganapataye Namah', in a plate of rice. Music and dance students begin new lessons. In Kerala, Vidyarambham is held at temples such as Thunchan Parambu and Kollur Mookambika, and in Tamil Nadu at Koothanur's Saraswati temple.",
+     "ml": "സരസ്വതിക്കു മുന്നിൽ പൂജയ്ക്കു വച്ച പുസ്തകങ്ങളും ഉപകരണങ്ങളും ചെറിയ പൂജയോടെ എടുക്കുന്നു (പൂജയെടുപ്പ്); അന്നു രാവിലെ ആദ്യം വായിക്കുന്നതോ വായിക്കുന്നതോ ഒരു പ്രാർത്ഥനയോ പാഠമോ ആണ്. കുട്ടികളെ എഴുത്തിനിരുത്തുന്നു (വിദ്യാരംഭം): ഗുരുവോ മുതിർന്നവരോ കുട്ടിയുടെ വിരൽ പിടിച്ച് അരിയിൽ 'ഹരിശ്രീ ഗണപതയേ നമഃ' എന്ന് എഴുതിക്കുന്നു, നാവിൽ സ്വർണ്ണം കൊണ്ട് അക്ഷരം കുറിക്കുന്നു. തുഞ്ചൻ പറമ്പ്, കൊല്ലൂർ മൂകാംബിക, പനച്ചിക്കാട് തുടങ്ങിയ ഇടങ്ങളിൽ ആയിരങ്ങൾ എത്തുന്നു. സംഗീത-നൃത്ത വിദ്യാർത്ഥികൾ പുതിയ പാഠങ്ങൾ തുടങ്ങുന്നു."
+    },
+    "story": {
+     "en": "On the tenth day the Goddess overcame Mahishasura after nine days of battle, and the gods rejoiced; 'Vijaya' means victory. In the Ramayana, Rama defeated Ravana on this day after worshipping the Goddess. Because victory over ignorance is the truest one, the day is held the best of the year for beginning to learn: whatever is begun on Vijayadashami is begun with the Goddess of learning's blessing.",
+     "ml": "ഒൻപതു ദിവസത്തെ യുദ്ധത്തിനു ശേഷം പത്താം ദിവസം ദേവി മഹിഷാസുരനെ ജയിച്ചു; ദേവന്മാർ സന്തോഷിച്ചു; 'വിജയ' എന്നാൽ വിജയം. രാമായണത്തിൽ, ദേവിയെ ആരാധിച്ച ശേഷം ശ്രീരാമൻ ഈ ദിവസം രാവണനെ ജയിച്ചു. അജ്ഞാനത്തിനു മേലുള്ള വിജയമാണ് യഥാർത്ഥ വിജയം എന്നതിനാൽ, പഠനം തുടങ്ങാൻ വർഷത്തിലെ ഏറ്റവും നല്ല ദിവസമായി ഇതു കരുതപ്പെടുന്നു. കേരളത്തിൽ, മലയാളത്തിന്റെ പിതാവായ തുഞ്ചത്ത് എഴുത്തച്ഛനെയും ഈ ദിവസം ഓർക്കുന്നു."
+    },
+    "howTo": {
+     "en": [
+      "In the morning, do a short puja and take back the books and instruments from before Saraswati.",
+      "Read a prayer or a page, write something, or play a few notes before anything else.",
+      "If a child is starting to learn, sit them on an elder's lap and guide their finger to write the first letters in a plate of rice.",
+      "Begin a new lesson or course you have been planning.",
+      "Take down the kolu if you set one up, keeping one doll lying down as a gentle goodbye till next year."
+     ],
+     "ml": [
+      "രാവിലെ ചെറിയ പൂജ ചെയ്ത് സരസ്വതിക്കു മുന്നിൽ വച്ച പുസ്തകങ്ങളും ഉപകരണങ്ങളും എടുക്കുക.",
+      "മറ്റെന്തിനും മുമ്പ് ഒരു പ്രാർത്ഥനയോ ഒരു താളോ വായിക്കുക, എന്തെങ്കിലും എഴുതുക, അല്ലെങ്കിൽ ഏതാനും സ്വരങ്ങൾ വായിക്കുക.",
+      "കുട്ടിയെ എഴുത്തിനിരുത്തുന്നുണ്ടെങ്കിൽ ഗുരുവിന്റെയോ മുതിർന്നവരുടെയോ മടിയിലിരുത്തി, അരിയിൽ 'ഹരിശ്രീ ഗണപതയേ നമഃ' എഴുതിക്കുക.",
+      "ആലോചിച്ചിരുന്ന പുതിയ പാഠമോ പഠനമോ തുടങ്ങുക."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Vijayadashami! May every new beginning be blessed.",
+     "ml": "വിജയദശമി ആശംസകൾ! എല്ലാ പുതിയ തുടക്കങ്ങളും ശുഭമാകട്ടെ."
+    }
+   }
+  },
+  {
+   "id": "deepavali-ml",
+   "names": {
+    "en": "Deepavali",
+    "ml": "ദീപാവലി"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 29
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [
+    "Kept as Naraka Chaturdashi, the day Krishna Chaturdashi holds at sunrise, with the oil bath before dawn. Lakshmi Puja on Amavasya, the North Indian Diwali, can fall the next day; far from India, as in North America, the two are often a day apart."
+   ],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Naraka Chaturdashi: the South Indian Deepavali, beginning with an oil bath before dawn.",
+     "ml": "നരക ചതുർദശി: ദക്ഷിണേന്ത്യൻ ദീപാവലി, പുലരും മുമ്പുള്ള എണ്ണതേച്ചുകുളിയോടെ തുടങ്ങുന്നു."
+    },
+    "traditions": {
+     "en": "Families wake long before dawn for the Ganga snanam: an elder applies warm sesame oil to each person's head, and everyone bathes, which tradition says is as good as bathing in the Ganga on this morning. Everyone wears new clothes, eats the Deepavali lehiyam (a digestive herbal paste) and a sweet, and lights crackers in the dark before sunrise. Sweets and savouries made for days, adhirasam, murukku, mysorepak, ribbon pakoda, are shared with neighbours. Lamps are lit at the door in the evening. 'Ganga snanam aacha?' (have you had your Ganga bath?) is the morning greeting.",
+     "ml": "കുടുംബങ്ങൾ പുലരുംമുമ്പേ ഉണർന്ന് എണ്ണതേച്ചുകുളിക്കുന്നു: മുതിർന്നവർ ഓരോരുത്തരുടെയും തലയിൽ ചൂടുള്ള നല്ലെണ്ണ തേച്ചുകൊടുക്കുന്നു. പുതുവസ്ത്രമണിഞ്ഞ്, മധുരം കഴിച്ച്, പുലരും മുമ്പ് പടക്കം പൊട്ടിക്കുന്നു. പലഹാരങ്ങൾ അയൽക്കാരുമായി പങ്കിടുന്നു; വൈകുന്നേരം വാതിൽക്കൽ ദീപങ്ങൾ തെളിക്കുന്നു. തുലാമാസത്തിലെ ഈ ആഘോഷം കേരളത്തിൽ, പ്രത്യേകിച്ച് തെക്കൻ ജില്ലകളിൽ, കുടുംബങ്ങൾ ഒത്തുചേരുന്ന ദിവസമാണ്."
+    },
+    "story": {
+     "en": "Narakasura, son of Bhudevi, the Earth, grew powerful and arrogant, imprisoned sixteen thousand women and troubled the gods. Krishna, with Satyabhama, who was Bhudevi herself in a new birth, rode out against him, and at dawn on Chaturdashi Narakasura fell. As he died, he understood what he had done, and asked that the day be celebrated with lights, new clothes and joy, so that people would remember that even the darkest night ends. His mother agreed, and Deepavali morning in the South is kept as he asked.",
+     "ml": "ഭൂമീദേവിയുടെ പുത്രനായ നരകാസുരൻ ശക്തനും അഹങ്കാരിയുമായി, പതിനാറായിരം സ്ത്രീകളെ തടവിലാക്കി, ദേവന്മാരെ ദ്രോഹിച്ചു. പുനർജന്മത്തിൽ ഭൂമീദേവി തന്നെയായ സത്യഭാമയോടൊപ്പം കൃഷ്ണൻ അവനെ നേരിട്ടു; ചതുർദശിയുടെ പുലർച്ചെ നരകാസുരൻ വീണു. മരണവേളയിൽ സ്വന്തം ചെയ്തികൾ തിരിച്ചറിഞ്ഞ അവൻ, ഏറ്റവും ഇരുണ്ട രാത്രിയും അവസാനിക്കുമെന്ന് ആളുകൾ ഓർക്കാനായി ഈ ദിവസം ദീപങ്ങളും പുതുവസ്ത്രങ്ങളും സന്തോഷവുമായി ആഘോഷിക്കണമെന്ന് അപേക്ഷിച്ചു. അമ്മ സമ്മതിച്ചു."
+    },
+    "howTo": {
+     "en": [
+      "In the days before, make or buy sweets and savouries, new clothes, oil, shikakai and the Deepavali lehiyam.",
+      "Wake before dawn; an elder applies warm sesame oil to everyone's head. Bathe with shikakai.",
+      "Wear new clothes, worship at the family altar, and eat a little lehiyam and a sweet.",
+      "Light crackers before sunrise if you do; choose quieter ones, and keep children and animals safe.",
+      "Visit and share sweets with neighbours and relatives; light lamps at the door in the evening."
+     ],
+     "ml": [
+      "മുൻദിവസങ്ങളിൽ പലഹാരങ്ങൾ, പുതുവസ്ത്രം, എണ്ണ, ചീവയ്ക്കപ്പൊടി എന്നിവ ഒരുക്കുക.",
+      "പുലരും മുമ്പ് ഉണരുക; മുതിർന്നവർ എല്ലാവരുടെയും തലയിൽ ചൂടുള്ള നല്ലെണ്ണ തേക്കും. കുളിക്കുക.",
+      "പുതുവസ്ത്രമണിഞ്ഞ് പ്രാർത്ഥിച്ച് മധുരം കഴിക്കുക.",
+      "പടക്കം പൊട്ടിക്കുന്നുണ്ടെങ്കിൽ ശബ്ദം കുറഞ്ഞവ തിരഞ്ഞെടുക്കുക; കുട്ടികളെയും മൃഗങ്ങളെയും സുരക്ഷിതരാക്കുക.",
+      "അയൽക്കാരുമായി പലഹാരം പങ്കിടുക; വൈകുന്നേരം വാതിൽക്കൽ ദീപം തെളിക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Deepavali! Ganga snanam aacha?",
+     "ml": "ദീപാവലി ആശംസകൾ!"
+    }
+   }
+  },
+  {
+   "id": "mandala-kalam",
+   "names": {
+    "en": "Mandala Kalam begins",
+    "ml": "മണ്ഡലകാലാരംഭം"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "vrishchika",
+    "day": 1
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 41,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Vrischikam 1: the start of the forty-one-day Mandala season and the Sabarimala pilgrimage.",
+     "ml": "വൃശ്ചികം 1: നാല്പത്തിയൊന്നു ദിവസത്തെ മണ്ഡലകാലവും ശബരിമല തീർത്ഥാടനവും തുടങ്ങുന്നു."
+    },
+    "traditions": {
+     "en": "Pilgrims begin the forty-one-day vratham for Sabarimala by wearing the mala, a tulsi or rudraksha bead necklace, on Vrischikam 1. During the vratham they wear black or blue, eat vegetarian food, rise early, avoid alcohol and anger, and address one another as 'Swami'. Homes and temples across Kerala hold bhajans through the season. Before the journey, the irumudi kettu, the two-part bundle of offerings, is prepared.",
+     "ml": "ശബരിമലയ്ക്കുള്ള നാല്പത്തിയൊന്നു ദിവസത്തെ വ്രതം വൃശ്ചികം ഒന്നിന് തുളസിയോ രുദ്രാക്ഷമോ മാലയിട്ട് തീർത്ഥാടകർ ആരംഭിക്കുന്നു. വ്രതകാലത്ത് കറുപ്പോ നീലയോ വസ്ത്രം, സസ്യാഹാരം, നേരത്തെ ഉണരൽ, മദ്യവും കോപവും ഒഴിവാക്കൽ; പരസ്പരം 'സ്വാമി' എന്നു വിളിക്കുന്നു. കേരളമെമ്പാടും വീടുകളിലും ക്ഷേത്രങ്ങളിലും ഭജനകൾ. യാത്രയ്ക്കു മുമ്പ് ഇരുമുടിക്കെട്ട് നിറയ്ക്കുന്നു."
+    },
+    "story": {
+     "en": "Ayyappa, found as an infant by the King of Pandalam, chose to sit in meditation at Sabarimala after overcoming the demoness Mahishi. The vratham is modelled on his own discipline as a brahmachari: forty-one days of simplicity, so that the pilgrim reaches the eighteen steps changed. On the journey everyone is equal and everyone is Ayyappa, which is why pilgrims call each other Swami.",
+     "ml": "പന്തളം രാജാവ് ശിശുവായി കണ്ടെത്തിയ അയ്യപ്പൻ മഹിഷിയെ നിഗ്രഹിച്ച ശേഷം ശബരിമലയിൽ ധ്യാനത്തിലിരിക്കാൻ തീരുമാനിച്ചു. ഈ വ്രതം അദ്ദേഹത്തിന്റെ ബ്രഹ്മചര്യത്തിന്റെ മാതൃകയിലാണ്: പതിനെട്ടാം പടിയിലെത്തുമ്പോൾ മാറിയ മനസ്സോടെയാകാൻ നാല്പത്തിയൊന്നു ദിവസത്തെ ലാളിത്യം. യാത്രയിൽ എല്ലാവരും തുല്യരും എല്ലാവരും അയ്യപ്പനുമാണ്; അതുകൊണ്ടാണ് പരസ്പരം സ്വാമി എന്നു വിളിക്കുന്നത്."
+    },
+    "howTo": {
+     "en": [
+      "If you are going to Sabarimala, wear the mala from a guruswami or temple on Vrischikam 1 and begin the vratham.",
+      "Through the season, eat vegetarian food, keep calm speech and rise early.",
+      "Join the evening bhajans at home or at a temple.",
+      "Even if you are not going, light a lamp and chant 'Swamiye Saranam Ayyappa' on Vrischikam 1."
+     ],
+     "ml": [
+      "ശബരിമലയ്ക്കു പോകുന്നുണ്ടെങ്കിൽ വൃശ്ചികം ഒന്നിന് ഗുരുസ്വാമിയിൽ നിന്നോ ക്ഷേത്രത്തിൽ നിന്നോ മാലയിട്ട് വ്രതം ആരംഭിക്കുക.",
+      "മണ്ഡലകാലം മുഴുവൻ സസ്യാഹാരം, ശാന്തമായ സംസാരം, നേരത്തെ ഉണരൽ.",
+      "വീട്ടിലോ ക്ഷേത്രത്തിലോ സന്ധ്യാഭജനയിൽ പങ്കുചേരുക.",
+      "പോകുന്നില്ലെങ്കിലും വൃശ്ചികം ഒന്നിന് വിളക്കു കൊളുത്തി 'സ്വാമിയേ ശരണമയ്യപ്പാ' ജപിക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "Swamiye Saranam Ayyappa! Mandala Kalam begins.",
+     "ml": "സ്വാമിയേ ശരണമയ്യപ്പാ! മണ്ഡലകാലം ആരംഭിക്കുന്നു."
+    }
+   }
+  },
+  {
+   "id": "guruvayur-ekadasi",
+   "names": {
+    "en": "Guruvayur Ekadasi",
+    "ml": "ഗുരുവായൂർ ഏകാദശി"
+   },
+   "rule": {
+    "type": "tithi-in-solar-month",
+    "month": "vrishchika",
+    "tithi": 11
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Shukla Ekadashi of Vrischikam, Guruvayur's great day.",
+     "ml": "വൃശ്ചികമാസത്തിലെ ശുക്ലപക്ഷ ഏകാദശി, ഗുരുവായൂരിന്റെ മഹാദിനം."
+    },
+    "traditions": {
+     "en": "At Guruvayur, the Ekadashi festival includes a month of elephants' processions, the Chembai Sangeetholsavam, a music festival of thousands of musicians in memory of the singer Chembai Vaidyanatha Bhagavathar, and the udayasthamana pooja from dawn to dusk. Devotees fast from grains, and the temple serves the Ekadashi meal of wheat and puzhukku. The Gita is recited, since the day is also Gita Jayanthi in many years.",
+     "ml": "ഗുരുവായൂരിൽ ഏകാദശി ഉത്സവത്തിന്റെ ഭാഗമായി ഒരു മാസത്തെ ആനയെഴുന്നള്ളിപ്പുകൾ, ഗായകൻ ചെമ്പൈ വൈദ്യനാഥ ഭാഗവതരുടെ സ്മരണയിൽ ആയിരക്കണക്കിനു സംഗീതജ്ഞർ പങ്കെടുക്കുന്ന ചെമ്പൈ സംഗീതോത്സവം, ഉദയാസ്തമന പൂജ. ഭക്തർ അരിയാഹാരം ഒഴിവാക്കി വ്രതമെടുക്കുന്നു; ക്ഷേത്രത്തിൽ ഗോതമ്പും പുഴുക്കും ചേർന്ന ഏകാദശി ഭക്ഷണം. പല വർഷങ്ങളിലും ഇത് ഗീതാജയന്തി കൂടിയായതിനാൽ ഗീതാപാരായണം."
+    },
+    "story": {
+     "en": "The idol at Guruvayur is said to have been worshipped by Krishna's parents at Dwarka. When Dwarka was to be submerged, Krishna asked that it be carried to safety; Guru, Brihaspati, and Vayu, the wind, brought it to Kerala, and Shiva showed them the place, which is why it is called Guru-vayu-ur. The Ekadashi of Vrischikam is said to be the day the idol was installed. A beloved story tells of the devotee Kurooramma, an old woman whom Krishna visited as a child to keep her company.",
+     "ml": "ദ്വാരകയിൽ ശ്രീകൃഷ്ണന്റെ മാതാപിതാക്കൾ ആരാധിച്ചിരുന്ന വിഗ്രഹമാണ് ഗുരുവായൂരിലേതെന്നു വിശ്വാസം. ദ്വാരക കടലെടുക്കാറായപ്പോൾ വിഗ്രഹം സുരക്ഷിതമായി കൊണ്ടുപോകാൻ കൃഷ്ണൻ ആവശ്യപ്പെട്ടു; ഗുരുവും (ബൃഹസ്പതി) വായുവും അതു കേരളത്തിലെത്തിച്ചു; ശിവൻ സ്ഥലം കാണിച്ചുകൊടുത്തു; അങ്ങനെ ഗുരു-വായു-ഊർ. വൃശ്ചിക ഏകാദശിയിലാണ് പ്രതിഷ്ഠ നടന്നതെന്നു പറയപ്പെടുന്നു. ഒറ്റയ്ക്കായിരുന്ന വൃദ്ധയായ ഭക്ത കുറൂരമ്മയ്ക്കു കൂട്ടായി കൃഷ്ണൻ ബാലനായി ചെന്ന കഥ ഏറെ പ്രിയങ്കരമാണ്."
+    },
+    "howTo": {
+     "en": [
+      "Keep the Ekadashi fast from rice; wheat, fruit and puzhukku are usual.",
+      "Visit Guruvayur or a Krishna temple, or listen to the Chembai Sangeetholsavam.",
+      "Light the nilavilakku before Guruvayurappan, offer tulsi and butter, and read the Narayaneeyam or Gita.",
+      "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "അരിയാഹാരം ഒഴിവാക്കി ഏകാദശി വ്രതമെടുക്കുക; ഗോതമ്പ്, പഴം, പുഴുക്ക് പതിവാണ്.",
+      "ഗുരുവായൂരോ കൃഷ്ണക്ഷേത്രമോ സന്ദർശിക്കുക, അല്ലെങ്കിൽ ചെമ്പൈ സംഗീതോത്സവം കേൾക്കുക.",
+      "ഗുരുവായൂരപ്പനു മുന്നിൽ നിലവിളക്കു കൊളുത്തി തുളസിയും വെണ്ണയും അർപ്പിച്ച് നാരായണീയമോ ഗീതയോ വായിക്കുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം അവസാനിപ്പിക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "Guruvayur Ekadasi greetings. Guruvayurappa saranam!",
+     "ml": "ഗുരുവായൂർ ഏകാദശി ആശംസകൾ. ഗുരുവായൂരപ്പാ ശരണം!"
+    }
+   }
+  },
+  {
+   "id": "thrikkarthika",
+   "names": {
+    "en": "Thrikkarthika",
+    "ml": "തൃക്കാർത്തിക"
+   },
+   "rule": {
+    "type": "nakshatra-in-solar-month",
+    "month": "vrishchika",
+    "nakshatra": "krittika",
+    "observance": {
+     "kala": "pradosh"
+    },
+    "nearTithi": 15
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Karthika star in Vrischikam near the full moon: lamps around every Kerala home.",
+     "ml": "വൃശ്ചികമാസത്തിലെ കാർത്തിക: കേരളത്തിലെ ഓരോ വീടിനു ചുറ്റും ദീപങ്ങൾ."
+    },
+    "traditions": {
+     "en": "At dusk, Kerala homes are outlined with rows of small clay lamps (chirathu) along walls, steps and the courtyard, and the family prays to the Goddess. Temples, especially Devi temples like Chakkulathukavu and Kumaranallur, hold karthika deepam. Families make ada and unniyappam, and in some homes the kozhukatta, steamed sweet rice dumplings.",
+     "ml": "സന്ധ്യയ്ക്ക് കേരളത്തിലെ വീടുകൾ മതിലുകളിലും പടികളിലും മുറ്റത്തും ചെരാതുകളുടെ നിരകളാൽ അലങ്കരിക്കപ്പെടുന്നു; കുടുംബം ദേവിയോടു പ്രാർത്ഥിക്കുന്നു. ക്ഷേത്രങ്ങളിൽ, പ്രത്യേകിച്ച് ചക്കുളത്തുകാവ്, കുമാരനല്ലൂർ തുടങ്ങിയ ദേവീക്ഷേത്രങ്ങളിൽ, കാർത്തികദീപം. കുടുംബങ്ങൾ അടയും ഉണ്ണിയപ്പവും, ചില വീടുകളിൽ കൊഴുക്കട്ടയും ഉണ്ടാക്കുന്നു."
+    },
+    "story": {
+     "en": "In Kerala, Thrikkarthika is the Goddess's festival: Karthika is said to be the birth star of Devi at Kumaranallur, and the lamps welcome her. It shares the story told in Tamil Nadu of the endless column of light that Brahma and Vishnu could not measure, which was Shiva, and the day is also linked to Subrahmanya, raised by the Karthika stars.",
+     "ml": "കേരളത്തിൽ തൃക്കാർത്തിക ദേവിയുടെ ഉത്സവമാണ്: കുമാരനല്ലൂർ ദേവിയുടെ ജന്മനക്ഷത്രം കാർത്തികയാണെന്നു പറയപ്പെടുന്നു; ദീപങ്ങൾ ദേവിയെ വരവേൽക്കുന്നു. ബ്രഹ്മാവിനും വിഷ്ണുവിനും അളക്കാനാകാത്ത, ശിവനായ, അനന്തമായ ജ്യോതിസ്തംഭത്തിന്റെ കഥയും, കാർത്തിക നക്ഷത്രങ്ങൾ വളർത്തിയ സുബ്രഹ്മണ്യനുമായുള്ള ബന്ധവും ഈ ദിവസത്തിനുണ്ട്."
+    },
+    "howTo": {
+     "en": [
+      "Wash and soak clay lamps the day before; get wicks and oil.",
+      "At dusk, light the nilavilakku first, then line the walls, steps and courtyard with lamps.",
+      "Pray to the Goddess, and share ada or unniyappam."
+     ],
+     "ml": [
+      "തലേന്ന് ചെരാതുകൾ കഴുകി കുതിർത്തു വയ്ക്കുക; തിരിയും എണ്ണയും ഒരുക്കുക.",
+      "സന്ധ്യയ്ക്ക് ആദ്യം നിലവിളക്കു കൊളുത്തി, പിന്നെ മതിലുകളിലും പടികളിലും മുറ്റത്തും ചെരാതുകൾ നിരത്തുക.",
+      "ദേവിയോടു പ്രാർത്ഥിച്ച് അടയോ ഉണ്ണിയപ്പമോ പങ്കിടുക."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Thrikkarthika!",
+     "ml": "തൃക്കാർത്തിക ആശംസകൾ!"
+    }
+   }
+  },
+  {
+   "id": "mandala-pooja",
+   "names": {
+    "en": "Mandala Pooja",
+    "ml": "മണ്ഡലപൂജ"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "mandala-kalam",
+    "offsetDays": 40
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The forty-first day of the Mandala season: the Mandala Pooja at Sabarimala.",
+     "ml": "മണ്ഡലകാലത്തിന്റെ നാല്പത്തിയൊന്നാം ദിവസം: ശബരിമലയിലെ മണ്ഡലപൂജ."
+    },
+    "traditions": {
+     "en": "At Sabarimala, the golden attire (thanka anki) offered by the Travancore royal family is brought in procession and adorns Ayyappa for the Mandala Pooja, after which the temple closes briefly before reopening for Makaravilakku. Pilgrims who wore the mala on Vrischikam 1 complete their forty-one-day vratham. Across Kerala, temples hold special pujas.",
+     "ml": "ശബരിമലയിൽ, തിരുവിതാംകൂർ രാജകുടുംബം സമർപ്പിച്ച തങ്ക അങ്കി ഘോഷയാത്രയായി കൊണ്ടുവന്ന് മണ്ഡലപൂജയ്ക്ക് അയ്യപ്പനു ചാർത്തുന്നു; അതിനുശേഷം നട അടച്ച് മകരവിളക്കിനായി വീണ്ടും തുറക്കുന്നു. വൃശ്ചികം ഒന്നിന് മാലയിട്ട തീർത്ഥാടകർ നാല്പത്തിയൊന്നു ദിവസത്തെ വ്രതം പൂർത്തിയാക്കുന്നു. കേരളമെമ്പാടുമുള്ള ക്ഷേത്രങ്ങളിൽ വിശേഷാൽ പൂജകൾ."
+    },
+    "story": {
+     "en": "The mandala, forty-one days, is a traditional span for a discipline to take root. The Mandala Pooja marks the completion of the pilgrims' vratham, the time Ayyappa himself is said to have kept, and the Lord is adorned in gold to receive their devotion.",
+     "ml": "ഒരു ശീലം വേരുറയ്ക്കാനുള്ള പരമ്പരാഗത കാലയളവാണ് നാല്പത്തിയൊന്നു ദിവസത്തെ മണ്ഡലം. അയ്യപ്പൻ സ്വയം അനുഷ്ഠിച്ചതായി പറയപ്പെടുന്ന ഈ വ്രതത്തിന്റെ പൂർത്തീകരണമാണ് മണ്ഡലപൂജ; ഭക്തരുടെ ഭക്തി സ്വീകരിക്കാൻ ഭഗവാൻ സ്വർണ്ണാലങ്കാരം ധരിക്കുന്നു."
+    },
+    "howTo": {
+     "en": [
+      "Light the nilavilakku and chant 'Swamiye Saranam Ayyappa' at dusk.",
+      "Watch the Mandala Pooja broadcast from Sabarimala.",
+      "If you kept the vratham, complete it as your guruswami advises."
+     ],
+     "ml": [
+      "സന്ധ്യയ്ക്ക് നിലവിളക്കു കൊളുത്തി 'സ്വാമിയേ ശരണമയ്യപ്പാ' ജപിക്കുക.",
+      "ശബരിമലയിൽ നിന്നുള്ള മണ്ഡലപൂജ സംപ്രേക്ഷണം കാണുക.",
+      "വ്രതമെടുത്തിട്ടുണ്ടെങ്കിൽ ഗുരുസ്വാമിയുടെ നിർദ്ദേശപ്രകാരം പൂർത്തിയാക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "Swamiye Saranam Ayyappa! Mandala Pooja greetings.",
+     "ml": "സ്വാമിയേ ശരണമയ്യപ്പാ! മണ്ഡലപൂജ ആശംസകൾ."
+    }
+   }
+  },
+  {
+   "id": "mukkoti-ekadasi",
+   "names": {
+    "en": "Mukkoti (Swargavathil) Ekadasi",
+    "ml": "മുക്കോടി ഏകാദശി"
+   },
+   "rule": {
+    "type": "tithi-in-solar-month",
+    "month": "dhanu",
+    "tithi": 11
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Shukla Ekadashi of Dhanu: Swargavathil Ekadasi, when the gate of Vaikuntha opens.",
+     "ml": "ധനുമാസത്തിലെ ശുക്ല ഏകാദശി: വൈകുണ്ഠ കവാടം തുറക്കുന്ന സ്വർഗ്ഗവാതിൽ ഏകാദശി."
+    },
+    "traditions": {
+     "en": "Vishnu temples in Kerala, the Sree Padmanabhaswamy temple in Thiruvananthapuram among them, open the northern 'swargavathil' for devotees at dawn. Devotees fast from rice and keep a vigil, reciting the Vishnu Sahasranamam and Narayaneeyam. It is also called Vaikunta Ekadasi.",
+     "ml": "തിരുവനന്തപുരം ശ്രീപത്മനാഭസ്വാമി ക്ഷേത്രം ഉൾപ്പെടെയുള്ള വിഷ്ണുക്ഷേത്രങ്ങളിൽ പുലർച്ചെ വടക്കേ 'സ്വർഗ്ഗവാതിൽ' ഭക്തർക്കായി തുറക്കുന്നു. ഭക്തർ അരിയാഹാരം ഒഴിവാക്കി വ്രതമെടുത്ത് ഉറക്കമൊഴിഞ്ഞ് വിഷ്ണുസഹസ്രനാമവും നാരായണീയവും ജപിക്കുന്നു. വൈകുണ്ഠ ഏകാദശി എന്നും അറിയപ്പെടുന്നു."
+    },
+    "story": {
+     "en": "The story told is that Madhu and Kaitabha, two asuras overcome by Vishnu, asked that the gate of his realm be opened on this day for all who come, and that they too might pass through it. 'Mukkoti' recalls the 'three crore' gods said to gather to worship Vishnu on this Ekadashi.",
+     "ml": "വിഷ്ണുവിനാൽ ജയിക്കപ്പെട്ട മധു, കൈടഭൻ എന്നീ അസുരന്മാർ, ഈ ദിവസം വരുന്ന എല്ലാവർക്കുമായി അദ്ദേഹത്തിന്റെ ലോകത്തിന്റെ കവാടം തുറക്കണമെന്നും തങ്ങൾക്കും അതിലൂടെ കടക്കാനാകണമെന്നും അപേക്ഷിച്ചുവെന്നാണ് കഥ. ഈ ഏകാദശിയിൽ വിഷ്ണുവിനെ ആരാധിക്കാൻ മുക്കോടി ദേവകൾ ഒത്തുചേരുന്നു എന്നതിനാൽ 'മുക്കോടി' ഏകാദശി."
+    },
+    "howTo": {
+     "en": [
+      "Keep the Ekadashi fast from rice, and keep a vigil the night before if you can.",
+      "Visit a Vishnu temple at dawn to pass through the swargavathil.",
+      "Recite the Vishnu Sahasranamam or Narayaneeyam.",
+      "Break the fast during Dvadashi the next morning."
+     ],
+     "ml": [
+      "അരിയാഹാരം ഒഴിവാക്കി ഏകാദശി വ്രതമെടുക്കുക; കഴിയുമെങ്കിൽ തലേന്ന് ഉറക്കമൊഴിയുക.",
+      "പുലർച്ചെ വിഷ്ണുക്ഷേത്രത്തിൽ സ്വർഗ്ഗവാതിൽ കടക്കുക.",
+      "വിഷ്ണുസഹസ്രനാമമോ നാരായണീയമോ ജപിക്കുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം അവസാനിപ്പിക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "Mukkoti Ekadasi greetings.",
+     "ml": "മുക്കോടി ഏകാദശി ആശംസകൾ."
+    }
+   }
+  },
+  {
+   "id": "thiruvathira",
+   "names": {
+    "en": "Dhanu Thiruvathira",
+    "ml": "ധനുതിരുവാതിര"
+   },
+   "rule": {
+    "type": "nakshatra-in-solar-month",
+    "month": "dhanu",
+    "nakshatra": "ardra",
+    "observance": {
+     "minCoverMinutes": 144,
+     "kala": "morning"
+    },
+    "nearTithi": 15
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Malayalam calendar, Kollam (https://www.drikpanchang.com/malayalam/calendar/malayalam-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Dhanu Thiruvathira: Kerala women's night of the thiruvathirakali dance, for Shiva and Parvati.",
+     "ml": "ധനുതിരുവാതിര: ശിവപാർവ്വതിമാർക്കായി സ്ത്രീകളുടെ തിരുവാതിരക്കളിയുടെ രാത്രി."
+    },
+    "traditions": {
+     "en": "Women keep a fast from rice and stay awake through the night of Thiruvathira, performing the thiruvathirakali, a graceful circular dance around a nilavilakku with clapping and songs. They bathe in a pond before dawn (thudichu kuli), splashing the water to a song, and wear the set mundu. The day's food is thiruvathira puzhukku, a mash of tubers and beans, with koova payasam made from arrowroot. Women offer the paathira poo choodal, wearing flowers at midnight, especially in a first Thiruvathira after marriage.",
+     "ml": "സ്ത്രീകൾ അരിയാഹാരം ഒഴിവാക്കി വ്രതമെടുത്ത് തിരുവാതിര രാത്രി ഉറക്കമൊഴിഞ്ഞ്, നിലവിളക്കിനു ചുറ്റും കൈകൊട്ടി പാട്ടുപാടി സുന്ദരമായ വട്ടക്കളിയായ തിരുവാതിരക്കളി ആടുന്നു. പുലരും മുമ്പ് പാട്ടിനൊപ്പം വെള്ളം തുടിച്ച് കുളത്തിൽ കുളിക്കുന്നു (തുടിച്ചുകുളി); സെറ്റുമുണ്ട് ധരിക്കുന്നു. ദിവസത്തെ ഭക്ഷണം കിഴങ്ങുകളും പയറും ചേർത്ത തിരുവാതിരപ്പുഴുക്കും കൂവപ്പായസവും. അർദ്ധരാത്രി പൂ ചൂടുന്ന പാതിരാപ്പൂ ചൂടൽ, പ്രത്യേകിച്ച് വിവാഹശേഷമുള്ള ആദ്യ തിരുവാതിരയ്ക്ക് (പൂത്തിരുവാതിര)."
+    },
+    "story": {
+     "en": "Thiruvathira is Shiva's birth star. The story told in Kerala is that Parvati kept a long tapas and fast to win Shiva, and on Dhanu Thiruvathira he accepted her; women keep the day in her memory, for the happiness of their homes. Another telling remembers Kamadeva, burnt by Shiva's third eye, and restored at the plea of his wife Rati, who kept this vratham; women pray, like Rati, for their partners. Tamil Nadu keeps the same star as Arudra Darshan.",
+     "ml": "തിരുവാതിര ശിവന്റെ ജന്മനക്ഷത്രമാണ്. ശിവനെ പതിയായി ലഭിക്കാൻ പാർവ്വതി ദീർഘകാലം തപസ്സും വ്രതവുമനുഷ്ഠിച്ചു; ധനുമാസ തിരുവാതിരയിൽ ശിവൻ അവരെ സ്വീകരിച്ചു; വീടുകളുടെ സന്തോഷത്തിനായി സ്ത്രീകൾ പാർവ്വതിയുടെ ഓർമ്മയിൽ ഈ ദിവസം ആചരിക്കുന്നു എന്നാണ് കേരളത്തിലെ കഥ. ശിവന്റെ തൃക്കണ്ണിൽ ദഹിച്ച കാമദേവനെ, ഈ വ്രതമെടുത്ത ഭാര്യ രതിയുടെ അപേക്ഷയാൽ തിരികെ ലഭിച്ചതും മറ്റൊരു കഥ; രതിയെപ്പോലെ സ്ത്രീകൾ പങ്കാളികൾക്കായി പ്രാർത്ഥിക്കുന്നു. തമിഴ്നാട്ടിൽ ഇതേ നക്ഷത്രം ആരുദ്രദർശനമാണ്."
+    },
+    "howTo": {
+     "en": [
+      "Keep a fast from rice for the day, eating puzhukku, fruit and koova payasam.",
+      "In the evening, light the nilavilakku and gather with women of the family or neighbourhood.",
+      "Dance the thiruvathirakali around the lamp, and stay up through the night with songs if you can.",
+      "At midnight, wear flowers in your hair (paathira poo choodal).",
+      "Before dawn, bathe, and visit a Shiva temple in the morning."
+     ],
+     "ml": [
+      "അരിയാഹാരം ഒഴിവാക്കി പുഴുക്കും പഴവും കൂവപ്പായസവും കഴിച്ച് വ്രതമെടുക്കുക.",
+      "സന്ധ്യയ്ക്ക് നിലവിളക്കു കൊളുത്തി കുടുംബത്തിലെയോ അയൽപക്കത്തെയോ സ്ത്രീകളോടൊപ്പം ഒത്തുകൂടുക.",
+      "വിളക്കിനു ചുറ്റും തിരുവാതിരക്കളി ആടി, കഴിയുമെങ്കിൽ പാട്ടുകളോടെ ഉറക്കമൊഴിയുക.",
+      "അർദ്ധരാത്രി മുടിയിൽ പൂ ചൂടുക (പാതിരാപ്പൂ ചൂടൽ).",
+      "പുലരും മുമ്പ് കുളിച്ച്, രാവിലെ ശിവക്ഷേത്രം സന്ദർശിക്കുക."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Thiruvathira!",
+     "ml": "തിരുവാതിര ആശംസകൾ!"
+    }
+   }
+  }
+ ],
+ "dailySignificance": [
+  {
+   "key": "ekadashi",
+   "names": {
+    "en": "Ekadashi",
+    "ml": "ഏകാദശി"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 11
+   },
+   "content": {
+    "summary": {
+     "en": "The eleventh day of each fortnight, kept by many with a fast and prayer to Vishnu.",
+     "ml": "ഓരോ പക്ഷത്തിലെയും പതിനൊന്നാം ദിവസം; പലരും ഉപവാസവും വിഷ്ണുപ്രാർത്ഥനയുമായി ആചരിക്കുന്നു."
+    },
+    "traditions": {
+     "en": "Ekadashi comes twice a month. Those who keep it avoid grains and beans for the day, some eating fruit and milk, some keeping a stricter fast, and spend time in prayer, reading or chanting Vishnu's names. The fast is broken the next morning, during Dvadashi; the parana time is shown in almanacs. People who are unwell, pregnant, elderly or on medication keep a gentle version, which tradition fully accepts.",
+     "ml": "ഏകാദശി മാസത്തിൽ രണ്ടുതവണ വരുന്നു. ആചരിക്കുന്നവർ അന്ന് അരിയാഹാരവും പയറുവർഗ്ഗങ്ങളും ഒഴിവാക്കുന്നു; ചിലർ പഴവും പാലും, ചിലർ കഠിനവ്രതം; പ്രാർത്ഥനയിലും പാരായണത്തിലും വിഷ്ണുനാമജപത്തിലും സമയം ചെലവഴിക്കുന്നു. പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം അവസാനിപ്പിക്കുന്നു. അസുഖമുള്ളവരും ഗർഭിണികളും പ്രായമായവരും മരുന്നു കഴിക്കുന്നവരും ലഘുവ്രതമാണ് എടുക്കുന്നത്; പാരമ്പര്യം അത് പൂർണ്ണമായി അംഗീകരിക്കുന്നു."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free supper the evening before.",
+      "On Ekadashi, avoid grains and beans; take fruit, milk or vrat food.",
+      "Light a lamp before Vishnu and offer tulsi.",
+      "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്നു വൈകുന്നേരം അരിയില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിക്ക് അരിയും പയറും ഒഴിവാക്കി പഴമോ പാലോ വ്രതഭക്ഷണമോ കഴിക്കുക.",
+      "വിഷ്ണുവിനു മുന്നിൽ വിളക്കു കൊളുത്തി തുളസി അർപ്പിക്കുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം അവസാനിപ്പിക്കുക."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Ekadashi fasting rules"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "ekadashi",
+   "names": {
+    "en": "Ekadashi",
+    "ml": "ഏകാദശി"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 26
+   },
+   "content": {
+    "summary": {
+     "en": "The eleventh day of each fortnight, kept by many with a fast and prayer to Vishnu.",
+     "ml": "ഓരോ പക്ഷത്തിലെയും പതിനൊന്നാം ദിവസം; പലരും ഉപവാസവും വിഷ്ണുപ്രാർത്ഥനയുമായി ആചരിക്കുന്നു."
+    },
+    "traditions": {
+     "en": "Ekadashi comes twice a month. Those who keep it avoid grains and beans for the day, some eating fruit and milk, some keeping a stricter fast, and spend time in prayer, reading or chanting Vishnu's names. The fast is broken the next morning, during Dvadashi; the parana time is shown in almanacs. People who are unwell, pregnant, elderly or on medication keep a gentle version, which tradition fully accepts.",
+     "ml": "ഏകാദശി മാസത്തിൽ രണ്ടുതവണ വരുന്നു. ആചരിക്കുന്നവർ അന്ന് അരിയാഹാരവും പയറുവർഗ്ഗങ്ങളും ഒഴിവാക്കുന്നു; ചിലർ പഴവും പാലും, ചിലർ കഠിനവ്രതം; പ്രാർത്ഥനയിലും പാരായണത്തിലും വിഷ്ണുനാമജപത്തിലും സമയം ചെലവഴിക്കുന്നു. പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം അവസാനിപ്പിക്കുന്നു. അസുഖമുള്ളവരും ഗർഭിണികളും പ്രായമായവരും മരുന്നു കഴിക്കുന്നവരും ലഘുവ്രതമാണ് എടുക്കുന്നത്; പാരമ്പര്യം അത് പൂർണ്ണമായി അംഗീകരിക്കുന്നു."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free supper the evening before.",
+      "On Ekadashi, avoid grains and beans; take fruit, milk or vrat food.",
+      "Light a lamp before Vishnu and offer tulsi.",
+      "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്നു വൈകുന്നേരം അരിയില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിക്ക് അരിയും പയറും ഒഴിവാക്കി പഴമോ പാലോ വ്രതഭക്ഷണമോ കഴിക്കുക.",
+      "വിഷ്ണുവിനു മുന്നിൽ വിളക്കു കൊളുത്തി തുളസി അർപ്പിക്കുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം അവസാനിപ്പിക്കുക."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Ekadashi fasting rules"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "pournami",
+   "names": {
+    "en": "Pournami",
+    "ml": "പൗർണ്ണമി"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 15
+   },
+   "content": {
+    "summary": {
+     "en": "The full moon, kept with temple visits, girivalam and the evening lamp.",
+     "ml": "പൗർണ്ണമി: ക്ഷേത്രദർശനവും സന്ധ്യാദീപവുമായി ആചരിക്കുന്ന ദിവസം."
+    },
+    "traditions": {
+     "en": "On Pournami many families visit the Goddess's temple, and at Thiruvannamalai thousands walk the girivalam around Arunachala under the full moon. Some keep a fast and break it after seeing the Moon. Satyanarayana puja is held in many homes. Several festivals fall on the full moon of their month: Chitra Pournami, Masi Magam and Karthigai Deepam.",
+     "ml": "പൗർണ്ണമിയിൽ പല കുടുംബങ്ങളും ദേവീക്ഷേത്രം സന്ദർശിക്കുന്നു; പല ക്ഷേത്രങ്ങളിലും പൗർണ്ണമിപൂജ. ചിലർ വ്രതമെടുത്ത് ചന്ദ്രനെ കണ്ട ശേഷം അവസാനിപ്പിക്കുന്നു. സന്ധ്യയ്ക്ക് നിലവിളക്കും ലളിതാസഹസ്രനാമ ജപവും."
+    },
+    "howTo": {
+     "en": [
+      "Light a lamp in the evening and pray to the Goddess or Vishnu.",
+      "Visit a temple, or walk the girivalam if you are at Thiruvannamalai.",
+      "Look at the full Moon and offer it water if your family does."
+     ],
+     "ml": [
+      "സന്ധ്യയ്ക്ക് വിളക്കു കൊളുത്തി ദേവിയെയോ വിഷ്ണുവിനെയോ പ്രാർത്ഥിക്കുക.",
+      "ഒരു ക്ഷേത്രം സന്ദർശിക്കുക.",
+      "പതിവുണ്ടെങ്കിൽ പൂർണ്ണചന്ദ്രനെ കണ്ട് ജലം അർപ്പിക്കുക."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Purnima"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "karuthavavu",
+   "names": {
+    "en": "Karutha Vavu (Amavasi)",
+    "ml": "കറുത്തവാവ്"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 30
+   },
+   "content": {
+    "summary": {
+     "en": "The new moon, when many Kerala families offer bali for their ancestors.",
+     "ml": "അമാവാസി: പല കുടുംബങ്ങളും പിതൃക്കൾക്കായി ബലിയർപ്പിക്കുന്ന ദിവസം."
+    },
+    "traditions": {
+     "en": "On the new moon, many families keep an orikkal (one meal) the day before and offer bali tharpanam for their ancestors at home or at a riverside temple, and set a portion of food out for crows. Karkidakam, Thulam and Kumbham vavu are the largest. Some temples hold vavu bali every month.",
+     "ml": "അമാവാസിക്ക് തലേന്ന് ഒരിക്കലെടുത്ത്, പല കുടുംബങ്ങളും വീട്ടിലോ പുഴക്കടവിലെ ക്ഷേത്രത്തിലോ പിതൃക്കൾക്കായി ബലിതർപ്പണം നടത്തി, ഭക്ഷണത്തിന്റെ ഒരു പങ്ക് കാക്കയ്ക്കു വയ്ക്കുന്നു. കർക്കിടകം, തുലാം, കുംഭം വാവുകളാണ് ഏറ്റവും പ്രധാനം. ചില ക്ഷേത്രങ്ങളിൽ എല്ലാ മാസവും വാവുബലിയുണ്ട്."
+    },
+    "howTo": {
+     "en": [
+      "Eat one meal the day before if your family does.",
+      "Offer water and sesame for your ancestors, facing south, or join the bali at a temple.",
+      "Set a portion of food out for crows, and give to someone in need."
+     ],
+     "ml": [
+      "പതിവുണ്ടെങ്കിൽ തലേന്ന് ഒരിക്കലെടുക്കുക.",
+      "തെക്കോട്ടു തിരിഞ്ഞ് പിതൃക്കൾക്കായി എള്ളും ജലവും അർപ്പിക്കുക, അല്ലെങ്കിൽ ക്ഷേത്രത്തിലെ ബലിയിൽ പങ്കുചേരുക.",
+      "ഭക്ഷണത്തിന്റെ ഒരു പങ്ക് കാക്കയ്ക്കു വച്ച്, ആവശ്യക്കാർക്ക് നൽകുക."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Malayalam calendar"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "pradosham",
+   "names": {
+    "en": "Pradosham",
+    "ml": "പ്രദോഷം"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 13,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "Trayodashi at dusk, when Shiva and Nandi are worshipped.",
+     "ml": "സന്ധ്യാസമയത്തെ ത്രയോദശി: ശിവനെയും നന്ദിയെയും ആരാധിക്കുന്ന സമയം."
+    },
+    "traditions": {
+     "en": "Twice a month, at the pradosha kalam around sunset on Trayodashi, Shiva temples hold abhishekam for Nandi and Shiva, and the deity is taken around the temple. Devotees fast until the evening worship and offer bilva leaves, milk and flowers. Sani Pradosham and Soma Pradosham, on Saturday and Monday, draw the largest crowds.",
+     "ml": "മാസത്തിൽ രണ്ടുതവണ, ത്രയോദശിയിൽ സന്ധ്യയോടടുത്ത പ്രദോഷകാലത്ത് ശിവക്ഷേത്രങ്ങളിൽ നന്ദിക്കും ശിവനും അഭിഷേകം നടക്കുന്നു. ഭക്തർ സന്ധ്യാപൂജ വരെ ഉപവസിച്ച് കൂവളം, പാൽ, പൂവ് എന്നിവ അർപ്പിക്കുന്നു. ശനിയാഴ്ചയും തിങ്കളാഴ്ചയും വരുന്ന പ്രദോഷങ്ങൾ വിശേഷമാണ്."
+    },
+    "howTo": {
+     "en": [
+      "Fast until the evening worship if you keep it.",
+      "At pradosham (around sunset), visit a Shiva temple or offer bilva and milk at home with a lamp.",
+      "Chant 'Om Namah Shivaya'."
+     ],
+     "ml": [
+      "ആചരിക്കുന്നവർ സന്ധ്യാപൂജ വരെ ഉപവസിക്കുക.",
+      "പ്രദോഷവേളയിൽ (സൂര്യാസ്തമനത്തോടടുത്ത്) ശിവക്ഷേത്രം സന്ദർശിക്കുക, അല്ലെങ്കിൽ വീട്ടിൽ വിളക്കു കൊളുത്തി കൂവളവും പാലും അർപ്പിക്കുക.",
+      "'ഓം നമഃ ശിവായ' ജപിക്കുക."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Pradosham"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "pradosham",
+   "names": {
+    "en": "Pradosham",
+    "ml": "പ്രദോഷം"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 28,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "Trayodashi at dusk, when Shiva and Nandi are worshipped.",
+     "ml": "സന്ധ്യാസമയത്തെ ത്രയോദശി: ശിവനെയും നന്ദിയെയും ആരാധിക്കുന്ന സമയം."
+    },
+    "traditions": {
+     "en": "Twice a month, at the pradosha kalam around sunset on Trayodashi, Shiva temples hold abhishekam for Nandi and Shiva, and the deity is taken around the temple. Devotees fast until the evening worship and offer bilva leaves, milk and flowers. Sani Pradosham and Soma Pradosham, on Saturday and Monday, draw the largest crowds.",
+     "ml": "മാസത്തിൽ രണ്ടുതവണ, ത്രയോദശിയിൽ സന്ധ്യയോടടുത്ത പ്രദോഷകാലത്ത് ശിവക്ഷേത്രങ്ങളിൽ നന്ദിക്കും ശിവനും അഭിഷേകം നടക്കുന്നു. ഭക്തർ സന്ധ്യാപൂജ വരെ ഉപവസിച്ച് കൂവളം, പാൽ, പൂവ് എന്നിവ അർപ്പിക്കുന്നു. ശനിയാഴ്ചയും തിങ്കളാഴ്ചയും വരുന്ന പ്രദോഷങ്ങൾ വിശേഷമാണ്."
+    },
+    "howTo": {
+     "en": [
+      "Fast until the evening worship if you keep it.",
+      "At pradosham (around sunset), visit a Shiva temple or offer bilva and milk at home with a lamp.",
+      "Chant 'Om Namah Shivaya'."
+     ],
+     "ml": [
+      "ആചരിക്കുന്നവർ സന്ധ്യാപൂജ വരെ ഉപവസിക്കുക.",
+      "പ്രദോഷവേളയിൽ (സൂര്യാസ്തമനത്തോടടുത്ത്) ശിവക്ഷേത്രം സന്ദർശിക്കുക, അല്ലെങ്കിൽ വീട്ടിൽ വിളക്കു കൊളുത്തി കൂവളവും പാലും അർപ്പിക്കുക.",
+      "'ഓം നമഃ ശിവായ' ജപിക്കുക."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Pradosham"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "shashti",
+   "names": {
+    "en": "Shashti",
+    "ml": "ഷഷ്ഠി"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 6
+   },
+   "content": {
+    "summary": {
+     "en": "The sixth day of the bright fortnight, kept for Murugan.",
+     "ml": "ശുക്ലപക്ഷത്തിലെ ആറാം ദിവസം, സുബ്രഹ്മണ്യന് പ്രിയം."
+    },
+    "traditions": {
+     "en": "Each month, devotees of Murugan keep a fast or eat simply on Shashti, visit his temple, and recite the Kanda Shashti Kavacham. The Shashti of Aippasi, Kanda Sashti, is the great one, ending in Soorasamharam. In Kerala the Shashti vratham is widely kept by women for their children.",
+     "ml": "ഓരോ മാസവും സുബ്രഹ്മണ്യഭക്തർ ഷഷ്ഠിക്ക് ഉപവസിക്കുകയോ ലഘുഭക്ഷണം കഴിക്കുകയോ ചെയ്ത് ക്ഷേത്രം സന്ദർശിക്കുന്നു. മക്കൾക്കായി അമ്മമാർ എടുക്കുന്ന ഷഷ്ഠിവ്രതം കേരളത്തിൽ വ്യാപകമാണ്. തുലാമാസത്തിലെ സ്കന്ദഷഷ്ഠി ഏറ്റവും പ്രധാനം."
+    },
+    "howTo": {
+     "en": [
+      "Keep a fast or eat simply until the evening.",
+      "Visit a Murugan temple, or offer milk and flowers at home with a lamp.",
+      "Recite the Kanda Shashti Kavacham."
+     ],
+     "ml": [
+      "സന്ധ്യ വരെ ഉപവസിക്കുകയോ ലഘുഭക്ഷണം കഴിക്കുകയോ ചെയ്യുക.",
+      "സുബ്രഹ്മണ്യക്ഷേത്രം സന്ദർശിക്കുക, അല്ലെങ്കിൽ വീട്ടിൽ വിളക്കു കൊളുത്തി പാലും പൂവും അർപ്പിക്കുക.",
+      "സുബ്രഹ്മണ്യ സ്തോത്രം ജപിക്കുക."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Skanda Sashti"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "sankashti-chathurthi",
+   "names": {
+    "en": "Sankashti Chathurthi",
+    "ml": "സങ്കടഹര ചതുർത്ഥി"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 19,
+    "observance": {
+     "kala": "moonrise"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "The Chathurthi after the full moon, kept for Ganapathi until moonrise.",
+     "ml": "പൗർണ്ണമിക്കു ശേഷമുള്ള ചതുർത്ഥി, ചന്ദ്രോദയം വരെ ഗണപതിക്കായി ആചരിക്കുന്നു."
+    },
+    "traditions": {
+     "en": "Devotees fast through the day, offer modakam, appam and karuka grass to Ganapathi in the evening, and break the fast after seeing the Moon. Ganapathi temples hold special homams.",
+     "ml": "ഭക്തർ പകൽ ഉപവസിച്ച്, വൈകുന്നേരം ഗണപതിക്ക് മോദകവും അപ്പവും കറുകയും അർപ്പിച്ച്, ചന്ദ്രനെ കണ്ട ശേഷം വ്രതം അവസാനിപ്പിക്കുന്നു. ഗണപതിക്ഷേത്രങ്ങളിൽ വിശേഷാൽ ഹോമം."
+    },
+    "howTo": {
+     "en": [
+      "Fast through the day if you keep it.",
+      "In the evening, offer modakam and karuka to Ganapathi.",
+      "After moonrise, look at the Moon and break the fast."
+     ],
+     "ml": [
+      "ആചരിക്കുന്നവർ പകൽ ഉപവസിക്കുക.",
+      "വൈകുന്നേരം ഗണപതിക്ക് മോദകവും കറുകയും അർപ്പിക്കുക.",
+      "ചന്ദ്രോദയത്തിനു ശേഷം ചന്ദ്രനെ കണ്ട് വ്രതം അവസാനിപ്പിക്കുക."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Sankashti Chaturthi"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "thingal-vratham",
+   "names": {
+    "en": "Thinkalazhcha vratham (Monday)",
+    "ml": "തിങ്കളാഴ്ച വ്രതം"
+   },
+   "rule": {
+    "type": "weekday",
+    "weekday": "monday"
+   },
+   "content": {
+    "summary": {
+     "en": "Monday, kept for Shiva and Parvati, much loved by Kerala's women.",
+     "ml": "തിങ്കളാഴ്ച, ശിവപാർവതിമാർക്കായി."
+    },
+    "traditions": {
+     "en": "In Kerala the Monday vratham is kept for Shiva and Parvati, very often by women and girls, with prayers for the family's wellbeing. The day begins with an early bath and a visit to a Shiva temple; many take only one meal, of rice, or none until evening, and chant the Panchakshari.",
+     "ml": "കേരളത്തിൽ തിങ്കളാഴ്ച വ്രതം ശിവപാർവതിമാർക്കായി, പ്രധാനമായും സ്ത്രീകളും പെൺകുട്ടികളും, കുടുംബത്തിന്റെ നന്മയ്ക്കായുള്ള പ്രാർത്ഥനയോടെ എടുക്കുന്നു. അതിരാവിലെ കുളിച്ച് ശിവക്ഷേത്ര ദർശനം നടത്തി, പലരും ഒരിക്കൽ മാത്രം ഭക്ഷണം കഴിക്കുകയോ സന്ധ്യ വരെ ഉപവസിക്കുകയോ ചെയ്ത് പഞ്ചാക്ഷരി ജപിക്കുന്നു."
+    },
+    "howTo": {
+     "en": [
+      "Bathe early and visit a Shiva temple.",
+      "Take one simple meal, or fast until evening.",
+      "Chant the Panchakshari, Om Namah Shivaya."
+     ],
+     "ml": [
+      "അതിരാവിലെ കുളിച്ച് ശിവക്ഷേത്രം സന്ദർശിക്കുക.",
+      "ഒരിക്കൽ മാത്രം ലഘുഭക്ഷണം, അല്ലെങ്കിൽ സന്ധ്യ വരെ ഉപവാസം.",
+      "പഞ്ചാക്ഷരി (ഓം നമഃ ശിവായ) ജപിക്കുക."
+     ]
+    }
+   },
+   "sources": [
+    "Kerala temple practice"
+   ],
+   "optIn": true
+  },
+  {
+   "key": "velli-vratham",
+   "names": {
+    "en": "Friday for the Goddess",
+    "ml": "വെള്ളിയാഴ്ച വ്രതം"
+   },
+   "rule": {
+    "type": "weekday",
+    "weekday": "friday"
+   },
+   "content": {
+    "summary": {
+     "en": "Friday, kept for the Goddess: Amman, Lakshmi, Bhagavathi.",
+     "ml": "വെള്ളിയാഴ്ച, ദേവിക്ക് പ്രിയം."
+    },
+    "traditions": {
+     "en": "In the South, Friday is the Goddess's day. Homes are cleaned, a kolam is drawn and the lamp lit early; many visit an Amman or Bhagavathi temple and recite the Lalitha Sahasranamam or Abhirami Andhadhi. Some keep the day with a fast until evening. The Fridays of Aadi and Thai in Tamil Nadu are especially kept.",
+     "ml": "തെക്കേ ഇന്ത്യയിൽ വെള്ളിയാഴ്ച ദേവിയുടെ ദിവസമാണ്. വീട് വൃത്തിയാക്കി, നേരത്തേ വിളക്കു കൊളുത്തി, പലരും ദേവീക്ഷേത്രം സന്ദർശിച്ച് ലളിതാസഹസ്രനാമം ജപിക്കുന്നു. ചിലർ സന്ധ്യ വരെ ഉപവസിക്കുന്നു."
+    },
+    "howTo": {
+     "en": [
+      "Clean the home, draw a kolam and light the lamp early.",
+      "Visit an Amman or Bhagavathi temple, or offer flowers at home.",
+      "Recite the Lalitha Sahasranamam."
+     ],
+     "ml": [
+      "വീട് വൃത്തിയാക്കി നേരത്തേ വിളക്കു കൊളുത്തുക.",
+      "ദേവീക്ഷേത്രം സന്ദർശിക്കുക, അല്ലെങ്കിൽ വീട്ടിൽ പൂവ് അർപ്പിക്കുക.",
+      "ലളിതാസഹസ്രനാമം ജപിക്കുക."
+     ]
+    }
+   },
+   "sources": [
+    "Tamil Nadu and Kerala temple practice"
+   ],
+   "optIn": true
+  },
+  {
+   "key": "hanuman-vrat",
+   "names": {
+    "en": "Hanuman vrat",
+    "ml": "ഹനുമാൻ വ്രതം (ശനിയാഴ്ച)"
+   },
+   "rule": {
+    "type": "weekday",
+    "weekday": "saturday"
+   },
+   "content": {
+    "summary": {
+     "en": "A weekly day for Hanuman: Tuesday in the North, Saturday in much of the South.",
+     "ml": "ഹനുമാന്റെ വാരദിനം: തെക്കേ ഇന്ത്യയിൽ ശനിയാഴ്ച."
+    },
+    "traditions": {
+     "en": "Devotees of Hanuman keep one day a week for him, Tuesday in the North and Saturday in much of the South. Many eat a single simple meal, visit a Hanuman temple, and read the Hanuman Chalisa or the Sundara Kandam of the Ramayana. In the North sindoor and jasmine oil are offered; in Tamil Nadu a garland of vadai or betel leaves. Some keep a run of weeks, often 21, as a personal vow of discipline and devotion.",
+     "ml": "ഹനുമദ്ഭക്തർ ആഴ്ചയിൽ ഒരു ദിവസം, തെക്കേ ഇന്ത്യയിൽ പലപ്പോഴും ശനിയാഴ്ച, ഹനുമാനായി മാറ്റിവയ്ക്കുന്നു. പലരും ഒരിക്കൽ മാത്രം ലഘുഭക്ഷണം കഴിച്ച്, ഹനുമാൻ ക്ഷേത്രം സന്ദർശിച്ച്, ഹനുമാൻ ചാലീസയോ സുന്ദരകാണ്ഡമോ പാരായണം ചെയ്യുന്നു. വെറ്റിലമാലയും അവൽ നിവേദ്യവും പതിവാണ്."
+    },
+    "howTo": {
+     "en": [
+      "Bathe early and keep the day simple: one meal, or fruit and milk.",
+      "Visit a Hanuman temple, or light a lamp before his picture at home.",
+      "Offer sindoor and jasmine oil (North) or a vadai or betel-leaf garland (South).",
+      "Read the Hanuman Chalisa or a chapter of the Sundara Kandam."
+     ],
+     "ml": [
+      "രാവിലെ കുളിച്ച് ദിവസം ലളിതമാക്കുക: ഒരിക്കൽ ഭക്ഷണം, അല്ലെങ്കിൽ പഴവും പാലും.",
+      "ഹനുമാൻ ക്ഷേത്രം സന്ദർശിക്കുക, അല്ലെങ്കിൽ വീട്ടിൽ ചിത്രത്തിനു മുന്നിൽ വിളക്കു കൊളുത്തുക.",
+      "വെറ്റിലമാല ചാർത്തുക.",
+      "ഹനുമാൻ ചാലീസയോ സുന്ദരകാണ്ഡമോ പാരായണം ചെയ്യുക."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Mangalwar Vrat",
+    "Hanuman Chalisa (Tulsidas)"
+   ],
+   "optIn": true
+  },
+  {
+   "key": "shani-vrat",
+   "names": {
+    "en": "Shani vrat (Saturday)",
+    "ml": "ശനിയാഴ്ച വ്രതം"
+   },
+   "rule": {
+    "type": "weekday",
+    "weekday": "saturday"
+   },
+   "content": {
+    "summary": {
+     "en": "Saturday, Shani's day, kept with a simple meal, a sesame-oil lamp and giving to others.",
+     "ml": "ശനിയാഴ്ച: ലഘുഭക്ഷണം, എള്ളെണ്ണ വിളക്ക്, ദാനം."
+    },
+    "traditions": {
+     "en": "Saturday is Shani's day. Those who keep the Saturday vrat eat once, simply, often after sunset; light a lamp of sesame oil at a Shani shrine or under a peepal tree; and offer black sesame and blue or dark flowers. Giving food, oil or clothes to people who need them is at the heart of the day. Shani is honoured as the teacher of patience and fairness, and the vrat is kept as a weekly practice of steadiness and service. In Tamil Nadu the Saturdays of Purattasi are kept for Perumal as well.",
+     "ml": "ശനിയാഴ്ച ശനീശ്വരന്റെ ദിവസമാണ്. വ്രതമെടുക്കുന്നവർ ഒരിക്കൽ ലഘുവായി ഭക്ഷിച്ച്, ശാസ്താ ക്ഷേത്രത്തിലോ ആലിൻചുവട്ടിലോ എള്ളെണ്ണ വിളക്കു കൊളുത്തി, എള്ളും നീലപ്പൂവും അർപ്പിക്കുന്നു. ആവശ്യക്കാർക്ക് അന്നവും എണ്ണയും വസ്ത്രവും നൽകുന്നത് ഈ ദിവസത്തിന്റെ പ്രധാന ഭാഗമാണ്. ക്ഷമയുടെയും നീതിയുടെയും ഗുരുവായി ശനീശ്വരനെ ആദരിക്കുന്നു."
+    },
+    "howTo": {
+     "en": [
+      "Keep the day simple: one meal, often after sunset.",
+      "Light a sesame-oil lamp at a Shani shrine or under a peepal tree.",
+      "Offer black sesame and a dark flower.",
+      "Give food, oil or clothing to someone who needs it."
+     ],
+     "ml": [
+      "ദിവസം ലളിതമാക്കുക: ഒരിക്കൽ മാത്രം ഭക്ഷണം.",
+      "ക്ഷേത്രത്തിലോ ആലിൻചുവട്ടിലോ എള്ളെണ്ണ വിളക്കു കൊളുത്തുക.",
+      "എള്ളും നീലപ്പൂവും അർപ്പിക്കുക.",
+      "ആവശ്യക്കാർക്ക് അന്നമോ എണ്ണയോ വസ്ത്രമോ നൽകുക."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Shaniwar Vrat"
+   ],
+   "optIn": true
+  }
+ ],
+ "personal": {
+  "birthday": {
+   "basis": "nakshatra",
+   "observance": {
+    "kala": "morning",
+    "minCoverMinutes": 144
+   },
+   "occurrence": "last"
+  },
+  "remembrance": {
+   "basis": "nakshatra",
+   "observance": {
+    "kala": "aparahna"
+   },
+   "occurrence": "last"
+  }
+ },
+ "muhurtham": {
+  "events": [
+   {
+    "id": "marriage",
+    "names": {
+     "en": "Marriage",
+     "ml": "വിവാഹം"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "magha",
+     "uttara_phalguni",
+     "hasta",
+     "swati",
+     "anuradha",
+     "mula",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     22
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidSolarMonths": [
+     "karka"
+    ]
+   },
+   {
+    "id": "engagement",
+    "names": {
+     "en": "Engagement",
+     "ml": "വിവാഹ നിശ്ചയം"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "magha",
+     "uttara_phalguni",
+     "hasta",
+     "swati",
+     "anuradha",
+     "mula",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     22
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidSolarMonths": [
+     "karka"
+    ]
+   },
+   {
+    "id": "griha-pravesham",
+    "names": {
+     "en": "Housewarming",
+     "ml": "ഗൃഹപ്രവേശം"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "uttara_phalguni",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidSolarMonths": [
+     "karka"
+    ]
+   },
+   {
+    "id": "bhoomi-puja",
+    "names": {
+     "en": "Foundation (Bhoomi Puja)",
+     "ml": "ഭൂമിപൂജ (കുറ്റിയടി)"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidSolarMonths": [
+     "karka"
+    ]
+   },
+   {
+    "id": "property",
+    "names": {
+     "en": "Buying property",
+     "ml": "വസ്തു വാങ്ങൽ"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "anuradha",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidSolarMonths": [
+     "karka"
+    ]
+   },
+   {
+    "id": "vehicle",
+    "names": {
+     "en": "Buying a vehicle",
+     "ml": "വാഹനം വാങ്ങൽ"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidSolarMonths": [
+     "karka"
+    ]
+   },
+   {
+    "id": "business",
+    "names": {
+     "en": "Starting a business",
+     "ml": "വ്യാപാരം ആരംഭിക്കൽ"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidSolarMonths": [
+     "karka"
+    ]
+   },
+   {
+    "id": "naming",
+    "names": {
+     "en": "Naming ceremony",
+     "ml": "നാമകരണം (നൂലുകെട്ട്)"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidAdhika": false,
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "annaprashana",
+    "names": {
+     "en": "First rice",
+     "ml": "ചോറൂണ്"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "vidyarambham",
+    "names": {
+     "en": "Start of learning",
+     "ml": "വിദ്യാരംഭം"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "ardra",
+     "punarvasu",
+     "pushya",
+     "purva_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "mula",
+     "purva_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "purva_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidJanmaNakshatra": false
+   }
+  ],
+  "sources": [
+   "Muhurta Chintamani (Daivajna Rama), vivaha, griha-pravesha, yatra and samskara prakaranas",
+   "Kerala Jyothisham practice: Karkidakam avoided for marriage and griha pravesham",
+   "Tamil panchangam practice: Aadi, Purattasi and Margazhi avoided for marriage",
+   "North Indian panchangam practice: kharmas, Chaturmas and Pitru Paksha"
+  ]
+ }
+}

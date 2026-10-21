@@ -1,0 +1,3336 @@
+{
+ "schemaVersion": 1,
+ "culture": "telugu",
+ "packVersion": 1,
+ "language": "te",
+ "calendarSystem": "lunisolar",
+ "lunarMonthSystem": "amanta",
+ "solarDayRule": {
+  "type": "sunset"
+ },
+ "era": "shaka-samvatsara",
+ "names": {
+  "solarMonths": {
+   "mesha": {
+    "en": "Mesham",
+    "te": "మేషం"
+   },
+   "vrishabha": {
+    "en": "Vrishabham",
+    "te": "వృషభం"
+   },
+   "mithuna": {
+    "en": "Mithunam",
+    "te": "మిథునం"
+   },
+   "karka": {
+    "en": "Karkatakam",
+    "te": "కర్కాటకం"
+   },
+   "simha": {
+    "en": "Simham",
+    "te": "సింహం"
+   },
+   "kanya": {
+    "en": "Kanya",
+    "te": "కన్య"
+   },
+   "tula": {
+    "en": "Tula",
+    "te": "తుల"
+   },
+   "vrishchika": {
+    "en": "Vrischikam",
+    "te": "వృశ్చికం"
+   },
+   "dhanu": {
+    "en": "Dhanus",
+    "te": "ధనుస్సు"
+   },
+   "makara": {
+    "en": "Makaram",
+    "te": "మకరం"
+   },
+   "kumbha": {
+    "en": "Kumbham",
+    "te": "కుంభం"
+   },
+   "meena": {
+    "en": "Meenam",
+    "te": "మీనం"
+   }
+  },
+  "lunarMonths": {
+   "chaitra": {
+    "en": "Chaitra",
+    "te": "చైత్రం"
+   },
+   "vaishakha": {
+    "en": "Vaishakha",
+    "te": "వైశాఖం"
+   },
+   "jyeshtha": {
+    "en": "Jyeshtha",
+    "te": "జ్యేష్ఠం"
+   },
+   "ashadha": {
+    "en": "Ashadha",
+    "te": "ఆషాఢం"
+   },
+   "shravana": {
+    "en": "Shravana",
+    "te": "శ్రావణం"
+   },
+   "bhadrapada": {
+    "en": "Bhadrapada",
+    "te": "భాద్రపదం"
+   },
+   "ashvin": {
+    "en": "Ashvayuja",
+    "te": "ఆశ్వయుజం"
+   },
+   "kartika": {
+    "en": "Karthika",
+    "te": "కార్తీకం"
+   },
+   "margashirsha": {
+    "en": "Margashira",
+    "te": "మార్గశిరం"
+   },
+   "pausha": {
+    "en": "Pushya",
+    "te": "పుష్యం"
+   },
+   "magha": {
+    "en": "Magha",
+    "te": "మాఘం"
+   },
+   "phalguna": {
+    "en": "Phalguna",
+    "te": "ఫాల్గుణం"
+   }
+  },
+  "nakshatras": {
+   "ashwini": {
+    "en": "Ashwini",
+    "te": "అశ్విని"
+   },
+   "bharani": {
+    "en": "Bharani",
+    "te": "భరణి"
+   },
+   "krittika": {
+    "en": "Krittika",
+    "te": "కృత్తిక"
+   },
+   "rohini": {
+    "en": "Rohini",
+    "te": "రోహిణి"
+   },
+   "mrigashira": {
+    "en": "Mrigashira",
+    "te": "మృగశిర"
+   },
+   "ardra": {
+    "en": "Ardra",
+    "te": "ఆర్ద్ర"
+   },
+   "punarvasu": {
+    "en": "Punarvasu",
+    "te": "పునర్వసు"
+   },
+   "pushya": {
+    "en": "Pushyami",
+    "te": "పుష్యమి"
+   },
+   "ashlesha": {
+    "en": "Ashlesha",
+    "te": "ఆశ్లేష"
+   },
+   "magha": {
+    "en": "Makha",
+    "te": "మఖ"
+   },
+   "purva_phalguni": {
+    "en": "Pubba",
+    "te": "పుబ్బ"
+   },
+   "uttara_phalguni": {
+    "en": "Uttara",
+    "te": "ఉత్తర"
+   },
+   "hasta": {
+    "en": "Hasta",
+    "te": "హస్త"
+   },
+   "chitra": {
+    "en": "Chitta",
+    "te": "చిత్త"
+   },
+   "swati": {
+    "en": "Swati",
+    "te": "స్వాతి"
+   },
+   "vishakha": {
+    "en": "Vishakha",
+    "te": "విశాఖ"
+   },
+   "anuradha": {
+    "en": "Anuradha",
+    "te": "అనూరాధ"
+   },
+   "jyeshtha": {
+    "en": "Jyeshtha",
+    "te": "జ్యేష్ఠ"
+   },
+   "mula": {
+    "en": "Moola",
+    "te": "మూల"
+   },
+   "purva_ashadha": {
+    "en": "Purvashadha",
+    "te": "పూర్వాషాఢ"
+   },
+   "uttara_ashadha": {
+    "en": "Uttarashadha",
+    "te": "ఉత్తరాషాఢ"
+   },
+   "shravana": {
+    "en": "Shravanam",
+    "te": "శ్రవణం"
+   },
+   "dhanishta": {
+    "en": "Dhanishta",
+    "te": "ధనిష్ఠ"
+   },
+   "shatabhisha": {
+    "en": "Shatabhisham",
+    "te": "శతభిషం"
+   },
+   "purva_bhadrapada": {
+    "en": "Purvabhadra",
+    "te": "పూర్వాభాద్ర"
+   },
+   "uttara_bhadrapada": {
+    "en": "Uttarabhadra",
+    "te": "ఉత్తరాభాద్ర"
+   },
+   "revati": {
+    "en": "Revati",
+    "te": "రేవతి"
+   }
+  },
+  "tithis": {
+   "pratipada": {
+    "en": "Padyami",
+    "te": "పాడ్యమి"
+   },
+   "dvitiya": {
+    "en": "Vidiya",
+    "te": "విదియ"
+   },
+   "tritiya": {
+    "en": "Tadiya",
+    "te": "తదియ"
+   },
+   "chaturthi": {
+    "en": "Chavithi",
+    "te": "చవితి"
+   },
+   "panchami": {
+    "en": "Panchami",
+    "te": "పంచమి"
+   },
+   "shashthi": {
+    "en": "Shashthi",
+    "te": "షష్ఠి"
+   },
+   "saptami": {
+    "en": "Saptami",
+    "te": "సప్తమి"
+   },
+   "ashtami": {
+    "en": "Ashtami",
+    "te": "అష్టమి"
+   },
+   "navami": {
+    "en": "Navami",
+    "te": "నవమి"
+   },
+   "dashami": {
+    "en": "Dashami",
+    "te": "దశమి"
+   },
+   "ekadashi": {
+    "en": "Ekadashi",
+    "te": "ఏకాదశి"
+   },
+   "dvadashi": {
+    "en": "Dvadashi",
+    "te": "ద్వాదశి"
+   },
+   "trayodashi": {
+    "en": "Trayodashi",
+    "te": "త్రయోదశి"
+   },
+   "chaturdashi": {
+    "en": "Chaturdashi",
+    "te": "చతుర్దశి"
+   },
+   "purnima": {
+    "en": "Purnima",
+    "te": "పౌర్ణమి"
+   },
+   "amavasya": {
+    "en": "Amavasya",
+    "te": "అమావాస్య"
+   }
+  },
+  "weekdays": {
+   "sunday": {
+    "en": "Aadivaram",
+    "te": "ఆదివారం"
+   },
+   "monday": {
+    "en": "Somavaram",
+    "te": "సోమవారం"
+   },
+   "tuesday": {
+    "en": "Mangalavaram",
+    "te": "మంగళవారం"
+   },
+   "wednesday": {
+    "en": "Budhavaram",
+    "te": "బుధవారం"
+   },
+   "thursday": {
+    "en": "Guruvaram",
+    "te": "గురువారం"
+   },
+   "friday": {
+    "en": "Shukravaram",
+    "te": "శుక్రవారం"
+   },
+   "saturday": {
+    "en": "Shanivaram",
+    "te": "శనివారం"
+   }
+  },
+  "paksha": {
+   "shukla": {
+    "en": "Shukla Paksham",
+    "te": "శుక్ల పక్షం"
+   },
+   "krishna": {
+    "en": "Krishna Paksham",
+    "te": "కృష్ణ పక్షం"
+   }
+  },
+  "yogas": {
+   "vishkambha": {
+    "en": "Vishkambha",
+    "te": "విష్కంభ"
+   },
+   "priti": {
+    "en": "Preeti",
+    "te": "ప్రీతి"
+   },
+   "ayushman": {
+    "en": "Ayushman",
+    "te": "ఆయుష్మాన్"
+   },
+   "saubhagya": {
+    "en": "Saubhagya",
+    "te": "సౌభాగ్య"
+   },
+   "shobhana": {
+    "en": "Shobhana",
+    "te": "శోభన"
+   },
+   "atiganda": {
+    "en": "Atiganda",
+    "te": "అతిగండ"
+   },
+   "sukarma": {
+    "en": "Sukarma",
+    "te": "సుకర్మ"
+   },
+   "dhriti": {
+    "en": "Dhriti",
+    "te": "ధృతి"
+   },
+   "shula": {
+    "en": "Shoola",
+    "te": "శూల"
+   },
+   "ganda": {
+    "en": "Ganda",
+    "te": "గండ"
+   },
+   "vriddhi": {
+    "en": "Vriddhi",
+    "te": "వృద్ధి"
+   },
+   "dhruva": {
+    "en": "Dhruva",
+    "te": "ధ్రువ"
+   },
+   "vyaghata": {
+    "en": "Vyaghata",
+    "te": "వ్యాఘాత"
+   },
+   "harshana": {
+    "en": "Harshana",
+    "te": "హర్షణ"
+   },
+   "vajra": {
+    "en": "Vajra",
+    "te": "వజ్ర"
+   },
+   "siddhi": {
+    "en": "Siddhi",
+    "te": "సిద్ధి"
+   },
+   "vyatipata": {
+    "en": "Vyatipata",
+    "te": "వ్యతీపాత"
+   },
+   "variyan": {
+    "en": "Variyan",
+    "te": "వరీయాన్"
+   },
+   "parigha": {
+    "en": "Parigha",
+    "te": "పరిఘ"
+   },
+   "shiva": {
+    "en": "Shiva",
+    "te": "శివ"
+   },
+   "siddha": {
+    "en": "Siddha",
+    "te": "సిద్ధ"
+   },
+   "sadhya": {
+    "en": "Sadhya",
+    "te": "సాధ్య"
+   },
+   "shubha": {
+    "en": "Shubha",
+    "te": "శుభ"
+   },
+   "shukla": {
+    "en": "Shukla",
+    "te": "శుక్ల"
+   },
+   "brahma": {
+    "en": "Brahma",
+    "te": "బ్రహ్మ"
+   },
+   "indra": {
+    "en": "Indra",
+    "te": "ఇంద్ర"
+   },
+   "vaidhriti": {
+    "en": "Vaidhriti",
+    "te": "వైధృతి"
+   }
+  },
+  "karanas": {
+   "bava": {
+    "en": "Bava",
+    "te": "బవ"
+   },
+   "balava": {
+    "en": "Balava",
+    "te": "బాలవ"
+   },
+   "kaulava": {
+    "en": "Kaulava",
+    "te": "కౌలవ"
+   },
+   "taitila": {
+    "en": "Taitila",
+    "te": "తైతిల"
+   },
+   "garaja": {
+    "en": "Garaja",
+    "te": "గరజ"
+   },
+   "vanija": {
+    "en": "Vanija",
+    "te": "వణిజ"
+   },
+   "vishti": {
+    "en": "Vishti",
+    "te": "విష్టి"
+   },
+   "shakuni": {
+    "en": "Shakuni",
+    "te": "శకుని"
+   },
+   "chatushpada": {
+    "en": "Chatushpada",
+    "te": "చతుష్పాద"
+   },
+   "naga": {
+    "en": "Naga",
+    "te": "నాగ"
+   },
+   "kimstughna": {
+    "en": "Kimstughna",
+    "te": "కింస్తుఘ్న"
+   }
+  },
+  "eras": {
+   "shaka-samvatsara": {
+    "en": "Shalivahana Shaka",
+    "te": "శాలివాహన శకం"
+   }
+  },
+  "adhika": {
+   "adhika": {
+    "en": "Adhika",
+    "te": "అధిక"
+   }
+  },
+  "samvatsaras": {
+   "prabhava": {
+    "en": "Prabhava",
+    "te": "ప్రభవ"
+   },
+   "vibhava": {
+    "en": "Vibhava",
+    "te": "విభవ"
+   },
+   "shukla": {
+    "en": "Shukla",
+    "te": "శుక్ల"
+   },
+   "pramoduta": {
+    "en": "Pramoduta",
+    "te": "ప్రమోదూత"
+   },
+   "prajotpatti": {
+    "en": "Prajotpatti",
+    "te": "ప్రజోత్పత్తి"
+   },
+   "angirasa": {
+    "en": "Angirasa",
+    "te": "ఆంగీరస"
+   },
+   "shrimukha": {
+    "en": "Shrimukha",
+    "te": "శ్రీముఖ"
+   },
+   "bhava": {
+    "en": "Bhava",
+    "te": "భావ"
+   },
+   "yuva": {
+    "en": "Yuva",
+    "te": "యువ"
+   },
+   "dhatu": {
+    "en": "Dhatu",
+    "te": "ధాత"
+   },
+   "ishvara": {
+    "en": "Ishvara",
+    "te": "ఈశ్వర"
+   },
+   "bahudhanya": {
+    "en": "Bahudhanya",
+    "te": "బహుధాన్య"
+   },
+   "pramathi": {
+    "en": "Pramathi",
+    "te": "ప్రమాథి"
+   },
+   "vikrama": {
+    "en": "Vikrama",
+    "te": "విక్రమ"
+   },
+   "vrisha": {
+    "en": "Vrisha",
+    "te": "వృష"
+   },
+   "chitrabhanu": {
+    "en": "Chitrabhanu",
+    "te": "చిత్రభాను"
+   },
+   "svabhanu": {
+    "en": "Svabhanu",
+    "te": "స్వభాను"
+   },
+   "tarana": {
+    "en": "Tarana",
+    "te": "తారణ"
+   },
+   "parthiva": {
+    "en": "Parthiva",
+    "te": "పార్థివ"
+   },
+   "vyaya": {
+    "en": "Vyaya",
+    "te": "వ్యయ"
+   },
+   "sarvajit": {
+    "en": "Sarvajit",
+    "te": "సర్వజిత్"
+   },
+   "sarvadhari": {
+    "en": "Sarvadhari",
+    "te": "సర్వధారి"
+   },
+   "virodhi": {
+    "en": "Virodhi",
+    "te": "విరోధి"
+   },
+   "vikriti": {
+    "en": "Vikriti",
+    "te": "వికృతి"
+   },
+   "khara": {
+    "en": "Khara",
+    "te": "ఖర"
+   },
+   "nandana": {
+    "en": "Nandana",
+    "te": "నందన"
+   },
+   "vijaya": {
+    "en": "Vijaya",
+    "te": "విజయ"
+   },
+   "jaya": {
+    "en": "Jaya",
+    "te": "జయ"
+   },
+   "manmatha": {
+    "en": "Manmatha",
+    "te": "మన్మథ"
+   },
+   "durmukhi": {
+    "en": "Durmukhi",
+    "te": "దుర్ముఖి"
+   },
+   "hevilambi": {
+    "en": "Hevilambi",
+    "te": "హేవిళంబి"
+   },
+   "vilambi": {
+    "en": "Vilambi",
+    "te": "విళంబి"
+   },
+   "vikari": {
+    "en": "Vikari",
+    "te": "వికారి"
+   },
+   "sharvari": {
+    "en": "Sharvari",
+    "te": "శార్వరి"
+   },
+   "plava": {
+    "en": "Plava",
+    "te": "ప్లవ"
+   },
+   "shubhakrit": {
+    "en": "Shubhakrit",
+    "te": "శుభకృత్"
+   },
+   "shobhakrit": {
+    "en": "Shobhakrit",
+    "te": "శోభకృత్"
+   },
+   "krodhi": {
+    "en": "Krodhi",
+    "te": "క్రోధి"
+   },
+   "vishvavasu": {
+    "en": "Vishvavasu",
+    "te": "విశ్వావసు"
+   },
+   "parabhava": {
+    "en": "Parabhava",
+    "te": "పరాభవ"
+   },
+   "plavanga": {
+    "en": "Plavanga",
+    "te": "ప్లవంగ"
+   },
+   "kilaka": {
+    "en": "Kilaka",
+    "te": "కీలక"
+   },
+   "saumya": {
+    "en": "Saumya",
+    "te": "సౌమ్య"
+   },
+   "sadharana": {
+    "en": "Sadharana",
+    "te": "సాధారణ"
+   },
+   "virodhikrit": {
+    "en": "Virodhikrit",
+    "te": "విరోధికృత్"
+   },
+   "paridhavi": {
+    "en": "Paridhavi",
+    "te": "పరిధావి"
+   },
+   "pramadicha": {
+    "en": "Pramadicha",
+    "te": "ప్రమాదీచ"
+   },
+   "ananda": {
+    "en": "Ananda",
+    "te": "ఆనంద"
+   },
+   "rakshasa": {
+    "en": "Rakshasa",
+    "te": "రాక్షస"
+   },
+   "nala": {
+    "en": "Nala",
+    "te": "నల"
+   },
+   "pingala": {
+    "en": "Pingala",
+    "te": "పింగళ"
+   },
+   "kalayukti": {
+    "en": "Kalayukti",
+    "te": "కాళయుక్తి"
+   },
+   "siddharthi": {
+    "en": "Siddharthi",
+    "te": "సిద్ధార్థి"
+   },
+   "raudri": {
+    "en": "Raudri",
+    "te": "రౌద్రి"
+   },
+   "durmati": {
+    "en": "Durmati",
+    "te": "దుర్మతి"
+   },
+   "dundubhi": {
+    "en": "Dundubhi",
+    "te": "దుందుభి"
+   },
+   "rudhirodgari": {
+    "en": "Rudhirodgari",
+    "te": "రుధిరోద్గారి"
+   },
+   "raktakshi": {
+    "en": "Raktakshi",
+    "te": "రక్తాక్షి"
+   },
+   "krodhana": {
+    "en": "Krodhana",
+    "te": "క్రోధన"
+   },
+   "akshaya": {
+    "en": "Akshaya",
+    "te": "అక్షయ"
+   }
+  },
+  "rashis": {
+   "mesha": {
+    "en": "Mesham",
+    "te": "మేషం"
+   },
+   "vrishabha": {
+    "en": "Vrishabham",
+    "te": "వృషభం"
+   },
+   "mithuna": {
+    "en": "Mithunam",
+    "te": "మిథునం"
+   },
+   "karka": {
+    "en": "Karkatakam",
+    "te": "కర్కాటకం"
+   },
+   "simha": {
+    "en": "Simham",
+    "te": "సింహం"
+   },
+   "kanya": {
+    "en": "Kanya",
+    "te": "కన్య"
+   },
+   "tula": {
+    "en": "Tula",
+    "te": "తుల"
+   },
+   "vrishchika": {
+    "en": "Vrischikam",
+    "te": "వృశ్చికం"
+   },
+   "dhanu": {
+    "en": "Dhanus",
+    "te": "ధనుస్సు"
+   },
+   "makara": {
+    "en": "Makaram",
+    "te": "మకరం"
+   },
+   "kumbha": {
+    "en": "Kumbham",
+    "te": "కుంభం"
+   },
+   "meena": {
+    "en": "Meenam",
+    "te": "మీనం"
+   }
+  }
+ },
+ "display": {
+  "primary": "lunar",
+  "nameEn": "Telugu",
+  "nameNative": "తెలుగు",
+  "newYear": "ugadi",
+  "referencePlace": "Hyderabad"
+ },
+ "festivals": [
+  {
+   "id": "bhogi-te",
+   "names": {
+    "en": "Bhogi",
+    "te": "భోగి"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "makar-sankranti-te",
+    "offsetDays": -1
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The first day of Pongal: clearing out the old, with a bonfire at dawn."
+    },
+    "traditions": {
+     "en": "On the last day of Margazhi, families clean their homes thoroughly and, at dawn, light a small bonfire of old mats, worn-out items and dry leaves, a sign of letting go of the old before the new month. Children beat small drums called bhogi melam. Homes are whitewashed, doorways decorated with kolam and mango-leaf toranams, and the house made ready for Thai Pongal. Today many families burn only natural material, or skip the fire, to keep the air clean."
+    },
+    "story": {
+     "en": "Bhogi is named for Indra, the god of rain, who is also called Bhogi, the enjoyer. The farmers of Tamil Nadu thank him on this day for the rains that brought the harvest. The story told in some homes is of Krishna asking the cowherds of Braj to honour Govardhan hill instead of Indra, and of Indra, after learning humility, being honoured again on Bhogi, the day before the harvest festival. The bonfire itself is a simple, old idea: before the new begins, let the old go."
+    },
+    "howTo": {
+     "en": [
+      "In the days before, clean the house and set aside old, unusable things.",
+      "At dawn, light a small bonfire of natural material in a safe place, or skip it if your area discourages fires.",
+      "Bathe, draw a kolam at the doorway and hang mango-leaf toranams.",
+      "Prepare for tomorrow: buy the new pot, rice, jaggery, sugarcane and turmeric plants for Pongal."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Bhogi! Out with the old, in with the new."
+    }
+   }
+  },
+  {
+   "id": "makar-sankranti-te",
+   "names": {
+    "en": "Makara Sankranti",
+    "te": "మకర సంక్రాంతి"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "makara",
+    "day": 1
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-AP",
+    "IN-TG"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Sun enters Makara: the harvest festival that marks the start of Uttarayana, the Sun's northward journey."
+    },
+    "traditions": {
+     "en": "Families wake early for a bath, many in a river, and offer water to the Sun. Sesame and jaggery sweets (til-gud, gajak, rewari) are made and shared, and khichdi is cooked and given away. Kites fill the sky in Gujarat and Rajasthan, where the day is Uttarayan. In Punjab the evening before is Lohri; in Tamil Nadu the same day is Thai Pongal and in Assam it is Magh Bihu. Giving warm clothes, blankets and grain to those who need them is a common part of the day."
+    },
+    "story": {
+     "en": "The story told for this day is of the Sun god, Surya, visiting his son Shani. The two had long been distant, and Surya's journey into Makara, the sign Shani rules, is remembered as a father setting aside old differences to see his son. Shani is said to have welcomed him with black sesame, the only thing he had, and Surya accepted it gladly. That is why sesame is at the heart of the day's food and gifts. The day is also remembered in the Mahabharata: Bhishma, who could choose the moment of his passing, waited on his bed of arrows for Uttarayana to begin. And many tell that on this day the Ganga, following King Bhagiratha, reached the sea at Ganga Sagar, where a great bathing fair is held every year."
+    },
+    "howTo": {
+     "en": [
+      "The day before, make til-gud laddoos or buy gajak and rewari, and soak rice and moong dal for khichdi.",
+      "Wake before sunrise and bathe; add a few sesame seeds to the bath water if your family does.",
+      "Offer water to the rising Sun from a copper vessel, facing east.",
+      "Cook khichdi and share it, along with sesame sweets, with neighbours and anyone who visits.",
+      "Set aside grain, sesame, a blanket or warm clothes to give to someone who needs them.",
+      "Spend the afternoon outdoors: fly kites in Gujarat and Rajasthan, or visit family elsewhere.",
+      "Greet elders with til-gud; in Maharashtra the words are 'til-gul ghya, god god bola' (take sweets and speak sweetly)."
+     ]
+    },
+    "greeting": {
+     "en": "May the Sun's new journey bring warmth to your home. Happy Makar Sankranti!"
+    }
+   }
+  },
+  {
+   "id": "kanuma",
+   "names": {
+    "en": "Kanuma",
+    "te": "కనుమ"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "makar-sankranti-te",
+    "offsetDays": 1
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The third day of Sankranti in Andhra and Telangana, for the cattle and the farm.",
+     "te": "సంక్రాంతి మూడవ రోజు, పశువులకు, వ్యవసాయానికి అంకితం."
+    },
+    "traditions": {
+     "en": "The day after Makara Sankranti, farming families honour the cattle that work the fields. Cows and bullocks are bathed, their horns painted and hung with bells and flowers, and they are fed pongali. Many homes make a feast of the day, and families visit relatives; by custom many avoid starting a journey on Kanuma. In some villages there are bullock races and cockfights are a long-standing, much-debated custom.",
+     "te": "మకర సంక్రాంతి మరుసటి రోజు రైతు కుటుంబాలు పొలంలో పనిచేసే పశువులను పూజిస్తాయి. ఆవులను, ఎద్దులను స్నానం చేయించి, కొమ్ములకు రంగులు వేసి, గంటలు, పూలతో అలంకరించి, పొంగలి తినిపిస్తారు. చాలా ఇళ్లలో విందు చేసుకుని బంధువులను కలుస్తారు; ఆచారం ప్రకారం కనుమ నాడు ప్రయాణం మొదలుపెట్టరు."
+    },
+    "story": {
+     "en": "The story told is of Krishna lifting Govardhana to shelter the cowherds and their cattle from Indra's rains; Kanuma thanks the cattle, and the hills and rains that feed them, at the close of the harvest festival.",
+     "te": "ఇంద్రుని వర్షం నుండి గోపాలకులను, పశువులను కాపాడటానికి శ్రీకృష్ణుడు గోవర్ధన గిరిని ఎత్తిన కథ చెబుతారు; పంట పండుగ ముగింపులో పశువులకు, వాటిని పోషించే కొండలకు, వర్షాలకు కనుమ కృతజ్ఞత చెబుతుంది."
+    },
+    "howTo": {
+     "en": [
+      "Bathe the cattle and decorate them with turmeric, kumkum, bells and flowers.",
+      "Offer pongali and feed it to the cattle.",
+      "Prepare the festive meal and share it with family and relatives."
+     ],
+     "te": [
+      "పశువులకు స్నానం చేయించి పసుపు, కుంకుమ, గంటలు, పూలతో అలంకరించండి.",
+      "పొంగలి నివేదించి పశువులకు తినిపించండి.",
+      "పండుగ భోజనం చేసి కుటుంబంతో, బంధువులతో పంచుకోండి."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Kanuma!",
+     "te": "కనుమ శుభాకాంక్షలు!"
+    }
+   }
+  },
+  {
+   "id": "ratha-saptami-te",
+   "names": {
+    "en": "Ratha Saptami",
+    "te": "రథ సప్తమి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "magha",
+    "tithi": 7
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The seventh day of bright Magha: the Sun's birthday, when Surya turns his chariot north."
+    },
+    "traditions": {
+     "en": "People bathe at dawn, traditionally placing seven leaves of the arka (erukku) plant on the head and shoulders while bathing. A chariot with seven horses is drawn in kolam or rangoli at the doorstep, and the Sun is worshipped as the rising light, with a lamp and a sweet pongal or kheer cooked in the open sunlight in some homes. Temples hold a Surya procession: at Tirumala the deity is taken out on seven vahanas through the day, from dawn to night, for the 'one-day Brahmotsavam'. The day is also called Surya Jayanti and Achala Saptami."
+    },
+    "story": {
+     "en": "The story told for Ratha Saptami is that on this day Surya was born to the sage Kashyapa and Aditi, and so is called Aditya. His chariot is drawn by seven horses, said to stand for the seven days of the week, or for the seven colours of light, and it has a single wheel, the year turning. From Ratha Saptami, tradition says, the Sun turns his chariot fully northward, and the days grow warmer toward spring. A second story tells of King Yashovarma of Kamboja, whose only son was unwell for a long time; on a sage's advice the prince kept the Ratha Saptami observance, and is remembered as having grown strong. The arka leaves of the bath are a reminder of Bhishma, who is said to have received them in his last days."
+    },
+    "howTo": {
+     "en": [
+      "The evening before, draw a seven-horse chariot rangoli or kolam at the entrance.",
+      "Wake before dawn and bathe; if your family does, place seven arka leaves, with a little rice and sesame, on your head and shoulders while bathing.",
+      "Face the rising Sun and offer water from a copper vessel, reciting the Aditya Hridayam or simply the twelve names of Surya.",
+      "Light a lamp and offer a sweet pongal or kheer, cooked in sunlight if you can.",
+      "Share the prasad and spend some time outdoors in the morning sun."
+     ]
+    },
+    "greeting": {
+     "en": "May the rising Sun light your path. Happy Ratha Saptami!"
+    }
+   }
+  },
+  {
+   "id": "maha-shivaratri-te",
+   "names": {
+    "en": "Maha Shivaratri",
+    "te": "మహా శివరాత్రి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "magha",
+    "tithi": 29,
+    "observance": {
+     "kala": "nishita"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-AP",
+    "IN-TG"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The great night of Shiva, kept with fasting, night-long worship and the chanting of 'Om Namah Shivaya'."
+    },
+    "traditions": {
+     "en": "Devotees fast through the day, some taking only fruit and milk, and stay awake through the night. Temples hold four worships (prahara puja) across the night, bathing the Shiva linga in milk, curd, honey, ghee and water and offering bilva leaves. At home, families chant 'Om Namah Shivaya', read or listen to Shiva stories and sing bhajans. In Tamil Nadu temples hold the night's four abhishekams; in Kerala, the Aluva riverbank fills with people keeping vigil; in the North, kanwariyas carry Ganga water to Shiva temples. The fast is broken the next morning."
+    },
+    "story": {
+     "en": "Several stories are told for this night. In one, when the gods and asuras churned the ocean for nectar, a deadly poison, Halahala, rose first and threatened every living thing. Shiva drank it to protect the world, and Parvati held his throat so it would not go further; his throat turned blue, and he is called Neelakantha. The gods kept awake all night to watch over him, and devotees keep that vigil still. Another story tells of a hunter lost in the forest at night who climbed a bilva tree to stay safe. Restless, he plucked leaves and dropped them, not knowing a Shiva linga stood below; by morning he had kept a night's worship without meaning to, and his heart was changed. Many also remember this as the night of Shiva and Parvati's wedding."
+    },
+    "howTo": {
+     "en": [
+      "Decide how you will fast: a full fast, fruit and milk, or one simple meal; elders, children and anyone unwell often keep a light version.",
+      "Gather bilva leaves, milk, water, curd, honey, flowers and a lamp.",
+      "In the evening, bathe and visit a Shiva temple, or set up a small linga or picture at home.",
+      "Bathe the linga with water and milk, offer bilva leaves and flowers, and light the lamp.",
+      "Chant 'Om Namah Shivaya', read the Shiva Purana or listen to bhajans; many keep awake through the four quarters of the night.",
+      "The night's main worship is at Nishita, around midnight; the app's day view shows the time.",
+      "Break the fast the next morning after a bath and a short prayer, with simple food."
+     ]
+    },
+    "greeting": {
+     "en": "Om Namah Shivaya. Peaceful wishes on Maha Shivaratri."
+    }
+   }
+  },
+  {
+   "id": "holika-dahan-te",
+   "names": {
+    "en": "Kamuni Punnami",
+    "te": "కాముని పున్నమి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "phalguna",
+    "tithi": 15,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [
+    "2026: Bhadra covered the whole of Pradosh on 2 March and a lunar eclipse fell on 3 March; the almanacs moved it to 3 March (Holi 4 March)."
+   ],
+   "hidden": true,
+   "overrides": {
+    "2026": [
+     "2026-03-03"
+    ]
+   },
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ]
+  },
+  {
+   "id": "holi-te",
+   "names": {
+    "en": "Holi",
+    "te": "హోళీ"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "holika-dahan-te",
+    "offsetDays": 1
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The festival of colours, the morning after Holika Dahan: spring, play and setting differences aside."
+    },
+    "traditions": {
+     "en": "Friends, families and whole streets play with coloured powder (gulal) and coloured water, chasing one another with pichkaris and water balloons. The greeting is 'Holi hai!' and 'Bura na mano, Holi hai' (don't mind, it's Holi). Homes make gujiya, malpua, dahi bhalle and thandai. By afternoon everyone washes up, dresses in fresh clothes and visits relatives and friends. In Braj, around Mathura and Vrindavan, Holi is celebrated for days, with Lathmar Holi at Barsana and flower Holi in the temples."
+    },
+    "story": {
+     "en": "Holi carries two stories. The first follows from the night before: the morning after Holika's fire, people celebrated Prahlad's safe return, and the colours are that celebration. The second is the story of Krishna in Braj. As a child Krishna worried that his dark skin set him apart from fair Radha. His mother Yashoda laughed and told him to colour Radha's face with whatever colour he liked. He did, and Radha and the gopis coloured him back, and the game spread through Gokul and Vrindavan. That playful spirit, in which no one minds being coloured and everyone is equal for a day, is what Holi is about. Coming at the end of winter, it is also a celebration of spring."
+    },
+    "howTo": {
+     "en": [
+      "A day or two before, buy natural or skin-safe gulal, and make or order gujiya and thandai.",
+      "Before playing, rub coconut or mustard oil on your skin and hair so colours wash off easily; wear old clothes.",
+      "In the morning, start with a small prayer and a pinch of gulal offered to Krishna or the family deity.",
+      "Greet elders by touching their feet and putting a little gulal on their cheeks or feet.",
+      "Play with friends and neighbours; ask before colouring someone, and keep colour away from eyes and away from animals.",
+      "Around midday, wash, change into clean clothes and share sweets.",
+      "In the afternoon or evening, visit relatives and friends, and make peace with anyone you have drifted from."
+     ]
+    },
+    "greeting": {
+     "en": "Wishing you a Holi full of colour, laughter and old friends. Happy Holi!"
+    }
+   }
+  },
+  {
+   "id": "ugadi",
+   "names": {
+    "en": "Ugadi",
+    "te": "ఉగాది"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "chaitra",
+    "tithi": 1
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-AP",
+    "IN-TG"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "New Year's Day in the Telugu and Kannada calendars: the first day of Chaitra, and of a new samvatsara.",
+     "te": "తెలుగు సంవత్సరాది: చైత్ర శుద్ధ పాడ్యమి, కొత్త సంవత్సరానికి మొదటి రోజు."
+    },
+    "traditions": {
+     "en": "Homes are cleaned, doorways hung with mango leaves and drawn with rangoli, and families bathe early with oil. The day's signature is Ugadi pachadi in Andhra and Telangana, and bevu-bella in Karnataka: neem flowers, jaggery, raw mango, tamarind, salt and pepper together, six tastes for the sweet, bitter and sour of the year ahead. In the evening the new year's panchanga is read aloud at temples and in homes, the Panchanga Shravanam, telling what the year's almanac holds. New clothes, holige or bobbatlu, and visits to elders complete the day.",
+     "te": "ఇళ్లను శుభ్రం చేసి, గుమ్మాలకు మామిడి తోరణాలు కట్టి, ముగ్గులు వేస్తారు; ఉదయాన్నే తలంటు స్నానం చేస్తారు. ఉగాది పచ్చడి ఈ రోజు ప్రత్యేకత: వేప పువ్వు, బెల్లం, మామిడి, చింతపండు, ఉప్పు, కారం కలిపిన ఆరు రుచులు, రాబోయే సంవత్సరపు తీపి, చేదు, పులుపులకు గుర్తు. సాయంత్రం దేవాలయాల్లో, ఇళ్లలో కొత్త పంచాంగ శ్రవణం జరుగుతుంది. కొత్త బట్టలు, బొబ్బట్లు, పెద్దల దర్శనంతో రోజు పూర్తవుతుంది."
+    },
+    "story": {
+     "en": "The story told for Ugadi is that Brahma began the creation of the world on Chaitra Shukla Pratipada, so the year itself begins here; the name comes from yuga and adi, the beginning of an age. The Shalivahana era, by which the Telugu and Kannada calendars count their years, is also said to begin on this day. The pachadi's six tastes carry the day's quiet teaching: a year brings every flavour, and each is taken together, with an even mind.",
+     "te": "బ్రహ్మదేవుడు చైత్ర శుద్ధ పాడ్యమి నాడు సృష్టిని ఆరంభించాడని చెబుతారు; అందుకే సంవత్సరం ఇక్కడే మొదలవుతుంది. యుగ, ఆది అనే పదాల నుండి ఉగాది పేరు వచ్చింది. తెలుగు సంవత్సరాలను లెక్కించే శాలివాహన శకం కూడా ఈ రోజే మొదలైందని చెబుతారు. పచ్చడిలోని ఆరు రుచులు సంవత్సరం అన్ని రుచులనూ తెస్తుందని, అన్నింటినీ సమభావంతో స్వీకరించాలని గుర్తుచేస్తాయి."
+    },
+    "howTo": {
+     "en": [
+      "Clean the house the day before; on the morning tie mango-leaf torans and draw rangoli.",
+      "Take an oil bath early and wear new or fresh clothes.",
+      "Prepare Ugadi pachadi or bevu-bella and offer it first at the home shrine, then share it with everyone.",
+      "Cook holige or bobbatlu and the festive meal.",
+      "In the evening, hear the new year's panchanga read at a temple or at home."
+     ],
+     "te": [
+      "ముందు రోజు ఇల్లు శుభ్రం చేయండి; ఉదయం మామిడి తోరణాలు కట్టి ముగ్గులు వేయండి.",
+      "తెల్లవారుజామున తలంటు స్నానం చేసి కొత్త బట్టలు ధరించండి.",
+      "ఉగాది పచ్చడి చేసి ముందుగా దేవునికి నివేదించి, అందరికీ పంచండి.",
+      "బొబ్బట్లు, పండుగ భోజనం వండండి.",
+      "సాయంత్రం దేవాలయంలో లేదా ఇంట్లో పంచాంగ శ్రవణం వినండి."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Ugadi! May the new year bring every good taste.",
+     "te": "ఉగాది శుభాకాంక్షలు!"
+    }
+   }
+  },
+  {
+   "id": "rama-navami-te",
+   "names": {
+    "en": "Sri Rama Navami",
+    "te": "శ్రీ రామ నవమి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "chaitra",
+    "tithi": 9,
+    "observance": {
+     "kala": "madhyahna"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-AP",
+    "IN-TG"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The birth of Rama, on the ninth day of bright Chaitra."
+    },
+    "traditions": {
+     "en": "Rama's birth is celebrated at midday with a small cradle, songs and readings of the Ramayana. In Tamil Nadu, temples and homes offer panakam, a cooling drink of jaggery, dry ginger and cardamom, neer mor (spiced buttermilk) and kosumalli, a salad of soaked moong dal and cucumber, given out to everyone in the summer heat. Many homes hold Rama Navami bhajans for nine days. In Kerala, the Adhyatma Ramayanam is read, and temples such as Triprayar celebrate."
+    },
+    "story": {
+     "en": "King Dasharatha of Ayodhya performed a great yajna for children, and from its fire came a bowl of payasam, which he shared among his three queens. Kausalya gave birth to Rama at midday on the ninth day of bright Chaitra; Kaikeyi to Bharata; and Sumitra to Lakshmana and Shatrughna. Rama grew to be remembered as the one who kept to what was right even when it cost him most, leaving his throne for fourteen years in the forest to keep his father's word. Rama Navami celebrates his birth and his example."
+    },
+    "howTo": {
+     "en": [
+      "Decorate a picture of Rama, Sita, Lakshmana and Hanuman with flowers.",
+      "Prepare panakam, neer mor and kosumalli.",
+      "At midday (the madhyahna time in the day view), light a lamp, offer the food and tulsi, and sing a Rama bhajan or read from the Ramayana.",
+      "Share the panakam and neer mor with everyone who visits, and with passers-by in the heat."
+     ]
+    },
+    "greeting": {
+     "en": "Jai Shri Ram! Happy Rama Navami."
+    }
+   }
+  },
+  {
+   "id": "akshaya-tritiya-te",
+   "names": {
+    "en": "Akshaya Tritiya",
+    "te": "అక్షయ తృతీయ"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "vaishakha",
+    "tithi": 3,
+    "observance": {
+     "minCoverMinutes": 144,
+     "fallback": "begins",
+     "kala": "morning"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The third day of bright Vaishakha, traditionally favoured for new beginnings and for giving."
+    },
+    "traditions": {
+     "en": "'Akshaya' means 'that which does not diminish', and the day is traditionally seen as good for starting things: a business, a house, a course of study, a marriage. Many families buy a little gold or silver, and many more give: water and cooling drinks, fans, umbrellas, grain and clothes, since it falls in the hot season. Vishnu and Lakshmi are worshipped, and in Odisha the building of the chariots for the Puri Rath Yatra begins today. Parashurama Jayanti falls on or near the same day, and Jain families break the year-long varshi tapa fast with sugarcane juice."
+    },
+    "story": {
+     "en": "Several stories meet on this day. In one, Krishna's childhood friend Sudama, a poor Brahmin, walked to Dwarka to see him, carrying only a little beaten rice (poha) tied in a cloth as a gift. Krishna embraced him, ate the poha with delight, and sent him home without Sudama asking for anything; when Sudama returned, his family's hardship had ended. In another, during the Pandavas' exile, Krishna gave Draupadi the Akshaya Patra, a vessel that never ran empty until she had eaten, so no guest at their door went hungry. Tradition also holds that the Treta Yuga began on this day, that the Ganga descended to earth, and that Vyasa began dictating the Mahabharata to Ganesha."
+    },
+    "howTo": {
+     "en": [
+      "In the morning, bathe and offer a lamp, flowers and tulsi to Vishnu and Lakshmi at home.",
+      "Offer something simple and cooling: barley, sattu, cucumber, jaggery water or panakam.",
+      "If you were planning to start something, a course, a savings plan or a small venture, many families choose today to begin.",
+      "Give something in the spirit of the day: water or buttermilk to passers-by, an umbrella, a fan, grain or clothes.",
+      "If your family buys gold or silver, keep it small and meaningful; the giving matters more in the tradition.",
+      "Share a simple meal, and if you can, feed a guest or someone who needs it."
+     ]
+    },
+    "greeting": {
+     "en": "May what you begin today grow steadily. Happy Akshaya Tritiya!"
+    }
+   }
+  },
+  {
+   "id": "hanuman-jayanti-te",
+   "names": {
+    "en": "Hanuman Jayanti",
+    "te": "హనుమాన్ జయంతి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "vaishakha",
+    "tithi": 25
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [
+    "Kept in the Telugu states on Vaishakha Krishna Dashami, after a 41-day Hanuman Deeksha from Chaitra Purnima."
+   ],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The birth of Hanuman, celebrated on Chaitra Purnima across North India."
+    },
+    "traditions": {
+     "en": "Devotees visit Hanuman temples from early morning, since Hanuman is said to have been born at sunrise. The idol is offered sindoor mixed with jasmine oil, a garland of betel leaves, and boondi or besan laddoos. The Hanuman Chalisa is recited, often many times over, and the Sundarkand of the Ramcharitmanas is read. Many keep a fast for the day. Celebrations are large at Salasar Balaji in Rajasthan and in Hanuman temples across Uttar Pradesh. In Tamil Nadu and Kerala the day is kept in Margazhi, and in Andhra Pradesh and Telangana in Vaishakha."
+    },
+    "story": {
+     "en": "Hanuman was born to Anjana and Kesari, and is called the son of Vayu, the wind, who watched over him. The story told of his childhood is that, seeing the rising Sun, he took it for a ripe fruit and leapt into the sky to catch it. Indra, alarmed, struck him with his thunderbolt, and the child fell, wounding his jaw (hanu), which gave him his name. Vayu, grieving, withdrew the air from the world until the gods came together to revive the child and gave him gifts of strength, wisdom and long life. Hanuman grew up to become Rama's devoted friend and messenger, who leapt across the ocean to find Sita in Lanka. He is remembered for strength used in service, and for humility."
+    },
+    "howTo": {
+     "en": [
+      "Wake early and bathe before sunrise, the hour of Hanuman's birth.",
+      "Visit a Hanuman temple, or set up a picture of Hanuman at home with a red cloth.",
+      "Offer sindoor (or a little vermilion), a red flower garland, and boondi or besan laddoos.",
+      "Light a lamp with ghee or jasmine oil.",
+      "Recite the Hanuman Chalisa, once or as many times as you like; read the Sundarkand if you have time.",
+      "Keep a fast for the day if your family does, eating once in the evening.",
+      "Share the laddoos as prasad, and if you can, help someone who needs it, in Hanuman's spirit of service."
+     ]
+    },
+    "greeting": {
+     "en": "Jai Hanuman! Wishing you strength and a steady heart on Hanuman Jayanti."
+    }
+   }
+  },
+  {
+   "id": "narasimha-jayanti-te",
+   "names": {
+    "en": "Narasimha Jayanti",
+    "te": "నృసింహ జయంతి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "vaishakha",
+    "tithi": 14,
+    "observance": {
+     "prefer": "last",
+     "kala": "sunset"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Vaishakha Shukla Chaturdashi at dusk: the appearance of Narasimha, Vishnu as man-lion, to protect Prahlad."
+    },
+    "traditions": {
+     "en": "Narasimha is worshipped at dusk, the hour of his appearance. Devotees fast through the day and break the fast after the evening puja with fruit and panakam, a cooling drink of jaggery, pepper and cardamom. Temples to Narasimha, at Ahobilam, Simhachalam, Yadagirigutta and Melkote, hold special abhishekams. The story of Prahlad is read aloud at home."
+    },
+    "story": {
+     "en": "Hiranyakashipu had won a boon that he could not be killed by man or beast, by day or by night, indoors or outdoors, on earth or in the sky, by any weapon. Believing himself beyond reach, he demanded worship, and his own son Prahlad would not give up his devotion to Vishnu. One evening the king, mocking, asked whether Vishnu was in the pillar before him, and struck it. The pillar split, and Vishnu stepped out as Narasimha, half man and half lion, neither man nor beast. At twilight, neither day nor night, on the threshold, neither inside nor outside, holding the king on his lap, neither earth nor sky, he ended Hiranyakashipu's rule with his claws. Then, still fierce, he was calmed by Prahlad's gentle prayer."
+    },
+    "howTo": {
+     "en": [
+      "Keep a fast through the day if your family does, taking fruit or milk.",
+      "At dusk, set up a picture of Narasimha, or Lakshmi-Narasimha, and light a lamp.",
+      "Offer flowers, tulsi and panakam (jaggery water with pepper and cardamom).",
+      "Read the story of Prahlad and Narasimha, or chant the Narasimha stotra.",
+      "Break the fast with the panakam and a simple meal."
+     ]
+    },
+    "greeting": {
+     "en": "Wishes on Narasimha Jayanti: may Prahlad's trust stay with you."
+    }
+   }
+  },
+  {
+   "id": "tholi-ekadashi",
+   "names": {
+    "en": "Tholi Ekadashi",
+    "te": "తొలి ఏకాదశి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashadha",
+    "tithi": 11,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Ashadha Shukla Ekadashi: Vishnu goes into his four-month yogic sleep; chaturmas begins."
+    },
+    "traditions": {
+     "en": "Also called Ashadhi Ekadashi and Padma Ekadashi, it begins chaturmas, the four months of the monsoon when many people take on a discipline: giving up a food, eating once a day, or reading daily. In Maharashtra, the great Pandharpur Wari reaches its end: lakhs of warkaris walk for weeks, singing abhangs, to see Vitthal on this day. Traditionally, weddings and housewarmings are not held until Vishnu wakes on Devutthana Ekadashi."
+    },
+    "story": {
+     "en": "The story told is that on this Ekadashi Vishnu lies down on the serpent Shesha in the ocean of milk and enters yoga nidra, a sleep of deep meditation, for four months, waking on Kartika Shukla Ekadashi. Another story, told in Maharashtra, is of Pundalik, a young man devoted to his parents. When Vishnu, as Vitthal, came to his door, Pundalik was massaging his father's feet, and without rising he tossed Vitthal a brick to stand on until he was done. Vitthal waited, standing on the brick with his hands on his hips, and stands that way in Pandharpur to this day."
+    },
+    "howTo": {
+     "en": [
+      "Fast on Ekadashi from grains and beans.",
+      "Worship Vishnu or Vitthal with tulsi and a lamp; sing abhangs or bhajans.",
+      "If you wish, choose a small discipline for the four months of chaturmas.",
+      "Join a local dindi or temple procession if there is one.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "bonalu",
+   "names": {
+    "en": "Bonalu (Ashadha Sundays)",
+    "te": "బోనాలు"
+   },
+   "rule": {
+    "type": "nth-weekday",
+    "weekday": "sunday",
+    "within": {
+     "type": "lunar-month",
+     "month": "ashadha"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [
+    "IN-TG"
+   ],
+   "durationDays": 1,
+   "variations": [
+    "Celebrated on the Sundays of Ashadha in Hyderabad and Secunderabad, beginning at Golconda; dates for each temple are announced locally."
+   ],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Telangana's festival of the Goddess, on the Sundays of Ashadha.",
+     "te": "ఆషాఢ మాసపు ఆదివారాలలో తెలంగాణ అమ్మవారి పండుగ."
+    },
+    "traditions": {
+     "en": "Through Ashadha, Hyderabad and Secunderabad take offerings to the Goddess in her many forms: Yellamma, Pochamma, Mahankali. Women carry bonam, a pot of rice cooked with milk and jaggery, on their heads, the pot decorated with neem leaves, turmeric and a lamp on top, to the temple in procession with drums. The Pothuraju, the Goddess's brother, dances ahead. The festival opens at Golconda and moves through Ujjaini Mahankali in Secunderabad and Lal Darwaza in the old city, and closes with Rangam, a forecast spoken at the temple.",
+     "te": "ఆషాఢ మాసమంతా హైదరాబాద్, సికింద్రాబాద్‌లలో ఎల్లమ్మ, పోచమ్మ, మహంకాళి వంటి అమ్మవారి రూపాలకు బోనాలు సమర్పిస్తారు. పాలు, బెల్లంతో వండిన అన్నం కుండను వేప ఆకులు, పసుపు, దీపంతో అలంకరించి స్త్రీలు తలపై పెట్టుకుని, డప్పుల మోతతో ఊరేగింపుగా గుడికి వెళ్తారు. పోతరాజు ముందు నృత్యం చేస్తాడు. గోల్కొండలో మొదలై, ఉజ్జయిని మహంకాళి, లాల్ దర్వాజా మీదుగా సాగి, రంగంతో ముగుస్తుంది."
+    },
+    "story": {
+     "en": "Bonalu is told as thanks to the Goddess for keeping the city through the monsoon season; tradition dates it to the 19th century, when the people of Hyderabad vowed offerings to Mahankali, and the vow has been kept every Ashadha since.",
+     "te": "వర్షాకాలంలో నగరాన్ని కాపాడినందుకు అమ్మవారికి కృతజ్ఞతగా బోనాలు సమర్పిస్తారని చెబుతారు; 19వ శతాబ్దంలో హైదరాబాద్ ప్రజలు మహంకాళికి మొక్కుకున్న మొక్కు అప్పటినుండి ప్రతి ఆషాఢంలో తీర్చుకుంటున్నారని సంప్రదాయం."
+    },
+    "howTo": {
+     "en": [
+      "Cook rice with milk and jaggery in a new pot and decorate it with neem leaves and turmeric.",
+      "Place a small lamp on the lid and carry the bonam to the Goddess's temple.",
+      "Offer the bonam, then share the prasadam with family and neighbours."
+     ],
+     "te": [
+      "కొత్త కుండలో పాలు, బెల్లంతో అన్నం వండి, వేప ఆకులు, పసుపుతో అలంకరించండి.",
+      "మూతపై చిన్న దీపం పెట్టి బోనాన్ని అమ్మవారి గుడికి తీసుకెళ్లండి.",
+      "బోనం సమర్పించి, ప్రసాదాన్ని కుటుంబంతో, ఇరుగుపొరుగుతో పంచుకోండి."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Bonalu!",
+     "te": "బోనాల పండుగ శుభాకాంక్షలు!"
+    }
+   }
+  },
+  {
+   "id": "guru-purnima-te",
+   "names": {
+    "en": "Guru Purnima",
+    "te": "గురు పూర్ణిమ"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashadha",
+    "tithi": 15
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The full moon of Ashadha, for honouring teachers, remembering Vyasa."
+    },
+    "traditions": {
+     "en": "Students visit and thank their teachers, and disciples gather at ashrams and with their spiritual guides. Music and dance students offer flowers and a performance to their gurus. Many families honour parents and elders as their first teachers. Ashrams hold Vyasa puja, and the day begins the four months of chaturmas, when wandering monks stay in one place for the monsoon. Buddhists remember it as the day the Buddha gave his first teaching at Sarnath."
+    },
+    "story": {
+     "en": "Guru Purnima is the birthday of Veda Vyasa, born to the sage Parashara and Satyavati on an island in the Yamuna. Tradition credits him with dividing the one Veda into four so that it could be learned, composing the Mahabharata, and compiling the Puranas, which is why he is honoured as the teacher of teachers and the day is also called Vyasa Purnima. Yogic tradition adds that on this full moon Shiva, the Adiyogi, sat facing south and began to teach the first seven disciples, the Saptarishis, becoming the first guru."
+    },
+    "howTo": {
+     "en": [
+      "Think of the teachers who shaped you: at school, in music or a craft, at home, or on a spiritual path.",
+      "Visit or call one of them to thank them; take flowers, fruit or a small gift if you visit.",
+      "At home, light a lamp before a picture of Vyasa, your guru or your family deity, and offer flowers.",
+      "Touch the feet of your parents and elders, your first teachers.",
+      "Spend a little time studying or practising something you have learned, in your teacher's honour."
+     ]
+    },
+    "greeting": {
+     "en": "With gratitude to every teacher. Happy Guru Purnima!"
+    }
+   }
+  },
+  {
+   "id": "shravana-purnima-te",
+   "names": {
+    "en": "Shravana Purnima",
+    "te": "శ్రావణ పూర్ణిమ"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "shravana",
+    "tithi": 15
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": true,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ]
+  },
+  {
+   "id": "varalakshmi-vratam-te",
+   "names": {
+    "en": "Varalakshmi Vratam",
+    "te": "వరలక్ష్మీ వ్రతం"
+   },
+   "rule": {
+    "type": "weekday-on-or-before",
+    "to": "shravana-purnima-te",
+    "weekday": "friday"
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Friday before Avani Pournami: married women invite Varalakshmi, the boon-giving Lakshmi, home."
+    },
+    "traditions": {
+     "en": "Women prepare a kalasham, a pot filled with rice or water, coins and betel, topped with a coconut on which a face of the goddess is fixed, and dress it in a sari and jewellery. On Thursday evening the goddess is welcomed at the doorway with a song and brought in. On Friday she is worshipped with lamps, flowers and nine kinds of offerings, and women tie a yellow thread (nombu charadu) on their right wrist. Neighbours are invited for thamboolam of turmeric, kumkum, betel, fruit and a blouse piece. It is kept in Tamil Nadu, Karnataka, Andhra Pradesh and Telangana."
+    },
+    "story": {
+     "en": "The story told is of Charumathi, a devoted wife in the city of Kundina, to whom Lakshmi appeared in a dream and told her to worship her as Varalakshmi on the Friday before Shravana Purnima. Charumathi told the other women of the city, and they kept the vratam together, tying the sacred thread. The story says their homes were filled with good things. Shiva is also said to have told Parvati of this vratam as one that families can keep together for the wellbeing of the home."
+    },
+    "howTo": {
+     "en": [
+      "On Thursday, clean the house, draw a kolam, and prepare the kalasham with a coconut and the goddess's face.",
+      "On Thursday evening, welcome the goddess at the doorway with a song and a lamp, and bring her to the puja place.",
+      "On Friday morning, worship her with flowers, lamps and offerings such as sweet pongal, payasam, vadai and fruit; read the Varalakshmi story.",
+      "Tie the yellow thread on your right wrist.",
+      "Invite women neighbours and give thamboolam."
+     ]
+    },
+    "greeting": {
+     "en": "Varalakshmi Vratam wishes to your home!"
+    }
+   }
+  },
+  {
+   "id": "raksha-bandhan-te",
+   "names": {
+    "en": "Rakhi Purnima",
+    "te": "రాఖీ పూర్ణిమ"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "shravana",
+    "tithi": 15,
+    "observance": {
+     "minCoverMinutes": 144,
+     "kala": "morning"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Shravana Purnima: sisters tie a rakhi on their brothers' wrists, and brothers promise to stand by them."
+    },
+    "traditions": {
+     "en": "In the morning sisters prepare a thali with a rakhi, roli, rice, a lamp and sweets. They apply a tilak to their brother's forehead, tie the rakhi on his right wrist, wave the lamp and feed him a sweet; the brother gives a gift and a promise of support. Cousins and friends tie rakhis too, and sisters far away post them. Rakhi is tied outside the Bhadra period, which the day view shows. In Maharashtra the same full moon is Narali Purnima, when fishing communities offer coconuts to the sea, and in the South it is Avani Avittam, when the sacred thread is renewed."
+    },
+    "story": {
+     "en": "Many stories are told. In the Mahabharata, Krishna cut his finger, and Draupadi tore a strip from her sari to bind it; Krishna promised to repay the kindness, and did so when he protected her honour in the Kaurava court. In another, the asura king Bali had kept Vishnu as his doorkeeper, and Lakshmi, wanting him home, tied a thread on Bali's wrist as a sister and asked for her husband back as her gift; Bali gladly agreed. A story from history tells of Rani Karnavati of Mewar sending a rakhi to the emperor Humayun to ask for help. In all of them, the thread is a promise of care between people who choose to stand by one another."
+    },
+    "howTo": {
+     "en": [
+      "Choose rakhis, and buy or make sweets the day before; post rakhis early for siblings far away.",
+      "Check the day view for the Bhadra period, and plan the ceremony after it ends.",
+      "Prepare a thali: rakhi, roli or kumkum, rice, a small lamp and sweets.",
+      "The brother sits facing east; the sister applies a tilak, tilts a few grains of rice on it, and ties the rakhi on his right wrist.",
+      "She waves the lamp, feeds him a sweet, and he gives her a gift and his blessing or promise.",
+      "Call or video-call siblings you cannot meet, and share a meal with the family."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Raksha Bandhan to every brother and sister!"
+    }
+   }
+  },
+  {
+   "id": "krishnashtami-te",
+   "names": {
+    "en": "Sri Krishna Janmashtami",
+    "te": "శ్రీ కృష్ణ జన్మాష్టమి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "shravana",
+    "tithi": 23
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-AP",
+    "IN-TG"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The birth of Krishna, kept with a fast and a midnight celebration."
+    },
+    "traditions": {
+     "en": "Devotees fast through the day and gather at midnight, the hour of Krishna's birth, to bathe an image of baby Krishna (Laddu Gopal) in milk and curd, dress him and rock him in a decorated cradle while singing bhajans. Homes and temples set up jhankis, scenes from his life, and children dress up as Krishna and Radha. Mathura and Vrindavan celebrate for days. In Maharashtra, the next day is Dahi Handi, when human pyramids climb to break pots of curd hung high, as young Krishna stole butter. The fast is broken after midnight with makhan-mishri and panjiri."
+    },
+    "story": {
+     "en": "King Kamsa of Mathura was told that the eighth child of his sister Devaki would end his rule, so he imprisoned her and her husband Vasudeva. Krishna was born at midnight in that prison, on the eighth day of the dark fortnight, under Rohini nakshatra, in a storm. The story goes that the guards fell asleep and the chains and doors opened. Vasudeva carried the baby in a basket through the flooded Yamuna, which parted for them, with the serpent Shesha spreading his hoods over the child against the rain. In Gokul he exchanged Krishna for the newborn daughter of Nanda and Yashoda, who raised Krishna as their own. He grew up among the cowherds, beloved for his mischief, his flute, and his care for everyone around him."
+    },
+    "howTo": {
+     "en": [
+      "Decorate a small cradle and set up an image of baby Krishna (Laddu Gopal); make a jhanki if you like.",
+      "Fast through the day: many take fruit and milk; elders and children often keep it light.",
+      "Prepare panchamrit (milk, curd, ghee, honey, sugar), makhan-mishri, panjiri and tulsi leaves.",
+      "Sing bhajans and read the story of Krishna's birth in the evening.",
+      "Check the day view for the Nishita time around midnight; at that moment bathe the image with panchamrit, dress it and place it in the cradle.",
+      "Rock the cradle, sing 'Nand ke anand bhayo', and offer the food and tulsi.",
+      "Share the prasad and break the fast."
+     ]
+    },
+    "greeting": {
+     "en": "Jai Shri Krishna! Happy Janmashtami."
+    }
+   }
+  },
+  {
+   "id": "vinayaka-chavithi",
+   "names": {
+    "en": "Vinayaka Chavithi",
+    "te": "వినాయక చవితి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "bhadrapada",
+    "tithi": 4,
+    "observance": {
+     "kala": "madhyahna"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-AP",
+    "IN-TG"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Ganesha's birthday in Kerala, with the ashta dravya ganapathi homam and modakam."
+    },
+    "traditions": {
+     "en": "Kerala's Ganapathi temples, Pazhavangadi in Thiruvananthapuram, Kottarakkara and Madhur, hold the ashta dravya maha ganapathi homam at dawn, with eight offerings including coconut, jaggery and banana, and appams and modakams are offered. Many homes perform a small homam or puja, and public Ganesha idols are taken out for immersion in coastal towns. The day's sweet is kozhukatta or modakam."
+    },
+    "story": {
+     "en": "Parvati shaped a child from the turmeric paste of her bath and set him at her door. Shiva, coming home, was stopped by the boy, who did not know him, and struck off his head; then, to console Parvati, gave him an elephant's head and brought him back as Ganapati, to be worshipped first before every undertaking. At Kottarakkara, the story is told that the master sculptor Perunthachan, building a Shiva temple, carved a small Ganapati from a jackfruit-wood chip, and it was installed there and loved above the main deity."
+    },
+    "howTo": {
+     "en": [
+      "Make modakam or kozhukatta and unniyappam.",
+      "Visit a Ganapathi temple for the morning homam, or perform a simple puja at home.",
+      "At midday (madhyahna; see the day view), offer the sweets, a coconut and karuka grass to Ganapati with a lamp.",
+      "Avoid looking at the Moon that night, as tradition asks."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Vinayaka Chathurthi!"
+    }
+   }
+  },
+  {
+   "id": "mahalaya-amavasya-te",
+   "names": {
+    "en": "Mahalaya Amavasya",
+    "te": "మహాలయ అమావాస్య"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "bhadrapada",
+    "tithi": 30,
+    "observance": {
+     "kala": "aparahna"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The new moon that closes the fortnight of the ancestors, the day before Navarathiri."
+    },
+    "traditions": {
+     "en": "Families offer tarpanam to all their ancestors at the sea, rivers or at home, feed people and give food and clothes. It is one of the three great days of remembrance in the Tamil year, with Aadi and Thai Amavasai. The next day, Navarathiri begins and the kolu dolls are set out."
+    },
+    "story": {
+     "en": "As the last day of the fortnight granted to Karna, Mahalaya Amavasai gathers in every ancestor the family wishes to remember, including those whose day is not known. It also opens the season of the Goddess: tradition holds that as the ancestors depart, the Goddess arrives for the nine nights."
+    },
+    "howTo": {
+     "en": [
+      "In the afternoon (aparahna; see the day view), offer water with black sesame, facing south, naming all your ancestors.",
+      "Cook a simple meal and set a portion out for crows.",
+      "Give food, clothes or grain to someone in need.",
+      "In the evening, begin preparing the kolu steps for Navarathiri."
+     ]
+    },
+    "greeting": {
+     "en": "Remembering our ancestors on Mahalaya Amavasai."
+    }
+   }
+  },
+  {
+   "id": "bathukamma",
+   "names": {
+    "en": "Bathukamma",
+    "te": "బతుకమ్మ"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "bhadrapada",
+    "tithi": 30,
+    "observance": {
+     "kala": "aparahna"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [
+    "IN-TG"
+   ],
+   "durationDays": 9,
+   "variations": [
+    "Nine days from Mahalaya Amavasya (Engili Pula Bathukamma) to Durgashtami (Saddula Bathukamma), across Telangana."
+   ],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Telangana's nine-day festival of flowers, from Mahalaya Amavasya to Durgashtami.",
+     "te": "మహాలయ అమావాస్య నుండి దుర్గాష్టమి వరకు తొమ్మిది రోజుల తెలంగాణ పూల పండుగ."
+    },
+    "traditions": {
+     "en": "Each evening women stack seasonal wildflowers, tangedu, gunuka, banti, in concentric rings into a cone, the bathukamma, topped with a turmeric Gauri. They gather in a circle around their bathukammas and sing and clap in rhythm, then set them afloat on a lake or tank. Each day has its own name and offering, from Engili Pula Bathukamma on the first day to Saddula Bathukamma on Durgashtami, the grandest, when sweets of seven grains are shared.",
+     "te": "ప్రతి సాయంత్రం స్త్రీలు తంగేడు, గునుక, బంతి వంటి కాలానుగుణ పూలను వలయాలుగా పేర్చి బతుకమ్మను తయారుచేసి, పైన పసుపు గౌరమ్మను ఉంచుతారు. బతుకమ్మల చుట్టూ వలయంగా చేరి పాటలు పాడుతూ చప్పట్లు కొడతారు, తర్వాత చెరువులో నిమజ్జనం చేస్తారు. ఎంగిలి పూల బతుకమ్మ నుండి దుర్గాష్టమి నాటి సద్దుల బతుకమ్మ వరకు ప్రతి రోజుకూ పేరు, నైవేద్యం ఉంటాయి."
+    },
+    "story": {
+     "en": "Bathukamma means 'come alive, Mother'. The story told is of a girl, Bathukamma, revered as Gauri herself, and of the Goddess honoured through the flowers of the season that bloom after the rains; the festival celebrates the earth, water and women's company.",
+     "te": "బతుకమ్మ అంటే 'బతుకు అమ్మా'. గౌరమ్మ స్వరూపంగా పూజించబడిన బతుకమ్మ అనే బాలిక కథ చెబుతారు; వర్షాల తర్వాత వికసించే పూలతో అమ్మవారిని పూజిస్తూ, భూమి, నీరు, స్త్రీల సహచర్యాన్ని ఈ పండుగ జరుపుకుంటుంది."
+    },
+    "howTo": {
+     "en": [
+      "Gather seasonal flowers and arrange them in rings into a cone on a plate.",
+      "Place a small Gauri of turmeric on top and offer it at home.",
+      "In the evening, join the circle of women to sing and clap around the bathukammas.",
+      "Set the bathukamma afloat in a lake or tank and share the day's offering."
+     ],
+     "te": [
+      "కాలానుగుణ పూలను సేకరించి పళ్లెంలో వలయాలుగా పేర్చండి.",
+      "పైన పసుపు గౌరమ్మను ఉంచి ఇంట్లో పూజించండి.",
+      "సాయంత్రం స్త్రీలతో కలిసి బతుకమ్మల చుట్టూ పాటలు పాడుతూ చప్పట్లు కొట్టండి.",
+      "బతుకమ్మను చెరువులో నిమజ్జనం చేసి నైవేద్యాన్ని పంచుకోండి."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Bathukamma!",
+     "te": "బతుకమ్మ పండుగ శుభాకాంక్షలు!"
+    }
+   }
+  },
+  {
+   "id": "navaratri-te",
+   "names": {
+    "en": "Devi Navaratrulu",
+    "te": "దేవీ నవరాత్రులు"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 1
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Nine nights of the Goddess in Ashvin, ending in Dussehra."
+    },
+    "traditions": {
+     "en": "On the first morning families set up the kalash (ghatasthapana) and sow barley, and for nine days worship one form of Durga each day: Shailaputri, Brahmacharini, Chandraghanta, Kushmanda, Skandamata, Katyayani, Kalaratri, Mahagauri and Siddhidatri. Many fast or eat only vrat food. Evenings bring garba and dandiya in Gujarat, Ram Lila plays across the North, and the grand Durga Puja pandals of Bengal in the last five days. On Ashtami or Navami, young girls are honoured as the Goddess in kanya puja."
+    },
+    "story": {
+     "en": "The Devi Mahatmya tells that the buffalo-demon Mahishasura, granted a boon that no man or god could defeat him, drove the gods from heaven. The gods' anger and strength combined into a blaze of light from which the Goddess Durga took form, and each god gave her a weapon: Shiva his trident, Vishnu his discus, Indra his thunderbolt. Riding a lion, she fought Mahishasura for nine days and nights as he changed shape again and again, and on the tenth day she overcame him. Navratri keeps those nine nights, and Vijayadashami celebrates the victory."
+    },
+    "howTo": {
+     "en": [
+      "The day before, clean the puja space and gather a kalash, coconut, mango leaves, barley and soil.",
+      "On the first morning, set up the kalash and sow barley beside it; light a lamp before the Goddess.",
+      "Each day, worship that day's form of Durga with flowers and an aarti, and read a portion of the Durga Saptashati if you can.",
+      "Choose your fast: one meal, fruit and milk, or vrat foods like kuttu, singhara and sabudana.",
+      "In the evenings, join a garba, a Ram Lila or a Durga Puja pandal.",
+      "On Ashtami or Navami, invite young girls home, wash their feet, and serve them puri, chana and halwa with a small gift."
+     ]
+    },
+    "greeting": {
+     "en": "Jai Mata Di! Wishing you a joyful Navratri."
+    }
+   }
+  },
+  {
+   "id": "durgashtami-te",
+   "names": {
+    "en": "Durgashtami (Saddula Bathukamma)",
+    "te": "దుర్గాష్టమి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 8
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Durgashtami: the evening of pooja vaypu, when books and tools are placed before Saraswati."
+    },
+    "traditions": {
+     "en": "In the evening, families place books, notebooks, musical instruments and the tools of their trade before Saraswati and the Goddess, decorated with flowers, and light the lamp. From then until Vijayadashami morning, no studying or work with those things is done, and they are worshipped as the Goddess's own. Schools and offices often close for the days that follow."
+    },
+    "story": {
+     "en": "The eighth day of the Goddess's battle with Mahishasura is when she took her fiercest form as Durga. Placing the instruments of learning and work before her is a way of offering them back to their source for a few days: everything one knows and does is received as her gift, and on Vijayadashami it is taken up again with fresh purpose."
+    },
+    "howTo": {
+     "en": [
+      "Clean the puja space and set up a picture of Saraswati or the Goddess.",
+      "In the evening, arrange books, instruments and tools before her with flowers, and light the nilavilakku.",
+      "Pray, and leave them there until Vijayadashami morning."
+     ]
+    },
+    "greeting": {
+     "en": "Durgashtami greetings."
+    }
+   }
+  },
+  {
+   "id": "maha-navami-te",
+   "names": {
+    "en": "Maha Navami",
+    "te": "మహా నవమి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 9,
+    "observance": {
+     "kala": "aparahna"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The ninth day of Navratri: Durga as Siddhidatri, the day before Vijayadashami."
+    },
+    "traditions": {
+     "en": "Navratri's final worship is kept today with a havan in many homes, and kanya puja for those who keep it on Navami. In the South, Ayudha Puja falls today: tools, vehicles, books and instruments are cleaned, decorated and worshipped. In Bengal it is the last full day of Durga Puja, with the Navami bhog."
+    },
+    "story": {
+     "en": "On Navami the Goddess is worshipped as Siddhidatri, the giver of accomplishment, said in the Devi Purana to be the form from which even Shiva received his powers. In the story of Mahishasura, the ninth day is the last before the final victory, and the worship of weapons and tools today remembers the instruments the gods gave Durga for her battle."
+    },
+    "howTo": {
+     "en": [
+      "Worship Siddhidatri with flowers and an aarti, and perform a small havan if your family does.",
+      "Hold kanya puja if you keep it on Navami.",
+      "Clean and decorate your tools, books, instruments or vehicle, and honour them.",
+      "Prepare to end the fast and conclude the Navratri worship."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Maha Navami!"
+    }
+   }
+  },
+  {
+   "id": "vijayadashami-te",
+   "names": {
+    "en": "Vijayadashami (Dasara)",
+    "te": "విజయదశమి (దసరా)"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 10,
+    "observance": {
+     "kala": "aparahna"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-AP",
+    "IN-TG"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The tenth day: the Goddess's victory, and the day children begin learning."
+    },
+    "traditions": {
+     "en": "The books and instruments set before Saraswati are taken back with a short worship, and the first thing read or played that morning is a prayer or a lesson. Young children are initiated into learning (Vidyarambham): an elder or a teacher holds the child's finger and writes the first letters, in Tamil 'Hari Sri' or 'a', and in Kerala 'Hari Sri Ganapataye Namah', in a plate of rice. Music and dance students begin new lessons. In Kerala, Vidyarambham is held at temples such as Thunchan Parambu and Kollur Mookambika, and in Tamil Nadu at Koothanur's Saraswati temple."
+    },
+    "story": {
+     "en": "On the tenth day the Goddess overcame Mahishasura after nine days of battle, and the gods rejoiced; 'Vijaya' means victory. In the Ramayana, Rama defeated Ravana on this day after worshipping the Goddess. Because victory over ignorance is the truest one, the day is held the best of the year for beginning to learn: whatever is begun on Vijayadashami is begun with the Goddess of learning's blessing."
+    },
+    "howTo": {
+     "en": [
+      "In the morning, do a short puja and take back the books and instruments from before Saraswati.",
+      "Read a prayer or a page, write something, or play a few notes before anything else.",
+      "If a child is starting to learn, sit them on an elder's lap and guide their finger to write the first letters in a plate of rice.",
+      "Begin a new lesson or course you have been planning.",
+      "Take down the kolu if you set one up, keeping one doll lying down as a gentle goodbye till next year."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Vijayadashami! May every new beginning be blessed."
+    }
+   }
+  },
+  {
+   "id": "atla-taddi",
+   "names": {
+    "en": "Atla Taddi",
+    "te": "అట్ల తద్ది"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 18
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [
+    "Dated by the Tritiya at sunrise, as the Telugu almanacs do; the fast is kept until moonrise that evening."
+   ],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "A moonrise vrata of Andhra and Telangana women, three days after Ashvayuja Purnima.",
+     "te": "ఆశ్వయుజ బహుళ తదియ నాడు చంద్రోదయం వరకు స్త్రీలు చేసే వ్రతం."
+    },
+    "traditions": {
+     "en": "Before dawn, women and girls eat a meal, then keep the day's fast. In the morning they swing on swings hung from trees and play together; by evening they worship Gauri, offer and share atlu, the day's dosas, and break the fast after seeing the moon rise. Unmarried girls keep it with prayers for a good marriage, married women for the family's wellbeing.",
+     "te": "తెల్లవారకముందే స్త్రీలు, బాలికలు భోజనం చేసి రోజంతా ఉపవాసం ఉంటారు. ఉదయం చెట్లకు కట్టిన ఉయ్యాలలు ఊగుతూ ఆటలాడతారు; సాయంత్రం గౌరమ్మను పూజించి అట్లు నివేదించి పంచుకుంటారు, చంద్రోదయం చూసి ఉపవాసం విరమిస్తారు. పెళ్లికాని అమ్మాయిలు మంచి వివాహం కోసం, వివాహితలు కుటుంబ క్షేమం కోసం ప్రార్థిస్తారు."
+    },
+    "story": {
+     "en": "The story told is of a princess who kept this vrata but, tired by evening, was given a false moon by her brothers' lamp; she kept it again with full care in the years that followed, and her devotion was rewarded by Gauri.",
+     "te": "ఈ వ్రతం చేసిన ఒక రాకుమారికి సాయంత్రం అలసటతో ఉండగా అన్నలు దీపాన్ని చంద్రునిగా చూపించారని, తర్వాతి సంవత్సరాలలో ఆమె నిష్ఠగా వ్రతం చేయగా గౌరమ్మ అనుగ్రహించిందని కథ చెబుతారు."
+    },
+    "howTo": {
+     "en": [
+      "Eat before dawn and keep the day's fast.",
+      "In the evening, worship Gauri with flowers and turmeric.",
+      "Make atlu (dosas) and offer them, then share them with other women.",
+      "Break the fast after seeing the moon rise."
+     ],
+     "te": [
+      "తెల్లవారకముందే భోజనం చేసి రోజంతా ఉపవాసం ఉండండి.",
+      "సాయంత్రం పూలు, పసుపుతో గౌరమ్మను పూజించండి.",
+      "అట్లు వేసి నివేదించి, ఇతర స్త్రీలతో పంచుకోండి.",
+      "చంద్రోదయం చూసి ఉపవాసం విరమించండి."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Atla Taddi!",
+     "te": "అట్ల తద్ది శుభాకాంక్షలు!"
+    }
+   }
+  },
+  {
+   "id": "naraka-chaturdashi-te",
+   "names": {
+    "en": "Naraka Chaturdashi",
+    "te": "నరక చతుర్దశి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 29
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Choti Diwali: Krishna's victory over Narakasura, kept with an early oil bath and lamps."
+    },
+    "traditions": {
+     "en": "Before dawn, families take an abhyanga snan, a bath after rubbing the body with oil and ubtan (a paste of gram flour, turmeric and herbs). Lamps are lit in the evening, and in some homes a small lamp is placed at the rubbish heap or drain, so no corner is left dark. In Tamil Nadu and Kerala this is Deepavali itself, celebrated with the dawn oil bath, new clothes and crackers. In the North it is called Choti Diwali, the eve of the main festival."
+    },
+    "story": {
+     "en": "Narakasura, king of Pragjyotisha, had grown so powerful that he imprisoned sixteen thousand women and seized the earrings of Aditi, mother of the gods. Krishna rode out against him with Satyabhama, and in some tellings it is Satyabhama herself who defeats him, since a boon said only his mother could end his life, and Satyabhama is remembered as an incarnation of Bhudevi, his mother. As he fell, Narakasura asked that the day be remembered with lights and joy, and Krishna granted it. Krishna then freed the imprisoned women and, so that none of them would be shunned, gave them the honour of his name."
+    },
+    "howTo": {
+     "en": [
+      "Wake before dawn; rub sesame oil and then ubtan on your skin, and bathe.",
+      "Wear fresh or new clothes, and offer a prayer to Krishna.",
+      "In the evening, light lamps at the door, in every room and at the corners of the house.",
+      "Make or finish sweets for the next day, and finish decorating."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Choti Diwali! May light reach every corner."
+    }
+   }
+  },
+  {
+   "id": "deepavali-te",
+   "names": {
+    "en": "Deepavali",
+    "te": "దీపావళి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 30,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-AP",
+    "IN-TG"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Kartika Amavasya: the festival of lights, with Lakshmi Puja at dusk."
+    },
+    "traditions": {
+     "en": "Homes are filled with diyas and lights, the doorway is marked with rangoli and small footprints of Lakshmi, and families wear new clothes. At dusk, Lakshmi and Ganesha are worshipped together, with account books and cash boxes blessed in business families. Sweets and dry fruits are exchanged with neighbours and relatives, and the evening is lit with lamps and fireworks. For Jains it marks Mahavira's nirvana, and for Sikhs it is Bandi Chhor Divas."
+    },
+    "story": {
+     "en": "Diwali remembers Rama's return to Ayodhya after fourteen years of exile and his victory in Lanka. The people of Ayodhya, overjoyed, lit rows of lamps (deepavali) along every street on the dark new-moon night to welcome Rama, Sita and Lakshmana home. Lakshmi, who rose from the churning of the ocean and chose Vishnu, is worshipped on this night as the goddess of wellbeing and abundance, together with Ganesha, the remover of obstacles, so that every beginning in the new season is made well."
+    },
+    "howTo": {
+     "en": [
+      "In the days before, clean the house thoroughly, and buy diyas, wicks, oil, flowers and sweets.",
+      "In the afternoon, draw a rangoli at the entrance and set out lamps.",
+      "Check the Lakshmi Puja time in the day view (pradosh, after sunset).",
+      "Set up Lakshmi and Ganesha on a red cloth, with a kalash, coins, rice, flowers, sweets and a lamp; worship them together, Ganesha first.",
+      "After the puja, light diyas at the door, windows, balcony and every room.",
+      "Share sweets with family and neighbours; if you light crackers, choose quieter ones and keep them away from children and animals."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Diwali! May every lamp tonight bring light and warmth to your home."
+    }
+   }
+  },
+  {
+   "id": "nagula-chavithi",
+   "names": {
+    "en": "Nagula Chavithi",
+    "te": "నాగుల చవితి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "kartika",
+    "tithi": 4
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Karthika Shukla Chaturthi, when families honour the serpent at its anthill.",
+     "te": "కార్తీక శుద్ధ చవితి నాడు పుట్ట వద్ద నాగదేవతను పూజించే పండుగ."
+    },
+    "traditions": {
+     "en": "Early in the morning, families go to a snake's anthill, often near a temple, and pour milk into it, offering flowers, turmeric, kumkum and chalimidi (rice flour and jaggery) and nuvvula undalu (sesame balls). Many keep a fast until the worship is done. It falls in Karthika, the month of lamps, and the day is kept with care for the creatures of the earth.",
+     "te": "తెల్లవారుజామునే కుటుంబాలు పుట్ట వద్దకు వెళ్లి పాలు పోసి, పూలు, పసుపు, కుంకుమ, చలిమిడి, నువ్వుల ఉండలు నివేదిస్తారు. పూజ పూర్తయ్యే వరకు చాలామంది ఉపవాసం ఉంటారు. దీపాల మాసమైన కార్తీకంలో వచ్చే ఈ రోజు భూమిపై జీవరాశుల పట్ల శ్రద్ధతో జరుపుకుంటారు."
+    },
+    "story": {
+     "en": "The serpent is honoured as the guardian of the earth and of water, and as Subrahmanya, worshipped in serpent form in the South; the day thanks the nagas who are said to hold up the world.",
+     "te": "నాగదేవతను భూమికి, జలానికి రక్షకునిగా, దక్షిణాదిన సర్పరూపంలో పూజించే సుబ్రహ్మణ్యస్వామిగా భావిస్తారు; ప్రపంచాన్ని మోస్తారని చెప్పే నాగులకు ఈ రోజు కృతజ్ఞత చెబుతారు."
+    },
+    "howTo": {
+     "en": [
+      "Keep a fast in the morning until the worship.",
+      "At an anthill or a nagadevata shrine, pour milk and offer flowers, turmeric and kumkum.",
+      "Offer chalimidi and sesame balls, and share them as prasadam."
+     ],
+     "te": [
+      "పూజ అయ్యే వరకు ఉదయం ఉపవాసం ఉండండి.",
+      "పుట్ట వద్ద లేదా నాగదేవత సన్నిధిలో పాలు పోసి పూలు, పసుపు, కుంకుమ సమర్పించండి.",
+      "చలిమిడి, నువ్వుల ఉండలు నివేదించి ప్రసాదంగా పంచండి."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Nagula Chavithi!",
+     "te": "నాగుల చవితి శుభాకాంక్షలు!"
+    }
+   }
+  },
+  {
+   "id": "karthika-purnima-te",
+   "names": {
+    "en": "Karthika Purnima",
+    "te": "కార్తీక పూర్ణిమ"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "kartika",
+    "tithi": 15
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The full moon of Kartika: Dev Deepawali in Varanasi, Guru Nanak Jayanti, and the end of the holy month."
+    },
+    "traditions": {
+     "en": "Kartika, a month of early baths and lamps, ends today. People bathe at dawn in rivers and lakes, and in the evening lamps are lit everywhere: in Varanasi the ghats glow with lakhs of diyas for Dev Deepawali, the gods' own Diwali. Lamps are floated on water. Sikhs celebrate Guru Nanak's birth (Gurpurab) with prabhat pheris, kirtan and langar. The Pushkar fair in Rajasthan reaches its peak, and in Odisha Boita Bandana sees small paper boats set sail."
+    },
+    "story": {
+     "en": "The day is remembered as Tripuri Purnima: the three flying cities of the asura Tripurasura had been conquering the worlds, and could be struck only when, once in a thousand years, they aligned. On this full moon Shiva, with a single arrow from a bow that was Mount Meru, struck all three at once, and the gods, relieved, lit lamps in celebration: Dev Deepawali. Tradition also holds that Vishnu's first avatar, Matsya, the fish, appeared on Kartika Purnima to save Manu and the seeds of life from the great flood."
+    },
+    "howTo": {
+     "en": [
+      "Bathe at dawn, in a river if you can.",
+      "Worship Vishnu or Shiva with flowers and a lamp; read the Satyanarayan katha if your family does.",
+      "At dusk, light many lamps at home, and float a lamp on water if you are near a river or lake.",
+      "Give food or a lamp to someone, and if you are Sikh or wish to join, visit a gurdwara for Gurpurab."
+     ]
+    },
+    "greeting": {
+     "en": "Wishes on Kartik Purnima and Dev Deepawali. May your home glow with light."
+    }
+   }
+  },
+  {
+   "id": "mukkoti-ekadasi-te",
+   "names": {
+    "en": "Mukkoti Ekadasi (Vaikuntha Ekadasi)",
+    "te": "ముక్కోటి ఏకాదశి"
+   },
+   "rule": {
+    "type": "tithi-in-solar-month",
+    "month": "dhanu",
+    "tithi": 11
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Shukla Ekadashi of Dhanu: Swargavathil Ekadasi, when the gate of Vaikuntha opens."
+    },
+    "traditions": {
+     "en": "Vishnu temples in Kerala, the Sree Padmanabhaswamy temple in Thiruvananthapuram among them, open the northern 'swargavathil' for devotees at dawn. Devotees fast from rice and keep a vigil, reciting the Vishnu Sahasranamam and Narayaneeyam. It is also called Vaikunta Ekadasi."
+    },
+    "story": {
+     "en": "The story told is that Madhu and Kaitabha, two asuras overcome by Vishnu, asked that the gate of his realm be opened on this day for all who come, and that they too might pass through it. 'Mukkoti' recalls the 'three crore' gods said to gather to worship Vishnu on this Ekadashi."
+    },
+    "howTo": {
+     "en": [
+      "Keep the Ekadashi fast from rice, and keep a vigil the night before if you can.",
+      "Visit a Vishnu temple at dawn to pass through the swargavathil.",
+      "Recite the Vishnu Sahasranamam or Narayaneeyam.",
+      "Break the fast during Dvadashi the next morning."
+     ]
+    },
+    "greeting": {
+     "en": "Mukkoti Ekadasi greetings."
+    }
+   }
+  },
+  {
+   "id": "subrahmanya-shashti-te",
+   "names": {
+    "en": "Subrahmanya Shashti",
+    "te": "సుబ్రహ్మణ్య షష్ఠి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "margashirsha",
+    "tithi": 6,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Margazhi-month Sashti, a Murugan observance especially kept in Karnataka and Tamil Nadu."
+    },
+    "traditions": {
+     "en": "Devotees fast and worship Murugan, often in his serpent form as Subrahmanya, with milk, flowers and panchamritam. At Kukke Subramanya in Karnataka and at Murugan temples in Tamil Nadu, there are special abhishekams and processions. Many recite the Kanda Shashti Kavacham."
+    },
+    "story": {
+     "en": "Tradition holds that on this Sashti Murugan, having overcome the asura Tarakasura, came to rest at Kukke, where the serpent king Vasuki was keeping tapas for his protection, and Murugan gave him shelter. He is worshipped there as Subrahmanya, the protector of the serpents."
+    },
+    "howTo": {
+     "en": [
+      "Keep a fast or a simple vegetarian meal if your family does.",
+      "Worship Murugan with milk, flowers and panchamritam, and light a lamp.",
+      "Recite the Kanda Shashti Kavacham."
+     ]
+    },
+    "greeting": {
+     "en": "Subrahmanya Sashti greetings."
+    }
+   }
+  },
+  {
+   "id": "dattatreya-jayanti-te",
+   "names": {
+    "en": "Datta Jayanti",
+    "te": "దత్త జయంతి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "margashirsha",
+    "tithi": 15,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Margashirsha Purnima: the birth of Dattatreya, in whom Brahma, Vishnu and Shiva are joined."
+    },
+    "traditions": {
+     "en": "Dattatreya is worshipped at dusk, the hour of his birth, especially in Maharashtra, Karnataka, Gujarat and Andhra Pradesh, at Ganagapur, Narsobawadi and Audumbar. Devotees read the Guru Charitra over the preceding days, sing bhajans, and offer flowers and sweets. He is often pictured with three heads, six arms, a cow and four dogs, beneath an audumbar (fig) tree."
+    },
+    "story": {
+     "en": "Anasuya, wife of the sage Atri, was so renowned for her devotion that the goddesses Saraswati, Lakshmi and Parvati asked their husbands to test her. Brahma, Vishnu and Shiva came to her ashram as wandering monks and asked for food, but only if she served them unclothed. Anasuya, by the power of her devotion, turned the three into infants, and fed and cared for them as their mother. When the goddesses came seeking their husbands, she restored them, and the three gods, pleased, offered her a boon. She asked that they be born as her son, and so Dattatreya, 'given' (datta) to Atri, was born, uniting all three."
+    },
+    "howTo": {
+     "en": [
+      "Read a chapter of the Guru Charitra or Dattatreya stotras in the morning.",
+      "At dusk, set up a picture of Dattatreya, light a lamp and offer flowers, tulsi and a sweet.",
+      "Sing a Datta bhajan such as 'Digambara Digambara Shripad Vallabh Digambara'.",
+      "Feed a cow or a dog if you can, and share the prasad."
+     ]
+    },
+    "greeting": {
+     "en": "Wishes on Dattatreya Jayanti."
+    }
+   }
+  }
+ ],
+ "dailySignificance": [
+  {
+   "key": "ekadashi",
+   "names": {
+    "en": "Ekadashi",
+    "te": "ఏకాదశి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 11,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "The eleventh day of each fortnight, kept by many with a fast and prayer to Vishnu."
+    },
+    "traditions": {
+     "en": "Ekadashi comes twice a month. Those who keep it avoid grains and beans for the day, some eating fruit and milk, some keeping a stricter fast, and spend time in prayer, reading or chanting Vishnu's names. The fast is broken the next morning, during Dvadashi; the parana time is shown in almanacs. People who are unwell, pregnant, elderly or on medication keep a gentle version, which tradition fully accepts."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free supper the evening before.",
+      "On Ekadashi, avoid grains and beans; take fruit, milk or vrat food.",
+      "Light a lamp before Vishnu and offer tulsi.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Ekadashi fasting rules"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "ekadashi",
+   "names": {
+    "en": "Ekadashi",
+    "te": "ఏకాదశి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 26,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "The eleventh day of each fortnight, kept by many with a fast and prayer to Vishnu."
+    },
+    "traditions": {
+     "en": "Ekadashi comes twice a month. Those who keep it avoid grains and beans for the day, some eating fruit and milk, some keeping a stricter fast, and spend time in prayer, reading or chanting Vishnu's names. The fast is broken the next morning, during Dvadashi; the parana time is shown in almanacs. People who are unwell, pregnant, elderly or on medication keep a gentle version, which tradition fully accepts."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free supper the evening before.",
+      "On Ekadashi, avoid grains and beans; take fruit, milk or vrat food.",
+      "Light a lamp before Vishnu and offer tulsi.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Ekadashi fasting rules"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "purnima",
+   "names": {
+    "en": "Purnima",
+    "te": "పౌర్ణమి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 15
+   },
+   "content": {
+    "summary": {
+     "en": "The full moon, a day for worship, Satyanarayan katha and giving."
+    },
+    "traditions": {
+     "en": "Each full moon is kept by many families with a morning bath, worship of Vishnu, and in the evening the Satyanarayan katha with sheera prasad. Some keep a fast until moonrise and offer water to the Moon. Giving food or clothes is valued on the full moon. Many festivals fall on Purnima: Holi, Guru Purnima, Raksha Bandhan and Sharad Purnima among them."
+    },
+    "howTo": {
+     "en": [
+      "Bathe in the morning and light a lamp before Vishnu.",
+      "Hold or listen to the Satyanarayan katha in the evening if your family does.",
+      "Offer water to the rising Moon.",
+      "Give food or clothes to someone in need."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Purnima"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "amavasya",
+   "names": {
+    "en": "Amavasya",
+    "te": "అమావాస్య"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 30
+   },
+   "content": {
+    "summary": {
+     "en": "The new moon, a day for remembering ancestors with water and sesame."
+    },
+    "traditions": {
+     "en": "On the new moon many families offer tarpan, water with black sesame, to their ancestors, give food to those in need, and feed cows, crows or dogs. Some keep a fast. It is traditionally a quiet day, and many prefer to begin new ventures on other days. When the new moon falls on a Monday it is Somvati Amavasya, and on a Saturday, Shani Amavasya."
+    },
+    "howTo": {
+     "en": [
+      "In the morning, bathe and offer water with black sesame, facing south, naming your ancestors.",
+      "Give food to someone in need, and feed a cow, crow or dog.",
+      "Light a lamp in the evening."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Amavasya"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "pradosham",
+   "names": {
+    "en": "Pradosham",
+    "te": "ప్రదోషం"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 13,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "Trayodashi at dusk, when Shiva and Nandi are worshipped."
+    },
+    "traditions": {
+     "en": "Twice a month, at the pradosha kalam around sunset on Trayodashi, Shiva temples hold abhishekam for Nandi and Shiva, and the deity is taken around the temple. Devotees fast until the evening worship and offer bilva leaves, milk and flowers. Sani Pradosham and Soma Pradosham, on Saturday and Monday, draw the largest crowds."
+    },
+    "howTo": {
+     "en": [
+      "Fast until the evening worship if you keep it.",
+      "At pradosham (around sunset), visit a Shiva temple or offer bilva and milk at home with a lamp.",
+      "Chant 'Om Namah Shivaya'."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Pradosham"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "pradosham",
+   "names": {
+    "en": "Pradosham",
+    "te": "ప్రదోషం"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 28,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "Trayodashi at dusk, when Shiva and Nandi are worshipped."
+    },
+    "traditions": {
+     "en": "Twice a month, at the pradosha kalam around sunset on Trayodashi, Shiva temples hold abhishekam for Nandi and Shiva, and the deity is taken around the temple. Devotees fast until the evening worship and offer bilva leaves, milk and flowers. Sani Pradosham and Soma Pradosham, on Saturday and Monday, draw the largest crowds."
+    },
+    "howTo": {
+     "en": [
+      "Fast until the evening worship if you keep it.",
+      "At pradosham (around sunset), visit a Shiva temple or offer bilva and milk at home with a lamp.",
+      "Chant 'Om Namah Shivaya'."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Pradosham"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "sankashti-chaturthi",
+   "names": {
+    "en": "Sankashti Chaturthi",
+    "te": "సంకష్టహర చతుర్థి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 19,
+    "observance": {
+     "kala": "moonrise"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "The fourth day after the full moon, kept for Ganesha and broken at moonrise."
+    },
+    "traditions": {
+     "en": "Each month, on Krishna Chaturthi, devotees of Ganesha fast through the day, worship him in the evening with durva grass, modak and red flowers, and break the fast after seeing the Moon and offering it water. When it falls on a Tuesday it is called Angaraki Chaturthi."
+    },
+    "howTo": {
+     "en": [
+      "Fast through the day if you keep it.",
+      "In the evening, worship Ganesha with durva and modak or laddoos.",
+      "Check moonrise in the day view; offer water to the Moon, then break the fast."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Sankashti Chaturthi"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "masik-shivaratri",
+   "names": {
+    "en": "Masik Shivaratri",
+    "te": "మాస శివరాత్రి"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 29,
+    "observance": {
+     "kala": "nishita"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "The monthly Shivaratri, on the night of Krishna Chaturdashi."
+    },
+    "traditions": {
+     "en": "Each month, the night before the new moon is a small Shivaratri. Devotees fast, worship Shiva at night with bel leaves, water and milk, and chant 'Om Namah Shivaya'. The one in Magha (Phalguna in the North) is Maha Shivaratri."
+    },
+    "howTo": {
+     "en": [
+      "Fast through the day if you keep it.",
+      "At night, offer water, milk and bel leaves to Shiva and light a lamp.",
+      "Chant 'Om Namah Shivaya'."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Masik Shivaratri"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "somavara-vratham",
+   "names": {
+    "en": "Somavara vratham (Monday)",
+    "te": "సోమవార వ్రతం"
+   },
+   "rule": {
+    "type": "weekday",
+    "weekday": "monday"
+   },
+   "content": {
+    "summary": {
+     "en": "Monday, kept for Shiva; the Mondays of Karthigai most of all."
+    },
+    "traditions": {
+     "en": "Many in Tamil Nadu keep Mondays for Shiva, fasting until evening and visiting a Shiva temple, where abhishekam is offered. The Mondays of Karthigai, the Karthigai Somavarams, are especially kept, with 108 or 1008 conch abhishekams in the great temples."
+    },
+    "howTo": {
+     "en": [
+      "Fast until evening, or eat simply.",
+      "Visit a Shiva temple for the evening abhishekam.",
+      "Chant Om Namah Shivaya."
+     ]
+    }
+   },
+   "sources": [
+    "Tamil Nadu temple practice"
+   ],
+   "optIn": true
+  },
+  {
+   "key": "hanuman-vrat",
+   "names": {
+    "en": "Hanuman vrat",
+    "te": "హనుమాన్ వ్రతం"
+   },
+   "rule": {
+    "type": "weekday",
+    "weekday": "tuesday"
+   },
+   "content": {
+    "summary": {
+     "en": "A weekly day for Hanuman: Tuesday in the North, Saturday in much of the South."
+    },
+    "traditions": {
+     "en": "Devotees of Hanuman keep one day a week for him, Tuesday in the North and Saturday in much of the South. Many eat a single simple meal, visit a Hanuman temple, and read the Hanuman Chalisa or the Sundara Kandam of the Ramayana. In the North sindoor and jasmine oil are offered; in Tamil Nadu a garland of vadai or betel leaves. Some keep a run of weeks, often 21, as a personal vow of discipline and devotion."
+    },
+    "howTo": {
+     "en": [
+      "Bathe early and keep the day simple: one meal, or fruit and milk.",
+      "Visit a Hanuman temple, or light a lamp before his picture at home.",
+      "Offer sindoor and jasmine oil (North) or a vadai or betel-leaf garland (South).",
+      "Read the Hanuman Chalisa or a chapter of the Sundara Kandam."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Mangalwar Vrat",
+    "Hanuman Chalisa (Tulsidas)"
+   ],
+   "optIn": true
+  },
+  {
+   "key": "velli-vratham",
+   "names": {
+    "en": "Friday for the Goddess",
+    "te": "శుక్రవార వ్రతం"
+   },
+   "rule": {
+    "type": "weekday",
+    "weekday": "friday"
+   },
+   "content": {
+    "summary": {
+     "en": "Friday, kept for the Goddess: Amman, Lakshmi, Bhagavathi."
+    },
+    "traditions": {
+     "en": "In the South, Friday is the Goddess's day. Homes are cleaned, a kolam is drawn and the lamp lit early; many visit an Amman or Bhagavathi temple and recite the Lalitha Sahasranamam or Abhirami Andhadhi. Some keep the day with a fast until evening. The Fridays of Aadi and Thai in Tamil Nadu are especially kept."
+    },
+    "howTo": {
+     "en": [
+      "Clean the home, draw a kolam and light the lamp early.",
+      "Visit an Amman or Bhagavathi temple, or offer flowers at home.",
+      "Recite the Lalitha Sahasranamam."
+     ]
+    }
+   },
+   "sources": [
+    "Tamil Nadu and Kerala temple practice"
+   ],
+   "optIn": true
+  },
+  {
+   "key": "shani-vrat",
+   "names": {
+    "en": "Shani vrat (Saturday)",
+    "te": "శనివార వ్రతం"
+   },
+   "rule": {
+    "type": "weekday",
+    "weekday": "saturday"
+   },
+   "content": {
+    "summary": {
+     "en": "Saturday, Shani's day, kept with a simple meal, a sesame-oil lamp and giving to others."
+    },
+    "traditions": {
+     "en": "Saturday is Shani's day. Those who keep the Saturday vrat eat once, simply, often after sunset; light a lamp of sesame oil at a Shani shrine or under a peepal tree; and offer black sesame and blue or dark flowers. Giving food, oil or clothes to people who need them is at the heart of the day. Shani is honoured as the teacher of patience and fairness, and the vrat is kept as a weekly practice of steadiness and service. In Tamil Nadu the Saturdays of Purattasi are kept for Perumal as well."
+    },
+    "howTo": {
+     "en": [
+      "Keep the day simple: one meal, often after sunset.",
+      "Light a sesame-oil lamp at a Shani shrine or under a peepal tree.",
+      "Offer black sesame and a dark flower.",
+      "Give food, oil or clothing to someone who needs it."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Shaniwar Vrat"
+   ],
+   "optIn": true
+  }
+ ],
+ "personal": {
+  "birthday": {
+   "basis": "nakshatra",
+   "observance": {
+    "kala": "sunrise"
+   },
+   "occurrence": "last"
+  },
+  "remembrance": {
+   "basis": "tithi",
+   "observance": {
+    "kala": "aparahna"
+   }
+  }
+ },
+ "muhurtham": {
+  "events": [
+   {
+    "id": "marriage",
+    "names": {
+     "en": "Marriage",
+     "te": "వివాహం"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "magha",
+     "uttara_phalguni",
+     "hasta",
+     "swati",
+     "anuradha",
+     "mula",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     22
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidLunarSpans": [
+     {
+      "from": {
+       "month": "ashadha",
+       "tithi": 1
+      },
+      "to": {
+       "month": "ashadha",
+       "tithi": 30
+      }
+     }
+    ],
+    "avoidSolarMonths": [
+     "dhanu"
+    ]
+   },
+   {
+    "id": "engagement",
+    "names": {
+     "en": "Engagement",
+     "te": "నిశ్చితార్థం"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "magha",
+     "uttara_phalguni",
+     "hasta",
+     "swati",
+     "anuradha",
+     "mula",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     22
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidLunarSpans": [
+     {
+      "from": {
+       "month": "ashadha",
+       "tithi": 1
+      },
+      "to": {
+       "month": "ashadha",
+       "tithi": 30
+      }
+     }
+    ],
+    "avoidSolarMonths": [
+     "dhanu"
+    ]
+   },
+   {
+    "id": "griha-pravesham",
+    "names": {
+     "en": "Housewarming",
+     "te": "గృహప్రవేశం"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "uttara_phalguni",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidLunarSpans": [
+     {
+      "from": {
+       "month": "ashadha",
+       "tithi": 1
+      },
+      "to": {
+       "month": "ashadha",
+       "tithi": 30
+      }
+     }
+    ]
+   },
+   {
+    "id": "bhoomi-puja",
+    "names": {
+     "en": "Foundation (Bhoomi Puja)",
+     "te": "భూమి పూజ"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidLunarSpans": [
+     {
+      "from": {
+       "month": "ashadha",
+       "tithi": 1
+      },
+      "to": {
+       "month": "ashadha",
+       "tithi": 30
+      }
+     }
+    ]
+   },
+   {
+    "id": "property",
+    "names": {
+     "en": "Buying property",
+     "te": "ఆస్తి కొనుగోలు"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "anuradha",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidLunarSpans": [
+     {
+      "from": {
+       "month": "bhadrapada",
+       "tithi": 16
+      },
+      "to": {
+       "month": "bhadrapada",
+       "tithi": 30
+      }
+     }
+    ]
+   },
+   {
+    "id": "vehicle",
+    "names": {
+     "en": "Buying a vehicle",
+     "te": "వాహనం కొనుగోలు"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidLunarSpans": [
+     {
+      "from": {
+       "month": "bhadrapada",
+       "tithi": 16
+      },
+      "to": {
+       "month": "bhadrapada",
+       "tithi": 30
+      }
+     }
+    ]
+   },
+   {
+    "id": "business",
+    "names": {
+     "en": "Starting a business",
+     "te": "వ్యాపార ప్రారంభం"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidLunarSpans": [
+     {
+      "from": {
+       "month": "bhadrapada",
+       "tithi": 16
+      },
+      "to": {
+       "month": "bhadrapada",
+       "tithi": 30
+      }
+     }
+    ]
+   },
+   {
+    "id": "naming",
+    "names": {
+     "en": "Naming ceremony",
+     "te": "నామకరణం"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidAdhika": false,
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "annaprashana",
+    "names": {
+     "en": "First rice",
+     "te": "అన్నప్రాశన"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "vidyarambham",
+    "names": {
+     "en": "Start of learning",
+     "te": "అక్షరాభ్యాసం"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "ardra",
+     "punarvasu",
+     "pushya",
+     "purva_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "mula",
+     "purva_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "purva_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidJanmaNakshatra": false
+   }
+  ],
+  "sources": [
+   "Muhurta Chintamani (Daivajna Rama), vivaha, griha-pravesha, yatra and samskara prakaranas",
+   "Kerala Jyothisham practice: Karkidakam avoided for marriage and griha pravesham",
+   "Tamil panchangam practice: Aadi, Purattasi and Margazhi avoided for marriage",
+   "North Indian panchangam practice: kharmas, Chaturmas and Pitru Paksha"
+  ]
+ }
+}
