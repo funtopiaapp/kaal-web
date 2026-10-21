@@ -93,6 +93,8 @@ input[type=text], input[type=date], input[type=time], select { width: 100%; padd
 .ring { width: 140px; height: 140px; margin: 0 auto 16px; border-radius: 50%; border: 1px dashed var(--line); position: relative; animation: spin 6s linear infinite; }
 .ring::after { content: ""; position: absolute; inset: 50px; border-radius: 50%; background: radial-gradient(#FFD27A, #F0A24A 50%, var(--accent)); }
 .ring i { position: absolute; top: -5px; left: 64px; width: 10px; height: 10px; border-radius: 50%; background: var(--ink); }
+/* A small ring while a birth star is read. */
+.ring.mini { width: 36px; height: 36px; margin: 8px auto; } .ring.mini::after { inset: 12px; } .ring.mini i { width: 6px; height: 6px; top: -3px; left: 15px; }
 @keyframes spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .ring { animation: none; } }
 .list-row { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-top: 1px solid var(--line); }

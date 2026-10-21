@@ -77,13 +77,15 @@ const tithiName = n => (n === 15 || n === 30 ? '' : name('paksha', n < 15 ? 'shu
 
 // ---------------------------------------------------------------- engine
 async function cal(year, place = S.home) {
-  const key = `${place.id}|${place.latitude}|${year}`;
+  const key = `${S.culture}|${place.id}|${place.latitude}|${year}`;
   if (!handles.has(key)) handles.set(key, engine({ op: 'open', year, location: place, pack: packJson }).then(r => r.handle));
   return handles.get(key);
 }
 async function resetCalendars() {
-  for (const h of handles.values()) h.then(handle => engine({ op: 'close', handle })).catch(() => {});
+  // A screen still loading may hold one of these; close them a little later.
+  const old = [...handles.values()];
   handles.clear();
+  setTimeout(() => old.forEach(h => h.then(handle => engine({ op: 'close', handle })).catch(() => {})), 60000);
 }
 const day = async (s, place = S.home) => engine({ op: 'day', handle: await cal(+s.slice(0, 4), place), date: s });
 async function upcoming(from, days) {
@@ -671,15 +673,19 @@ function personEditor(person, presetSex, onSaved) {
     <div class="field"><span>${esc(t('pp.place'))}: <b id="pplace">${esc(p.place?.name || '')}</b></span><div id="ppick"></div></div>
     <div class="card" id="preview"></div>
     <div class="small muted">${esc(t('pp.timeNote'))}</div>
+    <p id="perr" class="small" style="color:var(--accent);font-weight:700;margin:10px 0 0"></p>
     <button class="btn block" id="psave" style="margin-top:12px">${esc(t('c.save'))}</button>
     ${person ? `<button class="btn soft block" id="pdel" style="margin-top:8px">${esc(t('pp.delete'))}</button>` : ''}`, o2 => {
       const q = s => o2.querySelector(s);
       const preview = async () => {
         const d = q('#pd').value; if (!d || !p.place) { q('#preview').innerHTML = `<span class="small muted">${esc(t('bs.choosePlace'))}</span>`; return; }
-        q('#preview').innerHTML = '…';
         const tm = q('#pt').value; const minutes = tm ? +tm.slice(0, 2) * 60 + +tm.slice(3) : null;
+        // The same inputs read once: Save does not compute them again.
+        const key = `${d}|${minutes}|${p.place.latitude}|${p.place.longitude}`;
+        if (p._anchor && p._key === key) { q('#preview').innerHTML = anchorCard(p._anchor); return; }
+        q('#preview').innerHTML = '<div class="ring mini"><i></i></div>';
         const mine = ++p._seq;
-        try { const a = await anchorFor(d, minutes, p.place); if (mine !== p._seq) return; p._anchor = a; p._minutes = minutes; q('#preview').innerHTML = anchorCard(a); }
+        try { const a = await anchorFor(d, minutes, p.place); if (mine !== p._seq) return; p._anchor = a; p._minutes = minutes; p._key = key; q('#preview').innerHTML = anchorCard(a); }
         catch (e) { if (mine === p._seq) q('#preview').textContent = t('pp.failed'); }
       };
       o2.querySelectorAll('[data-sex]').forEach(b => b.onclick = () => { p.sex = b.dataset.sex; o2.querySelectorAll('[data-sex]').forEach(x => x.classList.toggle('on', x === b)); });
@@ -689,8 +695,14 @@ function personEditor(person, presetSex, onSaved) {
       if (p.date) preview();
       q('#psave').onclick = async () => {
         p.name = q('#pn').value.trim(); p.date = q('#pd').value;
-        if (!p.name || !p.date || !p.sex || !p.place) return alert(`${t('pp.name')}, ${t('pp.sex')}, ${t('pp.born')}, ${t('pp.place')}`);
-        await preview(); if (!p._anchor) return;
+        // Say what is missing in the sheet itself, next to Save.
+        const missing = [[!p.name, 'pp.name'], [!p.sex, 'pp.sex'], [!p.date, 'pp.born'], [!p.place, 'pp.place']].filter(x => x[0]).map(x => t(x[1]));
+        q('#perr').textContent = missing.length ? '⚠ ' + missing.join(', ') : '';
+        if (missing.length) return;
+        const btn = q('#psave'); btn.disabled = true; btn.textContent = '…';
+        await preview();
+        btn.disabled = false; btn.textContent = t('c.save');
+        if (!p._anchor) { q('#perr').textContent = '⚠ ' + t('pp.failed'); return; }
         const rec = { id: p.id, name: p.name, sex: p.sex, kind: p.kind, date: p.date, minutes: p._minutes ?? null, place: p.place, anchor: p._anchor };
         const i = S.people.findIndex(x => x.id === p.id); if (i >= 0) S.people[i] = rec; else S.people.push(rec);
         save(); o2.remove(); onSaved ? onSaved(rec) : render();
@@ -813,7 +825,7 @@ function viewSettings() {
       <div class="seg">${['system', 'light', 'dark'].map(m => `<button data-th="${m}" class="${S.theme === m ? 'on' : ''}">${esc(t('s.' + m))}</button>`).join('')}</div>
       <p class="small muted" style="margin-top:10px">${esc(t('th.light'))}</p><div class="chips">${LIGHT.map(id => `<button class="chip ${S.light === id ? 'on' : ''}" data-lt="${id}">${esc(t('th.' + id))}</button>`).join('')}</div>
       <p class="small muted" style="margin-top:10px">${esc(t('th.dark'))}</p><div class="chips">${DARK.map(id => `<button class="chip ${S.dark === id ? 'on' : ''}" data-dk="${id}">${esc(t('th.' + id))}</button>`).join('')}</div></div>
-    <div class="card"><p class="label">${esc(t('s.about'))}</p><p class="small">${esc(t('ab.what'))}</p><p class="small">${esc(t('s.privacy'))}</p>
+    <div class="card"><p class="label">${esc(t('s.about'))}</p><p class="small">${esc(t('web.what'))}</p><p class="small">${esc(t('web.privacy'))}</p>
       <p class="small muted">${esc(t('s.attribution'))}</p><p class="small"><a href="https://funtopiaapp.github.io/kaal-privacy/">${esc(t('mn.support'))}</a> · <a href="https://funtopiaapp.github.io/kaal-privacy/privacy.html">${esc(t('mn.privacy'))}</a></p>
       <p class="small muted">Web edition for testing · all features unlocked</p></div>`;
   $('#main').querySelectorAll('[data-c]').forEach(b => b.onclick = async () => { S.culture = b.dataset.c; save(); await loadPack(); await resetCalendars(); render(); });
