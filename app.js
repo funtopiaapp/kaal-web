@@ -26,8 +26,12 @@ const TABS = [['home', 'hm.home'], ['today', 'tab.today'], ['calendar', 'tab.cal
 
 // ---------------------------------------------------------------- state
 const saved = (() => { try { return JSON.parse(localStorage.getItem('kaal-web') || '{}'); } catch { return {}; } })();
-const S = Object.assign({ culture: '', native: false, home: null, theme: 'system', light: 'kaal', dark: 'kaal-dark', people: [], vrats: [], vratLog: {}, families: [] }, saved);
+const S = Object.assign({ tileOrder: [], tileStyle: 'classic', textSize: 1, culture: '', native: false, home: null, theme: 'system', light: 'kaal', dark: 'kaal-dark', people: [], vrats: [], vratLog: {}, families: [] }, saved);
 function save() { try { localStorage.setItem('kaal-web', JSON.stringify(S)); } catch {} }
+// The app's text size, 0 (smaller) to 4 (largest), as on iOS: the whole page scales.
+const SHARE_ICON = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>';
+const TEXT_SIZES = [0.9, 1, 1.15, 1.3, 1.45];
+const applyTextSize = () => { document.documentElement.style.setProperty('--ts', TEXT_SIZES[S.textSize] ?? 1); document.body.style.zoom = TEXT_SIZES[S.textSize] ?? 1; };
 
 let STR = {}, pack = null, packJson = '', tab = 'home', dayDate = null, monthDate = null;
 const handles = new Map();
@@ -44,7 +48,7 @@ function tIn(L, key, ...args) {
   // English in the tradition's own vocabulary ("Muhurtham" -> "Shubh Muhurat").
   if (L === 'en') for (const [a, b] of pack?.display?.terms || []) s = s.split(a).join(b);
   let i = 0;
-  return s.replace(/%(?:(\d+)\$)?([@d])/g, (_, n) => String(args[n ? Number(n) - 1 : i++] ?? ''));
+  return s.replace(/%(?:(\d+)\$)?([@d])/g, (_, n) => String(args[n ? Number(n) - 1 : i++] ?? '')).replace(/%%/g, '%');
 }
 const name = (table, key) => { const e = pack?.names?.[table]?.[key]; return e ? (e[lang()] ?? e.en) : (key || ''); };
 // In English, the name used where the user lives: Phagwah in Trinidad, Thaipoosam Cavadee in Mauritius.
@@ -77,9 +81,24 @@ function today(tz = S.home?.tz) {
 // monthPlace for the month grid, dayPlace for a day opened from it.
 let monthPlace = null, dayPlace = null;
 const here = () => dayPlace || S.home;
+// Month and weekday names by language (from ICU). Browsers carry little or no date data for some
+// languages (Odia, Nepali), and fall back to English or "2026 M10 23"; Kaal fills in the names itself.
+const DATE_NAMES = {"ml": {"ml": ["ജനുവരി", "ഫെബ്രുവരി", "മാർച്ച്", "ഏപ്രിൽ", "മേയ്", "ജൂൺ", "ജൂലൈ", "ഓഗസ്റ്റ്", "സെപ്റ്റംബർ", "ഒക്‌ടോബർ", "നവംബർ", "ഡിസംബർ"], "ms": ["ജനു", "ഫെബ്രു", "മാർ", "ഏപ്രി", "മേയ്", "ജൂൺ", "ജൂലൈ", "ഓഗ", "സെപ്റ്റം", "ഒക്ടോ", "നവം", "ഡിസം"], "wl": ["ഞായറാഴ്‌ച", "തിങ്കളാഴ്‌ച", "ചൊവ്വാഴ്‌ച", "ബുധനാഴ്‌ച", "വ്യാഴാഴ്‌ച", "വെള്ളിയാഴ്‌ച", "ശനിയാഴ്‌ച"], "ws": ["ഞായർ", "തിങ്കൾ", "ചൊവ്വ", "ബുധൻ", "വ്യാഴം", "വെള്ളി", "ശനി"]}, "ta": {"ml": ["ஜனவரி", "பிப்ரவரி", "மார்ச்", "ஏப்ரல்", "மே", "ஜூன்", "ஜூலை", "ஆகஸ்ட்", "செப்டம்பர்", "அக்டோபர்", "நவம்பர்", "டிசம்பர்"], "ms": ["ஜன.", "பிப்.", "மார்.", "ஏப்.", "மே", "ஜூன்", "ஜூலை", "ஆக.", "செப்.", "அக்.", "நவ.", "டிச."], "wl": ["ஞாயிறு", "திங்கள்", "செவ்வாய்", "புதன்", "வியாழன்", "வெள்ளி", "சனி"], "ws": ["ஞாயி.", "திங்.", "செவ்.", "புத.", "வியா.", "வெள்.", "சனி"]}, "hi": {"ml": ["जनवरी", "फ़रवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितंबर", "अक्तूबर", "नवंबर", "दिसंबर"], "ms": ["जन॰", "फ़र॰", "मार्च", "अप्रैल", "मई", "जून", "जुल॰", "अग॰", "सित॰", "अक्तू॰", "नव॰", "दिस॰"], "wl": ["रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"], "ws": ["रवि", "सोम", "मंगल", "बुध", "गुरु", "शुक्र", "शनि"]}, "te": {"ml": ["జనవరి", "ఫిబ్రవరి", "మార్చి", "ఏప్రిల్", "మే", "జూన్", "జులై", "ఆగస్టు", "సెప్టెంబర్", "అక్టోబర్", "నవంబర్", "డిసెంబర్"], "ms": ["జన", "ఫిబ్ర", "మార్చి", "ఏప్రి", "మే", "జూన్", "జులై", "ఆగ", "సెప్టెం", "అక్టో", "నవం", "డిసెం"], "wl": ["ఆదివారం", "సోమవారం", "మంగళవారం", "బుధవారం", "గురువారం", "శుక్రవారం", "శనివారం"], "ws": ["ఆది", "సోమ", "మంగళ", "బుధ", "గురు", "శుక్ర", "శని"]}, "kn": {"ml": ["ಜನವರಿ", "ಫೆಬ್ರವರಿ", "ಮಾರ್ಚ್", "ಏಪ್ರಿಲ್", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗಸ್ಟ್", "ಸೆಪ್ಟೆಂಬರ್", "ಅಕ್ಟೋಬರ್", "ನವೆಂಬರ್", "ಡಿಸೆಂಬರ್"], "ms": ["ಜನ", "ಫೆಬ್ರ", "ಮಾರ್ಚ್", "ಏಪ್ರಿ", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗ", "ಸೆಪ್ಟೆಂ", "ಅಕ್ಟೋ", "ನವೆಂ", "ಡಿಸೆಂ"], "wl": ["ಭಾನುವಾರ", "ಸೋಮವಾರ", "ಮಂಗಳವಾರ", "ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"], "ws": ["ಭಾನು", "ಸೋಮ", "ಮಂಗಳ", "ಬುಧ", "ಗುರು", "ಶುಕ್ರ", "ಶನಿ"]}, "gu": {"ml": ["જાન્યુઆરી", "ફેબ્રુઆરી", "માર્ચ", "એપ્રિલ", "મે", "જૂન", "જુલાઈ", "ઑગસ્ટ", "સપ્ટેમ્બર", "ઑક્ટોબર", "નવેમ્બર", "ડિસેમ્બર"], "ms": ["જાન્યુ", "ફેબ્રુ", "માર્ચ", "એપ્રિલ", "મે", "જૂન", "જુલાઈ", "ઑગસ્ટ", "સપ્ટે", "ઑક્ટો", "નવે", "ડિસે"], "wl": ["રવિવાર", "સોમવાર", "મંગળવાર", "બુધવાર", "ગુરુવાર", "શુક્રવાર", "શનિવાર"], "ws": ["રવિ", "સોમ", "મંગળ", "બુધ", "ગુરુ", "શુક્ર", "શનિ"]}, "mr": {"ml": ["जानेवारी", "फेब्रुवारी", "मार्च", "एप्रिल", "मे", "जून", "जुलै", "ऑगस्ट", "सप्टेंबर", "ऑक्टोबर", "नोव्हेंबर", "डिसेंबर"], "ms": ["जाने", "फेब्रु", "मार्च", "एप्रि", "मे", "जून", "जुलै", "ऑग", "सप्टें", "ऑक्टो", "नोव्हें", "डिसें"], "wl": ["रविवार", "सोमवार", "मंगळवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"], "ws": ["रवि", "सोम", "मंगळ", "बुध", "गुरु", "शुक्र", "शनि"]}, "bn": {"ml": ["জানুয়ারী", "ফেব্রুয়ারী", "মার্চ", "এপ্রিল", "মে", "জুন", "জুলাই", "আগস্ট", "সেপ্টেম্বর", "অক্টোবর", "নভেম্বর", "ডিসেম্বর"], "ms": ["জানু", "ফেব", "মার্চ", "এপ্রিল", "মে", "জুন", "জুলাই", "আগস্ট", "সেপ্টেঃ", "অক্টোঃ", "নভেঃ", "ডিসেঃ"], "wl": ["রবিবার", "সোমবার", "মঙ্গলবার", "বুধবার", "বৃহস্পতিবার", "শুক্রবার", "শনিবার"], "ws": ["রবি", "সোম", "মঙ্গল", "বুধ", "বৃহস্পতি", "শুক্র", "শনি"]}, "or": {"ml": ["ଜାନୁଆରୀ", "ଫେବୃଆରୀ", "ମାର୍ଚ୍ଚ", "ଅପ୍ରେଲ", "ମଇ", "ଜୁନ", "ଜୁଲାଇ", "ଅଗଷ୍ଟ", "ସେପ୍ଟେମ୍ବର", "ଅକ୍ଟୋବର", "ନଭେମ୍ବର", "ଡିସେମ୍ବର"], "ms": ["ଜାନୁଆରୀ", "ଫେବୃଆରୀ", "ମାର୍ଚ୍ଚ", "ଅପ୍ରେଲ", "ମଇ", "ଜୁନ", "ଜୁଲାଇ", "ଅଗଷ୍ଟ", "ସେପ୍ଟେମ୍ବର", "ଅକ୍ଟୋବର", "ନଭେମ୍ବର", "ଡିସେମ୍ବର"], "wl": ["ରବିବାର", "ସୋମବାର", "ମଙ୍ଗଳବାର", "ବୁଧବାର", "ଗୁରୁବାର", "ଶୁକ୍ରବାର", "ଶନିବାର"], "ws": ["ରବି", "ସୋମ", "ମଙ୍ଗଳ", "ବୁଧ", "ଗୁରୁ", "ଶୁକ୍ର", "ଶନି"]}, "ne": {"ml": ["जनवरी", "फेब्रुअरी", "मार्च", "अप्रिल", "मे", "जुन", "जुलाई", "अगस्ट", "सेप्टेम्बर", "अक्टोबर", "नोभेम्बर", "डिसेम्बर"], "ms": ["जनवरी", "फेब्रुअरी", "मार्च", "अप्रिल", "मे", "जुन", "जुलाई", "अगस्ट", "सेप्टेम्बर", "अक्टोबर", "नोभेम्बर", "डिसेम्बर"], "wl": ["आइतबार", "सोमबार", "मङ्गलबार", "बुधबार", "बिहिबार", "शुक्रबार", "शनिबार"], "ws": ["आइत", "सोम", "मङ्गल", "बुध", "बिहि", "शुक्र", "शनि"]}};
+function dtf(opts) {
+  const f = new Intl.DateTimeFormat(locale(), opts), L = lang(), N = DATE_NAMES[L];
+  if (!N) return f;
+  const num = (d, o) => +new Intl.DateTimeFormat('en-US', { ...o, timeZone: opts.timeZone }).format(d);
+  const wd = d => ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(new Intl.DateTimeFormat('en-US', { weekday: 'short', timeZone: opts.timeZone }).format(d));
+  return { format: d => f.formatToParts(d).map(p => {
+    const latin = /[A-Za-z]/.test(p.value);
+    if (p.type === 'month' && (latin || opts.month === 'long' && /^\d+$/.test(p.value))) return N[opts.month === 'short' ? 'ms' : 'ml'][num(d, { month: 'numeric' }) - 1];
+    if (p.type === 'weekday' && latin) return N[opts.weekday === 'short' ? 'ws' : 'wl'][wd(d)];
+    return p.value;
+  }).join('') };
+}
 const greg = (s, opts = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) =>
-  new Intl.DateTimeFormat(locale(), { ...opts, timeZone: 'UTC' }).format(parse(s));
-const clock = u => new Intl.DateTimeFormat(locale(), { hour: 'numeric', minute: '2-digit', timeZone: here().tz }).format(new Date(u * 1000));
+  dtf({ ...opts, timeZone: 'UTC' }).format(parse(s));
+const clock = u => dtf({ hour: 'numeric', minute: '2-digit', timeZone: here().tz }).format(new Date(u * 1000));
 const span = w => `${clock(w.start)} – ${clock(w.end)}`;
 function tithiKey(n) {
   const k = ['pratipada', 'dvitiya', 'tritiya', 'chaturthi', 'panchami', 'shashthi', 'saptami', 'ashtami', 'navami', 'dashami', 'ekadashi', 'dvadashi', 'trayodashi', 'chaturdashi'];
@@ -191,7 +210,7 @@ function sheet(html, onOpen) {
 }
 
 async function render() {
-  applyTheme(); shell();
+  applyTheme(); applyTextSize(); shell();
   if (!S.culture || !S.home) return onboarding();
   try {
     if (tab === 'home') return await viewHome();
@@ -227,7 +246,7 @@ function onboarding() {
 // each with one live fact; a tile opens its tab.
 // "10:42 AM Kollam · 6:12 AM Dubai".
 function clocks() {
-  return [S.home, S.away].filter(Boolean).map(p => `${new Intl.DateTimeFormat(locale(), { hour: 'numeric', minute: '2-digit', timeZone: p.tz }).format(new Date())} ${p.name}`).join(' · ');
+  return [S.home, S.away].filter(Boolean).map(p => `${dtf({ hour: 'numeric', minute: '2-digit', timeZone: p.tz }).format(new Date())} ${p.name}`).join(' · ');
 }
 // The time since sunrise in the tradition's units (24 minutes, 24 seconds).
 function sinceSunrise(sunrise) {
@@ -237,6 +256,49 @@ function sinceSunrise(sunrise) {
   return t('hm.sinceSunrise', `${Math.floor(s / 1440)} ${names[0]} ${Math.floor((s % 1440) / 24)} ${names[1]}`);
 }
 let homeTick = null;
+// Home's tiles in the user's order (S.tileOrder); new tiles join at the end.
+function orderTiles(tiles) {
+  const key = h => h.match(/data-k="([^"]+)"/)[1], o = S.tileOrder;
+  return tiles.map((h, i) => [h, o.indexOf(key(h)) < 0 ? o.length + i : o.indexOf(key(h))]).sort((a, b) => a[1] - b[1]).map(x => x[0]);
+}
+const moonPhase = i => !i ? '🌑' : i === 15 ? '🌕' : i === 30 ? '🌑' : i <= 3 ? '🌒' : i <= 8 ? '🌓' : i < 15 ? '🌔' : i <= 21 ? '🌖' : i <= 26 ? '🌗' : '🌘';
+// A faint mandala of petals for the panchangam card.
+const PETALS = (() => {
+  let d = '';
+  for (const [r, n, off] of [[100, 12, 0], [62, 12, Math.PI / 12]]) for (let i = 0; i < n; i++) {
+    const a = i / n * 2 * Math.PI + off, tx = 100 + Math.cos(a) * r, ty = 100 + Math.sin(a) * r, mx = 100 + Math.cos(a) * r / 2, my = 100 + Math.sin(a) * r / 2, w = r * .28, sa = a + Math.PI / 2;
+    d += `M100 100Q${(mx + Math.cos(sa) * w).toFixed(1)} ${(my + Math.sin(sa) * w).toFixed(1)} ${tx.toFixed(1)} ${ty.toFixed(1)}Q${(mx - Math.cos(sa) * w).toFixed(1)} ${(my - Math.sin(sa) * w).toFixed(1)} 100 100`;
+  }
+  return `<svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.2"><path d="${d}"/><circle cx="100" cy="100" r="18"/></svg>`;
+})();
+const TILE_STYLES = ['classic', 'mosaic', 'colourful', 'minimal'];
+// Reorder Home's tiles, put what's coming soonest first, juggle, and pick a style.
+function arrangeSheet(keys, x) {
+  let order = orderTiles(keys.map(k => `data-k="${k}"`)).map(h => h.match(/data-k="([^"]+)"/)[1]);
+  const label = k => ({ festivals: t('tab.festivals'), day: t('dm.title'), vrats: t('vj.title'), calendar: t('tab.calendar'), jathakam: t('jk.chart'), sky: t('sk.title'), temples: t('tm.title'), people: t('fam.family'), match: t('mt.label'), greetings: t('gr.title'), birthstar: t('bs.result'), settings: t('tab.settings') })[k] || k;
+  const o = sheet('<div id="arr"></div>');
+  const draw = () => {
+    o.querySelector('#arr').innerHTML = `<h2 class="serif">${esc(t('hm.arrange'))}</h2>
+      <p class="label">${esc(t('ar.style'))}</p><div class="chips">${TILE_STYLES.map(st => `<button class="chip ${S.tileStyle === st ? 'on' : ''}" data-st="${st}">${esc(t('ar.s.' + st))}</button>`).join('')}</div>
+      <div class="card"><button class="linkbtn block" data-auto>✨ ${esc(t('ar.auto'))}</button><button class="linkbtn block" data-shuf>🔀 ${esc(t('ar.shuffle'))}</button><button class="linkbtn block" data-reset>↺ ${esc(t('ar.reset'))}</button>
+      <p class="small muted">${esc(t('ar.autoNote'))}</p></div>
+      <p class="label">${esc(t('ar.order'))}</p><div class="card">${order.map((k, i) => `<div class="list-row"><span class="grow">${esc(label(k))}</span><button class="arrow" data-up="${i}" aria-label="Up">↑</button><button class="arrow" data-dn="${i}" aria-label="Down">↓</button></div>`).join('')}</div>
+      <button class="btn block" data-done>${esc(t('c.done'))}</button>`;
+    const q = (sel, f) => o.querySelectorAll(sel).forEach(b => b.onclick = () => { f(b); draw(); });
+    q('[data-st]', b => { S.tileStyle = b.dataset.st; });
+    q('[data-up]', b => { const i = +b.dataset.up; if (i > 0) [order[i - 1], order[i]] = [order[i], order[i - 1]]; });
+    q('[data-dn]', b => { const i = +b.dataset.dn; if (i < order.length - 1) [order[i + 1], order[i]] = [order[i], order[i + 1]]; });
+    q('[data-reset]', () => { order = [...keys]; });
+    q('[data-shuf]', () => { order.sort(() => Math.random() - .5); S.tileStyle = TILE_STYLES.filter(s => s !== S.tileStyle)[Math.floor(Math.random() * 3)]; });
+    q('[data-auto]', () => {
+      const n = s => s ? daysBetween(x.d, s) : 999;
+      const soon = { festivals: n(x.fest?.date), greetings: n(x.greet?.date) + 1, people: n(x.person?.date), vrats: n(x.vrat?.date), day: 0 };
+      order = keys.map((k, i) => [k, soon[k] ?? 500 + i]).sort((a, b) => a[1] - b[1]).map(y => y[0]);
+    });
+    o.querySelector('[data-done]').onclick = () => { S.tileOrder = order; save(); o.remove(); viewHome(); };
+  };
+  draw();
+}
 async function viewHome() {
   const d = today();
   dayDate = null; dayPlace = null;
@@ -287,7 +349,7 @@ async function viewHome() {
   }[k]);
   const svg = k => `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icon(k)}</svg>`;
   // The symbol and the feature's name on one line, then what it holds now; the same symbol large and faint in the corner.
-  const tile = (k, go, tone, label, value, detail) => `<button class="tile ${tone}" data-go="${go}"><span class="tbg" aria-hidden="true">${svg(k)}</span>
+  const tile = (k, go, tone, label, value, detail) => `<button class="tile ${tone}" data-go="${go}" data-k="${k}" draggable="true"><span class="tbg" aria-hidden="true">${svg(k)}</span>
     <span class="trow"><span class="ic">${svg(k)}</span><span class="lb">${esc(label)}</span></span>
     <span class="tx"><b>${esc(value)}</b>${detail ? `<span class="dt">${esc(detail)}</span>` : ''}</span></button>`;
   const tiles = [
@@ -310,10 +372,12 @@ async function viewHome() {
       <button class="placepill" data-go="settings">📍 ${esc(S.home.name)}</button></div>
     <div class="homehero">
       <button class="hero" data-go="today">
-        <span class="herotop"><span>${esc(t('p.panchang'))}</span><span aria-hidden="true">☀</span></span>
+        <span class="heroart" aria-hidden="true">${PETALS}</span>
+        <span class="herotop"><span>${esc(t('p.panchang'))}</span><span aria-hidden="true" class="moon">${moonPhase(p.tithis[0]?.index)}</span></span>
         <span class="serif herodate">${esc(cultureDate(p.solar, p.lunar))}</span>
         <span class="herosub">${esc(tithi)}</span>
         <span class="herosub small">${esc(yearLabel(p.year))}</span>
+        ${p.tithis[0] ? (() => { const x = p.tithis[0], f = Math.min(1, Math.max(0, (now - x.start) / (x.end - x.start))); return `<span class="tprog"><span style="width:${Math.max(2, f * 100)}%"></span></span><span class="herosub small">${esc(t('hm.tithiDone', name('tithis', x.key), Math.round(f * 100)))}</span>`; })() : ''}
         <span class="hcells">${[[t('p.nakshatra'), p.nakshatras[0] ? name('nakshatras', p.nakshatras[0].key) : '–'], [t('sun.sunrise'), clock(p.sunrise)], [t('sun.sunset'), clock(p.sunset)]]
           .map(([l, v]) => `<span class="hcell"><span>${esc(l)}</span><b>${esc(v)}</b></span>`).join('')}</span>
         <span class="rahu">${esc(t('time.rahu'))} ${esc(span(p.rahuKalam))}</span>
@@ -321,9 +385,26 @@ async function viewHome() {
       <button class="wide" data-go="muhurtham"><span class="ic">${svg('muhurtham')}</span>
         <span class="tx"><span class="lb">${esc(t('tab.muhurtham'))}</span><span class="serif big">${esc(t('m.pwTitle'))}</span><span class="dt">${esc(events.join(', '))}…</span></span><span class="chev" aria-hidden="true">›</span></button>
     </div>
-    <div class="tiles">${tiles.join('')}</div>
+    <div class="arrangebar"><span class="tsize"><button data-ts="-1" aria-label="${esc(t('ts.smaller'))}">A−</button><button data-ts="1" aria-label="${esc(t('ts.larger'))}" style="font-size:17px">A+</button></span>
+      <button class="linkbtn" data-arrange>▦ ${esc(t('hm.arrange'))}</button></div>
+    <div class="tiles style-${esc(S.tileStyle)}">${orderTiles(tiles).join('')}</div>
     <div class="small muted" style="text-align:center;margin-top:8px">Kaal · ${esc(t('o.tagline'))}</div></div>`;
   $('#main').querySelectorAll('[data-go]').forEach(b => b.onclick = () => { tab = b.dataset.go; render(); scrollTo(0, 0); });
+  $('#main').querySelectorAll('[data-ts]').forEach(b => b.onclick = () => { S.textSize = Math.max(0, Math.min(TEXT_SIZES.length - 1, S.textSize + +b.dataset.ts)); save(); applyTextSize(); });
+  $('#main').querySelector('[data-arrange]').onclick = () => arrangeSheet(tiles.map(x => x.match(/data-k="([^"]+)"/)[1]), { fest, greet, vrat, person, d });
+  // Drag a tile onto another to put it there.
+  let dragged = null;
+  $('#main').querySelectorAll('.tile[data-k]').forEach(el => {
+    el.ondragstart = e => { dragged = el.dataset.k; e.dataTransfer.effectAllowed = 'move'; };
+    el.ondragover = e => e.preventDefault();
+    el.ondrop = e => {
+      e.preventDefault();
+      if (!dragged || dragged === el.dataset.k) return;
+      const order = [...$('#main').querySelectorAll('.tile[data-k]')].map(x => x.dataset.k).filter(k => k !== dragged);
+      order.splice(order.indexOf(el.dataset.k), 0, dragged);
+      S.tileOrder = order; save(); viewHome();
+    };
+  });
   clearInterval(homeTick);
   homeTick = setInterval(() => { if (tab !== 'home' || !$('#clocks')) return clearInterval(homeTick); $('#clocks').textContent = clocks(); $('#nazhika').textContent = sinceSunrise(p.sunrise); }, 30000);
   // The year's sky takes a few seconds; its tile fills in when ready, next year only if this one is over.
@@ -331,7 +412,7 @@ async function viewHome() {
   let sky = (await skyEvents(y).catch(() => [])).find(e => e.at > now);
   if (!sky) sky = (await skyEvents(y + 1).catch(() => [])).find(e => e.at > now);
   const el = tab === 'home' && $('#main .tile[data-go="sky"] .tx');
-  if (el && sky) el.innerHTML = `<b>${esc(skyTitle(sky))}</b><span class="dt">${esc(new Intl.DateTimeFormat(locale(), { day: 'numeric', month: 'short', year: 'numeric', timeZone: S.home.tz }).format(new Date(sky.at * 1000)))}</span>`;
+  if (el && sky) el.innerHTML = `<b>${esc(skyTitle(sky))}</b><span class="dt">${esc(dtf({ day: 'numeric', month: 'short', year: 'numeric', timeZone: S.home.tz }).format(new Date(sky.at * 1000)))}</span>`;
 }
 
 // ---------------------------------------------------------------- today / day
@@ -380,7 +461,7 @@ async function viewDay() {
       ${fine ? windowsRow('time.amrit', fine.amritKalam, d) : ''}
       ${[['time.brahma', p.brahmaMuhurta]].map(([k, w]) => `<div class="row"><span>${esc(t(k))}</span><span class="v">${esc(span(w))}</span></div>`).join('')}</div>
     ${fine ? `<div class="card" id="mcard">${muhurtasCard(fine, d)}</div>` : ''}
-    <button class="btn soft block noprint" onclick="window.print()">🖨 ${esc(t('pdf.share'))}</button>`;
+    <button class="btn soft block noprint" onclick="window.print()">${SHARE_ICON} ${esc(t('pdf.share'))}</button>`;
   $('#main').querySelectorAll('[data-shift]').forEach(b => b.onclick = () => { dayDate = addDays(d, +b.dataset.shift); tab = 'today'; viewDay(); });
   $('#main').querySelector('[data-today]')?.addEventListener('click', () => { dayDate = null; viewDay(); });
   wireCheckIns();
@@ -416,7 +497,7 @@ let mAll = false;
 function civilIn(u) { return new Intl.DateTimeFormat('en-CA', { timeZone: here().tz, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(u * 1000)); }
 function stamp(u, d) {
   if (civilIn(u) === d) return clock(u);
-  return new Intl.DateTimeFormat(locale(), { day: 'numeric', month: 'short', timeZone: here().tz }).format(new Date(u * 1000)) + ' ' + clock(u);
+  return dtf({ day: 'numeric', month: 'short', timeZone: here().tz }).format(new Date(u * 1000)) + ' ' + clock(u);
 }
 function windowText(a, b, d) { return civilIn(a) === civilIn(b) ? `${stamp(a, d)} – ${clock(b)}` : `${stamp(a, d)} – ${stamp(b, d)}`; }
 function windowsRow(k, ps, d) {
@@ -562,7 +643,7 @@ async function vratCalendar() {
   }
   const mark = a => a === true ? '<span class="gold">★</span>' : a === false ? '☾' : '◌';
   return `<div class="card"><p class="label">${esc(t('vj.calendar'))}</p>
-    <div class="dayhead" style="margin:0"><div class="nav"><button class="arrow" data-vc="-1">‹</button><b class="serif" style="font-size:20px">${esc(new Intl.DateTimeFormat(locale(), { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(m)))}</b><button class="arrow" data-vc="1">›</button></div></div>
+    <div class="dayhead" style="margin:0"><div class="nav"><button class="arrow" data-vc="-1">‹</button><b class="serif" style="font-size:20px">${esc(dtf({ month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(m)))}</b><button class="arrow" data-vc="1">›</button></div></div>
     ${keys.length > 1 ? `<div class="vc-chips"><button class="pill ${!vcFilter ? 'on' : ''}" data-vf="">${esc(t('f.all'))}</button>${keys.map(k => `<button class="pill ${vcFilter === k ? 'on' : ''}" data-vf="${esc(k)}">${esc(recName(k))}</button>`).join('')}</div>` : ''}
     <div class="grid">${wd.map(w => `<div class="wd">${esc(w)}</div>`).join('')}${cells}</div>
     <p class="gold" style="font-weight:700">★ ${esc(t('vj.monthKept', shown.filter(e => S.vratLog[e.id] === true).length))}</p>
@@ -657,7 +738,7 @@ const SIGNS = ['mesha', 'vrishabha', 'mithuna', 'karka', 'simha', 'kanya', 'tula
 const GCOL = { sun: '#E08A2E', moon: '#8FA7C4', mars: '#C6453A', mercury: '#3E9B5C', jupiter: '#E2B53A', venus: '#D58AB4', saturn: '#3D4F8F', rahu: '#6E6A63', ketu: '#9A6B45' };
 const chartStyle = () => S.chartStyle || ({ tamil: 'south', 'sri-lankan-tamil': 'south', 'malaysian-tamil': 'south', malayalam: 'south', telugu: 'south', kannada: 'south', bengali: 'east', odia: 'east' }[S.culture] || 'north');
 const vargaName = n => `D${n} · ${name('vargas', 'd' + n)}`;
-const dLabel = u => new Intl.DateTimeFormat(locale(), { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(u * 1000));
+const dLabel = u => dtf({ day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(u * 1000));
 function periodName(p, system) {
   if (system === 'yogini') return `${name('yoginis', p.key)} · ${name('grahas', p.lord)}`;
   if (system === 'chara') return name('rashis', p.key);
@@ -819,7 +900,7 @@ function skyTitle(e) {
 // As on iOS (EclipseSheet): each phase in local time, the traditional sutak
 // when the eclipse is seen here, and what an eclipse is - information only.
 function eclipseSheet(e) {
-  const when = u => new Intl.DateTimeFormat(locale(), { day: 'numeric', month: 'short', timeZone: S.home.tz }).format(new Date(u * 1000)) + ' · ' + clock(u);
+  const when = u => dtf({ day: 'numeric', month: 'short', timeZone: S.home.tz }).format(new Date(u * 1000)) + ' · ' + clock(u);
   const phases = (e.contacts || []).map(c => `<div class="row"><span class="muted">${esc(t('sk.' + c.phase))}</span><span class="v">${esc(when(c.at))}</span></div>`).join('');
   sheet(`<h2 class="serif" style="margin:4px 0">${esc(skyTitle(e))}</h2>
     ${e.visible !== undefined ? `<p class="small" style="font-weight:700;color:${e.visible ? 'var(--accent)' : 'var(--muted)'}">${esc(t(e.visible ? 'sk.visible' : 'sk.notVisible', S.home.name))}</p>` : ''}
@@ -832,7 +913,7 @@ async function viewSky() {
   const tz = S.home.tz, nowLocal = new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()).split(':');
   const now = await engine({ op: 'jataka', date: today(), minutes: +nowLocal[0] * 60 + +nowLocal[1], location: S.home });
   const ev = (await skyEvents(skyYear)).filter(e => skyFilter === 'all' || (skyFilter === 'eclipses' ? e.kind.endsWith('eclipse') : skyFilter === 'ingress' ? e.kind === 'ingress' : e.kind === 'retrograde' || e.kind === 'direct'));
-  const month = u => new Intl.DateTimeFormat(locale(), { month: 'long', year: 'numeric', timeZone: tz }).format(new Date(u * 1000));
+  const month = u => dtf({ month: 'long', year: 'numeric', timeZone: tz }).format(new Date(u * 1000));
   let html = `<div class="card"><p class="label">${esc(t('sk.now'))}</p><div class="planets">${now.grahas.map(g => `<div><span style="color:${GCOL[g.graha]}">●</span> <b>${esc(name('grahas', g.graha))}${g.retrograde ? ' ᴿ' : ''}</b><div class="small muted">${esc(name('rashis', g.sign))} ${Math.floor(g.degrees)}° · ${esc(name('nakshatras', g.nakshatra))}</div></div>`).join('')}</div></div>
     <div class="dayhead" style="margin:0"><div class="nav"><button class="arrow" data-sy="-1">‹</button><b class="serif" style="font-size:22px">${skyYear}</b><button class="arrow" data-sy="1">›</button></div></div>
     <div class="seg" style="margin:8px 0 14px">${[['all', 'f.all'], ['eclipses', 'sk.eclipses'], ['ingress', 'sk.ingress'], ['stations', 'sk.stations']].map(([k, l]) => `<button data-sf="${k}" class="${skyFilter === k ? 'on' : ''}">${esc(t(l))}</button>`).join('')}</div>`;
@@ -932,6 +1013,54 @@ async function viewTemples() {
   $('#main').querySelector('[data-tmpick]').onclick = () => placePicker($('#tmpp'), p => { tmNear = p; viewTemples(); });
 }
 
+// ---------------------------------------------------------------- the engine's reason, in words
+// The engine says how it chose a day in fixed English ("tithi 13 prevails at pradosh");
+// this reads it back in the user's language, naming tithis, stars, months and kalas as the tradition does.
+function tithiTerm(n) {
+  const keys = pack.names.tithis ? Object.keys(pack.names.tithis) : [];
+  if (n === 15) return name('tithis', 'purnima');
+  if (n === 30) return name('tithis', 'amavasya');
+  const k = keys[(n - 1) % 15];
+  return `${name('paksha', n < 15 ? 'shukla' : 'krishna')} ${name('tithis', k)}`;
+}
+function ruleTerm(w) {
+  let m;
+  if ((m = w.match(/^(.*), nearest tithi (\d+)$/))) return t('r.nearest', ruleTerm(m[1]), tithiTerm(+m[2]));
+  if ((m = w.match(/^tithi (\d+)$/))) return tithiTerm(+m[1]);
+  if ((m = w.match(/^(.+) in ([\w-]+)$/))) return t('r.in', ruleTerm(m[1]), monthOrSign(m[2]));
+  if ((m = w.match(/^([\w-]+) before ([\w-]+)$/))) return t('r.before', ruleTerm(m[1]), eventName(m[2]));
+  if (pack.names.nakshatras?.[w]) return name('nakshatras', w);
+  return w.replace(/_/g, ' ');
+}
+const monthOrSign = k => pack.names.lunarMonths?.[k] ? name('lunarMonths', k) : pack.names.solarMonths?.[k] ? name('solarMonths', k) : name('rashis', k);
+const eventName = id => { const f = pack.festivals.find(f => f.id === id); return f ? fname(f) : recName(id); };
+function explainHow(how) {
+  if (!how) return '';
+  let m, tail = '';
+  if ((m = how.match(/^(.*) on a (\w+)$/))) { how = m[1]; tail = ' ' + t('r.onWeekday', name('weekdays', m[2])); }
+  const kala = k => STR['rk.' + k] ? t('rk.' + k) : k;
+  const dv = name('tithis', 'dvadashi');
+  const rules = [
+    [/^(.*) prevails at two sunrises; observed on the second, with Dvadashi for parana$/, m => t('r.ekSecond', ruleTerm(m[1]), dv)],
+    [/^(.*) prevails at two sunrises; observed on the first$/, m => t('r.ekFirst', ruleTerm(m[1]))],
+    [/^(.*) prevails at sunrise, but Dvadashi ends before the next sunrise; observed the day before$/, m => t('r.ekBefore', ruleTerm(m[1]), dv)],
+    [/^(.*) sees no sunrise; observed the day it begins$/, m => t('r.noSunrise', ruleTerm(m[1]))],
+    [/^(.*) does not reach ([\w-]+); observed by sunrise$/, m => t('r.notReach', ruleTerm(m[1]), kala(m[2]))],
+    [/^(.*) does not qualify on any day; observed the day it begins$/, m => t('r.begins', ruleTerm(m[1]))],
+    [/^(.*) prevails at ([\w-]+)$/, m => t('r.prevails', ruleTerm(m[1]), kala(m[2]))],
+    [/^([\w-]+) day (\d+) by its own day rule$/, m => t('r.ownDay', monthOrSign(m[1]), m[2])],
+    [/^(\w+) on or before ([\w-]+)$/, m => t('r.onOrBefore', name('weekdays', m[1]), eventName(m[2]))],
+    [/^([\w-]+) day (\d+)$/, m => t('r.monthDay', monthOrSign(m[1]), m[2])],
+    [/^every (\w+)$/, m => t('r.every', name('weekdays', m[1]))],
+    [/^-1 (\w+)$/, m => t('r.last', name('weekdays', m[1]))],
+    [/^(\d+) (\w+)$/, m => t('r.nth', m[1], name('weekdays', m[2]))],
+    [/^fixed Gregorian date$/, () => t('r.fixed')],
+    [/^([+-]\d+) days from ([\w-]+)$/, m => t(+m[1] < 0 ? 'r.dayBefore' : 'r.after', Math.abs(+m[1]), eventName(m[2]))],
+  ];
+  for (const [re, f] of rules) if ((m = how.match(re))) return f(m) + tail;
+  return how + tail;
+}
+
 // ---------------------------------------------------------------- festival page
 async function festivalSheet(id, date) {
   const f = pack.festivals.find(x => x.id === id); if (!f) return;
@@ -947,12 +1076,12 @@ async function festivalSheet(id, date) {
     <p>${esc(text(f.content?.summary))}</p>
     ${w ? `<div class="card"><p class="label">${esc(t('f.pujaTime'))}</p><div>${esc(t('f.keptAt', t('k.' + w.kala)))}</div><div style="font-size:20px;font-weight:700;color:var(--accent)">${esc(w.start === w.end ? clock(w.start) : span(w))}</div><div class="small muted">${esc(t('f.pujaFor', S.home.name))}</div></div>` : ''}
     ${f.content?.traditions ? `<div class="card"><p class="label">${esc(t('f.traditions'))}</p><p>${esc(text(f.content.traditions))}</p></div>` : ''}
-    ${f.local?.[S.home?.country] ? `<div class="card"><p class="label">${esc(t('f.whereYouLive'))}</p><p>${esc(f.local[S.home.country])}</p></div>` : ''}
+    ${f.local?.[S.home?.country] ? `<div class="card"><p class="label">${esc(t('f.whereYouLive'))}</p><p>${esc((lang() !== 'en' && f.localNative?.[S.home.country]) || f.local[S.home.country])}</p></div>` : ''}
     ${f.content?.story ? `<div class="card"><p class="label">${esc(t('f.story'))}</p><p>${esc(text(f.content.story))}</p></div>` : ''}
     ${steps.length ? `<div class="card"><p class="label">${esc(t('f.howTo'))}</p><ol>${steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol></div>` : ''}
-    ${f.variations?.length ? `<div class="card"><p class="label">${esc(t('f.notes'))}</p>${f.variations.map(v => `<p class="small">${esc(v)}</p>`).join('')}</div>` : ''}
-    ${how ? `<div class="card"><p class="label">${esc(t('f.dateHow'))}</p><p class="small muted">${esc(how)}</p></div>` : ''}
-    <button class="btn soft block noprint" onclick="window.print()">🖨 ${esc(t('pdf.share'))}</button>`);
+    ${f.variations?.length ? `<div class="card"><p class="label">${esc(t('f.notes'))}</p>${(lang() !== 'en' && f.variationsNative?.length ? f.variationsNative : f.variations).map(v => `<p class="small">${esc(v)}</p>`).join('')}</div>` : ''}
+    ${how ? `<div class="card"><p class="label">${esc(t('f.dateHow'))}</p><p class="small muted">${esc(explainHow(how))}</p></div>` : ''}
+    <button class="btn soft block noprint" onclick="window.print()">${SHARE_ICON} ${esc(t('pdf.share'))}</button>`);
 }
 
 // ---------------------------------------------------------------- month
@@ -983,7 +1112,7 @@ async function viewMonth() {
       <div>${fs.length ? `<span class="dot ${major ? 'major' : ''}"></span>` : ''}${special ? '<span class="dot hollow"></span>' : ''}</div></div>`;
   }).join('');
   $('#main').innerHTML = `<div class="dayhead"><div class="nav"><button class="arrow" data-m="-1">‹</button>
-      <div><h1 class="serif" style="font-size:24px">${esc(head)}</h1><div class="muted">${esc(new Intl.DateTimeFormat(locale(), { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(m)))}</div>
+      <div><h1 class="serif" style="font-size:24px">${esc(head)}</h1><div class="muted">${esc(dtf({ month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(m)))}</div>
       <select class="placechip noprint" aria-label="${esc(t('cal.location'))}"><option value="home" ${!monthPlace ? 'selected' : ''}>📍 ${esc(S.home.name)}</option>
         ${monthPlace ? `<option value="other" selected>📍 ${esc(monthPlace.name)}</option>` : ''}<option value="pick">${esc(t('cal.other'))}</option></select></div>
       <button class="arrow" data-m="1">›</button></div></div>
@@ -991,7 +1120,7 @@ async function viewMonth() {
     <p class="small muted" style="margin-top:10px"><span class="dot major"></span> ${esc(t('f.major'))} &nbsp; <span class="dot"></span> ${esc(t('tab.festivals'))} &nbsp; <span class="dot hollow"></span> ${['ekadashi', 'purnima', 'amavasya'].map(k => esc(name('tithis', k))).join(' · ')}</p>
     ${items.length ? `<p class="label" style="margin-top:16px">${esc(t('tab.festivals'))}</p>` : ''}
     ${items.map(x => festRow(x.f, x.date)).join('')}
-    <div class="noprint" style="display:flex;gap:8px"><button class="btn soft" style="flex:1" onclick="window.print()">🖨 ${esc(t('pdf.month'))}</button><button class="btn soft" style="flex:1" data-year>🖨 ${esc(t('pdf.year'))}</button></div>`;
+    <div class="noprint" style="display:flex;gap:8px"><button class="btn soft" style="flex:1" onclick="window.print()">${SHARE_ICON} ${esc(t('pdf.month'))}</button><button class="btn soft" style="flex:1" data-year>${SHARE_ICON} ${esc(t('pdf.year'))}</button></div>`;
   $('#main').querySelector('[data-year]').onclick = () => printYear(y, place);
   $('#main').querySelectorAll('[data-m]').forEach(b => b.onclick = () => {
     const d = parse(m); d.setUTCMonth(d.getUTCMonth() + +b.dataset.m, 1); monthDate = ymd(d); viewMonth();
@@ -1020,7 +1149,7 @@ async function printYear(y, place) {
     const mc = cells.filter(x => +x.date.slice(5, 7) === mo);
     const head = [...new Set(mc.map(x => solar ? name('solarMonths', x.solar?.month) : name('lunarMonths', x.lunar?.month)))].join(' – ');
     const lead = parse(`${y}-${pad(mo)}-01`).getUTCDay();
-    html += `<section class="ym"><h2 class="serif">${esc(head)}</h2><div class="muted">${esc(new Intl.DateTimeFormat(locale(), { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(`${y}-${pad(mo)}-01`)))}</div>
+    html += `<section class="ym"><h2 class="serif">${esc(head)}</h2><div class="muted">${esc(dtf({ month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(`${y}-${pad(mo)}-01`)))}</div>
       <div class="grid">${wd.map(w => `<div class="wd">${esc(w)}</div>`).join('')}${'<div class="cell empty"></div>'.repeat(lead)}${mc.map(x => {
         const fs = x.festivals.map(id => pack.festivals.find(f => f.id === id)).filter(f => f && !f.hidden);
         return `<div class="cell ${fs.length ? 'fest' : ''}"><div class="d">${+x.date.slice(8)}</div><div class="t">${esc(solar && x.solar ? String(x.solar.day) : name('tithis', x.tithi))}</div><div class="n">${esc(name('nakshatras', x.nakshatra))}</div>${fs.slice(0, 2).map(f => `<div class="n" style="color:var(--accent)">${esc(fname(f))}</div>`).join('')}</div>`;
@@ -1034,7 +1163,7 @@ async function printYear(y, place) {
 function festRow(f, date) {
   const n = daysBetween(today(), date);
   return `<div class="fest ${f.tier === 'major' ? 'major' : ''}" data-f="${esc(f.id)}" data-d="${date}"><div class="bar2"></div>
-    <div style="min-width:44px;text-align:center"><b>${+date.slice(8)}</b><div class="small muted">${esc(new Intl.DateTimeFormat(locale(), { month: 'short', timeZone: 'UTC' }).format(parse(date)))}</div></div>
+    <div style="min-width:44px;text-align:center"><b>${+date.slice(8)}</b><div class="small muted">${esc(dtf({ month: 'short', timeZone: 'UTC' }).format(parse(date)))}</div></div>
     <div><b>${esc(fname(f))}</b><div class="small muted">${esc(fother(f))}</div></div>
     <div class="when">${n === 0 ? esc(t('day.today')) : n === 1 ? esc(t('day.tomorrow')) : n > 1 ? esc(t('day.inDays', n)) : ''}</div></div>`;
 }
@@ -1063,10 +1192,10 @@ async function viewFestivals() {
   let month = '';
   for (const x of list) {
     const mm = x.date.slice(0, 7);
-    if (mm !== month) { month = mm; html += `<p class="label" style="margin-top:14px">${esc(new Intl.DateTimeFormat(locale(), { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(x.date)))}</p>`; }
-    html += x.obs ? `<div class="list-row obs"><span style="color:var(--gold)">☾</span><span class="grow">${esc(recName(x.obs))}</span><span class="small muted">${esc(new Intl.DateTimeFormat(locale(), { day: 'numeric', month: 'short', timeZone: 'UTC' }).format(parse(x.date)))}</span></div>` : festRow(x.f, x.date);
+    if (mm !== month) { month = mm; html += `<p class="label" style="margin-top:14px">${esc(dtf({ month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(x.date)))}</p>`; }
+    html += x.obs ? `<div class="list-row obs"><span style="color:var(--gold)">☾</span><span class="grow">${esc(recName(x.obs))}</span><span class="small muted">${esc(dtf({ day: 'numeric', month: 'short', timeZone: 'UTC' }).format(parse(x.date)))}</span></div>` : festRow(x.f, x.date);
   }
-  $('#main').innerHTML = html + `<button class="btn soft block noprint" onclick="window.print()">🖨 ${esc(t('pdf.share'))}</button>`;
+  $('#main').innerHTML = html + `<button class="btn soft block noprint" onclick="window.print()">${SHARE_ICON} ${esc(t('pdf.share'))}</button>`;
   $('#main').querySelectorAll('[data-maj]').forEach(b => b.onclick = () => { majorOnly = b.dataset.maj === '1'; viewFestivals(); });
   wireFestivals();
 }
@@ -1272,12 +1401,12 @@ function renderResults() {
   const monthHead = (m, i) => {
     if (!M.results.months || (i > 0 && shown[i - 1].date.slice(0, 7) === m.date.slice(0, 7))) return '';
     const n = shown.filter(x => x.date.slice(0, 7) === m.date.slice(0, 7)).length;
-    return `<p class="label" style="margin-top:14px">${esc(new Intl.DateTimeFormat(locale(), { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(m.date)))} · ${esc(t('m.inMonth', n))}</p>`;
+    return `<p class="label" style="margin-top:14px">${esc(dtf({ month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(m.date)))} · ${esc(t('m.inMonth', n))}</p>`;
   };
   $('#mres').innerHTML = !list.length ? `<div class="card muted">${esc(t('m.none'))}</div>` : `
     ${M.results.months ? '' : `<div class="seg noprint" style="margin-bottom:8px"><button data-bd="0" class="${!M.byDate ? 'on' : ''}">${esc(t('m.best'))}</button><button data-bd="1" class="${M.byDate ? 'on' : ''}">${esc(t('m.byDate'))}</button></div>`}
     <p class="small muted">${esc(t('m.found', list.length))}</p>
-    <button class="btn soft block noprint" onclick="window.print()" style="margin-bottom:10px">🖨 ${esc(t('pdf.share'))}</button>
+    <button class="btn soft block noprint" onclick="window.print()" style="margin-bottom:10px">${SHARE_ICON} ${esc(t('pdf.share'))}</button>
     ${shown.map((m, i) => `${monthHead(m, i)}<div class="card"><div style="display:flex;justify-content:space-between"><b>${esc(greg(m.date))}</b><span class="small muted">${esc(t('day.inDays', daysBetween(today(), m.date)))}</span></div>
       <div style="color:var(--accent);font-weight:700">${m.windows.map(span).map(esc).join(' · ')}</div>
       ${m.lagnas.length ? `<div class="small">${esc(t('m.lagnas', m.lagnas.map(l => `${name('rashis', l.lagna)} ${clock(l.start)}–${clock(l.end)}`).join(' · ')))}</div>` : ''}
@@ -1293,7 +1422,7 @@ function renderResults() {
 // ---------------------------------------------------------------- greetings
 // As on iOS (GreetingCard.swift): each festival's card art (cards/<motif>.svg,
 // drawn in white and tinted to a palette), names and a message. The web is
-// free, so the card is personal and carries no watermark.
+// free, so the card is personal, with the Kaal mark at its foot.
 const PALETTES = [
   ['#11113E', '#2A1F5C', '#fff', '#E8C25A', '#F3D98C'], ['#B5523B', '#7E2E1E', '#fff', '#FFE2B8', '#FFE9CC'],
   ['#F4A62A', '#E0701B', '#3B1B07', '#7A1F0E', '#FFF3D6'], ['#0D6E6E', '#123E5C', '#fff', '#F0D27A', '#BDE6E0'],
@@ -1368,8 +1497,9 @@ async function cardImage(f, date, st, native, line) {
   if (st.from) { y += 16; put(t('card.with', st.from), '600 44px Georgia, serif', P[3], 60); }
   // A small Kaal mark at the foot, for the brand.
   const logo = new Image(); logo.src = 'icon-192.png'; await logo.decode().catch(() => {});
-  g.globalAlpha = .75; if (logo.complete) g.drawImage(logo, W / 2 - 70, H - 64, 34, 34);
-  g.font = '600 30px sans-serif'; g.fillStyle = P[2]; g.textAlign = 'left'; g.fillText('Kaal', W / 2 - 28, H - 36); g.globalAlpha = 1;
+  g.fillStyle = '#0003'; g.beginPath(); g.roundRect(W / 2 - 92, H - 92, 184, 60, 30); g.fill();
+  if (logo.complete) g.drawImage(logo, W / 2 - 80, H - 84, 44, 44);
+  g.font = '700 36px sans-serif'; g.fillStyle = '#fff'; g.textAlign = 'left'; g.fillText('Kaal', W / 2 - 24, H - 49);
   return new Promise(r => c.toBlob(r, 'image/png'));
 }
 
@@ -1504,7 +1634,7 @@ async function poruthamSheet(bride, groom) {
       <div class="small muted">${esc(t('pr.' + p.key + '.about'))}</div>
       <div class="small"><b>${esc(t(p.matching === true ? 'pr.agrees' : p.matching === false ? 'pr.differs' : 'pr.undecided'))}</b> · <span class="muted">${esc(p.detail)}</span></div></div></div>`).join('')}</div>
     <p class="small muted">${esc(t('pr.note'))}</p>
-    <button class="btn soft block noprint" onclick="window.print()">🖨 ${esc(t('pdf.share'))}</button>`);
+    <button class="btn soft block noprint" onclick="window.print()">${SHARE_ICON} ${esc(t('pdf.share'))}</button>`);
 }
 
 // ---------------------------------------------------------------- settings
@@ -1517,12 +1647,15 @@ function viewSettings() {
       <div class="seg">${['system', 'light', 'dark'].map(m => `<button data-th="${m}" class="${S.theme === m ? 'on' : ''}">${esc(t('s.' + m))}</button>`).join('')}</div>
       <p class="small muted" style="margin-top:10px">${esc(t('th.light'))}</p><div class="chips">${LIGHT.map(id => `<button class="chip ${S.light === id ? 'on' : ''}" data-lt="${id}">${esc(t('th.' + id))}</button>`).join('')}</div>
       <p class="small muted" style="margin-top:10px">${esc(t('th.dark'))}</p><div class="chips">${DARK.map(id => `<button class="chip ${S.dark === id ? 'on' : ''}" data-dk="${id}">${esc(t('th.' + id))}</button>`).join('')}</div></div>
+    <div class="card"><p class="label">${esc(t('ts.title'))}</p><div class="seg">${TEXT_SIZES.map((z, i) => `<button data-tz="${i}" class="${S.textSize === i ? 'on' : ''}" style="font-size:${Math.round(12 * z + (i - 1) * 2)}px">A</button>`).join('')}</div>
+      <p class="small muted" style="margin-top:8px">${esc(t('ts.sample'))}</p></div>
     <div class="card"><p class="label">${esc(t('s.about'))}</p><p class="small">${esc(t('web.what'))}</p><p class="small">${esc(t('web.privacy'))}</p>
       <p class="small muted">${esc(t('s.attribution'))}</p><p class="small"><a href="https://funtopiaapp.github.io/kaal-privacy/">${esc(t('mn.support'))}</a> · <a href="https://funtopiaapp.github.io/kaal-privacy/privacy.html">${esc(t('mn.privacy'))}</a></p>
       <p class="small muted">Web edition for testing · all features unlocked</p></div>`;
   $('#main').querySelectorAll('[data-c]').forEach(b => b.onclick = async () => { S.culture = b.dataset.c; save(); await loadPack(); await resetCalendars(); render(); });
   $('#main').querySelectorAll('[data-l]').forEach(b => b.onclick = () => { S.native = b.dataset.l === '1'; save(); render(); });
   $('#main').querySelectorAll('[data-th]').forEach(b => b.onclick = () => { S.theme = b.dataset.th; save(); render(); });
+  $('#main').querySelectorAll('[data-tz]').forEach(b => b.onclick = () => { S.textSize = +b.dataset.tz; save(); render(); });
   $('#main').querySelectorAll('[data-lt]').forEach(b => b.onclick = () => { S.light = b.dataset.lt; save(); render(); });
   $('#main').querySelectorAll('[data-dk]').forEach(b => b.onclick = () => { S.dark = b.dataset.dk; save(); render(); });
   placePicker($('#hp'), async p => { S.home = p; save(); await resetCalendars(); tab = 'today'; render(); });

@@ -1329,6 +1329,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1392,6 +1394,8 @@
    "variations": [
     "Almanacs following the Vakya panchangam can place Thai 1, and so Pongal, a day later; the Tamil Nadu holiday list for 2026 keeps Pongal on 15 January."
    ],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1455,6 +1459,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1513,6 +1519,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1569,6 +1577,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1647,6 +1657,8 @@
    },
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1706,6 +1718,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1775,6 +1789,8 @@
    },
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1837,6 +1853,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1896,6 +1914,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1955,6 +1975,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2021,6 +2043,8 @@
    },
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2082,6 +2106,8 @@
    },
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2146,6 +2172,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2206,6 +2234,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2261,6 +2291,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2315,6 +2347,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2372,6 +2406,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2430,6 +2466,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2484,6 +2522,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2540,6 +2580,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2597,6 +2639,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2656,6 +2700,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2712,6 +2758,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2766,6 +2814,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": true,
    "overrides": {},
    "sources": [
@@ -2790,6 +2840,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2850,6 +2902,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2917,6 +2971,8 @@
    },
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2982,6 +3038,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3039,6 +3097,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3098,6 +3158,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3154,6 +3216,8 @@
    "local": {},
    "durationDays": 9,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3216,6 +3280,8 @@
    "variations": [
     "The computed almanacs (Chennai) place it on 20 October 2026, the Navami at sunrise; the Tamil Nadu holiday list keeps it on 19 October 2026."
    ],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3281,6 +3347,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3382,6 +3450,8 @@
    "variations": [
     "Kept as Naraka Chaturdashi, the day Krishna Chaturdashi holds at sunrise, with the oil bath before dawn. Lakshmi Puja on Amavasya, the North Indian Diwali, can fall the next day; far from India, as in North America, the two are often a day apart."
    ],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3444,6 +3514,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3503,6 +3575,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3564,6 +3638,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3626,6 +3702,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3680,6 +3758,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3739,6 +3819,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3795,6 +3877,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3854,6 +3938,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3901,6 +3987,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3948,6 +4036,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3995,6 +4085,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4042,6 +4134,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4090,6 +4184,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4137,6 +4233,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4184,6 +4282,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4231,6 +4331,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4278,6 +4380,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4325,6 +4429,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4372,6 +4478,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4419,6 +4527,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4466,6 +4576,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4513,6 +4625,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4560,6 +4674,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4607,6 +4723,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4654,6 +4772,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4701,6 +4821,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4748,6 +4870,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4795,6 +4919,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4842,6 +4968,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4889,6 +5017,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4936,6 +5066,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [

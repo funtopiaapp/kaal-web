@@ -1154,6 +1154,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1217,6 +1219,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1283,6 +1287,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1344,6 +1350,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1407,6 +1415,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1470,6 +1480,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1532,6 +1544,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1589,6 +1603,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1657,6 +1673,8 @@
    },
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1726,6 +1744,8 @@
    "variations": [
     "2026: Bhadra covered the whole of Pradosh on 2 March and a lunar eclipse fell on 3 March; the almanacs moved Holika Dahan to 3 March (Holi 4 March)."
    ],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {
     "2026": [
@@ -1821,6 +1841,8 @@
    },
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1885,6 +1907,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1944,6 +1968,8 @@
    "local": {},
    "durationDays": 9,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2007,6 +2033,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2078,6 +2106,8 @@
    "variations": [
     "Smarta observance by madhyahna Navami; ISKCON may keep the following day (26 and 27 March 2026)."
    ],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2142,6 +2172,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2210,6 +2242,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2274,6 +2308,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2334,6 +2370,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2394,6 +2432,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2455,6 +2495,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2514,6 +2556,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2571,6 +2615,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2632,6 +2678,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2695,6 +2743,8 @@
    "variations": [
     "In a year with an adhika Jyeshtha (2026), Ganga Dussehra is kept in the adhika month."
    ],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2752,6 +2802,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2811,6 +2863,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2868,6 +2922,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2927,6 +2983,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2990,6 +3048,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3054,6 +3114,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3115,6 +3177,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3174,6 +3238,8 @@
    "variations": [
     "Kaal follows the widely observed date (Ashtami at sunrise). Smarta households who keep the midnight (Nishita) Ashtami may observe a day earlier, as in 2025 (15 Aug) and 2027 (24 Aug)."
    ],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3238,6 +3304,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3304,6 +3372,8 @@
    },
    "durationDays": 10,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3368,6 +3438,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3425,6 +3497,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3482,6 +3556,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3539,6 +3615,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3599,6 +3677,8 @@
    "local": {},
    "durationDays": 16,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3661,6 +3741,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3718,6 +3800,8 @@
    "local": {},
    "durationDays": 9,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3779,6 +3863,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3839,6 +3925,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3902,6 +3990,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3965,6 +4055,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4025,6 +4117,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4089,6 +4183,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4151,6 +4247,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4210,6 +4308,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4312,6 +4412,8 @@
    },
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4377,6 +4479,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4437,6 +4541,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4499,6 +4605,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4560,6 +4668,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4617,6 +4727,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4677,6 +4789,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4734,6 +4848,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4791,6 +4907,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4851,6 +4969,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4908,6 +5028,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -4968,6 +5090,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -5026,6 +5150,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -5084,6 +5210,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -5142,6 +5270,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -5200,6 +5330,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -5260,6 +5392,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -5318,6 +5452,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -5376,6 +5512,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -5434,6 +5572,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -5492,6 +5632,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -5550,6 +5692,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -5608,6 +5752,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -5666,6 +5812,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -5724,6 +5872,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -5782,6 +5932,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -5840,6 +5992,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -5898,6 +6052,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -5956,6 +6112,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -6014,6 +6172,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -6072,6 +6232,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -6130,6 +6292,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -6188,6 +6352,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -6246,6 +6412,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -6304,6 +6472,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [

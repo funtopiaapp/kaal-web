@@ -1165,6 +1165,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1216,6 +1218,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1279,6 +1283,8 @@
    "variations": [
     "Pashupatinath in Kathmandu draws pilgrims from across Nepal and India through the night."
    ],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1332,6 +1338,8 @@
    "variations": [
     "The hills keep Holi on the Purnima; the Terai plays colours the day after."
    ],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1388,6 +1396,8 @@
    },
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1437,6 +1447,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1488,6 +1500,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1525,6 +1539,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1571,6 +1587,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1622,6 +1640,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1670,6 +1690,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1718,6 +1740,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1752,6 +1776,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1788,6 +1814,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1839,6 +1867,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1893,6 +1923,8 @@
    },
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1944,6 +1976,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1992,6 +2026,8 @@
    "variations": [
     "Kathmandu's festival of Indra and of the living goddess Kumari, whose chariot is drawn through the old city."
    ],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2026,6 +2062,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2072,6 +2110,8 @@
    "local": {},
    "durationDays": 16,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2121,6 +2161,8 @@
    "local": {},
    "durationDays": 15,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2160,6 +2202,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2199,6 +2243,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2247,6 +2293,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2295,6 +2343,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2332,6 +2382,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2381,6 +2433,8 @@
    "local": {},
    "durationDays": 5,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2415,6 +2469,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2492,6 +2548,8 @@
    },
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2545,6 +2603,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2583,6 +2643,8 @@
    "variations": [
     "The last of Tihar's five days, the day after Goru Tihar and Mha Puja, as Nepal's almanacs keep it."
    ],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2622,6 +2684,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2673,6 +2737,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2720,6 +2786,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2767,6 +2835,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2814,6 +2884,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2861,6 +2933,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2909,6 +2983,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2956,6 +3032,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3003,6 +3081,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3050,6 +3130,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3097,6 +3179,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3144,6 +3228,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3191,6 +3277,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3238,6 +3326,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3285,6 +3375,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3332,6 +3424,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3379,6 +3473,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3426,6 +3522,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3473,6 +3571,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3520,6 +3620,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3567,6 +3669,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3614,6 +3718,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3661,6 +3767,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3708,6 +3816,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3755,6 +3865,8 @@
    "local": {},
    "durationDays": 1,
    "variations": [],
+   "variationsNative": [],
+   "localNative": {},
    "hidden": false,
    "overrides": {},
    "sources": [

@@ -195,9 +195,9 @@ footer.foot { max-width: 760px; margin: 0 auto; padding: 0 16px 40px; font-size:
 .tile.quiet { background: var(--sunken); border-color: transparent; }
 .tile.quiet .ic { background: var(--card); color: var(--muted); }
 .tx { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
-.tx .lb { font-size: 12px; font-weight: 700; color: var(--muted); }
-.tx b { font-size: 16px; line-height: 1.25; }
-.tx .dt { font-size: 13px; color: var(--muted); }
+.tx .lb { font-size: 13px; font-weight: 700; color: var(--muted); }
+.tx b { font-size: 17px; line-height: 1.25; }
+.tx .dt { font-size: 14.5px; color: var(--muted); }
 .tile:hover, .wide:hover, .hero:hover { filter: brightness(.98); }
 .tile:focus-visible, .wide:focus-visible, .hero:focus-visible, .placepill:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
@@ -245,8 +245,8 @@ details.factor .grow { flex: 1; }
 .gtext { position: absolute; inset: 29% 22px 25% 22px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-align: center; }
 .gdear { font: italic 16px Georgia, serif; } .gnat { font-weight: 700; font-size: 26px; } .gname { font-size: 24px; font-weight: 700; }
 .gdate { font-size: 13px; opacity: .85; } .gline { font: italic 13px Georgia, serif; opacity: .92; } .gfrom { font: 600 14px Georgia, serif; }
-.gbrand { position: absolute; left: 0; right: 0; bottom: 6px; display: flex; justify-content: center; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; opacity: .7; }
-.gbrand img { width: 12px; height: 12px; border-radius: 3px; }
+.gbrand { position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%); display: flex; align-items: center; gap: 6px; padding: 3px 10px 3px 4px; border-radius: 99px; background: #0003; color: #fff; font-size: 13px; font-weight: 700; letter-spacing: .3px; }
+.gbrand img { width: 18px; height: 18px; border-radius: 5px; }
 .badges { display: flex; gap: 6px; align-items: center; }
 .dicon { display: inline-block; vertical-align: -3px; background: currentColor; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; color: var(--accent); }
 .pill.on .dicon { color: #fff; }
@@ -256,8 +256,32 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .tile .trow { display: flex; align-items: center; gap: 8px; }
 .tile .trow .ic { width: 28px; height: 28px; border-radius: 50%; flex: none; }
 .tile .trow .ic svg { width: 15px; height: 15px; }
-.tile .trow .lb { font-size: 12px; font-weight: 700; color: var(--muted); }
+.tile .trow .lb { font-size: 13.5px; font-weight: 700; color: var(--muted); }
 .tile .tbg { position: absolute; right: -10px; bottom: -12px; width: 76px; height: 76px; color: var(--accent); opacity: .1; transform: rotate(-12deg); pointer-events: none; }
 .tile.gold .tbg, .tile.warm .tbg { color: var(--gold); }
 .tile .tbg svg { width: 100%; height: 100%; }
 .tile .tx { position: relative; }
+
+/* Home: text size, arrange, tile styles, the panchangam card's mandala and tithi progress. */
+.arrangebar { display: flex; justify-content: flex-end; align-items: center; gap: 12px; margin: 0 0 10px; }
+.tsize { display: inline-flex; background: var(--soft); border-radius: 99px; }
+.tsize button { border: 0; background: none; color: var(--accent); font-weight: 700; font-size: 13px; width: 40px; height: 32px; cursor: pointer; }
+.arrangebar .linkbtn { padding: 0; }
+.linkbtn.block { display: block; padding: 8px 0; text-align: left; }
+.tile[draggable="true"] { cursor: grab; }
+.tiles.style-mosaic .tile:nth-child(3n) { grid-column: span 2; }
+.tiles.style-mosaic .tile:nth-child(3n) b { font-size: 20px; }
+.tiles.style-colourful .tile { border-color: transparent; background: var(--goldsoft); }
+.tiles.style-colourful .tile:nth-child(even) { background: var(--soft); }
+.tiles.style-colourful .tile .ic { background: var(--card); }
+.tiles.style-minimal .tile { background: var(--card); border-color: var(--line); }
+.tiles.style-minimal .tile .tbg { display: none; }
+.hero { position: relative; overflow: hidden; background: linear-gradient(135deg, var(--accent), color-mix(in srgb, var(--accent) 68%, #000)); }
+.hero > span { position: relative; }
+.hero .heroart { position: absolute; right: -80px; top: -80px; width: 260px; height: 260px; opacity: .14; pointer-events: none; }
+.hero .heroart svg { width: 100%; height: 100%; }
+.hero .moon { font-size: 22px; line-height: 1; }
+.tprog { display: block; height: 6px; border-radius: 99px; background: rgba(255,255,255,.2); overflow: hidden; }
+.tprog > span { display: block; height: 100%; border-radius: 99px; background: var(--gold); }
+.wide { background: linear-gradient(90deg, var(--goldsoft), var(--soft)) !important; border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent) !important; }
+.wide .ic { background: linear-gradient(135deg, var(--gold), var(--accent)) !important; color: #fff !important; }
