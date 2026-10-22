@@ -1077,6 +1077,63 @@
    ]
   ]
  },
+ "regions": {
+  "IN": {
+   "Andaman and Nicobar": "AN",
+   "Andhra Pradesh": "AP",
+   "Arunachal Pradesh": "AR",
+   "Assam": "AS",
+   "Bihar": "BR",
+   "Chandigarh": "CH",
+   "Chhattisgarh": "CG",
+   "Dadra and Nagar Haveli and Daman and Diu": "DH",
+   "Delhi": "DL",
+   "Goa": "GA",
+   "Gujarat": "GJ",
+   "Haryana": "HR",
+   "Himachal Pradesh": "HP",
+   "Jammu and Kashmir": "JK",
+   "Jharkhand": "JH",
+   "Karnataka": "KA",
+   "Kerala": "KL",
+   "Ladakh": "LA",
+   "Madhya Pradesh": "MP",
+   "Maharashtra": "MH",
+   "Manipur": "MN",
+   "Meghalaya": "ML",
+   "Mizoram": "MZ",
+   "Nagaland": "NL",
+   "Odisha": "OD",
+   "Puducherry": "PY",
+   "Punjab": "PB",
+   "Rajasthan": "RJ",
+   "Sikkim": "SK",
+   "Tamil Nadu": "TN",
+   "Telangana": "TG",
+   "Tripura": "TR",
+   "Uttar Pradesh": "UP",
+   "Uttarakhand": "UK",
+   "West Bengal": "WB"
+  },
+  "MY": {
+   "Johor": "01",
+   "Kedah": "02",
+   "Kelantan": "03",
+   "Melaka": "04",
+   "Negeri Sembilan": "05",
+   "Pahang": "06",
+   "Penang": "07",
+   "Perak": "08",
+   "Perlis": "09",
+   "Selangor": "10",
+   "Terengganu": "11",
+   "Sabah": "12",
+   "Sarawak": "13",
+   "Kuala Lumpur": "14",
+   "Labuan": "15",
+   "Putrajaya": "16"
+  }
+ },
  "festivals": [
   {
    "id": "maghe-sankranti",
@@ -1093,6 +1150,8 @@
    "holidayIn": [
     "NP"
    ],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -1141,6 +1200,8 @@
    "holidayIn": [
     "NP"
    ],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -1190,8 +1251,17 @@
    },
    "tier": "major",
    "holidayIn": [
-    "NP"
+    "NP",
+    "MU",
+    "LK"
    ],
+   "localNames": {
+    "MU": "Maha Shivaratree"
+   },
+   "local": {
+    "MU": "In Mauritius, Maha Shivaratree is a public holiday; in the days before, pilgrims walk to Ganga Talao (Grand Bassin) carrying kanwars.",
+    "LK": "In Sri Lanka, Maha Shivaratri is a public holiday."
+   },
    "durationDays": 1,
    "variations": [
     "Pashupatinath in Kathmandu draws pilgrims from across Nepal and India through the night."
@@ -1242,6 +1312,8 @@
    "holidayIn": [
     "NP"
    ],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [
     "The hills keep Holi on the Purnima; the Terai plays colours the day after."
@@ -1290,6 +1362,15 @@
    },
    "tier": "regional",
    "holidayIn": [],
+   "localNames": {
+    "TT": "Ram Naumi",
+    "GY": "Ram Naumi",
+    "SR": "Ram Naumi",
+    "FJ": "Ram Naumi"
+   },
+   "local": {
+    "FJ": "In Fiji, Ram Naumi closes nine nights of Ramayan recitation by the mandalis."
+   },
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -1336,6 +1417,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -1384,6 +1467,8 @@
    "holidayIn": [
     "NP"
    ],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -1418,6 +1503,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -1461,6 +1548,8 @@
    },
    "tier": "regional",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -1509,6 +1598,8 @@
    },
    "tier": "regional",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -1554,6 +1645,8 @@
    "holidayIn": [
     "NP"
    ],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -1599,6 +1692,8 @@
    "holidayIn": [
     "NP"
    ],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -1630,6 +1725,8 @@
    },
    "tier": "regional",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -1663,6 +1760,8 @@
    "holidayIn": [
     "NP"
    ],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -1711,6 +1810,8 @@
    "holidayIn": [
     "NP"
    ],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -1757,7 +1858,13 @@
     }
    },
    "tier": "regional",
-   "holidayIn": [],
+   "holidayIn": [
+    "MU"
+   ],
+   "localNames": {},
+   "local": {
+    "MU": "In Mauritius, Ganesh Chaturthi is a public holiday."
+   },
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -1806,6 +1913,8 @@
    },
    "tier": "regional",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -1849,6 +1958,8 @@
    },
    "tier": "regional",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [
     "Kathmandu's festival of Indra and of the living goddess Kumari, whose chariot is drawn through the old city."
@@ -1882,6 +1993,8 @@
    },
    "tier": "regional",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -1925,6 +2038,8 @@
    },
    "tier": "regional",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 16,
    "variations": [],
    "hidden": false,
@@ -1971,6 +2086,8 @@
    "holidayIn": [
     "NP"
    ],
+   "localNames": {},
+   "local": {},
    "durationDays": 15,
    "variations": [],
    "hidden": false,
@@ -2007,6 +2124,8 @@
    "holidayIn": [
     "NP"
    ],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2043,6 +2162,8 @@
    "holidayIn": [
     "NP"
    ],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2088,6 +2209,8 @@
    "holidayIn": [
     "NP"
    ],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2133,6 +2256,8 @@
    "holidayIn": [
     "NP"
    ],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2167,6 +2292,8 @@
    },
    "tier": "regional",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2213,6 +2340,8 @@
    },
    "tier": "major",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 5,
    "variations": [],
    "hidden": false,
@@ -2244,6 +2373,8 @@
    },
    "tier": "major",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2278,8 +2409,48 @@
    },
    "tier": "major",
    "holidayIn": [
-    "NP"
+    "NP",
+    "IN",
+    "MY-01",
+    "MY-02",
+    "MY-03",
+    "MY-04",
+    "MY-05",
+    "MY-06",
+    "MY-07",
+    "MY-08",
+    "MY-09",
+    "MY-10",
+    "MY-11",
+    "MY-12",
+    "MY-14",
+    "MY-15",
+    "MY-16",
+    "SG",
+    "LK",
+    "TT",
+    "GY",
+    "SR",
+    "FJ",
+    "MU"
    ],
+   "localNames": {
+    "TT": "Divali",
+    "GY": "Diwali",
+    "SR": "Divali",
+    "MU": "Divali"
+   },
+   "local": {
+    "TT": "In Trinidad and Tobago, Divali is a public holiday. The Divali Nagar at Chaguanas runs for days before, and homes and yards are lit with deyas.",
+    "GY": "In Guyana, Diwali is a public holiday, and the night before is lit by motorcades of illuminated floats.",
+    "SR": "In Suriname, Divali is a public holiday, kept with lamps, prayers and sweets.",
+    "FJ": "In Fiji, Diwali is a public holiday; homes are lit with diyas and sweets are shared with neighbours of every faith.",
+    "MU": "In Mauritius, Divali is a public holiday; homes are lit with clay lamps and gâteaux patates are shared.",
+    "MY": "In Malaysia, Deepavali is a public holiday in every state except Sarawak, with open houses for friends of every faith.",
+    "SG": "In Singapore, Deepavali is a public holiday, and Little India is lit for weeks before.",
+    "ZA": "In South Africa, Diwali is not a public holiday; families in Durban, Johannesburg and beyond mark it with lamps, prayers and fireworks.",
+    "LK": "In Sri Lanka, Deepavali is a public holiday."
+   },
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2330,6 +2501,8 @@
    "holidayIn": [
     "NP"
    ],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2363,6 +2536,8 @@
    "holidayIn": [
     "NP"
    ],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [
     "The last of Tihar's five days, the day after Goru Tihar and Mha Puja, as Nepal's almanacs keep it."
@@ -2401,6 +2576,8 @@
    "holidayIn": [
     "NP"
    ],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2449,6 +2626,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2493,6 +2672,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2537,6 +2718,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2581,6 +2764,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2625,6 +2810,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2670,6 +2857,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2714,6 +2903,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2758,6 +2949,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2802,6 +2995,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2846,6 +3041,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2890,6 +3087,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2934,6 +3133,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -2978,6 +3179,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -3022,6 +3225,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -3066,6 +3271,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -3110,6 +3317,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -3154,6 +3363,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -3198,6 +3409,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -3242,6 +3455,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -3286,6 +3501,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -3330,6 +3547,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -3374,6 +3593,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -3418,6 +3639,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,
@@ -3462,6 +3685,8 @@
    },
    "tier": "minor",
    "holidayIn": [],
+   "localNames": {},
+   "local": {},
    "durationDays": 1,
    "variations": [],
    "hidden": false,

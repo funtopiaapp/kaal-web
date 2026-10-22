@@ -22,7 +22,7 @@ const CULTURES = [
 ];
 const LIGHT = ['kaal', 'ivory', 'rose', 'sage'], DARK = ['kaal-dark', 'night', 'charcoal', 'peacock'];
 const TABS = [['home', 'hm.home'], ['today', 'tab.today'], ['calendar', 'tab.calendar'], ['festivals', 'tab.festivals'], ['muhurtham', 'tab.muhurtham'],
-  ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['match', 'mt.label'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
+  ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['match', 'mt.label'], ['guide', 'gd.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
 
 // ---------------------------------------------------------------- state
 const saved = (() => { try { return JSON.parse(localStorage.getItem('kaal-web') || '{}'); } catch { return {}; } })();
@@ -47,7 +47,18 @@ function tIn(L, key, ...args) {
   return s.replace(/%(?:(\d+)\$)?([@d])/g, (_, n) => String(args[n ? Number(n) - 1 : i++] ?? ''));
 }
 const name = (table, key) => { const e = pack?.names?.[table]?.[key]; return e ? (e[lang()] ?? e.en) : (key || ''); };
-const fname = f => f.names[lang()] ?? f.names.en;
+// In English, the name used where the user lives: Phagwah in Trinidad, Thaipoosam Cavadee in Mauritius.
+const fname = f => (lang() === 'en' && f.localNames?.[S.home?.country]) || (f.names[lang()] ?? f.names.en);
+// A public holiday where the user lives: by country, or by state ("IN-TN", "MY-14").
+function isHoliday(f) {
+  const c = S.home?.country, st = pack?.regions?.[c]?.[S.home?.region];
+  return (f.holidayIn || []).some(x => x === c || (st && x === `${c}-${st}`));
+}
+// The lunar date a festival is kept on, when its tithi begins after sunrise in the same paksha.
+function keptLunar(f, l) {
+  const t = f.rule?.type === 'tithi-in-lunar-month' ? f.rule.tithi : null;
+  return l && t && t !== l.tithi && (t > 15) === (l.tithi > 15) ? { ...l, tithi: t } : l;
+}
 const fother = f => { const o = lang() === 'en' ? pack.language : 'en'; const n = f.names[o]; return n && n !== fname(f) ? n : ''; };
 const recName = key => { const r = pack.dailySignificance.find(d => d.key === key); return r ? (r.names[lang()] ?? r.names.en ?? key) : key; };
 const text = d => d ? (d[lang()] ?? d.en) : '';
@@ -188,6 +199,7 @@ async function render() {
     if (tab === 'muhurtham') return viewMuhurtham();
     if (tab === 'birthstar') return viewBirthStar();
     if (tab === 'match') return await viewMatch();
+    if (tab === 'guide') return viewGuide();
     if (tab === 'vrats') return await viewVrats();
     if (tab === 'jathakam') return await viewJathakam();
     if (tab === 'temples') return await viewTemples();
@@ -548,6 +560,10 @@ async function viewVrats() {
         <button class="btn soft" data-mark="${esc(v.id)}" data-to="1" title="${esc(t('vj.kept'))}">★</button><button class="btn soft" data-mark="${esc(v.id)}" data-to="0" title="${esc(t('vj.notThisTime'))}">☾</button>
         <span style="width:28px;text-align:center;font-size:20px">${icon(S.vratLog[v.id])}</span></div>`).join('')}<p class="small muted">${esc(t('vj.recentNote'))}</p></div>` : ''}
     ${await vratCalendar()}
+    <div class="card"><p class="label">${esc(t('vg.list'))}</p>${choices.map(r => `<details class="factor"><summary><span class="grow"><b>${esc(recName(r.key))}</b><span class="small muted" style="display:block">${esc(text(r.content?.summary))}</span></span></summary>
+        ${r.content?.traditions ? `<p class="label" style="margin:10px 0 2px">${esc(t('vg.title'))}</p><p style="margin:0">${esc(text(r.content.traditions))}</p>` : ''}
+        ${(r.content?.howTo?.[lang()] || r.content?.howTo?.en || []).length ? `<p class="label" style="margin:10px 0 2px">${esc(t('vg.steps'))}</p><ol style="margin:0;padding-left:20px">${(r.content.howTo[lang()] || r.content.howTo.en).map(x => `<li>${esc(x)}</li>`).join('')}</ol>` : ''}
+        <p class="small muted">${esc(t('vg.gentle'))}</p></details>`).join('')}</div>
     <div class="card"><p class="label">${esc(t('v.title'))}</p>${choices.map(r => `<label class="list-row" style="cursor:pointer"><div class="grow"><b>${esc(recName(r.key))}</b><div class="small muted">${esc(text(r.content?.summary))}</div></div>
         <input type="checkbox" data-v="${esc(r.key)}" ${S.vrats.includes(r.key) ? 'checked' : ''}></label>`).join('')}<p class="small muted">${esc(t('v.note'))}</p></div>`;
   $('#main').querySelectorAll('[data-v]').forEach(c => c.onchange = () => {
@@ -872,13 +888,14 @@ async function festivalSheet(id, date) {
   const how = occ.find(o => o.id === id && o.date === date)?.how || '';
   const steps = f.content?.howTo ? (f.content.howTo[lang()] ?? f.content.howTo.en ?? []) : [];
   sheet(`<div style="clear:both"></div>
-    ${f.tier === 'major' ? `<span class="pill">${esc(t('f.major'))}</span>` : ''}${f.holidayIn?.length ? `<span class="pill">${esc(t('f.holiday'))}</span>` : ''}
+    ${f.tier === 'major' ? `<span class="pill">${esc(t('f.major'))}</span>` : ''}${isHoliday(f) ? `<span class="pill">${esc(t('f.holiday'))}</span>` : ''}
     <h1 class="serif" style="margin:6px 0 0">${esc(fname(f))}</h1><div class="muted">${esc(fother(f))}</div>
     <div style="color:var(--accent);font-weight:700;margin-top:6px">${esc(greg(date))}</div>
-    <div class="small muted">📍 ${esc(t('f.forPlace', S.home.name))} · ${esc(cultureDate(p.solar, p.lunar))}</div>
+    <div class="small muted">📍 ${esc(t('f.forPlace', S.home.name))} · ${esc(cultureDate(p.solar, keptLunar(f, p.lunar)))}</div>
     <p>${esc(text(f.content?.summary))}</p>
     ${w ? `<div class="card"><p class="label">${esc(t('f.pujaTime'))}</p><div>${esc(t('f.keptAt', t('k.' + w.kala)))}</div><div style="font-size:20px;font-weight:700;color:var(--accent)">${esc(w.start === w.end ? clock(w.start) : span(w))}</div><div class="small muted">${esc(t('f.pujaFor', S.home.name))}</div></div>` : ''}
     ${f.content?.traditions ? `<div class="card"><p class="label">${esc(t('f.traditions'))}</p><p>${esc(text(f.content.traditions))}</p></div>` : ''}
+    ${f.local?.[S.home?.country] ? `<div class="card"><p class="label">${esc(t('f.whereYouLive'))}</p><p>${esc(f.local[S.home.country])}</p></div>` : ''}
     ${f.content?.story ? `<div class="card"><p class="label">${esc(t('f.story'))}</p><p>${esc(text(f.content.story))}</p></div>` : ''}
     ${steps.length ? `<div class="card"><p class="label">${esc(t('f.howTo'))}</p><ol>${steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol></div>` : ''}
     ${f.variations?.length ? `<div class="card"><p class="label">${esc(t('f.notes'))}</p>${f.variations.map(v => `<p class="small">${esc(v)}</p>`).join('')}</div>` : ''}
@@ -1217,6 +1234,16 @@ function renderResults() {
     </div>`).join('')}
     <p class="small muted">${esc(t('m.excluded'))}</p>`;
   $('#mres').querySelectorAll('[data-bd]').forEach(b => b.onclick = () => { M.byDate = b.dataset.bd === '1'; renderResults(); });
+}
+
+// ---------------------------------------------------------------- guide
+// As on iOS (InfoViews.GuideView): every feature, where it is and how to use it.
+function viewGuide() {
+  const rows = [['hm.home', 'gd.home'], ['p.panchang', 'gd.panchang'], ['tab.calendar', 'gd.calendar'], ['tab.festivals', 'gd.festivals'],
+    ['tab.muhurtham', 'gd.muhurtham'], ['mt.label', 'gd.match'], ['jk.title', 'gd.chart'], ['bs.title', 'gd.birthstar'], ['pp.title', 'gd.people'],
+    ['v.title', 'gd.vrats'], ['sk.title', 'gd.sky'], ['tm.title', 'gd.temples'], ['s.notifications', 'gd.alerts'], ['tab.settings', 'gd.settings']];
+  $('#main').innerHTML = `<h2 class="serif" style="margin:0">${esc(t('gd.title'))}</h2><p class="muted">${esc(t('gd.intro'))}</p>
+    ${rows.map(([n, d]) => `<div class="card"><b style="color:var(--accent)">${esc(t(n))}</b><p style="margin:6px 0 0">${esc(t(d))}</p></div>`).join('')}`;
 }
 
 // ---------------------------------------------------------------- matching
