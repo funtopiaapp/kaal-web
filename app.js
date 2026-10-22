@@ -22,7 +22,7 @@ const CULTURES = [
 ];
 const LIGHT = ['kaal', 'ivory', 'rose', 'sage'], DARK = ['kaal-dark', 'night', 'charcoal', 'peacock'];
 const TABS = [['home', 'hm.home'], ['today', 'tab.today'], ['calendar', 'tab.calendar'], ['festivals', 'tab.festivals'], ['muhurtham', 'tab.muhurtham'],
-  ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['match', 'mt.label'], ['guide', 'gd.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
+  ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['match', 'mt.label'], ['greetings', 'gr.title'], ['guide', 'gd.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
 
 // ---------------------------------------------------------------- state
 const saved = (() => { try { return JSON.parse(localStorage.getItem('kaal-web') || '{}'); } catch { return {}; } })();
@@ -200,6 +200,7 @@ async function render() {
     if (tab === 'birthstar') return viewBirthStar();
     if (tab === 'match') return await viewMatch();
     if (tab === 'guide') return viewGuide();
+    if (tab === 'greetings') return await viewGreetings();
     if (tab === 'vrats') return await viewVrats();
     if (tab === 'jathakam') return await viewJathakam();
     if (tab === 'temples') return await viewTemples();
@@ -845,7 +846,7 @@ function deityForVrat(k) {
 }
 // As on iOS: nearest to the home location (or a city the user picks), by
 // deity, each deity's temples nearest first; a deity filter, All by default.
-let tmNear = null;
+let tmNear = null, tmRegion = null;
 function kmFrom(o, x) {
   const r = Math.PI / 180, p1 = o.latitude * r, p2 = x.lat * r, dp = p2 - p1, dl = (x.lon - o.longitude) * r;
   const h = Math.sin(dp / 2) ** 2 + Math.cos(p1) * Math.cos(p2) * Math.sin(dl / 2) ** 2;
@@ -861,21 +862,26 @@ async function viewTemples() {
   const yours = [...new Set(S.vrats.map(deityForVrat).filter(Boolean))];
   const order = [...yours, ...TEMPLES.deities.filter(d => !yours.includes(d))];
   const origin = tmNear || S.home;
-  const shown = tmDeity ? [tmDeity] : order;
+  // A deity with its family (Vishnu brings Krishna, Rama, Jagannath, Venkateswara), in one state or everywhere.
+  const shown = tmDeity ? [tmDeity, ...TEMPLES.deities.filter(d => TEMPLES.parents?.[d] === tmDeity)] : order;
+  const region = x => x.place.split(', ').pop();
+  const regions = [...new Set(TEMPLES.temples.map(region))].sort();
   const card = x => `<div class="card temple"><h2 class="serif">${esc(x.name)}</h2><div class="small muted tmplace"><span>📍 ${esc(x.place)}</span><span>${esc(distText(kmFrom(origin, x)))}</span></div><p>${esc(x.about)}</p>
     ${x.donate ? `<a class="btn block" href="${esc(x.donate)}" target="_blank" rel="noopener">♥ ${esc(t('tm.donate'))}</a>` : x.site ? '' : `<p class="small muted">${esc(t('tm.noLink'))}</p>`}
     <div class="links">${x.site && x.site !== x.donate ? `<a href="${esc(x.site)}" target="_blank" rel="noopener">🌐 ${esc(t('tm.site'))}</a>` : ''}
     <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x.name + ', ' + x.place)}" target="_blank" rel="noopener">🗺 ${esc(t('tm.directions'))}</a></div></div>`;
   const groups = shown.map(d => {
-    const list = TEMPLES.temples.filter(x => x.deity === d).sort((a, b) => kmFrom(origin, a) - kmFrom(origin, b));
+    const list = TEMPLES.temples.filter(x => x.deity === d && (!tmRegion || region(x) === tmRegion)).sort((a, b) => kmFrom(origin, a) - kmFrom(origin, b));
     return list.length ? `${tmDeity ? '' : `<h2 class="serif tmdeity">${esc(t('deity.' + d))}</h2>`}${list.map(card).join('')}` : '';
   }).join('');
   $('#main').innerHTML = `<div class="card tmnear"><div class="row" style="border:0;align-items:center"><b>📍 ${esc(t('tm.near', origin.name))}</b>
       <span>${tmNear ? `<button class="btn soft" data-tmhome>${esc(t('dual.home'))}</button> ` : ''}<button class="btn soft" data-tmpick>${esc(t('cal.other'))}</button></span></div><div id="tmpp"></div></div>
+    <label class="field"><span>${esc(t('tm.where'))}</span><select id="tmregion"><option value="">${esc(t('tm.everywhere'))}</option>${regions.map(r => `<option ${r === tmRegion ? 'selected' : ''}>${esc(r)}</option>`).join('')}</select></label>
     ${yours.length ? `<p class="label">${esc(t('tm.yours'))}</p>` : ''}
     <div class="vc-chips"><button class="pill ${!tmDeity ? 'on' : ''}" data-deity="">${esc(t('f.all'))}</button>${order.map(d => `<button class="pill ${d === tmDeity ? 'on' : ''}" data-deity="${d}">${yours.includes(d) ? '☾ ' : ''}${esc(t('deity.' + d))}</button>`).join('')}</div>
     ${groups}<p class="small muted">${esc(t('tm.note'))}</p>`;
   $('#main').querySelectorAll('[data-deity]').forEach(b => b.onclick = () => { tmDeity = b.dataset.deity || null; viewTemples(); });
+  $('#tmregion').onchange = e => { tmRegion = e.target.value || null; viewTemples(); };
   $('#main').querySelector('[data-tmhome]')?.addEventListener('click', () => { tmNear = null; viewTemples(); });
   $('#main').querySelector('[data-tmpick]').onclick = () => placePicker($('#tmpp'), p => { tmNear = p; viewTemples(); });
 }
@@ -1234,6 +1240,83 @@ function renderResults() {
     </div>`).join('')}
     <p class="small muted">${esc(t('m.excluded'))}</p>`;
   $('#mres').querySelectorAll('[data-bd]').forEach(b => b.onclick = () => { M.byDate = b.dataset.bd === '1'; renderResults(); });
+}
+
+// ---------------------------------------------------------------- greetings
+// As on iOS (GreetingCard.swift): each festival's card art (cards/<motif>.svg,
+// drawn in white and tinted to a palette), names and a message. The web is
+// free, so the card is personal and carries no watermark.
+const PALETTES = [
+  ['#11113E', '#2A1F5C', '#fff', '#E8C25A', '#F3D98C'], ['#B5523B', '#7E2E1E', '#fff', '#FFE2B8', '#FFE9CC'],
+  ['#F4A62A', '#E0701B', '#3B1B07', '#7A1F0E', '#FFF3D6'], ['#0D6E6E', '#123E5C', '#fff', '#F0D27A', '#BDE6E0'],
+  ['#4A1942', '#2B0F2A', '#fff', '#F2B6D0', '#F6D6E6'], ['#FAF6EF', '#F1E7D6', '#2B2420', '#B5523B', '#C9814F']];
+const cardPalette = m => ({ diya: 0, shiva: 0, moon: 0, pongal: 1, ganesha: 1, murugan: 1, pookalam: 2, holi: 3, krishna: 3, newyear: 3 })[m] ?? 4;
+async function viewGreetings() {
+  loading();
+  const list = (await upcoming(today(), 180)).filter(x => x.f.tier !== 'minor');
+  if (tab !== 'greetings') return;
+  $('#main').innerHTML = `<h2 class="serif" style="margin:0">${esc(t('gr.title'))}</h2><p class="muted">${esc(t('gr.pick'))}</p>
+    <div class="card">${list.map((x, i) => `<div class="list-row" data-g="${i}" style="cursor:pointer"><span class="cardthumb" style="${cardBg(x.f.card, cardPalette(x.f.card))}"><i style="${cardArt(x.f.card, cardPalette(x.f.card))}"></i></span>
+      <div class="grow"><b>${esc(fname(x.f))}</b><div class="small muted">${esc(greg(x.date, { day: 'numeric', month: 'short', year: 'numeric' }))}</div></div><span>✉︎</span></div>`).join('')}</div>`;
+  $('#main').querySelectorAll('[data-g]').forEach(r => r.onclick = () => cardMaker(list[+r.dataset.g].f, list[+r.dataset.g].date));
+}
+const cardBg = (m, p) => `background:linear-gradient(${PALETTES[p][0]},${PALETTES[p][1]})`;
+const cardArt = (m, p) => `background:${PALETTES[p][4]};-webkit-mask:url(cards/${m || 'lotus'}.svg) center/100% 100%;mask:url(cards/${m || 'lotus'}.svg) center/100% 100%;opacity:.85`;
+function cardMaker(f, date) {
+  const st = { p: cardPalette(f.card), to: '', from: '', msg: '' };
+  const o = sheet(`<h2 class="serif">${esc(t('gr.card'))}</h2><div id="gcard" class="gcard"></div>
+    <p class="label">${esc(t('card.colour'))}</p><div style="display:flex;gap:8px;flex-wrap:wrap">${PALETTES.map((_, i) => `<button class="cardthumb" data-p="${i}" style="${cardBg(f.card, i)}"><i style="${cardArt(f.card, i)}"></i></button>`).join('')}</div>
+    <label class="field"><span>${esc(t('card.to'))}</span><input id="gto" maxlength="40"></label>
+    <label class="field"><span>${esc(t('card.from'))}</span><input id="gfrom" maxlength="40"></label>
+    <label class="field"><span>${esc(t('card.message'))}</span><textarea id="gmsg" maxlength="160" rows="3"></textarea></label>
+    <div class="chips">${['card.wish1', 'card.wish2', 'card.wish3'].map(k => `<button class="chip" data-w="${esc(t(k, fname(f)))}">${esc(t(k, fname(f)))}</button>`).join('')}</div>
+    <button class="btn block" id="gshare" style="margin-top:12px">${esc(t('f.share'))}</button>`);
+  const native = f.names[pack.language] !== fname(f) ? f.names[pack.language] : '';
+  const line = () => st.msg || text(f.content?.greeting) || text(f.content?.summary) || '';
+  const draw = () => {
+    const P = PALETTES[st.p];
+    o.querySelector('#gcard').innerHTML = `<div class="gcard-in" style="${cardBg(f.card, st.p)};color:${P[2]}"><i style="${cardArt(f.card, st.p)}"></i>
+      <div class="gtext">${st.to ? `<div class="gdear">${esc(t('card.dear', st.to))}</div>` : ''}${native ? `<div class="gnat" style="color:${P[3]}">${esc(native)}</div>` : ''}
+      <div class="serif gname">${esc(fname(f))}</div><div class="gdate">${esc(greg(date, { day: 'numeric', month: 'long', year: 'numeric' }))}</div>
+      ${line() ? `<div class="gline">${esc(line())}</div>` : ''}${st.from ? `<div class="gfrom" style="color:${P[3]}">${esc(t('card.with', st.from))}</div>` : ''}</div></div>`;
+  };
+  o.querySelectorAll('[data-p]').forEach(b => b.onclick = () => { st.p = +b.dataset.p; draw(); });
+  o.querySelector('#gto').oninput = e => { st.to = e.target.value; draw(); };
+  o.querySelector('#gfrom').oninput = e => { st.from = e.target.value; draw(); };
+  o.querySelector('#gmsg').oninput = e => { st.msg = e.target.value; draw(); };
+  o.querySelectorAll('[data-w]').forEach(b => b.onclick = () => { st.msg = b.dataset.w; o.querySelector('#gmsg').value = st.msg; draw(); });
+  o.querySelector('#gshare').onclick = async () => {
+    const blob = await cardImage(f, date, st, native, line());
+    const file = new File([blob], `${f.id}.png`, { type: 'image/png' });
+    if (navigator.canShare?.({ files: [file] })) { try { await navigator.share({ files: [file] }); return; } catch {} }
+    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = file.name; a.click();
+  };
+  draw();
+}
+// The card as a 1080 x 1350 image: gradient, tinted art, then the words.
+async function cardImage(f, date, st, native, line) {
+  const P = PALETTES[st.p], W = 1080, H = 1350, c = document.createElement('canvas'); c.width = W; c.height = H;
+  const g = c.getContext('2d'), grad = g.createLinearGradient(0, 0, 0, H); grad.addColorStop(0, P[0]); grad.addColorStop(1, P[1]);
+  g.fillStyle = grad; g.fillRect(0, 0, W, H);
+  const img = new Image(); img.src = `cards/${f.card || 'lotus'}.svg`; await img.decode();
+  const art = document.createElement('canvas'); art.width = W; art.height = H; const a = art.getContext('2d');
+  a.drawImage(img, 0, 0, W, H); a.globalCompositeOperation = 'source-in'; a.fillStyle = P[4]; a.fillRect(0, 0, W, H);
+  g.globalAlpha = .85; g.drawImage(art, 0, 0); g.globalAlpha = 1; g.textAlign = 'center';
+  let y = H * .36;
+  const put = (s, font, color, gap, max = 24) => {
+    g.font = font; g.fillStyle = color;
+    const words = s.split(' '), lines = []; let cur = '';
+    for (const w of words) { const nx = cur ? cur + ' ' + w : w; if (g.measureText(nx).width > W - 220 && cur) { lines.push(cur); cur = w; } else cur = nx; }
+    if (cur) lines.push(cur);
+    for (const l of lines.slice(0, max)) { g.fillText(l, W / 2, y); y += gap; }
+  };
+  if (st.to) put(t('card.dear', st.to), 'italic 48px Georgia, serif', P[2], 70);
+  if (native) put(native, 'bold 80px sans-serif', P[3], 100);
+  put(fname(f), 'bold 76px Georgia, serif', P[2], 70);
+  put(greg(date, { day: 'numeric', month: 'long', year: 'numeric' }), '500 38px sans-serif', P[2], 80);
+  if (line) put(line, 'italic 40px Georgia, serif', P[2], 54, 5);
+  if (st.from) { y += 16; put(t('card.with', st.from), '600 44px Georgia, serif', P[3], 60); }
+  return new Promise(r => c.toBlob(r, 'image/png'));
 }
 
 // ---------------------------------------------------------------- guide

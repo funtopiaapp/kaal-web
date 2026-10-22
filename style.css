@@ -237,3 +237,11 @@ details.factor { background: var(--card); border: 1px solid var(--line); border-
 details.factor > summary { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; list-style: none; }
 details.factor > summary::-webkit-details-marker { display: none; }
 details.factor .grow { flex: 1; }
+/* Greeting cards: the art is a white SVG used as a mask, tinted per palette. */
+.cardthumb { position: relative; display: inline-block; width: 44px; height: 55px; border-radius: 8px; overflow: hidden; border: 0; padding: 0; flex: none; cursor: pointer; }
+.cardthumb i, .gcard-in > i { position: absolute; inset: 0; }
+.gcard { display: flex; justify-content: center; margin: 8px 0 14px; }
+.gcard-in { position: relative; width: 320px; height: 400px; border-radius: 18px; overflow: hidden; box-shadow: 0 8px 24px #0003; }
+.gtext { position: absolute; inset: 29% 22px 25% 22px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-align: center; }
+.gdear { font: italic 16px Georgia, serif; } .gnat { font-weight: 700; font-size: 26px; } .gname { font-size: 24px; font-weight: 700; }
+.gdate { font-size: 13px; opacity: .85; } .gline { font: italic 13px Georgia, serif; opacity: .92; } .gfrom { font: 600 14px Georgia, serif; }
