@@ -1224,7 +1224,10 @@
    "durationDays": 1,
    "variations": [],
    "variationsNative": [],
-   "localNative": {},
+   "localNative": {
+    "MU": "മൗറീഷ്യസിൽ മഹാ ശിവരാത്രി പൊതു അവധിയാണ്; അതിനു മുമ്പുള്ള ദിവസങ്ങളിൽ തീർഥാടകർ കാവടികളുമായി ഗംഗാ തലാവിലേക്ക് (ഗ്രാൻഡ് ബാസിൻ) നടന്നുപോകുന്നു.",
+    "LK": "ശ്രീലങ്കയിൽ മഹാ ശിവരാത്രി പൊതു അവധിയാണ്."
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1422,7 +1425,9 @@
    "durationDays": 1,
    "variations": [],
    "variationsNative": [],
-   "localNative": {},
+   "localNative": {
+    "FJ": "ഫിജിയിൽ, മണ്ഡലികൾ ഒമ്പതു രാത്രി നടത്തുന്ന രാമായണ പാരായണം രാമനവമിയോടെ സമാപിക്കുന്നു."
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2399,7 +2404,9 @@
    "variations": [
     "Kerala keeps Sreekrishna Jayanthi on the Krishna Ashtami that falls in Chingam, so in some years (2025) it comes a lunar month after the North's Janmashtami."
    ],
-   "variationsNative": [],
+   "variationsNative": [
+    "കേരളത്തിൽ ശ്രീകൃഷ്ണജയന്തി ചിങ്ങമാസത്തിലെ കൃഷ്ണാഷ്ടമിയിലാണ് ആചരിക്കുന്നത്; അതിനാൽ ചില വർഷങ്ങളിൽ (2025) ഉത്തരേന്ത്യയിലെ ജന്മാഷ്ടമി കഴിഞ്ഞ് ഒരു ചാന്ദ്രമാസത്തിനു ശേഷമാണ് ഇത് വരുന്നത്."
+   ],
    "localNative": {},
    "hidden": false,
    "overrides": {},
@@ -2468,7 +2475,9 @@
    "durationDays": 1,
    "variations": [],
    "variationsNative": [],
-   "localNative": {},
+   "localNative": {
+    "MU": "മൗറീഷ്യസിൽ വിനായക ചതുർഥി പൊതു അവധിയാണ്."
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2802,8 +2811,20 @@
    "variations": [
     "Kept as Naraka Chaturdashi, the day Krishna Chaturdashi holds at sunrise, with the oil bath before dawn. Lakshmi Puja on Amavasya, the North Indian Diwali, can fall the next day; far from India, as in North America, the two are often a day apart."
    ],
-   "variationsNative": [],
-   "localNative": {},
+   "variationsNative": [
+    "സൂര്യോദയത്തിൽ കൃഷ്ണപക്ഷ ചതുർദശി ഉള്ള ദിവസം, പുലർച്ചെയുള്ള എണ്ണതേച്ചുകുളിയോടെ, നരകചതുർദശിയായി ആചരിക്കുന്നു. ഉത്തരേന്ത്യയിലെ ദീപാവലിയായ അമാവാസിയിലെ ലക്ഷ്മീപൂജ പിറ്റേന്ന് വരാം; ഇന്ത്യക്ക് പുറത്ത്, വടക്കേ അമേരിക്കയിലെന്ന പോലെ, ഇവ രണ്ടും പലപ്പോഴും ഒരു ദിവസം വ്യത്യാസത്തിലാണ്."
+   ],
+   "localNative": {
+    "TT": "ട്രിനിഡാഡ് ആൻഡ് ടൊബാഗോയിൽ ദീപാവലി പൊതു അവധിയാണ്. ചഗ്വാനസിലെ ദിവാലി നഗർ ദിവസങ്ങൾക്കു മുമ്പേ തുടങ്ങുന്നു; വീടുകളും മുറ്റങ്ങളും ദീപങ്ങളാൽ തെളിയുന്നു.",
+    "GY": "ഗയാനയിൽ ദീപാവലി പൊതു അവധിയാണ്; തലേ രാത്രി ദീപാലംകൃതമായ വാഹനഘോഷയാത്രകൾ നഗരത്തെ തെളിയിക്കുന്നു.",
+    "SR": "സുരിനാമിൽ ദീപാവലി പൊതു അവധിയാണ്; ദീപങ്ങളും പ്രാർഥനയും മധുരങ്ങളുമായി ആഘോഷിക്കുന്നു.",
+    "FJ": "ഫിജിയിൽ ദീപാവലി പൊതു അവധിയാണ്; വീടുകൾ ദീപങ്ങളാൽ തെളിയുന്നു, എല്ലാ വിശ്വാസങ്ങളിലുമുള്ള അയൽക്കാരുമായി മധുരം പങ്കിടുന്നു.",
+    "MU": "മൗറീഷ്യസിൽ ദീപാവലി പൊതു അവധിയാണ്; വീടുകൾ മൺവിളക്കുകളാൽ തെളിയുന്നു, മധുരക്കിഴങ്ങ് പലഹാരമായ ഗാതോ പതാത് പങ്കിടുന്നു.",
+    "MY": "മലേഷ്യയിൽ സരവാക്ക് ഒഴികെ എല്ലാ സംസ്ഥാനങ്ങളിലും ദീപാവലി പൊതു അവധിയാണ്; എല്ലാ വിശ്വാസങ്ങളിലുമുള്ള സുഹൃത്തുക്കൾക്കായി വീടുകൾ തുറന്നിടുന്നു.",
+    "SG": "സിംഗപ്പൂരിൽ ദീപാവലി പൊതു അവധിയാണ്; ആഴ്ചകൾക്കു മുമ്പേ ലിറ്റിൽ ഇന്ത്യ ദീപാലംകൃതമാകുന്നു.",
+    "ZA": "ദക്ഷിണാഫ്രിക്കയിൽ ദീപാവലി പൊതു അവധിയല്ല; ഡർബനിലും ജോഹന്നാസ്ബർഗിലും മറ്റിടങ്ങളിലുമുള്ള കുടുംബങ്ങൾ ദീപങ്ങളും പ്രാർഥനയും പടക്കങ്ങളുമായി ആഘോഷിക്കുന്നു.",
+    "LK": "ശ്രീലങ്കയിൽ ദീപാവലി പൊതു അവധിയാണ്."
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3229,13 +3250,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Chaitra Shukla Ekadashi, the first Ekadashi of the new year."
+     "en": "Chaitra Shukla Ekadashi, the first Ekadashi of the new year.",
+     "ml": "ചൈത്ര ശുക്ല ഏകാദശി, പുതുവർഷത്തിലെ ആദ്യ ഏകാദശി."
     },
     "traditions": {
-     "en": "As with every Ekadashi, devotees of Vishnu fast from grains and beans, many on fruit and milk, spend time in prayer and break the fast the next morning during Dvadashi. Coming just after Rama Navami, Kamada Ekadashi is often kept with readings from the Ramayana and the singing of Vishnu's names."
+     "en": "As with every Ekadashi, devotees of Vishnu fast from grains and beans, many on fruit and milk, spend time in prayer and break the fast the next morning during Dvadashi. Coming just after Rama Navami, Kamada Ekadashi is often kept with readings from the Ramayana and the singing of Vishnu's names.",
+     "ml": "എല്ലാ ഏകാദശിയിലുമെന്ന പോലെ വിഷ്ണുഭക്തർ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കി, പലരും പഴവും പാലും മാത്രം കഴിച്ച്, പ്രാർഥനയിൽ സമയം ചെലവിട്ട്, പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുന്നു. രാമനവമിക്ക് തൊട്ടുപിന്നാലെ വരുന്നതിനാൽ കാമദ ഏകാദശി പലപ്പോഴും രാമായണ പാരായണവും വിഷ്ണുനാമ ജപവുമായാണ് ആചരിക്കുന്നത്."
     },
     "story": {
-     "en": "The story told is of Lalit and Lalita, a gandharva couple at the court of King Pundarika. Lalit, distracted by thoughts of his wife, sang out of tune before the king, and the king in his anger declared that he would take the form of a fearsome rakshasa. Lalita followed her husband through the forests, caring for him, until she met the sage Shringi, who told her of the Ekadashi of Chaitra. She kept the fast with full devotion and offered its merit to her husband, and Lalit was restored to his own form. The two returned home together."
+     "en": "The story told is of Lalit and Lalita, a gandharva couple at the court of King Pundarika. Lalit, distracted by thoughts of his wife, sang out of tune before the king, and the king in his anger declared that he would take the form of a fearsome rakshasa. Lalita followed her husband through the forests, caring for him, until she met the sage Shringi, who told her of the Ekadashi of Chaitra. She kept the fast with full devotion and offered its merit to her husband, and Lalit was restored to his own form. The two returned home together.",
+     "ml": "പുണ്ഡരീക രാജാവിന്റെ സഭയിലെ ഗന്ധർവദമ്പതികളായ ലളിതനെയും ലളിതയെയും കുറിച്ചാണ് കഥ. ഭാര്യയെക്കുറിച്ചുള്ള ചിന്തയിൽ മുഴുകിയ ലളിതൻ രാജാവിന്റെ മുന്നിൽ ശ്രുതി തെറ്റി പാടി; കോപിച്ച രാജാവ് അവൻ ഭീകരനായ രാക്ഷസരൂപം പ്രാപിക്കട്ടെ എന്നു പറഞ്ഞു. ലളിത ഭർത്താവിനെ പരിചരിച്ചുകൊണ്ട് കാടുകളിലൂടെ അവനെ പിന്തുടർന്നു; ഒടുവിൽ ശൃംഗി മുനിയെ കണ്ടുമുട്ടി, അദ്ദേഹം ചൈത്രത്തിലെ ഏകാദശിയെക്കുറിച്ച് പറഞ്ഞുകൊടുത്തു. അവൾ പൂർണ ഭക്തിയോടെ വ്രതമെടുത്ത് അതിന്റെ പുണ്യം ഭർത്താവിന് സമർപ്പിച്ചു; ലളിതന് സ്വന്തം രൂപം തിരിച്ചുകിട്ടി. ഇരുവരും ഒരുമിച്ച് വീട്ടിലേക്ക് മടങ്ങി."
     },
     "howTo": {
      "en": [
@@ -3244,6 +3268,13 @@
       "Worship Vishnu with tulsi, flowers and a lamp, and read or listen to the day's story.",
       "Chant Vishnu's names or the Vishnu Sahasranama, and keep the day calm.",
       "Break the fast the next morning within the Dvadashi time, with simple food."
+     ],
+     "ml": [
+      "തലേന്ന് (ദശമി) രാത്രി ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക; പഴം, പാൽ, അണ്ടിപ്പരിപ്പ് എന്നിവ കഴിക്കാം, കഴിയുമെങ്കിൽ കൂടുതൽ കർശനമായി നോൽക്കാം.",
+      "തുളസി, പൂക്കൾ, വിളക്ക് എന്നിവയോടെ വിഷ്ണുവിനെ ആരാധിക്കുക; അന്നത്തെ കഥ വായിക്കുകയോ കേൾക്കുകയോ ചെയ്യുക.",
+      "വിഷ്ണുനാമങ്ങളോ വിഷ്ണുസഹസ്രനാമമോ ജപിക്കുക; ദിവസം ശാന്തമായി കഴിക്കുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശി സമയത്തിനുള്ളിൽ ലളിതമായ ഭക്ഷണത്തോടെ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -3278,13 +3309,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Vaishakha Krishna Ekadashi (Chaitra in the amanta reckoning), the Ekadashi of protection."
+     "en": "Vaishakha Krishna Ekadashi (Chaitra in the amanta reckoning), the Ekadashi of protection.",
+     "ml": "വൈശാഖ കൃഷ്ണ ഏകാദശി (അമാന്ത രീതിയിൽ ചൈത്രം), സംരക്ഷണത്തിന്റെ ഏകാദശി."
     },
     "traditions": {
-     "en": "Devotees fast and worship Vishnu in his Vamana form. Tradition especially values giving on this day: food, water in the summer heat, and help to students. Many avoid honey, meat, betel and gambling, and keep the day quiet."
+     "en": "Devotees fast and worship Vishnu in his Vamana form. Tradition especially values giving on this day: food, water in the summer heat, and help to students. Many avoid honey, meat, betel and gambling, and keep the day quiet.",
+     "ml": "ഭക്തർ വ്രതമെടുത്ത് വാമനരൂപത്തിലുള്ള വിഷ്ണുവിനെ ആരാധിക്കുന്നു. ഈ ദിവസത്തെ ദാനത്തിന് പാരമ്പര്യം പ്രത്യേക പ്രാധാന്യം നൽകുന്നു: ഭക്ഷണം, വേനൽച്ചൂടിൽ വെള്ളം, വിദ്യാർഥികൾക്ക് സഹായം. പലരും തേൻ, മാംസം, വെറ്റില, ചൂതാട്ടം എന്നിവ ഒഴിവാക്കി ദിവസം ശാന്തമായി കഴിക്കുന്നു."
     },
     "story": {
-     "en": "The story told is of King Mandhata, a just and generous ruler on the banks of the Narmada, who was absorbed in tapas when a bear attacked him and dragged him into the forest. He did not abandon his calm, but prayed to Vishnu, who came and freed him; but the king's foot was badly injured. Vishnu told him to keep the Varuthini Ekadashi at Mathura and worship his Varaha form, and the king, keeping the observance, was made whole. 'Varuthini' means 'the one that shields', and the day is remembered as a time of shelter."
+     "en": "The story told is of King Mandhata, a just and generous ruler on the banks of the Narmada, who was absorbed in tapas when a bear attacked him and dragged him into the forest. He did not abandon his calm, but prayed to Vishnu, who came and freed him; but the king's foot was badly injured. Vishnu told him to keep the Varuthini Ekadashi at Mathura and worship his Varaha form, and the king, keeping the observance, was made whole. 'Varuthini' means 'the one that shields', and the day is remembered as a time of shelter.",
+     "ml": "നർമദാതീരത്ത് ഭരണം നടത്തിയ നീതിമാനും ഉദാരനുമായ മാന്ധാതാ രാജാവിനെക്കുറിച്ചാണ് കഥ. തപസ്സിൽ മുഴുകിയിരിക്കെ ഒരു കരടി അദ്ദേഹത്തെ ആക്രമിച്ച് കാട്ടിലേക്ക് വലിച്ചിഴച്ചു. അദ്ദേഹം ശാന്തത കൈവിടാതെ വിഷ്ണുവിനോട് പ്രാർഥിച്ചു; വിഷ്ണു വന്ന് അദ്ദേഹത്തെ മോചിപ്പിച്ചു, പക്ഷേ രാജാവിന്റെ കാലിന് സാരമായി പരിക്കേറ്റിരുന്നു. മഥുരയിൽ വരൂഥിനി ഏകാദശി ആചരിച്ച് വരാഹരൂപത്തെ ആരാധിക്കാൻ വിഷ്ണു പറഞ്ഞു; വ്രതമെടുത്ത രാജാവ് പൂർണ ആരോഗ്യം വീണ്ടെടുത്തു. 'വരൂഥിനി' എന്നാൽ 'കാക്കുന്നവൾ'; ഈ ദിവസം അഭയത്തിന്റെ കാലമായി ഓർമിക്കപ്പെടുന്നു."
     },
     "howTo": {
      "en": [
@@ -3293,6 +3327,13 @@
       "Worship Vishnu with tulsi and a lamp, and hear the story of King Mandhata.",
       "Give water, food or help to someone, in the spirit of the day.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക; പഴവും പാലുമാണ് പതിവ്.",
+      "തുളസിയും വിളക്കുമായി വിഷ്ണുവിനെ ആരാധിക്കുക; മാന്ധാതാ രാജാവിന്റെ കഥ കേൾക്കുക.",
+      "ദിവസത്തിന്റെ ചൈതന്യത്തിൽ ആർക്കെങ്കിലും വെള്ളമോ ഭക്ഷണമോ സഹായമോ നൽകുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -3327,13 +3368,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Vaishakha Shukla Ekadashi, named for Vishnu's Mohini form."
+     "en": "Vaishakha Shukla Ekadashi, named for Vishnu's Mohini form.",
+     "ml": "വൈശാഖ ശുക്ല ഏകാദശി, വിഷ്ണുവിന്റെ മോഹിനീരൂപത്തിന്റെ പേരിൽ."
     },
     "traditions": {
-     "en": "Devotees fast and worship Vishnu, remembering the form in which he appeared during the churning of the ocean. In temples, especially in Gujarat and the South, the deity is adorned as Mohini. The day is kept with prayer, reading and singing of Vishnu's names."
+     "en": "Devotees fast and worship Vishnu, remembering the form in which he appeared during the churning of the ocean. In temples, especially in Gujarat and the South, the deity is adorned as Mohini. The day is kept with prayer, reading and singing of Vishnu's names.",
+     "ml": "പാലാഴിമഥന സമയത്ത് വിഷ്ണു പ്രത്യക്ഷപ്പെട്ട രൂപത്തെ ഓർത്ത് ഭക്തർ വ്രതമെടുത്ത് വിഷ്ണുവിനെ ആരാധിക്കുന്നു. ക്ഷേത്രങ്ങളിൽ, പ്രത്യേകിച്ച് ഗുജറാത്തിലും ദക്ഷിണേന്ത്യയിലും, ദേവനെ മോഹിനിയായി അലങ്കരിക്കുന്നു. പ്രാർഥനയും വായനയും വിഷ്ണുനാമ ഗാനവുമായി ദിവസം ആചരിക്കുന്നു."
     },
     "story": {
-     "en": "When the gods and asuras churned the ocean and the pot of amrit rose, the asuras seized it. Vishnu took the form of Mohini, an enchanting woman, and offered to share the nectar fairly; captivated, the asuras agreed, and Mohini served it to the gods. The day also carries the story of Dhrishtabuddhi, a merchant's son who wasted his inheritance and lost his way, until the sage Kaundinya told him of this Ekadashi. He kept it sincerely, and his life turned toward steadiness and kindness."
+     "en": "When the gods and asuras churned the ocean and the pot of amrit rose, the asuras seized it. Vishnu took the form of Mohini, an enchanting woman, and offered to share the nectar fairly; captivated, the asuras agreed, and Mohini served it to the gods. The day also carries the story of Dhrishtabuddhi, a merchant's son who wasted his inheritance and lost his way, until the sage Kaundinya told him of this Ekadashi. He kept it sincerely, and his life turned toward steadiness and kindness.",
+     "ml": "ദേവന്മാരും അസുരന്മാരും പാലാഴി കടഞ്ഞപ്പോൾ അമൃതകലശം ഉയർന്നുവന്നു; അസുരന്മാർ അത് കൈക്കലാക്കി. വിഷ്ണു മോഹിനി എന്ന സുന്ദരിയുടെ രൂപമെടുത്ത് അമൃത് ന്യായമായി പങ്കിടാമെന്ന് പറഞ്ഞു; മയങ്ങിപ്പോയ അസുരന്മാർ സമ്മതിച്ചു, മോഹിനി അമൃത് ദേവന്മാർക്ക് വിളമ്പി. പൈതൃകസ്വത്ത് പാഴാക്കി വഴിതെറ്റിയ ധൃഷ്ടബുദ്ധി എന്ന വ്യാപാരിപുത്രന്റെ കഥയും ഈ ദിവസത്തിനുണ്ട്; കൗണ്ഡിന്യ മുനി അവന് ഈ ഏകാദശിയെക്കുറിച്ച് പറഞ്ഞുകൊടുത്തു. അവൻ ആത്മാർഥമായി വ്രതമെടുത്തു; അവന്റെ ജീവിതം സ്ഥിരതയിലേക്കും ദയയിലേക്കും തിരിഞ്ഞു."
     },
     "howTo": {
      "en": [
@@ -3342,6 +3386,13 @@
       "Worship Vishnu with tulsi, yellow flowers and a lamp; hear the story of the churning and of Dhrishtabuddhi.",
       "Spend time in prayer or reading, and avoid harsh speech.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക.",
+      "തുളസി, മഞ്ഞപ്പൂക്കൾ, വിളക്ക് എന്നിവയോടെ വിഷ്ണുവിനെ ആരാധിക്കുക; പാലാഴിമഥനത്തിന്റെയും ധൃഷ്ടബുദ്ധിയുടെയും കഥ കേൾക്കുക.",
+      "പ്രാർഥനയിലോ വായനയിലോ സമയം ചെലവിടുക; പരുഷമായ വാക്കുകൾ ഒഴിവാക്കുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -3376,13 +3427,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Jyeshtha Krishna Ekadashi (Vaishakha in the amanta reckoning), also called Achala Ekadashi."
+     "en": "Jyeshtha Krishna Ekadashi (Vaishakha in the amanta reckoning), also called Achala Ekadashi.",
+     "ml": "ജ്യേഷ്ഠ കൃഷ്ണ ഏകാദശി (അമാന്ത രീതിയിൽ വൈശാഖം), അചല ഏകാദശി എന്നും പേര്."
     },
     "traditions": {
-     "en": "'Apara' means boundless. Devotees fast and worship Vishnu as Trivikrama, the form that measured the worlds in three steps. In Odisha the day is called Jalakrida Ekadashi, and in Punjab and Haryana, Bhadrakali Ekadashi. As the summer heat peaks, giving water and cooling drinks is a common practice."
+     "en": "'Apara' means boundless. Devotees fast and worship Vishnu as Trivikrama, the form that measured the worlds in three steps. In Odisha the day is called Jalakrida Ekadashi, and in Punjab and Haryana, Bhadrakali Ekadashi. As the summer heat peaks, giving water and cooling drinks is a common practice.",
+     "ml": "'അപര' എന്നാൽ അതിരില്ലാത്തത്. മൂന്നടികൊണ്ട് ലോകങ്ങൾ അളന്ന ത്രിവിക്രമരൂപത്തിൽ വിഷ്ണുവിനെ ഭക്തർ വ്രതമെടുത്ത് ആരാധിക്കുന്നു. ഒഡീഷയിൽ ഈ ദിവസം ജലക്രീഡാ ഏകാദശി എന്നും പഞ്ചാബിലും ഹരിയാനയിലും ഭദ്രകാളി ഏകാദശി എന്നും അറിയപ്പെടുന്നു. വേനൽച്ചൂട് കൂടുന്ന കാലമായതിനാൽ വെള്ളവും തണുത്ത പാനീയങ്ങളും ദാനം ചെയ്യുന്നത് പതിവാണ്."
     },
     "story": {
-     "en": "The story told is of King Mahidhvaja, a righteous king whose younger brother Vajradhvaja, jealous, took his life and buried him beneath a peepal tree. The king's spirit could not rest, and troubled travellers who passed that way. The sage Dhaumya, passing by, understood what had happened, kept the Apara Ekadashi and offered its merit to the king, and Mahidhvaja found peace. The story is told to show how far a single sincere observance, made for another, can reach."
+     "en": "The story told is of King Mahidhvaja, a righteous king whose younger brother Vajradhvaja, jealous, took his life and buried him beneath a peepal tree. The king's spirit could not rest, and troubled travellers who passed that way. The sage Dhaumya, passing by, understood what had happened, kept the Apara Ekadashi and offered its merit to the king, and Mahidhvaja found peace. The story is told to show how far a single sincere observance, made for another, can reach.",
+     "ml": "ധർമിഷ്ഠനായ മഹീധ്വജ രാജാവിനെക്കുറിച്ചാണ് കഥ. അസൂയാലുവായ അനുജൻ വജ്രധ്വജൻ അദ്ദേഹത്തിന്റെ ജീവനെടുത്ത് ഒരു അരയാലിന്റെ ചുവട്ടിൽ കുഴിച്ചിട്ടു. രാജാവിന്റെ ആത്മാവിന് ശാന്തി കിട്ടിയില്ല; ആ വഴി പോകുന്ന യാത്രക്കാർക്ക് ശല്യമായി. അതുവഴി വന്ന ധൗമ്യ മുനി സംഭവിച്ചത് മനസ്സിലാക്കി അപരാ ഏകാദശി ആചരിച്ച് അതിന്റെ പുണ്യം രാജാവിന് സമർപ്പിച്ചു; മഹീധ്വജന് ശാന്തി ലഭിച്ചു. മറ്റൊരാൾക്കായി ആത്മാർഥമായി ചെയ്യുന്ന ഒരു വ്രതം എത്ര ദൂരം എത്തുമെന്ന് കാണിക്കാനാണ് ഈ കഥ പറയുന്നത്."
     },
     "howTo": {
      "en": [
@@ -3391,6 +3445,13 @@
       "Worship Vishnu as Trivikrama with tulsi and a lamp, and hear the story of King Mahidhvaja.",
       "Offer water or sherbet to people in the heat.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക.",
+      "തുളസിയും വിളക്കുമായി ത്രിവിക്രമനായ വിഷ്ണുവിനെ ആരാധിക്കുക; മഹീധ്വജ രാജാവിന്റെ കഥ കേൾക്കുക.",
+      "ചൂടിൽ കഴിയുന്നവർക്ക് വെള്ളമോ സർബത്തോ നൽകുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -3425,13 +3486,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Jyeshtha Shukla Ekadashi, the strictest Ekadashi, kept without even water."
+     "en": "Jyeshtha Shukla Ekadashi, the strictest Ekadashi, kept without even water.",
+     "ml": "ജ്യേഷ്ഠ ശുക്ല ഏകാദശി, വെള്ളം പോലും കുടിക്കാതെ നോൽക്കുന്ന ഏറ്റവും കഠിനമായ ഏകാദശി."
     },
     "traditions": {
-     "en": "'Nirjala' means without water. Those who keep it fully go from sunrise to the next sunrise without food or water, in the hottest weeks of the year. Because of the hardship, tradition places great value on giving water: people set up stalls with cold water and sherbet, and give earthen pots, fans and umbrellas. It is also called Bhimseni Ekadashi. Those who cannot fast without water, for reasons of health or age, keep a gentler fast, which tradition fully accepts."
+     "en": "'Nirjala' means without water. Those who keep it fully go from sunrise to the next sunrise without food or water, in the hottest weeks of the year. Because of the hardship, tradition places great value on giving water: people set up stalls with cold water and sherbet, and give earthen pots, fans and umbrellas. It is also called Bhimseni Ekadashi. Those who cannot fast without water, for reasons of health or age, keep a gentler fast, which tradition fully accepts.",
+     "ml": "'നിർജല' എന്നാൽ ജലമില്ലാതെ. പൂർണമായി ആചരിക്കുന്നവർ വർഷത്തിലെ ഏറ്റവും ചൂടുള്ള ആഴ്ചകളിൽ ഒരു സൂര്യോദയം മുതൽ അടുത്ത സൂര്യോദയം വരെ ഭക്ഷണവും വെള്ളവുമില്ലാതെ കഴിയുന്നു. ഈ കാഠിന്യം കാരണം വെള്ളം ദാനം ചെയ്യുന്നതിന് പാരമ്പര്യം വലിയ വില നൽകുന്നു: തണുത്ത വെള്ളവും സർബത്തുമായി തണ്ണീർപ്പന്തലുകൾ ഒരുക്കുന്നു, മൺകുടങ്ങളും വിശറികളും കുടകളും ദാനം ചെയ്യുന്നു. ഭീമസേനി ഏകാദശി എന്നും പേരുണ്ട്. ആരോഗ്യമോ പ്രായമോ കാരണം വെള്ളമില്ലാതെ നോൽക്കാൻ കഴിയാത്തവർ ലഘുവായ വ്രതമെടുക്കുന്നു; പാരമ്പര്യം അത് പൂർണമായി അംഗീകരിക്കുന്നു."
     },
     "story": {
-     "en": "Bhima, the strongest of the Pandavas, loved his food and could not keep the twenty-four Ekadashis that his mother and brothers kept. He went to the sage Vyasa and asked if there were any way. Vyasa told him to keep just one Ekadashi, Jyeshtha Shukla Ekadashi, without food or water from sunrise to sunrise, and it would hold the place of all the others. Bhima kept it, and the day has been called Bhimseni Ekadashi since. The story is a gentle one: it makes room for those who find the full discipline hard."
+     "en": "Bhima, the strongest of the Pandavas, loved his food and could not keep the twenty-four Ekadashis that his mother and brothers kept. He went to the sage Vyasa and asked if there were any way. Vyasa told him to keep just one Ekadashi, Jyeshtha Shukla Ekadashi, without food or water from sunrise to sunrise, and it would hold the place of all the others. Bhima kept it, and the day has been called Bhimseni Ekadashi since. The story is a gentle one: it makes room for those who find the full discipline hard.",
+     "ml": "പാണ്ഡവരിൽ ഏറ്റവും ബലവാനായ ഭീമന് ഭക്ഷണം ഏറെ ഇഷ്ടമായിരുന്നു; അമ്മയും സഹോദരന്മാരും ആചരിച്ച ഇരുപത്തിനാല് ഏകാദശികളും അവന് നോൽക്കാനായില്ല. അവൻ വ്യാസ മഹർഷിയെ ചെന്നുകണ്ട് എന്തെങ്കിലും വഴിയുണ്ടോ എന്ന് ചോദിച്ചു. ജ്യേഷ്ഠ ശുക്ല ഏകാദശി എന്ന ഒരൊറ്റ ഏകാദശി സൂര്യോദയം മുതൽ സൂര്യോദയം വരെ ഭക്ഷണവും വെള്ളവുമില്ലാതെ ആചരിച്ചാൽ അത് മറ്റെല്ലാറ്റിനും തുല്യമാകുമെന്ന് വ്യാസൻ പറഞ്ഞു. ഭീമൻ അത് ആചരിച്ചു; അന്നുമുതൽ ഈ ദിവസം ഭീമസേനി ഏകാദശി എന്നറിയപ്പെടുന്നു. പൂർണമായ അച്ചടക്കം പ്രയാസമായവർക്കും ഇടം നൽകുന്ന സൗമ്യമായ കഥയാണിത്."
     },
     "howTo": {
      "en": [
@@ -3441,6 +3505,14 @@
       "Give water: fill pots, set up a water stall, or give earthen pots, fans or umbrellas.",
       "Keep the day calm and indoors in the heat; chant or read.",
       "Break the fast the next morning during Dvadashi, starting with water and something light."
+     ],
+     "ml": [
+      "എങ്ങനെ ആചരിക്കുമെന്ന് സത്യസന്ധമായി തീരുമാനിക്കുക; എന്തെങ്കിലും രോഗാവസ്ഥയുള്ളവരും ഗർഭിണികളും പ്രായമായവരും മരുന്ന് കഴിക്കുന്നവരും വെള്ളം കുടിച്ചുകൊണ്ടുള്ള ലഘുവ്രതം എടുക്കുക.",
+      "തലേന്ന് വൈകുന്നേരം നന്നായി ഭക്ഷണം കഴിക്കുകയും വെള്ളം കുടിക്കുകയും ചെയ്യുക.",
+      "ഏകാദശി രാവിലെ തുളസിയും വിളക്കുമായി വിഷ്ണുവിനെ ആരാധിക്കുക.",
+      "വെള്ളം ദാനം ചെയ്യുക: കുടങ്ങൾ നിറയ്ക്കുക, തണ്ണീർപ്പന്തൽ ഒരുക്കുക, അല്ലെങ്കിൽ മൺകുടങ്ങളോ വിശറികളോ കുടകളോ നൽകുക.",
+      "ചൂടിൽ വീടിനകത്ത് ശാന്തമായി കഴിയുക; ജപിക്കുകയോ വായിക്കുകയോ ചെയ്യുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ, വെള്ളവും ലഘുവായ എന്തെങ്കിലും കഴിച്ച്, വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -3475,13 +3547,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Ashadha Krishna Ekadashi (Jyeshtha in the amanta reckoning)."
+     "en": "Ashadha Krishna Ekadashi (Jyeshtha in the amanta reckoning).",
+     "ml": "ആഷാഢ കൃഷ്ണ ഏകാദശി (അമാന്ത രീതിയിൽ ജ്യേഷ്ഠം)."
     },
     "traditions": {
-     "en": "Coming just before the monsoon, Yogini Ekadashi is kept with a fast, worship of Vishnu and the peepal tree, and giving to those in need. Tradition holds it in especially high regard, and many keep it as a day of prayer and quiet."
+     "en": "Coming just before the monsoon, Yogini Ekadashi is kept with a fast, worship of Vishnu and the peepal tree, and giving to those in need. Tradition holds it in especially high regard, and many keep it as a day of prayer and quiet.",
+     "ml": "മഴക്കാലത്തിനു തൊട്ടുമുമ്പ് വരുന്ന യോഗിനി ഏകാദശി വ്രതത്തോടും വിഷ്ണുവിനെയും അരയാലിനെയും ആരാധിച്ചും ആവശ്യക്കാർക്ക് ദാനം ചെയ്തും ആചരിക്കുന്നു. പാരമ്പര്യം ഇതിന് പ്രത്യേക മഹത്വം കൽപ്പിക്കുന്നു; പലരും പ്രാർഥനയുടെയും നിശ്ശബ്ദതയുടെയും ദിവസമായി ഇത് ആചരിക്കുന്നു."
     },
     "story": {
-     "en": "The story told is of Hemamali, a gardener in the service of Kubera, whose task was to bring fresh flowers each morning for Kubera's worship of Shiva. One morning, lingering with his wife, he did not come. Kubera, angered, sent him from Alaka, and Hemamali wandered the earth, unwell and unhappy. At last he reached the ashram of the sage Markandeya, who listened kindly and told him of Yogini Ekadashi. Hemamali kept it with a full heart, his health returned, and he went home to Alaka."
+     "en": "The story told is of Hemamali, a gardener in the service of Kubera, whose task was to bring fresh flowers each morning for Kubera's worship of Shiva. One morning, lingering with his wife, he did not come. Kubera, angered, sent him from Alaka, and Hemamali wandered the earth, unwell and unhappy. At last he reached the ashram of the sage Markandeya, who listened kindly and told him of Yogini Ekadashi. Hemamali kept it with a full heart, his health returned, and he went home to Alaka.",
+     "ml": "കുബേരന്റെ സേവകനായ ഹേമമാലി എന്ന തോട്ടക്കാരനെക്കുറിച്ചാണ് കഥ. കുബേരന്റെ ശിവപൂജയ്ക്കായി എല്ലാ ദിവസവും രാവിലെ പുതിയ പൂക്കൾ കൊണ്ടുവരുന്നതായിരുന്നു അവന്റെ ജോലി. ഒരു ദിവസം ഭാര്യയോടൊപ്പം നേരം പോക്കി അവൻ വന്നില്ല. കോപിച്ച കുബേരൻ അവനെ അളകയിൽനിന്ന് പുറത്താക്കി; രോഗിയും ദുഃഖിതനുമായി ഹേമമാലി ഭൂമിയിൽ അലഞ്ഞു. ഒടുവിൽ മാർക്കണ്ഡേയ മുനിയുടെ ആശ്രമത്തിലെത്തി; മുനി ദയയോടെ കേട്ട് യോഗിനി ഏകാദശിയെക്കുറിച്ച് പറഞ്ഞുകൊടുത്തു. ഹേമമാലി നിറഞ്ഞ മനസ്സോടെ അത് ആചരിച്ചു; ആരോഗ്യം തിരിച്ചുകിട്ടി, അവൻ അളകയിലേക്ക് മടങ്ങി."
     },
     "howTo": {
      "en": [
@@ -3490,6 +3565,13 @@
       "Worship Vishnu with tulsi and a lamp, and offer water at a peepal tree if one is near.",
       "Hear the story of Hemamali and give food or water to someone.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക.",
+      "തുളസിയും വിളക്കുമായി വിഷ്ണുവിനെ ആരാധിക്കുക; അടുത്ത് അരയാലുണ്ടെങ്കിൽ അതിന് വെള്ളം ഒഴിക്കുക.",
+      "ഹേമമാലിയുടെ കഥ കേൾക്കുക; ആർക്കെങ്കിലും ഭക്ഷണമോ വെള്ളമോ നൽകുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -3524,13 +3606,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Ashadha Shukla Ekadashi: Vishnu goes into his four-month yogic sleep; chaturmas begins."
+     "en": "Ashadha Shukla Ekadashi: Vishnu goes into his four-month yogic sleep; chaturmas begins.",
+     "ml": "ആഷാഢ ശുക്ല ഏകാദശി: വിഷ്ണു നാലുമാസത്തെ യോഗനിദ്രയിലേക്ക് പ്രവേശിക്കുന്നു; ചാതുർമാസ്യം ആരംഭിക്കുന്നു."
     },
     "traditions": {
-     "en": "Also called Ashadhi Ekadashi and Padma Ekadashi, it begins chaturmas, the four months of the monsoon when many people take on a discipline: giving up a food, eating once a day, or reading daily. In Maharashtra, the great Pandharpur Wari reaches its end: lakhs of warkaris walk for weeks, singing abhangs, to see Vitthal on this day. Traditionally, weddings and housewarmings are not held until Vishnu wakes on Devutthana Ekadashi."
+     "en": "Also called Ashadhi Ekadashi and Padma Ekadashi, it begins chaturmas, the four months of the monsoon when many people take on a discipline: giving up a food, eating once a day, or reading daily. In Maharashtra, the great Pandharpur Wari reaches its end: lakhs of warkaris walk for weeks, singing abhangs, to see Vitthal on this day. Traditionally, weddings and housewarmings are not held until Vishnu wakes on Devutthana Ekadashi.",
+     "ml": "ആഷാഢി ഏകാദശി, പദ്മ ഏകാദശി എന്നീ പേരുകളുമുള്ള ഈ ദിവസം ചാതുർമാസ്യം ആരംഭിക്കുന്നു; മഴക്കാലത്തിലെ ഈ നാലുമാസം പലരും ഒരു നിഷ്ഠ സ്വീകരിക്കുന്നു: ഒരു ഭക്ഷണം ഉപേക്ഷിക്കുക, ദിവസം ഒരുനേരം മാത്രം കഴിക്കുക, അല്ലെങ്കിൽ ദിവസവും പാരായണം ചെയ്യുക. മഹാരാഷ്ട്രയിൽ മഹത്തായ പണ്ഡർപൂർ വാരി ഈ ദിവസം സമാപിക്കുന്നു: ലക്ഷക്കണക്കിന് വാർക്കരികൾ അഭംഗങ്ങൾ പാടി ആഴ്ചകളോളം നടന്ന് വിഠലനെ ദർശിക്കുന്നു. പരമ്പരാഗതമായി ദേവോത്ഥാന ഏകാദശിയിൽ വിഷ്ണു ഉണരുന്നതുവരെ വിവാഹങ്ങളും ഗൃഹപ്രവേശങ്ങളും നടത്താറില്ല."
     },
     "story": {
-     "en": "The story told is that on this Ekadashi Vishnu lies down on the serpent Shesha in the ocean of milk and enters yoga nidra, a sleep of deep meditation, for four months, waking on Kartika Shukla Ekadashi. Another story, told in Maharashtra, is of Pundalik, a young man devoted to his parents. When Vishnu, as Vitthal, came to his door, Pundalik was massaging his father's feet, and without rising he tossed Vitthal a brick to stand on until he was done. Vitthal waited, standing on the brick with his hands on his hips, and stands that way in Pandharpur to this day."
+     "en": "The story told is that on this Ekadashi Vishnu lies down on the serpent Shesha in the ocean of milk and enters yoga nidra, a sleep of deep meditation, for four months, waking on Kartika Shukla Ekadashi. Another story, told in Maharashtra, is of Pundalik, a young man devoted to his parents. When Vishnu, as Vitthal, came to his door, Pundalik was massaging his father's feet, and without rising he tossed Vitthal a brick to stand on until he was done. Vitthal waited, standing on the brick with his hands on his hips, and stands that way in Pandharpur to this day.",
+     "ml": "ഈ ഏകാദശിയിൽ വിഷ്ണു പാലാഴിയിൽ അനന്തന്റെ മേൽ ശയിച്ച് നാലുമാസത്തേക്ക് യോഗനിദ്രയിലേക്ക്, ആഴമേറിയ ധ്യാനത്തിന്റെ ഉറക്കത്തിലേക്ക്, പ്രവേശിക്കുന്നുവെന്നും കാർത്തിക ശുക്ല ഏകാദശിയിൽ ഉണരുന്നുവെന്നുമാണ് കഥ. മഹാരാഷ്ട്രയിൽ പറയുന്ന മറ്റൊരു കഥ മാതാപിതാക്കളോട് ഭക്തിയുള്ള പുണ്ഡലീകൻ എന്ന യുവാവിന്റേതാണ്. വിഷ്ണു വിഠലനായി അവന്റെ വാതിൽക്കൽ എത്തിയപ്പോൾ പുണ്ഡലീകൻ അച്ഛന്റെ കാൽ തിരുമ്മുകയായിരുന്നു; എഴുന്നേൽക്കാതെ, താൻ തീരുന്നതുവരെ നിൽക്കാൻ ഒരു ഇഷ്ടിക അവൻ വിഠലന് എറിഞ്ഞുകൊടുത്തു. വിഠലൻ ഇടുപ്പിൽ കൈകൾ വെച്ച് ആ ഇഷ്ടികയിൽ കാത്തുനിന്നു; ഇന്നും പണ്ഡർപൂരിൽ അങ്ങനെതന്നെ നിൽക്കുന്നു."
     },
     "howTo": {
      "en": [
@@ -3539,6 +3624,13 @@
       "If you wish, choose a small discipline for the four months of chaturmas.",
       "Join a local dindi or temple procession if there is one.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക.",
+      "തുളസിയും വിളക്കുമായി വിഷ്ണുവിനെയോ വിഠലനെയോ ആരാധിക്കുക; അഭംഗങ്ങളോ ഭജനകളോ പാടുക.",
+      "ആഗ്രഹമുണ്ടെങ്കിൽ ചാതുർമാസ്യത്തിലെ നാലുമാസത്തേക്ക് ഒരു ചെറിയ നിഷ്ഠ തിരഞ്ഞെടുക്കുക.",
+      "പ്രാദേശികമായി ദിണ്ഡിയോ ക്ഷേത്രഘോഷയാത്രയോ ഉണ്ടെങ്കിൽ അതിൽ ചേരുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -3573,13 +3665,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Shravana Krishna Ekadashi (Ashadha in the amanta reckoning), the first Ekadashi of chaturmas's dark fortnight."
+     "en": "Shravana Krishna Ekadashi (Ashadha in the amanta reckoning), the first Ekadashi of chaturmas's dark fortnight.",
+     "ml": "ശ്രാവണ കൃഷ്ണ ഏകാദശി (അമാന്ത രീതിയിൽ ആഷാഢം), ചാതുർമാസ്യത്തിലെ കൃഷ്ണപക്ഷത്തിലെ ആദ്യ ഏകാദശി."
     },
     "traditions": {
-     "en": "Devotees fast, worship Vishnu, and especially honour the tulsi plant: watering it, lighting a lamp before it and offering its leaves. Many light a ghee lamp before Vishnu through the evening. It falls in the rains, a season of reflection."
+     "en": "Devotees fast, worship Vishnu, and especially honour the tulsi plant: watering it, lighting a lamp before it and offering its leaves. Many light a ghee lamp before Vishnu through the evening. It falls in the rains, a season of reflection.",
+     "ml": "ഭക്തർ വ്രതമെടുത്ത് വിഷ്ണുവിനെ ആരാധിക്കുന്നു; പ്രത്യേകിച്ച് തുളസിച്ചെടിയെ ആദരിക്കുന്നു: വെള്ളമൊഴിച്ച്, മുന്നിൽ വിളക്ക് കൊളുത്തി, ഇലകൾ അർപ്പിച്ച്. പലരും വൈകുന്നേരം മുഴുവൻ വിഷ്ണുവിന് മുന്നിൽ നെയ്‌വിളക്ക് കത്തിച്ചുവെക്കുന്നു. മഴക്കാലത്ത്, ആത്മപരിശോധനയുടെ കാലത്താണ് ഇത് വരുന്നത്."
     },
     "story": {
-     "en": "The story told is of a hot-tempered landowner who, in a quarrel, struck a Brahmin, who fell and did not survive. Overwhelmed with remorse, the landowner wished to make amends, but the village would not let him take part in its rites. A sage told him to keep Kamika Ekadashi with sincerity, worshipping Vishnu with tulsi, and he did so. The story is told of how heartfelt remorse and a turn toward goodness are honoured in tradition, and how the village took him back."
+     "en": "The story told is of a hot-tempered landowner who, in a quarrel, struck a Brahmin, who fell and did not survive. Overwhelmed with remorse, the landowner wished to make amends, but the village would not let him take part in its rites. A sage told him to keep Kamika Ekadashi with sincerity, worshipping Vishnu with tulsi, and he did so. The story is told of how heartfelt remorse and a turn toward goodness are honoured in tradition, and how the village took him back.",
+     "ml": "ഒരു വഴക്കിനിടെ ഒരു ബ്രാഹ്മണനെ അടിക്കുകയും അദ്ദേഹം വീണ് മരിക്കുകയും ചെയ്ത മുൻകോപിയായ ഒരു ഭൂവുടമയെക്കുറിച്ചാണ് കഥ. പശ്ചാത്താപത്താൽ തളർന്ന അയാൾ പരിഹാരം ചെയ്യാൻ ആഗ്രഹിച്ചു, പക്ഷേ ഗ്രാമം അയാളെ ചടങ്ങുകളിൽ പങ്കെടുപ്പിച്ചില്ല. ആത്മാർഥതയോടെ തുളസിയാൽ വിഷ്ണുവിനെ ആരാധിച്ച് കാമികാ ഏകാദശി ആചരിക്കാൻ ഒരു മുനി പറഞ്ഞു; അയാൾ അങ്ങനെ ചെയ്തു. ഹൃദയംഗമമായ പശ്ചാത്താപത്തെയും നന്മയിലേക്കുള്ള തിരിവിനെയും പാരമ്പര്യം എങ്ങനെ മാനിക്കുന്നുവെന്നും ഗ്രാമം അയാളെ എങ്ങനെ തിരികെ സ്വീകരിച്ചുവെന്നുമാണ് കഥ പറയുന്നത്."
     },
     "howTo": {
      "en": [
@@ -3588,6 +3683,13 @@
       "Water the tulsi plant, light a lamp before it and offer tulsi leaves to Vishnu.",
       "Keep a ghee lamp lit before Vishnu in the evening.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക.",
+      "തുളസിക്ക് വെള്ളമൊഴിക്കുക, മുന്നിൽ വിളക്ക് കൊളുത്തുക, തുളസിയിലകൾ വിഷ്ണുവിന് അർപ്പിക്കുക.",
+      "വൈകുന്നേരം വിഷ്ണുവിന് മുന്നിൽ നെയ്‌വിളക്ക് കത്തിച്ചുവെക്കുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -3622,13 +3724,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Shravana Shukla Ekadashi, traditionally kept by couples praying for children."
+     "en": "Shravana Shukla Ekadashi, traditionally kept by couples praying for children.",
+     "ml": "ശ്രാവണ ശുക്ല ഏകാദശി, സന്താനത്തിനായി പ്രാർഥിക്കുന്ന ദമ്പതികൾ പരമ്പരാഗതമായി ആചരിക്കുന്നത്."
     },
     "traditions": {
-     "en": "'Putrada' means 'giver of children'. Couples hoping for a child often keep this fast together, and parents keep it for their children's wellbeing. Vishnu is worshipped as Bal Gopal, the child Krishna. In the South this Ekadashi is also called Pavitropana Ekadashi, when a pavitra, a woven thread, is offered to Vishnu."
+     "en": "'Putrada' means 'giver of children'. Couples hoping for a child often keep this fast together, and parents keep it for their children's wellbeing. Vishnu is worshipped as Bal Gopal, the child Krishna. In the South this Ekadashi is also called Pavitropana Ekadashi, when a pavitra, a woven thread, is offered to Vishnu.",
+     "ml": "'പുത്രദ' എന്നാൽ സന്താനത്തെ നൽകുന്നത്. കുഞ്ഞിനായി ആഗ്രഹിക്കുന്ന ദമ്പതികൾ പലപ്പോഴും ഒരുമിച്ച് ഈ വ്രതമെടുക്കുന്നു; മക്കളുടെ ക്ഷേമത്തിനായി മാതാപിതാക്കളും ആചരിക്കുന്നു. ബാലഗോപാലനായ ഉണ്ണിക്കൃഷ്ണനായാണ് വിഷ്ണുവിനെ ആരാധിക്കുന്നത്. ദക്ഷിണേന്ത്യയിൽ ഈ ഏകാദശി പവിത്രോപന ഏകാദശി എന്നും അറിയപ്പെടുന്നു; അന്ന് നെയ്ത നൂലായ പവിത്രം വിഷ്ണുവിന് സമർപ്പിക്കുന്നു."
     },
     "story": {
-     "en": "King Mahijit of Mahishmati ruled his people well but had no children, and the sorrow weighed on him and his kingdom. His ministers went to the sage Lomasha, who saw that the king in an earlier life had once turned a thirsty cow away from water. He advised that the king and his people keep the Shravana Shukla Ekadashi together and offer its merit to the king. They did, and in time a son was born to the royal couple, and the kingdom celebrated."
+     "en": "King Mahijit of Mahishmati ruled his people well but had no children, and the sorrow weighed on him and his kingdom. His ministers went to the sage Lomasha, who saw that the king in an earlier life had once turned a thirsty cow away from water. He advised that the king and his people keep the Shravana Shukla Ekadashi together and offer its merit to the king. They did, and in time a son was born to the royal couple, and the kingdom celebrated.",
+     "ml": "മാഹിഷ്മതിയിലെ മഹീജിത് രാജാവ് പ്രജകളെ നന്നായി ഭരിച്ചു, പക്ഷേ മക്കളുണ്ടായിരുന്നില്ല; ആ ദുഃഖം രാജാവിനെയും രാജ്യത്തെയും ബാധിച്ചു. മന്ത്രിമാർ ലോമശ മുനിയെ സമീപിച്ചു; മുൻജന്മത്തിൽ രാജാവ് ദാഹിച്ചുവന്ന ഒരു പശുവിനെ വെള്ളത്തിൽനിന്ന് ആട്ടിയോടിച്ചത് മുനി കണ്ടു. രാജാവും പ്രജകളും ഒരുമിച്ച് ശ്രാവണ ശുക്ല ഏകാദശി ആചരിച്ച് അതിന്റെ പുണ്യം രാജാവിന് സമർപ്പിക്കാൻ മുനി ഉപദേശിച്ചു. അവർ അങ്ങനെ ചെയ്തു; കാലക്രമത്തിൽ രാജദമ്പതികൾക്ക് ഒരു മകൻ ജനിച്ചു, രാജ്യം ആഘോഷിച്ചു."
     },
     "howTo": {
      "en": [
@@ -3637,6 +3742,13 @@
       "Worship Bal Gopal or Vishnu with tulsi, butter and a lamp; hear the story of King Mahijit.",
       "Give water to animals and food to children in need.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക; ദമ്പതികൾക്ക് ഒരുമിച്ച് ആചരിക്കാം.",
+      "തുളസി, വെണ്ണ, വിളക്ക് എന്നിവയോടെ ബാലഗോപാലനെയോ വിഷ്ണുവിനെയോ ആരാധിക്കുക; മഹീജിത് രാജാവിന്റെ കഥ കേൾക്കുക.",
+      "മൃഗങ്ങൾക്ക് വെള്ളവും ആവശ്യക്കാരായ കുട്ടികൾക്ക് ഭക്ഷണവും നൽകുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -3671,13 +3783,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Bhadrapada Krishna Ekadashi (Shravana in the amanta reckoning), also called Annada Ekadashi."
+     "en": "Bhadrapada Krishna Ekadashi (Shravana in the amanta reckoning), also called Annada Ekadashi.",
+     "ml": "ഭാദ്രപദ കൃഷ്ണ ഏകാദശി (അമാന്ത രീതിയിൽ ശ്രാവണം), അന്നദ ഏകാദശി എന്നും പേര്."
     },
     "traditions": {
-     "en": "Coming a few days after Janmashtami, Aja Ekadashi is kept with a fast, worship of Vishnu and a night of bhajans in many homes. The story of King Harishchandra is read, and people reflect on keeping one's word through hard times."
+     "en": "Coming a few days after Janmashtami, Aja Ekadashi is kept with a fast, worship of Vishnu and a night of bhajans in many homes. The story of King Harishchandra is read, and people reflect on keeping one's word through hard times.",
+     "ml": "ജന്മാഷ്ടമി കഴിഞ്ഞ് ഏതാനും ദിവസങ്ങൾക്കുള്ളിൽ വരുന്ന അജ ഏകാദശി വ്രതത്തോടും വിഷ്ണുപൂജയോടും പല വീടുകളിലും ഭജനകളുടെ രാത്രിയോടും ആചരിക്കുന്നു. ഹരിശ്ചന്ദ്ര രാജാവിന്റെ കഥ വായിക്കുന്നു; കഠിനകാലത്തും വാക്ക് പാലിക്കുന്നതിനെക്കുറിച്ച് ആളുകൾ ചിന്തിക്കുന്നു."
     },
     "story": {
-     "en": "Harishchandra, king of Ayodhya, was famed for never telling a lie. Tested by the sage Vishvamitra, he gave up his kingdom to keep a promise, and to pay the sage's fee he sold his wife and son and himself, ending as a keeper of the cremation ground at Kashi. Through every hardship he did not break his word. When his young son died and his wife came to the ground unable to pay the fee, Harishchandra, heartbroken, still asked for it as his duty required. The sage Gautama had told him of Aja Ekadashi, which he kept, and the story ends with the gods appearing, restoring his son and kingdom, and honouring his truthfulness."
+     "en": "Harishchandra, king of Ayodhya, was famed for never telling a lie. Tested by the sage Vishvamitra, he gave up his kingdom to keep a promise, and to pay the sage's fee he sold his wife and son and himself, ending as a keeper of the cremation ground at Kashi. Through every hardship he did not break his word. When his young son died and his wife came to the ground unable to pay the fee, Harishchandra, heartbroken, still asked for it as his duty required. The sage Gautama had told him of Aja Ekadashi, which he kept, and the story ends with the gods appearing, restoring his son and kingdom, and honouring his truthfulness.",
+     "ml": "ഒരിക്കലും കള്ളം പറയാത്തവനായി പ്രസിദ്ധനായിരുന്നു അയോധ്യയിലെ ഹരിശ്ചന്ദ്ര രാജാവ്. വിശ്വാമിത്ര മുനി പരീക്ഷിച്ചപ്പോൾ, ഒരു വാഗ്ദാനം പാലിക്കാൻ അദ്ദേഹം രാജ്യം ഉപേക്ഷിച്ചു; മുനിക്കുള്ള ദക്ഷിണ നൽകാൻ ഭാര്യയെയും മകനെയും തന്നെത്തന്നെയും വിറ്റു; ഒടുവിൽ കാശിയിലെ ശ്മശാനത്തിന്റെ കാവൽക്കാരനായി. എല്ലാ ദുരിതങ്ങളിലും അദ്ദേഹം വാക്ക് തെറ്റിച്ചില്ല. കൊച്ചുമകൻ മരിച്ച്, കൂലി കൊടുക്കാൻ കഴിവില്ലാതെ ഭാര്യ ശ്മശാനത്തിലെത്തിയപ്പോഴും, ഹൃദയം തകർന്നിട്ടും കടമയനുസരിച്ച് ഹരിശ്ചന്ദ്രൻ അത് ചോദിച്ചു. ഗൗതമ മുനി പറഞ്ഞുകൊടുത്ത അജ ഏകാദശി അദ്ദേഹം ആചരിച്ചിരുന്നു; ദേവന്മാർ പ്രത്യക്ഷപ്പെട്ട് മകനെയും രാജ്യവും തിരികെ നൽകി, അദ്ദേഹത്തിന്റെ സത്യസന്ധതയെ ആദരിക്കുന്നിടത്താണ് കഥ അവസാനിക്കുന്നത്."
     },
     "howTo": {
      "en": [
@@ -3686,6 +3801,13 @@
       "Worship Vishnu with tulsi and a lamp, and read the story of Harishchandra.",
       "Sing bhajans in the evening, and reflect on a promise you mean to keep.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക.",
+      "തുളസിയും വിളക്കുമായി വിഷ്ണുവിനെ ആരാധിക്കുക; ഹരിശ്ചന്ദ്രന്റെ കഥ വായിക്കുക.",
+      "വൈകുന്നേരം ഭജന പാടുക; പാലിക്കാൻ ഉദ്ദേശിക്കുന്ന ഒരു വാഗ്ദാനത്തെക്കുറിച്ച് ചിന്തിക്കുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -3720,13 +3842,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Bhadrapada Shukla Ekadashi: Vishnu turns onto his side in his sleep; also Vamana Ekadashi."
+     "en": "Bhadrapada Shukla Ekadashi: Vishnu turns onto his side in his sleep; also Vamana Ekadashi.",
+     "ml": "ഭാദ്രപദ ശുക്ല ഏകാദശി: ഉറക്കത്തിൽ വിഷ്ണു വശം തിരിയുന്നു; വാമന ഏകാദശി എന്നും പേര്."
     },
     "traditions": {
-     "en": "Also called Parivartini Ekadashi, from 'turning'. Devotees fast and worship Vishnu in his Vamana form, the dwarf brahmin, with curd rice and flowers. In Maharashtra it falls during Ganeshotsav, and it is a day of quiet worship in the middle of chaturmas."
+     "en": "Also called Parivartini Ekadashi, from 'turning'. Devotees fast and worship Vishnu in his Vamana form, the dwarf brahmin, with curd rice and flowers. In Maharashtra it falls during Ganeshotsav, and it is a day of quiet worship in the middle of chaturmas.",
+     "ml": "'തിരിയൽ' എന്ന അർഥത്തിൽ പരിവർത്തിനി ഏകാദശി എന്നും വിളിക്കുന്നു. കുള്ളനായ ബ്രാഹ്മണബാലനായ വാമനരൂപത്തിൽ വിഷ്ണുവിനെ ഭക്തർ വ്രതമെടുത്ത് തൈർസാദവും പൂക്കളുമായി ആരാധിക്കുന്നു. മഹാരാഷ്ട്രയിൽ ഇത് ഗണേശോത്സവ കാലത്താണ് വരുന്നത്; ചാതുർമാസ്യത്തിന്റെ മധ്യത്തിലെ ശാന്തമായ ആരാധനയുടെ ദിവസമാണിത്."
     },
     "story": {
-     "en": "The asura king Bali, grandson of Prahlad, was generous and powerful and had come to rule the three worlds. Vishnu came to his sacrifice as Vamana, a small brahmin boy, and asked for just three steps of land. Bali, against his teacher's warning, gladly agreed. Vamana grew to cosmic size: with one step he covered the earth, with the second the heavens, and for the third Bali offered his own head. Moved by his generosity, Vishnu gave him the underworld to rule and promised to stay as his guardian. On this Ekadashi, tradition says, Vishnu, sleeping through chaturmas, turns onto his side."
+     "en": "The asura king Bali, grandson of Prahlad, was generous and powerful and had come to rule the three worlds. Vishnu came to his sacrifice as Vamana, a small brahmin boy, and asked for just three steps of land. Bali, against his teacher's warning, gladly agreed. Vamana grew to cosmic size: with one step he covered the earth, with the second the heavens, and for the third Bali offered his own head. Moved by his generosity, Vishnu gave him the underworld to rule and promised to stay as his guardian. On this Ekadashi, tradition says, Vishnu, sleeping through chaturmas, turns onto his side.",
+     "ml": "പ്രഹ്ലാദന്റെ പൗത്രനായ അസുരരാജാവ് മഹാബലി ഉദാരനും ശക്തനുമായിരുന്നു; മൂന്നുലോകങ്ങളും ഭരിക്കുന്ന നിലയിലെത്തി. ബലിയുടെ യാഗത്തിലേക്ക് വിഷ്ണു വാമനനെന്ന കൊച്ചു ബ്രാഹ്മണബാലനായി വന്ന് മൂന്നടി മണ്ണ് മാത്രം ചോദിച്ചു. ഗുരുവിന്റെ മുന്നറിയിപ്പ് വകവെക്കാതെ ബലി സന്തോഷത്തോടെ സമ്മതിച്ചു. വാമനൻ പ്രപഞ്ചത്തോളം വളർന്നു: ഒരടികൊണ്ട് ഭൂമിയും രണ്ടാമത്തേതുകൊണ്ട് ആകാശവും അളന്നു; മൂന്നാമത്തേതിനായി ബലി സ്വന്തം ശിരസ്സ് കാണിച്ചുകൊടുത്തു. ആ ഉദാരതയിൽ സംപ്രീതനായ വിഷ്ണു അദ്ദേഹത്തിന് പാതാളം ഭരിക്കാൻ നൽകി, കാവലായി കൂടെ നിൽക്കാമെന്ന് വാഗ്ദാനം ചെയ്തു. ചാതുർമാസ്യം മുഴുവൻ ഉറങ്ങുന്ന വിഷ്ണു ഈ ഏകാദശിയിൽ വശം തിരിയുന്നുവെന്നാണ് പാരമ്പര്യം."
     },
     "howTo": {
      "en": [
@@ -3735,6 +3860,13 @@
       "Worship Vamana or Vishnu with tulsi, flowers and curd, and hear the story of Bali.",
       "Give something with an open hand, as Bali did.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക.",
+      "തുളസി, പൂക്കൾ, തൈര് എന്നിവയോടെ വാമനനെയോ വിഷ്ണുവിനെയോ ആരാധിക്കുക; മഹാബലിയുടെ കഥ കേൾക്കുക.",
+      "ബലിയെപ്പോലെ തുറന്ന കൈയോടെ എന്തെങ്കിലും ദാനം ചെയ്യുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -3769,13 +3901,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Ashvin Krishna Ekadashi (Bhadrapada in the amanta reckoning), in Pitru Paksha, kept for ancestors."
+     "en": "Ashvin Krishna Ekadashi (Bhadrapada in the amanta reckoning), in Pitru Paksha, kept for ancestors.",
+     "ml": "ആശ്വിന കൃഷ്ണ ഏകാദശി (അമാന്ത രീതിയിൽ ഭാദ്രപദം), പിതൃപക്ഷത്തിൽ, പിതൃക്കൾക്കായി ആചരിക്കുന്നത്."
     },
     "traditions": {
-     "en": "Falling within Pitru Paksha, Indira Ekadashi joins the Ekadashi fast to the remembrance of ancestors. Families keep the fast, worship Vishnu as Shaligram, and many perform a shraddha for their forebears on this day, offering food to Brahmins, cows and crows."
+     "en": "Falling within Pitru Paksha, Indira Ekadashi joins the Ekadashi fast to the remembrance of ancestors. Families keep the fast, worship Vishnu as Shaligram, and many perform a shraddha for their forebears on this day, offering food to Brahmins, cows and crows.",
+     "ml": "പിതൃപക്ഷത്തിൽ വരുന്നതിനാൽ ഇന്ദിരാ ഏകാദശി ഏകാദശിവ്രതത്തെ പിതൃസ്മരണയുമായി ചേർക്കുന്നു. കുടുംബങ്ങൾ വ്രതമെടുത്ത് സാളഗ്രാമമായി വിഷ്ണുവിനെ ആരാധിക്കുന്നു; പലരും ഈ ദിവസം പൂർവികർക്കായി ശ്രാദ്ധം നടത്തി ബ്രാഹ്മണർക്കും പശുക്കൾക്കും കാക്കകൾക്കും ഭക്ഷണം നൽകുന്നു."
     },
     "story": {
-     "en": "King Indrasena of Mahishmati was visited by the sage Narada, who brought news of the king's late father: in the afterlife, he wished his son would remember him. Narada told Indrasena how to keep the Ekadashi of Ashvin's dark fortnight, with shraddha for his father on the day before and fasting and worship on Ekadashi, and to offer its merit to him. The king kept it with his family and his people, and Narada later told him that his father was at peace. The story is the reason this Ekadashi is kept in remembrance of one's elders."
+     "en": "King Indrasena of Mahishmati was visited by the sage Narada, who brought news of the king's late father: in the afterlife, he wished his son would remember him. Narada told Indrasena how to keep the Ekadashi of Ashvin's dark fortnight, with shraddha for his father on the day before and fasting and worship on Ekadashi, and to offer its merit to him. The king kept it with his family and his people, and Narada later told him that his father was at peace. The story is the reason this Ekadashi is kept in remembrance of one's elders.",
+     "ml": "മാഹിഷ്മതിയിലെ ഇന്ദ്രസേന രാജാവിനെ നാരദ മുനി സന്ദർശിച്ച് അന്തരിച്ച പിതാവിന്റെ വിവരം അറിയിച്ചു: മകൻ തന്നെ ഓർക്കണമെന്ന് പരലോകത്ത് അദ്ദേഹം ആഗ്രഹിക്കുന്നു. തലേന്ന് പിതാവിനായി ശ്രാദ്ധവും ഏകാദശിയിൽ വ്രതവും പൂജയുമായി ആശ്വിന കൃഷ്ണപക്ഷത്തിലെ ഏകാദശി എങ്ങനെ ആചരിക്കണമെന്നും അതിന്റെ പുണ്യം പിതാവിന് സമർപ്പിക്കണമെന്നും നാരദൻ പറഞ്ഞുകൊടുത്തു. രാജാവ് കുടുംബത്തോടും പ്രജകളോടുമൊപ്പം അത് ആചരിച്ചു; പിതാവിന് ശാന്തി ലഭിച്ചുവെന്ന് പിന്നീട് നാരദൻ അറിയിച്ചു. മുതിർന്നവരുടെ സ്മരണയിൽ ഈ ഏകാദശി ആചരിക്കുന്നതിന്റെ കാരണം ഈ കഥയാണ്."
     },
     "howTo": {
      "en": [
@@ -3784,6 +3919,13 @@
       "Worship Vishnu with tulsi and a lamp, and remember your ancestors by name.",
       "If your family does, offer food to Brahmins, cows or crows, and give to those in need.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക.",
+      "തുളസിയും വിളക്കുമായി വിഷ്ണുവിനെ ആരാധിക്കുക; പൂർവികരെ പേരുചൊല്ലി ഓർക്കുക.",
+      "കുടുംബത്തിൽ പതിവുണ്ടെങ്കിൽ ബ്രാഹ്മണർക്കോ പശുക്കൾക്കോ കാക്കകൾക്കോ ഭക്ഷണം നൽകുക; ആവശ്യക്കാർക്ക് ദാനം ചെയ്യുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -3818,13 +3960,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Ashvin Shukla Ekadashi, the day after Dussehra."
+     "en": "Ashvin Shukla Ekadashi, the day after Dussehra.",
+     "ml": "ആശ്വിന ശുക്ല ഏകാദശി, വിജയദശമിയുടെ പിറ്റേന്ന്."
     },
     "traditions": {
-     "en": "Coming right after Vijayadashami, Papankusha Ekadashi is kept with a fast and worship of Vishnu as Padmanabha, the lotus-naveled. Giving is especially valued: food, clothes, grain, an umbrella or footwear. The name speaks of an 'ankusha', the goad that steers an elephant, and the day is seen as a time to steer oneself back toward good conduct."
+     "en": "Coming right after Vijayadashami, Papankusha Ekadashi is kept with a fast and worship of Vishnu as Padmanabha, the lotus-naveled. Giving is especially valued: food, clothes, grain, an umbrella or footwear. The name speaks of an 'ankusha', the goad that steers an elephant, and the day is seen as a time to steer oneself back toward good conduct.",
+     "ml": "വിജയദശമിക്ക് തൊട്ടുപിന്നാലെ വരുന്ന പാപാങ്കുശ ഏകാദശി വ്രതത്തോടും പദ്മനാഭനായ വിഷ്ണുവിന്റെ ആരാധനയോടും കൂടി ആചരിക്കുന്നു. ദാനത്തിന് പ്രത്യേക പ്രാധാന്യമുണ്ട്: ഭക്ഷണം, വസ്ത്രം, ധാന്യം, കുട, ചെരിപ്പ്. ആനയെ നയിക്കുന്ന തോട്ടിയായ 'അങ്കുശ'ത്തെക്കുറിച്ചാണ് പേര് പറയുന്നത്; സ്വയം നല്ല നടപ്പിലേക്ക് തിരികെ നയിക്കാനുള്ള സമയമായി ഈ ദിവസം കാണുന്നു."
     },
     "story": {
-     "en": "The story told is of Krodhana, a hunter in the Vindhya mountains who lived harshly and gave no thought to others. Near the end of his life, frightened and alone, he came to the ashram of the sage Angira and asked whether a life like his could still turn toward good. Angira told him of the Ekadashi of Ashvin's bright fortnight. Krodhana kept it with complete sincerity, and the story says that he found peace. The name 'Papankusha' is read as the goad that turns a person away from wrongdoing, at any point in life."
+     "en": "The story told is of Krodhana, a hunter in the Vindhya mountains who lived harshly and gave no thought to others. Near the end of his life, frightened and alone, he came to the ashram of the sage Angira and asked whether a life like his could still turn toward good. Angira told him of the Ekadashi of Ashvin's bright fortnight. Krodhana kept it with complete sincerity, and the story says that he found peace. The name 'Papankusha' is read as the goad that turns a person away from wrongdoing, at any point in life.",
+     "ml": "വിന്ധ്യാപർവതത്തിൽ കഠിനമായി ജീവിച്ച്, മറ്റുള്ളവരെക്കുറിച്ച് ചിന്തിക്കാതിരുന്ന ക്രോധനൻ എന്ന വേടനെക്കുറിച്ചാണ് കഥ. ജീവിതാന്ത്യത്തോടടുത്ത്, ഭയന്നും ഒറ്റപ്പെട്ടും, അവൻ അംഗിരസ് മുനിയുടെ ആശ്രമത്തിലെത്തി, തന്നെപ്പോലൊരാളുടെ ജീവിതത്തിന് ഇനിയും നന്മയിലേക്ക് തിരിയാനാകുമോ എന്ന് ചോദിച്ചു. ആശ്വിന ശുക്ലപക്ഷത്തിലെ ഏകാദശിയെക്കുറിച്ച് അംഗിരസ് പറഞ്ഞുകൊടുത്തു. ക്രോധനൻ പൂർണ ആത്മാർഥതയോടെ അത് ആചരിച്ചു; അവന് ശാന്തി ലഭിച്ചുവെന്ന് കഥ പറയുന്നു. ജീവിതത്തിന്റെ ഏതു ഘട്ടത്തിലും ഒരാളെ തെറ്റിൽനിന്ന് തിരിച്ചുവിടുന്ന തോട്ടിയായാണ് 'പാപാങ്കുശ' എന്ന പേര് വായിക്കപ്പെടുന്നത്."
     },
     "howTo": {
      "en": [
@@ -3833,6 +3978,13 @@
       "Worship Vishnu as Padmanabha with lotuses or other flowers, tulsi and a lamp.",
       "Give food, clothes or something useful to someone in need.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക.",
+      "താമരയോ മറ്റു പൂക്കളോ, തുളസി, വിളക്ക് എന്നിവയോടെ പദ്മനാഭനായ വിഷ്ണുവിനെ ആരാധിക്കുക.",
+      "ആവശ്യക്കാർക്ക് ഭക്ഷണമോ വസ്ത്രമോ ഉപകാരപ്രദമായ എന്തെങ്കിലുമോ നൽകുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -3867,13 +4019,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Kartika Krishna Ekadashi (Ashvin in the amanta reckoning), four days before Diwali."
+     "en": "Kartika Krishna Ekadashi (Ashvin in the amanta reckoning), four days before Diwali.",
+     "ml": "കാർത്തിക കൃഷ്ണ ഏകാദശി (അമാന്ത രീതിയിൽ ആശ്വിനം), ദീപാവലിക്ക് നാലുദിവസം മുമ്പ്."
     },
     "traditions": {
-     "en": "Named after Rama, a name of Lakshmi, this Ekadashi is kept with a fast and worship of Vishnu and Lakshmi together, as homes are being cleaned and readied for Diwali. Many light lamps before tulsi in the evening, as is done throughout Kartika."
+     "en": "Named after Rama, a name of Lakshmi, this Ekadashi is kept with a fast and worship of Vishnu and Lakshmi together, as homes are being cleaned and readied for Diwali. Many light lamps before tulsi in the evening, as is done throughout Kartika.",
+     "ml": "ലക്ഷ്മിയുടെ ഒരു പേരായ രമയുടെ പേരിലുള്ള ഈ ഏകാദശി, ദീപാവലിക്കായി വീടുകൾ വൃത്തിയാക്കി ഒരുക്കുന്ന സമയത്ത്, വ്രതത്തോടും വിഷ്ണുവിനെയും ലക്ഷ്മിയെയും ഒരുമിച്ച് ആരാധിച്ചും ആചരിക്കുന്നു. കാർത്തികമാസം മുഴുവനുമെന്ന പോലെ പലരും വൈകുന്നേരം തുളസിക്ക് മുന്നിൽ വിളക്ക് കൊളുത്തുന്നു."
     },
     "story": {
-     "en": "King Muchukunda, a devotee of Vishnu, had his whole kingdom keep Ekadashi. His daughter Chandrabhaga married Prince Shobhana, who was frail and found fasting very hard. When Rama Ekadashi came while Shobhana was visiting, Chandrabhaga, torn, encouraged him to keep it with everyone, and Shobhana, too weak, passed away in the night. Through the merit of the fast, the story says, he was given a beautiful city on Mount Mandarachala, but it could not last without a devotee's support. Chandrabhaga, who had kept every Ekadashi since childhood, journeyed there, offered him the merit of her own fasts, and the two lived together in the city, steadied by her devotion."
+     "en": "King Muchukunda, a devotee of Vishnu, had his whole kingdom keep Ekadashi. His daughter Chandrabhaga married Prince Shobhana, who was frail and found fasting very hard. When Rama Ekadashi came while Shobhana was visiting, Chandrabhaga, torn, encouraged him to keep it with everyone, and Shobhana, too weak, passed away in the night. Through the merit of the fast, the story says, he was given a beautiful city on Mount Mandarachala, but it could not last without a devotee's support. Chandrabhaga, who had kept every Ekadashi since childhood, journeyed there, offered him the merit of her own fasts, and the two lived together in the city, steadied by her devotion.",
+     "ml": "വിഷ്ണുഭക്തനായ മുചുകുന്ദ രാജാവ് രാജ്യം മുഴുവൻ ഏകാദശി ആചരിപ്പിച്ചു. അദ്ദേഹത്തിന്റെ മകൾ ചന്ദ്രഭാഗ ദുർബലനായ ശോഭന രാജകുമാരനെ വിവാഹം ചെയ്തു; അദ്ദേഹത്തിന് വ്രതം വളരെ പ്രയാസമായിരുന്നു. ശോഭനൻ സന്ദർശനത്തിനെത്തിയപ്പോൾ രമാ ഏകാദശി വന്നു; ആശയക്കുഴപ്പത്തിലായ ചന്ദ്രഭാഗ എല്ലാവരോടുമൊപ്പം ആചരിക്കാൻ പ്രോത്സാഹിപ്പിച്ചു; ഏറെ ദുർബലനായ ശോഭനൻ ആ രാത്രി മരണമടഞ്ഞു. വ്രതത്തിന്റെ പുണ്യത്താൽ മന്ദരാചലത്തിൽ മനോഹരമായ ഒരു നഗരം അദ്ദേഹത്തിന് ലഭിച്ചുവെന്നും, പക്ഷേ ഒരു ഭക്തയുടെ പിന്തുണയില്ലാതെ അത് നിലനിൽക്കില്ലായിരുന്നുവെന്നും കഥ പറയുന്നു. കുട്ടിക്കാലം മുതൽ എല്ലാ ഏകാദശിയും ആചരിച്ച ചന്ദ്രഭാഗ അവിടെയെത്തി സ്വന്തം വ്രതങ്ങളുടെ പുണ്യം അദ്ദേഹത്തിന് സമർപ്പിച്ചു; അവളുടെ ഭക്തിയുടെ ബലത്തിൽ ഇരുവരും ആ നഗരത്തിൽ ഒരുമിച്ച് ജീവിച്ചു."
     },
     "howTo": {
      "en": [
@@ -3882,6 +4037,13 @@
       "Worship Vishnu and Lakshmi together with tulsi, flowers and a lamp.",
       "Light a lamp before the tulsi plant in the evening.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക; വ്രതം പ്രയാസമാണെങ്കിൽ, കഥ തന്നെ സൂചിപ്പിക്കുന്നതുപോലെ, ലഘുവായി ആചരിക്കുക.",
+      "തുളസി, പൂക്കൾ, വിളക്ക് എന്നിവയോടെ വിഷ്ണുവിനെയും ലക്ഷ്മിയെയും ഒരുമിച്ച് ആരാധിക്കുക.",
+      "വൈകുന്നേരം തുളസിച്ചെടിക്ക് മുന്നിൽ വിളക്ക് കൊളുത്തുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -3916,13 +4078,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Kartika Shukla Ekadashi: Vishnu wakes from his four-month sleep; chaturmas ends."
+     "en": "Kartika Shukla Ekadashi: Vishnu wakes from his four-month sleep; chaturmas ends.",
+     "ml": "കാർത്തിക ശുക്ല ഏകാദശി: നാലുമാസത്തെ ഉറക്കത്തിൽനിന്ന് വിഷ്ണു ഉണരുന്നു; ചാതുർമാസ്യം അവസാനിക്കുന്നു."
     },
     "traditions": {
-     "en": "Also called Prabodhini Ekadashi and Dev Uthani Ekadashi, it ends chaturmas. In the evening, families draw Vishnu's footprints and a sugarcane canopy in the courtyard, place seasonal produce, water chestnuts, sugarcane, sweet potato and jujube, under it, and wake the god with bells, conch and songs: 'Utho Dev, baitho Dev'. Disciplines kept since Devshayani Ekadashi end today. Tulsi Vivah follows, and the season for weddings begins. In Pandharpur, the Kartiki Wari reaches Vitthal."
+     "en": "Also called Prabodhini Ekadashi and Dev Uthani Ekadashi, it ends chaturmas. In the evening, families draw Vishnu's footprints and a sugarcane canopy in the courtyard, place seasonal produce, water chestnuts, sugarcane, sweet potato and jujube, under it, and wake the god with bells, conch and songs: 'Utho Dev, baitho Dev'. Disciplines kept since Devshayani Ekadashi end today. Tulsi Vivah follows, and the season for weddings begins. In Pandharpur, the Kartiki Wari reaches Vitthal.",
+     "ml": "പ്രബോധിനി ഏകാദശി, ദേവ് ഉഠനി ഏകാദശി എന്നീ പേരുകളുമുള്ള ഈ ദിവസം ചാതുർമാസ്യം അവസാനിക്കുന്നു. വൈകുന്നേരം കുടുംബങ്ങൾ മുറ്റത്ത് വിഷ്ണുവിന്റെ പാദമുദ്രകൾ വരച്ച് കരിമ്പുകൊണ്ട് ഒരു മണ്ഡപം ഒരുക്കുന്നു; അതിനടിയിൽ കാലികമായ വിളകൾ, കരിമ്പ്, മധുരക്കിഴങ്ങ്, ഇലന്തപ്പഴം, വെള്ളച്ചെസ്റ്റ്നട്ട് എന്നിവ വെച്ച്, മണിയും ശംഖും പാട്ടുമായി 'ഉഠോ ദേവ്, ബൈഠോ ദേവ്' എന്നു പാടി ദേവനെ ഉണർത്തുന്നു. ദേവശയനി ഏകാദശി മുതൽ ആചരിച്ച നിഷ്ഠകൾ ഇന്ന് അവസാനിക്കുന്നു. തുടർന്ന് തുളസീവിവാഹം; വിവാഹകാലം ആരംഭിക്കുന്നു. പണ്ഡർപൂരിൽ കാർത്തികി വാരി വിഠലന്റെ സന്നിധിയിലെത്തുന്നു."
     },
     "story": {
-     "en": "Having entered yoga nidra on Devshayani Ekadashi, Vishnu wakes on this day after four months. One telling explains the sleep itself: after a long struggle against the asura Shankhasura, Vishnu rested in the ocean of milk, and the gods agreed to keep watch through the rains. Another tells that Vishnu promised Bali, ruler of the underworld, that he would dwell with him for four months of every year; on Devutthana Ekadashi he returns. Either way, the household wakes him with joy, and the year's celebrations can begin again."
+     "en": "Having entered yoga nidra on Devshayani Ekadashi, Vishnu wakes on this day after four months. One telling explains the sleep itself: after a long struggle against the asura Shankhasura, Vishnu rested in the ocean of milk, and the gods agreed to keep watch through the rains. Another tells that Vishnu promised Bali, ruler of the underworld, that he would dwell with him for four months of every year; on Devutthana Ekadashi he returns. Either way, the household wakes him with joy, and the year's celebrations can begin again.",
+     "ml": "ദേവശയനി ഏകാദശിയിൽ യോഗനിദ്രയിലേക്ക് പ്രവേശിച്ച വിഷ്ണു നാലുമാസത്തിനുശേഷം ഈ ദിവസം ഉണരുന്നു. ഒരു കഥ ഉറക്കത്തിന്റെ കാരണം പറയുന്നു: ശംഖാസുരനുമായുള്ള നീണ്ട യുദ്ധത്തിനുശേഷം വിഷ്ണു പാലാഴിയിൽ വിശ്രമിച്ചു; മഴക്കാലം മുഴുവൻ ദേവന്മാർ കാവൽ നിൽക്കാമെന്ന് സമ്മതിച്ചു. മറ്റൊരു കഥയിൽ, പാതാളത്തിന്റെ അധിപനായ മഹാബലിയോടൊപ്പം എല്ലാ വർഷവും നാലുമാസം വസിക്കാമെന്ന് വിഷ്ണു വാഗ്ദാനം ചെയ്തിരുന്നു; ദേവോത്ഥാന ഏകാദശിയിൽ അദ്ദേഹം മടങ്ങിയെത്തുന്നു. ഏതായാലും വീട്ടുകാർ സന്തോഷത്തോടെ അദ്ദേഹത്തെ ഉണർത്തുന്നു; വർഷത്തിലെ ആഘോഷങ്ങൾ വീണ്ടും ആരംഭിക്കാം."
     },
     "howTo": {
      "en": [
@@ -3931,6 +4096,13 @@
       "Place seasonal fruit and vegetables under it, light lamps around it, and worship Vishnu.",
       "Wake him with a bell or conch and the song 'Utho Dev, baitho Dev'.",
       "End any chaturmas discipline today, and break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക.",
+      "വൈകുന്നേരം മുറ്റത്ത് അരിമാവോ ചോക്കോ കൊണ്ട് വിഷ്ണുവിന്റെ പാദമുദ്രകൾ വരച്ച് കരിമ്പുകൊണ്ട് ചെറിയ മണ്ഡപം ഒരുക്കുക.",
+      "അതിനടിയിൽ കാലികമായ പഴങ്ങളും പച്ചക്കറികളും വെച്ച്, ചുറ്റും വിളക്കുകൾ കൊളുത്തി വിഷ്ണുവിനെ ആരാധിക്കുക.",
+      "മണിയോ ശംഖോ മുഴക്കി 'ഉഠോ ദേവ്, ബൈഠോ ദേവ്' എന്ന പാട്ടോടെ അദ്ദേഹത്തെ ഉണർത്തുക.",
+      "ചാതുർമാസ്യ നിഷ്ഠ ഇന്ന് അവസാനിപ്പിക്കുക; പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -3965,13 +4137,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Margashirsha Krishna Ekadashi (Kartika in the amanta reckoning): the birth of Ekadashi herself."
+     "en": "Margashirsha Krishna Ekadashi (Kartika in the amanta reckoning): the birth of Ekadashi herself.",
+     "ml": "മാർഗശീർഷ കൃഷ്ണ ഏകാദശി (അമാന്ത രീതിയിൽ കാർത്തികം): ഏകാദശീദേവിയുടെ ജനനം."
     },
     "traditions": {
-     "en": "'Utpanna' means 'arisen'. This is traditionally the Ekadashi on which people who wish to begin keeping Ekadashis start, since it remembers the day Ekadashi was born. Devotees fast and worship Vishnu, and hear the story of Ekadashi Devi."
+     "en": "'Utpanna' means 'arisen'. This is traditionally the Ekadashi on which people who wish to begin keeping Ekadashis start, since it remembers the day Ekadashi was born. Devotees fast and worship Vishnu, and hear the story of Ekadashi Devi.",
+     "ml": "'ഉത്പന്ന' എന്നാൽ ഉദിച്ചത്. ഏകാദശി ജനിച്ച ദിവസത്തെ ഓർക്കുന്നതിനാൽ, ഏകാദശിവ്രതം തുടങ്ങാൻ ആഗ്രഹിക്കുന്നവർ പരമ്പരാഗതമായി ഈ ഏകാദശിയിലാണ് ആരംഭിക്കുന്നത്. ഭക്തർ വ്രതമെടുത്ത് വിഷ്ണുവിനെ ആരാധിച്ച് ഏകാദശീദേവിയുടെ കഥ കേൾക്കുന്നു."
     },
     "story": {
-     "en": "The asura Mura had driven the gods from heaven, and Vishnu fought him for a thousand years. Tired, Vishnu went to rest in a cave at Badrikashram. Mura followed him there, meaning to strike while he slept. From Vishnu's body arose a radiant goddess, who faced Mura and overcame him. When Vishnu woke and saw what had happened, he named her Ekadashi, since she had appeared on the eleventh day, and granted that those who keep her day would be dear to him. From that day, the story says, Ekadashi has been kept."
+     "en": "The asura Mura had driven the gods from heaven, and Vishnu fought him for a thousand years. Tired, Vishnu went to rest in a cave at Badrikashram. Mura followed him there, meaning to strike while he slept. From Vishnu's body arose a radiant goddess, who faced Mura and overcame him. When Vishnu woke and saw what had happened, he named her Ekadashi, since she had appeared on the eleventh day, and granted that those who keep her day would be dear to him. From that day, the story says, Ekadashi has been kept.",
+     "ml": "മുരൻ എന്ന അസുരൻ ദേവന്മാരെ സ്വർഗത്തിൽനിന്ന് ഓടിച്ചു; ആയിരം വർഷം വിഷ്ണു അവനോട് യുദ്ധം ചെയ്തു. ക്ഷീണിതനായ വിഷ്ണു ബദരികാശ്രമത്തിലെ ഒരു ഗുഹയിൽ വിശ്രമിക്കാൻ പോയി. ഉറങ്ങുമ്പോൾ ആക്രമിക്കാൻ ഉദ്ദേശിച്ച് മുരൻ അവിടെയും പിന്തുടർന്നു. വിഷ്ണുവിന്റെ ശരീരത്തിൽനിന്ന് തേജസ്വിനിയായ ഒരു ദേവി ഉദിച്ച് മുരനെ നേരിട്ട് കീഴടക്കി. ഉണർന്ന വിഷ്ണു സംഭവിച്ചതു കണ്ട്, പതിനൊന്നാം ദിവസം പ്രത്യക്ഷപ്പെട്ടതിനാൽ അവൾക്ക് ഏകാദശി എന്ന് പേരിട്ടു; അവളുടെ ദിവസം ആചരിക്കുന്നവർ തനിക്ക് പ്രിയപ്പെട്ടവരാകുമെന്ന് വരം നൽകി. അന്നുമുതൽ ഏകാദശി ആചരിക്കപ്പെടുന്നുവെന്ന് കഥ പറയുന്നു."
     },
     "howTo": {
      "en": [
@@ -3980,6 +4155,13 @@
       "Fast on Ekadashi from grains and beans.",
       "Worship Vishnu with tulsi and a lamp, and hear the story of Ekadashi Devi.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "ഏകാദശിവ്രതം തുടങ്ങുകയാണെങ്കിൽ ഇതാണ് പരമ്പരാഗത ദിവസം; പഴവും പാലുമായി സൗമ്യമായി തുടങ്ങുക.",
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക.",
+      "തുളസിയും വിളക്കുമായി വിഷ്ണുവിനെ ആരാധിക്കുക; ഏകാദശീദേവിയുടെ കഥ കേൾക്കുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -4014,13 +4196,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Margashirsha Shukla Ekadashi: the Gita's day, also Vaikunta Ekadashi in many traditions."
+     "en": "Margashirsha Shukla Ekadashi: the Gita's day, also Vaikunta Ekadashi in many traditions.",
+     "ml": "മാർഗശീർഷ ശുക്ല ഏകാദശി: ഗീതയുടെ ദിവസം; പല പാരമ്പര്യങ്ങളിലും വൈകുണ്ഠ ഏകാദശി."
     },
     "traditions": {
-     "en": "Mokshada Ekadashi coincides with Gita Jayanti, and many people read the Bhagavad Gita through the day while keeping the fast. In South India the Ekadashi of the solar month of Margazhi (often this one or the next) is Vaikunta Ekadashi, when the northern 'gate of Vaikuntha' in Vishnu temples is opened at dawn."
+     "en": "Mokshada Ekadashi coincides with Gita Jayanti, and many people read the Bhagavad Gita through the day while keeping the fast. In South India the Ekadashi of the solar month of Margazhi (often this one or the next) is Vaikunta Ekadashi, when the northern 'gate of Vaikuntha' in Vishnu temples is opened at dawn.",
+     "ml": "മോക്ഷദ ഏകാദശി ഗീതാജയന്തിയോടൊപ്പമാണ് വരുന്നത്; പലരും വ്രതമെടുത്ത് ദിവസം മുഴുവൻ ഭഗവദ്ഗീത പാരായണം ചെയ്യുന്നു. ദക്ഷിണേന്ത്യയിൽ ധനുമാസത്തിലെ ഏകാദശി (പലപ്പോഴും ഇതോ അടുത്തതോ) വൈകുണ്ഠ ഏകാദശിയാണ്; അന്ന് പുലർച്ചെ വിഷ്ണുക്ഷേത്രങ്ങളിലെ വടക്കേ 'വൈകുണ്ഠ കവാടം' തുറക്കുന്നു."
     },
     "story": {
-     "en": "King Vaikhanasa of Champaka dreamt that his late father was unhappy in the afterlife. Troubled, he asked the learned men of his court, who sent him to the sage Parvata. The sage saw that his father had once been unkind to his own wife, and advised the king to keep the Ekadashi of Margashirsha's bright fortnight and offer its merit to his father. Vaikhanasa kept it with his family, and the story says his father appeared to him in a dream, at peace, and blessed him. 'Mokshada' means 'the giver of freedom'."
+     "en": "King Vaikhanasa of Champaka dreamt that his late father was unhappy in the afterlife. Troubled, he asked the learned men of his court, who sent him to the sage Parvata. The sage saw that his father had once been unkind to his own wife, and advised the king to keep the Ekadashi of Margashirsha's bright fortnight and offer its merit to his father. Vaikhanasa kept it with his family, and the story says his father appeared to him in a dream, at peace, and blessed him. 'Mokshada' means 'the giver of freedom'.",
+     "ml": "ചമ്പകനഗരത്തിലെ വൈഖാനസ രാജാവ് അന്തരിച്ച പിതാവ് പരലോകത്ത് ദുഃഖിതനാണെന്ന് സ്വപ്നം കണ്ടു. അസ്വസ്ഥനായ അദ്ദേഹം സഭയിലെ പണ്ഡിതരോട് ചോദിച്ചു; അവർ അദ്ദേഹത്തെ പർവത മുനിയുടെ അടുത്തേക്ക് അയച്ചു. പിതാവ് ഒരിക്കൽ സ്വന്തം ഭാര്യയോട് ദയയില്ലാതെ പെരുമാറിയിരുന്നുവെന്ന് മുനി കണ്ടു; മാർഗശീർഷ ശുക്ലപക്ഷത്തിലെ ഏകാദശി ആചരിച്ച് അതിന്റെ പുണ്യം പിതാവിന് സമർപ്പിക്കാൻ രാജാവിനോട് ഉപദേശിച്ചു. വൈഖാനസൻ കുടുംബത്തോടൊപ്പം അത് ആചരിച്ചു; പിതാവ് ശാന്തനായി സ്വപ്നത്തിൽ പ്രത്യക്ഷപ്പെട്ട് അനുഗ്രഹിച്ചുവെന്ന് കഥ പറയുന്നു. 'മോക്ഷദ' എന്നാൽ 'മോചനം നൽകുന്നത്'."
     },
     "howTo": {
      "en": [
@@ -4029,6 +4214,13 @@
       "Worship Krishna or Vishnu with tulsi and a lamp, and read the Bhagavad Gita, all or in part.",
       "Remember your elders, and hear the story of King Vaikhanasa.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക.",
+      "തുളസിയും വിളക്കുമായി കൃഷ്ണനെയോ വിഷ്ണുവിനെയോ ആരാധിക്കുക; ഭഗവദ്ഗീത മുഴുവനായോ ഭാഗികമായോ പാരായണം ചെയ്യുക.",
+      "മുതിർന്നവരെ ഓർക്കുക; വൈഖാനസ രാജാവിന്റെ കഥ കേൾക്കുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -4063,13 +4255,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Pausha Krishna Ekadashi (Margashirsha in the amanta reckoning)."
+     "en": "Pausha Krishna Ekadashi (Margashirsha in the amanta reckoning).",
+     "ml": "പൗഷ കൃഷ്ണ ഏകാദശി (അമാന്ത രീതിയിൽ മാർഗശീർഷം)."
     },
     "traditions": {
-     "en": "'Saphala' means fruitful. Devotees fast, worship Vishnu with seasonal fruit, and keep a night vigil with bhajans and lamps. Offering fruit and giving it away is a characteristic custom of the day."
+     "en": "'Saphala' means fruitful. Devotees fast, worship Vishnu with seasonal fruit, and keep a night vigil with bhajans and lamps. Offering fruit and giving it away is a characteristic custom of the day.",
+     "ml": "'സഫല' എന്നാൽ ഫലപ്രദം. ഭക്തർ വ്രതമെടുത്ത് കാലികമായ പഴങ്ങളാൽ വിഷ്ണുവിനെ ആരാധിക്കുന്നു; ഭജനകളും വിളക്കുകളുമായി രാത്രി ഉറക്കമൊഴിയുന്നു. പഴങ്ങൾ അർപ്പിക്കുന്നതും ദാനം ചെയ്യുന്നതും ഈ ദിവസത്തിന്റെ സവിശേഷ ആചാരമാണ്."
     },
     "story": {
-     "en": "King Mahishmata of Champavati had four sons, and the eldest, Lumpaka, lived recklessly and was sent away from the kingdom. He lived in the forest under a peepal tree, surviving on fruit. On Dashami night he was too cold to sleep, and through Ekadashi too weak to gather food; he gathered some fruit, offered it under the tree to Vishnu, and stayed awake that night, without knowing he was keeping Saphala Ekadashi. The story says his heart changed through that unknowing vigil, and he returned to his father, who welcomed him. He became a good king."
+     "en": "King Mahishmata of Champavati had four sons, and the eldest, Lumpaka, lived recklessly and was sent away from the kingdom. He lived in the forest under a peepal tree, surviving on fruit. On Dashami night he was too cold to sleep, and through Ekadashi too weak to gather food; he gathered some fruit, offered it under the tree to Vishnu, and stayed awake that night, without knowing he was keeping Saphala Ekadashi. The story says his heart changed through that unknowing vigil, and he returned to his father, who welcomed him. He became a good king.",
+     "ml": "ചമ്പാവതിയിലെ മഹിഷ്മത രാജാവിന് നാല് പുത്രന്മാരുണ്ടായിരുന്നു; മൂത്തവനായ ലുമ്പകൻ അലക്ഷ്യമായി ജീവിച്ചതിനാൽ രാജ്യത്തുനിന്ന് പുറത്താക്കപ്പെട്ടു. അവൻ കാട്ടിൽ ഒരു അരയാലിന്റെ ചുവട്ടിൽ പഴങ്ങൾ കഴിച്ച് ജീവിച്ചു. ദശമി രാത്രി തണുപ്പുകാരണം ഉറങ്ങാനായില്ല; ഏകാദശി ദിവസം ഭക്ഷണം ശേഖരിക്കാൻ കഴിയാത്തത്ര ദുർബലനായി; കുറച്ചു പഴങ്ങൾ ശേഖരിച്ച് മരച്ചുവട്ടിൽ വിഷ്ണുവിന് അർപ്പിച്ച് ആ രാത്രി ഉറങ്ങാതിരുന്നു; സഫല ഏകാദശി ആചരിക്കുകയാണെന്ന് അറിയാതെ. അറിയാതെയുള്ള ആ ഉറക്കമൊഴിയലിലൂടെ അവന്റെ മനസ്സ് മാറിയെന്നും, അവൻ അച്ഛന്റെ അടുത്തേക്ക് മടങ്ങിയെന്നും, അച്ഛൻ അവനെ സ്വീകരിച്ചുവെന്നും കഥ പറയുന്നു. അവൻ നല്ലൊരു രാജാവായി."
     },
     "howTo": {
      "en": [
@@ -4078,6 +4273,13 @@
       "Worship Vishnu with seasonal fruit, tulsi and a lamp.",
       "Keep a vigil with bhajans for part of the night, and give fruit to others.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക.",
+      "കാലികമായ പഴങ്ങൾ, തുളസി, വിളക്ക് എന്നിവയോടെ വിഷ്ണുവിനെ ആരാധിക്കുക.",
+      "രാത്രിയുടെ ഒരു ഭാഗം ഭജനകളോടെ ഉറക്കമൊഴിയുക; മറ്റുള്ളവർക്ക് പഴങ്ങൾ നൽകുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -4112,13 +4314,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Pausha Shukla Ekadashi, the winter Putrada Ekadashi."
+     "en": "Pausha Shukla Ekadashi, the winter Putrada Ekadashi.",
+     "ml": "പൗഷ ശുക്ല ഏകാദശി, ശീതകാലത്തെ പുത്രദ ഏകാദശി."
     },
     "traditions": {
-     "en": "Like Shravana Putrada Ekadashi, this day is traditionally kept by couples hoping for children and by parents for their children's wellbeing. Vishnu is worshipped with tulsi, and many give warm clothes and food in the cold of Pausha. In the South it often coincides with Vaikunta Ekadashi."
+     "en": "Like Shravana Putrada Ekadashi, this day is traditionally kept by couples hoping for children and by parents for their children's wellbeing. Vishnu is worshipped with tulsi, and many give warm clothes and food in the cold of Pausha. In the South it often coincides with Vaikunta Ekadashi.",
+     "ml": "ശ്രാവണ പുത്രദ ഏകാദശിയെപ്പോലെ, സന്താനത്തിനായി ആഗ്രഹിക്കുന്ന ദമ്പതികളും മക്കളുടെ ക്ഷേമത്തിനായി മാതാപിതാക്കളും പരമ്പരാഗതമായി ഈ ദിവസം ആചരിക്കുന്നു. തുളസിയാൽ വിഷ്ണുവിനെ ആരാധിക്കുന്നു; പൗഷത്തിലെ തണുപ്പിൽ പലരും ചൂടുവസ്ത്രങ്ങളും ഭക്ഷണവും ദാനം ചെയ്യുന്നു. ദക്ഷിണേന്ത്യയിൽ ഇത് പലപ്പോഴും വൈകുണ്ഠ ഏകാദശിയോടൊപ്പം വരുന്നു."
     },
     "story": {
-     "en": "King Suketuman of Bhadravati and Queen Shaibya had no children, and the king, worrying about who would carry the family forward, grew so troubled that he went alone into the forest. There, by a lotus lake, he found a gathering of sages who told him it was Pausha Shukla Ekadashi and advised him to keep it. He did, with full faith, and returning home kept the observance with the queen. In time a son was born to them, who grew into a kind and capable king."
+     "en": "King Suketuman of Bhadravati and Queen Shaibya had no children, and the king, worrying about who would carry the family forward, grew so troubled that he went alone into the forest. There, by a lotus lake, he found a gathering of sages who told him it was Pausha Shukla Ekadashi and advised him to keep it. He did, with full faith, and returning home kept the observance with the queen. In time a son was born to them, who grew into a kind and capable king.",
+     "ml": "ഭദ്രാവതിയിലെ സുകേതുമാൻ രാജാവിനും ശൈബ്യാ രാജ്ഞിക്കും മക്കളുണ്ടായിരുന്നില്ല; കുടുംബം ആര് മുന്നോട്ട് കൊണ്ടുപോകുമെന്ന ആശങ്കയിൽ ഏറെ വിഷമിച്ച രാജാവ് ഒറ്റയ്ക്ക് കാട്ടിലേക്ക് പോയി. അവിടെ ഒരു താമരപ്പൊയ്കയുടെ തീരത്ത് ഒരു മുനിസംഘത്തെ കണ്ടു; അന്ന് പൗഷ ശുക്ല ഏകാദശിയാണെന്നും അത് ആചരിക്കണമെന്നും അവർ ഉപദേശിച്ചു. പൂർണ വിശ്വാസത്തോടെ അദ്ദേഹം ആചരിച്ചു; വീട്ടിൽ മടങ്ങിയെത്തി രാജ്ഞിയോടൊപ്പവും ആചരിച്ചു. കാലക്രമത്തിൽ അവർക്ക് ഒരു മകൻ ജനിച്ചു; അവൻ ദയാലുവും സമർഥനുമായ രാജാവായി വളർന്നു."
     },
     "howTo": {
      "en": [
@@ -4127,6 +4332,13 @@
       "Worship Vishnu with tulsi and a lamp, and hear the story of King Suketuman.",
       "Give warm clothes or food to someone in the cold.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക; ദമ്പതികൾക്ക് ഒരുമിച്ച് ആചരിക്കാം.",
+      "തുളസിയും വിളക്കുമായി വിഷ്ണുവിനെ ആരാധിക്കുക; സുകേതുമാൻ രാജാവിന്റെ കഥ കേൾക്കുക.",
+      "തണുപ്പിൽ കഴിയുന്നവർക്ക് ചൂടുവസ്ത്രമോ ഭക്ഷണമോ നൽകുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -4161,13 +4373,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Magha Krishna Ekadashi (Pausha in the amanta reckoning): the Ekadashi of sesame, used in six ways."
+     "en": "Magha Krishna Ekadashi (Pausha in the amanta reckoning): the Ekadashi of sesame, used in six ways.",
+     "ml": "മാഘ കൃഷ്ണ ഏകാദശി (അമാന്ത രീതിയിൽ പൗഷം): ആറു വിധത്തിൽ എള്ള് ഉപയോഗിക്കുന്ന ഏകാദശി."
     },
     "traditions": {
-     "en": "'Shat-tila' means 'six sesames'. Tradition uses sesame six ways on this day: in a paste for bathing, in the bath water, in a small fire offering, in water offered to ancestors, in food, and as a gift. Sesame laddoos and sesame given to those in need are central to the day, in the depth of winter."
+     "en": "'Shat-tila' means 'six sesames'. Tradition uses sesame six ways on this day: in a paste for bathing, in the bath water, in a small fire offering, in water offered to ancestors, in food, and as a gift. Sesame laddoos and sesame given to those in need are central to the day, in the depth of winter.",
+     "ml": "'ഷട്-തില' എന്നാൽ 'ആറ് എള്ള്'. ഈ ദിവസം പാരമ്പര്യം എള്ള് ആറു വിധത്തിൽ ഉപയോഗിക്കുന്നു: കുളിക്കാനുള്ള കുഴമ്പിൽ, കുളിവെള്ളത്തിൽ, ചെറിയ ഹോമത്തിൽ, പിതൃക്കൾക്കുള്ള തർപ്പണജലത്തിൽ, ഭക്ഷണത്തിൽ, ദാനമായി. കൊടുംശൈത്യത്തിൽ എള്ളുണ്ടയും ആവശ്യക്കാർക്ക് എള്ള് ദാനവുമാണ് ഈ ദിവസത്തിന്റെ കേന്ദ്രം."
     },
     "story": {
-     "en": "The story told is of a devout woman who kept every fast with great discipline but had never given food to anyone. Vishnu came to her door as a mendicant to ask for alms, and she, irritated, dropped a lump of clay into his bowl. In the afterlife she was given a beautiful house, but it was empty of food and grain. Vishnu explained why, and told her to ask the celestial women who came to visit her about Shattila Ekadashi. She kept it, with sesame given generously, and her house was filled. The story is about the kindness that should go along with discipline."
+     "en": "The story told is of a devout woman who kept every fast with great discipline but had never given food to anyone. Vishnu came to her door as a mendicant to ask for alms, and she, irritated, dropped a lump of clay into his bowl. In the afterlife she was given a beautiful house, but it was empty of food and grain. Vishnu explained why, and told her to ask the celestial women who came to visit her about Shattila Ekadashi. She kept it, with sesame given generously, and her house was filled. The story is about the kindness that should go along with discipline.",
+     "ml": "എല്ലാ വ്രതങ്ങളും വലിയ നിഷ്ഠയോടെ ആചരിച്ചിരുന്നെങ്കിലും ആർക്കും ഒരിക്കലും ഭക്ഷണം നൽകിയിട്ടില്ലാത്ത ഒരു ഭക്തയെക്കുറിച്ചാണ് കഥ. വിഷ്ണു ഭിക്ഷുവായി അവളുടെ വാതിൽക്കൽ ഭിക്ഷ ചോദിച്ചെത്തി; അസ്വസ്ഥയായ അവൾ അദ്ദേഹത്തിന്റെ പാത്രത്തിൽ ഒരു മൺകട്ട ഇട്ടു. പരലോകത്ത് അവൾക്ക് മനോഹരമായ ഒരു വീട് ലഭിച്ചു, പക്ഷേ അതിൽ ഭക്ഷണമോ ധാന്യമോ ഉണ്ടായിരുന്നില്ല. വിഷ്ണു കാരണം വിശദീകരിച്ച്, അവളെ കാണാനെത്തുന്ന ദേവസ്ത്രീകളോട് ഷട്തില ഏകാദശിയെക്കുറിച്ച് ചോദിക്കാൻ പറഞ്ഞു. ഉദാരമായി എള്ള് ദാനം ചെയ്ത് അവൾ അത് ആചരിച്ചു; അവളുടെ വീട് നിറഞ്ഞു. നിഷ്ഠയോടൊപ്പം വേണ്ട ദയയെക്കുറിച്ചാണ് ഈ കഥ."
     },
     "howTo": {
      "en": [
@@ -4176,6 +4391,13 @@
       "Fast from grains and beans; sesame sweets are commonly eaten.",
       "Worship Vishnu with sesame, tulsi and a lamp, and offer water with sesame for your ancestors.",
       "Give sesame, sesame sweets, or warm food to someone in need, then break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ അൽപം എള്ള് കുഴമ്പ് തേച്ചോ വെള്ളത്തിൽ എള്ളിട്ടോ കുളിക്കുക.",
+      "ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക; എള്ളുകൊണ്ടുള്ള മധുരങ്ങൾ സാധാരണയായി കഴിക്കുന്നു.",
+      "എള്ള്, തുളസി, വിളക്ക് എന്നിവയോടെ വിഷ്ണുവിനെ ആരാധിക്കുക; പിതൃക്കൾക്ക് എള്ളും ജലവും അർപ്പിക്കുക.",
+      "ആവശ്യക്കാർക്ക് എള്ളോ എള്ളുമധുരമോ ചൂടുള്ള ഭക്ഷണമോ നൽകുക; പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -4210,13 +4432,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Magha Shukla Ekadashi, a few days after Vasant Panchami."
+     "en": "Magha Shukla Ekadashi, a few days after Vasant Panchami.",
+     "ml": "മാഘ ശുക്ല ഏകാദശി, വസന്തപഞ്ചമി കഴിഞ്ഞ് ഏതാനും ദിവസങ്ങൾക്കുള്ളിൽ."
     },
     "traditions": {
-     "en": "'Jaya' means victory. Devotees fast and worship Vishnu, and many keep a night vigil. In parts of the South this day is also called Bhumi Ekadashi or Bhishma Ekadashi, and the Vishnu Sahasranama, recited by Bhishma, is chanted."
+     "en": "'Jaya' means victory. Devotees fast and worship Vishnu, and many keep a night vigil. In parts of the South this day is also called Bhumi Ekadashi or Bhishma Ekadashi, and the Vishnu Sahasranama, recited by Bhishma, is chanted.",
+     "ml": "'ജയ' എന്നാൽ വിജയം. ഭക്തർ വ്രതമെടുത്ത് വിഷ്ണുവിനെ ആരാധിക്കുന്നു; പലരും രാത്രി ഉറക്കമൊഴിയുന്നു. ദക്ഷിണേന്ത്യയുടെ ചില ഭാഗങ്ങളിൽ ഈ ദിവസം ഭൂമി ഏകാദശി എന്നും ഭീഷ്മ ഏകാദശി എന്നും അറിയപ്പെടുന്നു; ഭീഷ്മർ ഉപദേശിച്ച വിഷ്ണുസഹസ്രനാമം ജപിക്കുന്നു."
     },
     "story": {
-     "en": "At Indra's court, the gandharva Malyavan and the dancer Pushpavati fell in love, and lost in each other, sang and danced carelessly before Indra. In his displeasure, Indra sent them down to the Himalayas as pishachas, restless spirits. They wandered in the cold, unhappy, unable to sleep or eat. One Magha Shukla Ekadashi they were too cold and miserable to eat anything, and sat awake all night beneath a peepal tree, remembering Vishnu. Without meaning to, they had kept Jaya Ekadashi. The next morning they were restored to their own forms and returned to heaven, where even Indra welcomed them."
+     "en": "At Indra's court, the gandharva Malyavan and the dancer Pushpavati fell in love, and lost in each other, sang and danced carelessly before Indra. In his displeasure, Indra sent them down to the Himalayas as pishachas, restless spirits. They wandered in the cold, unhappy, unable to sleep or eat. One Magha Shukla Ekadashi they were too cold and miserable to eat anything, and sat awake all night beneath a peepal tree, remembering Vishnu. Without meaning to, they had kept Jaya Ekadashi. The next morning they were restored to their own forms and returned to heaven, where even Indra welcomed them.",
+     "ml": "ഇന്ദ്രസഭയിൽ ഗന്ധർവനായ മാല്യവാനും നർത്തകിയായ പുഷ്പവതിയും പ്രണയത്തിലായി; പരസ്പരം മുഴുകി ഇന്ദ്രന്റെ മുന്നിൽ അശ്രദ്ധമായി പാടുകയും ആടുകയും ചെയ്തു. അതൃപ്തനായ ഇന്ദ്രൻ അവരെ പിശാചുക്കളായി, അലയുന്ന ആത്മാക്കളായി, ഹിമാലയത്തിലേക്ക് അയച്ചു. ഉറങ്ങാനോ ഭക്ഷണം കഴിക്കാനോ കഴിയാതെ, ദുഃഖിതരായി അവർ തണുപ്പിൽ അലഞ്ഞു. ഒരു മാഘ ശുക്ല ഏകാദശിയിൽ ഒന്നും കഴിക്കാനാകാത്തത്ര തണുപ്പും ദുഃഖവുമായി, വിഷ്ണുവിനെ ഓർത്ത് അരയാലിന്റെ ചുവട്ടിൽ രാത്രി മുഴുവൻ ഉണർന്നിരുന്നു. അറിയാതെ അവർ ജയ ഏകാദശി ആചരിക്കുകയായിരുന്നു. പിറ്റേന്ന് രാവിലെ അവർക്ക് സ്വന്തം രൂപം തിരിച്ചുകിട്ടി; സ്വർഗത്തിലേക്ക് മടങ്ങിയ അവരെ ഇന്ദ്രൻ പോലും സ്വാഗതം ചെയ്തു."
     },
     "howTo": {
      "en": [
@@ -4225,6 +4450,13 @@
       "Worship Vishnu with tulsi and a lamp, and chant the Vishnu Sahasranama.",
       "Keep a vigil with bhajans for part of the night if you can.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക.",
+      "തുളസിയും വിളക്കുമായി വിഷ്ണുവിനെ ആരാധിക്കുക; വിഷ്ണുസഹസ്രനാമം ജപിക്കുക.",
+      "കഴിയുമെങ്കിൽ രാത്രിയുടെ ഒരു ഭാഗം ഭജനകളോടെ ഉറക്കമൊഴിയുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -4259,13 +4491,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Phalguna Krishna Ekadashi (Magha in the amanta reckoning), kept by Rama before crossing to Lanka."
+     "en": "Phalguna Krishna Ekadashi (Magha in the amanta reckoning), kept by Rama before crossing to Lanka.",
+     "ml": "ഫാൽഗുന കൃഷ്ണ ഏകാദശി (അമാന്ത രീതിയിൽ മാഘം), ലങ്കയിലേക്ക് കടക്കുംമുമ്പ് ശ്രീരാമൻ ആചരിച്ചത്."
     },
     "traditions": {
-     "en": "'Vijaya' also means victory. Devotees fast, worship Vishnu or Rama, and in some homes place a kalash with seven grains and a coconut for the puja. People facing a hard task often keep this Ekadashi before beginning it."
+     "en": "'Vijaya' also means victory. Devotees fast, worship Vishnu or Rama, and in some homes place a kalash with seven grains and a coconut for the puja. People facing a hard task often keep this Ekadashi before beginning it.",
+     "ml": "'വിജയ' എന്നതിനും വിജയം എന്നാണ് അർഥം. ഭക്തർ വ്രതമെടുത്ത് വിഷ്ണുവിനെയോ രാമനെയോ ആരാധിക്കുന്നു; ചില വീടുകളിൽ പൂജയ്ക്കായി ഏഴു ധാന്യങ്ങളും നാളികേരവുമുള്ള കലശം വെക്കുന്നു. പ്രയാസമേറിയ ഒരു കാര്യം നേരിടുന്നവർ അത് തുടങ്ങുംമുമ്പ് പലപ്പോഴും ഈ ഏകാദശി ആചരിക്കുന്നു."
     },
     "story": {
-     "en": "Rama, with Lakshmana and the vanara army, reached the shore of the ocean on his way to Lanka to bring Sita back, and did not know how to cross. Lakshmana suggested they ask the sage Vakadalbhya, whose ashram was nearby. The sage advised Rama to keep the Ekadashi of the dark fortnight of Phalguna, with a kalash of grains and worship of Vishnu. Rama kept it with his companions, and the story continues with the building of the bridge to Lanka and the victory that followed."
+     "en": "Rama, with Lakshmana and the vanara army, reached the shore of the ocean on his way to Lanka to bring Sita back, and did not know how to cross. Lakshmana suggested they ask the sage Vakadalbhya, whose ashram was nearby. The sage advised Rama to keep the Ekadashi of the dark fortnight of Phalguna, with a kalash of grains and worship of Vishnu. Rama kept it with his companions, and the story continues with the building of the bridge to Lanka and the victory that followed.",
+     "ml": "സീതയെ തിരികെ കൊണ്ടുവരാൻ ലങ്കയിലേക്ക് പോകുംവഴി ലക്ഷ്മണനോടും വാനരസേനയോടുമൊപ്പം രാമൻ സമുദ്രതീരത്തെത്തി; എങ്ങനെ കടക്കുമെന്ന് അറിയില്ലായിരുന്നു. അടുത്തുള്ള ആശ്രമത്തിലെ വകദാൽഭ്യ മുനിയോട് ചോദിക്കാമെന്ന് ലക്ഷ്മണൻ നിർദേശിച്ചു. ധാന്യകലശവും വിഷ്ണുപൂജയുമായി ഫാൽഗുന കൃഷ്ണപക്ഷത്തിലെ ഏകാദശി ആചരിക്കാൻ മുനി രാമനെ ഉപദേശിച്ചു. സഹചാരികളോടൊപ്പം രാമൻ അത് ആചരിച്ചു; ലങ്കയിലേക്കുള്ള സേതുബന്ധനവും തുടർന്നുള്ള വിജയവുമായി കഥ തുടരുന്നു."
     },
     "howTo": {
      "en": [
@@ -4274,6 +4509,13 @@
       "If your family does, set up a kalash with seven kinds of grain and a coconut, and worship Vishnu or Rama with tulsi and a lamp.",
       "Hear the story of Rama at the seashore, and begin preparing for a task you have been putting off.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക.",
+      "കുടുംബത്തിൽ പതിവുണ്ടെങ്കിൽ ഏഴുതരം ധാന്യങ്ങളും നാളികേരവുമായി കലശം ഒരുക്കി, തുളസിയും വിളക്കുമായി വിഷ്ണുവിനെയോ രാമനെയോ ആരാധിക്കുക.",
+      "സമുദ്രതീരത്തെ രാമന്റെ കഥ കേൾക്കുക; നീട്ടിവെച്ചിരുന്ന ഒരു കാര്യത്തിനായി ഒരുങ്ങിത്തുടങ്ങുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -4308,13 +4550,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Phalguna Shukla Ekadashi, honouring the amla tree, a few days before Holi."
+     "en": "Phalguna Shukla Ekadashi, honouring the amla tree, a few days before Holi.",
+     "ml": "ഫാൽഗുന ശുക്ല ഏകാദശി, ഹോളിക്ക് ഏതാനും ദിവസം മുമ്പ്, നെല്ലിമരത്തെ ആദരിക്കുന്ന ദിവസം."
     },
     "traditions": {
-     "en": "Devotees fast and worship Vishnu beneath or beside an amla (Indian gooseberry) tree, said to be dear to him, offering water, flowers and thread, and walking around it. Amla is eaten or given that day. In Varanasi it is Rangbhari Ekadashi, when Shiva is said to bring Parvati home after their wedding and the colours of Holi begin, with gulal at Kashi Vishwanath."
+     "en": "Devotees fast and worship Vishnu beneath or beside an amla (Indian gooseberry) tree, said to be dear to him, offering water, flowers and thread, and walking around it. Amla is eaten or given that day. In Varanasi it is Rangbhari Ekadashi, when Shiva is said to bring Parvati home after their wedding and the colours of Holi begin, with gulal at Kashi Vishwanath.",
+     "ml": "വിഷ്ണുവിന് പ്രിയപ്പെട്ടതെന്ന് പറയപ്പെടുന്ന നെല്ലിമരത്തിന്റെ ചുവട്ടിലോ അരികിലോ ഭക്തർ വ്രതമെടുത്ത് വിഷ്ണുവിനെ ആരാധിക്കുന്നു; വെള്ളവും പൂക്കളും നൂലും അർപ്പിച്ച് മരത്തെ പ്രദക്ഷിണം ചെയ്യുന്നു. അന്ന് നെല്ലിക്ക കഴിക്കുകയോ ദാനം ചെയ്യുകയോ ചെയ്യുന്നു. വാരാണസിയിൽ ഇത് രംഗ്ഭരി ഏകാദശിയാണ്; വിവാഹശേഷം ശിവൻ പാർവതിയെ വീട്ടിലേക്ക് കൊണ്ടുവരുന്ന ദിവസമെന്നും, കാശി വിശ്വനാഥനിൽ ഗുലാലുമായി ഹോളിയുടെ നിറങ്ങൾ ആരംഭിക്കുന്ന ദിവസമെന്നും പറയപ്പെടുന്നു."
     },
     "story": {
-     "en": "The story told is of King Chitrasena of Vaidisha, whose whole kingdom kept Amalaki Ekadashi together beneath a great amla tree, singing and keeping vigil through the night. A hunter who happened to be there that night, tired and hungry, stayed to watch and listen till dawn. Though he understood little, the story says, his life turned toward good, and in a later birth he became a just king. Tradition holds the amla tree as one in which Vishnu dwells, which is why it is honoured today."
+     "en": "The story told is of King Chitrasena of Vaidisha, whose whole kingdom kept Amalaki Ekadashi together beneath a great amla tree, singing and keeping vigil through the night. A hunter who happened to be there that night, tired and hungry, stayed to watch and listen till dawn. Though he understood little, the story says, his life turned toward good, and in a later birth he became a just king. Tradition holds the amla tree as one in which Vishnu dwells, which is why it is honoured today.",
+     "ml": "വൈദിശയിലെ ചിത്രസേന രാജാവിന്റെ രാജ്യം മുഴുവൻ ഒരു വലിയ നെല്ലിമരത്തിന്റെ ചുവട്ടിൽ ഒരുമിച്ച് ആമലകി ഏകാദശി ആചരിച്ച്, പാട്ടുപാടി രാത്രി മുഴുവൻ ഉറക്കമൊഴിഞ്ഞതാണ് കഥ. ക്ഷീണിതനും വിശന്നവനുമായി ആ രാത്രി അവിടെയെത്തിയ ഒരു വേടൻ പുലരും വരെ കണ്ടും കേട്ടും നിന്നു. അവന് കാര്യമായൊന്നും മനസ്സിലായില്ലെങ്കിലും അവന്റെ ജീവിതം നന്മയിലേക്ക് തിരിഞ്ഞുവെന്നും പിന്നീടൊരു ജന്മത്തിൽ അവൻ നീതിമാനായ രാജാവായെന്നും കഥ പറയുന്നു. വിഷ്ണു വസിക്കുന്ന മരമായാണ് പാരമ്പര്യം നെല്ലിയെ കാണുന്നത്; അതുകൊണ്ടാണ് ഇന്ന് അതിനെ ആദരിക്കുന്നത്."
     },
     "howTo": {
      "en": [
@@ -4323,6 +4568,13 @@
       "Worship Vishnu beside an amla tree if there is one, offering water, flowers and thread and walking around it; otherwise worship with amla fruit at home.",
       "Eat amla and give some to others.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക.",
+      "നെല്ലിമരമുണ്ടെങ്കിൽ അതിനരികിൽ വെള്ളവും പൂക്കളും നൂലും അർപ്പിച്ച് പ്രദക്ഷിണം ചെയ്ത് വിഷ്ണുവിനെ ആരാധിക്കുക; അല്ലെങ്കിൽ വീട്ടിൽ നെല്ലിക്കയോടെ ആരാധിക്കുക.",
+      "നെല്ലിക്ക കഴിക്കുകയും മറ്റുള്ളവർക്ക് നൽകുകയും ചെയ്യുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }
@@ -4357,13 +4609,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Chaitra Krishna Ekadashi (Phalguna in the amanta reckoning), the last Ekadashi of the year."
+     "en": "Chaitra Krishna Ekadashi (Phalguna in the amanta reckoning), the last Ekadashi of the year.",
+     "ml": "ചൈത്ര കൃഷ്ണ ഏകാദശി (അമാന്ത രീതിയിൽ ഫാൽഗുനം), വർഷത്തിലെ അവസാന ഏകാദശി."
     },
     "traditions": {
-     "en": "Falling between Holi and the new year, the year's last Ekadashi is kept as a time of reflection: devotees fast, worship Vishnu, and look back on the year, setting right what they can. The name speaks of release from wrongdoing, and many use the day to apologise to someone or let go of a grudge."
+     "en": "Falling between Holi and the new year, the year's last Ekadashi is kept as a time of reflection: devotees fast, worship Vishnu, and look back on the year, setting right what they can. The name speaks of release from wrongdoing, and many use the day to apologise to someone or let go of a grudge.",
+     "ml": "ഹോളിക്കും പുതുവർഷത്തിനുമിടയിൽ വരുന്ന വർഷത്തിലെ അവസാന ഏകാദശി ആത്മപരിശോധനയുടെ സമയമായി ആചരിക്കുന്നു: ഭക്തർ വ്രതമെടുത്ത് വിഷ്ണുവിനെ ആരാധിച്ച്, വർഷത്തിലേക്ക് തിരിഞ്ഞുനോക്കി, കഴിയുന്നത് ശരിയാക്കുന്നു. തെറ്റിൽനിന്നുള്ള മോചനത്തെക്കുറിച്ചാണ് പേര് പറയുന്നത്; പലരും ആരോടെങ്കിലും ക്ഷമ ചോദിക്കാനോ ഒരു പക ഉപേക്ഷിക്കാനോ ഈ ദിവസം ഉപയോഗിക്കുന്നു."
     },
     "story": {
-     "en": "The sage Medhavi was deep in tapas in the Chaitraratha forest when the apsara Manjughosha, sent to distract him, sang and danced nearby. Medhavi was drawn away from his practice, and years passed before he realised how long he had lost. In his dismay he spoke harshly to her, and she was changed into a pishachini. Both were unhappy: she in her new form, he at having broken his discipline and spoken in anger. Medhavi's father, the sage Chyavana, told them both to keep the Chaitra Krishna Ekadashi. They did, sincerely, and each was restored, she to her own form and he to his practice. The story is about setting things right."
+     "en": "The sage Medhavi was deep in tapas in the Chaitraratha forest when the apsara Manjughosha, sent to distract him, sang and danced nearby. Medhavi was drawn away from his practice, and years passed before he realised how long he had lost. In his dismay he spoke harshly to her, and she was changed into a pishachini. Both were unhappy: she in her new form, he at having broken his discipline and spoken in anger. Medhavi's father, the sage Chyavana, told them both to keep the Chaitra Krishna Ekadashi. They did, sincerely, and each was restored, she to her own form and he to his practice. The story is about setting things right.",
+     "ml": "ചൈത്രരഥ വനത്തിൽ മേധാവി മുനി തപസ്സിൽ മുഴുകിയിരിക്കെ, അദ്ദേഹത്തെ വ്യതിചലിപ്പിക്കാൻ അയക്കപ്പെട്ട മഞ്ജുഘോഷ എന്ന അപ്സരസ്സ് അടുത്തുനിന്ന് പാടുകയും ആടുകയും ചെയ്തു. മേധാവി സാധനയിൽനിന്ന് അകന്നു; എത്രകാലം നഷ്ടമായെന്ന് തിരിച്ചറിയുംമുമ്പ് വർഷങ്ങൾ കടന്നുപോയി. ദുഃഖത്തിൽ അദ്ദേഹം അവളോട് പരുഷമായി സംസാരിച്ചു; അവൾ പിശാചിനിയായി മാറി. ഇരുവരും ദുഃഖിതരായി: അവൾ പുതിയ രൂപത്തിൽ, അദ്ദേഹം നിഷ്ഠ തെറ്റിച്ചതിലും കോപത്തിൽ സംസാരിച്ചതിലും. മേധാവിയുടെ പിതാവായ ച്യവന മഹർഷി ഇരുവരോടും ചൈത്ര കൃഷ്ണ ഏകാദശി ആചരിക്കാൻ പറഞ്ഞു. ആത്മാർഥമായി അവർ ആചരിച്ചു; അവൾക്ക് സ്വന്തം രൂപവും അദ്ദേഹത്തിന് സാധനയും തിരിച്ചുകിട്ടി. കാര്യങ്ങൾ ശരിയാക്കുന്നതിനെക്കുറിച്ചാണ് ഈ കഥ."
     },
     "howTo": {
      "en": [
@@ -4372,6 +4627,13 @@
       "Worship Vishnu with tulsi and a lamp, and hear the story of Medhavi and Manjughosha.",
       "Take a quiet moment to look back on the year; apologise to someone or let go of a grudge if you can.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ml": [
+      "തലേന്ന് വൈകുന്നേരം ധാന്യമില്ലാത്ത ലഘുഭക്ഷണം കഴിക്കുക.",
+      "ഏകാദശിയിൽ ധാന്യങ്ങളും പയറുവർഗങ്ങളും ഒഴിവാക്കുക.",
+      "തുളസിയും വിളക്കുമായി വിഷ്ണുവിനെ ആരാധിക്കുക; മേധാവിയുടെയും മഞ്ജുഘോഷയുടെയും കഥ കേൾക്കുക.",
+      "ശാന്തമായി വർഷത്തിലേക്ക് തിരിഞ്ഞുനോക്കുക; കഴിയുമെങ്കിൽ ആരോടെങ്കിലും ക്ഷമ ചോദിക്കുകയോ ഒരു പക ഉപേക്ഷിക്കുകയോ ചെയ്യുക.",
+      "പിറ്റേന്ന് രാവിലെ ദ്വാദശിയിൽ വ്രതം മുറിക്കുക."
      ]
     }
    }

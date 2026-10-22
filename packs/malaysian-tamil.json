@@ -1393,8 +1393,12 @@
    "variations": [
     "Almanacs following the Vakya panchangam can place Thai 1, and so Pongal, a day later; the Tamil Nadu holiday list for 2026 keeps Pongal on 15 January."
    ],
-   "variationsNative": [],
-   "localNative": {},
+   "variationsNative": [
+    "வாக்கிய பஞ்சாங்கத்தைப் பின்பற்றும் பஞ்சாங்கங்கள் தை 1-ஐயும், அதனால் பொங்கலையும், ஒரு நாள் தள்ளி வைக்கலாம்; தமிழ்நாடு அரசின் 2026 விடுமுறைப் பட்டியல் பொங்கலை ஜனவரி 15 அன்று வைத்துள்ளது."
+   ],
+   "localNative": {
+    "LK": "இலங்கையில் தைப்பொங்கல் பொது விடுமுறை நாள்."
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1593,7 +1597,13 @@
    "durationDays": 1,
    "variations": [],
    "variationsNative": [],
-   "localNative": {},
+   "localNative": {
+    "MY": "மலேசியாவில் மிகப் பெரிய தைப்பூசம் கோலாலம்பூர் அருகிலுள்ள பத்து மலையில் நடைபெறுகிறது; அங்கு 272 படிகள் ஏறிக் காவடிகள் சுமந்து செல்லப்படுகின்றன. பினாங்கில் ஊர்வலம் வெள்ளி ரதத்தைப் பின்தொடர்கிறது. சிலாங்கூர், கோலாலம்பூர், புத்ராஜெயா, ஜொகூர், நெகிரி செம்பிலான், பேராக், பினாங்கு ஆகியவற்றில் இது பொது விடுமுறை.",
+    "SG": "சிங்கப்பூரில் பக்தர்கள் ஸ்ரீ சீனிவாசப் பெருமாள் கோயிலிலிருந்து ஸ்ரீ தெண்டாயுதபாணி கோயில் வரை காவடிகளுடன் நடந்து செல்கின்றனர். இது பொது விடுமுறை அல்ல; அதனால் பலர் விடுப்பு எடுக்கின்றனர்.",
+    "MU": "மொரிஷியஸில் தைப்பூசக் காவடி பொது விடுமுறை; பல நாள் விரதத்திற்குப் பின் தீவு முழுவதும் உள்ள கோவில்களுக்குக் காவடிகள் சுமந்து செல்லப்படுகின்றன.",
+    "ZA": "தென்னாப்பிரிக்காவில் டர்பனும் குவாசுலு-நடாலும் இந்தியாவுக்கு வெளியே மிகப் பெரிய காவடி வழிபாடுகளில் ஒன்றைக் கடைப்பிடிக்கின்றன; டர்பன், பீட்டர்மாரிட்ஸ்பர்க் கோயில்களில் ஊர்வலங்கள் நடைபெறுகின்றன. இது பொது விடுமுறை அல்ல.",
+    "LK": "இலங்கையில் வடக்கு, கிழக்கு மாகாணங்களில் உள்ள முருகன் கோவில்களில் தைப்பூசம் கடைப்பிடிக்கப்படுகிறது; யாழ்ப்பாணம் நல்லூர் அவற்றுள் மிகவும் புகழ்பெற்றது."
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1724,7 +1734,10 @@
    "durationDays": 1,
    "variations": [],
    "variationsNative": [],
-   "localNative": {},
+   "localNative": {
+    "MU": "மொரிஷியஸில் மகா சிவராத்திரி பொது விடுமுறை; அதற்கு முந்தைய நாட்களில் யாத்ரீகர்கள் காவடிகளைச் சுமந்து கங்கா தலாவுக்கு (கிராண்ட் பாசின்) நடந்து செல்கின்றனர்.",
+    "LK": "இலங்கையில் மகா சிவராத்திரி பொது விடுமுறை நாள்."
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1978,7 +1991,9 @@
    "durationDays": 1,
    "variations": [],
    "variationsNative": [],
-   "localNative": {},
+   "localNative": {
+    "FJ": "பிஜியில், மண்டலிகள் ஒன்பது இரவுகள் நடத்தும் ராமாயணப் பாராயணம் ராம நவமியுடன் நிறைவடைகிறது."
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2040,7 +2055,9 @@
    "durationDays": 1,
    "variations": [],
    "variationsNative": [],
-   "localNative": {},
+   "localNative": {
+    "LK": "இலங்கையில் புத்தாண்டு தேசிய விடுமுறை; தமிழ், சிங்களக் குடும்பங்கள் இரண்டும் இதைக் கொண்டாடுகின்றன."
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2900,7 +2917,9 @@
    "durationDays": 1,
    "variations": [],
    "variationsNative": [],
-   "localNative": {},
+   "localNative": {
+    "MU": "மொரிஷியஸில் விநாயகர் சதுர்த்தி பொது விடுமுறை நாள்."
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3371,8 +3390,20 @@
    "variations": [
     "Kept as Naraka Chaturdashi, the day Krishna Chaturdashi holds at sunrise, with the oil bath before dawn. Lakshmi Puja on Amavasya, the North Indian Diwali, can fall the next day; far from India, as in North America, the two are often a day apart."
    ],
-   "variationsNative": [],
-   "localNative": {},
+   "variationsNative": [
+    "சூரிய உதயத்தில் தேய்பிறை சதுர்த்தசி உள்ள நாளில், விடியலுக்கு முன் எண்ணெய்க் குளியலுடன், நரக சதுர்த்தசியாகக் கொண்டாடப்படுகிறது. வட இந்தியத் தீபாவளியான அமாவாசை லட்சுமி பூஜை மறுநாள் வரலாம்; இந்தியாவுக்கு வெளியே, வட அமெரிக்காவில் போல, இவை இரண்டும் பெரும்பாலும் ஒரு நாள் இடைவெளியில் வருகின்றன."
+   ],
+   "localNative": {
+    "TT": "டிரினிடாட் மற்றும் டொபாகோவில் தீபாவளி பொது விடுமுறை. சகுவானாஸில் உள்ள திவாலி நகர் பல நாட்களுக்கு முன்பே தொடங்குகிறது; வீடுகளும் முற்றங்களும் தீபங்களால் ஒளிர்கின்றன.",
+    "GY": "கயானாவில் தீபாவளி பொது விடுமுறை; முந்தைய இரவு ஒளியூட்டப்பட்ட அலங்கார வாகன ஊர்வலங்கள் நகரை ஒளிரச் செய்கின்றன.",
+    "SR": "சுரினாமில் தீபாவளி பொது விடுமுறை; விளக்குகள், பிரார்த்தனை, இனிப்புகளுடன் கொண்டாடப்படுகிறது.",
+    "FJ": "பிஜியில் தீபாவளி பொது விடுமுறை; வீடுகள் அகல் விளக்குகளால் ஒளிர்கின்றன, எல்லா மதத்தினரான அண்டை வீட்டாருடனும் இனிப்புகள் பகிரப்படுகின்றன.",
+    "MU": "மொரிஷியஸில் தீபாவளி பொது விடுமுறை; வீடுகள் மண் விளக்குகளால் ஒளிர்கின்றன, சர்க்கரைவள்ளிக் கிழங்குப் பலகாரமான காத்தோ பத்தாத் பகிரப்படுகிறது.",
+    "MY": "மலேசியாவில் சரவாக் தவிர எல்லா மாநிலங்களிலும் தீபாவளி பொது விடுமுறை; எல்லா மதத்தினரான நண்பர்களுக்கும் வீடுகள் திறந்து வைக்கப்படுகின்றன.",
+    "SG": "சிங்கப்பூரில் தீபாவளி பொது விடுமுறை; வாரங்களுக்கு முன்பே லிட்டில் இந்தியா ஒளிரத் தொடங்குகிறது.",
+    "ZA": "தென்னாப்பிரிக்காவில் தீபாவளி பொது விடுமுறை அல்ல; டர்பன், ஜோகன்னஸ்பர்க் மற்றும் பிற இடங்களில் உள்ள குடும்பங்கள் விளக்குகள், பிரார்த்தனை, பட்டாசுகளுடன் கொண்டாடுகின்றன.",
+    "LK": "இலங்கையில் தீபாவளி பொது விடுமுறை நாள்."
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3867,13 +3898,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Chaitra Shukla Ekadashi, the first Ekadashi of the new year."
+     "en": "Chaitra Shukla Ekadashi, the first Ekadashi of the new year.",
+     "ta": "சித்திரை வளர்பிறை ஏகாதசி, புத்தாண்டின் முதல் ஏகாதசி."
     },
     "traditions": {
-     "en": "As with every Ekadashi, devotees of Vishnu fast from grains and beans, many on fruit and milk, spend time in prayer and break the fast the next morning during Dvadashi. Coming just after Rama Navami, Kamada Ekadashi is often kept with readings from the Ramayana and the singing of Vishnu's names."
+     "en": "As with every Ekadashi, devotees of Vishnu fast from grains and beans, many on fruit and milk, spend time in prayer and break the fast the next morning during Dvadashi. Coming just after Rama Navami, Kamada Ekadashi is often kept with readings from the Ramayana and the singing of Vishnu's names.",
+     "ta": "எல்லா ஏகாதசிகளையும் போலவே திருமால் பக்தர்கள் தானியங்களையும் பருப்பு வகைகளையும் தவிர்த்து, பலர் பழமும் பாலும் மட்டும் உண்டு, பிரார்த்தனையில் நேரம் செலவிட்டு, மறுநாள் காலை துவாதசியில் விரதத்தை முடிக்கின்றனர். ராம நவமிக்குச் சற்றுப் பின் வருவதால், காமதா ஏகாதசி பெரும்பாலும் ராமாயணப் பாராயணத்துடனும் திருமால் நாம ஜபத்துடனும் கடைப்பிடிக்கப்படுகிறது."
     },
     "story": {
-     "en": "The story told is of Lalit and Lalita, a gandharva couple at the court of King Pundarika. Lalit, distracted by thoughts of his wife, sang out of tune before the king, and the king in his anger declared that he would take the form of a fearsome rakshasa. Lalita followed her husband through the forests, caring for him, until she met the sage Shringi, who told her of the Ekadashi of Chaitra. She kept the fast with full devotion and offered its merit to her husband, and Lalit was restored to his own form. The two returned home together."
+     "en": "The story told is of Lalit and Lalita, a gandharva couple at the court of King Pundarika. Lalit, distracted by thoughts of his wife, sang out of tune before the king, and the king in his anger declared that he would take the form of a fearsome rakshasa. Lalita followed her husband through the forests, caring for him, until she met the sage Shringi, who told her of the Ekadashi of Chaitra. She kept the fast with full devotion and offered its merit to her husband, and Lalit was restored to his own form. The two returned home together.",
+     "ta": "புண்டரீக மன்னனின் அவையில் இருந்த கந்தர்வத் தம்பதியான லலிதன், லலிதா பற்றிய கதை இது. மனைவியின் நினைவில் மூழ்கியிருந்த லலிதன் மன்னன் முன் சுருதி தவறிப் பாடினான்; கோபம் கொண்ட மன்னன், அவன் பயங்கர ராட்சச உருவம் அடையட்டும் என்றான். லலிதா கணவனைப் பேணியபடி காடுகளில் அவனைப் பின்தொடர்ந்தாள்; இறுதியில் சிருங்கி முனிவரைச் சந்தித்தாள். அவர் சித்திரை ஏகாதசி பற்றிக் கூறினார். அவள் முழு பக்தியுடன் விரதம் இருந்து அதன் புண்ணியத்தைக் கணவனுக்கு அர்ப்பணித்தாள்; லலிதன் தன் சுய உருவம் பெற்றான். இருவரும் ஒன்றாக வீடு திரும்பினர்."
     },
     "howTo": {
      "en": [
@@ -3882,6 +3916,13 @@
       "Worship Vishnu with tulsi, flowers and a lamp, and read or listen to the day's story.",
       "Chant Vishnu's names or the Vishnu Sahasranama, and keep the day calm.",
       "Break the fast the next morning within the Dvadashi time, with simple food."
+     ],
+     "ta": [
+      "முந்தைய நாள் (தசமி) இரவு தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்; பழம், பால், பருப்புக் கொட்டைகள் உண்ணலாம், முடிந்தால் கடுமையான விரதம் இருக்கலாம்.",
+      "துளசி, மலர்கள், விளக்குடன் திருமாலை வழிபட்டு, அன்றைய கதையைப் படியுங்கள் அல்லது கேளுங்கள்.",
+      "திருமால் நாமங்களையோ விஷ்ணு சகஸ்ரநாமத்தையோ ஜபித்து, நாளை அமைதியாகக் கழியுங்கள்.",
+      "மறுநாள் காலை துவாதசி நேரத்திற்குள் எளிய உணவுடன் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -3916,13 +3957,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Vaishakha Krishna Ekadashi (Chaitra in the amanta reckoning), the Ekadashi of protection."
+     "en": "Vaishakha Krishna Ekadashi (Chaitra in the amanta reckoning), the Ekadashi of protection.",
+     "ta": "வைகாசி தேய்பிறை ஏகாதசி (அமாந்த முறையில் சித்திரை), பாதுகாப்பின் ஏகாதசி."
     },
     "traditions": {
-     "en": "Devotees fast and worship Vishnu in his Vamana form. Tradition especially values giving on this day: food, water in the summer heat, and help to students. Many avoid honey, meat, betel and gambling, and keep the day quiet."
+     "en": "Devotees fast and worship Vishnu in his Vamana form. Tradition especially values giving on this day: food, water in the summer heat, and help to students. Many avoid honey, meat, betel and gambling, and keep the day quiet.",
+     "ta": "பக்தர்கள் விரதம் இருந்து வாமன வடிவில் திருமாலை வழிபடுகின்றனர். இந்நாளின் தானத்திற்கு மரபு தனி முக்கியத்துவம் அளிக்கிறது: உணவு, கோடை வெயிலில் தண்ணீர், மாணவர்களுக்கு உதவி. பலர் தேன், இறைச்சி, வெற்றிலை, சூதாட்டம் ஆகியவற்றைத் தவிர்த்து நாளை அமைதியாகக் கழிக்கின்றனர்."
     },
     "story": {
-     "en": "The story told is of King Mandhata, a just and generous ruler on the banks of the Narmada, who was absorbed in tapas when a bear attacked him and dragged him into the forest. He did not abandon his calm, but prayed to Vishnu, who came and freed him; but the king's foot was badly injured. Vishnu told him to keep the Varuthini Ekadashi at Mathura and worship his Varaha form, and the king, keeping the observance, was made whole. 'Varuthini' means 'the one that shields', and the day is remembered as a time of shelter."
+     "en": "The story told is of King Mandhata, a just and generous ruler on the banks of the Narmada, who was absorbed in tapas when a bear attacked him and dragged him into the forest. He did not abandon his calm, but prayed to Vishnu, who came and freed him; but the king's foot was badly injured. Vishnu told him to keep the Varuthini Ekadashi at Mathura and worship his Varaha form, and the king, keeping the observance, was made whole. 'Varuthini' means 'the one that shields', and the day is remembered as a time of shelter.",
+     "ta": "நர்மதைக் கரையில் ஆட்சி செய்த நேர்மையும் தாராள மனமும் கொண்ட மாந்தாதா மன்னன் பற்றிய கதை இது. அவர் தவத்தில் ஆழ்ந்திருந்தபோது ஒரு கரடி அவரைத் தாக்கிக் காட்டுக்குள் இழுத்துச் சென்றது. அவர் அமைதியை இழக்காமல் திருமாலிடம் வேண்டினார்; திருமால் வந்து அவரை விடுவித்தார், ஆனால் மன்னனின் கால் பலமாகக் காயமடைந்திருந்தது. மதுராவில் வரூதினி ஏகாதசி இருந்து வராக வடிவை வழிபடுமாறு திருமால் கூறினார்; விரதம் இருந்த மன்னன் முழுமையாகக் குணமடைந்தார். 'வரூதினி' என்றால் 'காப்பவள்'; இந்நாள் அடைக்கலத்தின் காலமாக நினைவுகூரப்படுகிறது."
     },
     "howTo": {
      "en": [
@@ -3931,6 +3975,13 @@
       "Worship Vishnu with tulsi and a lamp, and hear the story of King Mandhata.",
       "Give water, food or help to someone, in the spirit of the day.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்; பழமும் பாலும் வழக்கம்.",
+      "துளசியும் விளக்கும் கொண்டு திருமாலை வழிபட்டு, மாந்தாதா மன்னனின் கதையைக் கேளுங்கள்.",
+      "இந்நாளின் உணர்வில் யாருக்காவது தண்ணீர், உணவு அல்லது உதவி அளியுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -3965,13 +4016,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Vaishakha Shukla Ekadashi, named for Vishnu's Mohini form."
+     "en": "Vaishakha Shukla Ekadashi, named for Vishnu's Mohini form.",
+     "ta": "வைகாசி வளர்பிறை ஏகாதசி, திருமாலின் மோகினி வடிவின் பெயரால்."
     },
     "traditions": {
-     "en": "Devotees fast and worship Vishnu, remembering the form in which he appeared during the churning of the ocean. In temples, especially in Gujarat and the South, the deity is adorned as Mohini. The day is kept with prayer, reading and singing of Vishnu's names."
+     "en": "Devotees fast and worship Vishnu, remembering the form in which he appeared during the churning of the ocean. In temples, especially in Gujarat and the South, the deity is adorned as Mohini. The day is kept with prayer, reading and singing of Vishnu's names.",
+     "ta": "பாற்கடல் கடைந்தபோது திருமால் தோன்றிய வடிவை நினைத்துப் பக்தர்கள் விரதம் இருந்து அவரை வழிபடுகின்றனர். கோயில்களில், குறிப்பாகக் குஜராத்திலும் தென்னிந்தியாவிலும், இறைவன் மோகினியாக அலங்கரிக்கப்படுகிறார். பிரார்த்தனை, படித்தல், திருமால் நாமப் பாடல்களுடன் இந்நாள் கடைப்பிடிக்கப்படுகிறது."
     },
     "story": {
-     "en": "When the gods and asuras churned the ocean and the pot of amrit rose, the asuras seized it. Vishnu took the form of Mohini, an enchanting woman, and offered to share the nectar fairly; captivated, the asuras agreed, and Mohini served it to the gods. The day also carries the story of Dhrishtabuddhi, a merchant's son who wasted his inheritance and lost his way, until the sage Kaundinya told him of this Ekadashi. He kept it sincerely, and his life turned toward steadiness and kindness."
+     "en": "When the gods and asuras churned the ocean and the pot of amrit rose, the asuras seized it. Vishnu took the form of Mohini, an enchanting woman, and offered to share the nectar fairly; captivated, the asuras agreed, and Mohini served it to the gods. The day also carries the story of Dhrishtabuddhi, a merchant's son who wasted his inheritance and lost his way, until the sage Kaundinya told him of this Ekadashi. He kept it sincerely, and his life turned toward steadiness and kindness.",
+     "ta": "தேவர்களும் அசுரர்களும் பாற்கடலைக் கடைந்தபோது அமுதக் கலசம் எழுந்தது; அசுரர்கள் அதைக் கைப்பற்றினர். திருமால் மோகினி என்னும் அழகிய பெண் வடிவெடுத்து, அமுதத்தை நியாயமாகப் பகிர்வதாகக் கூறினார்; மயங்கிய அசுரர்கள் ஒப்புக்கொண்டனர், மோகினி அமுதத்தைத் தேவர்களுக்குப் பரிமாறினாள். தன் பரம்பரைச் சொத்தை வீணடித்து வழிதவறிய வணிகர் மகன் திருஷ்டபுத்தியின் கதையும் இந்நாளுக்கு உண்டு; கௌண்டின்ய முனிவர் அவனுக்கு இந்த ஏகாதசி பற்றிக் கூறினார். அவன் உள்ளன்போடு விரதம் இருந்தான்; அவன் வாழ்க்கை நிலைத்தன்மையையும் கருணையையும் நோக்கித் திரும்பியது."
     },
     "howTo": {
      "en": [
@@ -3980,6 +4034,13 @@
       "Worship Vishnu with tulsi, yellow flowers and a lamp; hear the story of the churning and of Dhrishtabuddhi.",
       "Spend time in prayer or reading, and avoid harsh speech.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்.",
+      "துளசி, மஞ்சள் மலர்கள், விளக்குடன் திருமாலை வழிபட்டு, பாற்கடல் கடைதல், திருஷ்டபுத்தி ஆகியோரின் கதையைக் கேளுங்கள்.",
+      "பிரார்த்தனையில் அல்லது படிப்பதில் நேரம் செலவிடுங்கள்; கடுஞ்சொல் தவிருங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4014,13 +4075,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Jyeshtha Krishna Ekadashi (Vaishakha in the amanta reckoning), also called Achala Ekadashi."
+     "en": "Jyeshtha Krishna Ekadashi (Vaishakha in the amanta reckoning), also called Achala Ekadashi.",
+     "ta": "ஆனி தேய்பிறை ஏகாதசி (அமாந்த முறையில் வைகாசி), அசலா ஏகாதசி என்றும் அழைக்கப்படுகிறது."
     },
     "traditions": {
-     "en": "'Apara' means boundless. Devotees fast and worship Vishnu as Trivikrama, the form that measured the worlds in three steps. In Odisha the day is called Jalakrida Ekadashi, and in Punjab and Haryana, Bhadrakali Ekadashi. As the summer heat peaks, giving water and cooling drinks is a common practice."
+     "en": "'Apara' means boundless. Devotees fast and worship Vishnu as Trivikrama, the form that measured the worlds in three steps. In Odisha the day is called Jalakrida Ekadashi, and in Punjab and Haryana, Bhadrakali Ekadashi. As the summer heat peaks, giving water and cooling drinks is a common practice.",
+     "ta": "'அபரா' என்றால் எல்லையற்றது. மூன்று அடிகளால் உலகங்களை அளந்த திரிவிக்கிரம வடிவில் பக்தர்கள் விரதம் இருந்து திருமாலை வழிபடுகின்றனர். ஒடிசாவில் இந்நாள் ஜலக்ரீடா ஏகாதசி என்றும், பஞ்சாப், ஹரியானாவில் பத்ரகாளி ஏகாதசி என்றும் அழைக்கப்படுகிறது. கோடை வெப்பம் உச்சத்தில் இருப்பதால் தண்ணீரும் குளிர்பானங்களும் தானம் செய்வது வழக்கம்."
     },
     "story": {
-     "en": "The story told is of King Mahidhvaja, a righteous king whose younger brother Vajradhvaja, jealous, took his life and buried him beneath a peepal tree. The king's spirit could not rest, and troubled travellers who passed that way. The sage Dhaumya, passing by, understood what had happened, kept the Apara Ekadashi and offered its merit to the king, and Mahidhvaja found peace. The story is told to show how far a single sincere observance, made for another, can reach."
+     "en": "The story told is of King Mahidhvaja, a righteous king whose younger brother Vajradhvaja, jealous, took his life and buried him beneath a peepal tree. The king's spirit could not rest, and troubled travellers who passed that way. The sage Dhaumya, passing by, understood what had happened, kept the Apara Ekadashi and offered its merit to the king, and Mahidhvaja found peace. The story is told to show how far a single sincere observance, made for another, can reach.",
+     "ta": "தர்மம் தவறாத மகீத்வஜ மன்னன் பற்றிய கதை இது. பொறாமை கொண்ட அவரது தம்பி வஜ்ரத்வஜன் அவர் உயிரைப் பறித்து ஓர் அரசமரத்தடியில் புதைத்தான். மன்னனின் ஆன்மா அமைதி பெறாமல், அவ்வழியே சென்ற பயணிகளுக்குத் தொல்லை தந்தது. அவ்வழியே வந்த தௌம்ய முனிவர் நடந்ததைப் புரிந்துகொண்டு அபரா ஏகாதசி இருந்து அதன் புண்ணியத்தை மன்னனுக்கு அர்ப்பணித்தார்; மகீத்வஜன் அமைதி பெற்றார். மற்றொருவருக்காக உள்ளன்போடு செய்யும் ஒரு விரதம் எவ்வளவு தூரம் சென்றடையும் என்பதைக் காட்டவே இக்கதை சொல்லப்படுகிறது."
     },
     "howTo": {
      "en": [
@@ -4029,6 +4093,13 @@
       "Worship Vishnu as Trivikrama with tulsi and a lamp, and hear the story of King Mahidhvaja.",
       "Offer water or sherbet to people in the heat.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்.",
+      "துளசியும் விளக்கும் கொண்டு திரிவிக்கிரமனாகத் திருமாலை வழிபட்டு, மகீத்வஜ மன்னனின் கதையைக் கேளுங்கள்.",
+      "வெயிலில் இருப்பவர்களுக்குத் தண்ணீரோ சர்பத்தோ அளியுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4063,13 +4134,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Jyeshtha Shukla Ekadashi, the strictest Ekadashi, kept without even water."
+     "en": "Jyeshtha Shukla Ekadashi, the strictest Ekadashi, kept without even water.",
+     "ta": "ஆனி வளர்பிறை ஏகாதசி, தண்ணீர் கூட அருந்தாமல் இருக்கும் மிகக் கடுமையான ஏகாதசி."
     },
     "traditions": {
-     "en": "'Nirjala' means without water. Those who keep it fully go from sunrise to the next sunrise without food or water, in the hottest weeks of the year. Because of the hardship, tradition places great value on giving water: people set up stalls with cold water and sherbet, and give earthen pots, fans and umbrellas. It is also called Bhimseni Ekadashi. Those who cannot fast without water, for reasons of health or age, keep a gentler fast, which tradition fully accepts."
+     "en": "'Nirjala' means without water. Those who keep it fully go from sunrise to the next sunrise without food or water, in the hottest weeks of the year. Because of the hardship, tradition places great value on giving water: people set up stalls with cold water and sherbet, and give earthen pots, fans and umbrellas. It is also called Bhimseni Ekadashi. Those who cannot fast without water, for reasons of health or age, keep a gentler fast, which tradition fully accepts.",
+     "ta": "'நிர்ஜலா' என்றால் நீரின்றி. முழுமையாகக் கடைப்பிடிப்பவர்கள் ஆண்டின் மிக வெப்பமான வாரங்களில் ஒரு சூரிய உதயம் முதல் அடுத்த சூரிய உதயம் வரை உணவும் நீரும் இன்றி இருக்கின்றனர். இந்தக் கடினம் காரணமாக, நீர் தானத்திற்கு மரபு பெரும் மதிப்பளிக்கிறது: குளிர்ந்த நீரும் சர்பத்தும் கொண்ட தண்ணீர்ப் பந்தல்கள் அமைக்கப்படுகின்றன; மண்பானைகள், விசிறிகள், குடைகள் தானம் செய்யப்படுகின்றன. பீமசேனி ஏகாதசி என்றும் அழைக்கப்படுகிறது. உடல்நலம் அல்லது வயது காரணமாக நீரின்றி இருக்க முடியாதவர்கள் மென்மையான விரதம் இருக்கின்றனர்; மரபு அதை முழுமையாக ஏற்கிறது."
     },
     "story": {
-     "en": "Bhima, the strongest of the Pandavas, loved his food and could not keep the twenty-four Ekadashis that his mother and brothers kept. He went to the sage Vyasa and asked if there were any way. Vyasa told him to keep just one Ekadashi, Jyeshtha Shukla Ekadashi, without food or water from sunrise to sunrise, and it would hold the place of all the others. Bhima kept it, and the day has been called Bhimseni Ekadashi since. The story is a gentle one: it makes room for those who find the full discipline hard."
+     "en": "Bhima, the strongest of the Pandavas, loved his food and could not keep the twenty-four Ekadashis that his mother and brothers kept. He went to the sage Vyasa and asked if there were any way. Vyasa told him to keep just one Ekadashi, Jyeshtha Shukla Ekadashi, without food or water from sunrise to sunrise, and it would hold the place of all the others. Bhima kept it, and the day has been called Bhimseni Ekadashi since. The story is a gentle one: it makes room for those who find the full discipline hard.",
+     "ta": "பாண்டவர்களில் மிக வலிமையான பீமனுக்கு உணவு மிகவும் பிடிக்கும்; அன்னையும் சகோதரர்களும் கடைப்பிடித்த இருபத்து நான்கு ஏகாதசிகளையும் அவனால் இருக்க முடியவில்லை. அவன் வியாச முனிவரிடம் சென்று ஏதேனும் வழி உண்டா என்று கேட்டான். ஆனி வளர்பிறை ஏகாதசி என்ற ஒரே ஒரு ஏகாதசியை சூரிய உதயம் முதல் சூரிய உதயம் வரை உணவும் நீரும் இன்றி இருந்தால், அது மற்ற எல்லாவற்றுக்கும் ஈடாகும் என்று வியாசர் கூறினார். பீமன் அதைக் கடைப்பிடித்தான்; அன்றுமுதல் இந்நாள் பீமசேனி ஏகாதசி என்று அழைக்கப்படுகிறது. முழு ஒழுக்கம் கடினமாக இருப்பவர்களுக்கும் இடம் தரும் மென்மையான கதை இது."
     },
     "howTo": {
      "en": [
@@ -4079,6 +4153,14 @@
       "Give water: fill pots, set up a water stall, or give earthen pots, fans or umbrellas.",
       "Keep the day calm and indoors in the heat; chant or read.",
       "Break the fast the next morning during Dvadashi, starting with water and something light."
+     ],
+     "ta": [
+      "எப்படிக் கடைப்பிடிப்பது என்று நேர்மையாக முடிவு செய்யுங்கள்; ஏதேனும் உடல்நலக் குறைபாடு உள்ளவர்கள், கர்ப்பிணிகள், முதியோர், மருந்து உட்கொள்பவர்கள் நீர் அருந்தி மென்மையான விரதம் இருங்கள்.",
+      "முந்தைய மாலை நன்றாக உண்டு நீர் அருந்துங்கள்.",
+      "ஏகாதசி காலை துளசியும் விளக்கும் கொண்டு திருமாலை வழிபடுங்கள்.",
+      "நீர் தானம் செய்யுங்கள்: பானைகளை நிரப்புங்கள், தண்ணீர்ப் பந்தல் அமையுங்கள், அல்லது மண்பானை, விசிறி, குடை அளியுங்கள்.",
+      "வெயிலில் வீட்டுக்குள் அமைதியாக இருங்கள்; ஜபியுங்கள் அல்லது படியுங்கள்.",
+      "மறுநாள் காலை துவாதசியில், நீரும் எளிய உணவும் கொண்டு விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4113,13 +4195,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Ashadha Krishna Ekadashi (Jyeshtha in the amanta reckoning)."
+     "en": "Ashadha Krishna Ekadashi (Jyeshtha in the amanta reckoning).",
+     "ta": "ஆடி தேய்பிறை ஏகாதசி (அமாந்த முறையில் ஆனி)."
     },
     "traditions": {
-     "en": "Coming just before the monsoon, Yogini Ekadashi is kept with a fast, worship of Vishnu and the peepal tree, and giving to those in need. Tradition holds it in especially high regard, and many keep it as a day of prayer and quiet."
+     "en": "Coming just before the monsoon, Yogini Ekadashi is kept with a fast, worship of Vishnu and the peepal tree, and giving to those in need. Tradition holds it in especially high regard, and many keep it as a day of prayer and quiet.",
+     "ta": "பருவமழைக்குச் சற்று முன் வரும் யோகினி ஏகாதசி விரதத்துடனும், திருமாலையும் அரசமரத்தையும் வழிபட்டும், தேவையுள்ளோருக்குத் தானம் செய்தும் கடைப்பிடிக்கப்படுகிறது. மரபு இதைத் தனிச் சிறப்புடன் போற்றுகிறது; பலர் இதைப் பிரார்த்தனையும் அமைதியும் நிறைந்த நாளாகக் கடைப்பிடிக்கின்றனர்."
     },
     "story": {
-     "en": "The story told is of Hemamali, a gardener in the service of Kubera, whose task was to bring fresh flowers each morning for Kubera's worship of Shiva. One morning, lingering with his wife, he did not come. Kubera, angered, sent him from Alaka, and Hemamali wandered the earth, unwell and unhappy. At last he reached the ashram of the sage Markandeya, who listened kindly and told him of Yogini Ekadashi. Hemamali kept it with a full heart, his health returned, and he went home to Alaka."
+     "en": "The story told is of Hemamali, a gardener in the service of Kubera, whose task was to bring fresh flowers each morning for Kubera's worship of Shiva. One morning, lingering with his wife, he did not come. Kubera, angered, sent him from Alaka, and Hemamali wandered the earth, unwell and unhappy. At last he reached the ashram of the sage Markandeya, who listened kindly and told him of Yogini Ekadashi. Hemamali kept it with a full heart, his health returned, and he went home to Alaka.",
+     "ta": "குபேரனின் பணியாளான ஹேமமாலி என்னும் தோட்டக்காரன் பற்றிய கதை இது. குபேரனின் சிவ பூஜைக்காக ஒவ்வொரு காலையும் புதிய மலர்கள் கொண்டு வருவது அவன் பணி. ஒருநாள் மனைவியுடன் பொழுதுபோக்கி அவன் வரவில்லை. கோபம் கொண்ட குபேரன் அவனை அளகாபுரியிலிருந்து வெளியேற்றினான்; நோயுற்றும் துயருற்றும் ஹேமமாலி பூமியில் அலைந்தான். இறுதியில் மார்க்கண்டேய முனிவரின் ஆசிரமத்தை அடைந்தான்; முனிவர் கனிவுடன் கேட்டு யோகினி ஏகாதசி பற்றிக் கூறினார். ஹேமமாலி நிறைந்த மனதுடன் அதைக் கடைப்பிடித்தான்; உடல்நலம் திரும்பியது, அவன் அளகாபுரிக்குத் திரும்பினான்."
     },
     "howTo": {
      "en": [
@@ -4128,6 +4213,13 @@
       "Worship Vishnu with tulsi and a lamp, and offer water at a peepal tree if one is near.",
       "Hear the story of Hemamali and give food or water to someone.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்.",
+      "துளசியும் விளக்கும் கொண்டு திருமாலை வழிபடுங்கள்; அருகில் அரசமரம் இருந்தால் அதற்கு நீர் ஊற்றுங்கள்.",
+      "ஹேமமாலியின் கதையைக் கேட்டு, யாருக்காவது உணவோ நீரோ அளியுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4162,13 +4254,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Ashadha Shukla Ekadashi: Vishnu goes into his four-month yogic sleep; chaturmas begins."
+     "en": "Ashadha Shukla Ekadashi: Vishnu goes into his four-month yogic sleep; chaturmas begins.",
+     "ta": "ஆடி வளர்பிறை ஏகாதசி: திருமால் நான்கு மாத யோக நித்திரைக்குச் செல்கிறார்; சாதுர்மாஸ்யம் தொடங்குகிறது."
     },
     "traditions": {
-     "en": "Also called Ashadhi Ekadashi and Padma Ekadashi, it begins chaturmas, the four months of the monsoon when many people take on a discipline: giving up a food, eating once a day, or reading daily. In Maharashtra, the great Pandharpur Wari reaches its end: lakhs of warkaris walk for weeks, singing abhangs, to see Vitthal on this day. Traditionally, weddings and housewarmings are not held until Vishnu wakes on Devutthana Ekadashi."
+     "en": "Also called Ashadhi Ekadashi and Padma Ekadashi, it begins chaturmas, the four months of the monsoon when many people take on a discipline: giving up a food, eating once a day, or reading daily. In Maharashtra, the great Pandharpur Wari reaches its end: lakhs of warkaris walk for weeks, singing abhangs, to see Vitthal on this day. Traditionally, weddings and housewarmings are not held until Vishnu wakes on Devutthana Ekadashi.",
+     "ta": "ஆஷாடி ஏகாதசி, பத்ம ஏகாதசி என்றும் அழைக்கப்படும் இந்நாள் சாதுர்மாஸ்யத்தைத் தொடங்குகிறது; மழைக்காலத்தின் இந்த நான்கு மாதங்களில் பலர் ஒரு நியமத்தை ஏற்கின்றனர்: ஓர் உணவைத் துறத்தல், நாளுக்கு ஒருவேளை மட்டும் உண்ணுதல், அல்லது தினமும் பாராயணம் செய்தல். மகாராஷ்டிராவில் மாபெரும் பண்டர்பூர் வாரி இந்நாளில் நிறைவடைகிறது: லட்சக்கணக்கான வார்க்கரிகள் அபங்கங்கள் பாடியபடி வாரக்கணக்கில் நடந்து விட்டலனைத் தரிசிக்கின்றனர். மரபுப்படி, தேவுத்தான ஏகாதசியில் திருமால் விழிக்கும் வரை திருமணங்களும் புதுமனை புகுவிழாக்களும் நடத்தப்படுவதில்லை."
     },
     "story": {
-     "en": "The story told is that on this Ekadashi Vishnu lies down on the serpent Shesha in the ocean of milk and enters yoga nidra, a sleep of deep meditation, for four months, waking on Kartika Shukla Ekadashi. Another story, told in Maharashtra, is of Pundalik, a young man devoted to his parents. When Vishnu, as Vitthal, came to his door, Pundalik was massaging his father's feet, and without rising he tossed Vitthal a brick to stand on until he was done. Vitthal waited, standing on the brick with his hands on his hips, and stands that way in Pandharpur to this day."
+     "en": "The story told is that on this Ekadashi Vishnu lies down on the serpent Shesha in the ocean of milk and enters yoga nidra, a sleep of deep meditation, for four months, waking on Kartika Shukla Ekadashi. Another story, told in Maharashtra, is of Pundalik, a young man devoted to his parents. When Vishnu, as Vitthal, came to his door, Pundalik was massaging his father's feet, and without rising he tossed Vitthal a brick to stand on until he was done. Vitthal waited, standing on the brick with his hands on his hips, and stands that way in Pandharpur to this day.",
+     "ta": "இந்த ஏகாதசியில் திருமால் பாற்கடலில் ஆதிசேஷன் மீது சயனித்து நான்கு மாதங்கள் யோக நித்திரையில், ஆழ்ந்த தியான உறக்கத்தில், ஆழ்ந்து கார்த்திகை வளர்பிறை ஏகாதசியில் விழிக்கிறார் என்பது கதை. மகாராஷ்டிராவில் சொல்லப்படும் மற்றொரு கதை பெற்றோரிடம் பக்தி கொண்ட புண்டலீகன் என்ற இளைஞனைப் பற்றியது. திருமால் விட்டலனாக அவன் வாசலுக்கு வந்தபோது புண்டலீகன் தன் தந்தையின் கால்களைப் பிடித்துவிட்டுக் கொண்டிருந்தான்; எழாமலேயே, தான் முடிக்கும் வரை நிற்க ஒரு செங்கல்லை விட்டலனிடம் எறிந்தான். விட்டலன் இடுப்பில் கைகளை வைத்துக்கொண்டு அந்தச் செங்கல் மீது காத்திருந்தார்; இன்றும் பண்டர்பூரில் அப்படியே நிற்கிறார்."
     },
     "howTo": {
      "en": [
@@ -4177,6 +4272,13 @@
       "If you wish, choose a small discipline for the four months of chaturmas.",
       "Join a local dindi or temple procession if there is one.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்.",
+      "துளசியும் விளக்கும் கொண்டு திருமாலையோ விட்டலனையோ வழிபட்டு, அபங்கங்கள் அல்லது பஜனைகள் பாடுங்கள்.",
+      "விரும்பினால் சாதுர்மாஸ்யத்தின் நான்கு மாதங்களுக்கு ஒரு சிறு நியமத்தைத் தேர்ந்தெடுங்கள்.",
+      "உள்ளூரில் திண்டி அல்லது கோயில் ஊர்வலம் இருந்தால் அதில் கலந்துகொள்ளுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4211,13 +4313,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Shravana Krishna Ekadashi (Ashadha in the amanta reckoning), the first Ekadashi of chaturmas's dark fortnight."
+     "en": "Shravana Krishna Ekadashi (Ashadha in the amanta reckoning), the first Ekadashi of chaturmas's dark fortnight.",
+     "ta": "ஆவணி தேய்பிறை ஏகாதசி (அமாந்த முறையில் ஆடி), சாதுர்மாஸ்யத்தின் தேய்பிறையில் வரும் முதல் ஏகாதசி."
     },
     "traditions": {
-     "en": "Devotees fast, worship Vishnu, and especially honour the tulsi plant: watering it, lighting a lamp before it and offering its leaves. Many light a ghee lamp before Vishnu through the evening. It falls in the rains, a season of reflection."
+     "en": "Devotees fast, worship Vishnu, and especially honour the tulsi plant: watering it, lighting a lamp before it and offering its leaves. Many light a ghee lamp before Vishnu through the evening. It falls in the rains, a season of reflection.",
+     "ta": "பக்தர்கள் விரதம் இருந்து திருமாலை வழிபடுகின்றனர்; குறிப்பாகத் துளசிச் செடியைப் போற்றுகின்றனர்: நீர் ஊற்றி, முன்னால் விளக்கேற்றி, இலைகளை அர்ப்பணித்து. பலர் மாலை முழுவதும் திருமால் முன் நெய் விளக்கு ஏற்றி வைக்கின்றனர். மழைக்காலத்தில், சிந்தனைக்குரிய பருவத்தில் இது வருகிறது."
     },
     "story": {
-     "en": "The story told is of a hot-tempered landowner who, in a quarrel, struck a Brahmin, who fell and did not survive. Overwhelmed with remorse, the landowner wished to make amends, but the village would not let him take part in its rites. A sage told him to keep Kamika Ekadashi with sincerity, worshipping Vishnu with tulsi, and he did so. The story is told of how heartfelt remorse and a turn toward goodness are honoured in tradition, and how the village took him back."
+     "en": "The story told is of a hot-tempered landowner who, in a quarrel, struck a Brahmin, who fell and did not survive. Overwhelmed with remorse, the landowner wished to make amends, but the village would not let him take part in its rites. A sage told him to keep Kamika Ekadashi with sincerity, worshipping Vishnu with tulsi, and he did so. The story is told of how heartfelt remorse and a turn toward goodness are honoured in tradition, and how the village took him back.",
+     "ta": "ஒரு சண்டையில் ஓர் அந்தணரை அடித்து, அவர் விழுந்து உயிரிழக்கக் காரணமான முன்கோபக்கார நிலச்சுவான்தார் பற்றிய கதை இது. மனவருத்தத்தில் மூழ்கிய அவர் பரிகாரம் செய்ய விரும்பினார், ஆனால் ஊர் அவரைச் சடங்குகளில் பங்கேற்க விடவில்லை. உள்ளன்போடு துளசியால் திருமாலை வழிபட்டுக் காமிகா ஏகாதசி இருக்குமாறு ஒரு முனிவர் கூறினார்; அவர் அவ்வாறே செய்தார். உளமார்ந்த வருத்தத்தையும் நன்மையை நோக்கிய திருப்பத்தையும் மரபு எப்படி மதிக்கிறது, ஊர் அவரை எப்படி மீண்டும் ஏற்றுக்கொண்டது என்பதை இக்கதை சொல்கிறது."
     },
     "howTo": {
      "en": [
@@ -4226,6 +4331,13 @@
       "Water the tulsi plant, light a lamp before it and offer tulsi leaves to Vishnu.",
       "Keep a ghee lamp lit before Vishnu in the evening.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்.",
+      "துளசிக்கு நீர் ஊற்றி, முன்னால் விளக்கேற்றி, துளசி இலைகளைத் திருமாலுக்கு அர்ப்பணியுங்கள்.",
+      "மாலையில் திருமால் முன் நெய் விளக்கு ஏற்றி வையுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4260,13 +4372,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Shravana Shukla Ekadashi, traditionally kept by couples praying for children."
+     "en": "Shravana Shukla Ekadashi, traditionally kept by couples praying for children.",
+     "ta": "ஆவணி வளர்பிறை ஏகாதசி, குழந்தைப் பேறு வேண்டும் தம்பதியர் மரபாகக் கடைப்பிடிப்பது."
     },
     "traditions": {
-     "en": "'Putrada' means 'giver of children'. Couples hoping for a child often keep this fast together, and parents keep it for their children's wellbeing. Vishnu is worshipped as Bal Gopal, the child Krishna. In the South this Ekadashi is also called Pavitropana Ekadashi, when a pavitra, a woven thread, is offered to Vishnu."
+     "en": "'Putrada' means 'giver of children'. Couples hoping for a child often keep this fast together, and parents keep it for their children's wellbeing. Vishnu is worshipped as Bal Gopal, the child Krishna. In the South this Ekadashi is also called Pavitropana Ekadashi, when a pavitra, a woven thread, is offered to Vishnu.",
+     "ta": "'புத்ரதா' என்றால் மக்கட்பேறு அளிப்பது. குழந்தை வேண்டும் தம்பதியர் பெரும்பாலும் இந்த விரதத்தை ஒன்றாக இருக்கின்றனர்; பெற்றோர் தம் குழந்தைகளின் நலனுக்காகவும் கடைப்பிடிக்கின்றனர். திருமால் பாலகோபாலனாக, குழந்தைக் கண்ணனாக வழிபடப்படுகிறார். தென்னிந்தியாவில் இந்த ஏகாதசி பவித்ரோபன ஏகாதசி என்றும் அழைக்கப்படுகிறது; அன்று நெய்த நூலான பவித்ரம் திருமாலுக்கு அர்ப்பணிக்கப்படுகிறது."
     },
     "story": {
-     "en": "King Mahijit of Mahishmati ruled his people well but had no children, and the sorrow weighed on him and his kingdom. His ministers went to the sage Lomasha, who saw that the king in an earlier life had once turned a thirsty cow away from water. He advised that the king and his people keep the Shravana Shukla Ekadashi together and offer its merit to the king. They did, and in time a son was born to the royal couple, and the kingdom celebrated."
+     "en": "King Mahijit of Mahishmati ruled his people well but had no children, and the sorrow weighed on him and his kingdom. His ministers went to the sage Lomasha, who saw that the king in an earlier life had once turned a thirsty cow away from water. He advised that the king and his people keep the Shravana Shukla Ekadashi together and offer its merit to the king. They did, and in time a son was born to the royal couple, and the kingdom celebrated.",
+     "ta": "மாகிஷ்மதியின் மஹீஜித் மன்னன் மக்களை நன்கு ஆண்டான், ஆனால் குழந்தைகள் இல்லை; அந்தத் துயரம் மன்னனையும் நாட்டையும் வாட்டியது. அமைச்சர்கள் லோமச முனிவரிடம் சென்றனர்; முற்பிறவியில் மன்னன் தாகத்துடன் வந்த ஒரு பசுவைத் தண்ணீரிலிருந்து விரட்டியதை முனிவர் கண்டார். மன்னனும் மக்களும் ஒன்றாக ஆவணி வளர்பிறை ஏகாதசி இருந்து அதன் புண்ணியத்தை மன்னனுக்கு அர்ப்பணிக்குமாறு அறிவுறுத்தினார். அவர்கள் அவ்வாறே செய்தனர்; காலப்போக்கில் அரச தம்பதிக்கு ஒரு மகன் பிறந்தான், நாடு கொண்டாடியது."
     },
     "howTo": {
      "en": [
@@ -4275,6 +4390,13 @@
       "Worship Bal Gopal or Vishnu with tulsi, butter and a lamp; hear the story of King Mahijit.",
       "Give water to animals and food to children in need.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்; தம்பதியர் ஒன்றாகக் கடைப்பிடிக்கலாம்.",
+      "துளசி, வெண்ணெய், விளக்குடன் பாலகோபாலனையோ திருமாலையோ வழிபட்டு, மஹீஜித் மன்னனின் கதையைக் கேளுங்கள்.",
+      "விலங்குகளுக்குத் தண்ணீரும் தேவையுள்ள குழந்தைகளுக்கு உணவும் அளியுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4309,13 +4431,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Bhadrapada Krishna Ekadashi (Shravana in the amanta reckoning), also called Annada Ekadashi."
+     "en": "Bhadrapada Krishna Ekadashi (Shravana in the amanta reckoning), also called Annada Ekadashi.",
+     "ta": "புரட்டாசி தேய்பிறை ஏகாதசி (அமாந்த முறையில் ஆவணி), அன்னதா ஏகாதசி என்றும் அழைக்கப்படுகிறது."
     },
     "traditions": {
-     "en": "Coming a few days after Janmashtami, Aja Ekadashi is kept with a fast, worship of Vishnu and a night of bhajans in many homes. The story of King Harishchandra is read, and people reflect on keeping one's word through hard times."
+     "en": "Coming a few days after Janmashtami, Aja Ekadashi is kept with a fast, worship of Vishnu and a night of bhajans in many homes. The story of King Harishchandra is read, and people reflect on keeping one's word through hard times.",
+     "ta": "கோகுலாஷ்டமிக்குச் சில நாட்களுக்குப் பின் வரும் அஜா ஏகாதசி விரதத்துடனும், திருமால் வழிபாட்டுடனும், பல வீடுகளில் இரவு பஜனையுடனும் கடைப்பிடிக்கப்படுகிறது. அரிச்சந்திர மன்னனின் கதை படிக்கப்படுகிறது; கடினமான காலங்களிலும் சொன்ன சொல் தவறாமை பற்றி மக்கள் சிந்திக்கின்றனர்."
     },
     "story": {
-     "en": "Harishchandra, king of Ayodhya, was famed for never telling a lie. Tested by the sage Vishvamitra, he gave up his kingdom to keep a promise, and to pay the sage's fee he sold his wife and son and himself, ending as a keeper of the cremation ground at Kashi. Through every hardship he did not break his word. When his young son died and his wife came to the ground unable to pay the fee, Harishchandra, heartbroken, still asked for it as his duty required. The sage Gautama had told him of Aja Ekadashi, which he kept, and the story ends with the gods appearing, restoring his son and kingdom, and honouring his truthfulness."
+     "en": "Harishchandra, king of Ayodhya, was famed for never telling a lie. Tested by the sage Vishvamitra, he gave up his kingdom to keep a promise, and to pay the sage's fee he sold his wife and son and himself, ending as a keeper of the cremation ground at Kashi. Through every hardship he did not break his word. When his young son died and his wife came to the ground unable to pay the fee, Harishchandra, heartbroken, still asked for it as his duty required. The sage Gautama had told him of Aja Ekadashi, which he kept, and the story ends with the gods appearing, restoring his son and kingdom, and honouring his truthfulness.",
+     "ta": "ஒருபோதும் பொய் சொல்லாதவர் என்று புகழ்பெற்றவர் அயோத்தி மன்னன் அரிச்சந்திரன். விசுவாமித்திர முனிவர் சோதித்தபோது, ஒரு வாக்கைக் காக்கத் தன் நாட்டைத் துறந்தார்; முனிவருக்குரிய தட்சணையைச் செலுத்த மனைவியையும் மகனையும் தன்னையுமே விற்றார்; இறுதியில் காசியில் மயானக் காவலரானார். எல்லாத் துன்பங்களிலும் அவர் சொல் தவறவில்லை. இளம் மகன் இறந்து, கட்டணம் செலுத்த இயலாமல் மனைவி மயானத்துக்கு வந்தபோதும், மனம் உடைந்தும் கடமைப்படி அவர் அதைக் கேட்டார். கௌதம முனிவர் கூறிய அஜா ஏகாதசியை அவர் கடைப்பிடித்திருந்தார்; தேவர்கள் தோன்றி மகனையும் நாட்டையும் மீட்டளித்து, அவரது சத்தியத்தைப் போற்றுவதோடு கதை நிறைவடைகிறது."
     },
     "howTo": {
      "en": [
@@ -4324,6 +4449,13 @@
       "Worship Vishnu with tulsi and a lamp, and read the story of Harishchandra.",
       "Sing bhajans in the evening, and reflect on a promise you mean to keep.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்.",
+      "துளசியும் விளக்கும் கொண்டு திருமாலை வழிபட்டு, அரிச்சந்திரனின் கதையைப் படியுங்கள்.",
+      "மாலையில் பஜனை பாடி, நீங்கள் காக்க நினைக்கும் ஒரு வாக்குறுதியைப் பற்றிச் சிந்தியுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4358,13 +4490,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Bhadrapada Shukla Ekadashi: Vishnu turns onto his side in his sleep; also Vamana Ekadashi."
+     "en": "Bhadrapada Shukla Ekadashi: Vishnu turns onto his side in his sleep; also Vamana Ekadashi.",
+     "ta": "புரட்டாசி வளர்பிறை ஏகாதசி: உறக்கத்தில் திருமால் பக்கவாட்டில் திரும்புகிறார்; வாமன ஏகாதசி என்றும் அழைக்கப்படுகிறது."
     },
     "traditions": {
-     "en": "Also called Parivartini Ekadashi, from 'turning'. Devotees fast and worship Vishnu in his Vamana form, the dwarf brahmin, with curd rice and flowers. In Maharashtra it falls during Ganeshotsav, and it is a day of quiet worship in the middle of chaturmas."
+     "en": "Also called Parivartini Ekadashi, from 'turning'. Devotees fast and worship Vishnu in his Vamana form, the dwarf brahmin, with curd rice and flowers. In Maharashtra it falls during Ganeshotsav, and it is a day of quiet worship in the middle of chaturmas.",
+     "ta": "'திரும்புதல்' என்ற பொருளில் பரிவர்த்தினி ஏகாதசி என்றும் அழைக்கப்படுகிறது. குள்ள அந்தணச் சிறுவனான வாமன வடிவில் திருமாலைப் பக்தர்கள் விரதம் இருந்து தயிர்சாதமும் மலர்களும் கொண்டு வழிபடுகின்றனர். மகாராஷ்டிராவில் இது விநாயகர் உற்சவக் காலத்தில் வருகிறது; சாதுர்மாஸ்யத்தின் நடுவே அமைதியான வழிபாட்டுக்குரிய நாள் இது."
     },
     "story": {
-     "en": "The asura king Bali, grandson of Prahlad, was generous and powerful and had come to rule the three worlds. Vishnu came to his sacrifice as Vamana, a small brahmin boy, and asked for just three steps of land. Bali, against his teacher's warning, gladly agreed. Vamana grew to cosmic size: with one step he covered the earth, with the second the heavens, and for the third Bali offered his own head. Moved by his generosity, Vishnu gave him the underworld to rule and promised to stay as his guardian. On this Ekadashi, tradition says, Vishnu, sleeping through chaturmas, turns onto his side."
+     "en": "The asura king Bali, grandson of Prahlad, was generous and powerful and had come to rule the three worlds. Vishnu came to his sacrifice as Vamana, a small brahmin boy, and asked for just three steps of land. Bali, against his teacher's warning, gladly agreed. Vamana grew to cosmic size: with one step he covered the earth, with the second the heavens, and for the third Bali offered his own head. Moved by his generosity, Vishnu gave him the underworld to rule and promised to stay as his guardian. On this Ekadashi, tradition says, Vishnu, sleeping through chaturmas, turns onto his side.",
+     "ta": "பிரகலாதனின் பேரனான அசுர மன்னன் மகாபலி தாராள மனமும் வலிமையும் கொண்டவன்; மூவுலகையும் ஆளும் நிலைக்கு உயர்ந்தான். அவனது யாகத்துக்குத் திருமால் வாமனன் என்னும் சிறு அந்தணச் சிறுவனாக வந்து மூன்றடி மண் மட்டுமே கேட்டார். குருவின் எச்சரிக்கையையும் மீறி பலி மகிழ்ச்சியுடன் ஒப்புக்கொண்டான். வாமனன் பிரபஞ்ச அளவுக்கு வளர்ந்தார்: ஓரடியால் பூமியையும், இரண்டாவதால் விண்ணையும் அளந்தார்; மூன்றாவதுக்குப் பலி தன் தலையையே காட்டினான். அந்தத் தாராளத்தால் மகிழ்ந்த திருமால் அவனுக்குப் பாதாளத்தை ஆளக் கொடுத்து, காவலாக உடனிருப்பதாக வாக்களித்தார். சாதுர்மாஸ்யம் முழுவதும் உறங்கும் திருமால் இந்த ஏகாதசியில் பக்கவாட்டில் திரும்புகிறார் என்பது மரபு."
     },
     "howTo": {
      "en": [
@@ -4373,6 +4508,13 @@
       "Worship Vamana or Vishnu with tulsi, flowers and curd, and hear the story of Bali.",
       "Give something with an open hand, as Bali did.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்.",
+      "துளசி, மலர்கள், தயிருடன் வாமனனையோ திருமாலையோ வழிபட்டு, மகாபலியின் கதையைக் கேளுங்கள்.",
+      "பலியைப் போலத் திறந்த கையுடன் ஏதேனும் தானம் செய்யுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4407,13 +4549,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Ashvin Krishna Ekadashi (Bhadrapada in the amanta reckoning), in Pitru Paksha, kept for ancestors."
+     "en": "Ashvin Krishna Ekadashi (Bhadrapada in the amanta reckoning), in Pitru Paksha, kept for ancestors.",
+     "ta": "ஐப்பசி தேய்பிறை ஏகாதசி (அமாந்த முறையில் புரட்டாசி), மகாளய பட்சத்தில், முன்னோருக்காகக் கடைப்பிடிப்பது."
     },
     "traditions": {
-     "en": "Falling within Pitru Paksha, Indira Ekadashi joins the Ekadashi fast to the remembrance of ancestors. Families keep the fast, worship Vishnu as Shaligram, and many perform a shraddha for their forebears on this day, offering food to Brahmins, cows and crows."
+     "en": "Falling within Pitru Paksha, Indira Ekadashi joins the Ekadashi fast to the remembrance of ancestors. Families keep the fast, worship Vishnu as Shaligram, and many perform a shraddha for their forebears on this day, offering food to Brahmins, cows and crows.",
+     "ta": "மகாளய பட்சத்தில் வருவதால் இந்திரா ஏகாதசி, ஏகாதசி விரதத்தை முன்னோர் நினைவுடன் இணைக்கிறது. குடும்பங்கள் விரதம் இருந்து சாளக்கிராமமாகத் திருமாலை வழிபடுகின்றன; பலர் இந்நாளில் முன்னோருக்குச் சிராத்தம் செய்து அந்தணர், பசுக்கள், காகங்களுக்கு உணவு அளிக்கின்றனர்."
     },
     "story": {
-     "en": "King Indrasena of Mahishmati was visited by the sage Narada, who brought news of the king's late father: in the afterlife, he wished his son would remember him. Narada told Indrasena how to keep the Ekadashi of Ashvin's dark fortnight, with shraddha for his father on the day before and fasting and worship on Ekadashi, and to offer its merit to him. The king kept it with his family and his people, and Narada later told him that his father was at peace. The story is the reason this Ekadashi is kept in remembrance of one's elders."
+     "en": "King Indrasena of Mahishmati was visited by the sage Narada, who brought news of the king's late father: in the afterlife, he wished his son would remember him. Narada told Indrasena how to keep the Ekadashi of Ashvin's dark fortnight, with shraddha for his father on the day before and fasting and worship on Ekadashi, and to offer its merit to him. The king kept it with his family and his people, and Narada later told him that his father was at peace. The story is the reason this Ekadashi is kept in remembrance of one's elders.",
+     "ta": "மாகிஷ்மதியின் இந்திரசேன மன்னனை நாரத முனிவர் சந்தித்து, மறைந்த தந்தையின் செய்தியைக் கூறினார்: மகன் தன்னை நினைவுகூர வேண்டும் என்று மறுலகில் அவர் விரும்புகிறார். முந்தைய நாள் தந்தைக்குச் சிராத்தமும், ஏகாதசியன்று விரதமும் பூஜையுமாக, ஐப்பசி தேய்பிறை ஏகாதசியை எப்படிக் கடைப்பிடிப்பது என்றும், அதன் புண்ணியத்தைத் தந்தைக்கு அர்ப்பணிப்பது என்றும் நாரதர் கூறினார். மன்னன் குடும்பத்துடனும் மக்களுடனும் அதைக் கடைப்பிடித்தான்; தந்தை அமைதி பெற்றார் என்று பின்னர் நாரதர் தெரிவித்தார். மூத்தோர் நினைவில் இந்த ஏகாதசி கடைப்பிடிக்கப்படுவதற்கு இக்கதையே காரணம்."
     },
     "howTo": {
      "en": [
@@ -4422,6 +4567,13 @@
       "Worship Vishnu with tulsi and a lamp, and remember your ancestors by name.",
       "If your family does, offer food to Brahmins, cows or crows, and give to those in need.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்.",
+      "துளசியும் விளக்கும் கொண்டு திருமாலை வழிபட்டு, முன்னோரைப் பெயர் சொல்லி நினைவுகூருங்கள்.",
+      "குடும்ப வழக்கம் இருந்தால் அந்தணர், பசுக்கள் அல்லது காகங்களுக்கு உணவு அளித்து, தேவையுள்ளோருக்குத் தானம் செய்யுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4456,13 +4608,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Ashvin Shukla Ekadashi, the day after Dussehra."
+     "en": "Ashvin Shukla Ekadashi, the day after Dussehra.",
+     "ta": "ஐப்பசி வளர்பிறை ஏகாதசி, விஜயதசமிக்கு மறுநாள்."
     },
     "traditions": {
-     "en": "Coming right after Vijayadashami, Papankusha Ekadashi is kept with a fast and worship of Vishnu as Padmanabha, the lotus-naveled. Giving is especially valued: food, clothes, grain, an umbrella or footwear. The name speaks of an 'ankusha', the goad that steers an elephant, and the day is seen as a time to steer oneself back toward good conduct."
+     "en": "Coming right after Vijayadashami, Papankusha Ekadashi is kept with a fast and worship of Vishnu as Padmanabha, the lotus-naveled. Giving is especially valued: food, clothes, grain, an umbrella or footwear. The name speaks of an 'ankusha', the goad that steers an elephant, and the day is seen as a time to steer oneself back toward good conduct.",
+     "ta": "விஜயதசமிக்கு உடனே பின் வரும் பாபாங்குசா ஏகாதசி விரதத்துடனும், பத்மநாபனாகத் திருமாலை வழிபட்டும் கடைப்பிடிக்கப்படுகிறது. தானத்திற்குத் தனி மதிப்பு உண்டு: உணவு, உடை, தானியம், குடை, காலணி. யானையை வழிநடத்தும் அங்குசத்தைப் பெயர் குறிக்கிறது; தன்னை நல்லொழுக்கத்தை நோக்கி மீண்டும் செலுத்தும் நேரமாக இந்நாள் கருதப்படுகிறது."
     },
     "story": {
-     "en": "The story told is of Krodhana, a hunter in the Vindhya mountains who lived harshly and gave no thought to others. Near the end of his life, frightened and alone, he came to the ashram of the sage Angira and asked whether a life like his could still turn toward good. Angira told him of the Ekadashi of Ashvin's bright fortnight. Krodhana kept it with complete sincerity, and the story says that he found peace. The name 'Papankusha' is read as the goad that turns a person away from wrongdoing, at any point in life."
+     "en": "The story told is of Krodhana, a hunter in the Vindhya mountains who lived harshly and gave no thought to others. Near the end of his life, frightened and alone, he came to the ashram of the sage Angira and asked whether a life like his could still turn toward good. Angira told him of the Ekadashi of Ashvin's bright fortnight. Krodhana kept it with complete sincerity, and the story says that he found peace. The name 'Papankusha' is read as the goad that turns a person away from wrongdoing, at any point in life.",
+     "ta": "விந்திய மலையில் கடுமையாக வாழ்ந்து, பிறரைப் பற்றிச் சிந்திக்காத குரோதனன் என்ற வேடன் பற்றிய கதை இது. வாழ்வின் இறுதியில், அச்சமும் தனிமையுமாக, அவன் ஆங்கீரச முனிவரின் ஆசிரமத்தை அடைந்து, தன்னைப் போன்றவனின் வாழ்க்கையும் இன்னும் நன்மையை நோக்கித் திரும்ப முடியுமா என்று கேட்டான். ஐப்பசி வளர்பிறை ஏகாதசி பற்றி ஆங்கீரசர் கூறினார். குரோதனன் முழு உள்ளன்போடு அதைக் கடைப்பிடித்தான்; அவன் அமைதி பெற்றான் என்று கதை கூறுகிறது. வாழ்வின் எந்தக் கட்டத்திலும் ஒருவரைத் தவறிலிருந்து திருப்பும் அங்குசமாகவே 'பாபாங்குசா' என்ற பெயர் பொருள்கொள்ளப்படுகிறது."
     },
     "howTo": {
      "en": [
@@ -4471,6 +4626,13 @@
       "Worship Vishnu as Padmanabha with lotuses or other flowers, tulsi and a lamp.",
       "Give food, clothes or something useful to someone in need.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்.",
+      "தாமரை அல்லது பிற மலர்கள், துளசி, விளக்குடன் பத்மநாபனாகத் திருமாலை வழிபடுங்கள்.",
+      "தேவையுள்ளோருக்கு உணவு, உடை அல்லது பயனுள்ள ஏதேனும் அளியுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4505,13 +4667,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Kartika Krishna Ekadashi (Ashvin in the amanta reckoning), four days before Diwali."
+     "en": "Kartika Krishna Ekadashi (Ashvin in the amanta reckoning), four days before Diwali.",
+     "ta": "கார்த்திகை தேய்பிறை ஏகாதசி (அமாந்த முறையில் ஐப்பசி), தீபாவளிக்கு நான்கு நாள் முன்."
     },
     "traditions": {
-     "en": "Named after Rama, a name of Lakshmi, this Ekadashi is kept with a fast and worship of Vishnu and Lakshmi together, as homes are being cleaned and readied for Diwali. Many light lamps before tulsi in the evening, as is done throughout Kartika."
+     "en": "Named after Rama, a name of Lakshmi, this Ekadashi is kept with a fast and worship of Vishnu and Lakshmi together, as homes are being cleaned and readied for Diwali. Many light lamps before tulsi in the evening, as is done throughout Kartika.",
+     "ta": "லட்சுமியின் பெயர்களில் ஒன்றான ரமாவின் பெயரால் அமைந்த இந்த ஏகாதசி, தீபாவளிக்காக வீடுகள் சுத்தம் செய்யப்பட்டு அலங்கரிக்கப்படும் வேளையில், விரதத்துடனும் திருமாலையும் லட்சுமியையும் சேர்த்து வழிபட்டும் கடைப்பிடிக்கப்படுகிறது. கார்த்திகை மாதம் முழுவதும் போலவே பலர் மாலையில் துளசி முன் விளக்கேற்றுகின்றனர்."
     },
     "story": {
-     "en": "King Muchukunda, a devotee of Vishnu, had his whole kingdom keep Ekadashi. His daughter Chandrabhaga married Prince Shobhana, who was frail and found fasting very hard. When Rama Ekadashi came while Shobhana was visiting, Chandrabhaga, torn, encouraged him to keep it with everyone, and Shobhana, too weak, passed away in the night. Through the merit of the fast, the story says, he was given a beautiful city on Mount Mandarachala, but it could not last without a devotee's support. Chandrabhaga, who had kept every Ekadashi since childhood, journeyed there, offered him the merit of her own fasts, and the two lived together in the city, steadied by her devotion."
+     "en": "King Muchukunda, a devotee of Vishnu, had his whole kingdom keep Ekadashi. His daughter Chandrabhaga married Prince Shobhana, who was frail and found fasting very hard. When Rama Ekadashi came while Shobhana was visiting, Chandrabhaga, torn, encouraged him to keep it with everyone, and Shobhana, too weak, passed away in the night. Through the merit of the fast, the story says, he was given a beautiful city on Mount Mandarachala, but it could not last without a devotee's support. Chandrabhaga, who had kept every Ekadashi since childhood, journeyed there, offered him the merit of her own fasts, and the two lived together in the city, steadied by her devotion.",
+     "ta": "திருமால் பக்தரான முசுகுந்த மன்னன் நாடு முழுவதையும் ஏகாதசி கடைப்பிடிக்கச் செய்தான். அவன் மகள் சந்திரபாகா பலவீனமான சோபன இளவரசனை மணந்தாள்; அவனுக்கு விரதம் மிகக் கடினமாக இருந்தது. சோபனன் வருகை தந்திருந்தபோது ரமா ஏகாதசி வந்தது; தடுமாறிய சந்திரபாகா எல்லோருடனும் சேர்ந்து கடைப்பிடிக்க ஊக்கமளித்தாள்; மிகவும் பலவீனமான சோபனன் அன்றிரவு காலமானான். விரதத்தின் புண்ணியத்தால் மந்தராசல மலையில் அழகிய நகரம் அவனுக்குக் கிடைத்தது, ஆனால் ஒரு பக்தையின் துணையின்றி அது நிலைக்காது என்று கதை கூறுகிறது. சிறுவயது முதல் எல்லா ஏகாதசிகளையும் கடைப்பிடித்த சந்திரபாகா அங்கு சென்று தன் விரதங்களின் புண்ணியத்தை அவனுக்கு அர்ப்பணித்தாள்; அவள் பக்தியின் துணையுடன் இருவரும் அந்த நகரில் ஒன்றாக வாழ்ந்தனர்."
     },
     "howTo": {
      "en": [
@@ -4520,6 +4685,13 @@
       "Worship Vishnu and Lakshmi together with tulsi, flowers and a lamp.",
       "Light a lamp before the tulsi plant in the evening.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்; விரதம் கடினமாக இருந்தால், கதையே சுட்டுவது போல, மென்மையாகக் கடைப்பிடியுங்கள்.",
+      "துளசி, மலர்கள், விளக்குடன் திருமாலையும் லட்சுமியையும் சேர்த்து வழிபடுங்கள்.",
+      "மாலையில் துளசிச் செடி முன் விளக்கேற்றுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4554,13 +4726,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Kartika Shukla Ekadashi: Vishnu wakes from his four-month sleep; chaturmas ends."
+     "en": "Kartika Shukla Ekadashi: Vishnu wakes from his four-month sleep; chaturmas ends.",
+     "ta": "கார்த்திகை வளர்பிறை ஏகாதசி: திருமால் நான்கு மாத உறக்கத்திலிருந்து விழிக்கிறார்; சாதுர்மாஸ்யம் நிறைவடைகிறது."
     },
     "traditions": {
-     "en": "Also called Prabodhini Ekadashi and Dev Uthani Ekadashi, it ends chaturmas. In the evening, families draw Vishnu's footprints and a sugarcane canopy in the courtyard, place seasonal produce, water chestnuts, sugarcane, sweet potato and jujube, under it, and wake the god with bells, conch and songs: 'Utho Dev, baitho Dev'. Disciplines kept since Devshayani Ekadashi end today. Tulsi Vivah follows, and the season for weddings begins. In Pandharpur, the Kartiki Wari reaches Vitthal."
+     "en": "Also called Prabodhini Ekadashi and Dev Uthani Ekadashi, it ends chaturmas. In the evening, families draw Vishnu's footprints and a sugarcane canopy in the courtyard, place seasonal produce, water chestnuts, sugarcane, sweet potato and jujube, under it, and wake the god with bells, conch and songs: 'Utho Dev, baitho Dev'. Disciplines kept since Devshayani Ekadashi end today. Tulsi Vivah follows, and the season for weddings begins. In Pandharpur, the Kartiki Wari reaches Vitthal.",
+     "ta": "பிரபோதினி ஏகாதசி, தேவ் உட்டனி ஏகாதசி என்றும் அழைக்கப்படும் இந்நாள் சாதுர்மாஸ்யத்தை நிறைவு செய்கிறது. மாலையில் குடும்பங்கள் முற்றத்தில் திருமாலின் திருவடிகளை வரைந்து கரும்பால் ஒரு பந்தல் அமைக்கின்றன; அதன் கீழ் பருவகால விளைபொருட்களான கரும்பு, சர்க்கரைவள்ளிக் கிழங்கு, இலந்தைப் பழம், சிங்காரா ஆகியவற்றை வைத்து, மணி, சங்கு, பாடல்களுடன் 'உட்டோ தேவ், பைட்டோ தேவ்' என்று பாடி இறைவனை எழுப்புகின்றன. தேவசயனி ஏகாதசி முதல் கடைப்பிடித்த நியமங்கள் இன்று நிறைவடைகின்றன. தொடர்ந்து துளசி கல்யாணம்; திருமணக் காலம் தொடங்குகிறது. பண்டர்பூரில் கார்த்திகி வாரி விட்டலனை அடைகிறது."
     },
     "story": {
-     "en": "Having entered yoga nidra on Devshayani Ekadashi, Vishnu wakes on this day after four months. One telling explains the sleep itself: after a long struggle against the asura Shankhasura, Vishnu rested in the ocean of milk, and the gods agreed to keep watch through the rains. Another tells that Vishnu promised Bali, ruler of the underworld, that he would dwell with him for four months of every year; on Devutthana Ekadashi he returns. Either way, the household wakes him with joy, and the year's celebrations can begin again."
+     "en": "Having entered yoga nidra on Devshayani Ekadashi, Vishnu wakes on this day after four months. One telling explains the sleep itself: after a long struggle against the asura Shankhasura, Vishnu rested in the ocean of milk, and the gods agreed to keep watch through the rains. Another tells that Vishnu promised Bali, ruler of the underworld, that he would dwell with him for four months of every year; on Devutthana Ekadashi he returns. Either way, the household wakes him with joy, and the year's celebrations can begin again.",
+     "ta": "தேவசயனி ஏகாதசியில் யோக நித்திரைக்குச் சென்ற திருமால் நான்கு மாதங்களுக்குப் பின் இந்நாளில் விழிக்கிறார். ஒரு கதை உறக்கத்தின் காரணத்தைச் சொல்கிறது: சங்காசுரனுடன் நீண்ட போருக்குப் பின் திருமால் பாற்கடலில் ஓய்வெடுத்தார்; மழைக்காலம் முழுவதும் தேவர்கள் காவல் இருக்க ஒப்புக்கொண்டனர். மற்றொரு கதையில், பாதாள அதிபனான மகாபலியுடன் ஒவ்வோர் ஆண்டும் நான்கு மாதங்கள் தங்குவதாகத் திருமால் வாக்களித்திருந்தார்; தேவுத்தான ஏகாதசியில் அவர் திரும்புகிறார். எப்படியாயினும் வீட்டார் மகிழ்ச்சியுடன் அவரை எழுப்புகின்றனர்; ஆண்டின் கொண்டாட்டங்கள் மீண்டும் தொடங்கலாம்."
     },
     "howTo": {
      "en": [
@@ -4569,6 +4744,13 @@
       "Place seasonal fruit and vegetables under it, light lamps around it, and worship Vishnu.",
       "Wake him with a bell or conch and the song 'Utho Dev, baitho Dev'.",
       "End any chaturmas discipline today, and break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்.",
+      "மாலையில் முற்றத்தில் அரிசி மாவு அல்லது சுண்ணத்தால் திருமாலின் திருவடிகளை வரைந்து, கரும்பால் சிறு பந்தல் அமையுங்கள்.",
+      "அதன் கீழ் பருவகாலப் பழங்களையும் காய்கறிகளையும் வைத்து, சுற்றிலும் விளக்கேற்றித் திருமாலை வழிபடுங்கள்.",
+      "மணி அல்லது சங்கு ஒலித்து, 'உட்டோ தேவ், பைட்டோ தேவ்' பாடலுடன் அவரை எழுப்புங்கள்.",
+      "சாதுர்மாஸ்ய நியமத்தை இன்று நிறைவு செய்து, மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4603,13 +4785,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Margashirsha Krishna Ekadashi (Kartika in the amanta reckoning): the birth of Ekadashi herself."
+     "en": "Margashirsha Krishna Ekadashi (Kartika in the amanta reckoning): the birth of Ekadashi herself.",
+     "ta": "மார்கழி தேய்பிறை ஏகாதசி (அமாந்த முறையில் கார்த்திகை): ஏகாதசி தேவியின் பிறப்பு."
     },
     "traditions": {
-     "en": "'Utpanna' means 'arisen'. This is traditionally the Ekadashi on which people who wish to begin keeping Ekadashis start, since it remembers the day Ekadashi was born. Devotees fast and worship Vishnu, and hear the story of Ekadashi Devi."
+     "en": "'Utpanna' means 'arisen'. This is traditionally the Ekadashi on which people who wish to begin keeping Ekadashis start, since it remembers the day Ekadashi was born. Devotees fast and worship Vishnu, and hear the story of Ekadashi Devi.",
+     "ta": "'உத்பன்னா' என்றால் தோன்றியது. ஏகாதசி பிறந்த நாளை நினைவுகூர்வதால், ஏகாதசி விரதம் தொடங்க விரும்புவோர் மரபாக இந்த ஏகாதசியில்தான் தொடங்குகின்றனர். பக்தர்கள் விரதம் இருந்து திருமாலை வழிபட்டு ஏகாதசி தேவியின் கதையைக் கேட்கின்றனர்."
     },
     "story": {
-     "en": "The asura Mura had driven the gods from heaven, and Vishnu fought him for a thousand years. Tired, Vishnu went to rest in a cave at Badrikashram. Mura followed him there, meaning to strike while he slept. From Vishnu's body arose a radiant goddess, who faced Mura and overcame him. When Vishnu woke and saw what had happened, he named her Ekadashi, since she had appeared on the eleventh day, and granted that those who keep her day would be dear to him. From that day, the story says, Ekadashi has been kept."
+     "en": "The asura Mura had driven the gods from heaven, and Vishnu fought him for a thousand years. Tired, Vishnu went to rest in a cave at Badrikashram. Mura followed him there, meaning to strike while he slept. From Vishnu's body arose a radiant goddess, who faced Mura and overcame him. When Vishnu woke and saw what had happened, he named her Ekadashi, since she had appeared on the eleventh day, and granted that those who keep her day would be dear to him. From that day, the story says, Ekadashi has been kept.",
+     "ta": "முரன் என்ற அசுரன் தேவர்களை விண்ணுலகிலிருந்து விரட்டினான்; ஆயிரம் ஆண்டுகள் திருமால் அவனுடன் போரிட்டார். களைப்படைந்த திருமால் பதரிகாசிரமத்தில் ஒரு குகையில் ஓய்வெடுக்கச் சென்றார். உறங்கும்போது தாக்க எண்ணி முரன் அங்கும் பின்தொடர்ந்தான். திருமாலின் திருமேனியிலிருந்து ஒளிமிகுந்த ஒரு தேவி தோன்றி முரனை எதிர்த்து வென்றாள். விழித்த திருமால் நடந்ததைக் கண்டு, பதினோராம் நாளில் தோன்றியதால் அவளுக்கு ஏகாதசி என்று பெயரிட்டு, அவள் நாளைக் கடைப்பிடிப்போர் தனக்குப் பிரியமானவர் ஆவர் என்று வரமளித்தார். அன்றுமுதல் ஏகாதசி கடைப்பிடிக்கப்படுகிறது என்று கதை கூறுகிறது."
     },
     "howTo": {
      "en": [
@@ -4618,6 +4803,13 @@
       "Fast on Ekadashi from grains and beans.",
       "Worship Vishnu with tulsi and a lamp, and hear the story of Ekadashi Devi.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "ஏகாதசி விரதம் தொடங்குவதானால் இதுவே மரபான நாள்; பழமும் பாலுமாக மென்மையாகத் தொடங்குங்கள்.",
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்.",
+      "துளசியும் விளக்கும் கொண்டு திருமாலை வழிபட்டு, ஏகாதசி தேவியின் கதையைக் கேளுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4652,13 +4844,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Margashirsha Shukla Ekadashi: the Gita's day, also Vaikunta Ekadashi in many traditions."
+     "en": "Margashirsha Shukla Ekadashi: the Gita's day, also Vaikunta Ekadashi in many traditions.",
+     "ta": "மார்கழி வளர்பிறை ஏகாதசி: கீதையின் நாள்; பல மரபுகளில் வைகுண்ட ஏகாதசி."
     },
     "traditions": {
-     "en": "Mokshada Ekadashi coincides with Gita Jayanti, and many people read the Bhagavad Gita through the day while keeping the fast. In South India the Ekadashi of the solar month of Margazhi (often this one or the next) is Vaikunta Ekadashi, when the northern 'gate of Vaikuntha' in Vishnu temples is opened at dawn."
+     "en": "Mokshada Ekadashi coincides with Gita Jayanti, and many people read the Bhagavad Gita through the day while keeping the fast. In South India the Ekadashi of the solar month of Margazhi (often this one or the next) is Vaikunta Ekadashi, when the northern 'gate of Vaikuntha' in Vishnu temples is opened at dawn.",
+     "ta": "மோட்சதா ஏகாதசி கீதா ஜயந்தியுடன் சேர்ந்து வருகிறது; பலர் விரதம் இருந்தபடி நாள் முழுவதும் பகவத் கீதையைப் பாராயணம் செய்கின்றனர். தென்னிந்தியாவில் சூரிய மாதமான மார்கழியில் வரும் ஏகாதசி (பெரும்பாலும் இதுவோ அடுத்ததோ) வைகுண்ட ஏகாதசி; அன்று விடியலில் திருமால் கோயில்களில் வடக்கு 'சொர்க்க வாசல்' திறக்கப்படுகிறது."
     },
     "story": {
-     "en": "King Vaikhanasa of Champaka dreamt that his late father was unhappy in the afterlife. Troubled, he asked the learned men of his court, who sent him to the sage Parvata. The sage saw that his father had once been unkind to his own wife, and advised the king to keep the Ekadashi of Margashirsha's bright fortnight and offer its merit to his father. Vaikhanasa kept it with his family, and the story says his father appeared to him in a dream, at peace, and blessed him. 'Mokshada' means 'the giver of freedom'."
+     "en": "King Vaikhanasa of Champaka dreamt that his late father was unhappy in the afterlife. Troubled, he asked the learned men of his court, who sent him to the sage Parvata. The sage saw that his father had once been unkind to his own wife, and advised the king to keep the Ekadashi of Margashirsha's bright fortnight and offer its merit to his father. Vaikhanasa kept it with his family, and the story says his father appeared to him in a dream, at peace, and blessed him. 'Mokshada' means 'the giver of freedom'.",
+     "ta": "சம்பக நகர மன்னன் வைகானசன் தன் மறைந்த தந்தை மறுலகில் துயரத்தில் இருப்பதாகக் கனவு கண்டான். கலங்கிய அவன் அவையின் அறிஞர்களிடம் கேட்க, அவர்கள் அவனைப் பர்வத முனிவரிடம் அனுப்பினர். தந்தை ஒருமுறை தன் மனைவியிடம் இரக்கமின்றி நடந்துகொண்டதை முனிவர் கண்டு, மார்கழி வளர்பிறை ஏகாதசி இருந்து அதன் புண்ணியத்தைத் தந்தைக்கு அர்ப்பணிக்குமாறு மன்னனுக்கு அறிவுறுத்தினார். வைகானசன் குடும்பத்துடன் அதைக் கடைப்பிடித்தான்; தந்தை அமைதியுடன் கனவில் தோன்றி ஆசீர்வதித்தார் என்று கதை கூறுகிறது. 'மோட்சதா' என்றால் 'விடுதலை அளிப்பது'."
     },
     "howTo": {
      "en": [
@@ -4667,6 +4862,13 @@
       "Worship Krishna or Vishnu with tulsi and a lamp, and read the Bhagavad Gita, all or in part.",
       "Remember your elders, and hear the story of King Vaikhanasa.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்.",
+      "துளசியும் விளக்கும் கொண்டு கண்ணனையோ திருமாலையோ வழிபட்டு, பகவத் கீதையை முழுமையாகவோ பகுதியாகவோ பாராயணம் செய்யுங்கள்.",
+      "மூத்தோரை நினைவுகூர்ந்து, வைகானச மன்னனின் கதையைக் கேளுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4701,13 +4903,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Pausha Krishna Ekadashi (Margashirsha in the amanta reckoning)."
+     "en": "Pausha Krishna Ekadashi (Margashirsha in the amanta reckoning).",
+     "ta": "தை தேய்பிறை ஏகாதசி (அமாந்த முறையில் மார்கழி)."
     },
     "traditions": {
-     "en": "'Saphala' means fruitful. Devotees fast, worship Vishnu with seasonal fruit, and keep a night vigil with bhajans and lamps. Offering fruit and giving it away is a characteristic custom of the day."
+     "en": "'Saphala' means fruitful. Devotees fast, worship Vishnu with seasonal fruit, and keep a night vigil with bhajans and lamps. Offering fruit and giving it away is a characteristic custom of the day.",
+     "ta": "'சபலா' என்றால் பயனளிப்பது. பக்தர்கள் விரதம் இருந்து பருவகாலப் பழங்களால் திருமாலை வழிபட்டு, பஜனைகளும் விளக்குகளுமாக இரவு கண்விழிக்கின்றனர். பழங்களை அர்ப்பணிப்பதும் தானம் செய்வதும் இந்நாளின் தனி வழக்கம்."
     },
     "story": {
-     "en": "King Mahishmata of Champavati had four sons, and the eldest, Lumpaka, lived recklessly and was sent away from the kingdom. He lived in the forest under a peepal tree, surviving on fruit. On Dashami night he was too cold to sleep, and through Ekadashi too weak to gather food; he gathered some fruit, offered it under the tree to Vishnu, and stayed awake that night, without knowing he was keeping Saphala Ekadashi. The story says his heart changed through that unknowing vigil, and he returned to his father, who welcomed him. He became a good king."
+     "en": "King Mahishmata of Champavati had four sons, and the eldest, Lumpaka, lived recklessly and was sent away from the kingdom. He lived in the forest under a peepal tree, surviving on fruit. On Dashami night he was too cold to sleep, and through Ekadashi too weak to gather food; he gathered some fruit, offered it under the tree to Vishnu, and stayed awake that night, without knowing he was keeping Saphala Ekadashi. The story says his heart changed through that unknowing vigil, and he returned to his father, who welcomed him. He became a good king.",
+     "ta": "சம்பாவதியின் மகிஷ்மத மன்னனுக்கு நான்கு மகன்கள்; மூத்தவன் லும்பகன் பொறுப்பின்றி வாழ்ந்ததால் நாட்டை விட்டு வெளியேற்றப்பட்டான். அவன் காட்டில் ஓர் அரசமரத்தடியில் பழங்களை உண்டு வாழ்ந்தான். தசமி இரவு குளிரால் உறங்க முடியவில்லை; ஏகாதசியன்று உணவு சேகரிக்க முடியாத அளவு பலவீனமானான்; சில பழங்களைச் சேகரித்து மரத்தடியில் திருமாலுக்கு அர்ப்பணித்து, அன்றிரவு கண்விழித்திருந்தான், தான் சபலா ஏகாதசி கடைப்பிடிப்பதை அறியாமலேயே. அறியாமல் இருந்த அந்தக் கண்விழிப்பால் அவன் மனம் மாறியது என்றும், அவன் தந்தையிடம் திரும்ப, தந்தை அவனை ஏற்றுக்கொண்டார் என்றும் கதை கூறுகிறது. அவன் நல்ல மன்னனானான்."
     },
     "howTo": {
      "en": [
@@ -4716,6 +4921,13 @@
       "Worship Vishnu with seasonal fruit, tulsi and a lamp.",
       "Keep a vigil with bhajans for part of the night, and give fruit to others.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்.",
+      "பருவகாலப் பழங்கள், துளசி, விளக்குடன் திருமாலை வழிபடுங்கள்.",
+      "இரவின் ஒரு பகுதி பஜனையுடன் கண்விழித்து, பிறருக்குப் பழங்கள் அளியுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4750,13 +4962,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Pausha Shukla Ekadashi, the winter Putrada Ekadashi."
+     "en": "Pausha Shukla Ekadashi, the winter Putrada Ekadashi.",
+     "ta": "தை வளர்பிறை ஏகாதசி, குளிர்காலப் புத்ரதா ஏகாதசி."
     },
     "traditions": {
-     "en": "Like Shravana Putrada Ekadashi, this day is traditionally kept by couples hoping for children and by parents for their children's wellbeing. Vishnu is worshipped with tulsi, and many give warm clothes and food in the cold of Pausha. In the South it often coincides with Vaikunta Ekadashi."
+     "en": "Like Shravana Putrada Ekadashi, this day is traditionally kept by couples hoping for children and by parents for their children's wellbeing. Vishnu is worshipped with tulsi, and many give warm clothes and food in the cold of Pausha. In the South it often coincides with Vaikunta Ekadashi.",
+     "ta": "ஆவணி புத்ரதா ஏகாதசியைப் போலவே, குழந்தை வேண்டும் தம்பதியரும் குழந்தைகளின் நலனுக்காகப் பெற்றோரும் இந்நாளை மரபாகக் கடைப்பிடிக்கின்றனர். துளசியால் திருமால் வழிபடப்படுகிறார்; குளிர்காலத்தில் பலர் கம்பளி ஆடைகளும் உணவும் தானம் செய்கின்றனர். தென்னிந்தியாவில் இது பெரும்பாலும் வைகுண்ட ஏகாதசியுடன் சேர்ந்து வருகிறது."
     },
     "story": {
-     "en": "King Suketuman of Bhadravati and Queen Shaibya had no children, and the king, worrying about who would carry the family forward, grew so troubled that he went alone into the forest. There, by a lotus lake, he found a gathering of sages who told him it was Pausha Shukla Ekadashi and advised him to keep it. He did, with full faith, and returning home kept the observance with the queen. In time a son was born to them, who grew into a kind and capable king."
+     "en": "King Suketuman of Bhadravati and Queen Shaibya had no children, and the king, worrying about who would carry the family forward, grew so troubled that he went alone into the forest. There, by a lotus lake, he found a gathering of sages who told him it was Pausha Shukla Ekadashi and advised him to keep it. He did, with full faith, and returning home kept the observance with the queen. In time a son was born to them, who grew into a kind and capable king.",
+     "ta": "பத்ராவதியின் சுகேதுமான் மன்னனுக்கும் சைப்யா அரசிக்கும் குழந்தைகள் இல்லை; குடும்பத்தை யார் முன்னெடுப்பார் என்ற கவலையில் மிகவும் கலங்கிய மன்னன் தனியாகக் காட்டுக்குச் சென்றான். அங்கு ஒரு தாமரைக் குளக்கரையில் முனிவர் கூட்டத்தைக் கண்டான்; அன்று தை வளர்பிறை ஏகாதசி என்றும், அதைக் கடைப்பிடிக்குமாறும் அவர்கள் அறிவுறுத்தினர். முழு நம்பிக்கையுடன் அவன் கடைப்பிடித்தான்; வீடு திரும்பி அரசியுடனும் கடைப்பிடித்தான். காலப்போக்கில் அவர்களுக்கு ஒரு மகன் பிறந்தான்; அவன் கருணையும் திறமையும் மிக்க மன்னனாக வளர்ந்தான்."
     },
     "howTo": {
      "en": [
@@ -4765,6 +4980,13 @@
       "Worship Vishnu with tulsi and a lamp, and hear the story of King Suketuman.",
       "Give warm clothes or food to someone in the cold.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்; தம்பதியர் ஒன்றாகக் கடைப்பிடிக்கலாம்.",
+      "துளசியும் விளக்கும் கொண்டு திருமாலை வழிபட்டு, சுகேதுமான் மன்னனின் கதையைக் கேளுங்கள்.",
+      "குளிரில் வாடுவோருக்குக் கம்பளி ஆடையோ உணவோ அளியுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4799,13 +5021,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Magha Krishna Ekadashi (Pausha in the amanta reckoning): the Ekadashi of sesame, used in six ways."
+     "en": "Magha Krishna Ekadashi (Pausha in the amanta reckoning): the Ekadashi of sesame, used in six ways.",
+     "ta": "மாசி தேய்பிறை ஏகாதசி (அமாந்த முறையில் தை): எள்ளை ஆறு விதமாகப் பயன்படுத்தும் ஏகாதசி."
     },
     "traditions": {
-     "en": "'Shat-tila' means 'six sesames'. Tradition uses sesame six ways on this day: in a paste for bathing, in the bath water, in a small fire offering, in water offered to ancestors, in food, and as a gift. Sesame laddoos and sesame given to those in need are central to the day, in the depth of winter."
+     "en": "'Shat-tila' means 'six sesames'. Tradition uses sesame six ways on this day: in a paste for bathing, in the bath water, in a small fire offering, in water offered to ancestors, in food, and as a gift. Sesame laddoos and sesame given to those in need are central to the day, in the depth of winter.",
+     "ta": "'ஷட்-திலா' என்றால் 'ஆறு எள்'. இந்நாளில் மரபு எள்ளை ஆறு விதமாகப் பயன்படுத்துகிறது: குளிக்கும் பசையில், குளிக்கும் நீரில், சிறு ஹோமத்தில், முன்னோருக்கான தர்ப்பண நீரில், உணவில், தானமாக. கடுங்குளிரில் எள்ளுருண்டையும் தேவையுள்ளோருக்கு எள் தானமுமே இந்நாளின் மையம்."
     },
     "story": {
-     "en": "The story told is of a devout woman who kept every fast with great discipline but had never given food to anyone. Vishnu came to her door as a mendicant to ask for alms, and she, irritated, dropped a lump of clay into his bowl. In the afterlife she was given a beautiful house, but it was empty of food and grain. Vishnu explained why, and told her to ask the celestial women who came to visit her about Shattila Ekadashi. She kept it, with sesame given generously, and her house was filled. The story is about the kindness that should go along with discipline."
+     "en": "The story told is of a devout woman who kept every fast with great discipline but had never given food to anyone. Vishnu came to her door as a mendicant to ask for alms, and she, irritated, dropped a lump of clay into his bowl. In the afterlife she was given a beautiful house, but it was empty of food and grain. Vishnu explained why, and told her to ask the celestial women who came to visit her about Shattila Ekadashi. She kept it, with sesame given generously, and her house was filled. The story is about the kindness that should go along with discipline.",
+     "ta": "எல்லா விரதங்களையும் மிகுந்த நியமத்துடன் கடைப்பிடித்தும் ஒருபோதும் யாருக்கும் உணவளிக்காத ஒரு பக்தையைப் பற்றிய கதை இது. திருமால் துறவியாக அவள் வாசலுக்குப் பிச்சை கேட்டு வந்தார்; எரிச்சலடைந்த அவள் அவரது பாத்திரத்தில் ஒரு மண்கட்டியைப் போட்டாள். மறுலகில் அவளுக்கு அழகிய வீடு கிடைத்தது, ஆனால் அதில் உணவோ தானியமோ இல்லை. திருமால் காரணத்தை விளக்கி, அவளைக் காண வரும் தேவமகளிரிடம் ஷட்திலா ஏகாதசி பற்றிக் கேட்குமாறு கூறினார். தாராளமாக எள் தானம் செய்து அவள் அதைக் கடைப்பிடித்தாள்; அவள் வீடு நிறைந்தது. நியமத்துடன் சேர்ந்திருக்க வேண்டிய கருணையைப் பற்றிய கதை இது."
     },
     "howTo": {
      "en": [
@@ -4814,6 +5039,13 @@
       "Fast from grains and beans; sesame sweets are commonly eaten.",
       "Worship Vishnu with sesame, tulsi and a lamp, and offer water with sesame for your ancestors.",
       "Give sesame, sesame sweets, or warm food to someone in need, then break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று சிறிது எள் பசை பூசியோ நீரில் எள் இட்டோ குளியுங்கள்.",
+      "தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்; எள் இனிப்புகள் பொதுவாக உண்ணப்படுகின்றன.",
+      "எள், துளசி, விளக்குடன் திருமாலை வழிபட்டு, முன்னோருக்கு எள்ளும் நீரும் அர்ப்பணியுங்கள்.",
+      "தேவையுள்ளோருக்கு எள், எள் இனிப்பு அல்லது சூடான உணவு அளித்து, மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4848,13 +5080,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Magha Shukla Ekadashi, a few days after Vasant Panchami."
+     "en": "Magha Shukla Ekadashi, a few days after Vasant Panchami.",
+     "ta": "மாசி வளர்பிறை ஏகாதசி, வசந்த பஞ்சமிக்குச் சில நாள் பின்."
     },
     "traditions": {
-     "en": "'Jaya' means victory. Devotees fast and worship Vishnu, and many keep a night vigil. In parts of the South this day is also called Bhumi Ekadashi or Bhishma Ekadashi, and the Vishnu Sahasranama, recited by Bhishma, is chanted."
+     "en": "'Jaya' means victory. Devotees fast and worship Vishnu, and many keep a night vigil. In parts of the South this day is also called Bhumi Ekadashi or Bhishma Ekadashi, and the Vishnu Sahasranama, recited by Bhishma, is chanted.",
+     "ta": "'ஜயா' என்றால் வெற்றி. பக்தர்கள் விரதம் இருந்து திருமாலை வழிபடுகின்றனர்; பலர் இரவு கண்விழிக்கின்றனர். தென்னிந்தியாவின் சில பகுதிகளில் இந்நாள் பூமி ஏகாதசி என்றும் பீஷ்ம ஏகாதசி என்றும் அழைக்கப்படுகிறது; பீஷ்மர் உரைத்த விஷ்ணு சகஸ்ரநாமம் ஜபிக்கப்படுகிறது."
     },
     "story": {
-     "en": "At Indra's court, the gandharva Malyavan and the dancer Pushpavati fell in love, and lost in each other, sang and danced carelessly before Indra. In his displeasure, Indra sent them down to the Himalayas as pishachas, restless spirits. They wandered in the cold, unhappy, unable to sleep or eat. One Magha Shukla Ekadashi they were too cold and miserable to eat anything, and sat awake all night beneath a peepal tree, remembering Vishnu. Without meaning to, they had kept Jaya Ekadashi. The next morning they were restored to their own forms and returned to heaven, where even Indra welcomed them."
+     "en": "At Indra's court, the gandharva Malyavan and the dancer Pushpavati fell in love, and lost in each other, sang and danced carelessly before Indra. In his displeasure, Indra sent them down to the Himalayas as pishachas, restless spirits. They wandered in the cold, unhappy, unable to sleep or eat. One Magha Shukla Ekadashi they were too cold and miserable to eat anything, and sat awake all night beneath a peepal tree, remembering Vishnu. Without meaning to, they had kept Jaya Ekadashi. The next morning they were restored to their own forms and returned to heaven, where even Indra welcomed them.",
+     "ta": "இந்திரன் அவையில் கந்தர்வன் மால்யவானும் நடனமாது புஷ்பவதியும் காதல் கொண்டனர்; ஒருவரில் ஒருவர் மூழ்கி இந்திரன் முன் கவனமின்றிப் பாடி ஆடினர். அதிருப்தியடைந்த இந்திரன் அவர்களைப் பிசாசுகளாக, அலையும் ஆவிகளாக, இமயமலைக்கு அனுப்பினான். உறங்கவோ உண்ணவோ இயலாமல், துயருடன் அவர்கள் குளிரில் அலைந்தனர். ஒரு மாசி வளர்பிறை ஏகாதசியன்று ஏதும் உண்ண முடியாத அளவு குளிரிலும் துயரிலும், திருமாலை நினைத்தபடி ஓர் அரசமரத்தடியில் இரவு முழுவதும் விழித்திருந்தனர். அறியாமலேயே அவர்கள் ஜயா ஏகாதசி கடைப்பிடித்திருந்தனர். மறுநாள் காலை அவர்கள் சுய உருவம் பெற்று விண்ணுலகம் திரும்பினர்; இந்திரனே அவர்களை வரவேற்றான்."
     },
     "howTo": {
      "en": [
@@ -4863,6 +5098,13 @@
       "Worship Vishnu with tulsi and a lamp, and chant the Vishnu Sahasranama.",
       "Keep a vigil with bhajans for part of the night if you can.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்.",
+      "துளசியும் விளக்கும் கொண்டு திருமாலை வழிபட்டு, விஷ்ணு சகஸ்ரநாமம் ஜபியுங்கள்.",
+      "முடிந்தால் இரவின் ஒரு பகுதி பஜனையுடன் கண்விழியுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4897,13 +5139,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Phalguna Krishna Ekadashi (Magha in the amanta reckoning), kept by Rama before crossing to Lanka."
+     "en": "Phalguna Krishna Ekadashi (Magha in the amanta reckoning), kept by Rama before crossing to Lanka.",
+     "ta": "பங்குனி தேய்பிறை ஏகாதசி (அமாந்த முறையில் மாசி), இலங்கைக்குக் கடக்கும் முன் ராமன் கடைப்பிடித்தது."
     },
     "traditions": {
-     "en": "'Vijaya' also means victory. Devotees fast, worship Vishnu or Rama, and in some homes place a kalash with seven grains and a coconut for the puja. People facing a hard task often keep this Ekadashi before beginning it."
+     "en": "'Vijaya' also means victory. Devotees fast, worship Vishnu or Rama, and in some homes place a kalash with seven grains and a coconut for the puja. People facing a hard task often keep this Ekadashi before beginning it.",
+     "ta": "'விஜயா' என்பதும் வெற்றியையே குறிக்கிறது. பக்தர்கள் விரதம் இருந்து திருமாலையோ ராமனையோ வழிபடுகின்றனர்; சில வீடுகளில் பூஜைக்காக ஏழு தானியங்களும் தேங்காயும் கொண்ட கலசம் வைக்கப்படுகிறது. கடினமான பணியை எதிர்கொள்பவர்கள் அதைத் தொடங்கும் முன் பெரும்பாலும் இந்த ஏகாதசியைக் கடைப்பிடிக்கின்றனர்."
     },
     "story": {
-     "en": "Rama, with Lakshmana and the vanara army, reached the shore of the ocean on his way to Lanka to bring Sita back, and did not know how to cross. Lakshmana suggested they ask the sage Vakadalbhya, whose ashram was nearby. The sage advised Rama to keep the Ekadashi of the dark fortnight of Phalguna, with a kalash of grains and worship of Vishnu. Rama kept it with his companions, and the story continues with the building of the bridge to Lanka and the victory that followed."
+     "en": "Rama, with Lakshmana and the vanara army, reached the shore of the ocean on his way to Lanka to bring Sita back, and did not know how to cross. Lakshmana suggested they ask the sage Vakadalbhya, whose ashram was nearby. The sage advised Rama to keep the Ekadashi of the dark fortnight of Phalguna, with a kalash of grains and worship of Vishnu. Rama kept it with his companions, and the story continues with the building of the bridge to Lanka and the victory that followed.",
+     "ta": "சீதையை மீட்க இலங்கைக்குச் செல்லும் வழியில் லட்சுமணனுடனும் வானரப் படையுடனும் ராமன் கடற்கரையை அடைந்தார்; எப்படிக் கடப்பது என்று தெரியவில்லை. அருகிலுள்ள ஆசிரமத்தின் வகதால்ப்ய முனிவரிடம் கேட்கலாம் என்று லட்சுமணன் கூறினான். தானியக் கலசமும் திருமால் வழிபாடுமாகப் பங்குனி தேய்பிறை ஏகாதசி இருக்குமாறு முனிவர் ராமனுக்கு அறிவுறுத்தினார். தோழர்களுடன் ராமன் அதைக் கடைப்பிடித்தார்; இலங்கைக்குச் சேது கட்டியதும் தொடர்ந்த வெற்றியுமாகக் கதை தொடர்கிறது."
     },
     "howTo": {
      "en": [
@@ -4912,6 +5157,13 @@
       "If your family does, set up a kalash with seven kinds of grain and a coconut, and worship Vishnu or Rama with tulsi and a lamp.",
       "Hear the story of Rama at the seashore, and begin preparing for a task you have been putting off.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்.",
+      "குடும்ப வழக்கம் இருந்தால் ஏழு வகைத் தானியங்களும் தேங்காயும் கொண்டு கலசம் அமைத்து, துளசியும் விளக்கும் கொண்டு திருமாலையோ ராமனையோ வழிபடுங்கள்.",
+      "கடற்கரையில் ராமனின் கதையைக் கேட்டு, தள்ளிப்போட்டு வந்த ஒரு பணிக்குத் தயாராகத் தொடங்குங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4946,13 +5198,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Phalguna Shukla Ekadashi, honouring the amla tree, a few days before Holi."
+     "en": "Phalguna Shukla Ekadashi, honouring the amla tree, a few days before Holi.",
+     "ta": "பங்குனி வளர்பிறை ஏகாதசி, ஹோலிக்குச் சில நாள் முன், நெல்லி மரத்தைப் போற்றும் நாள்."
     },
     "traditions": {
-     "en": "Devotees fast and worship Vishnu beneath or beside an amla (Indian gooseberry) tree, said to be dear to him, offering water, flowers and thread, and walking around it. Amla is eaten or given that day. In Varanasi it is Rangbhari Ekadashi, when Shiva is said to bring Parvati home after their wedding and the colours of Holi begin, with gulal at Kashi Vishwanath."
+     "en": "Devotees fast and worship Vishnu beneath or beside an amla (Indian gooseberry) tree, said to be dear to him, offering water, flowers and thread, and walking around it. Amla is eaten or given that day. In Varanasi it is Rangbhari Ekadashi, when Shiva is said to bring Parvati home after their wedding and the colours of Holi begin, with gulal at Kashi Vishwanath.",
+     "ta": "திருமாலுக்குப் பிரியமானது என்று சொல்லப்படும் நெல்லி மரத்தடியிலோ அருகிலோ பக்தர்கள் விரதம் இருந்து திருமாலை வழிபடுகின்றனர்; நீர், மலர்கள், நூல் அர்ப்பணித்து மரத்தை வலம் வருகின்றனர். அன்று நெல்லிக்காய் உண்ணப்படுகிறது அல்லது தானம் செய்யப்படுகிறது. வாரணாசியில் இது ரங்பரி ஏகாதசி; திருமணத்துக்குப் பின் சிவன் பார்வதியை வீட்டுக்கு அழைத்து வரும் நாள் என்றும், காசி விஸ்வநாதரிடம் குலாலுடன் ஹோலியின் வண்ணங்கள் தொடங்கும் நாள் என்றும் சொல்லப்படுகிறது."
     },
     "story": {
-     "en": "The story told is of King Chitrasena of Vaidisha, whose whole kingdom kept Amalaki Ekadashi together beneath a great amla tree, singing and keeping vigil through the night. A hunter who happened to be there that night, tired and hungry, stayed to watch and listen till dawn. Though he understood little, the story says, his life turned toward good, and in a later birth he became a just king. Tradition holds the amla tree as one in which Vishnu dwells, which is why it is honoured today."
+     "en": "The story told is of King Chitrasena of Vaidisha, whose whole kingdom kept Amalaki Ekadashi together beneath a great amla tree, singing and keeping vigil through the night. A hunter who happened to be there that night, tired and hungry, stayed to watch and listen till dawn. Though he understood little, the story says, his life turned toward good, and in a later birth he became a just king. Tradition holds the amla tree as one in which Vishnu dwells, which is why it is honoured today.",
+     "ta": "வைதிசாவின் சித்ரசேன மன்னனின் நாடு முழுவதும் ஒரு பெரிய நெல்லி மரத்தடியில் ஒன்றாக ஆமலகி ஏகாதசி கடைப்பிடித்து, பாடியபடி இரவு முழுவதும் கண்விழித்தது பற்றிய கதை இது. களைப்புடனும் பசியுடனும் அன்றிரவு அங்கு வந்த ஒரு வேடன் விடியும் வரை பார்த்தும் கேட்டும் இருந்தான். அவனுக்கு அதிகம் புரியவில்லை என்றாலும் அவன் வாழ்க்கை நன்மையை நோக்கித் திரும்பியது என்றும், பிற்பிறவியில் அவன் நீதியுள்ள மன்னனானான் என்றும் கதை கூறுகிறது. திருமால் உறையும் மரமாக நெல்லியை மரபு கருதுவதால்தான் இன்று அது போற்றப்படுகிறது."
     },
     "howTo": {
      "en": [
@@ -4961,6 +5216,13 @@
       "Worship Vishnu beside an amla tree if there is one, offering water, flowers and thread and walking around it; otherwise worship with amla fruit at home.",
       "Eat amla and give some to others.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்.",
+      "நெல்லி மரம் இருந்தால் அதனருகில் நீர், மலர்கள், நூல் அர்ப்பணித்து வலம் வந்து திருமாலை வழிபடுங்கள்; இல்லையெனில் வீட்டில் நெல்லிக்காயுடன் வழிபடுங்கள்.",
+      "நெல்லிக்காய் உண்டு, பிறருக்கும் அளியுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
@@ -4995,13 +5257,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Chaitra Krishna Ekadashi (Phalguna in the amanta reckoning), the last Ekadashi of the year."
+     "en": "Chaitra Krishna Ekadashi (Phalguna in the amanta reckoning), the last Ekadashi of the year.",
+     "ta": "சித்திரை தேய்பிறை ஏகாதசி (அமாந்த முறையில் பங்குனி), ஆண்டின் கடைசி ஏகாதசி."
     },
     "traditions": {
-     "en": "Falling between Holi and the new year, the year's last Ekadashi is kept as a time of reflection: devotees fast, worship Vishnu, and look back on the year, setting right what they can. The name speaks of release from wrongdoing, and many use the day to apologise to someone or let go of a grudge."
+     "en": "Falling between Holi and the new year, the year's last Ekadashi is kept as a time of reflection: devotees fast, worship Vishnu, and look back on the year, setting right what they can. The name speaks of release from wrongdoing, and many use the day to apologise to someone or let go of a grudge.",
+     "ta": "ஹோலிக்கும் புத்தாண்டுக்கும் இடையே வரும் ஆண்டின் கடைசி ஏகாதசி சிந்தனைக்குரிய நேரமாகக் கடைப்பிடிக்கப்படுகிறது: பக்தர்கள் விரதம் இருந்து திருமாலை வழிபட்டு, கடந்த ஆண்டைத் திரும்பிப் பார்த்து, முடிந்ததைச் சரிசெய்கின்றனர். தவறிலிருந்து விடுதலையைப் பெயர் குறிக்கிறது; பலர் இந்நாளில் யாரிடமாவது மன்னிப்புக் கேட்கின்றனர் அல்லது ஒரு மனக்கசப்பைக் கைவிடுகின்றனர்."
     },
     "story": {
-     "en": "The sage Medhavi was deep in tapas in the Chaitraratha forest when the apsara Manjughosha, sent to distract him, sang and danced nearby. Medhavi was drawn away from his practice, and years passed before he realised how long he had lost. In his dismay he spoke harshly to her, and she was changed into a pishachini. Both were unhappy: she in her new form, he at having broken his discipline and spoken in anger. Medhavi's father, the sage Chyavana, told them both to keep the Chaitra Krishna Ekadashi. They did, sincerely, and each was restored, she to her own form and he to his practice. The story is about setting things right."
+     "en": "The sage Medhavi was deep in tapas in the Chaitraratha forest when the apsara Manjughosha, sent to distract him, sang and danced nearby. Medhavi was drawn away from his practice, and years passed before he realised how long he had lost. In his dismay he spoke harshly to her, and she was changed into a pishachini. Both were unhappy: she in her new form, he at having broken his discipline and spoken in anger. Medhavi's father, the sage Chyavana, told them both to keep the Chaitra Krishna Ekadashi. They did, sincerely, and each was restored, she to her own form and he to his practice. The story is about setting things right.",
+     "ta": "சைத்ரரத வனத்தில் மேதாவி முனிவர் தவத்தில் ஆழ்ந்திருந்தபோது, அவரைத் திசைதிருப்ப அனுப்பப்பட்ட மஞ்சுகோஷா என்ற அப்சரஸ் அருகில் பாடி ஆடினாள். மேதாவி தம் சாதனையிலிருந்து விலகினார்; எவ்வளவு காலம் இழந்தோம் என்று உணர்வதற்குள் ஆண்டுகள் கடந்தன. மனவேதனையில் அவர் அவளிடம் கடுமையாகப் பேச, அவள் பிசாசினியாக மாறினாள். இருவரும் துயருற்றனர்: அவள் புதிய வடிவில், அவர் நியமம் தவறியதிலும் கோபத்தில் பேசியதிலும். மேதாவியின் தந்தையான ச்யவன முனிவர் இருவரையும் சித்திரை தேய்பிறை ஏகாதசி கடைப்பிடிக்குமாறு கூறினார். உள்ளன்போடு அவர்கள் கடைப்பிடித்தனர்; அவள் சுய உருவமும் அவர் சாதனையும் மீண்டும் பெற்றனர். தவறுகளைச் சரிசெய்வது பற்றிய கதை இது."
     },
     "howTo": {
      "en": [
@@ -5010,6 +5275,13 @@
       "Worship Vishnu with tulsi and a lamp, and hear the story of Medhavi and Manjughosha.",
       "Take a quiet moment to look back on the year; apologise to someone or let go of a grudge if you can.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை தானியம் இல்லாத எளிய உணவு உண்ணுங்கள்.",
+      "ஏகாதசியன்று தானியங்களையும் பருப்பு வகைகளையும் தவிருங்கள்.",
+      "துளசியும் விளக்கும் கொண்டு திருமாலை வழிபட்டு, மேதாவி, மஞ்சுகோஷா ஆகியோரின் கதையைக் கேளுங்கள்.",
+      "அமைதியாக ஆண்டைத் திரும்பிப் பாருங்கள்; முடிந்தால் யாரிடமாவது மன்னிப்புக் கேளுங்கள் அல்லது ஒரு மனக்கசப்பைக் கைவிடுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதத்தை முடியுங்கள்."
      ]
     }
    }
