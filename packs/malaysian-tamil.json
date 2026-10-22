@@ -733,6 +733,18 @@
    "tamil-samvatsara": {
     "en": "Tamil year",
     "ta": "தமிழ் ஆண்டு"
+   },
+   "vikram-chaitradi": {
+    "en": "Vikram Samvat",
+    "ta": "விக்ரம சம்வத்"
+   },
+   "shaka-samvatsara": {
+    "en": "Shaka Samvat",
+    "ta": "சக ஆண்டு"
+   },
+   "kali": {
+    "en": "Kali Yuga",
+    "ta": "கலியுகம்"
    }
   },
   "adhika": {
@@ -1033,6 +1045,190 @@
    "visham": {
     "en": "Visham",
     "ta": "விஷம்"
+   }
+  },
+  "anandadi": {
+   "ananda": {
+    "en": "Ananda",
+    "ta": "ஆனந்தம்"
+   },
+   "kaladanda": {
+    "en": "Kaladanda",
+    "ta": "காலதண்டம்"
+   },
+   "dhumra": {
+    "en": "Dhumra",
+    "ta": "தூம்ரம்"
+   },
+   "dhata": {
+    "en": "Dhata",
+    "ta": "தாதா"
+   },
+   "saumya": {
+    "en": "Saumya",
+    "ta": "சௌம்யம்"
+   },
+   "dhwanksha": {
+    "en": "Dhwanksha",
+    "ta": "த்வாங்க்ஷம்"
+   },
+   "ketu": {
+    "en": "Ketu",
+    "ta": "கேது"
+   },
+   "shrivatsa": {
+    "en": "Shrivatsa",
+    "ta": "ஸ்ரீவத்சம்"
+   },
+   "vajra": {
+    "en": "Vajra",
+    "ta": "வஜ்ரம்"
+   },
+   "mudgara": {
+    "en": "Mudgara",
+    "ta": "முத்கரம்"
+   },
+   "chhatra": {
+    "en": "Chhatra",
+    "ta": "சத்ரம்"
+   },
+   "mitra": {
+    "en": "Mitra",
+    "ta": "மித்ரம்"
+   },
+   "manasa": {
+    "en": "Manasa",
+    "ta": "மானசம்"
+   },
+   "padma": {
+    "en": "Padma",
+    "ta": "பத்மம்"
+   },
+   "lumbaka": {
+    "en": "Lumbaka",
+    "ta": "லும்பகம்"
+   },
+   "utpata": {
+    "en": "Utpata",
+    "ta": "உத்பாதம்"
+   },
+   "mrityu": {
+    "en": "Mrityu",
+    "ta": "ம்ருத்யு"
+   },
+   "kana": {
+    "en": "Kana",
+    "ta": "காணம்"
+   },
+   "siddhi": {
+    "en": "Siddhi",
+    "ta": "சித்தி"
+   },
+   "shubha": {
+    "en": "Shubha",
+    "ta": "சுபம்"
+   },
+   "amrita": {
+    "en": "Amrita",
+    "ta": "அம்ருதம்"
+   },
+   "musala": {
+    "en": "Musala",
+    "ta": "முசலம்"
+   },
+   "gada": {
+    "en": "Gada",
+    "ta": "கதம்"
+   },
+   "matanga": {
+    "en": "Matanga",
+    "ta": "மாதங்கம்"
+   },
+   "rakshasa": {
+    "en": "Rakshasa",
+    "ta": "ராக்ஷசம்"
+   },
+   "chara": {
+    "en": "Chara",
+    "ta": "சரம்"
+   },
+   "sthira": {
+    "en": "Sthira",
+    "ta": "ஸ்திரம்"
+   },
+   "vardhamana": {
+    "en": "Vardhamana",
+    "ta": "வர்தமானம்"
+   }
+  },
+  "chartYogas": {
+   "ruchaka": {
+    "en": "Ruchaka",
+    "ta": "ருசக"
+   },
+   "bhadra": {
+    "en": "Bhadra",
+    "ta": "பத்ர"
+   },
+   "hamsa": {
+    "en": "Hamsa",
+    "ta": "ஹம்ஸ"
+   },
+   "malavya": {
+    "en": "Malavya",
+    "ta": "மாளவ்ய"
+   },
+   "sasa": {
+    "en": "Sasa",
+    "ta": "சச"
+   },
+   "gajakesari": {
+    "en": "Gajakesari",
+    "ta": "கஜகேசரி"
+   },
+   "budhaditya": {
+    "en": "Budhaditya",
+    "ta": "புதாதித்ய"
+   },
+   "chandra-mangala": {
+    "en": "Chandra-Mangala",
+    "ta": "சந்திர-மங்கள"
+   },
+   "sunapha": {
+    "en": "Sunapha",
+    "ta": "சுனபா"
+   },
+   "anapha": {
+    "en": "Anapha",
+    "ta": "அனபா"
+   },
+   "durudhara": {
+    "en": "Durudhara",
+    "ta": "துருதரா"
+   },
+   "kemadruma": {
+    "en": "Kemadruma",
+    "ta": "கேமத்ரும"
+   },
+   "vesi": {
+    "en": "Vesi",
+    "ta": "வேசி"
+   },
+   "vasi": {
+    "en": "Vasi",
+    "ta": "வாசி"
+   },
+   "ubhayachari": {
+    "en": "Ubhayachari",
+    "ta": "உபயசரி"
+   },
+   "amala": {
+    "en": "Amala",
+    "ta": "அமல"
+   },
+   "parivartana": {
+    "en": "Parivartana",
+    "ta": "பரிவர்த்தனை"
    }
   }
  },
@@ -3284,6 +3480,1063 @@
      "ta": "அனுமத் ஜெயந்தி நல்வாழ்த்துகள்!"
     }
    }
+  },
+  {
+   "id": "kamada-ekadashi-ta",
+   "names": {
+    "en": "Kamada Ekadashi",
+    "ta": "காமதா ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "chaitra",
+    "tithi": 11,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Chaitra Shukla Ekadashi, the first Ekadashi of the new year."
+    },
+    "traditions": {
+     "en": "As with every Ekadashi, devotees of Vishnu fast from grains and beans, many on fruit and milk, spend time in prayer and break the fast the next morning during Dvadashi. Coming just after Rama Navami, Kamada Ekadashi is often kept with readings from the Ramayana and the singing of Vishnu's names."
+    },
+    "story": {
+     "en": "The story told is of Lalit and Lalita, a gandharva couple at the court of King Pundarika. Lalit, distracted by thoughts of his wife, sang out of tune before the king, and the king in his anger declared that he would take the form of a fearsome rakshasa. Lalita followed her husband through the forests, caring for him, until she met the sage Shringi, who told her of the Ekadashi of Chaitra. She kept the fast with full devotion and offered its merit to her husband, and Lalit was restored to his own form. The two returned home together."
+    },
+    "howTo": {
+     "en": [
+      "The evening before (Dashami), eat a light meal without grains in the night.",
+      "On Ekadashi, fast from grains and beans; take fruit, milk and nuts, or keep a stricter fast if you are able.",
+      "Worship Vishnu with tulsi, flowers and a lamp, and read or listen to the day's story.",
+      "Chant Vishnu's names or the Vishnu Sahasranama, and keep the day calm.",
+      "Break the fast the next morning within the Dvadashi time, with simple food."
+     ]
+    }
+   }
+  },
+  {
+   "id": "varuthini-ekadashi-ta",
+   "names": {
+    "en": "Varuthini Ekadashi",
+    "ta": "வரூதினி ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "chaitra",
+    "tithi": 26,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Vaishakha Krishna Ekadashi (Chaitra in the amanta reckoning), the Ekadashi of protection."
+    },
+    "traditions": {
+     "en": "Devotees fast and worship Vishnu in his Vamana form. Tradition especially values giving on this day: food, water in the summer heat, and help to students. Many avoid honey, meat, betel and gambling, and keep the day quiet."
+    },
+    "story": {
+     "en": "The story told is of King Mandhata, a just and generous ruler on the banks of the Narmada, who was absorbed in tapas when a bear attacked him and dragged him into the forest. He did not abandon his calm, but prayed to Vishnu, who came and freed him; but the king's foot was badly injured. Vishnu told him to keep the Varuthini Ekadashi at Mathura and worship his Varaha form, and the king, keeping the observance, was made whole. 'Varuthini' means 'the one that shields', and the day is remembered as a time of shelter."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free meal the evening before.",
+      "Fast on Ekadashi from grains and beans; fruit and milk are usual.",
+      "Worship Vishnu with tulsi and a lamp, and hear the story of King Mandhata.",
+      "Give water, food or help to someone, in the spirit of the day.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "mohini-ekadashi-ta",
+   "names": {
+    "en": "Mohini Ekadashi",
+    "ta": "மோகினி ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "vaishakha",
+    "tithi": 11,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Vaishakha Shukla Ekadashi, named for Vishnu's Mohini form."
+    },
+    "traditions": {
+     "en": "Devotees fast and worship Vishnu, remembering the form in which he appeared during the churning of the ocean. In temples, especially in Gujarat and the South, the deity is adorned as Mohini. The day is kept with prayer, reading and singing of Vishnu's names."
+    },
+    "story": {
+     "en": "When the gods and asuras churned the ocean and the pot of amrit rose, the asuras seized it. Vishnu took the form of Mohini, an enchanting woman, and offered to share the nectar fairly; captivated, the asuras agreed, and Mohini served it to the gods. The day also carries the story of Dhrishtabuddhi, a merchant's son who wasted his inheritance and lost his way, until the sage Kaundinya told him of this Ekadashi. He kept it sincerely, and his life turned toward steadiness and kindness."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free meal the evening before.",
+      "Fast on Ekadashi from grains and beans.",
+      "Worship Vishnu with tulsi, yellow flowers and a lamp; hear the story of the churning and of Dhrishtabuddhi.",
+      "Spend time in prayer or reading, and avoid harsh speech.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "apara-ekadashi-ta",
+   "names": {
+    "en": "Apara Ekadashi",
+    "ta": "அபரா ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "vaishakha",
+    "tithi": 26,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Jyeshtha Krishna Ekadashi (Vaishakha in the amanta reckoning), also called Achala Ekadashi."
+    },
+    "traditions": {
+     "en": "'Apara' means boundless. Devotees fast and worship Vishnu as Trivikrama, the form that measured the worlds in three steps. In Odisha the day is called Jalakrida Ekadashi, and in Punjab and Haryana, Bhadrakali Ekadashi. As the summer heat peaks, giving water and cooling drinks is a common practice."
+    },
+    "story": {
+     "en": "The story told is of King Mahidhvaja, a righteous king whose younger brother Vajradhvaja, jealous, took his life and buried him beneath a peepal tree. The king's spirit could not rest, and troubled travellers who passed that way. The sage Dhaumya, passing by, understood what had happened, kept the Apara Ekadashi and offered its merit to the king, and Mahidhvaja found peace. The story is told to show how far a single sincere observance, made for another, can reach."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free meal the evening before.",
+      "Fast on Ekadashi from grains and beans.",
+      "Worship Vishnu as Trivikrama with tulsi and a lamp, and hear the story of King Mahidhvaja.",
+      "Offer water or sherbet to people in the heat.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "nirjala-ekadashi-ta",
+   "names": {
+    "en": "Nirjala Ekadashi",
+    "ta": "நிர்ஜலா ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "jyeshtha",
+    "tithi": 11,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Jyeshtha Shukla Ekadashi, the strictest Ekadashi, kept without even water."
+    },
+    "traditions": {
+     "en": "'Nirjala' means without water. Those who keep it fully go from sunrise to the next sunrise without food or water, in the hottest weeks of the year. Because of the hardship, tradition places great value on giving water: people set up stalls with cold water and sherbet, and give earthen pots, fans and umbrellas. It is also called Bhimseni Ekadashi. Those who cannot fast without water, for reasons of health or age, keep a gentler fast, which tradition fully accepts."
+    },
+    "story": {
+     "en": "Bhima, the strongest of the Pandavas, loved his food and could not keep the twenty-four Ekadashis that his mother and brothers kept. He went to the sage Vyasa and asked if there were any way. Vyasa told him to keep just one Ekadashi, Jyeshtha Shukla Ekadashi, without food or water from sunrise to sunrise, and it would hold the place of all the others. Bhima kept it, and the day has been called Bhimseni Ekadashi since. The story is a gentle one: it makes room for those who find the full discipline hard."
+    },
+    "howTo": {
+     "en": [
+      "Decide honestly how you will keep it; if you have any health condition, are pregnant, elderly or on medication, keep a gentle fast with water instead.",
+      "Eat and drink well the evening before.",
+      "On Ekadashi, worship Vishnu in the morning with tulsi and a lamp.",
+      "Give water: fill pots, set up a water stall, or give earthen pots, fans or umbrellas.",
+      "Keep the day calm and indoors in the heat; chant or read.",
+      "Break the fast the next morning during Dvadashi, starting with water and something light."
+     ]
+    }
+   }
+  },
+  {
+   "id": "yogini-ekadashi-ta",
+   "names": {
+    "en": "Yogini Ekadashi",
+    "ta": "யோகினி ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "jyeshtha",
+    "tithi": 26,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Ashadha Krishna Ekadashi (Jyeshtha in the amanta reckoning)."
+    },
+    "traditions": {
+     "en": "Coming just before the monsoon, Yogini Ekadashi is kept with a fast, worship of Vishnu and the peepal tree, and giving to those in need. Tradition holds it in especially high regard, and many keep it as a day of prayer and quiet."
+    },
+    "story": {
+     "en": "The story told is of Hemamali, a gardener in the service of Kubera, whose task was to bring fresh flowers each morning for Kubera's worship of Shiva. One morning, lingering with his wife, he did not come. Kubera, angered, sent him from Alaka, and Hemamali wandered the earth, unwell and unhappy. At last he reached the ashram of the sage Markandeya, who listened kindly and told him of Yogini Ekadashi. Hemamali kept it with a full heart, his health returned, and he went home to Alaka."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free meal the evening before.",
+      "Fast on Ekadashi from grains and beans.",
+      "Worship Vishnu with tulsi and a lamp, and offer water at a peepal tree if one is near.",
+      "Hear the story of Hemamali and give food or water to someone.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "devshayani-ekadashi-ta",
+   "names": {
+    "en": "Devshayani Ekadashi",
+    "ta": "தேவசயனி ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashadha",
+    "tithi": 11,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Ashadha Shukla Ekadashi: Vishnu goes into his four-month yogic sleep; chaturmas begins."
+    },
+    "traditions": {
+     "en": "Also called Ashadhi Ekadashi and Padma Ekadashi, it begins chaturmas, the four months of the monsoon when many people take on a discipline: giving up a food, eating once a day, or reading daily. In Maharashtra, the great Pandharpur Wari reaches its end: lakhs of warkaris walk for weeks, singing abhangs, to see Vitthal on this day. Traditionally, weddings and housewarmings are not held until Vishnu wakes on Devutthana Ekadashi."
+    },
+    "story": {
+     "en": "The story told is that on this Ekadashi Vishnu lies down on the serpent Shesha in the ocean of milk and enters yoga nidra, a sleep of deep meditation, for four months, waking on Kartika Shukla Ekadashi. Another story, told in Maharashtra, is of Pundalik, a young man devoted to his parents. When Vishnu, as Vitthal, came to his door, Pundalik was massaging his father's feet, and without rising he tossed Vitthal a brick to stand on until he was done. Vitthal waited, standing on the brick with his hands on his hips, and stands that way in Pandharpur to this day."
+    },
+    "howTo": {
+     "en": [
+      "Fast on Ekadashi from grains and beans.",
+      "Worship Vishnu or Vitthal with tulsi and a lamp; sing abhangs or bhajans.",
+      "If you wish, choose a small discipline for the four months of chaturmas.",
+      "Join a local dindi or temple procession if there is one.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "kamika-ekadashi-ta",
+   "names": {
+    "en": "Kamika Ekadashi",
+    "ta": "காமிகா ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashadha",
+    "tithi": 26,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Shravana Krishna Ekadashi (Ashadha in the amanta reckoning), the first Ekadashi of chaturmas's dark fortnight."
+    },
+    "traditions": {
+     "en": "Devotees fast, worship Vishnu, and especially honour the tulsi plant: watering it, lighting a lamp before it and offering its leaves. Many light a ghee lamp before Vishnu through the evening. It falls in the rains, a season of reflection."
+    },
+    "story": {
+     "en": "The story told is of a hot-tempered landowner who, in a quarrel, struck a Brahmin, who fell and did not survive. Overwhelmed with remorse, the landowner wished to make amends, but the village would not let him take part in its rites. A sage told him to keep Kamika Ekadashi with sincerity, worshipping Vishnu with tulsi, and he did so. The story is told of how heartfelt remorse and a turn toward goodness are honoured in tradition, and how the village took him back."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free meal the evening before.",
+      "Fast on Ekadashi from grains and beans.",
+      "Water the tulsi plant, light a lamp before it and offer tulsi leaves to Vishnu.",
+      "Keep a ghee lamp lit before Vishnu in the evening.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "shravana-putrada-ekadashi-ta",
+   "names": {
+    "en": "Shravana Putrada Ekadashi",
+    "ta": "புத்ரதா ஏகாதசி (ஆவணி)"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "shravana",
+    "tithi": 11,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Shravana Shukla Ekadashi, traditionally kept by couples praying for children."
+    },
+    "traditions": {
+     "en": "'Putrada' means 'giver of children'. Couples hoping for a child often keep this fast together, and parents keep it for their children's wellbeing. Vishnu is worshipped as Bal Gopal, the child Krishna. In the South this Ekadashi is also called Pavitropana Ekadashi, when a pavitra, a woven thread, is offered to Vishnu."
+    },
+    "story": {
+     "en": "King Mahijit of Mahishmati ruled his people well but had no children, and the sorrow weighed on him and his kingdom. His ministers went to the sage Lomasha, who saw that the king in an earlier life had once turned a thirsty cow away from water. He advised that the king and his people keep the Shravana Shukla Ekadashi together and offer its merit to the king. They did, and in time a son was born to the royal couple, and the kingdom celebrated."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free meal the evening before.",
+      "Fast on Ekadashi from grains and beans; couples may keep it together.",
+      "Worship Bal Gopal or Vishnu with tulsi, butter and a lamp; hear the story of King Mahijit.",
+      "Give water to animals and food to children in need.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "aja-ekadashi-ta",
+   "names": {
+    "en": "Aja Ekadashi",
+    "ta": "அஜா ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "shravana",
+    "tithi": 26,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Bhadrapada Krishna Ekadashi (Shravana in the amanta reckoning), also called Annada Ekadashi."
+    },
+    "traditions": {
+     "en": "Coming a few days after Janmashtami, Aja Ekadashi is kept with a fast, worship of Vishnu and a night of bhajans in many homes. The story of King Harishchandra is read, and people reflect on keeping one's word through hard times."
+    },
+    "story": {
+     "en": "Harishchandra, king of Ayodhya, was famed for never telling a lie. Tested by the sage Vishvamitra, he gave up his kingdom to keep a promise, and to pay the sage's fee he sold his wife and son and himself, ending as a keeper of the cremation ground at Kashi. Through every hardship he did not break his word. When his young son died and his wife came to the ground unable to pay the fee, Harishchandra, heartbroken, still asked for it as his duty required. The sage Gautama had told him of Aja Ekadashi, which he kept, and the story ends with the gods appearing, restoring his son and kingdom, and honouring his truthfulness."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free meal the evening before.",
+      "Fast on Ekadashi from grains and beans.",
+      "Worship Vishnu with tulsi and a lamp, and read the story of Harishchandra.",
+      "Sing bhajans in the evening, and reflect on a promise you mean to keep.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "parsva-ekadashi-ta",
+   "names": {
+    "en": "Parsva Ekadashi",
+    "ta": "பரிவர்த்தினி ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "bhadrapada",
+    "tithi": 11,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Bhadrapada Shukla Ekadashi: Vishnu turns onto his side in his sleep; also Vamana Ekadashi."
+    },
+    "traditions": {
+     "en": "Also called Parivartini Ekadashi, from 'turning'. Devotees fast and worship Vishnu in his Vamana form, the dwarf brahmin, with curd rice and flowers. In Maharashtra it falls during Ganeshotsav, and it is a day of quiet worship in the middle of chaturmas."
+    },
+    "story": {
+     "en": "The asura king Bali, grandson of Prahlad, was generous and powerful and had come to rule the three worlds. Vishnu came to his sacrifice as Vamana, a small brahmin boy, and asked for just three steps of land. Bali, against his teacher's warning, gladly agreed. Vamana grew to cosmic size: with one step he covered the earth, with the second the heavens, and for the third Bali offered his own head. Moved by his generosity, Vishnu gave him the underworld to rule and promised to stay as his guardian. On this Ekadashi, tradition says, Vishnu, sleeping through chaturmas, turns onto his side."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free meal the evening before.",
+      "Fast on Ekadashi from grains and beans.",
+      "Worship Vamana or Vishnu with tulsi, flowers and curd, and hear the story of Bali.",
+      "Give something with an open hand, as Bali did.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "indira-ekadashi-ta",
+   "names": {
+    "en": "Indira Ekadashi",
+    "ta": "இந்திரா ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "bhadrapada",
+    "tithi": 26,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Ashvin Krishna Ekadashi (Bhadrapada in the amanta reckoning), in Pitru Paksha, kept for ancestors."
+    },
+    "traditions": {
+     "en": "Falling within Pitru Paksha, Indira Ekadashi joins the Ekadashi fast to the remembrance of ancestors. Families keep the fast, worship Vishnu as Shaligram, and many perform a shraddha for their forebears on this day, offering food to Brahmins, cows and crows."
+    },
+    "story": {
+     "en": "King Indrasena of Mahishmati was visited by the sage Narada, who brought news of the king's late father: in the afterlife, he wished his son would remember him. Narada told Indrasena how to keep the Ekadashi of Ashvin's dark fortnight, with shraddha for his father on the day before and fasting and worship on Ekadashi, and to offer its merit to him. The king kept it with his family and his people, and Narada later told him that his father was at peace. The story is the reason this Ekadashi is kept in remembrance of one's elders."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free meal the evening before.",
+      "Fast on Ekadashi from grains and beans.",
+      "Worship Vishnu with tulsi and a lamp, and remember your ancestors by name.",
+      "If your family does, offer food to Brahmins, cows or crows, and give to those in need.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "papankusha-ekadashi-ta",
+   "names": {
+    "en": "Papankusha Ekadashi",
+    "ta": "பாபாங்குசா ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 11,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Ashvin Shukla Ekadashi, the day after Dussehra."
+    },
+    "traditions": {
+     "en": "Coming right after Vijayadashami, Papankusha Ekadashi is kept with a fast and worship of Vishnu as Padmanabha, the lotus-naveled. Giving is especially valued: food, clothes, grain, an umbrella or footwear. The name speaks of an 'ankusha', the goad that steers an elephant, and the day is seen as a time to steer oneself back toward good conduct."
+    },
+    "story": {
+     "en": "The story told is of Krodhana, a hunter in the Vindhya mountains who lived harshly and gave no thought to others. Near the end of his life, frightened and alone, he came to the ashram of the sage Angira and asked whether a life like his could still turn toward good. Angira told him of the Ekadashi of Ashvin's bright fortnight. Krodhana kept it with complete sincerity, and the story says that he found peace. The name 'Papankusha' is read as the goad that turns a person away from wrongdoing, at any point in life."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free meal the evening before.",
+      "Fast on Ekadashi from grains and beans.",
+      "Worship Vishnu as Padmanabha with lotuses or other flowers, tulsi and a lamp.",
+      "Give food, clothes or something useful to someone in need.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "rama-ekadashi-ta",
+   "names": {
+    "en": "Rama Ekadashi",
+    "ta": "ரமா ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 26,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Kartika Krishna Ekadashi (Ashvin in the amanta reckoning), four days before Diwali."
+    },
+    "traditions": {
+     "en": "Named after Rama, a name of Lakshmi, this Ekadashi is kept with a fast and worship of Vishnu and Lakshmi together, as homes are being cleaned and readied for Diwali. Many light lamps before tulsi in the evening, as is done throughout Kartika."
+    },
+    "story": {
+     "en": "King Muchukunda, a devotee of Vishnu, had his whole kingdom keep Ekadashi. His daughter Chandrabhaga married Prince Shobhana, who was frail and found fasting very hard. When Rama Ekadashi came while Shobhana was visiting, Chandrabhaga, torn, encouraged him to keep it with everyone, and Shobhana, too weak, passed away in the night. Through the merit of the fast, the story says, he was given a beautiful city on Mount Mandarachala, but it could not last without a devotee's support. Chandrabhaga, who had kept every Ekadashi since childhood, journeyed there, offered him the merit of her own fasts, and the two lived together in the city, steadied by her devotion."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free meal the evening before.",
+      "Fast on Ekadashi from grains and beans; if fasting is hard for you, keep a gentle fast, as the story itself suggests.",
+      "Worship Vishnu and Lakshmi together with tulsi, flowers and a lamp.",
+      "Light a lamp before the tulsi plant in the evening.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "devutthana-ekadashi-ta",
+   "names": {
+    "en": "Devutthana Ekadashi",
+    "ta": "பிரபோதினி ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "kartika",
+    "tithi": 11,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Kartika Shukla Ekadashi: Vishnu wakes from his four-month sleep; chaturmas ends."
+    },
+    "traditions": {
+     "en": "Also called Prabodhini Ekadashi and Dev Uthani Ekadashi, it ends chaturmas. In the evening, families draw Vishnu's footprints and a sugarcane canopy in the courtyard, place seasonal produce, water chestnuts, sugarcane, sweet potato and jujube, under it, and wake the god with bells, conch and songs: 'Utho Dev, baitho Dev'. Disciplines kept since Devshayani Ekadashi end today. Tulsi Vivah follows, and the season for weddings begins. In Pandharpur, the Kartiki Wari reaches Vitthal."
+    },
+    "story": {
+     "en": "Having entered yoga nidra on Devshayani Ekadashi, Vishnu wakes on this day after four months. One telling explains the sleep itself: after a long struggle against the asura Shankhasura, Vishnu rested in the ocean of milk, and the gods agreed to keep watch through the rains. Another tells that Vishnu promised Bali, ruler of the underworld, that he would dwell with him for four months of every year; on Devutthana Ekadashi he returns. Either way, the household wakes him with joy, and the year's celebrations can begin again."
+    },
+    "howTo": {
+     "en": [
+      "Fast on Ekadashi from grains and beans.",
+      "In the evening, draw Vishnu's footprints in the courtyard with rice flour or chalk and set up a small sugarcane canopy.",
+      "Place seasonal fruit and vegetables under it, light lamps around it, and worship Vishnu.",
+      "Wake him with a bell or conch and the song 'Utho Dev, baitho Dev'.",
+      "End any chaturmas discipline today, and break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "utpanna-ekadashi-ta",
+   "names": {
+    "en": "Utpanna Ekadashi",
+    "ta": "உத்பன்னா ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "kartika",
+    "tithi": 26,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Margashirsha Krishna Ekadashi (Kartika in the amanta reckoning): the birth of Ekadashi herself."
+    },
+    "traditions": {
+     "en": "'Utpanna' means 'arisen'. This is traditionally the Ekadashi on which people who wish to begin keeping Ekadashis start, since it remembers the day Ekadashi was born. Devotees fast and worship Vishnu, and hear the story of Ekadashi Devi."
+    },
+    "story": {
+     "en": "The asura Mura had driven the gods from heaven, and Vishnu fought him for a thousand years. Tired, Vishnu went to rest in a cave at Badrikashram. Mura followed him there, meaning to strike while he slept. From Vishnu's body arose a radiant goddess, who faced Mura and overcame him. When Vishnu woke and saw what had happened, he named her Ekadashi, since she had appeared on the eleventh day, and granted that those who keep her day would be dear to him. From that day, the story says, Ekadashi has been kept."
+    },
+    "howTo": {
+     "en": [
+      "If you are beginning Ekadashi fasts, this is the traditional day to start; begin gently, with fruit and milk.",
+      "Eat a light, grain-free meal the evening before.",
+      "Fast on Ekadashi from grains and beans.",
+      "Worship Vishnu with tulsi and a lamp, and hear the story of Ekadashi Devi.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "mokshada-ekadashi-ta",
+   "names": {
+    "en": "Mokshada Ekadashi",
+    "ta": "மோக்ஷதா ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "margashirsha",
+    "tithi": 11,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Margashirsha Shukla Ekadashi: the Gita's day, also Vaikunta Ekadashi in many traditions."
+    },
+    "traditions": {
+     "en": "Mokshada Ekadashi coincides with Gita Jayanti, and many people read the Bhagavad Gita through the day while keeping the fast. In South India the Ekadashi of the solar month of Margazhi (often this one or the next) is Vaikunta Ekadashi, when the northern 'gate of Vaikuntha' in Vishnu temples is opened at dawn."
+    },
+    "story": {
+     "en": "King Vaikhanasa of Champaka dreamt that his late father was unhappy in the afterlife. Troubled, he asked the learned men of his court, who sent him to the sage Parvata. The sage saw that his father had once been unkind to his own wife, and advised the king to keep the Ekadashi of Margashirsha's bright fortnight and offer its merit to his father. Vaikhanasa kept it with his family, and the story says his father appeared to him in a dream, at peace, and blessed him. 'Mokshada' means 'the giver of freedom'."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free meal the evening before.",
+      "Fast on Ekadashi from grains and beans.",
+      "Worship Krishna or Vishnu with tulsi and a lamp, and read the Bhagavad Gita, all or in part.",
+      "Remember your elders, and hear the story of King Vaikhanasa.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "saphala-ekadashi-ta",
+   "names": {
+    "en": "Saphala Ekadashi",
+    "ta": "சபலா ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "margashirsha",
+    "tithi": 26,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Pausha Krishna Ekadashi (Margashirsha in the amanta reckoning)."
+    },
+    "traditions": {
+     "en": "'Saphala' means fruitful. Devotees fast, worship Vishnu with seasonal fruit, and keep a night vigil with bhajans and lamps. Offering fruit and giving it away is a characteristic custom of the day."
+    },
+    "story": {
+     "en": "King Mahishmata of Champavati had four sons, and the eldest, Lumpaka, lived recklessly and was sent away from the kingdom. He lived in the forest under a peepal tree, surviving on fruit. On Dashami night he was too cold to sleep, and through Ekadashi too weak to gather food; he gathered some fruit, offered it under the tree to Vishnu, and stayed awake that night, without knowing he was keeping Saphala Ekadashi. The story says his heart changed through that unknowing vigil, and he returned to his father, who welcomed him. He became a good king."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free meal the evening before.",
+      "Fast on Ekadashi from grains and beans.",
+      "Worship Vishnu with seasonal fruit, tulsi and a lamp.",
+      "Keep a vigil with bhajans for part of the night, and give fruit to others.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "pausha-putrada-ekadashi-ta",
+   "names": {
+    "en": "Pausha Putrada Ekadashi",
+    "ta": "புத்ரதா ஏகாதசி (தை)"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "pausha",
+    "tithi": 11,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Pausha Shukla Ekadashi, the winter Putrada Ekadashi."
+    },
+    "traditions": {
+     "en": "Like Shravana Putrada Ekadashi, this day is traditionally kept by couples hoping for children and by parents for their children's wellbeing. Vishnu is worshipped with tulsi, and many give warm clothes and food in the cold of Pausha. In the South it often coincides with Vaikunta Ekadashi."
+    },
+    "story": {
+     "en": "King Suketuman of Bhadravati and Queen Shaibya had no children, and the king, worrying about who would carry the family forward, grew so troubled that he went alone into the forest. There, by a lotus lake, he found a gathering of sages who told him it was Pausha Shukla Ekadashi and advised him to keep it. He did, with full faith, and returning home kept the observance with the queen. In time a son was born to them, who grew into a kind and capable king."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free meal the evening before.",
+      "Fast on Ekadashi from grains and beans; couples may keep it together.",
+      "Worship Vishnu with tulsi and a lamp, and hear the story of King Suketuman.",
+      "Give warm clothes or food to someone in the cold.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "shattila-ekadashi-ta",
+   "names": {
+    "en": "Shattila Ekadashi",
+    "ta": "ஷட்திலா ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "pausha",
+    "tithi": 26,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Magha Krishna Ekadashi (Pausha in the amanta reckoning): the Ekadashi of sesame, used in six ways."
+    },
+    "traditions": {
+     "en": "'Shat-tila' means 'six sesames'. Tradition uses sesame six ways on this day: in a paste for bathing, in the bath water, in a small fire offering, in water offered to ancestors, in food, and as a gift. Sesame laddoos and sesame given to those in need are central to the day, in the depth of winter."
+    },
+    "story": {
+     "en": "The story told is of a devout woman who kept every fast with great discipline but had never given food to anyone. Vishnu came to her door as a mendicant to ask for alms, and she, irritated, dropped a lump of clay into his bowl. In the afterlife she was given a beautiful house, but it was empty of food and grain. Vishnu explained why, and told her to ask the celestial women who came to visit her about Shattila Ekadashi. She kept it, with sesame given generously, and her house was filled. The story is about the kindness that should go along with discipline."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free meal the evening before.",
+      "On Ekadashi, bathe with a little sesame paste or sesame in the water.",
+      "Fast from grains and beans; sesame sweets are commonly eaten.",
+      "Worship Vishnu with sesame, tulsi and a lamp, and offer water with sesame for your ancestors.",
+      "Give sesame, sesame sweets, or warm food to someone in need, then break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "jaya-ekadashi-ta",
+   "names": {
+    "en": "Jaya Ekadashi",
+    "ta": "ஜயா ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "magha",
+    "tithi": 11,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Magha Shukla Ekadashi, a few days after Vasant Panchami."
+    },
+    "traditions": {
+     "en": "'Jaya' means victory. Devotees fast and worship Vishnu, and many keep a night vigil. In parts of the South this day is also called Bhumi Ekadashi or Bhishma Ekadashi, and the Vishnu Sahasranama, recited by Bhishma, is chanted."
+    },
+    "story": {
+     "en": "At Indra's court, the gandharva Malyavan and the dancer Pushpavati fell in love, and lost in each other, sang and danced carelessly before Indra. In his displeasure, Indra sent them down to the Himalayas as pishachas, restless spirits. They wandered in the cold, unhappy, unable to sleep or eat. One Magha Shukla Ekadashi they were too cold and miserable to eat anything, and sat awake all night beneath a peepal tree, remembering Vishnu. Without meaning to, they had kept Jaya Ekadashi. The next morning they were restored to their own forms and returned to heaven, where even Indra welcomed them."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free meal the evening before.",
+      "Fast on Ekadashi from grains and beans.",
+      "Worship Vishnu with tulsi and a lamp, and chant the Vishnu Sahasranama.",
+      "Keep a vigil with bhajans for part of the night if you can.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "vijaya-ekadashi-ta",
+   "names": {
+    "en": "Vijaya Ekadashi",
+    "ta": "விஜயா ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "magha",
+    "tithi": 26,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Phalguna Krishna Ekadashi (Magha in the amanta reckoning), kept by Rama before crossing to Lanka."
+    },
+    "traditions": {
+     "en": "'Vijaya' also means victory. Devotees fast, worship Vishnu or Rama, and in some homes place a kalash with seven grains and a coconut for the puja. People facing a hard task often keep this Ekadashi before beginning it."
+    },
+    "story": {
+     "en": "Rama, with Lakshmana and the vanara army, reached the shore of the ocean on his way to Lanka to bring Sita back, and did not know how to cross. Lakshmana suggested they ask the sage Vakadalbhya, whose ashram was nearby. The sage advised Rama to keep the Ekadashi of the dark fortnight of Phalguna, with a kalash of grains and worship of Vishnu. Rama kept it with his companions, and the story continues with the building of the bridge to Lanka and the victory that followed."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free meal the evening before.",
+      "Fast on Ekadashi from grains and beans.",
+      "If your family does, set up a kalash with seven kinds of grain and a coconut, and worship Vishnu or Rama with tulsi and a lamp.",
+      "Hear the story of Rama at the seashore, and begin preparing for a task you have been putting off.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "amalaki-ekadashi-ta",
+   "names": {
+    "en": "Amalaki Ekadashi",
+    "ta": "ஆமலகி ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "phalguna",
+    "tithi": 11,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Phalguna Shukla Ekadashi, honouring the amla tree, a few days before Holi."
+    },
+    "traditions": {
+     "en": "Devotees fast and worship Vishnu beneath or beside an amla (Indian gooseberry) tree, said to be dear to him, offering water, flowers and thread, and walking around it. Amla is eaten or given that day. In Varanasi it is Rangbhari Ekadashi, when Shiva is said to bring Parvati home after their wedding and the colours of Holi begin, with gulal at Kashi Vishwanath."
+    },
+    "story": {
+     "en": "The story told is of King Chitrasena of Vaidisha, whose whole kingdom kept Amalaki Ekadashi together beneath a great amla tree, singing and keeping vigil through the night. A hunter who happened to be there that night, tired and hungry, stayed to watch and listen till dawn. Though he understood little, the story says, his life turned toward good, and in a later birth he became a just king. Tradition holds the amla tree as one in which Vishnu dwells, which is why it is honoured today."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free meal the evening before.",
+      "Fast on Ekadashi from grains and beans.",
+      "Worship Vishnu beside an amla tree if there is one, offering water, flowers and thread and walking around it; otherwise worship with amla fruit at home.",
+      "Eat amla and give some to others.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
+  },
+  {
+   "id": "papamochani-ekadashi-ta",
+   "names": {
+    "en": "Papamochani Ekadashi",
+    "ta": "பாபமோசனி ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "phalguna",
+    "tithi": 26,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Kuala Lumpur (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Chaitra Krishna Ekadashi (Phalguna in the amanta reckoning), the last Ekadashi of the year."
+    },
+    "traditions": {
+     "en": "Falling between Holi and the new year, the year's last Ekadashi is kept as a time of reflection: devotees fast, worship Vishnu, and look back on the year, setting right what they can. The name speaks of release from wrongdoing, and many use the day to apologise to someone or let go of a grudge."
+    },
+    "story": {
+     "en": "The sage Medhavi was deep in tapas in the Chaitraratha forest when the apsara Manjughosha, sent to distract him, sang and danced nearby. Medhavi was drawn away from his practice, and years passed before he realised how long he had lost. In his dismay he spoke harshly to her, and she was changed into a pishachini. Both were unhappy: she in her new form, he at having broken his discipline and spoken in anger. Medhavi's father, the sage Chyavana, told them both to keep the Chaitra Krishna Ekadashi. They did, sincerely, and each was restored, she to her own form and he to his practice. The story is about setting things right."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free meal the evening before.",
+      "Fast on Ekadashi from grains and beans.",
+      "Worship Vishnu with tulsi and a lamp, and hear the story of Medhavi and Manjughosha.",
+      "Take a quiet moment to look back on the year; apologise to someone or let go of a grudge if you can.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   }
   }
  ],
  "dailySignificance": [
@@ -3894,6 +5147,7 @@
      "thursday",
      "friday"
     ],
+    "group": "family",
     "avoidSolarMonths": [
      "karka",
      "kanya",
@@ -3941,6 +5195,7 @@
      "thursday",
      "friday"
     ],
+    "group": "family",
     "avoidSolarMonths": [
      "karka",
      "kanya",
@@ -3983,6 +5238,7 @@
      "thursday",
      "friday"
     ],
+    "group": "home",
     "avoidSolarMonths": [
      "karka",
      "kanya",
@@ -4031,6 +5287,7 @@
      "thursday",
      "friday"
     ],
+    "group": "home",
     "avoidSolarMonths": [
      "karka",
      "dhanu"
@@ -4073,7 +5330,8 @@
      "wednesday",
      "thursday",
      "friday"
-    ]
+    ],
+    "group": "home"
    },
    {
     "id": "vehicle",
@@ -4121,7 +5379,8 @@
      "wednesday",
      "thursday",
      "friday"
-    ]
+    ],
+    "group": "travel"
    },
    {
     "id": "business",
@@ -4162,7 +5421,8 @@
      "wednesday",
      "thursday",
      "friday"
-    ]
+    ],
+    "group": "work"
    },
    {
     "id": "naming",
@@ -4213,7 +5473,8 @@
      "friday"
     ],
     "avoidAdhika": false,
-    "avoidJanmaNakshatra": false
+    "avoidJanmaNakshatra": false,
+    "group": "family"
    },
    {
     "id": "annaprashana",
@@ -4258,7 +5519,8 @@
      "thursday",
      "friday"
     ],
-    "avoidJanmaNakshatra": false
+    "avoidJanmaNakshatra": false,
+    "group": "family"
    },
    {
     "id": "vidyarambham",
@@ -4306,7 +5568,8 @@
      "thursday",
      "friday"
     ],
-    "avoidJanmaNakshatra": false
+    "avoidJanmaNakshatra": false,
+    "group": "family"
    },
    {
     "id": "upanayanam",
@@ -4359,7 +5622,8 @@
       }
      }
     ],
-    "avoidJanmaNakshatra": false
+    "avoidJanmaNakshatra": false,
+    "group": "family"
    },
    {
     "id": "mundan",
@@ -4400,7 +5664,8 @@
      "thursday",
      "friday"
     ],
-    "avoidJanmaNakshatra": false
+    "avoidJanmaNakshatra": false,
+    "group": "family"
    },
    {
     "id": "karnavedha",
@@ -4445,7 +5710,8 @@
      "thursday",
      "friday"
     ],
-    "avoidJanmaNakshatra": false
+    "avoidJanmaNakshatra": false,
+    "group": "family"
    },
    {
     "id": "travel",
@@ -4484,7 +5750,8 @@
      "thursday",
      "friday"
     ],
-    "avoidAdhika": false
+    "avoidAdhika": false,
+    "group": "travel"
    },
    {
     "id": "jewellery",
@@ -4529,7 +5796,8 @@
      "thursday",
      "friday"
     ],
-    "avoidAdhika": false
+    "avoidAdhika": false,
+    "group": "life"
    },
    {
     "id": "seemantham",
@@ -4568,7 +5836,1207 @@
      "wednesday",
      "thursday",
      "friday"
-    ]
+    ],
+    "group": "family"
+   },
+   {
+    "id": "pumsavana",
+    "group": "family",
+    "names": {
+     "en": "Pumsavana",
+     "ta": "பும்சவனம்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "mula",
+     "uttara_ashadha",
+     "shravana",
+     "uttara_bhadrapada"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "dhruva+kshipra",
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "nishkramana",
+    "group": "family",
+    "names": {
+     "en": "Baby's first outing (Nishkramana)",
+     "ta": "நிஷ்க்ரமணம்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "shravana",
+     "dhanishta",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+mridu+chara",
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "nasika-vedha",
+    "group": "family",
+    "names": {
+     "en": "Nose piercing",
+     "ta": "மூக்குக் குத்துதல்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+mridu",
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "dwiragaman",
+    "group": "family",
+    "names": {
+     "en": "Bride's return journey (Dwiragaman)",
+     "ta": "த்விராகமனம்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+mridu+dhruva"
+   },
+   {
+    "id": "construction",
+    "group": "home",
+    "names": {
+     "en": "Start of house construction",
+     "ta": "வீடு கட்டத் தொடக்கம்"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday",
+     "saturday"
+    ],
+    "basis": "dhruva+mridu"
+   },
+   {
+    "id": "house-move",
+    "group": "home",
+    "names": {
+     "en": "Moving into a rented home",
+     "ta": "வாடகை வீட்டுக்குக் குடிபோதல்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "dhruva+mridu+chara+kshipra"
+   },
+   {
+    "id": "borewell",
+    "group": "home",
+    "names": {
+     "en": "Digging a well or borewell",
+     "ta": "கிணறு / ஆழ்துளைக் கிணறு தோண்டுதல்"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "dhruva+mridu"
+   },
+   {
+    "id": "furniture",
+    "group": "home",
+    "names": {
+     "en": "Buying furniture or appliances",
+     "ta": "மரச்சாமான் / உபகரணங்கள் வாங்குதல்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "dhruva+mridu+kshipra",
+    "avoidAdhika": false
+   },
+   {
+    "id": "utensils",
+    "group": "home",
+    "names": {
+     "en": "Buying utensils for a new kitchen",
+     "ta": "புதிய சமையலறைக்குப் பாத்திரங்கள் வாங்குதல்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "dhruva+mridu+kshipra",
+    "avoidAdhika": false
+   },
+   {
+    "id": "shop-opening",
+    "group": "work",
+    "names": {
+     "en": "Opening a shop",
+     "ta": "கடை திறப்பு"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+mridu+dhruva"
+   },
+   {
+    "id": "office-opening",
+    "group": "work",
+    "names": {
+     "en": "Opening an office",
+     "ta": "அலுவலகத் திறப்பு"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+mridu+dhruva"
+   },
+   {
+    "id": "new-job",
+    "group": "work",
+    "names": {
+     "en": "Joining a new job",
+     "ta": "புதிய வேலையில் சேர்தல்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+mridu+dhruva",
+    "avoidAdhika": false
+   },
+   {
+    "id": "machinery",
+    "group": "work",
+    "names": {
+     "en": "Installing machinery",
+     "ta": "இயந்திரம் நிறுவுதல்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday",
+     "saturday"
+    ],
+    "basis": "kshipra+mridu+dhruva"
+   },
+   {
+    "id": "agreement",
+    "group": "work",
+    "names": {
+     "en": "Signing an agreement",
+     "ta": "ஒப்பந்தம் கையெழுத்திடல்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+mridu+dhruva",
+    "avoidAdhika": false
+   },
+   {
+    "id": "investment",
+    "group": "work",
+    "names": {
+     "en": "Investing or opening an account",
+     "ta": "முதலீடு / கணக்குத் தொடக்கம்"
+    },
+    "nakshatras": [
+     "rohini",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "dhruva+kshipra",
+    "avoidAdhika": false
+   },
+   {
+    "id": "medical",
+    "group": "life",
+    "names": {
+     "en": "Starting a course of treatment",
+     "ta": "சிகிச்சை தொடக்கம்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "shravana",
+     "dhanishta",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+mridu+chara",
+    "avoidAdhika": false
+   },
+   {
+    "id": "music-arts",
+    "group": "life",
+    "names": {
+     "en": "Beginning music, dance or an art",
+     "ta": "இசை / நடனம் கற்கத் தொடக்கம்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "mridu+kshipra",
+    "avoidAdhika": false
+   },
+   {
+    "id": "new-clothes",
+    "group": "life",
+    "names": {
+     "en": "Wearing new clothes",
+     "ta": "புத்தாடை அணிதல்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "vishakha",
+     "anuradha",
+     "uttara_ashadha",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "vastra",
+    "avoidAdhika": false
+   },
+   {
+    "id": "sowing",
+    "group": "life",
+    "names": {
+     "en": "Sowing seeds",
+     "ta": "விதை விதைத்தல்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "dhruva+mridu+kshipra",
+    "avoidAdhika": false
+   },
+   {
+    "id": "tree-planting",
+    "group": "life",
+    "names": {
+     "en": "Planting a tree",
+     "ta": "மரம் நடுதல்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "dhruva+mridu+kshipra",
+    "avoidAdhika": false
+   },
+   {
+    "id": "pratishtha",
+    "group": "life",
+    "names": {
+     "en": "Installing a deity at home",
+     "ta": "வீட்டில் விக்ரகப் பிரதிஷ்டை"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "dhruva+mridu"
+   },
+   {
+    "id": "foreign-travel",
+    "group": "travel",
+    "names": {
+     "en": "Travelling abroad",
+     "ta": "வெளிநாட்டுப் பயணம்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "swati",
+     "anuradha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+chara+mridu",
+    "avoidAdhika": false
+   },
+   {
+    "id": "pilgrimage",
+    "group": "travel",
+    "names": {
+     "en": "Setting out on a pilgrimage",
+     "ta": "தீர்த்த யாத்திரை புறப்படுதல்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "swati",
+     "anuradha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+chara+mridu",
+    "avoidAdhika": false
+   },
+   {
+    "id": "vehicle-first-drive",
+    "group": "travel",
+    "names": {
+     "en": "First drive of a new vehicle",
+     "ta": "புதிய வாகனத்தின் முதல் பயணம்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+chara+mridu",
+    "avoidAdhika": false
    }
   ],
   "sources": [

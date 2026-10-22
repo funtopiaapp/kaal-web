@@ -39,6 +39,8 @@ const lang = () => (S.native && pack ? pack.language : 'en');
 function t(key, ...args) {
   const e = STR[key];
   let s = e ? (e[lang()] ?? e.en) : key;
+  // English in the tradition's own vocabulary ("Muhurtham" -> "Shubh Muhurat").
+  if (lang() === 'en') for (const [a, b] of pack?.display?.terms || []) s = s.split(a).join(b);
   let i = 0;
   return s.replace(/%(?:(\d+)\$)?([@d])/g, (_, n) => String(args[n ? Number(n) - 1 : i++] ?? ''));
 }
@@ -77,7 +79,10 @@ function cultureDate(solar, lunar) {
 }
 function yearLabel(y) {
   if (!y) return '';
-  return y.samvatsara ? `${name('samvatsaras', y.samvatsara)} · ${name('eras', y.era)}` : `${name('eras', y.era)} ${y.number ?? ''}`;
+  // As on iOS: the number and the samvatsara's name where this tradition's tables carry it.
+  const sv = y.samvatsara && pack.names?.samvatsaras?.[y.samvatsara] ? name('samvatsaras', y.samvatsara) : '';
+  if (y.number != null) return `${name('eras', y.era)} ${y.number}${sv ? ' · ' + sv : ''}`;
+  return sv ? `${sv} · ${name('eras', y.era)}` : '';
 }
 const tithiName = n => (n === 15 || n === 30 ? '' : name('paksha', n < 15 ? 'shukla' : 'krishna') + ' ') + name('tithis', tithiKey(n));
 
@@ -221,13 +226,18 @@ async function viewHome() {
     }
   }
   const when = s => { const n = daysBetween(d, s); return n === 0 ? t('day.today') : n === 1 ? t('day.tomorrow') : t('day.inDays', n); };
-  const ch = fine?.choghadiya || [], i = ch.findIndex(c => now >= c.start && now < c.end);
-  const chog = i < 0 ? null : [`${t('dm.choghadiya')}: ${name('choghadiya', ch[i].key)}`, t('p.until', clock(ch[i].end)) + (ch[i + 1] ? ', ' + t('p.then', name('choghadiya', ch[i + 1].key)) : '')];
+  // The running period in the tradition's own way of dividing the day.
+  const kind = mKinds()[0], ch = (fine && { choghadiya: fine.choghadiya, gowri: fine.gowri, hora: fine.hora }[kind]) || [];
+  const plabel = key => kind === 'hora' ? name('grahas', key) : name(kind, key);
+  const i = ch.findIndex(c => now >= c.start && now < c.end);
+  const chog = i < 0 ? null : [`${t('dm.' + kind)}: ${plabel(ch[i].key)}`, t('p.until', clock(ch[i].end)) + (ch[i + 1] ? ', ' + t('p.then', plabel(ch[i + 1].key)) : '')];
   const kept = Object.values(S.vratLog).filter(Boolean).length;
   const c = CULTURES.find(c => c.id === S.culture);
   // A lunar tradition's date already names the tithi; a solar one's does not.
   const tithi = p.tithis[0] ? `${pack.display.primary === 'solar' ? `${p.lunar ? name('paksha', p.lunar.paksha) + ' ' : ''}${name('tithis', p.tithis[0].key)} · ` : ''}${t('p.until', clock(p.tithis[0].end))}${p.tithis[1] ? ', ' + t('p.then', name('tithis', p.tithis[1].key)) : ''}` : '';
   const events = (pack.muhurtham?.events || []).slice(0, 3).map(e => e.names[lang()] ?? e.names.en);
+  // The user may have moved to another tab while this loaded.
+  if (tab !== 'home') return;
   const icon = k => ({
     festivals: '<path d="M12 3c1.8 2.2 2.6 3.9 2.6 5.3A2.6 2.6 0 0 1 12 11a2.6 2.6 0 0 1-2.6-2.7C9.4 6.9 10.2 5.2 12 3z"/><path d="M4 14h16c0 3.3-3.6 6-8 6s-8-2.7-8-6z"/><path d="M12 11v3"/>',
     day: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
@@ -318,13 +328,14 @@ async function viewDay() {
     <div class="card"><p class="label">${esc(t('p.panchang'))}</p>
       ${[[t('p.tithi'), (p.lunar ? name('paksha', p.lunar.paksha) + ' ' : '') + tv, td], [t('p.nakshatra'), nv, nd], [t('p.yoga'), yv, yd], [t('p.karana'), kv, kd]]
         .map(([l, v, s]) => `<div class="row"><span class="muted">${esc(l)}</span><span class="v">${esc(v)}<small>${esc(s)}</small></span></div>`).join('')}</div>
+    ${fine ? dayDetail(p, fine, d) : ''}
     <div class="card sun">${[['sun.sunrise', p.sunrise], ['sun.sunset', p.sunset], ['sun.moonrise', p.moonrise], ['sun.moonset', p.moonset]]
         .map(([k, u]) => `<div><b>${u ? esc(clock(u)) : esc(t('sun.none'))}</b><span class="small muted">${esc(t(k))}</span></div>`).join('')}</div>
     <div class="card"><p class="label">${esc(t('time.section'))}</p><div class="small muted">${esc(t('time.avoid'))}</div>
       ${[['time.rahu', p.rahuKalam], ['time.yama', p.yamagandam], ['time.gulika', p.gulikaKalam]].map(([k, w]) => `<div class="row"><span>${esc(t(k))}</span><span class="v">${esc(span(w))}</span></div>`).join('')}
       ${fine ? [['time.durmuhurtam', fine.durmuhurtam], ['time.varjyam', fine.varjyam], ['time.bhadra', fine.bhadra], ['time.panchaka', fine.panchaka]].map(([k, ps]) => windowsRow(k, ps, d)).join('') : ''}
       <div class="small muted" style="margin-top:8px">${esc(t('time.favoured'))}</div>
-      ${[['time.abhijit', p.abhijit]].map(([k, w]) => `<div class="row"><span>${esc(t(k))}</span><span class="v">${esc(span(w))}</span></div>`).join('')}
+      <div class="row"><span>${esc(t('time.abhijit'))}</span><span class="v">${esc(p.weekday === 'wednesday' ? t('time.abhijitNone') : span(p.abhijit))}</span></div>
       ${fine ? windowsRow('time.amrit', fine.amritKalam, d) : ''}
       ${[['time.brahma', p.brahmaMuhurta]].map(([k, w]) => `<div class="row"><span>${esc(t(k))}</span><span class="v">${esc(span(w))}</span></div>`).join('')}</div>
     ${fine ? `<div class="card" id="mcard">${muhurtasCard(fine, d)}</div>` : ''}
@@ -335,6 +346,25 @@ async function viewDay() {
   $('#main').querySelectorAll('[data-goto-sky]').forEach(x => x.onclick = () => { tab = 'sky'; render(); });
   wireMuhurtas(fine, d);
   wireFestivals();
+}
+
+// As on iOS (DayDetailCard): collapsed by default - signs, the yogas of the
+// day, the day's other muhurtas and the year in several reckonings.
+function dayDetail(p, f, d) {
+  const spans = (ps, label) => ps.map((x, i) => i < ps.length - 1 ? `${label(x.key)} ${t('p.until', clock(x.end))}` : label(x.key)).join('<br>');
+  const wins = ps => ps.length ? ps.map(x => esc(windowText(x.start, x.end, d))).join('<br>') : esc(t('dd.none'));
+  const row = (k, v) => `<div class="row"><span class="muted">${esc(t(k))}</span><span class="v">${v}</span></div>`;
+  const years = (p.years || []).map(y => {
+    const era = name('eras', y.era), sv = y.samvatsara && pack.names?.samvatsaras?.[y.samvatsara] ? name('samvatsaras', y.samvatsara) : '';
+    return y.number != null ? `${era} ${y.number}${sv ? ' · ' + sv : ''}` : `${sv} · ${era}`;
+  });
+  return `<details class="card detail"><summary class="label">${esc(t('dd.title'))}</summary>
+    ${row('dd.moonSign', esc(spans(f.moonSigns, k => name('rashis', k))).replace(/&lt;br&gt;/g, '<br>'))}
+    ${row('dd.sunSign', esc(spans(f.sunSigns, k => name('rashis', k))).replace(/&lt;br&gt;/g, '<br>'))}
+    ${row('dd.anandadi', esc(spans(f.anandadi, k => name('anandadi', k))).replace(/&lt;br&gt;/g, '<br>'))}
+    ${row('dd.sarvartha', wins(f.sarvarthaSiddhi))}${row('dd.amritSiddhi', wins(f.amritSiddhi))}
+    ${[['dd.pratah', f.pratahSandhya], ['dd.vijaya', f.vijaya], ['dd.godhuli', f.godhuli], ['dd.sayahna', f.sayahnaSandhya], ['dd.nishita', f.nishita]].map(([k, w]) => row(k, esc(windowText(w.start, w.end, d)))).join('')}
+    ${row('dd.years', years.map(esc).join('<br>'))}</details>`;
 }
 
 // ---------------------------------------------------------------- the day in parts
@@ -351,8 +381,14 @@ function windowText(a, b, d) { return civilIn(a) === civilIn(b) ? `${stamp(a, d)
 function windowsRow(k, ps, d) {
   return ps.length ? `<div class="row"><span>${esc(t(k))}</span><span class="v">${ps.map(p => esc(windowText(p.start, p.end, d))).join('<br>')}</span></div>` : '';
 }
+// As on iOS (dayPartKinds): the tradition's own ways of dividing the day, its own first.
+function mKinds() {
+  if (['tamil', 'sri-lankan-tamil', 'malaysian-tamil', 'telugu'].includes(S.culture)) return ['gowri', 'hora', 'lagna'];
+  if (['malayalam', 'kannada'].includes(S.culture)) return ['hora', 'lagna'];
+  return ['choghadiya', 'hora', 'lagna'];
+}
 function mKind() {
-  return S.mKind || ({ tamil: 'gowri', 'sri-lankan-tamil': 'gowri', 'malaysian-tamil': 'gowri', telugu: 'gowri', malayalam: 'hora', kannada: 'hora' }[S.culture] || 'choghadiya');
+  return mKinds().includes(S.mKind) ? S.mKind : mKinds()[0];
 }
 function muhurtasCard(fine, d) {
   const k = mKind(), ps = { choghadiya: fine.choghadiya, gowri: fine.gowri, hora: fine.hora, lagna: fine.lagnas }[k];
@@ -360,7 +396,7 @@ function muhurtasCard(fine, d) {
   const now = Date.now() / 1000, cur = ps.findIndex(p => now >= p.start && now < p.end);
   const from = mAll ? 0 : Math.max(cur, 0), list = ps.slice(from, mAll ? ps.length : from + 3);
   return `<p class="label">${esc(t('dm.title'))}</p>
-    <div class="seg" style="margin-bottom:8px">${['choghadiya', 'gowri', 'hora', 'lagna'].map(x => `<button data-mk="${x}" class="${k === x ? 'on' : ''}">${esc(t('dm.' + x))}</button>`).join('')}</div>
+    <div class="seg" style="margin-bottom:8px">${mKinds().map(x => `<button data-mk="${x}" class="${k === x ? 'on' : ''}">${esc(t('dm.' + x))}</button>`).join('')}</div>
     ${list.map((p, j) => { const i = from + j, marked = k === 'choghadiya' || k === 'gowri';
       const night = mAll && i > 0 && p.night && !ps[i - 1].night ? `<div class="small muted" style="margin-top:6px;font-weight:700">${esc(t('dm.night'))}</div>` : '';
       return `${night}<div class="mrow ${i === cur ? 'now' : ''}"><span class="mdot ${marked ? (FAVOURED.has(p.key) ? 'fav' : 'ring') : ''}"></span><span class="grow">${esc(label(p.key))}${i === cur ? ` <b class="small">${esc(t('dm.now'))}</b>` : ''}</span><span class="muted">${esc(windowText(p.start, p.end, d))}</span></div>`; }).join('')}
@@ -546,6 +582,27 @@ let jkFamily = null;
 let jkSection = 0, jkPerson = null, jkVarga = 1, jkSystem = 'vimshottari', jkAhead = true, jkSpan = 20;
 const jkCache = new Map();
 const births = () => S.people.filter(p => p.kind !== 'remembrance' && p.place);
+// As on iOS (GunaMilanViews): each tradition's own matching - Porutham in the
+// South, Ashtakoota Guna Milan elsewhere. Guna Milan stays off until the corpus
+// (content/validation/ashtakoota-corpus.md) agrees with Drik; ?gm=1 shows it for checking.
+const GUNA_MILAN_RELEASED = new URLSearchParams(location.search).has('gm');
+const matchesByPorutham = () => ['malayalam', 'tamil', 'telugu', 'kannada', 'sri-lankan-tamil', 'malaysian-tamil'].includes(S.culture);
+async function gunaMilanSheet(bride, groom) {
+  const side = p => ({ date: p.date, minutes: p.minutes ?? undefined, location: p.place });
+  const r = await engine({ op: 'gunaMilan', bride: side(bride), groom: side(groom) });
+  const m = r.milan, pts = x => Number.isInteger(x) ? String(x) : x.toFixed(1);
+  const sideName = (k, v) => k.key === 'bhakoot' ? name('rashis', v) : k.key === 'graha-maitri' ? name('grahas', v) : v.charAt(0).toUpperCase() + v.slice(1);
+  const rule = (key, of) => `<div class="card" style="background:var(--sunken)"><p class="small">${esc(t(key))}</p><p class="small muted"><b>${esc(t('gm.cancel'))}</b></p>
+    ${m.cancellations.filter(c => c.of === of).map(c => `<div class="small" style="color:${c.holds ? 'var(--accent)' : 'var(--muted)'}">· ${esc(t('gm.c.' + c.condition))}: ${esc(t(c.holds ? 'gm.holds' : 'gm.notHold'))}</div>`).join('')}</div>`;
+  const kuja = (p, list) => `<div class="small"><b>${esc(p.name)}</b>${list.map(k => `<div style="color:${k.listed ? 'var(--accent)' : 'var(--muted)'}">${esc(t('jk.kujaRow', k.house, k.from === 'lagna' ? t('jk.lagnaWord') : name('grahas', k.from)))} · ${esc(t(k.listed ? 'jk.kujaListed' : 'jk.kujaNot'))}</div>`).join('')}</div>`;
+  sheet(`<h2 class="serif">${esc(t('gm.title'))}</h2><div style="font-size:24px;font-weight:700;color:var(--accent)">${esc(t('gm.total', pts(m.total)))}</div>
+    <p style="font-weight:600">${esc(t('gm.band.' + m.band))}</p>
+    <div class="card">${m.kootas.map(k => `<div class="row"><span>${esc(t('gm.' + k.key))}<small class="muted" style="display:block">${esc(t('gm.sides', sideName(k, k.bride), sideName(k, k.groom)))}</small></span><span class="v">${pts(k.points)} / ${pts(k.max)}</span></div>`).join('')}</div>
+    ${m.nadiZero ? rule('gm.nadiRule', 'nadi') : ''}${m.bhakootZero ? rule('gm.bhakootRule', 'bhakoot') : ''}
+    <div class="card"><p class="label">${esc(t('gm.manglik'))}</p>${kuja(bride, r.brideKuja)}${kuja(groom, r.groomKuja)}</div>
+    <p class="small muted">${esc(t('gm.note'))}</p>`);
+}
+
 async function jataka(p) {
   const key = `${p.id}|${p.date}|${p.minutes}|${p.place.latitude}`;
   if (!jkCache.has(key)) jkCache.set(key, engine({ op: 'jataka', date: p.date, minutes: p.minutes ?? undefined, location: p.place }));
@@ -593,17 +650,54 @@ function dashaTree(ps, system, now, depth) {
       : `<div class="dasha d${depth} leaf">${head}</div>`;
   }).join('');
 }
+// As on iOS (StrengthSection): yogas with their rules, Kuja dosha and Kaal
+// Sarp as placements, Shadbala and Ashtakavarga - no reading, no remedy.
+function strengthHtml(j) {
+  const st = j.strength, gn = k => name('grahas', k), names = gs => gs.map(gn).join(', ');
+  const from = k => k === 'moon' || k === 'sun' || k === 'venus' ? gn(k) : t('jk.lagnaWord');
+  const rule = y => {
+    const h = y.houses || [];
+    if (['ruchaka', 'bhadra', 'hamsa', 'malavya', 'sasa'].includes(y.key)) return t('yg.mahapurusha', names(y.grahas), h[0]);
+    if (y.key === 'gajakesari') return t('yg.gajakesari', h[0]);
+    if (y.key === 'parivartana') return t('yg.parivartana', gn(y.grahas[0]), gn(y.grahas[1]));
+    if (y.key === 'budhaditya' || y.key === 'chandra-mangala') return t('yg.conjunction', gn(y.grahas[0]), gn(y.grahas[1]));
+    if (y.key === 'kemadruma') return t('yg.kemadruma');
+    if (y.key === 'amala') return t('yg.amala', names(y.grahas), from(y.from));
+    return t(y.from === 'sun' ? 'yg.fromSun' : 'yg.fromMoon', names(y.grahas), h.join(', '));
+  };
+  const ks = st.kaalSarp === 'rahu-ketu' ? t('jk.kaalSarp', gn('rahu'), gn('ketu')) : st.kaalSarp === 'ketu-rahu' ? t('jk.kaalSarp', gn('ketu'), gn('rahu')) : t('jk.noKaalSarp');
+  let html = `<div class="card"><p class="label">${esc(t('jk.yogas'))}</p><p class="small muted">${esc(t('jk.yogasNote'))}</p>
+    ${st.yogas.map(y => `<div class="row" style="display:block"><b>${esc(name('chartYogas', y.key))}</b><div class="small muted">${esc(rule(y))}</div></div>`).join('')}</div>
+    <div class="card"><p class="label">${esc(t('jk.doshas'))}</p><p class="small muted">${esc(t('jk.doshaNote'))}</p>
+    ${st.kuja.map(k => `<div class="row" style="display:block">${esc(t('jk.kujaRow', k.house, from(k.from)))}<div class="small" style="color:${k.listed ? 'var(--accent)' : 'var(--muted)'}">${esc(t(k.listed ? 'jk.kujaListed' : 'jk.kujaNot'))}</div></div>`).join('')}
+    <div class="row">${esc(ks)}</div></div>`;
+  if (st.shadbala) {
+    const top = Math.max(...st.shadbala.map(g => g.total), 1);
+    html += `<div class="card"><p class="label">${esc(t('jk.shadbala'))}</p><p class="small muted">${esc(t('jk.sbNote'))}</p>
+      ${st.shadbala.map(g => `<div class="sbrow"><span>${esc(gn(g.graha))}</span><span class="sbbar"><i style="width:${(g.total / top * 100).toFixed(1)}%"></i></span><span class="v"><b>${g.total.toFixed(2)}</b>${g.minimum ? `<small>${esc(t('jk.minimum', g.minimum.toFixed(1)))}</small>` : ''}</span></div>`).join('')}</div>`;
+  }
+  if (st.ashtakavarga) {
+    const signs = ['mesha', 'vrishabha', 'mithuna', 'karka', 'simha', 'kanya', 'tula', 'vrishchika', 'dhanu', 'makara', 'kumbha', 'meena'], lg = j.lagna?.sign;
+    const av = st.ashtakavarga;
+    html += `<div class="card"><p class="label">${esc(t('jk.sav'))}</p><p class="small muted">${esc(t('jk.avNote'))}</p><div class="avwrap"><table class="av">
+      <tr><th></th>${signs.map(s => `<th class="${s === lg ? 'lg' : ''}">${esc(name('rashis', s).slice(0, 3))}</th>`).join('')}</tr>
+      <tr class="sav"><th>${esc(t('jk.sav'))}</th>${av.sav.map(n => `<td class="${n >= 28 ? 'hi' : ''}">${n}</td>`).join('')}</tr>
+      ${av.bav.map(b => `<tr><th>${esc(gn(b.graha))}</th>${b.bindus.map(n => `<td>${n}</td>`).join('')}</tr>`).join('')}</table></div></div>`;
+  } else html += `<p class="small muted">${esc(t('jk.needTime'))}</p>`;
+  return html;
+}
+
 async function viewJathakam() {
   loading();
   const ps = births(), now = Date.now() / 1000;
   const person = ps.find(p => p.id === jkPerson) || ps[0];
   let body = '';
-  if (jkSection < 2) {
+  if (jkSection !== 2) {
     body += `<div class="card"><p class="label">${esc(t('jk.whose'))}</p><div style="display:flex;gap:8px"><select id="jkp">${ps.map(p => `<option value="${p.id}" ${p === person ? 'selected' : ''}>${esc(personLabel(p))}</option>`).join('')}</select>
       <button class="btn soft" data-add>＋</button>${person ? `<button class="btn soft" data-edit>${esc(t('c.edit'))}</button>` : ''}</div>
       ${person ? `<div class="small muted" style="margin-top:6px">${esc(greg(person.date, { day: 'numeric', month: 'short', year: 'numeric' }))}${person.minutes != null ? ` · ${pad(Math.floor(person.minutes / 60))}:${pad(person.minutes % 60)}` : ''} · ${esc(person.place.name)}</div>` : `<p class="small muted">${esc(t('jk.noFamily'))}</p>`}</div>`;
   }
-  const j = person && jkSection < 2 ? await jataka(person) : null;
+  const j = person && jkSection !== 2 ? await jataka(person) : null;
   if (j && !j.timeKnown) body += `<div class="banner">${esc(t('jk.noTime'))}</div>`;
   if (j && jkSection === 0) {
     const v = j.vargas.find(x => x.number === jkVarga) || j.vargas[0];
@@ -627,6 +721,7 @@ async function viewJathakam() {
         <div class="now">${esc(t('jk.running', running(d.periods, now).map(p => periodName(p, sys)).join(' › ')))}</div></div>
       <div class="dashas">${dashaTree(d.periods, sys, now, 0)}</div>`;
   }
+  if (j && jkSection === 3 && j.strength) body += strengthHtml(j);
   if (jkSection === 2) {
     adoptFamilyless();
     const fam = []; for (const p of ps.filter(x => !jkFamily || x.family === jkFamily)) fam.push([p, await jataka(p)]);
@@ -646,7 +741,7 @@ async function viewJathakam() {
       ${sandhis.length ? `<div class="card"><p class="label">${esc(t('jk.sandhi'))}</p>${sandhis.map(x => `<div class="list-row"><div class="grow"><b>${esc(x.p.name)}</b><div><span style="color:${GCOL[x.a.key]}">●</span> ${esc(name('grahas', x.a.key))} → <span style="color:${GCOL[x.b.key]}">●</span> ${esc(name('grahas', x.b.key))}</div><div class="small muted">${esc(dLabel(x.s))} – ${esc(dLabel(x.e))}</div></div><b style="color:var(--accent)">${esc(dLabel(x.b.start))}</b></div>`).join('')}</div>` : ''}
       <button class="btn soft" data-add>＋ ${esc(t('m.addProfile'))}</button>`}`;
   }
-  $('#main').innerHTML = `<div class="seg" style="margin-bottom:14px">${['jk.chart', 'jk.dasha', 'jk.family'].map((k, i) => `<button data-jk="${i}" class="${jkSection === i ? 'on' : ''}">${esc(t(k))}</button>`).join('')}</div>${body}<p class="small muted">${esc(t('jk.chartNote'))}</p>`;
+  $('#main').innerHTML = `<div class="seg" style="margin-bottom:14px">${[['jk.chart', 0], ['jk.dasha', 1], ['jk.strength', 3], ['jk.family', 2]].map(([k, i]) => `<button data-jk="${i}" class="${jkSection === i ? 'on' : ''}">${esc(t(k))}</button>`).join('')}</div>${body}<p class="small muted">${esc(t('jk.chartNote'))}</p>`;
   const q = x => $('#main').querySelector(x), qa = x => $('#main').querySelectorAll(x);
   qa('[data-jk]').forEach(b => b.onclick = () => { jkSection = +b.dataset.jk; viewJathakam(); });
   q('#jkp')?.addEventListener('change', e => { jkPerson = e.target.value; viewJathakam(); });
@@ -676,6 +771,17 @@ function skyTitle(e) {
   if (e.kind === 'direct') return t('sk.direct', name('grahas', e.graha));
   return `${t(e.kind === 'solar-eclipse' ? 'sk.solar' : 'sk.lunar')} · ${t('sk.' + e.eclipse)}`;
 }
+// As on iOS (EclipseSheet): each phase in local time, the traditional sutak
+// when the eclipse is seen here, and what an eclipse is - information only.
+function eclipseSheet(e) {
+  const when = u => new Intl.DateTimeFormat(locale(), { day: 'numeric', month: 'short', timeZone: S.home.tz }).format(new Date(u * 1000)) + ' · ' + clock(u);
+  const phases = (e.contacts || []).map(c => `<div class="row"><span class="muted">${esc(t('sk.' + c.phase))}</span><span class="v">${esc(when(c.at))}</span></div>`).join('');
+  sheet(`<h2 class="serif" style="margin:4px 0">${esc(skyTitle(e))}</h2>
+    ${e.visible !== undefined ? `<p class="small" style="font-weight:700;color:${e.visible ? 'var(--accent)' : 'var(--muted)'}">${esc(t(e.visible ? 'sk.visible' : 'sk.notVisible', S.home.name))}</p>` : ''}
+    ${phases ? `<div class="card"><p class="label">${esc(t('sk.phasesFor', S.home.name))}</p>${phases}${e.sutak ? `<p class="small" style="margin-top:8px">${esc(t('sk.sutak', when(e.sutak)))}</p>` : ''}</div>` : ''}
+    <p>${esc(t(e.kind === 'solar-eclipse' ? 'sk.aboutSolar' : 'sk.aboutLunar'))}</p>`);
+}
+
 async function viewSky() {
   loading();
   const tz = S.home.tz, nowLocal = new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()).split(':');
@@ -690,7 +796,7 @@ async function viewSky() {
     const m = month(e.at);
     if (m !== cur) { html += `${cur ? '</div>' : ''}<p class="label" style="margin-top:12px">${esc(m)}</p><div class="card">`; cur = m; }
     const icon = e.kind === 'ingress' ? '→' : e.kind.endsWith('eclipse') ? (e.kind === 'solar-eclipse' ? '☀' : '☾') : '↺';
-    html += `<div class="list-row"><span style="font-size:20px;width:24px;text-align:center;color:${e.kind.endsWith('eclipse') ? 'var(--accent)' : GCOL[e.graha] || 'var(--muted)'}">${icon}</span><div class="grow"><b>${esc(skyTitle(e))}</b>
+    html += `<div class="list-row" ${e.kind.endsWith('eclipse') ? `data-ecl="${ev.indexOf(e)}" style="cursor:pointer"` : ''}><span style="font-size:20px;width:24px;text-align:center;color:${e.kind.endsWith('eclipse') ? 'var(--accent)' : GCOL[e.graha] || 'var(--muted)'}">${icon}</span><div class="grow"><b>${esc(skyTitle(e))}</b>
       <div class="small muted">${esc(dLabel(e.at))} · ${esc(clock(e.at))}</div>
       ${e.visible !== undefined ? `<div class="small" style="font-weight:700;color:${e.visible ? 'var(--accent)' : 'var(--muted)'}">${esc(t(e.visible ? 'sk.visible' : 'sk.notVisible', S.home.name))}</div>` : ''}
       ${e.start ? `<div class="small muted">${esc(clock(e.start))} – ${esc(clock(e.end))} · ${esc(t('sk.greatest', clock(e.at)))}</div>` : ''}</div></div>`;
@@ -699,6 +805,7 @@ async function viewSky() {
   $('#main').innerHTML = html;
   $('#main').querySelectorAll('[data-sy]').forEach(b => b.onclick = () => { skyYear += +b.dataset.sy; viewSky(); });
   $('#main').querySelectorAll('[data-sf]').forEach(b => b.onclick = () => { skyFilter = b.dataset.sf; viewSky(); });
+  $('#main').querySelectorAll('[data-ecl]').forEach(r => r.onclick = () => eclipseSheet(ev[+r.dataset.ecl]));
 }
 
 // ---------------------------------------------------------------- temples
@@ -810,7 +917,8 @@ async function viewMonth() {
     <p class="small muted" style="margin-top:10px"><span class="dot major"></span> ${esc(t('f.major'))} &nbsp; <span class="dot"></span> ${esc(t('tab.festivals'))} &nbsp; <span class="dot hollow"></span> ${['ekadashi', 'purnima', 'amavasya'].map(k => esc(name('tithis', k))).join(' · ')}</p>
     ${items.length ? `<p class="label" style="margin-top:16px">${esc(t('tab.festivals'))}</p>` : ''}
     ${items.map(x => festRow(x.f, x.date)).join('')}
-    <button class="btn soft block noprint" onclick="window.print()">🖨 ${esc(t('pdf.share'))}</button>`;
+    <div class="noprint" style="display:flex;gap:8px"><button class="btn soft" style="flex:1" onclick="window.print()">🖨 ${esc(t('pdf.month'))}</button><button class="btn soft" style="flex:1" data-year>🖨 ${esc(t('pdf.year'))}</button></div>`;
+  $('#main').querySelector('[data-year]').onclick = () => printYear(y, place);
   $('#main').querySelectorAll('[data-m]').forEach(b => b.onclick = () => {
     const d = parse(m); d.setUTCMonth(d.getUTCMonth() + +b.dataset.m, 1); monthDate = ymd(d); viewMonth();
   });
@@ -823,6 +931,32 @@ async function viewMonth() {
   };
   wireFestivals();
 }
+// As on iOS (PDFExport.year): the year's festivals, then each month as a grid,
+// in the tradition's names - printed (or saved as PDF) from the browser.
+async function printYear(y, place) {
+  loading();
+  const cells = await engine({ op: 'month', handle: await cal(y, place), from: `${y}-01-01`, to: `${y}-12-31` });
+  const solar = pack.display.primary === 'solar';
+  const c = CULTURES.find(c => c.id === S.culture);
+  const title = t('pdf.yearTitle', c ? (S.native ? c.native : c.en) : 'Kaal', y);
+  const fests = cells.flatMap(x => x.festivals.map(id => pack.festivals.find(f => f.id === id)).filter(f => f && !f.hidden && f.tier !== 'minor').map(f => ({ f, date: x.date })));
+  const wd = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].map(k => name('weekdays', k).slice(0, lang() === 'en' ? 3 : 4));
+  let html = `<div class="yearprint"><h1 class="serif">${esc(title)}</h1><p class="small muted">${esc(t('f.forPlace', place.name))}</p>${fests.map(x => festRow(x.f, x.date)).join('')}`;
+  for (let mo = 1; mo <= 12; mo++) {
+    const mc = cells.filter(x => +x.date.slice(5, 7) === mo);
+    const head = [...new Set(mc.map(x => solar ? name('solarMonths', x.solar?.month) : name('lunarMonths', x.lunar?.month)))].join(' – ');
+    const lead = parse(`${y}-${pad(mo)}-01`).getUTCDay();
+    html += `<section class="ym"><h2 class="serif">${esc(head)}</h2><div class="muted">${esc(new Intl.DateTimeFormat(locale(), { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(`${y}-${pad(mo)}-01`)))}</div>
+      <div class="grid">${wd.map(w => `<div class="wd">${esc(w)}</div>`).join('')}${'<div class="cell empty"></div>'.repeat(lead)}${mc.map(x => {
+        const fs = x.festivals.map(id => pack.festivals.find(f => f.id === id)).filter(f => f && !f.hidden);
+        return `<div class="cell ${fs.length ? 'fest' : ''}"><div class="d">${+x.date.slice(8)}</div><div class="t">${esc(solar && x.solar ? String(x.solar.day) : name('tithis', x.tithi))}</div><div class="n">${esc(name('nakshatras', x.nakshatra))}</div>${fs.slice(0, 2).map(f => `<div class="n" style="color:var(--accent)">${esc(fname(f))}</div>`).join('')}</div>`;
+      }).join('')}</div></section>`;
+  }
+  $('#main').innerHTML = html + `<p class="small muted">${esc(t('pdf.watermark'))}</p></div><button class="btn soft block noprint" data-back>‹ ${esc(t('tab.calendar'))}</button>`;
+  $('#main').querySelector('[data-back]').onclick = () => viewMonth();
+  setTimeout(() => window.print(), 300);
+}
+
 function festRow(f, date) {
   const n = daysBetween(today(), date);
   return `<div class="fest ${f.tier === 'major' ? 'major' : ''}" data-f="${esc(f.id)}" data-d="${date}"><div class="bar2"></div>
@@ -836,12 +970,27 @@ let majorOnly = true;
 async function viewFestivals() {
   loading();
   const list = (await upcoming(today(), 370)).filter(x => !majorOnly || x.f.tier !== 'minor');
+  // Under All, the recurring observances too, date only (as on iOS: weekly vrats only if kept,
+  // a plain Ekadashi left out where a named one falls the same day).
+  if (!majorOnly) {
+    const from = today(), to = addDays(from, 370), named = new Set(list.filter(x => x.f.id.includes('ekadashi')).map(x => x.date)), seen = new Set();
+    for (let y = +from.slice(0, 4); y <= +to.slice(0, 4); y++) {
+      for (const o of await engine({ op: 'observances', handle: await cal(y) })) {
+        const r = pack.dailySignificance.find(d => d.key === o.id);
+        if (o.date < from || o.date > to || (r?.optIn && !S.vrats.includes(o.id))) continue;
+        if (o.id.startsWith('ekadashi') && named.has(o.date)) continue;
+        if (seen.has(o.id + o.date)) continue;
+        seen.add(o.id + o.date); list.push({ obs: o.id, date: o.date });
+      }
+    }
+    list.sort((a, b) => a.date < b.date ? -1 : a.date > b.date ? 1 : (a.obs ? 1 : 0) - (b.obs ? 1 : 0));
+  }
   let html = `<div class="seg noprint" style="margin-bottom:12px"><button data-maj="1" class="${majorOnly ? 'on' : ''}">${esc(t('f.major'))}</button><button data-maj="0" class="${!majorOnly ? 'on' : ''}">${esc(t('f.all'))}</button></div>`;
   let month = '';
   for (const x of list) {
     const mm = x.date.slice(0, 7);
     if (mm !== month) { month = mm; html += `<p class="label" style="margin-top:14px">${esc(new Intl.DateTimeFormat(locale(), { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(x.date)))}</p>`; }
-    html += festRow(x.f, x.date);
+    html += x.obs ? `<div class="list-row obs"><span style="color:var(--gold)">☾</span><span class="grow">${esc(recName(x.obs))}</span><span class="small muted">${esc(new Intl.DateTimeFormat(locale(), { day: 'numeric', month: 'short', timeZone: 'UTC' }).format(parse(x.date)))}</span></div>` : festRow(x.f, x.date);
   }
   $('#main').innerHTML = html + `<button class="btn soft block noprint" onclick="window.print()">🖨 ${esc(t('pdf.share'))}</button>`;
   $('#main').querySelectorAll('[data-maj]').forEach(b => b.onclick = () => { majorOnly = b.dataset.maj === '1'; viewFestivals(); });
@@ -986,13 +1135,32 @@ function viewMuhurtham() {
   const opt = (list, sel, none) => `${none ? `<option value="">${esc(none)}</option>` : `<option value="">${esc(t('m.choose'))}</option>`}` + list.map(p => `<option value="${p.id}" ${p.id === sel ? 'selected' : ''}>${esc(personLabel(p))}</option>`).join('') + `<option value="+">＋ ${esc(t('m.addProfile'))}</option>`;
   const bride = births.find(p => p.id === M.bride), groom = births.find(p => p.id === M.groom);
   const ready = !couple || (bride && groom);
-  $('#main').innerHTML = `<p class="muted">${esc(t('m.intro'))}</p>
-    <div class="chips">${events.map(e => `<button class="chip ${M.event === e.id ? 'on' : ''}" data-ev="${e.id}">${esc(e.names[lang()] ?? e.names.en)}</button>`).join('')}</div>
+  // As on iOS: occasions by kind, and a browse mode with no inputs.
+  const groups = ['family', 'home', 'work', 'travel', 'life'].map(g => [g, events.filter(e => (e.group || 'life') === g)]).filter(([, l]) => l.length);
+  const picker = groups.map(([g, l]) => `<p class="label" style="margin-top:12px">${esc(t('m.group.' + g))}</p><div class="chips">${l.map(e => `<button class="chip ${M.event === e.id ? 'on' : ''}" data-ev="${e.id}">${esc(e.names[lang()] ?? e.names.en)}</button>`).join('')}</div>`).join('');
+  const mode = `<div class="seg" style="margin:8px 0"><button data-br="0" class="${!M.browse ? 'on' : ''}">${esc(t('m.modeFind'))}</button><button data-br="1" class="${M.browse ? 'on' : ''}">${esc(t('m.modeBrowse'))}</button></div>`;
+  if (M.browse) {
+    $('#main').innerHTML = `<p class="muted">${esc(t('m.intro'))}</p>${mode}${picker}<p class="small muted" style="margin-top:12px">${esc(t('m.browseNote'))}</p><div id="mres" style="margin-top:14px"></div><p class="small muted">${esc(t('m.lagna'))}</p>`;
+    $('#main').querySelectorAll('[data-ev]').forEach(b => b.onclick = () => { M.event = b.dataset.ev; M.results = null; viewMuhurtham(); });
+    $('#main').querySelectorAll('[data-br]').forEach(b => b.onclick = () => { M.browse = b.dataset.br === '1'; M.results = null; viewMuhurtham(); });
+    if (M.results) return renderResults();
+    $('#mres').innerHTML = '<div class="loading"><div class="ring"><i></i></div></div>';
+    const from = addDays(today(), 1); const d = parse(from); d.setUTCMonth(d.getUTCMonth() + 12); const to = ymd(d);
+    (async () => {
+      let out = [];
+      for (let y = +from.slice(0, 4); y <= +to.slice(0, 4); y++) out = out.concat(await engine({ op: 'muhurtham', handle: await cal(y), event: M.event, from, to, people: [] }));
+      if (!M.browse || tab !== 'muhurtham') return;
+      M.results = { list: out.sort((a, b) => a.date < b.date ? -1 : 1), chosen: [], months: true };
+      renderResults();
+    })();
+    return;
+  }
+  $('#main').innerHTML = `<p class="muted">${esc(t('m.intro'))}</p>${mode}${picker}
     <div class="card" style="margin-top:12px"><p class="label">${esc(t('m.when'))}</p><div class="seg">${[3, 6, 12].map(n => `<button data-mo="${n}" class="${M.months === n ? 'on' : ''}">${esc(t('m.months', n))}</button>`).join('')}</div></div>
     <div class="card"><p class="label">${esc(t(couple ? 'm.couple' : 'm.forWhom'))}</p><p class="small muted">${esc(t('m.jathakamNote'))}</p>
       ${couple ? `<label class="field"><span>${esc(t('m.bride'))}</span><select id="sb">${opt(births.filter(p => p.sex === 'female'), M.bride)}</select><div class="small muted">${esc(natalLine(bride?.anchor))}</div></label>
         <label class="field"><span>${esc(t('m.groom'))}</span><select id="sg">${opt(births.filter(p => p.sex === 'male'), M.groom)}</select><div class="small muted">${esc(natalLine(groom?.anchor))}</div></label>
-        ${!ready ? `<div class="small" style="color:var(--accent)">${esc(t('m.needCouple'))}</div>` : `<button class="btn soft block" id="por">💞 ${esc(t('pr.open'))}</button>`}`
+        ${!ready ? `<div class="small" style="color:var(--accent)">${esc(t('m.needCouple'))}</div>` : matchesByPorutham() ? `<button class="btn soft block" id="por">💞 ${esc(t('pr.open'))}</button>` : GUNA_MILAN_RELEASED ? `<button class="btn soft block" id="gm">💞 ${esc(t('gm.title'))}</button>` : ''}`
       : `<label class="field"><span>${esc(t('m.profile'))}</span><select id="sp">${opt(births, M.profile, t('m.nobody'))}</select></label>`}
       ${[bride, groom].concat(couple ? [] : [births.find(p => p.id === M.profile)]).filter(p => p && !p.anchor?.lagna).map(p => `<div class="small" style="color:var(--accent)">${esc(t('m.noTime', p.name))}</div>`).join('')}
     </div>
@@ -1000,6 +1168,7 @@ function viewMuhurtham() {
     <div id="mres" style="margin-top:14px"></div>
     <p class="small muted">${esc(t('m.lagna'))}</p>`;
   $('#main').querySelectorAll('[data-ev]').forEach(b => b.onclick = () => { M.event = b.dataset.ev; M.results = null; viewMuhurtham(); });
+  $('#main').querySelectorAll('[data-br]').forEach(b => b.onclick = () => { M.browse = b.dataset.br === '1'; M.results = null; viewMuhurtham(); });
   $('#main').querySelectorAll('[data-mo]').forEach(b => b.onclick = () => { M.months = +b.dataset.mo; M.results = null; viewMuhurtham(); });
   const pick = (sel, key, sex) => sel && (sel.onchange = () => {
     if (sel.value === '+') personEditor(null, sex, rec => { M[key] = rec.id; M.results = null; viewMuhurtham(); });
@@ -1007,6 +1176,7 @@ function viewMuhurtham() {
   });
   pick($('#sb'), 'bride', 'female'); pick($('#sg'), 'groom', 'male'); pick($('#sp'), 'profile', '');
   $('#por')?.addEventListener('click', () => poruthamSheet(bride, groom));
+  $('#gm')?.addEventListener('click', () => gunaMilanSheet(bride, groom));
   $('#find').onclick = async () => {
     $('#mres').innerHTML = '<div class="loading"><div class="ring"><i></i></div></div>';
     const from = addDays(today(), 1); const d = parse(from); d.setUTCMonth(d.getUTCMonth() + M.months); const to = ymd(d);
@@ -1021,12 +1191,18 @@ function viewMuhurtham() {
 }
 function renderResults() {
   const { list, chosen } = M.results;
-  const shown = M.byDate ? [...list].sort((a, b) => a.date < b.date ? -1 : 1) : list;
+  const shown = M.byDate || M.results.months ? [...list].sort((a, b) => a.date < b.date ? -1 : 1) : list;
+  // Browsing: a heading for each month, with its count.
+  const monthHead = (m, i) => {
+    if (!M.results.months || (i > 0 && shown[i - 1].date.slice(0, 7) === m.date.slice(0, 7))) return '';
+    const n = shown.filter(x => x.date.slice(0, 7) === m.date.slice(0, 7)).length;
+    return `<p class="label" style="margin-top:14px">${esc(new Intl.DateTimeFormat(locale(), { month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(m.date)))} · ${esc(t('m.inMonth', n))}</p>`;
+  };
   $('#mres').innerHTML = !list.length ? `<div class="card muted">${esc(t('m.none'))}</div>` : `
-    <div class="seg noprint" style="margin-bottom:8px"><button data-bd="0" class="${!M.byDate ? 'on' : ''}">${esc(t('m.best'))}</button><button data-bd="1" class="${M.byDate ? 'on' : ''}">${esc(t('m.byDate'))}</button></div>
+    ${M.results.months ? '' : `<div class="seg noprint" style="margin-bottom:8px"><button data-bd="0" class="${!M.byDate ? 'on' : ''}">${esc(t('m.best'))}</button><button data-bd="1" class="${M.byDate ? 'on' : ''}">${esc(t('m.byDate'))}</button></div>`}
     <p class="small muted">${esc(t('m.found', list.length))}</p>
     <button class="btn soft block noprint" onclick="window.print()" style="margin-bottom:10px">🖨 ${esc(t('pdf.share'))}</button>
-    ${shown.map(m => `<div class="card"><div style="display:flex;justify-content:space-between"><b>${esc(greg(m.date))}</b><span class="small muted">${esc(t('day.inDays', daysBetween(today(), m.date)))}</span></div>
+    ${shown.map((m, i) => `${monthHead(m, i)}<div class="card"><div style="display:flex;justify-content:space-between"><b>${esc(greg(m.date))}</b><span class="small muted">${esc(t('day.inDays', daysBetween(today(), m.date)))}</span></div>
       <div style="color:var(--accent);font-weight:700">${m.windows.map(span).map(esc).join(' · ')}</div>
       ${m.lagnas.length ? `<div class="small">${esc(t('m.lagnas', m.lagnas.map(l => `${name('rashis', l.lagna)} ${clock(l.start)}–${clock(l.end)}`).join(' · ')))}</div>` : ''}
       <div class="small">${esc(t('m.why', m.nakshatras.map(n => name('nakshatras', n)).join(', '), m.tithis.map(tithiName).join(', ')))}</div>

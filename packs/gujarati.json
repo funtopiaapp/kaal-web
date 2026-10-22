@@ -728,6 +728,18 @@
    "vikram-kartikadi": {
     "en": "Vikram Samvat",
     "gu": "વિક્રમ સંવત"
+   },
+   "vikram-chaitradi": {
+    "en": "Vikram Samvat (Chaitradi)",
+    "gu": "વિક્રમ સંવત (ચૈત્રાદિ)"
+   },
+   "shaka-samvatsara": {
+    "en": "Shaka Samvat",
+    "gu": "શક સંવત"
+   },
+   "kali": {
+    "en": "Kali Yuga",
+    "gu": "કળિયુગ"
    }
   },
   "adhika": {
@@ -1029,6 +1041,190 @@
     "en": "Visham",
     "gu": "વિષ"
    }
+  },
+  "anandadi": {
+   "ananda": {
+    "en": "Ananda",
+    "gu": "આનન્દ"
+   },
+   "kaladanda": {
+    "en": "Kaladanda",
+    "gu": "કાલદણ્ડ"
+   },
+   "dhumra": {
+    "en": "Dhumra",
+    "gu": "ધૂમ્ર"
+   },
+   "dhata": {
+    "en": "Dhata",
+    "gu": "ધાતા"
+   },
+   "saumya": {
+    "en": "Saumya",
+    "gu": "સૌમ્ય"
+   },
+   "dhwanksha": {
+    "en": "Dhwanksha",
+    "gu": "ધ્વાંક્ષ"
+   },
+   "ketu": {
+    "en": "Ketu",
+    "gu": "કેતુ"
+   },
+   "shrivatsa": {
+    "en": "Shrivatsa",
+    "gu": "શ્રીવત્સ"
+   },
+   "vajra": {
+    "en": "Vajra",
+    "gu": "વજ્ર"
+   },
+   "mudgara": {
+    "en": "Mudgara",
+    "gu": "મુદ્ગર"
+   },
+   "chhatra": {
+    "en": "Chhatra",
+    "gu": "છત્ર"
+   },
+   "mitra": {
+    "en": "Mitra",
+    "gu": "મિત્ર"
+   },
+   "manasa": {
+    "en": "Manasa",
+    "gu": "માનસ"
+   },
+   "padma": {
+    "en": "Padma",
+    "gu": "પદ્મ"
+   },
+   "lumbaka": {
+    "en": "Lumbaka",
+    "gu": "લુમ્બક"
+   },
+   "utpata": {
+    "en": "Utpata",
+    "gu": "ઉત્પાત"
+   },
+   "mrityu": {
+    "en": "Mrityu",
+    "gu": "મૃત્યુ"
+   },
+   "kana": {
+    "en": "Kana",
+    "gu": "કાણ"
+   },
+   "siddhi": {
+    "en": "Siddhi",
+    "gu": "સિદ્ધિ"
+   },
+   "shubha": {
+    "en": "Shubha",
+    "gu": "શુભ"
+   },
+   "amrita": {
+    "en": "Amrita",
+    "gu": "અમૃત"
+   },
+   "musala": {
+    "en": "Musala",
+    "gu": "મુસલ"
+   },
+   "gada": {
+    "en": "Gada",
+    "gu": "ગદ"
+   },
+   "matanga": {
+    "en": "Matanga",
+    "gu": "માતંગ"
+   },
+   "rakshasa": {
+    "en": "Rakshasa",
+    "gu": "રાક્ષસ"
+   },
+   "chara": {
+    "en": "Chara",
+    "gu": "ચર"
+   },
+   "sthira": {
+    "en": "Sthira",
+    "gu": "સ્થિર"
+   },
+   "vardhamana": {
+    "en": "Vardhamana",
+    "gu": "વર્ધમાન"
+   }
+  },
+  "chartYogas": {
+   "ruchaka": {
+    "en": "Ruchaka",
+    "gu": "રુચક"
+   },
+   "bhadra": {
+    "en": "Bhadra",
+    "gu": "ભદ્ર"
+   },
+   "hamsa": {
+    "en": "Hamsa",
+    "gu": "હંસ"
+   },
+   "malavya": {
+    "en": "Malavya",
+    "gu": "માલવ્ય"
+   },
+   "sasa": {
+    "en": "Sasa",
+    "gu": "શશ"
+   },
+   "gajakesari": {
+    "en": "Gajakesari",
+    "gu": "ગજકેસરી"
+   },
+   "budhaditya": {
+    "en": "Budhaditya",
+    "gu": "બુધાદિત્ય"
+   },
+   "chandra-mangala": {
+    "en": "Chandra-Mangala",
+    "gu": "ચન્દ્ર-મંગલ"
+   },
+   "sunapha": {
+    "en": "Sunapha",
+    "gu": "સુનફા"
+   },
+   "anapha": {
+    "en": "Anapha",
+    "gu": "અનફા"
+   },
+   "durudhara": {
+    "en": "Durudhara",
+    "gu": "દુરુધરા"
+   },
+   "kemadruma": {
+    "en": "Kemadruma",
+    "gu": "કેમદ્રુમ"
+   },
+   "vesi": {
+    "en": "Vesi",
+    "gu": "વેશિ"
+   },
+   "vasi": {
+    "en": "Vasi",
+    "gu": "વાશિ"
+   },
+   "ubhayachari": {
+    "en": "Ubhayachari",
+    "gu": "ઉભયચરી"
+   },
+   "amala": {
+    "en": "Amala",
+    "gu": "અમલા"
+   },
+   "parivartana": {
+    "en": "Parivartana",
+    "gu": "પરિવર્તન"
+   }
   }
  },
  "display": {
@@ -1036,7 +1232,81 @@
   "nameEn": "Gujarati",
   "nameNative": "ગુજરાતી",
   "newYear": "bestu-varas",
-  "referencePlace": "Ahmedabad"
+  "referencePlace": "Ahmedabad",
+  "terms": [
+   [
+    "Kuja dosha",
+    "Manglik dosha"
+   ],
+   [
+    "Muhurtham Finder",
+    "Shubh Muhurat Finder"
+   ],
+   [
+    "Muhurthams",
+    "Muhurats"
+   ],
+   [
+    "muhurthams",
+    "muhurats"
+   ],
+   [
+    "Muhurtham",
+    "Shubh Muhurat"
+   ],
+   [
+    "muhurtham",
+    "muhurat"
+   ],
+   [
+    "Panchangam",
+    "Panchang"
+   ],
+   [
+    "panchangam",
+    "panchang"
+   ],
+   [
+    "Amrit Kalam",
+    "Amrit Kaal"
+   ],
+   [
+    "Rahu Kalam",
+    "Rahu Kaal"
+   ],
+   [
+    "Rahu kalam",
+    "Rahu Kaal"
+   ],
+   [
+    "Gulika Kalam",
+    "Gulika Kaal"
+   ],
+   [
+    "Gulika kalam",
+    "Gulika Kaal"
+   ],
+   [
+    "Yamagandam",
+    "Yamaganda"
+   ],
+   [
+    "yamagandam",
+    "yamaganda"
+   ],
+   [
+    "Porutham",
+    "Kundali Milan"
+   ],
+   [
+    "Jathakam",
+    "Kundali"
+   ],
+   [
+    "jathakam",
+    "kundali"
+   ]
+  ]
  },
  "festivals": [
   {
@@ -4343,6 +4613,7 @@
      "thursday",
      "friday"
     ],
+    "group": "family",
     "avoidSolarMonths": [
      "dhanu",
      "meena"
@@ -4401,6 +4672,7 @@
      "thursday",
      "friday"
     ],
+    "group": "family",
     "avoidSolarMonths": [
      "dhanu",
      "meena"
@@ -4454,6 +4726,7 @@
      "thursday",
      "friday"
     ],
+    "group": "home",
     "avoidSolarMonths": [
      "dhanu",
      "meena"
@@ -4513,6 +4786,7 @@
      "thursday",
      "friday"
     ],
+    "group": "home",
     "avoidSolarMonths": [
      "dhanu",
      "meena"
@@ -4568,6 +4842,7 @@
      "thursday",
      "friday"
     ],
+    "group": "home",
     "avoidLunarSpans": [
      {
       "from": {
@@ -4628,6 +4903,7 @@
      "thursday",
      "friday"
     ],
+    "group": "travel",
     "avoidLunarSpans": [
      {
       "from": {
@@ -4681,6 +4957,7 @@
      "thursday",
      "friday"
     ],
+    "group": "work",
     "avoidLunarSpans": [
      {
       "from": {
@@ -4743,7 +5020,8 @@
      "friday"
     ],
     "avoidAdhika": false,
-    "avoidJanmaNakshatra": false
+    "avoidJanmaNakshatra": false,
+    "group": "family"
    },
    {
     "id": "annaprashana",
@@ -4788,7 +5066,8 @@
      "thursday",
      "friday"
     ],
-    "avoidJanmaNakshatra": false
+    "avoidJanmaNakshatra": false,
+    "group": "family"
    },
    {
     "id": "vidyarambham",
@@ -4836,7 +5115,8 @@
      "thursday",
      "friday"
     ],
-    "avoidJanmaNakshatra": false
+    "avoidJanmaNakshatra": false,
+    "group": "family"
    },
    {
     "id": "upanayanam",
@@ -4889,7 +5169,8 @@
       }
      }
     ],
-    "avoidJanmaNakshatra": false
+    "avoidJanmaNakshatra": false,
+    "group": "family"
    },
    {
     "id": "mundan",
@@ -4930,7 +5211,8 @@
      "thursday",
      "friday"
     ],
-    "avoidJanmaNakshatra": false
+    "avoidJanmaNakshatra": false,
+    "group": "family"
    },
    {
     "id": "karnavedha",
@@ -4975,7 +5257,8 @@
      "thursday",
      "friday"
     ],
-    "avoidJanmaNakshatra": false
+    "avoidJanmaNakshatra": false,
+    "group": "family"
    },
    {
     "id": "travel",
@@ -5014,7 +5297,8 @@
      "thursday",
      "friday"
     ],
-    "avoidAdhika": false
+    "avoidAdhika": false,
+    "group": "travel"
    },
    {
     "id": "jewellery",
@@ -5059,7 +5343,8 @@
      "thursday",
      "friday"
     ],
-    "avoidAdhika": false
+    "avoidAdhika": false,
+    "group": "life"
    },
    {
     "id": "seemantham",
@@ -5098,7 +5383,1207 @@
      "wednesday",
      "thursday",
      "friday"
-    ]
+    ],
+    "group": "family"
+   },
+   {
+    "id": "pumsavana",
+    "group": "family",
+    "names": {
+     "en": "Pumsavana",
+     "gu": "પુંસવન સંસ્કાર"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "mula",
+     "uttara_ashadha",
+     "shravana",
+     "uttara_bhadrapada"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "dhruva+kshipra",
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "nishkramana",
+    "group": "family",
+    "names": {
+     "en": "Baby's first outing (Nishkramana)",
+     "gu": "નિષ્ક્રમણ સંસ્કાર"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "shravana",
+     "dhanishta",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+mridu+chara",
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "nasika-vedha",
+    "group": "family",
+    "names": {
+     "en": "Nose piercing",
+     "gu": "નાક વીંધવું"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+mridu",
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "dwiragaman",
+    "group": "family",
+    "names": {
+     "en": "Bride's return journey (Dwiragaman)",
+     "gu": "દ્વિરાગમન (આણું)"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+mridu+dhruva"
+   },
+   {
+    "id": "construction",
+    "group": "home",
+    "names": {
+     "en": "Start of house construction",
+     "gu": "ગૃહ નિર્માણ આરંભ (શિલાન્યાસ)"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday",
+     "saturday"
+    ],
+    "basis": "dhruva+mridu"
+   },
+   {
+    "id": "house-move",
+    "group": "home",
+    "names": {
+     "en": "Moving into a rented home",
+     "gu": "ભાડાના ઘરમાં પ્રવેશ"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "dhruva+mridu+chara+kshipra"
+   },
+   {
+    "id": "borewell",
+    "group": "home",
+    "names": {
+     "en": "Digging a well or borewell",
+     "gu": "કૂવો / બોરવેલ ખોદવો"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "dhruva+mridu"
+   },
+   {
+    "id": "furniture",
+    "group": "home",
+    "names": {
+     "en": "Buying furniture or appliances",
+     "gu": "ફર્નિચર / ઉપકરણ ખરીદી"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "dhruva+mridu+kshipra",
+    "avoidAdhika": false
+   },
+   {
+    "id": "utensils",
+    "group": "home",
+    "names": {
+     "en": "Buying utensils for a new kitchen",
+     "gu": "નવા રસોડા માટે વાસણ ખરીદી"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "dhruva+mridu+kshipra",
+    "avoidAdhika": false
+   },
+   {
+    "id": "shop-opening",
+    "group": "work",
+    "names": {
+     "en": "Opening a shop",
+     "gu": "દુકાનનું ઉદ્ઘાટન"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+mridu+dhruva"
+   },
+   {
+    "id": "office-opening",
+    "group": "work",
+    "names": {
+     "en": "Opening an office",
+     "gu": "ઓફિસ ઉદ્ઘાટન"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+mridu+dhruva"
+   },
+   {
+    "id": "new-job",
+    "group": "work",
+    "names": {
+     "en": "Joining a new job",
+     "gu": "નવી નોકરીની શરૂઆત"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+mridu+dhruva",
+    "avoidAdhika": false
+   },
+   {
+    "id": "machinery",
+    "group": "work",
+    "names": {
+     "en": "Installing machinery",
+     "gu": "મશીનરી સ્થાપના"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday",
+     "saturday"
+    ],
+    "basis": "kshipra+mridu+dhruva"
+   },
+   {
+    "id": "agreement",
+    "group": "work",
+    "names": {
+     "en": "Signing an agreement",
+     "gu": "કરાર પર સહી"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+mridu+dhruva",
+    "avoidAdhika": false
+   },
+   {
+    "id": "investment",
+    "group": "work",
+    "names": {
+     "en": "Investing or opening an account",
+     "gu": "રોકાણ / ખાતું ખોલવું"
+    },
+    "nakshatras": [
+     "rohini",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "dhruva+kshipra",
+    "avoidAdhika": false
+   },
+   {
+    "id": "medical",
+    "group": "life",
+    "names": {
+     "en": "Starting a course of treatment",
+     "gu": "સારવારની શરૂઆત"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "shravana",
+     "dhanishta",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+mridu+chara",
+    "avoidAdhika": false
+   },
+   {
+    "id": "music-arts",
+    "group": "life",
+    "names": {
+     "en": "Beginning music, dance or an art",
+     "gu": "સંગીત / નૃત્ય શિક્ષણ આરંભ"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "mridu+kshipra",
+    "avoidAdhika": false
+   },
+   {
+    "id": "new-clothes",
+    "group": "life",
+    "names": {
+     "en": "Wearing new clothes",
+     "gu": "નવાં વસ્ત્ર ધારણ"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "vishakha",
+     "anuradha",
+     "uttara_ashadha",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "vastra",
+    "avoidAdhika": false
+   },
+   {
+    "id": "sowing",
+    "group": "life",
+    "names": {
+     "en": "Sowing seeds",
+     "gu": "બીજ વાવવું"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "dhruva+mridu+kshipra",
+    "avoidAdhika": false
+   },
+   {
+    "id": "tree-planting",
+    "group": "life",
+    "names": {
+     "en": "Planting a tree",
+     "gu": "વૃક્ષારોપણ"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "dhruva+mridu+kshipra",
+    "avoidAdhika": false
+   },
+   {
+    "id": "pratishtha",
+    "group": "life",
+    "names": {
+     "en": "Installing a deity at home",
+     "gu": "ઘરમાં દેવ પ્રતિષ્ઠા"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "dhruva+mridu"
+   },
+   {
+    "id": "foreign-travel",
+    "group": "travel",
+    "names": {
+     "en": "Travelling abroad",
+     "gu": "વિદેશ યાત્રા"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "swati",
+     "anuradha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+chara+mridu",
+    "avoidAdhika": false
+   },
+   {
+    "id": "pilgrimage",
+    "group": "travel",
+    "names": {
+     "en": "Setting out on a pilgrimage",
+     "gu": "તીર્થયાત્રા આરંભ"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "swati",
+     "anuradha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+chara+mridu",
+    "avoidAdhika": false
+   },
+   {
+    "id": "vehicle-first-drive",
+    "group": "travel",
+    "names": {
+     "en": "First drive of a new vehicle",
+     "gu": "નવા વાહનની પ્રથમ યાત્રા"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "basis": "kshipra+chara+mridu",
+    "avoidAdhika": false
    }
   ],
   "sources": [

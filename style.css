@@ -206,3 +206,29 @@ footer.foot { max-width: 760px; margin: 0 auto; padding: 0 16px 40px; font-size:
 .tmplace span:last-child { white-space: nowrap; font-variant-numeric: tabular-nums; }
 .tmdeity { margin: 22px 4px 10px; font-size: 22px; }
 .tmnear .row { flex-wrap: wrap; }
+
+/* day detail */
+details.detail summary { cursor: pointer; list-style: none; margin: 0; }
+details.detail summary::-webkit-details-marker { display: none; }
+details.detail summary::after { content: ' ⌄'; color: var(--accent); }
+details.detail[open] summary { margin-bottom: 8px; }
+
+/* chart strength */
+.sbrow { display: grid; grid-template-columns: 90px 1fr 84px; gap: 10px; align-items: center; padding: 5px 0; }
+.sbbar { height: 8px; border-radius: 4px; background: var(--sunken); overflow: hidden; }
+.sbbar i { display: block; height: 100%; background: var(--accent); opacity: .75; }
+.sbrow .v { text-align: right; }
+.sbrow .v small { display: block; color: var(--muted); font-size: 11px; }
+.avwrap { overflow-x: auto; }
+table.av { border-collapse: collapse; font-variant-numeric: tabular-nums; font-size: 13px; }
+table.av th, table.av td { padding: 4px 5px; text-align: center; }
+table.av th:first-child { text-align: left; white-space: nowrap; }
+table.av tr.sav td { font-weight: 700; }
+table.av td.hi { color: var(--accent); }
+table.av th.lg { color: var(--accent); }
+table.av td { color: var(--muted); }
+
+/* the year, for printing */
+.yearprint .ym { break-before: page; page-break-before: always; margin-top: 18px; }
+.yearprint .ym h2 { margin: 0; }
+@media print { .yearprint .cell { min-height: 54px; } }
