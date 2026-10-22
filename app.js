@@ -98,7 +98,9 @@ function dtf(opts) {
 }
 const greg = (s, opts = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) =>
   dtf({ ...opts, timeZone: 'UTC' }).format(parse(s));
-const clock = u => dtf({ hour: 'numeric', minute: '2-digit', timeZone: here().tz }).format(new Date(u * 1000));
+// Times on the clock the user chose: as the browser has it, twelve-hour or twenty-four.
+const hourOpts = () => S.clock === 12 ? { hour12: true } : S.clock === 24 ? { hourCycle: 'h23' } : {};
+const clock = u => dtf({ hour: 'numeric', minute: '2-digit', ...hourOpts(), timeZone: here().tz }).format(new Date(u * 1000));
 const span = w => `${clock(w.start)} – ${clock(w.end)}`;
 function tithiKey(n) {
   const k = ['pratipada', 'dvitiya', 'tritiya', 'chaturthi', 'panchami', 'shashthi', 'saptami', 'ashtami', 'navami', 'dashami', 'ekadashi', 'dvadashi', 'trayodashi', 'chaturdashi'];
@@ -192,12 +194,23 @@ function applyTheme() {
 function shell() {
   const c = CULTURES.find(c => c.id === S.culture);
   $('#badge').textContent = c ? `☀ ${c.native} · ${c.en} ▾` : '';
-  $('#badge').onclick = () => { tab = 'settings'; render(); };
+  // The tradition, switched where you are: a sheet of all fifteen, not a trip to Settings.
+  $('#badge').onclick = () => {
+    const o = sheet(`<h2 class="serif">${esc(t('s.tradition'))}</h2><div class="chips">${CULTURES.map(x => `<button class="chip ${S.culture === x.id ? 'on' : ''}" data-tc="${x.id}">${x.native}<br><small>${x.en}</small></button>`).join('')}</div>`);
+    o.querySelectorAll('[data-tc]').forEach(b => b.onclick = async () => { o.remove(); if (b.dataset.tc === S.culture) return; S.culture = b.dataset.tc; save(); await loadPack(); await resetCalendars(); render(); });
+  };
   // English or the tradition's language, beside the tradition picker.
   if (pack) { $('#langbadge').textContent = `🗣 ${S.native ? pack.display.nameNative : 'English'} ▾`; $('#langbadge').onclick = () => { S.native = !S.native; save(); render(); }; }
   const house = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>';
-  $('#tabs').innerHTML = TABS.filter(([id]) => id !== 'match' || matchingAvailable()).map(([id, k]) => `<button data-tab="${id}" class="${id === tab ? 'on' : ''}">${id === 'home' ? house : ''}${esc(t(k))}</button>`).join('');
-  $('#tabs').querySelectorAll('button').forEach(b => b.onclick = () => { tab = b.dataset.tab; if (tab === 'today') { dayDate = null; dayPlace = null; } render(); });
+  // The daily five one tap away; everything else under More.
+  const DAILY = ['home', 'today', 'calendar', 'festivals', 'muhurtham'], rest = TABS.filter(([id]) => !DAILY.includes(id) && (id !== 'match' || matchingAvailable()));
+  $('#tabs').innerHTML = TABS.filter(([id]) => DAILY.includes(id)).map(([id, k]) => `<button data-tab="${id}" class="${id === tab ? 'on' : ''}">${id === 'home' ? house : ''}${esc(t(k))}</button>`).join('')
+    + `<button data-more class="${DAILY.includes(tab) ? '' : 'on'}">${DAILY.includes(tab) ? '' : esc(t(TABS.find(([id]) => id === tab)?.[1] || 'mn.more')) + ' · '}${esc(t('mn.more'))} ▾</button>`;
+  $('#tabs').querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { tab = b.dataset.tab; if (tab === 'today') { dayDate = null; dayPlace = null; } render(); });
+  $('#tabs').querySelector('[data-more]').onclick = () => {
+    const o = sheet(`<h2 class="serif">${esc(t('mn.more'))}</h2><div class="morehub">${rest.map(([id, k]) => `<button class="tile" data-mt="${id}"><b>${esc(t(k))}</b></button>`).join('')}</div>`);
+    o.querySelectorAll('[data-mt]').forEach(b => b.onclick = () => { o.remove(); tab = b.dataset.mt; render(); scrollTo(0, 0); });
+  };
   $('#foot').innerHTML = `<div>© ${new Date().getFullYear()} Funtopia App Company</div><div>${esc(t('s.attribution'))}</div>`;
 }
 function loading() { $('#main').innerHTML = `<div class="loading"><div class="ring"><i></i></div><div class="muted">${esc(t('o.tagline'))}</div></div>`; }
@@ -246,7 +259,7 @@ function onboarding() {
 // each with one live fact; a tile opens its tab.
 // "10:42 AM Kollam · 6:12 AM Dubai".
 function clocks() {
-  return [S.home, S.away].filter(Boolean).map(p => `${dtf({ hour: 'numeric', minute: '2-digit', timeZone: p.tz }).format(new Date())} ${p.name}`).join(' · ');
+  return [S.home, S.away].filter(Boolean).map(p => `${dtf({ hour: 'numeric', minute: '2-digit', ...hourOpts(), timeZone: p.tz }).format(new Date())} ${p.name}`).join(' · ');
 }
 // The time since sunrise in the tradition's units (24 minutes, 24 seconds).
 function sinceSunrise(sunrise) {
@@ -493,7 +506,7 @@ async function viewDay() {
     ${skyToday.map(e => `<div class="rec" data-goto-sky style="cursor:pointer">✦ ${esc(skyTitle(e))} · ${esc(clock(e.at))}</div>`).join('')}
     ${fests.map(({ f, o }) => `<div class="fest ${f.tier === 'major' ? 'major' : ''}" data-f="${esc(f.id)}" data-d="${o.date}"><div class="bar2"></div><div><b>${esc(fname(f))}</b><div class="small muted">${esc(fother(f))}</div><div class="small muted">${esc(text(f.content?.summary))}</div></div><div class="when">›</div></div>`).join('')}
     ${people.map(x => `<div class="rec">🎁 <b>${esc(x.title)}</b> <span class="small muted">${esc(x.line)}</span></div>`).join('')}
-    ${recs.map(k => { const r = pack.dailySignificance.find(r => r.key === k); return `<div class="rec">🌙 <b>${esc(recName(k))}</b><div class="small muted">${esc(text(r?.content?.summary))}</div></div>`; }).join('')}
+    ${recs.map(k => { const r = pack.dailySignificance.find(r => r.key === k); return `<div class="rec">🌙 <b>${esc(recName(k))}</b>${/sank/.test(k) && p.moonrise ? ` <span class="small" style="color:var(--accent);font-weight:700">· ${esc(t('sun.moonrise'))} ${esc(clock(p.moonrise))}</span>` : ''}<div class="small muted">${esc(text(r?.content?.summary))}</div></div>`; }).join('')}
     ${parana ? `<div class="card"><p class="label">${esc(t('v.parana'))}</p><div style="font-size:20px;font-weight:700">${esc(span(parana))}</div>${parana.dvadashiEnd ? `<div class="small muted">${esc(t('v.dvadashiEnds', clock(parana.dvadashiEnd)))}</div>` : ''}<div class="small muted">${esc(t('v.paranaWhy'))}</div></div>` : ''}
     <div class="card"><p class="label">${esc(t('p.panchang'))}</p>
       ${[[t('p.tithi'), (p.lunar ? name('paksha', p.lunar.paksha) + ' ' : '') + tv, td], [t('p.nakshatra'), nv, nd], [t('p.yoga'), yv, yd], [t('p.karana'), kv, kd]]
@@ -565,8 +578,14 @@ function muhurtasCard(fine, d) {
   const label = key => k === 'hora' ? name('grahas', key) : k === 'lagna' ? name('rashis', key) : name(k, key);
   const now = Date.now() / 1000, cur = ps.findIndex(p => now >= p.start && now < p.end);
   const from = mAll ? 0 : Math.max(cur, 0), list = ps.slice(from, mAll ? ps.length : from + 3);
+  // The favoured period now, or the next one and how soon.
+  const fav = (k === 'choghadiya' || k === 'gowri') ? ps.find(p => FAVOURED.has(p.key) && p.end > now) : null;
+  const mins = fav ? Math.floor((fav.start - now) / 60) : 0;
+  const good = !fav ? '' : fav.start <= now ? t('dm.goodNow', label(fav.key), windowText(fav.start, fav.end, d))
+    : t('dm.goodNext', label(fav.key), windowText(fav.start, fav.end, d), mins >= 60 ? t('dm.inHM', Math.floor(mins / 60), mins % 60) : t('dm.inM', mins));
   return `<p class="label">${esc(t('dm.title'))}</p>
     <div class="seg" style="margin-bottom:8px">${mKinds().map(x => `<button data-mk="${x}" class="${k === x ? 'on' : ''}">${esc(t('dm.' + x))}</button>`).join('')}</div>
+    ${good ? `<div style="color:var(--accent);font-weight:700;margin:4px 0 6px">✦ ${esc(good)}</div>` : ''}
     ${list.map((p, j) => { const i = from + j, marked = k === 'choghadiya' || k === 'gowri';
       const night = mAll && i > 0 && p.night && !ps[i - 1].night ? `<div class="small muted" style="margin-top:6px;font-weight:700">${esc(t('dm.night'))}</div>` : '';
       return `${night}<div class="mrow ${i === cur ? 'now' : ''}"><span class="mdot ${marked ? (FAVOURED.has(p.key) ? 'fav' : 'ring') : ''}"></span><span class="grow">${esc(label(p.key))}${i === cur ? ` <b class="small">${esc(t('dm.now'))}</b>` : ''}</span><span class="muted">${esc(windowText(p.start, p.end, d))}</span></div>`; }).join('')}
@@ -1148,6 +1167,9 @@ async function festivalSheet(id, date) {
   const handle = await cal(+date.slice(0, 4));
   const [p, w, occ] = await Promise.all([day(date), engine({ op: 'window', handle, id, date }), engine({ op: 'festivals', handle })]);
   const how = occ.find(o => o.id === id && o.date === date)?.how || '';
+  // An Ekadashi's parana the next morning; the moonrise for fasts kept until the moon is seen.
+  const parana = /ekadas/.test(id) ? await engine({ op: 'parana', handle, date }).catch(() => null) : null;
+  const byMoon = /karva|karwa|sankashti|sankatahara|chauth|chandra-darshan|ganesh-chaturthi/.test(id) && p.moonrise && w?.kala !== 'moonrise';
   const steps = f.content?.howTo ? (f.content.howTo[lang()] ?? f.content.howTo.en ?? []) : [];
   sheet(`<div style="clear:both"></div>
     ${f.tier === 'major' ? `<span class="pill">${esc(t('f.major'))}</span>` : ''}${isHoliday(f) ? `<span class="pill">${esc(t('f.holiday'))}</span>` : ''}
@@ -1156,6 +1178,8 @@ async function festivalSheet(id, date) {
     <div class="small muted">📍 ${esc(t('f.forPlace', S.home.name))} · ${esc(cultureDate(p.solar, keptLunar(f, p.lunar)))}</div>
     <p>${esc(text(f.content?.summary))}</p>
     ${w ? `<div class="card"><p class="label">${esc(t('f.pujaTime'))}</p><div>${esc(t('f.keptAt', t('k.' + w.kala)))}</div><div style="font-size:20px;font-weight:700;color:var(--accent)">${esc(w.start === w.end ? clock(w.start) : span(w))}</div><div class="small muted">${esc(t('f.pujaFor', S.home.name))}</div></div>` : ''}
+    ${parana ? `<div class="card"><p class="label">${esc(t('v.parana'))}</p><div class="small" style="color:var(--accent);font-weight:700">${esc(greg(addDays(date, 1), { weekday: 'short', day: 'numeric', month: 'short' }))}</div><div style="font-size:20px;font-weight:700">${esc(span(parana))}</div>${parana.dvadashiEnd ? `<div class="small muted">${esc(t('v.dvadashiEnds', clock(parana.dvadashiEnd)))}</div>` : ''}<div class="small muted">${esc(t('v.paranaWhy'))}</div></div>` : ''}
+    ${byMoon ? `<div class="card"><p class="label">${esc(t('sun.moonrise'))}</p><div style="font-size:20px;font-weight:700;color:var(--accent)">${esc(clock(p.moonrise))}</div><div class="small muted">${esc(t('f.pujaFor', S.home.name))}</div></div>` : ''}
     ${f.content?.traditions ? `<div class="card"><p class="label">${esc(t('f.traditions'))}</p><p>${esc(text(f.content.traditions))}</p></div>` : ''}
     ${f.local?.[S.home?.country] ? `<div class="card"><p class="label">${esc(t('f.whereYouLive'))}</p><p>${esc((lang() !== 'en' && f.localNative?.[S.home.country]) || f.local[S.home.country])}</p></div>` : ''}
     ${f.content?.story ? `<div class="card"><p class="label">${esc(t('f.story'))}</p><p>${esc(text(f.content.story))}</p></div>` : ''}
@@ -1787,6 +1811,7 @@ function viewSettings() {
       <div class="seg">${['system', 'light', 'dark'].map(m => `<button data-th="${m}" class="${S.theme === m ? 'on' : ''}">${esc(t('s.' + m))}</button>`).join('')}</div>
       <p class="small muted" style="margin-top:10px">${esc(t('th.light'))}</p><div class="chips">${LIGHT.map(id => `<button class="chip ${S.light === id ? 'on' : ''}" data-lt="${id}">${esc(t('th.' + id))}</button>`).join('')}</div>
       <p class="small muted" style="margin-top:10px">${esc(t('th.dark'))}</p><div class="chips">${DARK.map(id => `<button class="chip ${S.dark === id ? 'on' : ''}" data-dk="${id}">${esc(t('th.' + id))}</button>`).join('')}</div></div>
+    <div class="card"><p class="label">${esc(t('s.clock'))}</p><div class="seg">${[[0, 's.clockSystem'], [12, 's.clock12'], [24, 's.clock24']].map(([v, k]) => `<button data-ck="${v}" class="${(S.clock || 0) === v ? 'on' : ''}">${esc(t(k))}</button>`).join('')}</div></div>
     <div class="card"><p class="label">${esc(t('ts.title'))}</p><div class="seg">${TEXT_SIZES.map((z, i) => `<button data-tz="${i}" class="${S.textSize === i ? 'on' : ''}" style="font-size:${Math.round(12 * z + (i - 1) * 2)}px">A</button>`).join('')}</div>
       <p class="small muted" style="margin-top:8px">${esc(t('ts.sample'))}</p></div>
     <div class="card"><p class="label">${esc(t('s.about'))}</p><p class="small">${esc(t('web.what'))}</p><p class="small">${esc(t('web.privacy'))}</p>
@@ -1795,6 +1820,7 @@ function viewSettings() {
   $('#main').querySelectorAll('[data-c]').forEach(b => b.onclick = async () => { S.culture = b.dataset.c; save(); await loadPack(); await resetCalendars(); render(); });
   $('#main').querySelectorAll('[data-l]').forEach(b => b.onclick = () => { S.native = b.dataset.l === '1'; save(); render(); });
   $('#main').querySelectorAll('[data-th]').forEach(b => b.onclick = () => { S.theme = b.dataset.th; save(); render(); });
+  $('#main').querySelectorAll('[data-ck]').forEach(b => b.onclick = () => { S.clock = +b.dataset.ck; save(); render(); });
   $('#main').querySelectorAll('[data-tz]').forEach(b => b.onclick = () => { S.textSize = +b.dataset.tz; save(); render(); });
   $('#main').querySelectorAll('[data-lt]').forEach(b => b.onclick = () => { S.light = b.dataset.lt; save(); render(); });
   $('#main').querySelectorAll('[data-dk]').forEach(b => b.onclick = () => { S.dark = b.dataset.dk; save(); render(); });
