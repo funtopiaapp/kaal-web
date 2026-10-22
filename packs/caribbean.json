@@ -987,6 +987,10 @@
   "nameNative": "कैरिबियाई",
   "newYear": "nav-varsh",
   "referencePlace": "Port of Spain",
+  "matching": {
+   "en": "Kundli Milan",
+   "native": "कुंडली मिलान"
+  },
   "terms": [
    [
     "Kuja dosha",
@@ -1081,7 +1085,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -1140,7 +1144,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -1199,7 +1203,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -1258,7 +1262,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -1313,7 +1317,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -1369,7 +1373,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -1431,7 +1435,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -1493,7 +1497,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -1552,7 +1556,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -1616,7 +1620,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -1675,7 +1679,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -1739,7 +1743,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -1799,7 +1803,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -1855,7 +1859,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -1912,7 +1916,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -1967,7 +1971,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -2020,7 +2024,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -2079,7 +2083,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -2132,7 +2136,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -2191,7 +2195,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -2251,7 +2255,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -2310,7 +2314,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -2372,7 +2376,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -2432,7 +2436,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -2485,7 +2489,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -2538,7 +2542,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -2594,7 +2598,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -2652,7 +2656,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -2705,7 +2709,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -2762,7 +2766,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -2818,7 +2822,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -2874,7 +2878,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -2932,7 +2936,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -2988,7 +2992,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -3043,7 +3047,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -3105,7 +3109,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -3165,7 +3169,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -3221,7 +3225,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -3274,7 +3278,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -3327,7 +3331,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -3380,7 +3384,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -3433,7 +3437,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -3489,7 +3493,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -3542,7 +3546,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -3598,7 +3602,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -3652,7 +3656,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -3706,7 +3710,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -3760,7 +3764,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -3814,7 +3818,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -3870,7 +3874,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -3924,7 +3928,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -3978,7 +3982,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -4032,7 +4036,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -4086,7 +4090,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -4140,7 +4144,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -4194,7 +4198,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -4248,7 +4252,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -4302,7 +4306,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -4356,7 +4360,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -4410,7 +4414,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -4464,7 +4468,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -4518,7 +4522,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -4572,7 +4576,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -4626,7 +4630,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -4680,7 +4684,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -4734,7 +4738,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -4788,7 +4792,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -4842,7 +4846,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Hindu calendar, Port of Spain (https://www.drikpanchang.com/calendars/hindu/hinducalendar.html)"
+    "Reference almanac, Port of Spain"
    ],
    "content": {
     "summary": {
@@ -4916,7 +4920,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Ekadashi fasting rules"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -4959,7 +4963,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Ekadashi fasting rules"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -4999,7 +5003,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Purnima"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -5037,7 +5041,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Amavasya"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -5078,7 +5082,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Pradosh Vrat"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -5119,7 +5123,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Pradosh Vrat"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -5160,7 +5164,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Sankashti Chaturthi"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -5201,7 +5205,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Vinayaka Chaturthi"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -5242,7 +5246,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Masik Shivaratri"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -5280,7 +5284,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Masik Durgashtami"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -5323,7 +5327,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Kalashtami"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -5364,7 +5368,7 @@
    },
    "sources": [
     "Skanda Purana, Reva Khanda (Satyanarayan katha)",
-    "Drik Panchang, Satyanarayan Puja"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -5403,7 +5407,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Somwar Vrat"
+    "Reference almanac"
    ],
    "optIn": true
   },
@@ -5442,7 +5446,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Mangalwar Vrat",
+    "Reference almanac",
     "Hanuman Chalisa (Tulsidas)"
    ],
    "optIn": true
@@ -5482,7 +5486,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Guruwar Vrat"
+    "Reference almanac"
    ],
    "optIn": true
   },
@@ -5521,7 +5525,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Santoshi Mata Vrat"
+    "Reference almanac"
    ],
    "optIn": true
   },
@@ -5560,7 +5564,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Shaniwar Vrat"
+    "Reference almanac"
    ],
    "optIn": true
   }

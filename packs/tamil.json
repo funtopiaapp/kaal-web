@@ -1237,7 +1237,11 @@
   "nameEn": "Tamil",
   "nameNative": "தமிழ்",
   "newYear": "puthandu",
-  "referencePlace": "Chennai"
+  "referencePlace": "Chennai",
+  "matching": {
+   "en": "Thirumana Porutham",
+   "native": "திருமணப் பொருத்தம்"
+  }
  },
  "festivals": [
   {
@@ -1258,7 +1262,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -1315,7 +1319,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)",
+    "Reference almanac, Chennai",
     "Government of Tamil Nadu holidays 2026, G.O.(Ms.) No. 708"
    ],
    "content": {
@@ -1375,7 +1379,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -1430,7 +1434,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -1483,7 +1487,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -1542,7 +1546,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)",
+    "Reference almanac, Chennai",
     "Government of Tamil Nadu holidays 2026, G.O.(Ms.) No. 708"
    ],
    "content": {
@@ -1598,7 +1602,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -1656,7 +1660,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -1715,7 +1719,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -1771,7 +1775,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -1827,7 +1831,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -1883,7 +1887,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -1938,7 +1942,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)",
+    "Reference almanac, Chennai",
     "Government of Tamil Nadu holidays 2026, G.O.(Ms.) No. 708"
    ],
    "content": {
@@ -1999,7 +2003,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -2056,7 +2060,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -2108,7 +2112,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -2159,7 +2163,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -2213,7 +2217,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -2268,7 +2272,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -2319,7 +2323,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -2372,7 +2376,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -2426,7 +2430,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -2482,7 +2486,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -2535,7 +2539,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -2586,7 +2590,7 @@
    "hidden": true,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ]
   },
   {
@@ -2607,7 +2611,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -2664,7 +2668,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)",
+    "Reference almanac, Chennai",
     "Government of Tamil Nadu holidays 2026, G.O.(Ms.) No. 708"
    ],
    "content": {
@@ -2725,7 +2729,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)",
+    "Reference almanac, Chennai",
     "Government of Tamil Nadu holidays 2026, G.O.(Ms.) No. 708"
    ],
    "content": {
@@ -2787,7 +2791,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -2841,7 +2845,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -2897,7 +2901,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -2950,7 +2954,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -3004,12 +3008,12 @@
    ],
    "durationDays": 1,
    "variations": [
-    "Drik Panchang (Chennai) places it on 20 October 2026; the Tamil Nadu holiday list keeps it on 19 October 2026."
+    "The computed almanacs (Chennai) place it on 20 October 2026, the Navami at sunrise; the Tamil Nadu holiday list keeps it on 19 October 2026."
    ],
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)",
+    "Reference almanac, Chennai",
     "Government of Tamil Nadu holidays 2026, G.O.(Ms.) No. 708"
    ],
    "content": {
@@ -3070,7 +3074,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)",
+    "Reference almanac, Chennai",
     "Government of Tamil Nadu holidays 2026, G.O.(Ms.) No. 708"
    ],
    "content": {
@@ -3130,7 +3134,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)",
+    "Reference almanac, Chennai",
     "Government of Tamil Nadu holidays 2026, G.O.(Ms.) No. 708"
    ],
    "content": {
@@ -3189,7 +3193,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -3245,7 +3249,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -3303,7 +3307,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -3362,7 +3366,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -3413,7 +3417,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -3469,7 +3473,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -3522,7 +3526,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -3578,7 +3582,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -3622,7 +3626,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -3666,7 +3670,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -3710,7 +3714,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -3754,7 +3758,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -3799,7 +3803,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -3843,7 +3847,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -3887,7 +3891,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -3931,7 +3935,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -3975,7 +3979,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -4019,7 +4023,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -4063,7 +4067,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -4107,7 +4111,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -4151,7 +4155,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -4195,7 +4199,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -4239,7 +4243,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -4283,7 +4287,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -4327,7 +4331,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -4371,7 +4375,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -4415,7 +4419,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -4459,7 +4463,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -4503,7 +4507,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -4547,7 +4551,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -4591,7 +4595,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Tamil calendar, Chennai (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+    "Reference almanac, Chennai"
    ],
    "content": {
     "summary": {
@@ -4652,7 +4656,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Ekadashi fasting rules"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -4692,7 +4696,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Ekadashi fasting rules"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -4730,7 +4734,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Purnima"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -4768,7 +4772,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Tamil calendar"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -4809,7 +4813,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Pradosham"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -4850,7 +4854,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Pradosham"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -4891,7 +4895,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Sankashti Chaturthi"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -4929,7 +4933,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Skanda Sashti"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -4965,7 +4969,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Masik Karthigai"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -5006,7 +5010,7 @@
     }
    },
    "sources": [
-    "Tamil Nadu temple practice; Drik Panchang, Kalashtami"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -5119,7 +5123,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Mangalwar Vrat",
+    "Reference almanac",
     "Hanuman Chalisa (Tulsidas)"
    ],
    "optIn": true
@@ -5159,7 +5163,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Shaniwar Vrat"
+    "Reference almanac"
    ],
    "optIn": true
   }

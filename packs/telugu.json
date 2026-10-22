@@ -1228,7 +1228,11 @@
   "nameEn": "Telugu",
   "nameNative": "తెలుగు",
   "newYear": "ugadi",
-  "referencePlace": "Hyderabad"
+  "referencePlace": "Hyderabad",
+  "matching": {
+   "en": "Vivaha Ponthana",
+   "native": "వివాహ పొంతన"
+  }
  },
  "festivals": [
   {
@@ -1249,7 +1253,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -1295,7 +1299,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -1341,7 +1345,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -1392,7 +1396,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -1442,7 +1446,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -1497,7 +1501,7 @@
     ]
    },
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ]
   },
   {
@@ -1518,7 +1522,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -1567,7 +1571,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -1628,7 +1632,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -1676,7 +1680,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -1723,7 +1727,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -1773,7 +1777,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -1820,7 +1824,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -1868,7 +1872,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -1919,7 +1923,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -1963,7 +1967,7 @@
    "hidden": true,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ]
   },
   {
@@ -1984,7 +1988,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2032,7 +2036,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2080,7 +2084,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2132,7 +2136,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2178,7 +2182,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2228,7 +2232,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2281,7 +2285,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2326,7 +2330,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2371,7 +2375,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2420,7 +2424,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2466,7 +2470,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2519,7 +2523,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2568,7 +2572,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2613,7 +2617,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2664,7 +2668,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2707,7 +2711,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2753,7 +2757,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2798,7 +2802,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2844,7 +2848,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2888,7 +2892,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2932,7 +2936,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -2976,7 +2980,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3020,7 +3024,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3065,7 +3069,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3109,7 +3113,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3153,7 +3157,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3197,7 +3201,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3241,7 +3245,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3285,7 +3289,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3329,7 +3333,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3373,7 +3377,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3417,7 +3421,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3461,7 +3465,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3505,7 +3509,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3549,7 +3553,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3593,7 +3597,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3637,7 +3641,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3681,7 +3685,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3725,7 +3729,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3769,7 +3773,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3813,7 +3817,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Telugu calendar, Hyderabad (https://www.drikpanchang.com/telugu/calendar/telugu-calendar.html)"
+    "Reference almanac, Hyderabad"
    ],
    "content": {
     "summary": {
@@ -3869,7 +3873,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Ekadashi fasting rules"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -3904,7 +3908,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Ekadashi fasting rules"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -3936,7 +3940,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Purnima"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -3967,7 +3971,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Amavasya"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -4001,7 +4005,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Pradosham"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -4035,7 +4039,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Pradosham"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -4069,7 +4073,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Sankashti Chaturthi"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -4103,7 +4107,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Masik Shivaratri"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -4164,7 +4168,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Mangalwar Vrat",
+    "Reference almanac",
     "Hanuman Chalisa (Tulsidas)"
    ],
    "optIn": true
@@ -4226,7 +4230,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Shaniwar Vrat"
+    "Reference almanac"
    ],
    "optIn": true
   }

@@ -22,7 +22,7 @@ const CULTURES = [
 ];
 const LIGHT = ['kaal', 'ivory', 'rose', 'sage'], DARK = ['kaal-dark', 'night', 'charcoal', 'peacock'];
 const TABS = [['home', 'hm.home'], ['today', 'tab.today'], ['calendar', 'tab.calendar'], ['festivals', 'tab.festivals'], ['muhurtham', 'tab.muhurtham'],
-  ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
+  ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['match', 'mt.label'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
 
 // ---------------------------------------------------------------- state
 const saved = (() => { try { return JSON.parse(localStorage.getItem('kaal-web') || '{}'); } catch { return {}; } })();
@@ -162,7 +162,7 @@ function shell() {
   $('#badge').textContent = c ? `☀ ${c.native} · ${c.en} ▾` : '';
   $('#badge').onclick = () => { tab = 'settings'; render(); };
   const house = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>';
-  $('#tabs').innerHTML = TABS.map(([id, k]) => `<button data-tab="${id}" class="${id === tab ? 'on' : ''}">${id === 'home' ? house : ''}${esc(t(k))}</button>`).join('');
+  $('#tabs').innerHTML = TABS.filter(([id]) => id !== 'match' || matchingAvailable()).map(([id, k]) => `<button data-tab="${id}" class="${id === tab ? 'on' : ''}">${id === 'home' ? house : ''}${esc(t(k))}</button>`).join('');
   $('#tabs').querySelectorAll('button').forEach(b => b.onclick = () => { tab = b.dataset.tab; if (tab === 'today') { dayDate = null; dayPlace = null; } render(); });
   $('#foot').innerHTML = `<div>© ${new Date().getFullYear()} Funtopia App Company</div><div>${esc(t('s.attribution'))}</div>`;
 }
@@ -185,6 +185,7 @@ async function render() {
     if (tab === 'festivals') return await viewFestivals();
     if (tab === 'muhurtham') return viewMuhurtham();
     if (tab === 'birthstar') return viewBirthStar();
+    if (tab === 'match') return await viewMatch();
     if (tab === 'vrats') return await viewVrats();
     if (tab === 'jathakam') return await viewJathakam();
     if (tab === 'temples') return await viewTemples();
@@ -248,6 +249,7 @@ async function viewHome() {
     temples: '<path d="M12 2.5v2M9.5 8h5l-1-3.5h-3zM8 12h8l-1.5-4h-5zM6 20.5h12V12H6z"/><path d="M10.5 20.5v-4a1.5 1.5 0 0 1 3 0v4M4 20.5h16"/>',
     people: '<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9.5" r="2.3"/><path d="M3.5 19c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5M15 14c3 0 5.5 1.8 5.5 5"/>',
     birthstar: '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/><path d="M17 3v4M15 5h4"/>',
+    match: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
     settings: '<path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/>',
     muhurtham: '<circle cx="9" cy="14" r="5"/><circle cx="15" cy="14" r="5"/><path d="M10 4l2 3 2-3"/>',
   }[k]);
@@ -263,6 +265,7 @@ async function viewHome() {
     tile('sky', 'sky', 'gold', t('sk.title'), t('sk.now'), ''),
     tile('temples', 'temples', 'warm', t('tm.title'), t('tm.deity'), ['vishnu', 'shiva', 'devi'].map(x => t('deity.' + x)).join(' · ')),
     tile('people', 'people', 'accent', t('fam.family'), person ? t(person.p.kind === 'remembrance' ? 'pp.remembranceOf' : 'pp.birthdayOf', person.p.name) : t('pp.title'), person ? when(person.date) : t('pp.add')),
+    ...(matchingAvailable() ? [tile('match', 'match', 'accent', t('mt.label'), matchTitle(), t(matchesByPorutham() ? 'mt.ten' : 'mt.eight'))] : []),
     tile('birthstar', 'birthstar', 'gold', t('bs.result'), t('bs.title'), ''),
     tile('settings', 'settings', 'quiet', t('tab.settings'), c ? (S.native ? c.native : c.en) : '', t('s.notifications')),
   ];
@@ -584,7 +587,7 @@ const jkCache = new Map();
 const births = () => S.people.filter(p => p.kind !== 'remembrance' && p.place);
 // As on iOS (GunaMilanViews): each tradition's own matching - Porutham in the
 // South, Ashtakoota Guna Milan elsewhere. Guna Milan stays off until the corpus
-// (content/validation/ashtakoota-corpus.md) agrees with Drik; ?gm=1 shows it for checking.
+// (content/validation/ashtakoota-corpus.md) agrees with the reference almanac; ?gm=1 shows it for checking.
 const GUNA_MILAN_RELEASED = new URLSearchParams(location.search).has('gm');
 const matchesByPorutham = () => ['malayalam', 'tamil', 'telugu', 'kannada', 'sri-lankan-tamil', 'malaysian-tamil'].includes(S.culture);
 async function gunaMilanSheet(bride, groom) {
@@ -1212,6 +1215,98 @@ function renderResults() {
     </div>`).join('')}
     <p class="small muted">${esc(t('m.excluded'))}</p>`;
   $('#mres').querySelectorAll('[data-bd]').forEach(b => b.onclick = () => { M.byDate = b.dataset.bd === '1'; renderResults(); });
+}
+
+// ---------------------------------------------------------------- matching
+// As on iOS (MatchViews): the tradition's matching under its own name - the ten
+// poruthams in the South, Ashtakoota Guna Milan elsewhere - laid out as the
+// Porutham app lays out a result. Free here, like everything on the web.
+const matchingAvailable = () => matchesByPorutham() || GUNA_MILAN_RELEASED;
+function matchTitle() {
+  const m = pack?.display?.matching;
+  return m ? (lang() !== 'en' ? m.native : m.en) : t('pr.title');
+}
+const STAR_KEYS = ['ashwini', 'bharani', 'krittika', 'rohini', 'mrigashira', 'ardra', 'punarvasu', 'pushya', 'ashlesha', 'magha', 'purva_phalguni',
+  'uttara_phalguni', 'hasta', 'chitra', 'swati', 'vishakha', 'anuradha', 'jyeshtha', 'mula', 'purva_ashadha', 'uttara_ashadha', 'shravana',
+  'dhanishta', 'shatabhisha', 'purva_bhadrapada', 'uttara_bhadrapada', 'revati'];
+const MT = { bride: '', groom: '' };
+async function viewMatch() {
+  const list = S.people.filter(p => p.kind !== 'remembrance' && p.anchor && p.place);
+  if (!MT.bride) MT.bride = list.find(p => p.sex === 'female')?.id || '';
+  if (!MT.groom) MT.groom = list.find(p => p.sex === 'male')?.id || '';
+  const bride = list.find(p => p.id === MT.bride), groom = list.find(p => p.id === MT.groom);
+  const opt = (l, sel) => `<option value="">${esc(t('m.choose'))}</option>` + l.map(p => `<option value="${p.id}" ${p.id === sel ? 'selected' : ''}>${esc(personLabel(p))}</option>`).join('') + `<option value="+">＋ ${esc(t('m.addProfile'))}</option>`;
+  $('#main').innerHTML = `<h2 class="serif" style="margin:0">${esc(matchTitle())}</h2><p class="muted" style="margin-top:2px">${esc(t(matchesByPorutham() ? 'mt.ten' : 'mt.eight'))}</p>
+    <div class="card"><p class="label">${esc(t('m.couple'))}</p><p class="small muted">${esc(t('mt.choose'))}</p>
+      <label class="field"><span>${esc(t('m.bride'))}</span><select id="xb">${opt(list.filter(p => p.sex !== 'male'), MT.bride)}</select><div class="small muted">${esc(natalLine(bride?.anchor))}</div></label>
+      <label class="field"><span>${esc(t('m.groom'))}</span><select id="xg">${opt(list.filter(p => p.sex !== 'female'), MT.groom)}</select><div class="small muted">${esc(natalLine(groom?.anchor))}</div></label></div>
+    <div id="xres"></div>`;
+  const pick = (sel, key, sex) => sel.onchange = () => {
+    if (sel.value === '+') personEditor(null, sex, rec => { MT[key] = rec.id; viewMatch(); });
+    else { MT[key] = sel.value; viewMatch(); }
+  };
+  pick($('#xb'), 'bride', 'female'); pick($('#xg'), 'groom', 'male');
+  if (!bride || !groom) return;
+  $('#xres').innerHTML = '<div class="loading"><div class="ring"><i></i></div></div>';
+  let r;
+  try { r = matchesByPorutham() ? await poruthamReport(bride, groom) : await gunaMilanReport(bride, groom); }
+  catch (e) { $('#xres').innerHTML = `<div class="card">${esc(t('c.error', e.message))}</div>`; return; }
+  if (tab !== 'match') return;
+  $('#xres').innerHTML = matchReportHtml(r);
+}
+const birthSide = p => ({ date: p.date, minutes: p.minutes ?? undefined, location: p.place });
+async function poruthamReport(bride, groom) {
+  const m = await engine({ op: 'poruthamMatch', bride: birthSide(bride), groom: birthSide(groom) });
+  // The Porutham app's text has English, Malayalam, Tamil and Hindi; stars and signs as this tradition names them.
+  const L = ['ml', 'ta', 'hi'].includes(lang()) ? lang() : 'en';
+  const nm = (table, k) => { const e = pack?.names?.[table]?.[k]; return e ? (e[L] ?? e.en) : k; };
+  return JSON.parse(window.PoruthamRender(L, m, { bride: bride.name, groom: groom.name, now: Date.now() / 1000,
+    stars: STAR_KEYS.map(k => nm('nakshatras', k)), signs: SIGNS.map(k => nm('rashis', k)) }));
+}
+async function gunaMilanReport(bride, groom) {
+  const c = await engine({ op: 'gunaMilan', bride: birthSide(bride), groom: birthSide(groom) });
+  const m = c.milan;
+  const pts = x => Number.isInteger(x) ? String(x) : x % 1 === 0.5 ? (Math.floor(x) || '') + '½' : x.toFixed(1);
+  const value = (k, v) => k.key === 'bhakoot' ? name('rashis', v) : k.key === 'graha-maitri' ? name('grahas', v) : t('gmv.' + v);
+  const rows = m.kootas.map(k => {
+    const reason = k.key === 'tara' ? t('mt.reasonTara', k.bride, k.groom, pts(k.points))
+      : t('mt.reason', t('gm.' + k.key), value(k, k.bride), value(k, k.groom), pts(k.points), pts(k.max));
+    const sections = [[t('mt.signifies'), t(`gm.${k.key}.meaning`)], [t('mt.reasoning'), reason], [t('mt.rule'), t(`gm.${k.key}.rule`)]];
+    const zero = (k.key === 'nadi' && m.nadiZero) || (k.key === 'bhakoot' && m.bhakootZero);
+    if (zero) {
+      const lines = m.cancellations.filter(x => x.of === k.key).map(x => `· ${t('gm.c.' + x.condition)}: ${t(x.holds ? 'gm.holds' : 'gm.notHold')}`);
+      if (lines.length) sections.push([t('gm.cancel'), lines.join('\n')]);
+    }
+    return { key: k.key, name: t('gm.' + k.key), about: t(`gm.${k.key}.about`), matching: k.points > 0, verdict: `${pts(k.points)} / ${pts(k.max)}`,
+      tags: zero ? [t('pr.weighed')] : [], notes: zero ? [t(k.key === 'nadi' ? 'gm.nadiRule' : 'gm.bhakootRule')] : [], sections };
+  });
+  const mars = [[bride, c.brideKuja], [groom, c.groomKuja]].map(([p, kuja]) => ({ name: p.name, about: natalLine(p.anchor), matching: null,
+    verdict: `${kuja.filter(k => k.listed).length} / ${kuja.length}`, tags: [],
+    sections: [[t('gm.manglik'), kuja.map(k => `${t('jk.kujaRow', k.house, k.from === 'lagna' ? t('jk.lagnaWord') : name('grahas', k.from))} · ${t(k.listed ? 'jk.kujaListed' : 'jk.kujaNot')}`).join('\n')]] }));
+  const yes = rows.filter(x => x.matching), no = rows.filter(x => !x.matching);
+  return { score: m.total, outOf: t('mt.outOf36'), band: t('gm.band.' + m.band), reading: null,
+    bride: { label: t('m.bride'), star: natalLine(bride.anchor), sign: '' }, groom: { label: t('m.groom'), star: natalLine(groom.anchor), sign: '' },
+    matching: t('mt.gave', yes.length), matchingNames: yes.map(x => x.name), notMatching: t('mt.gaveNone', no.length), notMatchingNames: no.map(x => x.name),
+    notes: [m.nadiZero && t('gm.nadiRule'), m.bhakootZero && t('gm.bhakootRule')].filter(Boolean), rows, deeperTitle: t('mt.mangalTitle'), deeper: mars,
+    honestTitle: t('mt.honest'), honest: t('gm.note') };
+}
+function matchReportHtml(r) {
+  const br = s => esc(s).replace(/\n/g, '<br>');
+  const score = Number.isInteger(r.score) ? r.score : r.score.toFixed(1);
+  const side = s => `<div class="row"><span class="muted small"><b>${esc(s.label)}</b></span><span class="v">${esc([s.star, s.sign].filter(Boolean).join(' · '))}</span></div>`;
+  const row = x => `<details class="factor"><summary><span class="${x.matching === true ? 'tick' : 'cross'}">${x.matching === true ? '✓' : x.matching === false ? '✗' : '○'}</span>
+      <span class="grow"><b>${esc(x.name)}</b>${x.about ? `<span class="small muted" style="display:block">${esc(x.about)}</span>` : ''}${(x.tags || []).map(g => `<span class="pill">${esc(g)}</span>`).join('')}</span>
+      <span class="small" style="font-weight:700;${x.matching === true ? 'color:var(--accent)' : ''}">${esc(x.verdict)}</span></summary>
+    ${(x.notes || []).map(n => `<p class="small" style="color:var(--accent)">${esc(n)}</p>`).join('')}
+    ${x.sections.map(([h, b]) => `${h ? `<p class="label" style="margin:10px 0 2px">${esc(h)}</p>` : ''}${b ? `<p style="margin:0">${br(b)}</p>` : ''}`).join('')}</details>`;
+  return `<div class="card"><div><span class="serif" style="font-size:48px;font-weight:700;color:var(--accent)">${esc(score)}</span> <b class="muted">${esc(r.outOf)}</b></div>
+      <h3 style="margin:4px 0">${esc(r.band)}</h3>${r.reading ? `<p class="muted">${esc(r.reading)}</p>` : ''}${side(r.bride)}${side(r.groom)}</div>
+    <div class="card"><div style="color:var(--accent);font-weight:700">${esc(r.matching)}</div><div class="small muted">${esc(r.matchingNames.join(' · '))}</div>
+      ${r.notMatchingNames.length ? `<div style="font-weight:700;margin-top:8px">${esc(r.notMatching)}</div><div class="small muted">${esc(r.notMatchingNames.join(' · '))}</div>` : ''}
+      ${r.notes.map(n => `<p class="small" style="background:var(--sunken);padding:10px;border-radius:10px">${esc(n)}</p>`).join('')}</div>
+    ${r.rows.map(row).join('')}
+    ${r.deeper.length ? `<p class="label" style="margin-top:16px">${esc(r.deeperTitle)}</p>${r.deeperNote ? `<p class="small muted">${esc(r.deeperNote)}</p>` : ''}${r.deeper.map(row).join('')}` : ''}
+    <div class="card" style="margin-top:12px"><p class="label">${esc(r.honestTitle)}</p><p class="small muted">${esc(r.honest)}</p></div>`;
 }
 
 // ---------------------------------------------------------------- porutham

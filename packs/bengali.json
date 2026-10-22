@@ -1238,6 +1238,10 @@
   "nameNative": "বাংলা",
   "newYear": "pohela-boishakh",
   "referencePlace": "Kolkata",
+  "matching": {
+   "en": "Jotok Bichar",
+   "native": "যোটক বিচার"
+  },
   "terms": [
    [
     "Kuja dosha",
@@ -1335,7 +1339,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -1383,7 +1387,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -1434,7 +1438,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -1482,7 +1486,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -1516,7 +1520,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -1564,7 +1568,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -1614,7 +1618,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -1661,7 +1665,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -1694,7 +1698,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -1738,7 +1742,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -1781,7 +1785,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -1812,7 +1816,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -1855,7 +1859,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -1899,7 +1903,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -1946,7 +1950,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -1995,7 +1999,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2043,7 +2047,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2093,7 +2097,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2126,7 +2130,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2159,7 +2163,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2204,7 +2208,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2249,7 +2253,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2298,7 +2302,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2346,7 +2350,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2379,7 +2383,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2422,7 +2426,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2456,7 +2460,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2504,7 +2508,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2548,7 +2552,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2592,7 +2596,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2636,7 +2640,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2680,7 +2684,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2725,7 +2729,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2769,7 +2773,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2813,7 +2817,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2857,7 +2861,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2901,7 +2905,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2945,7 +2949,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -2989,7 +2993,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -3033,7 +3037,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -3077,7 +3081,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -3121,7 +3125,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -3165,7 +3169,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -3209,7 +3213,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -3253,7 +3257,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -3297,7 +3301,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -3341,7 +3345,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -3385,7 +3389,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -3429,7 +3433,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -3473,7 +3477,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -3517,7 +3521,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Bengali calendar, Kolkata (https://www.drikpanchang.com/bengali/calendar/bengali-calendar.html)"
+    "Reference almanac, Kolkata"
    ],
    "content": {
     "summary": {
@@ -3573,7 +3577,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Ekadashi fasting rules"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -3608,7 +3612,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Ekadashi fasting rules"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -3640,7 +3644,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Purnima"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -3671,7 +3675,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Amavasya"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -3705,7 +3709,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Pradosh Vrat"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -3739,7 +3743,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Pradosh Vrat"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -3772,7 +3776,7 @@
    },
    "sources": [
     "Skanda Purana, Reva Khanda (Satyanarayan katha)",
-    "Drik Panchang, Satyanarayan Puja"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -3803,7 +3807,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Somwar Vrat"
+    "Reference almanac"
    ],
    "optIn": true
   },
@@ -3834,7 +3838,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Shaniwar Vrat"
+    "Reference almanac"
    ],
    "optIn": true
   }

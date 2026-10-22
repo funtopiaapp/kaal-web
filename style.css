@@ -232,3 +232,8 @@ table.av td { color: var(--muted); }
 .yearprint .ym { break-before: page; page-break-before: always; margin-top: 18px; }
 .yearprint .ym h2 { margin: 0; }
 @media print { .yearprint .cell { min-height: 54px; } }
+/* Matching: each factor opens onto its meaning, reasoning and rule. */
+details.factor { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; margin: 8px 0; }
+details.factor > summary { display: flex; gap: 12px; align-items: flex-start; cursor: pointer; list-style: none; }
+details.factor > summary::-webkit-details-marker { display: none; }
+details.factor .grow { flex: 1; }

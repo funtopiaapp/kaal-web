@@ -1238,6 +1238,10 @@
   "nameNative": "ଓଡ଼ିଆ",
   "newYear": "pana-sankranti",
   "referencePlace": "Bhubaneswar",
+  "matching": {
+   "en": "Kundali Melana",
+   "native": "କୁଣ୍ଡଳୀ ମେଳନ"
+  },
   "terms": [
    [
     "Kuja dosha",
@@ -1334,7 +1338,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -1382,7 +1386,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -1433,7 +1437,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -1488,7 +1492,7 @@
     ]
    },
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -1521,7 +1525,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -1570,7 +1574,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -1618,7 +1622,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -1668,7 +1672,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -1713,7 +1717,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -1744,7 +1748,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -1779,7 +1783,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -1812,7 +1816,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -1855,7 +1859,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -1886,7 +1890,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -1933,7 +1937,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -1984,7 +1988,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2033,7 +2037,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2067,7 +2071,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2112,7 +2116,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2148,7 +2152,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2192,7 +2196,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2240,7 +2244,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2285,7 +2289,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2328,7 +2332,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2362,7 +2366,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2406,7 +2410,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2450,7 +2454,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2494,7 +2498,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2538,7 +2542,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2583,7 +2587,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2627,7 +2631,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2671,7 +2675,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2715,7 +2719,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2759,7 +2763,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2803,7 +2807,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2847,7 +2851,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2891,7 +2895,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2935,7 +2939,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -2979,7 +2983,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -3023,7 +3027,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -3067,7 +3071,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -3111,7 +3115,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -3155,7 +3159,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -3199,7 +3203,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -3243,7 +3247,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -3287,7 +3291,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -3331,7 +3335,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -3375,7 +3379,7 @@
    "hidden": false,
    "overrides": {},
    "sources": [
-    "Drik Panchang Odia calendar, Bhubaneswar (https://www.drikpanchang.com/oriya/oriya-calendar.html)"
+    "Reference almanac, Bhubaneswar"
    ],
    "content": {
     "summary": {
@@ -3431,7 +3435,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Ekadashi fasting rules"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -3466,7 +3470,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Ekadashi fasting rules"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -3498,7 +3502,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Purnima"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -3529,7 +3533,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Amavasya"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -3563,7 +3567,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Pradosh Vrat"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -3597,7 +3601,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Pradosh Vrat"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -3631,7 +3635,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Sankashti Chaturthi"
+    "Reference almanac"
    ],
    "optIn": false
   },
@@ -3662,7 +3666,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Somwar Vrat"
+    "Reference almanac"
    ],
    "optIn": true
   },
@@ -3693,7 +3697,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Guruwar Vrat"
+    "Reference almanac"
    ],
    "optIn": true
   },
@@ -3724,7 +3728,7 @@
     }
    },
    "sources": [
-    "Drik Panchang, Shaniwar Vrat"
+    "Reference almanac"
    ],
    "optIn": true
   }
