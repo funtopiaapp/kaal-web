@@ -1045,7 +1045,11 @@
    "rule": {
     "type": "tithi-in-lunar-month",
     "month": "magha",
-    "tithi": 5
+    "tithi": 5,
+    "observance": {
+     "prefer": "first",
+     "kala": "purvahna"
+    }
    },
    "tier": "major",
    "holidayIn": [],
@@ -2227,7 +2231,10 @@
     "type": "tithi-in-lunar-month",
     "month": "jyeshtha",
     "tithi": 10,
-    "adhika": "prefer"
+    "adhika": "prefer",
+    "observance": {
+     "kala": "purvahna"
+    }
    },
    "tier": "regional",
    "holidayIn": [],
@@ -2505,7 +2512,11 @@
    "rule": {
     "type": "tithi-in-lunar-month",
     "month": "shravana",
-    "tithi": 5
+    "tithi": 5,
+    "observance": {
+     "prefer": "first",
+     "kala": "purvahna"
+    }
    },
    "tier": "regional",
    "holidayIn": [],
@@ -2564,6 +2575,7 @@
     "tithi": 15,
     "observance": {
      "minCoverMinutes": 144,
+     "fallback": "begins",
      "kala": "morning"
     }
    },
@@ -3076,7 +3088,10 @@
    "rule": {
     "type": "tithi-in-lunar-month",
     "month": "bhadrapada",
-    "tithi": 16
+    "tithi": 16,
+    "observance": {
+     "kala": "aparahna"
+    }
    },
    "tier": "regional",
    "holidayIn": [],
@@ -3712,6 +3727,8 @@
     "month": "ashvin",
     "tithi": 30,
     "observance": {
+     "prefer": "last",
+     "minCoverMinutes": 24,
      "kala": "pradosh"
     }
    },
@@ -3774,7 +3791,10 @@
    "rule": {
     "type": "tithi-in-lunar-month",
     "month": "kartika",
-    "tithi": 1
+    "tithi": 1,
+    "observance": {
+     "kala": "daylight"
+    }
    },
    "tier": "major",
    "holidayIn": [],

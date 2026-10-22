@@ -1,0 +1,4557 @@
+{
+ "schemaVersion": 1,
+ "culture": "sri-lankan-tamil",
+ "packVersion": 1,
+ "language": "ta",
+ "calendarSystem": "solar",
+ "lunarMonthSystem": "amanta",
+ "solarDayRule": {
+  "type": "sunset"
+ },
+ "era": "tamil-samvatsara",
+ "solarDayPlace": {
+  "latitude": 9.66,
+  "longitude": 80.03,
+  "utcOffsetMinutes": 330
+ },
+ "names": {
+  "solarMonths": {
+   "mesha": {
+    "en": "Chithirai",
+    "ta": "சித்திரை"
+   },
+   "vrishabha": {
+    "en": "Vaikasi",
+    "ta": "வைகாசி"
+   },
+   "mithuna": {
+    "en": "Aani",
+    "ta": "ஆனி"
+   },
+   "karka": {
+    "en": "Aadi",
+    "ta": "ஆடி"
+   },
+   "simha": {
+    "en": "Avani",
+    "ta": "ஆவணி"
+   },
+   "kanya": {
+    "en": "Purattasi",
+    "ta": "புரட்டாசி"
+   },
+   "tula": {
+    "en": "Aippasi",
+    "ta": "ஐப்பசி"
+   },
+   "vrishchika": {
+    "en": "Karthigai",
+    "ta": "கார்த்திகை"
+   },
+   "dhanu": {
+    "en": "Margazhi",
+    "ta": "மார்கழி"
+   },
+   "makara": {
+    "en": "Thai",
+    "ta": "தை"
+   },
+   "kumbha": {
+    "en": "Maasi",
+    "ta": "மாசி"
+   },
+   "meena": {
+    "en": "Panguni",
+    "ta": "பங்குனி"
+   }
+  },
+  "lunarMonths": {
+   "chaitra": {
+    "en": "Chaitra",
+    "ta": "சைத்ரம்"
+   },
+   "vaishakha": {
+    "en": "Vaishakha",
+    "ta": "வைசாகம்"
+   },
+   "jyeshtha": {
+    "en": "Jyeshtha",
+    "ta": "ஜ்யேஷ்டம்"
+   },
+   "ashadha": {
+    "en": "Ashadha",
+    "ta": "ஆஷாடம்"
+   },
+   "shravana": {
+    "en": "Shravana",
+    "ta": "ஸ்ராவணம்"
+   },
+   "bhadrapada": {
+    "en": "Bhadrapada",
+    "ta": "பாத்ரபதம்"
+   },
+   "ashvin": {
+    "en": "Ashvin",
+    "ta": "ஆஸ்வயுஜம்"
+   },
+   "kartika": {
+    "en": "Kartika",
+    "ta": "கார்த்திகம்"
+   },
+   "margashirsha": {
+    "en": "Margashirsha",
+    "ta": "மார்கசீர்ஷம்"
+   },
+   "pausha": {
+    "en": "Pausha",
+    "ta": "பௌஷம்"
+   },
+   "magha": {
+    "en": "Magha",
+    "ta": "மாகம்"
+   },
+   "phalguna": {
+    "en": "Phalguna",
+    "ta": "பால்குனம்"
+   }
+  },
+  "nakshatras": {
+   "ashwini": {
+    "en": "Ashwini",
+    "ta": "அஸ்வினி"
+   },
+   "bharani": {
+    "en": "Bharani",
+    "ta": "பரணி"
+   },
+   "krittika": {
+    "en": "Karthigai",
+    "ta": "கார்த்திகை"
+   },
+   "rohini": {
+    "en": "Rohini",
+    "ta": "ரோகிணி"
+   },
+   "mrigashira": {
+    "en": "Mirugasirisham",
+    "ta": "மிருகசீரிடம்"
+   },
+   "ardra": {
+    "en": "Thiruvathirai",
+    "ta": "திருவாதிரை"
+   },
+   "punarvasu": {
+    "en": "Punarpoosam",
+    "ta": "புனர்பூசம்"
+   },
+   "pushya": {
+    "en": "Poosam",
+    "ta": "பூசம்"
+   },
+   "ashlesha": {
+    "en": "Ayilyam",
+    "ta": "ஆயில்யம்"
+   },
+   "magha": {
+    "en": "Magam",
+    "ta": "மகம்"
+   },
+   "purva_phalguni": {
+    "en": "Pooram",
+    "ta": "பூரம்"
+   },
+   "uttara_phalguni": {
+    "en": "Uthiram",
+    "ta": "உத்திரம்"
+   },
+   "hasta": {
+    "en": "Hastham",
+    "ta": "அஸ்தம்"
+   },
+   "chitra": {
+    "en": "Chithirai",
+    "ta": "சித்திரை"
+   },
+   "swati": {
+    "en": "Swathi",
+    "ta": "சுவாதி"
+   },
+   "vishakha": {
+    "en": "Visakam",
+    "ta": "விசாகம்"
+   },
+   "anuradha": {
+    "en": "Anusham",
+    "ta": "அனுஷம்"
+   },
+   "jyeshtha": {
+    "en": "Kettai",
+    "ta": "கேட்டை"
+   },
+   "mula": {
+    "en": "Moolam",
+    "ta": "மூலம்"
+   },
+   "purva_ashadha": {
+    "en": "Pooradam",
+    "ta": "பூராடம்"
+   },
+   "uttara_ashadha": {
+    "en": "Uthiradam",
+    "ta": "உத்திராடம்"
+   },
+   "shravana": {
+    "en": "Thiruvonam",
+    "ta": "திருவோணம்"
+   },
+   "dhanishta": {
+    "en": "Avittam",
+    "ta": "அவிட்டம்"
+   },
+   "shatabhisha": {
+    "en": "Sadhayam",
+    "ta": "சதயம்"
+   },
+   "purva_bhadrapada": {
+    "en": "Poorattathi",
+    "ta": "பூரட்டாதி"
+   },
+   "uttara_bhadrapada": {
+    "en": "Uthirattathi",
+    "ta": "உத்திரட்டாதி"
+   },
+   "revati": {
+    "en": "Revathi",
+    "ta": "ரேவதி"
+   }
+  },
+  "tithis": {
+   "pratipada": {
+    "en": "Prathamai",
+    "ta": "பிரதமை"
+   },
+   "dvitiya": {
+    "en": "Dwitiyai",
+    "ta": "துவிதியை"
+   },
+   "tritiya": {
+    "en": "Tritiyai",
+    "ta": "திருதியை"
+   },
+   "chaturthi": {
+    "en": "Chathurthi",
+    "ta": "சதுர்த்தி"
+   },
+   "panchami": {
+    "en": "Panchami",
+    "ta": "பஞ்சமி"
+   },
+   "shashthi": {
+    "en": "Sashti",
+    "ta": "சஷ்டி"
+   },
+   "saptami": {
+    "en": "Sapthami",
+    "ta": "சப்தமி"
+   },
+   "ashtami": {
+    "en": "Ashtami",
+    "ta": "அஷ்டமி"
+   },
+   "navami": {
+    "en": "Navami",
+    "ta": "நவமி"
+   },
+   "dashami": {
+    "en": "Dasami",
+    "ta": "தசமி"
+   },
+   "ekadashi": {
+    "en": "Ekadasi",
+    "ta": "ஏகாதசி"
+   },
+   "dvadashi": {
+    "en": "Dwadasi",
+    "ta": "துவாதசி"
+   },
+   "trayodashi": {
+    "en": "Thrayodasi",
+    "ta": "திரயோதசி"
+   },
+   "chaturdashi": {
+    "en": "Chathurdasi",
+    "ta": "சதுர்த்தசி"
+   },
+   "purnima": {
+    "en": "Pournami",
+    "ta": "பௌர்ணமி"
+   },
+   "amavasya": {
+    "en": "Amavasai",
+    "ta": "அமாவாசை"
+   }
+  },
+  "weekdays": {
+   "sunday": {
+    "en": "Nyayiru",
+    "ta": "ஞாயிறு"
+   },
+   "monday": {
+    "en": "Thingal",
+    "ta": "திங்கள்"
+   },
+   "tuesday": {
+    "en": "Sevvai",
+    "ta": "செவ்வாய்"
+   },
+   "wednesday": {
+    "en": "Budhan",
+    "ta": "புதன்"
+   },
+   "thursday": {
+    "en": "Vyazhan",
+    "ta": "வியாழன்"
+   },
+   "friday": {
+    "en": "Velli",
+    "ta": "வெள்ளி"
+   },
+   "saturday": {
+    "en": "Sani",
+    "ta": "சனி"
+   }
+  },
+  "paksha": {
+   "shukla": {
+    "en": "Valarpirai",
+    "ta": "வளர்பிறை"
+   },
+   "krishna": {
+    "en": "Theipirai",
+    "ta": "தேய்பிறை"
+   }
+  },
+  "yogas": {
+   "vishkambha": {
+    "en": "Vishkambha",
+    "ta": "விஷ்கம்பம்"
+   },
+   "priti": {
+    "en": "Priti",
+    "ta": "ப்ரீதி"
+   },
+   "ayushman": {
+    "en": "Ayushman",
+    "ta": "ஆயுஷ்மான்"
+   },
+   "saubhagya": {
+    "en": "Saubhagya",
+    "ta": "சௌபாக்கியம்"
+   },
+   "shobhana": {
+    "en": "Shobhana",
+    "ta": "சோபனம்"
+   },
+   "atiganda": {
+    "en": "Atiganda",
+    "ta": "அதிகண்டம்"
+   },
+   "sukarma": {
+    "en": "Sukarma",
+    "ta": "சுகர்மம்"
+   },
+   "dhriti": {
+    "en": "Dhriti",
+    "ta": "திருதி"
+   },
+   "shula": {
+    "en": "Shula",
+    "ta": "சூலம்"
+   },
+   "ganda": {
+    "en": "Ganda",
+    "ta": "கண்டம்"
+   },
+   "vriddhi": {
+    "en": "Vriddhi",
+    "ta": "விருத்தி"
+   },
+   "dhruva": {
+    "en": "Dhruva",
+    "ta": "துருவம்"
+   },
+   "vyaghata": {
+    "en": "Vyaghata",
+    "ta": "வியாகாதம்"
+   },
+   "harshana": {
+    "en": "Harshana",
+    "ta": "ஹர்ஷணம்"
+   },
+   "vajra": {
+    "en": "Vajra",
+    "ta": "வஜ்ரம்"
+   },
+   "siddhi": {
+    "en": "Siddhi",
+    "ta": "சித்தி"
+   },
+   "vyatipata": {
+    "en": "Vyatipata",
+    "ta": "வியதீபாதம்"
+   },
+   "variyan": {
+    "en": "Variyan",
+    "ta": "வரீயான்"
+   },
+   "parigha": {
+    "en": "Parigha",
+    "ta": "பரிகம்"
+   },
+   "shiva": {
+    "en": "Shiva",
+    "ta": "சிவம்"
+   },
+   "siddha": {
+    "en": "Siddha",
+    "ta": "சித்தம்"
+   },
+   "sadhya": {
+    "en": "Sadhya",
+    "ta": "சாத்தியம்"
+   },
+   "shubha": {
+    "en": "Shubha",
+    "ta": "சுபம்"
+   },
+   "shukla": {
+    "en": "Shukla",
+    "ta": "சுக்லம்"
+   },
+   "brahma": {
+    "en": "Brahma",
+    "ta": "பிரம்மம்"
+   },
+   "indra": {
+    "en": "Indra",
+    "ta": "ஐந்திரம்"
+   },
+   "vaidhriti": {
+    "en": "Vaidhriti",
+    "ta": "வைதிருதி"
+   }
+  },
+  "karanas": {
+   "bava": {
+    "en": "Bava",
+    "ta": "பவம்"
+   },
+   "balava": {
+    "en": "Balava",
+    "ta": "பாலவம்"
+   },
+   "kaulava": {
+    "en": "Kaulava",
+    "ta": "கௌலவம்"
+   },
+   "taitila": {
+    "en": "Taitila",
+    "ta": "தைதுலம்"
+   },
+   "garaja": {
+    "en": "Garaja",
+    "ta": "கரசை"
+   },
+   "vanija": {
+    "en": "Vanija",
+    "ta": "வணிசை"
+   },
+   "vishti": {
+    "en": "Vishti",
+    "ta": "பத்திரை"
+   },
+   "shakuni": {
+    "en": "Shakuni",
+    "ta": "சகுனி"
+   },
+   "chatushpada": {
+    "en": "Chatushpada",
+    "ta": "சதுஷ்பாதம்"
+   },
+   "naga": {
+    "en": "Naga",
+    "ta": "நாகவம்"
+   },
+   "kimstughna": {
+    "en": "Kimstughna",
+    "ta": "கிம்ஸ்துக்னம்"
+   }
+  },
+  "samvatsaras": {
+   "prabhava": {
+    "en": "Prabhava",
+    "ta": "பிரபவ"
+   },
+   "vibhava": {
+    "en": "Vibhava",
+    "ta": "விபவ"
+   },
+   "shukla": {
+    "en": "Sukla",
+    "ta": "சுக்ல"
+   },
+   "pramoduta": {
+    "en": "Pramodhutha",
+    "ta": "பிரமோதூத"
+   },
+   "prajotpatti": {
+    "en": "Prajorpathi",
+    "ta": "பிரசோற்பத்தி"
+   },
+   "angirasa": {
+    "en": "Angirasa",
+    "ta": "ஆங்கீரச"
+   },
+   "shrimukha": {
+    "en": "Srimukha",
+    "ta": "ஸ்ரீமுக"
+   },
+   "bhava": {
+    "en": "Bhava",
+    "ta": "பவ"
+   },
+   "yuva": {
+    "en": "Yuva",
+    "ta": "யுவ"
+   },
+   "dhatu": {
+    "en": "Dhathu",
+    "ta": "தாது"
+   },
+   "ishvara": {
+    "en": "Eswara",
+    "ta": "ஈஸ்வர"
+   },
+   "bahudhanya": {
+    "en": "Vehudhanya",
+    "ta": "வெகுதானிய"
+   },
+   "pramathi": {
+    "en": "Pramathi",
+    "ta": "பிரமாதி"
+   },
+   "vikrama": {
+    "en": "Vikrama",
+    "ta": "விக்கிரம"
+   },
+   "vrisha": {
+    "en": "Vishu",
+    "ta": "விஷு"
+   },
+   "chitrabhanu": {
+    "en": "Chitrabhanu",
+    "ta": "சித்திரபானு"
+   },
+   "svabhanu": {
+    "en": "Subhanu",
+    "ta": "சுபானு"
+   },
+   "tarana": {
+    "en": "Tharana",
+    "ta": "தாரண"
+   },
+   "parthiva": {
+    "en": "Parthiba",
+    "ta": "பார்த்திப"
+   },
+   "vyaya": {
+    "en": "Viya",
+    "ta": "விய"
+   },
+   "sarvajit": {
+    "en": "Sarvajith",
+    "ta": "சர்வசித்து"
+   },
+   "sarvadhari": {
+    "en": "Sarvadhari",
+    "ta": "சர்வதாரி"
+   },
+   "virodhi": {
+    "en": "Virodhi",
+    "ta": "விரோதி"
+   },
+   "vikriti": {
+    "en": "Vikruthi",
+    "ta": "விக்ருதி"
+   },
+   "khara": {
+    "en": "Kara",
+    "ta": "கர"
+   },
+   "nandana": {
+    "en": "Nandhana",
+    "ta": "நந்தன"
+   },
+   "vijaya": {
+    "en": "Vijaya",
+    "ta": "விஜய"
+   },
+   "jaya": {
+    "en": "Jaya",
+    "ta": "ஜய"
+   },
+   "manmatha": {
+    "en": "Manmatha",
+    "ta": "மன்மத"
+   },
+   "durmukhi": {
+    "en": "Dhunmukhi",
+    "ta": "துன்முகி"
+   },
+   "hevilambi": {
+    "en": "Hevilambi",
+    "ta": "ஹேவிளம்பி"
+   },
+   "vilambi": {
+    "en": "Vilambi",
+    "ta": "விளம்பி"
+   },
+   "vikari": {
+    "en": "Vikari",
+    "ta": "விகாரி"
+   },
+   "sharvari": {
+    "en": "Sarvari",
+    "ta": "சார்வரி"
+   },
+   "plava": {
+    "en": "Plava",
+    "ta": "பிலவ"
+   },
+   "shubhakrit": {
+    "en": "Subakrith",
+    "ta": "சுபகிருது"
+   },
+   "shobhakrit": {
+    "en": "Sobakrith",
+    "ta": "சோபகிருது"
+   },
+   "krodhi": {
+    "en": "Krodhi",
+    "ta": "குரோதி"
+   },
+   "vishvavasu": {
+    "en": "Visuvavasu",
+    "ta": "விசுவாவசு"
+   },
+   "parabhava": {
+    "en": "Parabhava",
+    "ta": "பராபவ"
+   },
+   "plavanga": {
+    "en": "Plavanga",
+    "ta": "பிலவங்க"
+   },
+   "kilaka": {
+    "en": "Keelaka",
+    "ta": "கீலக"
+   },
+   "saumya": {
+    "en": "Sowmya",
+    "ta": "சௌமிய"
+   },
+   "sadharana": {
+    "en": "Sadharana",
+    "ta": "சாதாரண"
+   },
+   "virodhikrit": {
+    "en": "Virodhikrith",
+    "ta": "விரோதிகிருது"
+   },
+   "paridhavi": {
+    "en": "Paridhabi",
+    "ta": "பரிதாபி"
+   },
+   "pramadicha": {
+    "en": "Pramadhisa",
+    "ta": "பிரமாதீச"
+   },
+   "ananda": {
+    "en": "Anandha",
+    "ta": "ஆனந்த"
+   },
+   "rakshasa": {
+    "en": "Rakshasa",
+    "ta": "ராட்சச"
+   },
+   "nala": {
+    "en": "Nala",
+    "ta": "நள"
+   },
+   "pingala": {
+    "en": "Pingala",
+    "ta": "பிங்கள"
+   },
+   "kalayukti": {
+    "en": "Kalayukthi",
+    "ta": "காளயுக்தி"
+   },
+   "siddharthi": {
+    "en": "Siddharthi",
+    "ta": "சித்தார்த்தி"
+   },
+   "raudri": {
+    "en": "Raudhri",
+    "ta": "ரௌத்திரி"
+   },
+   "durmati": {
+    "en": "Dhunmathi",
+    "ta": "துன்மதி"
+   },
+   "dundubhi": {
+    "en": "Dhundhubi",
+    "ta": "துந்துபி"
+   },
+   "rudhirodgari": {
+    "en": "Rudhirodhgari",
+    "ta": "ருத்ரோத்காரி"
+   },
+   "raktakshi": {
+    "en": "Rakthakshi",
+    "ta": "ரக்தாட்சி"
+   },
+   "krodhana": {
+    "en": "Krodhana",
+    "ta": "குரோதன"
+   },
+   "akshaya": {
+    "en": "Akshaya",
+    "ta": "அட்சய"
+   }
+  },
+  "eras": {
+   "tamil-samvatsara": {
+    "en": "Tamil year",
+    "ta": "தமிழ் ஆண்டு"
+   }
+  },
+  "adhika": {
+   "adhika": {
+    "en": "Adhika",
+    "ta": "அதிக"
+   }
+  },
+  "rashis": {
+   "mesha": {
+    "en": "Mesham",
+    "ta": "மேஷம்"
+   },
+   "vrishabha": {
+    "en": "Rishabam",
+    "ta": "ரிஷபம்"
+   },
+   "mithuna": {
+    "en": "Mithunam",
+    "ta": "மிதுனம்"
+   },
+   "karka": {
+    "en": "Kadagam",
+    "ta": "கடகம்"
+   },
+   "simha": {
+    "en": "Simmam",
+    "ta": "சிம்மம்"
+   },
+   "kanya": {
+    "en": "Kanni",
+    "ta": "கன்னி"
+   },
+   "tula": {
+    "en": "Thulam",
+    "ta": "துலாம்"
+   },
+   "vrishchika": {
+    "en": "Viruchigam",
+    "ta": "விருச்சிகம்"
+   },
+   "dhanu": {
+    "en": "Dhanusu",
+    "ta": "தனுசு"
+   },
+   "makara": {
+    "en": "Magaram",
+    "ta": "மகரம்"
+   },
+   "kumbha": {
+    "en": "Kumbam",
+    "ta": "கும்பம்"
+   },
+   "meena": {
+    "en": "Meenam",
+    "ta": "மீனம்"
+   }
+  },
+  "grahas": {
+   "sun": {
+    "en": "Sun",
+    "ta": "சூரியன்"
+   },
+   "moon": {
+    "en": "Moon",
+    "ta": "சந்திரன்"
+   },
+   "mars": {
+    "en": "Mars",
+    "ta": "செவ்வாய்"
+   },
+   "mercury": {
+    "en": "Mercury",
+    "ta": "புதன்"
+   },
+   "jupiter": {
+    "en": "Jupiter",
+    "ta": "குரு"
+   },
+   "venus": {
+    "en": "Venus",
+    "ta": "சுக்கிரன்"
+   },
+   "saturn": {
+    "en": "Saturn",
+    "ta": "சனி"
+   },
+   "rahu": {
+    "en": "Rahu",
+    "ta": "ராகு"
+   },
+   "ketu": {
+    "en": "Ketu",
+    "ta": "கேது"
+   }
+  },
+  "grahaShort": {
+   "sun": {
+    "en": "Su",
+    "ta": "சூ"
+   },
+   "moon": {
+    "en": "Mo",
+    "ta": "சந்"
+   },
+   "mars": {
+    "en": "Ma",
+    "ta": "செ"
+   },
+   "mercury": {
+    "en": "Me",
+    "ta": "பு"
+   },
+   "jupiter": {
+    "en": "Ju",
+    "ta": "கு"
+   },
+   "venus": {
+    "en": "Ve",
+    "ta": "சு"
+   },
+   "saturn": {
+    "en": "Sa",
+    "ta": "ச"
+   },
+   "rahu": {
+    "en": "Ra",
+    "ta": "ரா"
+   },
+   "ketu": {
+    "en": "Ke",
+    "ta": "கே"
+   },
+   "lagna": {
+    "en": "As",
+    "ta": "ல"
+   }
+  },
+  "yoginis": {
+   "mangala": {
+    "en": "Mangala",
+    "ta": "மங்களா"
+   },
+   "pingala": {
+    "en": "Pingala",
+    "ta": "பிங்களா"
+   },
+   "dhanya": {
+    "en": "Dhanya",
+    "ta": "தான்யா"
+   },
+   "bhramari": {
+    "en": "Bhramari",
+    "ta": "பிராமரி"
+   },
+   "bhadrika": {
+    "en": "Bhadrika",
+    "ta": "பத்ரிகா"
+   },
+   "ulka": {
+    "en": "Ulka",
+    "ta": "உல்கா"
+   },
+   "siddha": {
+    "en": "Siddha",
+    "ta": "சித்தா"
+   },
+   "sankata": {
+    "en": "Sankata",
+    "ta": "சங்கடா"
+   }
+  },
+  "vargas": {
+   "d1": {
+    "en": "Rasi",
+    "ta": "ராசி"
+   },
+   "d2": {
+    "en": "Hora",
+    "ta": "ஹோரை"
+   },
+   "d3": {
+    "en": "Drekkana",
+    "ta": "திரேக்காணம்"
+   },
+   "d4": {
+    "en": "Chaturthamsa",
+    "ta": "சதுர்த்தாம்சம்"
+   },
+   "d7": {
+    "en": "Saptamsa",
+    "ta": "சப்தாம்சம்"
+   },
+   "d9": {
+    "en": "Navamsa",
+    "ta": "நவாம்சம்"
+   },
+   "d10": {
+    "en": "Dasamsa",
+    "ta": "தசாம்சம்"
+   },
+   "d12": {
+    "en": "Dwadasamsa",
+    "ta": "துவாதசாம்சம்"
+   },
+   "d16": {
+    "en": "Shodasamsa",
+    "ta": "ஷோடசாம்சம்"
+   },
+   "d20": {
+    "en": "Vimsamsa",
+    "ta": "விம்சாம்சம்"
+   },
+   "d24": {
+    "en": "Chaturvimsamsa",
+    "ta": "சதுர்விம்சாம்சம்"
+   },
+   "d27": {
+    "en": "Saptavimsamsa",
+    "ta": "சப்தவிம்சாம்சம்"
+   },
+   "d30": {
+    "en": "Trimsamsa",
+    "ta": "திரிம்சாம்சம்"
+   },
+   "d40": {
+    "en": "Khavedamsa",
+    "ta": "கவேதாம்சம்"
+   },
+   "d45": {
+    "en": "Akshavedamsa",
+    "ta": "அக்ஷவேதாம்சம்"
+   },
+   "d60": {
+    "en": "Shashtiamsa",
+    "ta": "ஷஷ்டியாம்சம்"
+   }
+  },
+  "choghadiya": {
+   "udvega": {
+    "en": "Udvega",
+    "ta": "உத்வேகம்"
+   },
+   "chara": {
+    "en": "Chara",
+    "ta": "சரம்"
+   },
+   "labha": {
+    "en": "Labha",
+    "ta": "லாபம்"
+   },
+   "amrita": {
+    "en": "Amrita",
+    "ta": "அமிர்தம்"
+   },
+   "kala": {
+    "en": "Kala",
+    "ta": "காலம்"
+   },
+   "shubha": {
+    "en": "Shubha",
+    "ta": "சுபம்"
+   },
+   "roga": {
+    "en": "Roga",
+    "ta": "ரோகம்"
+   }
+  },
+  "gowri": {
+   "uthi": {
+    "en": "Udyogam",
+    "ta": "உத்தி"
+   },
+   "amirdha": {
+    "en": "Amirtham",
+    "ta": "அமிர்தம்"
+   },
+   "rogam": {
+    "en": "Rogam",
+    "ta": "ரோகம்"
+   },
+   "laabam": {
+    "en": "Labham",
+    "ta": "லாபம்"
+   },
+   "dhanam": {
+    "en": "Dhanam",
+    "ta": "தனம்"
+   },
+   "sugam": {
+    "en": "Sugam",
+    "ta": "சுகம்"
+   },
+   "soram": {
+    "en": "Soram",
+    "ta": "சோரம்"
+   },
+   "visham": {
+    "en": "Visham",
+    "ta": "விஷம்"
+   }
+  }
+ },
+ "display": {
+  "primary": "solar",
+  "nameEn": "Sri Lankan Tamil",
+  "nameNative": "இலங்கைத் தமிழ்",
+  "newYear": "puthandu",
+  "referencePlace": "Jaffna"
+ },
+ "festivals": [
+  {
+   "id": "bhogi",
+   "names": {
+    "en": "Bhogi",
+    "ta": "போகி"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "thai-pongal",
+    "offsetDays": -1
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The first day of Pongal: clearing out the old, with a bonfire at dawn.",
+     "ta": "பொங்கலின் முதல் நாள்: பழையவற்றை நீக்கும் நாள், விடியலில் போகித் தீயுடன்."
+    },
+    "traditions": {
+     "en": "On the last day of Margazhi, families clean their homes thoroughly and, at dawn, light a small bonfire of old mats, worn-out items and dry leaves, a sign of letting go of the old before the new month. Children beat small drums called bhogi melam. Homes are whitewashed, doorways decorated with kolam and mango-leaf toranams, and the house made ready for Thai Pongal. Today many families burn only natural material, or skip the fire, to keep the air clean.",
+     "ta": "மார்கழியின் கடைசி நாளில் குடும்பங்கள் வீட்டை முழுமையாகச் சுத்தம் செய்து, விடியலில் பழைய பாய்கள், உபயோகமற்ற பொருட்கள், காய்ந்த இலைகளைக் கொண்டு சிறு போகித் தீ மூட்டுகின்றன; புதிய மாதத்துக்கு முன் பழையதை விடுவதன் அடையாளம். குழந்தைகள் போகி மேளம் கொட்டுகின்றனர். வீடுகளுக்கு வெள்ளையடித்து, வாசலில் கோலமும் மாவிலைத் தோரணமும் அலங்கரித்து, தைப் பொங்கலுக்கு வீடு தயாராகிறது. காற்றைத் தூய்மையாக வைக்க இன்று பல குடும்பங்கள் இயற்கைப் பொருட்களை மட்டும் எரிக்கின்றன, அல்லது தீயைத் தவிர்க்கின்றன."
+    },
+    "story": {
+     "en": "Bhogi is named for Indra, the god of rain, who is also called Bhogi, the enjoyer. The farmers of Tamil Nadu thank him on this day for the rains that brought the harvest. The story told in some homes is of Krishna asking the cowherds of Braj to honour Govardhan hill instead of Indra, and of Indra, after learning humility, being honoured again on Bhogi, the day before the harvest festival. The bonfire itself is a simple, old idea: before the new begins, let the old go.",
+     "ta": "போகி, மழைக் கடவுளான இந்திரனின் பெயரால் அமைந்தது; அவர் போகி, அனுபவிப்பவர், என்றும் அழைக்கப்படுகிறார். அறுவடையைத் தந்த மழைக்காக இந்நாளில் தமிழக விவசாயிகள் அவருக்கு நன்றி செலுத்துகின்றனர். சில வீடுகளில் சொல்லப்படும் கதை: கண்ணன் ஆயர்களிடம் இந்திரனுக்குப் பதிலாகக் கோவர்த்தன மலையைப் போற்றச் சொன்னதும், பணிவு கற்ற இந்திரன் அறுவடைப் பண்டிகைக்கு முந்தைய போகியன்று மீண்டும் போற்றப்பட்டதும். போகித் தீ ஓர் எளிய பழைய சிந்தனை: புதியது தொடங்கும் முன் பழையதை விடு."
+    },
+    "howTo": {
+     "en": [
+      "In the days before, clean the house and set aside old, unusable things.",
+      "At dawn, light a small bonfire of natural material in a safe place, or skip it if your area discourages fires.",
+      "Bathe, draw a kolam at the doorway and hang mango-leaf toranams.",
+      "Prepare for tomorrow: buy the new pot, rice, jaggery, sugarcane and turmeric plants for Pongal."
+     ],
+     "ta": [
+      "முன்கூட்டியே வீட்டைச் சுத்தம் செய்து, உபயோகமற்ற பழைய பொருட்களைத் தனியே வையுங்கள்.",
+      "விடியலில் பாதுகாப்பான இடத்தில் இயற்கைப் பொருட்களால் சிறு தீ மூட்டுங்கள்; உங்கள் பகுதியில் தீ தவிர்க்கப்பட்டால் விட்டுவிடுங்கள்.",
+      "நீராடி, வாசலில் கோலமிட்டு, மாவிலைத் தோரணம் கட்டுங்கள்.",
+      "நாளைக்குத் தயாராகுங்கள்: பொங்கலுக்குப் புதுப் பானை, அரிசி, வெல்லம், கரும்பு, மஞ்சள் கொத்து வாங்குங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Bhogi! Out with the old, in with the new.",
+     "ta": "இனிய போகி நல்வாழ்த்துகள்! பழையன கழிந்து புதியன புகட்டும்."
+    }
+   }
+  },
+  {
+   "id": "thai-pongal",
+   "names": {
+    "en": "Thai Pongal",
+    "ta": "தைப் பொங்கல்"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "makara",
+    "day": 1
+   },
+   "tier": "major",
+   "holidayIn": [
+    "LK"
+   ],
+   "durationDays": 1,
+   "variations": [
+    "Almanacs following the Vakya panchangam can place Thai 1, and so Pongal, a day later; the Tamil Nadu holiday list for 2026 keeps Pongal on 15 January."
+   ],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Thai 1: Tamil Nadu's harvest festival, when the new rice boils over in thanks to the Sun.",
+     "ta": "தை 1: தமிழரின் அறுவடைத் திருநாள்; சூரியனுக்கு நன்றியாகப் புது அரிசி பொங்கும் நாள்."
+    },
+    "traditions": {
+     "en": "In Jaffna and across the North and East, Thai Pongal is the great harvest thanksgiving: the pongal is boiled over a fire in the courtyard at sunrise, facing the Sun, and families visit the kovil and share the sweet pongal with neighbours. It is a public holiday across Sri Lanka.",
+     "ta": "யாழ்ப்பாணத்திலும் வடக்கு, கிழக்கு எங்கும் தைப்பொங்கல் பெரும் அறுவடை நன்றி நாள்: சூரிய உதயத்தில் முற்றத்தில் சூரியனை நோக்கிப் பொங்கல் பொங்கி, குடும்பங்கள் கோவிலுக்குச் சென்று இனிப்புப் பொங்கலை அயலவருடன் பகிர்கின்றனர். இலங்கை முழுவதும் இது பொது விடுமுறை நாள்."
+    },
+    "story": {
+     "en": "Pongal is the Tamil farmers' thanksgiving, kept since the Sangam age, when it was called Thai Niradal. It thanks Surya, whose light grows the crops, at the moment the Sun turns north (Uttarayana) and the month of Thai begins: 'Thai pirandhal vazhi pirakkum', when Thai is born, a way opens. One story told is of Shiva sending his bull Nandi to earth to tell people to bathe with oil daily and eat once a month; Nandi mixed up the message and said eat daily and bathe once a month. Shiva, amused and a little exasperated, told Nandi to stay on earth and help plough the fields to grow all that extra food, which is why cattle are honoured on the next day, Mattu Pongal.",
+     "ta": "பொங்கல் தமிழ் விவசாயிகளின் நன்றித் திருநாள்; சங்க காலம் முதல், 'தை நீராடல்' என்ற பெயரில் கொண்டாடப்படுகிறது. சூரியன் வடக்கு நோக்கித் திரும்பி (உத்தராயணம்) தை மாதம் பிறக்கும் வேளையில், பயிர்களை வளர்க்கும் ஒளிக்காக சூரியனுக்கு நன்றி சொல்லப்படுகிறது: 'தை பிறந்தால் வழி பிறக்கும்'. ஒரு கதை: மக்கள் தினமும் எண்ணெய் தேய்த்து நீராடி மாதம் ஒருமுறை உண்ண வேண்டும் என்று சொல்ல சிவன் நந்தியை அனுப்பினார்; நந்தி செய்தியைக் குழப்பி, தினமும் உண்டு மாதம் ஒருமுறை நீராடச் சொன்னது. சிரித்தும் சற்றுச் சலித்தும் கொண்ட சிவன், அந்தக் கூடுதல் உணவை விளைவிக்க நிலத்தை உழுது உதவ நந்தியைப் பூமியிலேயே இருக்கச் சொன்னார்; அதனால்தான் மறுநாள் மாட்டுப் பொங்கலில் மாடுகள் போற்றப்படுகின்றன."
+    },
+    "howTo": {
+     "en": [
+      "The day before, buy a new pot, new rice, moong dal, jaggery, milk, ghee, cashews, sugarcane and turmeric and ginger plants.",
+      "Wake early, bathe, wear new clothes and draw a large kolam at the doorway.",
+      "Set up the pot in the open, facing east, with turmeric and ginger plants tied around its neck; light the fire as the Sun rises.",
+      "Boil milk and water, add the rice, and when it boils over, call 'Pongalo pongal!' together.",
+      "Make sakkarai pongal with jaggery and ghee, and ven pongal if you like.",
+      "Offer it to the Sun on a banana leaf with sugarcane, bananas and turmeric, then share it with family and neighbours."
+     ],
+     "ta": [
+      "முந்தைய நாள் புதுப் பானை, புது அரிசி, பாசிப்பருப்பு, வெல்லம், பால், நெய், முந்திரி, கரும்பு, மஞ்சள்-இஞ்சிக் கொத்து வாங்குங்கள்.",
+      "அதிகாலை எழுந்து நீராடி, புத்தாடை அணிந்து, வாசலில் பெரிய கோலமிடுங்கள்.",
+      "கிழக்கு நோக்கித் திறந்தவெளியில் பானையை வைத்து, கழுத்தில் மஞ்சள்-இஞ்சிக் கொத்து கட்டி, சூரிய உதயத்தில் அடுப்பு மூட்டுங்கள்.",
+      "பாலும் நீரும் கொதிக்க வைத்து அரிசி சேர்த்து, பொங்கி வழியும்போது அனைவரும் 'பொங்கலோ பொங்கல்!' என்று முழங்குங்கள்.",
+      "வெல்லம், நெய் சேர்த்துச் சர்க்கரைப் பொங்கல், விரும்பினால் வெண்பொங்கலும் செய்யுங்கள்.",
+      "வாழை இலையில் கரும்பு, வாழைப்பழம், மஞ்சளுடன் சூரியனுக்குப் படைத்து, குடும்பத்துடனும் அக்கம்பக்கத்துடனும் பகிருங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Pongalo pongal! A happy, abundant Thai Pongal to you.",
+     "ta": "பொங்கலோ பொங்கல்! இனிய தைப் பொங்கல் நல்வாழ்த்துகள்."
+    }
+   }
+  },
+  {
+   "id": "mattu-pongal",
+   "names": {
+    "en": "Mattu Pongal",
+    "ta": "மாட்டுப் பொங்கல்"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "thai-pongal",
+    "offsetDays": 1
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The day after Pongal, honouring cattle, the farmer's partners.",
+     "ta": "பொங்கலுக்கு மறுநாள், விவசாயியின் தோழர்களான மாடுகளைப் போற்றும் நாள்."
+    },
+    "traditions": {
+     "en": "Cows and bulls are bathed, their horns painted and capped with brass, and they are garlanded with flowers and bells. They are fed pongal, sugarcane and bananas, and taken in procession through the village. In some regions, jallikattu, the bull-embracing sport, is held around this day. Married women in many families keep Kanu Pidi, setting out coloured rice balls for crows and birds and praying for their brothers' wellbeing.",
+     "ta": "பசுக்களும் காளைகளும் குளிப்பாட்டப்பட்டு, கொம்புகளுக்கு வண்ணம் பூசிப் பித்தளைப் பூண் இட்டு, பூமாலையும் மணிகளும் அணிவிக்கப்படுகின்றன. பொங்கல், கரும்பு, வாழைப்பழம் ஊட்டப்பட்டு ஊர்வலமாக அழைத்துச் செல்லப்படுகின்றன. சில பகுதிகளில் இந்நாளையொட்டி ஜல்லிக்கட்டு நடக்கிறது. பல குடும்பங்களில் திருமணமான பெண்கள் கனுப்பிடி வைத்து, காகங்களுக்கும் பறவைகளுக்கும் வண்ணச் சோற்று உருண்டைகள் வைத்து, சகோதரர்களின் நலனுக்காக வேண்டுகின்றனர்."
+    },
+    "story": {
+     "en": "This is the day of Nandi's story, told for Pongal: Shiva's bull, who mixed up a message and was sent to earth to plough the fields. Cattle have pulled the ploughs and carts of Tamil farms for thousands of years, and Mattu Pongal is the day the farmer stops to thank them, decorating them and feeding them first. Kanu Pidi, kept the same morning, remembers the bond of brothers and sisters.",
+     "ta": "பொங்கலுக்குச் சொல்லப்படும் நந்தியின் கதைக்குரிய நாள் இது: செய்தியைக் குழப்பியதால் நிலம் உழப் பூமிக்கு அனுப்பப்பட்ட சிவனின் காளை. ஆயிரக்கணக்கான ஆண்டுகளாகத் தமிழ் வயல்களின் ஏர்களையும் வண்டிகளையும் இழுத்தவை மாடுகள்; அவற்றை அலங்கரித்து, முதலில் உணவளித்து, விவசாயி நன்றி சொல்லும் நாள் மாட்டுப் பொங்கல். அதே காலையில் வைக்கப்படும் கனுப்பிடி அண்ணன்-தங்கை பாசத்தை நினைவுகூர்கிறது."
+    },
+    "howTo": {
+     "en": [
+      "If you have cattle, bathe them, paint their horns, and garland them with flowers and bells.",
+      "Cook pongal and feed it to them first, with sugarcane and bananas; if you do not, visit a local goshala.",
+      "If your family keeps Kanu Pidi, set out coloured rice balls on a turmeric leaf for the birds in the morning.",
+      "Spend the day with family, and visit friends and relatives."
+     ],
+     "ta": [
+      "மாடுகள் இருந்தால் குளிப்பாட்டி, கொம்புகளுக்கு வண்ணம் பூசி, பூமாலையும் மணியும் அணிவியுங்கள்.",
+      "பொங்கல் சமைத்து முதலில் அவற்றுக்குக் கரும்பு, வாழைப்பழத்துடன் ஊட்டுங்கள்; மாடுகள் இல்லையெனில் அருகிலுள்ள கோசாலைக்குச் செல்லுங்கள்.",
+      "குடும்பத்தில் கனுப்பிடி வழக்கம் இருந்தால், காலையில் மஞ்சள் இலையில் பறவைகளுக்கு வண்ணச் சோற்று உருண்டைகள் வையுங்கள்.",
+      "குடும்பத்துடன் நாளைக் கழித்து, நண்பர்களையும் உறவினர்களையும் சந்தியுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Mattu Pongal! Thanks to the gentle partners of every farm.",
+     "ta": "இனிய மாட்டுப் பொங்கல் வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "thai-amavasai",
+   "names": {
+    "en": "Thai Amavasai",
+    "ta": "தை அமாவாசை"
+   },
+   "rule": {
+    "type": "tithi-in-solar-month",
+    "month": "makara",
+    "tithi": 30
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The new moon of Thai, one of the year's main days for remembering ancestors.",
+     "ta": "தை மாத அமாவாசை, முன்னோர்களை நினைவுகூரும் ஆண்டின் முக்கிய நாட்களில் ஒன்று."
+    },
+    "traditions": {
+     "en": "Families offer tarpanam, water with black sesame, to their ancestors, often at the sea or a river: Rameswaram, Kanyakumari, the Kaveri at Srirangam and Thiruvaiyaru draw large numbers. A simple meal is cooked and a portion offered to crows before the family eats. Many give food to those in need.",
+     "ta": "குடும்பங்கள் முன்னோர்களுக்குத் தர்ப்பணம், எள் கலந்த நீர், அளிக்கின்றன; பெரும்பாலும் கடலிலோ ஆற்றிலோ: ராமேஸ்வரம், கன்னியாகுமரி, ஸ்ரீரங்கம், திருவையாறு காவிரிக்கரை ஆகியவற்றில் ஏராளமானோர் கூடுகின்றனர். எளிய உணவு சமைத்து, குடும்பம் உண்ணும் முன் ஒரு பகுதி காகங்களுக்கு வைக்கப்படுகிறது. பலர் தேவையுள்ளோருக்கு உணவளிக்கின்றனர்."
+    },
+    "story": {
+     "en": "Tamil tradition keeps three new moons as the great days of remembrance: Aadi Amavasai, when the Sun begins its southward course, Purattasi's Mahalaya Amavasai, and Thai Amavasai, when the Sun has turned north. The thought is simple: at the turning points of the year, those who came before are remembered by name. The story of Abhirami Bhattar is also told on this day: devoted to the goddess Abhirami at Thirukkadaiyur, he told the king, in a trance, that the new moon was a full moon; when the king held him to it, Bhattar sang the Abhirami Andhadhi, and the goddess threw her earring into the sky, which shone like the full moon.",
+     "ta": "தமிழ் மரபில் மூன்று அமாவாசைகள் நினைவுகூரலின் பெரிய நாட்கள்: சூரியன் தெற்கு நோக்கிச் செல்லத் தொடங்கும் ஆடி அமாவாசை, புரட்டாசியின் மகாளய அமாவாசை, சூரியன் வடக்கு திரும்பிய பின் தை அமாவாசை. சிந்தனை எளிது: ஆண்டின் திருப்பங்களில் முன்னோர்களைப் பெயர் சொல்லி நினைவுகூர்தல். அபிராமி பட்டரின் கதையும் இந்நாளில் சொல்லப்படுகிறது: திருக்கடையூர் அபிராமியின் பக்தரான அவர், தியானத்தில் இருந்தபோது அமாவாசையை பௌர்ணமி என்று மன்னனிடம் சொன்னார்; மன்னன் அதை நிரூபிக்கச் சொன்னபோது பட்டர் அபிராமி அந்தாதி பாடினார்; அம்பிகை தன் தோட்டை வானில் எறிய, அது முழுநிலவாய் ஒளிர்ந்தது."
+    },
+    "howTo": {
+     "en": [
+      "In the morning, bathe and, facing south, offer water with black sesame to your ancestors, naming them; at a river or the sea if you can.",
+      "Cook a simple meal they would have liked and set a portion out for crows.",
+      "Give food to someone in need.",
+      "Light a lamp in the evening in their memory."
+     ],
+     "ta": [
+      "காலையில் நீராடி, தெற்கு நோக்கி, முன்னோர்களின் பெயர் சொல்லி எள் கலந்த நீர் அளியுங்கள்; முடிந்தால் ஆற்றிலோ கடலிலோ.",
+      "அவர்கள் விரும்பிய எளிய உணவு சமைத்து, ஒரு பகுதி காகங்களுக்கு வையுங்கள்.",
+      "தேவையுள்ள ஒருவருக்கு உணவளியுங்கள்.",
+      "மாலையில் அவர்கள் நினைவாக விளக்கேற்றுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Remembering our ancestors on Thai Amavasai.",
+     "ta": "தை அமாவாசையில் முன்னோர்களுக்கு வணக்கம்."
+    }
+   }
+  },
+  {
+   "id": "thaipusam",
+   "names": {
+    "en": "Thaipusam",
+    "ta": "தைப்பூசம்"
+   },
+   "rule": {
+    "type": "nakshatra-in-solar-month",
+    "month": "makara",
+    "nakshatra": "pushya",
+    "observance": {
+     "kala": "daylight"
+    },
+    "nearTithi": 15
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Pushya star near the Thai full moon: Murugan's great day, with kavadi and paal kudam.",
+     "ta": "தை பௌர்ணமியையொட்டிய பூச நட்சத்திரம்: முருகனின் பெருவிழா, காவடியும் பால்குடமும்."
+    },
+    "traditions": {
+     "en": "Devotees of Murugan prepare for days, many keeping a fast and wearing yellow or saffron. On Thaipusam they walk to Murugan temples, Palani above all, carrying kavadi, decorated arches borne on the shoulders, or paal kudam, pots of milk on the head, for the abhishekam. The air rings with 'Vel Vel, Vetrivel!' and 'Haro hara!' Thaipusam is also celebrated grandly by Tamil communities in Malaysia (Batu Caves), Singapore, Mauritius and Sri Lanka. Some devotees take on very demanding vows; families generally keep simpler ones.",
+     "ta": "முருக பக்தர்கள் பல நாட்கள் தயாராகின்றனர்; பலர் விரதமிருந்து மஞ்சள் அல்லது காவி உடை அணிகின்றனர். தைப்பூசத்தன்று முருகன் கோயில்களுக்கு, எல்லாவற்றுக்கும் மேலாகப் பழனிக்கு, தோளில் அலங்கரித்த காவடியோ, தலையில் அபிஷேகத்துக்கான பால்குடமோ சுமந்து நடந்து செல்கின்றனர். 'வேல் வேல், வெற்றிவேல்!', 'அரோகரா!' முழக்கங்கள் ஒலிக்கின்றன. மலேசியா (பத்துமலை), சிங்கப்பூர், மொரீஷியஸ், இலங்கைத் தமிழ்ச் சமூகங்களும் தைப்பூசத்தைப் பெருமையுடன் கொண்டாடுகின்றன. சில பக்தர்கள் மிகக் கடினமான நேர்த்திக்கடன்களை ஏற்கின்றனர்; குடும்பங்கள் பொதுவாக எளிய வழிபாட்டையே கடைப்பிடிக்கின்றன."
+    },
+    "story": {
+     "en": "The story told is that on Thaipusam, Parvati gave Murugan the Vel, her spear, so that he could face the asura Surapadman and his brothers, who were troubling the worlds. The Vel stands for knowledge that cuts through confusion. Kavadi has its own story: the sage Agastya asked his disciple Idumban to carry two hills to the south on a pole across his shoulders. Resting at Palani, Idumban found he could not lift the load again: young Murugan was standing on one hill. After a playful contest, Murugan blessed Idumban, and asked that those who come to him carrying a kavadi, as Idumban carried his hills, be welcomed.",
+     "ta": "சொல்லப்படும் கதை: உலகங்களைத் துன்புறுத்திய சூரபத்மனையும் அவன் சகோதரர்களையும் எதிர்கொள்ள, தைப்பூசத்தன்று பார்வதி முருகனுக்குத் தன் வேலை வழங்கினார். குழப்பத்தை அறுக்கும் ஞானத்தின் அடையாளம் வேல். காவடிக்குத் தனிக் கதை உண்டு: அகத்திய முனிவர் தன் சீடன் இடும்பனிடம் இரு மலைகளைத் தோளில் காவடியாகச் சுமந்து தெற்கே கொண்டுவரச் சொன்னார். பழனியில் ஓய்வெடுத்த இடும்பனால் மீண்டும் தூக்க முடியவில்லை: ஒரு மலைமீது சிறுவன் முருகன் நின்றிருந்தான். விளையாட்டான போட்டிக்குப் பின் முருகன் இடும்பனை ஆசீர்வதித்து, இடும்பன் மலைகளைச் சுமந்ததுபோல் காவடி சுமந்து தன்னிடம் வருவோரை வரவேற்பதாகச் சொன்னார்."
+    },
+    "howTo": {
+     "en": [
+      "In the days before, keep a vegetarian diet or a fast if your family does.",
+      "On Thaipusam, bathe early and wear yellow or saffron.",
+      "Visit a Murugan temple; carry a small pot of milk for the abhishekam if the temple allows it.",
+      "At home, decorate a picture of Murugan and his Vel, light a lamp, and offer milk, panchamritam and flowers.",
+      "Sing the Kanda Shashti Kavacham or Thiruppugazh, and share the prasad."
+     ],
+     "ta": [
+      "முந்தைய நாட்களில், குடும்ப வழக்கமெனில், சைவ உணவோ விரதமோ கடைப்பிடியுங்கள்.",
+      "தைப்பூசத்தன்று அதிகாலை நீராடி மஞ்சள் அல்லது காவி உடை அணியுங்கள்.",
+      "முருகன் கோயிலுக்குச் செல்லுங்கள்; கோயில் அனுமதித்தால் அபிஷேகத்துக்குச் சிறு பால்குடம் எடுத்துச் செல்லுங்கள்.",
+      "வீட்டில் முருகன்-வேல் படத்தை அலங்கரித்து, விளக்கேற்றி, பால், பஞ்சாமிர்தம், மலர் படையுங்கள்.",
+      "கந்த சஷ்டி கவசம் அல்லது திருப்புகழ் பாடி, பிரசாதம் பகிருங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Vetrivel Muruganukku Arohara! Happy Thaipusam.",
+     "ta": "வெற்றிவேல் முருகனுக்கு அரோகரா! தைப்பூச நல்வாழ்த்துகள்."
+    }
+   }
+  },
+  {
+   "id": "ratha-saptami-ta",
+   "names": {
+    "en": "Ratha Saptami",
+    "ta": "ரத சப்தமி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "magha",
+    "tithi": 7
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The seventh day of bright Magha: the Sun's birthday, when Surya turns his chariot north.",
+     "ta": "தை-மாசி வளர்பிறை சப்தமி: சூரிய ஜெயந்தி, சூரியன் தன் தேரை வடக்கு நோக்கித் திருப்பும் நாள்."
+    },
+    "traditions": {
+     "en": "People bathe at dawn, traditionally placing seven leaves of the arka (erukku) plant on the head and shoulders while bathing. A chariot with seven horses is drawn in kolam or rangoli at the doorstep, and the Sun is worshipped as the rising light, with a lamp and a sweet pongal or kheer cooked in the open sunlight in some homes. Temples hold a Surya procession: at Tirumala the deity is taken out on seven vahanas through the day, from dawn to night, for the 'one-day Brahmotsavam'. The day is also called Surya Jayanti and Achala Saptami.",
+     "ta": "மக்கள் விடியலில் நீராடுகின்றனர்; மரபாக எருக்கம் இலைகள் ஏழைத் தலையிலும் தோளிலும் வைத்து நீராடுவர். வாசலில் ஏழு குதிரைகள் பூட்டிய தேர் கோலமாக வரையப்படுகிறது; உதய சூரியனுக்கு விளக்கேற்றி வழிபடுகின்றனர், சில வீடுகளில் வெயிலில் சர்க்கரைப் பொங்கல் வைக்கின்றனர். திருமலையில் அன்று காலை முதல் இரவு வரை ஏழு வாகனங்களில் பெருமாள் புறப்பாடு, 'ஒருநாள் பிரம்மோற்சவம்' நடக்கிறது. இது சூரிய ஜெயந்தி, அசல சப்தமி என்றும் அழைக்கப்படுகிறது."
+    },
+    "story": {
+     "en": "The story told for Ratha Saptami is that on this day Surya was born to the sage Kashyapa and Aditi, and so is called Aditya. His chariot is drawn by seven horses, said to stand for the seven days of the week, or for the seven colours of light, and it has a single wheel, the year turning. From Ratha Saptami, tradition says, the Sun turns his chariot fully northward, and the days grow warmer toward spring. A second story tells of King Yashovarma of Kamboja, whose only son was unwell for a long time; on a sage's advice the prince kept the Ratha Saptami observance, and is remembered as having grown strong. The arka leaves of the bath are a reminder of Bhishma, who is said to have received them in his last days.",
+     "ta": "ரத சப்தமியின் கதை, இந்நாளில் காசியப முனிவருக்கும் அதிதிக்கும் சூரியன் பிறந்தார், எனவே ஆதித்யன் எனப்படுகிறார் என்பதாகும். அவர் தேரை ஏழு குதிரைகள் இழுக்கின்றன; அவை வாரத்தின் ஏழு நாட்கள் அல்லது ஒளியின் ஏழு நிறங்கள் எனப்படுகின்றன; தேருக்கு ஒரே சக்கரம், சுழலும் ஆண்டு. ரத சப்தமியிலிருந்து சூரியன் தன் தேரை முழுமையாக வடக்கு நோக்கித் திருப்புகிறார், நாட்கள் வசந்தம் நோக்கி வெப்பமடைகின்றன என்று மரபு கூறுகிறது. நீராடலின் எருக்கம் இலைகள் பீஷ்மரை நினைவூட்டுகின்றன; அவர் இறுதி நாட்களில் அவற்றைப் பெற்றதாகக் கூறப்படுகிறது."
+    },
+    "howTo": {
+     "en": [
+      "The evening before, draw a seven-horse chariot rangoli or kolam at the entrance.",
+      "Wake before dawn and bathe; if your family does, place seven arka leaves, with a little rice and sesame, on your head and shoulders while bathing.",
+      "Face the rising Sun and offer water from a copper vessel, reciting the Aditya Hridayam or simply the twelve names of Surya.",
+      "Light a lamp and offer a sweet pongal or kheer, cooked in sunlight if you can.",
+      "Share the prasad and spend some time outdoors in the morning sun."
+     ],
+     "ta": [
+      "முந்தைய மாலை வாசலில் ஏழு குதிரைத் தேர் கோலம் போடுங்கள்.",
+      "விடியலுக்கு முன் எழுந்து நீராடுங்கள்; குடும்ப வழக்கமெனில் சிறிது அரிசி, எள்ளுடன் ஏழு எருக்கம் இலைகளைத் தலையிலும் தோளிலும் வைத்து நீராடுங்கள்.",
+      "உதய சூரியனை நோக்கி செம்புப் பாத்திரத்தில் நீர் அர்ப்பணித்து, ஆதித்ய ஹிருதயம் அல்லது சூரியனின் பன்னிரண்டு நாமங்களைச் சொல்லுங்கள்.",
+      "விளக்கேற்றி, முடிந்தால் வெயிலில் சமைத்த சர்க்கரைப் பொங்கல் நைவேத்தியம் செய்யுங்கள்.",
+      "பிரசாதத்தைப் பகிர்ந்து, காலை வெயிலில் சிறிது நேரம் வெளியே இருங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "May the rising Sun light your path. Happy Ratha Saptami!",
+     "ta": "உதய சூரியன் உங்கள் பாதையை ஒளிரச் செய்யட்டும். ரத சப்தமி வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "maha-shivaratri-ta",
+   "names": {
+    "en": "Maha Shivaratri",
+    "ta": "மகா சிவராத்திரி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "magha",
+    "tithi": 29,
+    "observance": {
+     "kala": "nishita"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "LK"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The great night of Shiva, kept with fasting, night-long worship and the chanting of 'Om Namah Shivaya'.",
+     "ta": "சிவனின் மகா இரவு: உண்ணாநோன்பு, இரவு முழுதும் வழிபாடு, 'ஓம் நமசிவாய' ஜபம்."
+    },
+    "traditions": {
+     "en": "Devotees fast through the day, some taking only fruit and milk, and stay awake through the night. Temples hold four worships (prahara puja) across the night, bathing the Shiva linga in milk, curd, honey, ghee and water and offering bilva leaves. At home, families chant 'Om Namah Shivaya', read or listen to Shiva stories and sing bhajans. In Tamil Nadu temples hold the night's four abhishekams; in Kerala, the Aluva riverbank fills with people keeping vigil; in the North, kanwariyas carry Ganga water to Shiva temples. The fast is broken the next morning.",
+     "ta": "பக்தர்கள் பகல் முழுதும் உண்ணாநோன்பிருந்து, சிலர் பழமும் பாலும் மட்டும் உண்டு, இரவு முழுதும் விழித்திருக்கின்றனர். கோயில்களில் இரவின் நான்கு காலங்களிலும் பூஜை நடக்கிறது: சிவலிங்கத்துக்கு பால், தயிர், தேன், நெய், நீர் கொண்டு அபிஷேகம் செய்து வில்வ இலை சாற்றுகின்றனர். வீடுகளில் 'ஓம் நமசிவாய' ஜபமும், சிவ கதைகளும், தேவாரப் பாடல்களும் இடம்பெறுகின்றன. மறுநாள் காலை விரதம் முடிக்கப்படுகிறது."
+    },
+    "story": {
+     "en": "Several stories are told for this night. In one, when the gods and asuras churned the ocean for nectar, a deadly poison, Halahala, rose first and threatened every living thing. Shiva drank it to protect the world, and Parvati held his throat so it would not go further; his throat turned blue, and he is called Neelakantha. The gods kept awake all night to watch over him, and devotees keep that vigil still. Another story tells of a hunter lost in the forest at night who climbed a bilva tree to stay safe. Restless, he plucked leaves and dropped them, not knowing a Shiva linga stood below; by morning he had kept a night's worship without meaning to, and his heart was changed. Many also remember this as the night of Shiva and Parvati's wedding.",
+     "ta": "இந்த இரவுக்குப் பல கதைகள் சொல்லப்படுகின்றன. ஒன்றில், தேவர்களும் அசுரர்களும் அமுதத்துக்காகப் பாற்கடலைக் கடைந்தபோது, முதலில் ஆலகால விஷம் எழுந்து எல்லா உயிர்களுக்கும் ஆபத்தாக இருந்தது. உலகைக் காக்க சிவன் அதை அருந்தினார்; பார்வதி அவர் கழுத்தைப் பிடித்து விஷம் கீழே இறங்காமல் தடுத்தார். அவர் கழுத்து நீலமானது; அவர் நீலகண்டன் எனப்பட்டார். தேவர்கள் இரவு முழுதும் விழித்து அவரைக் காத்தனர்; அந்த விழிப்பை பக்தர்கள் இன்றும் கடைப்பிடிக்கின்றனர். இன்னொரு கதை, இரவில் காட்டில் வழி தவறிய ஒரு வேடன் பாதுகாப்புக்காக வில்வ மரத்தில் ஏறியதைச் சொல்கிறது. அமைதியின்றி அவன் இலைகளைப் பறித்துக் கீழே போட்டான்; கீழே சிவலிங்கம் இருந்தது அவனுக்குத் தெரியாது. காலைக்குள் அறியாமலே இரவு முழுதும் வழிபாடு நடந்தது; அவன் மனம் மாறியது."
+    },
+    "howTo": {
+     "en": [
+      "Decide how you will fast: a full fast, fruit and milk, or one simple meal; elders, children and anyone unwell often keep a light version.",
+      "Gather bilva leaves, milk, water, curd, honey, flowers and a lamp.",
+      "In the evening, bathe and visit a Shiva temple, or set up a small linga or picture at home.",
+      "Bathe the linga with water and milk, offer bilva leaves and flowers, and light the lamp.",
+      "Chant 'Om Namah Shivaya', read the Shiva Purana or listen to bhajans; many keep awake through the four quarters of the night.",
+      "The night's main worship is at Nishita, around midnight; the app's day view shows the time.",
+      "Break the fast the next morning after a bath and a short prayer, with simple food."
+     ],
+     "ta": [
+      "விரதம் எப்படி என்று முடிவு செய்யுங்கள்: முழு உண்ணாநோன்பு, பழம்-பால், அல்லது ஒரு எளிய உணவு; முதியோர், குழந்தைகள், உடல்நலம் குன்றியோர் லேசான விரதம் கடைப்பிடிப்பது வழக்கம்.",
+      "வில்வ இலை, பால், நீர், தயிர், தேன், மலர்கள், விளக்கு ஆகியவற்றைத் தயாராக வையுங்கள்.",
+      "மாலையில் நீராடி சிவன் கோயிலுக்குச் செல்லுங்கள், அல்லது வீட்டில் சிறிய லிங்கம் அல்லது படம் வையுங்கள்.",
+      "லிங்கத்துக்கு நீரும் பாலும் கொண்டு அபிஷேகம் செய்து, வில்வமும் மலரும் சாற்றி விளக்கேற்றுங்கள்.",
+      "'ஓம் நமசிவாய' ஜபியுங்கள், தேவாரம் அல்லது திருவாசகம் பாடுங்கள்; பலர் இரவின் நான்கு காலமும் விழித்திருக்கின்றனர்.",
+      "இரவின் முக்கிய வழிபாடு நள்ளிரவு நிசீத காலத்தில்; நேரம் நாள் விவரத்தில் உள்ளது.",
+      "மறுநாள் காலை நீராடி சிறு பிரார்த்தனைக்குப் பின் எளிய உணவுடன் விரதம் முடியுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Om Namah Shivaya. Peaceful wishes on Maha Shivaratri.",
+     "ta": "ஓம் நமசிவாய. மகா சிவராத்திரி நல்வாழ்த்துகள்."
+    }
+   }
+  },
+  {
+   "id": "masi-magam",
+   "names": {
+    "en": "Masi Magam",
+    "ta": "மாசி மகம்"
+   },
+   "rule": {
+    "type": "tithi-in-solar-month",
+    "month": "kumbha",
+    "tithi": 15
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The full moon of Maasi, when temple deities are taken to the sea and rivers for a ritual bath.",
+     "ta": "மாசி மாதப் பௌர்ணமி: கோயில் தெய்வங்கள் கடலுக்கும் ஆறுகளுக்கும் தீர்த்தவாரிக்கு எழுந்தருளும் நாள்."
+    },
+    "traditions": {
+     "en": "On Masi Magam, festival images from many temples are carried in procession to the sea, rivers and temple tanks for theerthavari, the ritual bath, and devotees bathe with them. The Mahamaham tank at Kumbakonam draws great crowds, and once every twelve years, when Jupiter is in Simha, the Mahamaham festival brings millions. Coastal towns such as Puducherry and Chidambaram hold sea-bath processions.",
+     "ta": "மாசி மகத்தன்று பல கோயில்களின் உற்சவ மூர்த்திகள் கடல், ஆறுகள், கோயில் குளங்களுக்குத் தீர்த்தவாரிக்கு ஊர்வலமாக எழுந்தருள, பக்தர்களும் உடன் நீராடுகின்றனர். கும்பகோணம் மகாமகக் குளத்தில் பெருந்திரளான மக்கள் கூடுகின்றனர்; பன்னிரண்டு ஆண்டுகளுக்கு ஒருமுறை, குரு சிம்மத்தில் இருக்கும்போது, மகாமகம் லட்சக்கணக்கானோரை ஈர்க்கிறது. புதுச்சேரி, சிதம்பரம் போன்ற கடற்கரை ஊர்களில் கடல் தீர்த்தவாரி ஊர்வலங்கள் நடக்கின்றன."
+    },
+    "story": {
+     "en": "One story told is that Varuna, god of the sea, was once bound and unable to act, and Shiva freed him on Masi Magam; Varuna asked that those who bathe in the sea on this day be welcomed, which is why the deities themselves come to the sea. At Kumbakonam the story is that, before the great flood, Brahma placed the seed of creation in a pot (kumbha) of nectar; when the waters receded the pot came to rest there, and its nectar filled the Mahamaham tank. Every river, it is said, comes there on Masi Magam to bathe.",
+     "ta": "ஒரு கதை: கடல் தேவன் வருணன் ஒருமுறை கட்டுண்டு செயலிழந்திருந்தான்; மாசி மகத்தன்று சிவன் அவனை விடுவித்தார்; அன்று கடலில் நீராடுவோரை வரவேற்க வேண்டும் என்று வருணன் வேண்டினான்; அதனால்தான் தெய்வங்களே கடலுக்கு எழுந்தருள்கின்றனர். கும்பகோணக் கதை: பிரளயத்துக்கு முன் பிரம்மன் படைப்பின் விதையை அமுதம் நிறைந்த கும்பத்தில் வைத்தார்; வெள்ளம் வடிந்தபோது கும்பம் அங்கே தங்கியது; அதன் அமுதம் மகாமகக் குளத்தை நிரப்பியது. மாசி மகத்தன்று எல்லா நதிகளும் அங்கே நீராட வருவதாகக் கூறப்படுகிறது."
+    },
+    "howTo": {
+     "en": [
+      "Bathe early; at the sea, a river or temple tank if you can join a theerthavari.",
+      "Visit a Shiva, Vishnu or Murugan temple and see the procession if one is held near you.",
+      "At home, light a lamp and offer flowers and a simple sweet.",
+      "Give food or water to pilgrims or those in need."
+     ],
+     "ta": [
+      "அதிகாலை நீராடுங்கள்; தீர்த்தவாரியில் கலந்துகொள்ள முடிந்தால் கடல், ஆறு அல்லது கோயில் குளத்தில்.",
+      "சிவன், பெருமாள் அல்லது முருகன் கோயிலுக்குச் சென்று, அருகில் ஊர்வலம் இருந்தால் தரிசியுங்கள்.",
+      "வீட்டில் விளக்கேற்றி மலரும் எளிய இனிப்பும் படையுங்கள்.",
+      "யாத்ரிகர்களுக்கோ தேவையுள்ளோருக்கோ உணவு அல்லது நீர் அளியுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Masi Magam!",
+     "ta": "மாசி மக நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "panguni-uthiram",
+   "names": {
+    "en": "Panguni Uthiram",
+    "ta": "பங்குனி உத்திரம்"
+   },
+   "rule": {
+    "type": "nakshatra-in-solar-month",
+    "month": "meena",
+    "nakshatra": "uttara_phalguni",
+    "occurrence": "last"
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Uthiram star in Panguni: the day of divine weddings, above all of Murugan and Deivanai.",
+     "ta": "பங்குனி மாத உத்திர நட்சத்திரம்: தெய்வத் திருமணங்களின் நாள், குறிப்பாக முருகன்-தெய்வானை திருமணம்."
+    },
+    "traditions": {
+     "en": "Temples celebrate the celestial weddings (thirukalyanam): Murugan and Deivanai, Shiva and Parvati as Meenakshi and Sundareshwarar in some temples, Rama and Sita, and Andal and Ranganatha at Srirangam. Devotees carry kavadi and paal kudam to Murugan temples, especially Palani and Thiruparankundram. Many family deity (kula deivam) temples hold their annual festival today, and families gather there from far away.",
+     "ta": "கோயில்களில் தெய்வத் திருக்கல்யாணங்கள் நடக்கின்றன: முருகன்-தெய்வானை, சில கோயில்களில் மீனாட்சி-சுந்தரேஸ்வரர், ராமர்-சீதை, ஸ்ரீரங்கத்தில் ஆண்டாள்-ரங்கநாதர். பக்தர்கள் முருகன் கோயில்களுக்கு, குறிப்பாகப் பழனி, திருப்பரங்குன்றத்துக்கு, காவடியும் பால்குடமும் சுமந்து செல்கின்றனர். பல குலதெய்வக் கோயில்களில் இன்று ஆண்டுத் திருவிழா; தொலைவிலிருந்தும் குடும்பங்கள் அங்கே கூடுகின்றன."
+    },
+    "story": {
+     "en": "After Murugan overcame Surapadman, Indra gave him his daughter Deivanai in marriage at Thiruparankundram, and tradition remembers that wedding on Panguni Uthiram. Other weddings are remembered on the same star: Shiva and Parvati's, and Rama and Sita's in some traditions. The day is also called Kalyana Vratham, and Uthiram is said to be the star under which Lakshmi appeared from the ocean of milk. With so many divine marriages, it is a day families like to visit their kula deivam and give thanks for their own homes.",
+     "ta": "சூரபத்மனை முருகன் வென்ற பின், திருப்பரங்குன்றத்தில் இந்திரன் தன் மகள் தெய்வானையை அவருக்கு மணமுடித்தான்; அந்தத் திருமணத்தை மரபு பங்குனி உத்திரத்தன்று நினைவுகூர்கிறது. அதே நட்சத்திரத்தில் பிற திருமணங்களும் நினைவுகூரப்படுகின்றன: சிவன்-பார்வதி, சில மரபுகளில் ராமர்-சீதை. இந்நாள் கல்யாண விரதம் என்றும் அழைக்கப்படுகிறது; பாற்கடலிலிருந்து மகாலட்சுமி தோன்றிய நட்சத்திரம் உத்திரம் என்றும் கூறப்படுகிறது. இத்தனை தெய்வத் திருமணங்கள் நிகழ்ந்த நாள் என்பதால், குலதெய்வத்தைத் தரிசித்து தம் வீட்டுக்காக நன்றி சொல்லக் குடும்பங்கள் விரும்பும் நாள் இது."
+    },
+    "howTo": {
+     "en": [
+      "Visit your kula deivam temple or a Murugan temple if you can; many families plan this trip months ahead.",
+      "Watch or attend a thirukalyanam at a nearby temple.",
+      "At home, decorate a picture of Murugan with Valli and Deivanai, light a lamp and offer panchamritam, fruit and flowers.",
+      "Keep a fast until the evening worship if your family does, and share the prasad."
+     ],
+     "ta": [
+      "முடிந்தால் குலதெய்வக் கோயிலுக்கோ முருகன் கோயிலுக்கோ செல்லுங்கள்; பல குடும்பங்கள் மாதங்களுக்கு முன்பே திட்டமிடுகின்றன.",
+      "அருகிலுள்ள கோயிலில் திருக்கல்யாணத்தைத் தரிசியுங்கள்.",
+      "வீட்டில் வள்ளி-தெய்வானையுடன் முருகன் படத்தை அலங்கரித்து, விளக்கேற்றி, பஞ்சாமிர்தம், பழம், மலர் படையுங்கள்.",
+      "குடும்ப வழக்கமெனில் மாலை வழிபாடு வரை விரதமிருந்து, பிரசாதம் பகிருங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Panguni Uthiram!",
+     "ta": "பங்குனி உத்திர நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "rama-navami-ta",
+   "names": {
+    "en": "Sri Rama Navami",
+    "ta": "ஸ்ரீ ராம நவமி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "chaitra",
+    "tithi": 9,
+    "observance": {
+     "kala": "madhyahna"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The birth of Rama, on the ninth day of bright Chaitra.",
+     "ta": "சைத்ர மாத வளர்பிறை நவமியில் ஸ்ரீராமன் பிறந்த நாள்."
+    },
+    "traditions": {
+     "en": "Rama's birth is celebrated at midday with a small cradle, songs and readings of the Ramayana. In Tamil Nadu, temples and homes offer panakam, a cooling drink of jaggery, dry ginger and cardamom, neer mor (spiced buttermilk) and kosumalli, a salad of soaked moong dal and cucumber, given out to everyone in the summer heat. Many homes hold Rama Navami bhajans for nine days. In Kerala, the Adhyatma Ramayanam is read, and temples such as Triprayar celebrate.",
+     "ta": "ஸ்ரீராமன் பிறப்பு மதியம் சிறு தொட்டில், பாடல்கள், ராமாயண பாராயணத்துடன் கொண்டாடப்படுகிறது. தமிழ்நாட்டில் கோயில்களிலும் வீடுகளிலும் பானகம் (வெல்லம், சுக்கு, ஏலம் கலந்த பானம்), நீர்மோர், கோசுமல்லி (ஊறிய பாசிப்பருப்பு-வெள்ளரிக் கலவை) படைத்து, வெயிலில் அனைவருக்கும் வழங்கப்படுகிறது. பல வீடுகளில் ஒன்பது நாள் ராம நவமி பஜனைகள் நடக்கின்றன."
+    },
+    "story": {
+     "en": "King Dasharatha of Ayodhya performed a great yajna for children, and from its fire came a bowl of payasam, which he shared among his three queens. Kausalya gave birth to Rama at midday on the ninth day of bright Chaitra; Kaikeyi to Bharata; and Sumitra to Lakshmana and Shatrughna. Rama grew to be remembered as the one who kept to what was right even when it cost him most, leaving his throne for fourteen years in the forest to keep his father's word. Rama Navami celebrates his birth and his example.",
+     "ta": "அயோத்தி மன்னன் தசரதன் மக்கட்பேறுக்காகப் பெரிய யாகம் செய்தான்; அதன் தீயிலிருந்து பாயசப் பாத்திரம் தோன்றியது; அதைத் தன் மூன்று அரசிகளுக்கும் பகிர்ந்தான். சைத்ர வளர்பிறை நவமியில் மதியம் கௌசல்யை ராமனைப் பெற்றாள்; கைகேயி பரதனை; சுமித்திரை லட்சுமணன், சத்ருக்னனை. மிகக் கடினமான வேளையிலும் அறத்தைக் கைவிடாதவனாக, தந்தையின் சொல் காக்க அரசைத் துறந்து பதினான்கு ஆண்டுகள் காட்டில் வாழ்ந்தவனாக ராமன் நினைவுகூரப்படுகிறான். ராம நவமி அவன் பிறப்பையும் வழிகாட்டலையும் கொண்டாடுகிறது."
+    },
+    "howTo": {
+     "en": [
+      "Decorate a picture of Rama, Sita, Lakshmana and Hanuman with flowers.",
+      "Prepare panakam, neer mor and kosumalli.",
+      "At midday (the madhyahna time in the day view), light a lamp, offer the food and tulsi, and sing a Rama bhajan or read from the Ramayana.",
+      "Share the panakam and neer mor with everyone who visits, and with passers-by in the heat."
+     ],
+     "ta": [
+      "ராமர், சீதை, லட்சுமணர், அனுமன் படத்தை மலர்களால் அலங்கரியுங்கள்.",
+      "பானகம், நீர்மோர், கோசுமல்லி தயார் செய்யுங்கள்.",
+      "மதியம் (நாள் விவரத்தில் மத்தியான நேரம்) விளக்கேற்றி, உணவும் துளசியும் படைத்து, ராம பஜனை பாடுங்கள் அல்லது ராமாயணம் படியுங்கள்.",
+      "வருவோர் அனைவருக்கும், வெயிலில் வழிப்போக்கருக்கும் பானகமும் நீர்மோரும் வழங்குங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Jai Shri Ram! Happy Rama Navami.",
+     "ta": "ஸ்ரீ ராம நவமி நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "puthandu",
+   "names": {
+    "en": "Tamil & Sinhala New Year (Puthandu)",
+    "ta": "தமிழ்ப் புத்தாண்டு"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "mesha",
+    "day": 1
+   },
+   "tier": "major",
+   "holidayIn": [
+    "LK"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Chithirai 1: the Tamil New Year, with the kanni of fruit, flowers and a mirror.",
+     "ta": "சித்திரை 1: தமிழ்ப் புத்தாண்டு, பழங்கள், பூக்கள், கண்ணாடியுடன் கூடிய கனி காணுதல்."
+    },
+    "traditions": {
+     "en": "On the eve, a tray is arranged with fruit, especially the three fruits mango, jackfruit and banana, betel leaves and nuts, flowers, gold or coins, rice, and a mirror, so that it is the first thing seen on waking (kanni). Homes are decorated with kolam and mango leaves, people wear new clothes, and the new year's panchangam is read at temples. The meal includes maanga pachadi, a dish of raw mango, neem flowers, jaggery and chilli, sweet, sour, bitter and hot together, for a year that will hold all of these.",
+     "ta": "முந்தைய இரவு ஒரு தட்டில் பழங்கள், குறிப்பாக மா, பலா, வாழை என்ற முக்கனி, வெற்றிலை-பாக்கு, பூக்கள், தங்கம் அல்லது நாணயங்கள், அரிசி, கண்ணாடி அடுக்கி வைக்கப்படுகிறது; காலை கண் விழித்ததும் முதலில் அதைக் காண்பதே கனி காணுதல். வீடுகள் கோலமும் மாவிலையுமாக அலங்கரிக்கப்படுகின்றன; புத்தாடை அணிந்து, கோயில்களில் புத்தாண்டு பஞ்சாங்கம் வாசிக்கப்படுகிறது. உணவில் மாங்காய், வேப்பம்பூ, வெல்லம், மிளகாய் சேர்த்த மாங்காய்ப் பச்சடி இடம்பெறுகிறது: இனிப்பு, புளிப்பு, கசப்பு, காரம் அனைத்தும் கலந்த ஆண்டுக்கான அடையாளம்."
+    },
+    "story": {
+     "en": "Puthandu marks the Sun's entry into Mesha, the first sign, and the beginning of the Tamil solar year, each named in a cycle of sixty. Tradition says Brahma began creation on this day. In the Sangam-era texts, the new year was welcomed in Chithirai, the season of new mango and the first heat of summer. The maanga pachadi carries the thought of the day: every year holds sweetness and bitterness alike, and both are welcomed together.",
+     "ta": "சூரியன் முதல் ராசியான மேஷத்தில் நுழைவதையும், அறுபது ஆண்டுச் சுழற்சியில் பெயரிடப்பட்ட தமிழ்ச் சூரிய ஆண்டின் தொடக்கத்தையும் புத்தாண்டு குறிக்கிறது. இந்நாளில் பிரம்மன் படைப்பைத் தொடங்கினார் என்று மரபு கூறுகிறது. சங்க இலக்கியங்களில், புது மாங்காயும் கோடையின் முதல் வெப்பமும் வரும் சித்திரையில் புத்தாண்டு வரவேற்கப்பட்டது. மாங்காய்ப் பச்சடி இந்நாளின் சிந்தனையைச் சுமக்கிறது: ஆண்டு இனிப்பையும் கசப்பையும் ஒன்றாகக் கொண்டுவரும்; இரண்டையும் ஒன்றாக வரவேற்போம்."
+    },
+    "howTo": {
+     "en": [
+      "The night before, arrange the kanni tray: mango, jackfruit, banana, betel, flowers, coins or gold, rice and a mirror, in the puja room.",
+      "On waking, go to the tray with eyes closed (an elder can lead the children) and open them to see it first.",
+      "Bathe, wear new clothes, draw a kolam and light a lamp.",
+      "Make maanga pachadi and a festive meal; listen to the new year's panchangam reading at a temple or at home.",
+      "Visit elders and seek their blessings."
+     ],
+     "ta": [
+      "முந்தைய இரவு பூஜையறையில் கனித் தட்டை அடுக்குங்கள்: மா, பலா, வாழை, வெற்றிலை, பூக்கள், நாணயங்கள் அல்லது தங்கம், அரிசி, கண்ணாடி.",
+      "விழித்ததும் கண்களை மூடியபடி தட்டின் முன் சென்று (குழந்தைகளைப் பெரியவர் அழைத்துச் செல்லலாம்) கண் திறந்து முதலில் அதைக் காணுங்கள்.",
+      "நீராடி, புத்தாடை அணிந்து, கோலமிட்டு, விளக்கேற்றுங்கள்.",
+      "மாங்காய்ப் பச்சடியும் பண்டிகை உணவும் சமைத்து, கோயிலிலோ வீட்டிலோ புத்தாண்டு பஞ்சாங்கம் கேளுங்கள்.",
+      "பெரியோரைச் சந்தித்து ஆசி பெறுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Puthandu vazhthukkal! A happy Tamil New Year.",
+     "ta": "இனிய தமிழ்ப் புத்தாண்டு நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "akshaya-tritiya-ta",
+   "names": {
+    "en": "Akshaya Tritiyai",
+    "ta": "அட்சய திருதியை"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "vaishakha",
+    "tithi": 3,
+    "observance": {
+     "minCoverMinutes": 144,
+     "fallback": "begins",
+     "kala": "morning"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The third day of bright Vaishakha, traditionally favoured for new beginnings and for giving.",
+     "ta": "சித்திரை-வைகாசி வளர்பிறை திருதியை: புதிய தொடக்கங்களுக்கும் தானத்துக்கும் மரபாக உகந்ததாகக் கருதப்படும் நாள்."
+    },
+    "traditions": {
+     "en": "'Akshaya' means 'that which does not diminish', and the day is traditionally seen as good for starting things: a business, a house, a course of study, a marriage. Many families buy a little gold or silver, and many more give: water and cooling drinks, fans, umbrellas, grain and clothes, since it falls in the hot season. Vishnu and Lakshmi are worshipped, and in Odisha the building of the chariots for the Puri Rath Yatra begins today. Parashurama Jayanti falls on or near the same day, and Jain families break the year-long varshi tapa fast with sugarcane juice.",
+     "ta": "'அட்சய' என்றால் 'குறையாதது'; இந்த நாள் புதியவற்றைத் தொடங்க நல்லதாக மரபில் கருதப்படுகிறது: தொழில், வீடு, கல்வி, திருமணம். பல குடும்பங்கள் சிறிது தங்கமோ வெள்ளியோ வாங்குகின்றன; இன்னும் பலர் தானம் செய்கின்றனர்: வெயில் காலம் என்பதால் தண்ணீர், நீர்மோர், விசிறி, குடை, அரிசி, ஆடை. திருமாலும் மகாலட்சுமியும் வழிபடப்படுகின்றனர். கும்பகோணத்தில் பல கோயில்களின் கருடசேவை இந்நாளில் நடக்கிறது."
+    },
+    "story": {
+     "en": "Several stories meet on this day. In one, Krishna's childhood friend Sudama, a poor Brahmin, walked to Dwarka to see him, carrying only a little beaten rice (poha) tied in a cloth as a gift. Krishna embraced him, ate the poha with delight, and sent him home without Sudama asking for anything; when Sudama returned, his family's hardship had ended. In another, during the Pandavas' exile, Krishna gave Draupadi the Akshaya Patra, a vessel that never ran empty until she had eaten, so no guest at their door went hungry. Tradition also holds that the Treta Yuga began on this day, that the Ganga descended to earth, and that Vyasa began dictating the Mahabharata to Ganesha.",
+     "ta": "இந்த நாளில் பல கதைகள் சந்திக்கின்றன. ஒன்றில், கண்ணனின் இளமைத் தோழன் குசேலர் (சுதாமா), ஏழை அந்தணர், ஒரு துணியில் கட்டிய சிறிது அவலை மட்டும் பரிசாக எடுத்துக்கொண்டு துவாரகைக்கு நடந்து சென்றார். கண்ணன் அவரைத் தழுவி, அவலை மகிழ்ச்சியுடன் உண்டு, குசேலர் எதுவும் கேட்காமலேயே அனுப்பி வைத்தார்; வீடு திரும்பியபோது குடும்பத்தின் வறுமை நீங்கியிருந்தது. இன்னொன்றில், பாண்டவர்களின் வனவாசத்தின்போது கண்ணன் திரௌபதிக்கு அட்சய பாத்திரம் அளித்தார்; வாசல் வந்த எந்த விருந்தினரும் பசியுடன் திரும்பவில்லை. திரேதா யுகம் இந்நாளில் தொடங்கியதாகவும் மரபு கூறுகிறது."
+    },
+    "howTo": {
+     "en": [
+      "In the morning, bathe and offer a lamp, flowers and tulsi to Vishnu and Lakshmi at home.",
+      "Offer something simple and cooling: barley, sattu, cucumber, jaggery water or panakam.",
+      "If you were planning to start something, a course, a savings plan or a small venture, many families choose today to begin.",
+      "Give something in the spirit of the day: water or buttermilk to passers-by, an umbrella, a fan, grain or clothes.",
+      "If your family buys gold or silver, keep it small and meaningful; the giving matters more in the tradition.",
+      "Share a simple meal, and if you can, feed a guest or someone who needs it."
+     ],
+     "ta": [
+      "காலையில் நீராடி, வீட்டில் திருமாலுக்கும் மகாலட்சுமிக்கும் விளக்கு, மலர், துளசி சமர்ப்பியுங்கள்.",
+      "எளிய, குளிர்ச்சியான நைவேத்தியம் செய்யுங்கள்: பானகம், நீர்மோர், வெல்லம், வெள்ளரி.",
+      "ஏதேனும் புதிதாகத் தொடங்கத் திட்டமிருந்தால், படிப்போ சேமிப்போ சிறு முயற்சியோ, பல குடும்பங்கள் இன்றைய நாளைத் தேர்ந்தெடுக்கின்றன.",
+      "நாளின் உணர்வில் ஏதேனும் கொடுங்கள்: வழிப்போக்கருக்குத் தண்ணீர் அல்லது நீர்மோர், குடை, விசிறி, அரிசி அல்லது ஆடை.",
+      "குடும்பம் தங்கம் வாங்குவதாயின், சிறிதாகவும் அர்த்தமுள்ளதாகவும் வையுங்கள்; மரபில் தானமே முக்கியம்.",
+      "எளிய உணவைப் பகிர்ந்து, முடிந்தால் ஒரு விருந்தினருக்கோ தேவையுள்ளவருக்கோ உணவளியுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "May what you begin today grow steadily. Happy Akshaya Tritiya!",
+     "ta": "இன்று தொடங்குவது தொடர்ந்து வளரட்டும். அட்சய திருதியை வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "sankara-jayanthi",
+   "names": {
+    "en": "Adi Sankara Jayanthi",
+    "ta": "ஆதி சங்கர ஜெயந்தி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "vaishakha",
+    "tithi": 5
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Vaishakha Shukla Panchami: the birth of Adi Shankaracharya.",
+     "ta": "வைசாக வளர்பிறை பஞ்சமி: ஆதி சங்கரர் பிறந்த நாள்."
+    },
+    "traditions": {
+     "en": "Mathas and temples associated with Shankara, at Kalady in Kerala, his birthplace, at Sringeri, Kanchi, Dwarka, Puri and Joshimath, hold special worship, recitations of his works, and processions. Many people read or chant his hymns: the Bhaja Govindam, Soundarya Lahari, Kanakadhara Stotram, or his short works on Advaita.",
+     "ta": "சங்கரருடன் தொடர்புடைய மடங்களிலும் கோயில்களிலும், அவர் பிறந்த கேரளத்தின் காலடி, சிருங்கேரி, காஞ்சி, துவாரகை, பூரி, ஜோஷிமட் ஆகியவற்றில், சிறப்பு வழிபாடுகள், அவர் நூல்களின் பாராயணம், ஊர்வலங்கள் நடக்கின்றன. பலர் அவரது பஜ கோவிந்தம், சௌந்தர்ய லஹரி, கனகதாரா ஸ்தோத்திரம், அத்வைத நூல்களைப் படிக்கின்றனர் அல்லது பாராயணம் செய்கின்றனர்."
+    },
+    "story": {
+     "en": "Shankara was born at Kalady, on the banks of the Purna (Periyar) river in Kerala, to Shivaguru and Aryamba. The story told is that as a boy he wished to become a sannyasi, but his widowed mother would not agree. One day while he bathed in the river, a crocodile caught his foot, and he called out that he could only be freed if she let him renounce; she agreed, the crocodile let go, and he left, promising to be with her at the end of her life, as he was. In a short life he walked the length of India, wrote commentaries on the Upanishads, the Gita and the Brahma Sutras, and founded the four mathas, teaching Advaita, the oneness of the self and Brahman.",
+     "ta": "கேரளத்தில் பூர்ணா (பெரியாறு) நதிக்கரையில் உள்ள காலடியில் சிவகுருவுக்கும் ஆர்யாம்பாளுக்கும் சங்கரர் பிறந்தார். சிறுவயதில் சந்நியாசியாக விரும்பினார், ஆனால் விதவைத் தாய் சம்மதிக்கவில்லை. ஒருநாள் ஆற்றில் நீராடும்போது முதலை அவர் காலைப் பிடிக்க, துறவுக்கு அனுமதித்தால் மட்டுமே விடுபடுவேன் என்று தாயை அழைத்தார்; தாய் சம்மதிக்க, முதலை விட்டது; தாயின் இறுதிக் காலத்தில் உடனிருப்பதாக உறுதியளித்துப் புறப்பட்டார், அவ்வாறே இருந்தார். குறுகிய வாழ்வில் இந்தியா முழுவதும் நடந்து, உபநிடதங்கள், கீதை, பிரம்ம சூத்திரத்துக்கு உரை எழுதி, நான்கு மடங்களை நிறுவி, ஆன்மாவும் பிரம்மமும் ஒன்றே என்ற அத்வைதத்தைப் போதித்தார்."
+    },
+    "howTo": {
+     "en": [
+      "Light a lamp before a picture of Adi Shankara.",
+      "Read or chant one of his works: Bhaja Govindam is a good, short place to start.",
+      "If you can, visit a Shankara matha or temple, or join an online recitation."
+     ],
+     "ta": [
+      "ஆதி சங்கரர் படத்தின் முன் விளக்கேற்றுங்கள்.",
+      "அவரது நூல்களில் ஒன்றைப் படியுங்கள் அல்லது பாராயணம் செய்யுங்கள்: தொடங்க பஜ கோவிந்தம் எளிய, சிறந்த நூல்.",
+      "முடிந்தால் சங்கர மடம் அல்லது கோயிலுக்குச் செல்லுங்கள், அல்லது இணையவழிப் பாராயணத்தில் கலந்துகொள்ளுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Remembering Adi Shankaracharya on his Jayanthi.",
+     "ta": "ஆதி சங்கரர் ஜெயந்தி நல்வாழ்த்துகள்."
+    }
+   }
+  },
+  {
+   "id": "ramanuja-jayanthi",
+   "names": {
+    "en": "Ramanuja Jayanthi",
+    "ta": "ராமானுஜ ஜெயந்தி"
+   },
+   "rule": {
+    "type": "nakshatra-in-solar-month",
+    "month": "mesha",
+    "nakshatra": "ardra",
+    "nearTithi": 15
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Chithirai Thiruvadhirai: the birth of Sri Ramanuja, teacher of Vishishtadvaita.",
+     "ta": "சித்திரைத் திருவாதிரை: விசிஷ்டாத்வைத ஆசான் ஸ்ரீ ராமானுஜர் அவதரித்த நாள்."
+    },
+    "traditions": {
+     "en": "Sri Vaishnava temples, at Sriperumbudur, his birthplace, Srirangam, Melkote and Kanchipuram, celebrate with special processions of his image, recitation of the Divya Prabandham and his own works, and annadanam (free meals). Families light a lamp before his picture and recite the Ramanuja Nootrandhadhi.",
+     "ta": "ஸ்ரீவைஷ்ணவக் கோயில்களில், அவர் பிறந்த ஸ்ரீபெரும்புதூர், ஸ்ரீரங்கம், மேல்கோட்டை, காஞ்சிபுரம் ஆகியவற்றில், அவர் திருமேனியின் சிறப்பு ஊர்வலம், திவ்யப் பிரபந்த பாராயணம், அவரது நூல்களின் பாராயணம், அன்னதானம் நடக்கின்றன. குடும்பங்கள் அவர் படத்தின் முன் விளக்கேற்றி இராமானுச நூற்றந்தாதி பாராயணம் செய்கின்றன."
+    },
+    "story": {
+     "en": "Ramanuja was born in 1017 at Sriperumbudur, on the Thiruvadhirai star in Chithirai. He became the great teacher of Vishishtadvaita, the philosophy that sees the world and souls as real and lovingly bound to Vishnu. The best-loved story is of the mantra his teacher Thirukoshtiyur Nambi gave him in secret, warning him not to share it. Ramanuja climbed the temple tower at Thirukoshtiyur and called the mantra out to everyone gathered below, saying that if sharing it cost him, he would gladly bear it so that all could have it. His teacher, moved, embraced him. Ramanuja also opened the temples to people of every background.",
+     "ta": "1017இல் சித்திரை மாதத் திருவாதிரை நட்சத்திரத்தில் ஸ்ரீபெரும்புதூரில் ராமானுஜர் அவதரித்தார். உலகமும் ஆன்மாக்களும் உண்மையானவை, அன்பால் திருமாலுடன் பிணைந்தவை என்று காணும் விசிஷ்டாத்வைதத்தின் பேராசானானார். மிகவும் விரும்பப்படும் கதை: அவர் ஆசான் திருக்கோட்டியூர் நம்பி ரகசியமாக மந்திரத்தை உபதேசித்து, யாருக்கும் சொல்லக்கூடாது என்றார். ராமானுஜர் திருக்கோட்டியூர் கோபுரத்தின் மீதேறி, கீழே கூடிய அனைவருக்கும் மந்திரத்தை உரக்க அறிவித்தார்; பகிர்வதால் தனக்கு இழப்பு நேர்ந்தாலும், அனைவரும் பெறுவதற்காக மகிழ்வுடன் ஏற்பேன் என்றார். நெகிழ்ந்த ஆசான் அவரை அணைத்துக்கொண்டார். அனைத்துத் தரப்பு மக்களுக்கும் கோயில்களைத் திறந்தவரும் ராமானுஜரே."
+    },
+    "howTo": {
+     "en": [
+      "Light a lamp before a picture of Ramanuja and offer flowers and tulsi.",
+      "Recite the Ramanuja Nootrandhadhi or a few pasurams of the Divya Prabandham.",
+      "Visit a Perumal temple, and if you can, contribute to or serve at an annadanam."
+     ],
+     "ta": [
+      "ராமானுஜர் படத்தின் முன் விளக்கேற்றி மலரும் துளசியும் சமர்ப்பியுங்கள்.",
+      "இராமானுச நூற்றந்தாதி அல்லது திவ்யப் பிரபந்தத்தின் சில பாசுரங்களைப் பாராயணம் செய்யுங்கள்.",
+      "பெருமாள் கோயிலுக்குச் சென்று, முடிந்தால் அன்னதானத்துக்குப் பங்களியுங்கள் அல்லது சேவை செய்யுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Remembering Sri Ramanuja on his Jayanthi.",
+     "ta": "ஸ்ரீ ராமானுஜர் ஜெயந்தி நல்வாழ்த்துகள்."
+    }
+   }
+  },
+  {
+   "id": "chitra-pournami",
+   "names": {
+    "en": "Chitra Pournami",
+    "ta": "சித்ரா பௌர்ணமி"
+   },
+   "rule": {
+    "type": "tithi-in-solar-month",
+    "month": "mesha",
+    "tithi": 15
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The full moon of Chithirai, Chitragupta's day and a night of moonlit gatherings.",
+     "ta": "சித்திரை மாதப் பௌர்ணமி: சித்திரகுப்தனின் நாள், நிலவொளியில் ஒன்றுகூடும் இரவு."
+    },
+    "traditions": {
+     "en": "Chitragupta, who keeps the record of every life's actions, is worshipped, especially at the Chitragupta temple in Kanchipuram, and families reflect on their own conduct. In Madurai, the Chithirai festival reaches its height with Kallazhagar entering the Vaigai river. At Thiruvannamalai, lakhs walk the girivalam around the hill under the full moon. Families also take food out to riverbanks and terraces and eat together in the moonlight (nila soru).",
+     "ta": "ஒவ்வொரு வாழ்வின் செயல்களையும் பதிவு செய்யும் சித்திரகுப்தன் வழிபடப்படுகிறார், குறிப்பாகக் காஞ்சிபுரம் சித்திரகுப்தர் கோயிலில்; குடும்பங்கள் தம் நடத்தையைச் சிந்திக்கின்றன. மதுரையில் கள்ளழகர் வைகையில் இறங்கும் சித்திரைத் திருவிழா உச்சம் பெறுகிறது. திருவண்ணாமலையில் முழுநிலவில் லட்சக்கணக்கானோர் கிரிவலம் வருகின்றனர். குடும்பங்கள் ஆற்றங்கரைகளுக்கும் மொட்டைமாடிகளுக்கும் உணவு எடுத்துச் சென்று நிலவொளியில் ஒன்றாக உண்கின்றன (நிலாச்சோறு)."
+    },
+    "story": {
+     "en": "The story told is of Chitragupta's birth: Brahma, having created the world, sat in meditation, and from his body arose a figure holding a pen and palm leaves, named Chitragupta, 'hidden picture', whose task is to record every action fairly, so that each person's life is seen as it truly was. On Chitra Pournami people remember him and look honestly at their own year. The full moon of Chithirai is also said to be when Indra, having erred, found peace by worshipping Shiva at Madurai.",
+     "ta": "சித்திரகுப்தன் பிறப்பின் கதை: உலகைப் படைத்த பின் பிரம்மன் தியானத்தில் அமர்ந்தார்; அவர் உடலிலிருந்து எழுத்தாணியும் ஓலையும் ஏந்திய ஒருவர் தோன்றினார்; அவர் பெயர் சித்திரகுப்தன், 'மறைந்த சித்திரம்'; ஒவ்வொருவர் வாழ்வும் உள்ளபடி காணப்படுவதற்காக ஒவ்வொரு செயலையும் நேர்மையாகப் பதிவு செய்வது அவர் பணி. சித்ரா பௌர்ணமியில் மக்கள் அவரை நினைத்து, தம் ஆண்டை நேர்மையாகப் பார்க்கின்றனர். தவறிழைத்த இந்திரன் மதுரையில் சிவனை வழிபட்டு அமைதி பெற்றதும் சித்திரைப் பௌர்ணமியில் என்று கூறப்படுகிறது."
+    },
+    "howTo": {
+     "en": [
+      "In the evening, light a lamp and offer a simple meal, rice, payasam and fruit, to Chitragupta with a pen and notebook beside the picture, as many families do.",
+      "Take a quiet moment to look back on the year's actions honestly.",
+      "If you are near Thiruvannamalai, consider the girivalam walk; otherwise visit a temple.",
+      "Eat dinner outdoors with family in the moonlight."
+     ],
+     "ta": [
+      "மாலையில் விளக்கேற்றி, பல குடும்பங்களைப் போல் படத்தின் அருகே பேனாவும் ஏடும் வைத்து, சித்திரகுப்தனுக்கு எளிய உணவு, சோறு, பாயசம், பழம் படையுங்கள்.",
+      "ஆண்டின் செயல்களை நேர்மையாகத் திரும்பிப் பார்க்க ஒரு அமைதியான நேரம் ஒதுக்குங்கள்.",
+      "திருவண்ணாமலை அருகில் இருந்தால் கிரிவலம் செல்லலாம்; இல்லையெனில் கோயிலுக்குச் செல்லுங்கள்.",
+      "குடும்பத்துடன் நிலவொளியில் வெளியே இரவு உணவு உண்ணுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Chitra Pournami!",
+     "ta": "சித்ரா பௌர்ணமி நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "vaikasi-visakam",
+   "names": {
+    "en": "Vaikasi Visakam",
+    "ta": "வைகாசி விசாகம்"
+   },
+   "rule": {
+    "type": "nakshatra-in-solar-month",
+    "month": "vrishabha",
+    "nakshatra": "vishakha",
+    "nearTithi": 15
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Visakam star in Vaikasi: the birth of Murugan.",
+     "ta": "வைகாசி மாத விசாக நட்சத்திரம்: முருகன் அவதரித்த நாள்."
+    },
+    "traditions": {
+     "en": "Murugan temples, at Tiruchendur above all, and at Palani, Swamimalai and Thiruparankundram, celebrate with abhishekams, processions and crowds carrying kavadi and paal kudam. Devotees fast, sing Thiruppugazh and the Kanda Shashti Kavacham, and offer panchamritam. In the summer heat, many set up stalls giving out neer mor and panakam.",
+     "ta": "முருகன் கோயில்களில், எல்லாவற்றுக்கும் மேலாகத் திருச்செந்தூரில், பழனி, சுவாமிமலை, திருப்பரங்குன்றத்திலும், அபிஷேகங்கள், ஊர்வலங்கள், காவடி-பால்குடம் சுமந்த திரள்கள். பக்தர்கள் விரதமிருந்து திருப்புகழும் கந்த சஷ்டி கவசமும் பாடி, பஞ்சாமிர்தம் படைக்கின்றனர். வெயிலில் பலர் நீர்மோர், பானகப் பந்தல்கள் அமைக்கின்றனர்."
+    },
+    "story": {
+     "en": "The story told is that when the asura Surapadman was troubling the worlds, the gods asked Shiva for a son who could face him. From Shiva's third eye came six sparks, carried by Agni and Vayu to the Saravana pool, where they became six infants, cared for by the six Krittika stars. When Parvati embraced them, they became one child with six faces, Shanmukha, also called Karthikeya and Murugan. He was born on Vaikasi Visakam, and grew to lead the gods' army and overcome Surapadman at Tiruchendur.",
+     "ta": "சொல்லப்படும் கதை: சூரபத்மன் உலகங்களைத் துன்புறுத்தியபோது, அவனை எதிர்கொள்ள ஒரு மகனைத் தருமாறு தேவர்கள் சிவனிடம் வேண்டினர். சிவனின் நெற்றிக்கண்ணிலிருந்து ஆறு தீப்பொறிகள் தோன்றின; அக்னியும் வாயுவும் அவற்றைச் சரவணப் பொய்கைக்குக் கொண்டு சேர்க்க, அவை ஆறு குழந்தைகளாகின; ஆறு கார்த்திகைப் பெண்கள் அவர்களை வளர்த்தனர். பார்வதி அவர்களை அணைத்தபோது ஆறுமுகங்கள் கொண்ட ஒரே குழந்தையானார்கள்: சண்முகன், கார்த்திகேயன், முருகன். வைகாசி விசாகத்தில் பிறந்த அவர், தேவர்படையை வழிநடத்தித் திருச்செந்தூரில் சூரபத்மனை வென்றார்."
+    },
+    "howTo": {
+     "en": [
+      "Keep a fast or a simple vegetarian diet for the day if your family does.",
+      "Visit a Murugan temple, or at home decorate a picture of Murugan with his Vel and peacock.",
+      "Offer panchamritam, milk, fruit and flowers, and light a lamp.",
+      "Sing the Kanda Shashti Kavacham or Thiruppugazh.",
+      "Give neer mor or panakam to people in the heat."
+     ],
+     "ta": [
+      "குடும்ப வழக்கமெனில் நாள் முழுதும் விரதமோ எளிய சைவ உணவோ கடைப்பிடியுங்கள்.",
+      "முருகன் கோயிலுக்குச் செல்லுங்கள், அல்லது வீட்டில் வேலும் மயிலுமுடன் முருகன் படத்தை அலங்கரியுங்கள்.",
+      "பஞ்சாமிர்தம், பால், பழம், மலர் படைத்து விளக்கேற்றுங்கள்.",
+      "கந்த சஷ்டி கவசம் அல்லது திருப்புகழ் பாடுங்கள்.",
+      "வெயிலில் மக்களுக்கு நீர்மோர் அல்லது பானகம் வழங்குங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Vetrivel Muruganukku Arohara! Happy Vaikasi Visakam.",
+     "ta": "வைகாசி விசாக நல்வாழ்த்துகள்! முருகனுக்கு அரோகரா!"
+    }
+   }
+  },
+  {
+   "id": "aadi-pirappu",
+   "names": {
+    "en": "Aadi Pirappu",
+    "ta": "ஆடிப் பிறப்பு"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "karka",
+    "day": 1
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Aadi 1: the start of the month of Aadi, sacred to the goddess.",
+     "ta": "ஆடி 1: அம்மனுக்கு உகந்த ஆடி மாதத்தின் தொடக்கம்."
+    },
+    "traditions": {
+     "en": "As the Sun begins its southward course (Dakshinayana), homes mark the new month with a kolam, a special meal with payasam and vadai, and worship of the goddess. Newly married couples traditionally spend Aadi apart, the bride at her parents' home, and the month is kept for worship rather than weddings. The whole month is full of Amman temple festivals, with koozh (fermented millet porridge) offered and shared.",
+     "ta": "சூரியன் தெற்கு நோக்கிய பயணத்தை (தட்சிணாயனம்) தொடங்கும் வேளையில், வீடுகள் கோலம், பாயசம், வடையுடன் சிறப்பு உணவு, அம்மன் வழிபாட்டுடன் புதிய மாதத்தைக் குறிக்கின்றன. மரபாகப் புதுமணத் தம்பதியர் ஆடியில் பிரிந்திருக்கின்றனர், மணப்பெண் தாய்வீட்டில்; இம்மாதம் திருமணங்களுக்கல்ல, வழிபாட்டுக்கு. மாதம் முழுதும் அம்மன் கோயில் திருவிழாக்கள், கூழ் படைத்துப் பகிர்தல்."
+    },
+    "story": {
+     "en": "Aadi is remembered as the month when the goddess, Shakti, is especially present on earth. The story told is that Parvati came to earth in Aadi to keep tapas, and that the goddess in every village shrine is honoured through the month. Aadi is also the month of the monsoon reaching the Kaveri delta, when the rivers swell and sowing begins, which is why Aadi Perukku falls in it.",
+     "ta": "சக்தியான அம்மன் பூமியில் சிறப்பாக உறையும் மாதமாக ஆடி நினைவுகூரப்படுகிறது. பார்வதி தவமிருக்க ஆடியில் பூமிக்கு வந்தார் என்றும், ஒவ்வொரு கிராமக் கோயிலின் அம்மனும் மாதம் முழுதும் போற்றப்படுகிறாள் என்றும் கூறப்படுகிறது. காவிரிப் படுகைக்குப் பருவமழை வந்து ஆறுகள் பெருகி, விதைப்புத் தொடங்கும் மாதமும் ஆடி; அதனால்தான் ஆடிப்பெருக்கு இம்மாதத்தில் வருகிறது."
+    },
+    "howTo": {
+     "en": [
+      "Draw a kolam and light a lamp before the goddess.",
+      "Cook a special meal with payasam and vadai.",
+      "Plan to visit an Amman temple during the month, especially on Fridays and Tuesdays."
+     ],
+     "ta": [
+      "கோலமிட்டு அம்மன் முன் விளக்கேற்றுங்கள்.",
+      "பாயசம், வடையுடன் சிறப்பு உணவு சமையுங்கள்.",
+      "மாதத்தில், குறிப்பாக வெள்ளி, செவ்வாய்க்கிழமைகளில், அம்மன் கோயிலுக்குச் செல்லத் திட்டமிடுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Aadi Pirappu!",
+     "ta": "ஆடிப் பிறப்பு நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "aadi-perukku",
+   "names": {
+    "en": "Aadi Perukku",
+    "ta": "ஆடிப்பெருக்கு"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "karka",
+    "day": 18
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Aadi 18: thanks to the rivers as the monsoon fills them, above all the Kaveri.",
+     "ta": "ஆடி 18: பருவமழையால் பெருகும் ஆறுகளுக்கு, குறிப்பாகக் காவிரிக்கு, நன்றி சொல்லும் நாள்."
+    },
+    "traditions": {
+     "en": "Families go to the banks of the Kaveri and other rivers and tanks with chitrannam, variety rice: lemon, tamarind, coconut and curd rice, along with sweet pongal. Women offer the river turmeric, kumkum, flowers, bangles and black beads, light lamps and float them on the water, and tie a yellow thread on their wrists or necks. Newly married couples visit the river together. Srirangam, Thiruvaiyaru and Mettur are crowded.",
+     "ta": "குடும்பங்கள் காவிரி மற்றும் பிற ஆறுகள், குளங்களின் கரைகளுக்குச் சித்திரான்னம், எலுமிச்சை, புளி, தேங்காய், தயிர் சாதம், சர்க்கரைப் பொங்கலுடன் செல்கின்றன. பெண்கள் ஆற்றுக்கு மஞ்சள், குங்குமம், பூக்கள், வளையல், கருகமணி படைத்து, விளக்கேற்றி நீரில் மிதக்கவிட்டு, மணிக்கட்டிலோ கழுத்திலோ மஞ்சள் சரடு கட்டுகின்றனர். புதுமணத் தம்பதியர் ஒன்றாக ஆற்றுக்கு வருகின்றனர். ஸ்ரீரங்கம், திருவையாறு, மேட்டூர் கூட்டமாக இருக்கும்."
+    },
+    "story": {
+     "en": "The Kaveri is honoured as a mother who feeds the delta. One story told is of the sage Agastya, who carried the Kaveri in his water pot; Ganesha, as a crow, tipped the pot over, and the river flowed out to become the Kaveri. Aadi Perukku, 'the rising of Aadi', celebrates the monsoon floodwaters reaching the fields just as sowing begins: farmers thank the river and pray for a good season. At Srirangam, Ranganatha is said to send gifts to the Kaveri, his sister, on this day.",
+     "ta": "டெல்டாவுக்கு உணவளிக்கும் தாயாகக் காவிரி போற்றப்படுகிறாள். ஒரு கதை: அகத்திய முனிவர் தன் கமண்டலத்தில் காவிரியைச் சுமந்து வந்தார்; காகமாக வந்த விநாயகர் கமண்டலத்தைக் கவிழ்க்க, நதி வெளியேறிக் காவிரியானது. 'ஆடியின் பெருக்கு', விதைப்புத் தொடங்கும் வேளையில் பருவமழை வெள்ளம் வயல்களை அடைவதைக் கொண்டாடுகிறது: விவசாயிகள் ஆற்றுக்கு நன்றி சொல்லி நல்ல பருவத்துக்காக வேண்டுகின்றனர். ஸ்ரீரங்கத்தில் ரங்கநாதர் தன் சகோதரியான காவிரிக்கு இந்நாளில் சீர் அனுப்புவதாகக் கூறப்படுகிறது."
+    },
+    "howTo": {
+     "en": [
+      "Cook chitrannam, lemon, tamarind, coconut or curd rice, and sweet pongal.",
+      "Go with family to a river, lake or tank; if you cannot, place a pot of water with flowers at home.",
+      "Offer turmeric, kumkum, flowers and a lamp to the water, and float the lamp.",
+      "Tie a yellow thread on the wrist, share the food on the riverbank, and enjoy the day outdoors."
+     ],
+     "ta": [
+      "சித்திரான்னம், எலுமிச்சை, புளி, தேங்காய் அல்லது தயிர் சாதமும் சர்க்கரைப் பொங்கலும் சமையுங்கள்.",
+      "குடும்பத்துடன் ஆறு, ஏரி அல்லது குளத்துக்குச் செல்லுங்கள்; முடியாவிட்டால் வீட்டில் மலர்களுடன் ஒரு நீர்க்குடம் வையுங்கள்.",
+      "நீருக்கு மஞ்சள், குங்குமம், மலர், விளக்கு படைத்து, விளக்கை மிதக்கவிடுங்கள்.",
+      "மணிக்கட்டில் மஞ்சள் சரடு கட்டி, ஆற்றங்கரையில் உணவைப் பகிர்ந்து, நாளை வெளியே மகிழ்வாகக் கழியுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Aadi Perukku! May the rivers run full.",
+     "ta": "ஆடிப்பெருக்கு நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "aadi-amavasai",
+   "names": {
+    "en": "Aadi Amavasai",
+    "ta": "ஆடி அமாவாசை"
+   },
+   "rule": {
+    "type": "tithi-in-solar-month",
+    "month": "karka",
+    "tithi": 30
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The new moon of Aadi, the year's greatest day for remembering ancestors.",
+     "ta": "ஆடி அமாவாசை, முன்னோர்களை நினைவுகூர ஆண்டின் மிகப் பெரிய நாள்."
+    },
+    "traditions": {
+     "en": "In Sri Lanka, families gather at Keerimalai's sacred spring near Jaffna, at the sea at Thirukketheeswaram and at temples by rivers and the shore to offer tharpanam for their parents and forebears, then share a meal. Those who lost a father keep a fast that day.",
+     "ta": "இலங்கையில் யாழ்ப்பாணத்துக்கு அருகிலுள்ள கீரிமலைப் புனித நீரூற்றிலும், திருக்கேதீஸ்வரக் கடலிலும், ஆறு, கடற்கரை ஓரக் கோவில்களிலும் குடும்பங்கள் கூடி பெற்றோருக்கும் முன்னோருக்கும் தர்ப்பணம் செய்து, பின் உணவு பகிர்கின்றனர். தந்தையை இழந்தவர்கள் அன்று விரதம் இருக்கின்றனர்."
+    },
+    "story": {
+     "en": "Tradition holds that as the Sun turns south, the ancestors draw near to their families, and the new moon of Aadi is the day they are most fully remembered. The story of Rameswaram is told: after the war in Lanka, Rama, with Sita, worshipped Shiva there, and Rameswaram became the place where families come to remember their elders. The day's heart is simple: to say the names of those who came before, and to feed others in their memory.",
+     "ta": "சூரியன் தெற்கு திரும்பும்போது முன்னோர்கள் தம் குடும்பங்களை நெருங்குவதாகவும், ஆடி அமாவாசையில் அவர்கள் முழுமையாக நினைவுகூரப்படுவதாகவும் மரபு கூறுகிறது. ராமேஸ்வரத்தின் கதை சொல்லப்படுகிறது: இலங்கைப் போருக்குப் பின் ராமர் சீதையுடன் அங்கு சிவனை வழிபட்டார்; பெரியோரை நினைவுகூரக் குடும்பங்கள் வரும் இடமானது ராமேஸ்வரம். இந்நாளின் மையம் எளிது: முன்னோர்களின் பெயர்களைச் சொல்லுதல், அவர்கள் நினைவாகப் பிறருக்கு உணவளித்தல்."
+    },
+    "howTo": {
+     "en": [
+      "In the morning, bathe and, facing south, offer water with black sesame, naming your ancestors; at a river or the sea if you can, or with a priest's help.",
+      "Cook a simple meal of their favourite dishes and set a portion out for crows first.",
+      "Give food, clothes or grain to someone in need.",
+      "Light a lamp in the evening in their memory."
+     ],
+     "ta": [
+      "காலையில் நீராடி, தெற்கு நோக்கி, முன்னோர்களின் பெயர் சொல்லி எள் கலந்த நீர் அளியுங்கள்; முடிந்தால் ஆற்றிலோ கடலிலோ, அல்லது புரோகிதர் உதவியுடன்.",
+      "அவர்கள் விரும்பிய எளிய உணவு சமைத்து, முதலில் ஒரு பகுதி காகங்களுக்கு வையுங்கள்.",
+      "தேவையுள்ள ஒருவருக்கு உணவு, உடை அல்லது தானியம் அளியுங்கள்.",
+      "மாலையில் அவர்கள் நினைவாக விளக்கேற்றுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Remembering our ancestors on Aadi Amavasai.",
+     "ta": "ஆடி அமாவாசையில் முன்னோர்களுக்கு வணக்கம்."
+    }
+   }
+  },
+  {
+   "id": "andal-jayanthi",
+   "names": {
+    "en": "Aadi Pooram (Andal Jayanthi)",
+    "ta": "ஆடிப்பூரம்"
+   },
+   "rule": {
+    "type": "nakshatra-in-solar-month",
+    "month": "karka",
+    "nakshatra": "purva_phalguni",
+    "occurrence": "last"
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Aadi Pooram: the birth of Andal, the poet-saint who gave us the Thiruppavai.",
+     "ta": "ஆடிப்பூரம்: திருப்பாவை அருளிய ஆண்டாள் அவதரித்த நாள்."
+    },
+    "traditions": {
+     "en": "Srivilliputhur, Andal's town, holds its great chariot festival, and every Perumal temple celebrates her. Amman temples also keep Aadi Pooram as the goddess's own festival, with valaikappu, offering glass bangles to the goddess, as at a baby shower; the bangles are then given to women devotees. Families recite the Thiruppavai and Nachiyar Thirumozhi.",
+     "ta": "ஆண்டாளின் ஊரான ஸ்ரீவில்லிபுத்தூரில் பெரிய தேர்த்திருவிழா நடக்கிறது; ஒவ்வொரு பெருமாள் கோயிலும் அவளைக் கொண்டாடுகிறது. அம்மன் கோயில்களும் ஆடிப்பூரத்தை அம்மனின் சொந்தத் திருவிழாவாகக் கொண்டாடுகின்றன; வளைகாப்பு போல அம்மனுக்குக் கண்ணாடி வளையல்கள் சார்த்தி, பின் பெண் பக்தர்களுக்கு வழங்குகின்றனர். குடும்பங்கள் திருப்பாவையும் நாச்சியார் திருமொழியும் பாராயணம் செய்கின்றன."
+    },
+    "story": {
+     "en": "Periyazhwar, a devotee who made garlands for the Perumal at Srivilliputhur, found a baby girl beneath a tulsi plant in his garden and raised her as Kodhai. She grew up loving Ranganatha so completely that she would secretly wear the god's garland before it went to the temple, to see if she was beautiful enough for him. When her father found out, he was dismayed and made a fresh garland; but that night the Perumal told him in a dream that he wanted only the garland Kodhai had worn. She came to be called Andal, she who ruled the Lord, and Soodikodutha Sudarkodi, the one who wore and then gave. Her thirty verses, the Thiruppavai, are sung every Margazhi morning.",
+     "ta": "ஸ்ரீவில்லிபுத்தூர்ப் பெருமாளுக்கு மாலை தொடுக்கும் பக்தர் பெரியாழ்வார், தன் தோட்டத்தில் துளசிச் செடியின் கீழ் ஒரு பெண் குழந்தையைக் கண்டெடுத்து கோதை என்று வளர்த்தார். அவள் அரங்கனை முழுமையாக நேசித்து வளர்ந்தாள்; கோயிலுக்குச் செல்லும் முன் இறைவனின் மாலையை ரகசியமாகத் தானணிந்து, அவனுக்குத் தகுந்த அழகுடையவளா என்று பார்த்தாள். தந்தை அறிந்து வருந்திப் புதிய மாலை தொடுத்தார்; ஆனால் அன்றிரவு கோதை அணிந்த மாலையே வேண்டும் என்று பெருமாள் கனவில் சொன்னார். இறைவனை ஆண்டவள் என்பதால் ஆண்டாள் என்றும், சூடிக் கொடுத்த சுடர்க்கொடி என்றும் அழைக்கப்பட்டாள். அவள் முப்பது பாசுரங்களான திருப்பாவை ஒவ்வொரு மார்கழிக் காலையும் பாடப்படுகிறது."
+    },
+    "howTo": {
+     "en": [
+      "Light a lamp before a picture of Andal or Perumal and offer a garland and tulsi.",
+      "Recite the Thiruppavai, or a few verses of it.",
+      "Visit a Perumal or Amman temple; join a valaikappu if one is held.",
+      "Offer sweet pongal or akkara adisil and share it."
+     ],
+     "ta": [
+      "ஆண்டாள் அல்லது பெருமாள் படத்தின் முன் விளக்கேற்றி மாலையும் துளசியும் சமர்ப்பியுங்கள்.",
+      "திருப்பாவை முழுவதையும் அல்லது சில பாசுரங்களைப் பாராயணம் செய்யுங்கள்.",
+      "பெருமாள் அல்லது அம்மன் கோயிலுக்குச் செல்லுங்கள்; வளைகாப்பு நடந்தால் கலந்துகொள்ளுங்கள்.",
+      "சர்க்கரைப் பொங்கல் அல்லது அக்கார அடிசில் படைத்துப் பகிருங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Aadi Pooram!",
+     "ta": "ஆடிப்பூர நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "aadi-velli",
+   "names": {
+    "en": "Aadi Velli (Fridays of Aadi)",
+    "ta": "ஆடி வெள்ளி"
+   },
+   "rule": {
+    "type": "nth-weekday",
+    "weekday": "friday",
+    "within": {
+     "type": "solar-month",
+     "month": "karka"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Fridays of Aadi, kept for the goddess.",
+     "ta": "அம்மனுக்கு உகந்த ஆடி வெள்ளிக்கிழமைகள்."
+    },
+    "traditions": {
+     "en": "On each Friday of Aadi, women visit Amman temples, Mariamman, Kamakshi, Karumariamman and the village goddess, offering lamps in lemon halves, koozh, flowers and bangles. At home, the goddess is worshipped with a kolam, a lamp and sweet pongal or payasam, and many recite the Lalitha Sahasranamam. Women exchange turmeric, kumkum and bangles with one another.",
+     "ta": "ஆடியின் ஒவ்வொரு வெள்ளியும் பெண்கள் அம்மன் கோயில்களுக்கு, மாரியம்மன், காமாட்சி, கருமாரியம்மன், கிராம தேவதை, சென்று எலுமிச்சை விளக்கு, கூழ், பூக்கள், வளையல் படைக்கின்றனர். வீட்டில் கோலம், விளக்கு, சர்க்கரைப் பொங்கல் அல்லது பாயசத்துடன் அம்மன் வழிபாடு; பலர் லலிதா சகஸ்ரநாமம் பாராயணம் செய்கின்றனர். பெண்கள் ஒருவருக்கொருவர் மஞ்சள், குங்குமம், வளையல் வழங்குகின்றனர்."
+    },
+    "story": {
+     "en": "Aadi is the goddess's month, and Friday the day of Lakshmi and Shakti. The tradition of the Aadi Fridays grows from the village goddesses of Tamil Nadu, the Ammans, worshipped as protecting mothers through the monsoon season. Koozh, the cool millet porridge offered to Mariamman, is shared with everyone as her prasad.",
+     "ta": "ஆடி அம்மனின் மாதம்; வெள்ளி மகாலட்சுமிக்கும் சக்திக்கும் உரிய நாள். பருவமழைக் காலத்தில் காக்கும் தாயாக வழிபடப்படும் தமிழகத்தின் கிராம தேவதைகளான அம்மன்களிடமிருந்து ஆடி வெள்ளி மரபு வளர்ந்தது. மாரியம்மனுக்குப் படைக்கும் குளிர்ச்சியான கூழ் அவள் பிரசாதமாக அனைவருக்கும் பகிரப்படுகிறது."
+    },
+    "howTo": {
+     "en": [
+      "Draw a kolam and light a lamp before the goddess in the morning.",
+      "Offer flowers, turmeric, kumkum and sweet pongal or payasam.",
+      "Recite the Lalitha Sahasranamam or an Amman song.",
+      "Visit an Amman temple in the evening, and share koozh or prasad."
+     ],
+     "ta": [
+      "காலையில் கோலமிட்டு அம்மன் முன் விளக்கேற்றுங்கள்.",
+      "மலர், மஞ்சள், குங்குமம், சர்க்கரைப் பொங்கல் அல்லது பாயசம் படையுங்கள்.",
+      "லலிதா சகஸ்ரநாமம் அல்லது அம்மன் பாடல் பாடுங்கள்.",
+      "மாலையில் அம்மன் கோயிலுக்குச் சென்று கூழ் அல்லது பிரசாதம் பகிருங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Aadi Velli greetings!",
+     "ta": "ஆடி வெள்ளி வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "garuda-panchami",
+   "names": {
+    "en": "Garuda Panchami",
+    "ta": "கருட பஞ்சமி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "shravana",
+    "tithi": 5
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Shravana Shukla Panchami: honouring Garuda, Vishnu's eagle, and his devotion to his mother.",
+     "ta": "ஆவணி வளர்பிறை பஞ்சமி: திருமாலின் வாகனமான கருடனையும் அவனுடைய தாய்ப்பாசத்தையும் போற்றும் நாள்."
+    },
+    "traditions": {
+     "en": "Women in Tamil Nadu and Karnataka worship Garuda, often with Nagas, praying for their brothers' and children's wellbeing, and tie a sacred thread. Perumal temples hold Garuda seva processions. It falls on the same day as Nag Panchami in the North.",
+     "ta": "தமிழகத்திலும் கர்நாடகத்திலும் பெண்கள், பெரும்பாலும் நாகங்களுடன், கருடனை வழிபட்டு, சகோதரர்களின் மற்றும் குழந்தைகளின் நலனுக்காக வேண்டி, காப்புக் கயிறு கட்டுகின்றனர். பெருமாள் கோயில்களில் கருட சேவை ஊர்வலங்கள். வடக்கின் நாக பஞ்சமியும் இதே நாள்."
+    },
+    "story": {
+     "en": "Garuda's mother Vinata had lost a wager to her sister Kadru, mother of the serpents, and became her servant. The serpents told Garuda they would free his mother if he brought them the amrit from heaven. Garuda flew to heaven, overcame its guardians and took the nectar, but did not drink it himself. Vishnu, pleased by his strength and selflessness, asked him to be his vehicle. Garuda gave the amrit to the serpents, freeing his mother, and Indra took it back before they could drink. The day honours a son's devotion to his mother.",
+     "ta": "கருடனின் தாய் வினதை, நாகங்களின் தாயான தன் சகோதரி கத்ருவிடம் பந்தயத்தில் தோற்று அவளுக்குப் பணிப்பெண்ணானாள். சொர்க்கத்திலிருந்து அமுதம் கொண்டுவந்தால் தாயை விடுவிப்பதாக நாகங்கள் கருடனிடம் சொன்னன. கருடன் சொர்க்கம் பறந்து, காவலர்களை வென்று அமுதத்தை எடுத்தான், ஆனால் தானே அருந்தவில்லை. அவன் வலிமையிலும் தன்னலமின்மையிலும் மகிழ்ந்த திருமால், தன் வாகனமாக இருக்கக் கேட்டார். கருடன் அமுதத்தை நாகங்களிடம் தந்து தாயை விடுவித்தான்; அவை அருந்தும் முன் இந்திரன் அதை மீட்டுக்கொண்டான். தாய்மீது மகனின் பக்தியைப் போற்றும் நாள் இது."
+    },
+    "howTo": {
+     "en": [
+      "Draw Garuda and a naga in a kolam or place a picture, and light a lamp.",
+      "Offer flowers, milk and sweets, and tie a sacred thread on the wrist.",
+      "Visit a Perumal temple for Garuda seva if one is held."
+     ],
+     "ta": [
+      "கோலத்தில் கருடனையும் நாகத்தையும் வரையுங்கள் அல்லது படம் வைத்து விளக்கேற்றுங்கள்.",
+      "மலர், பால், இனிப்பு படைத்து, மணிக்கட்டில் காப்புக் கயிறு கட்டுங்கள்.",
+      "கருட சேவை நடந்தால் பெருமாள் கோயிலுக்குச் செல்லுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Garuda Panchami!",
+     "ta": "கருட பஞ்சமி நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "shravana-purnima-ta",
+   "names": {
+    "en": "Avani Pournami",
+    "ta": "ஆவணி பௌர்ணமி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "shravana",
+    "tithi": 15
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": true,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ]
+  },
+  {
+   "id": "varalakshmi-vratam",
+   "names": {
+    "en": "Varalakshmi Vratam",
+    "ta": "வரலட்சுமி விரதம்"
+   },
+   "rule": {
+    "type": "weekday-on-or-before",
+    "to": "shravana-purnima-ta",
+    "weekday": "friday"
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Friday before Avani Pournami: married women invite Varalakshmi, the boon-giving Lakshmi, home.",
+     "ta": "ஆவணிப் பௌர்ணமிக்கு முந்தைய வெள்ளி: திருமணமான பெண்கள் வரம் தரும் வரலட்சுமியை வீட்டுக்கு அழைக்கும் விரதம்."
+    },
+    "traditions": {
+     "en": "Women prepare a kalasham, a pot filled with rice or water, coins and betel, topped with a coconut on which a face of the goddess is fixed, and dress it in a sari and jewellery. On Thursday evening the goddess is welcomed at the doorway with a song and brought in. On Friday she is worshipped with lamps, flowers and nine kinds of offerings, and women tie a yellow thread (nombu charadu) on their right wrist. Neighbours are invited for thamboolam of turmeric, kumkum, betel, fruit and a blouse piece. It is kept in Tamil Nadu, Karnataka, Andhra Pradesh and Telangana.",
+     "ta": "பெண்கள் கலசம் தயார் செய்கின்றனர்: அரிசி அல்லது நீர், நாணயங்கள், வெற்றிலை நிரப்பிய குடம், மேலே அம்மன் முகம் பொருத்திய தேங்காய், புடவையும் நகையும் அணிவித்து. வியாழன் மாலை பாடலுடன் வாசலில் அம்மனை வரவேற்று உள்ளே அழைக்கின்றனர். வெள்ளியன்று விளக்கு, மலர், ஒன்பது வகை நைவேத்தியத்துடன் வழிபட்டு, வலது மணிக்கட்டில் மஞ்சள் நோன்புச் சரடு கட்டுகின்றனர். அக்கம்பக்கப் பெண்களை அழைத்து மஞ்சள், குங்குமம், வெற்றிலை, பழம், ரவிக்கைத் துணியுடன் தாம்பூலம் வழங்குகின்றனர். தமிழ்நாடு, கர்நாடகம், ஆந்திரம், தெலங்கானாவில் கடைப்பிடிக்கப்படுகிறது."
+    },
+    "story": {
+     "en": "The story told is of Charumathi, a devoted wife in the city of Kundina, to whom Lakshmi appeared in a dream and told her to worship her as Varalakshmi on the Friday before Shravana Purnima. Charumathi told the other women of the city, and they kept the vratam together, tying the sacred thread. The story says their homes were filled with good things. Shiva is also said to have told Parvati of this vratam as one that families can keep together for the wellbeing of the home.",
+     "ta": "சொல்லப்படும் கதை: குண்டின நகரில் வாழ்ந்த பதிவிரதையான சாருமதியின் கனவில் மகாலட்சுமி தோன்றி, ஆவணிப் பௌர்ணமிக்கு முந்தைய வெள்ளியன்று தன்னை வரலட்சுமியாக வழிபடச் சொன்னாள். சாருமதி நகரின் பிற பெண்களுக்குச் சொல்ல, அனைவரும் ஒன்றாக நோன்புச் சரடு கட்டி விரதம் இருந்தனர். அவர்கள் இல்லங்கள் நலன்களால் நிறைந்தன என்று கதை கூறுகிறது. வீட்டின் நலனுக்காகக் குடும்பங்கள் ஒன்றாகக் கடைப்பிடிக்கக்கூடிய விரதமாகச் சிவன் பார்வதிக்கு இதைச் சொன்னதாகவும் கூறப்படுகிறது."
+    },
+    "howTo": {
+     "en": [
+      "On Thursday, clean the house, draw a kolam, and prepare the kalasham with a coconut and the goddess's face.",
+      "On Thursday evening, welcome the goddess at the doorway with a song and a lamp, and bring her to the puja place.",
+      "On Friday morning, worship her with flowers, lamps and offerings such as sweet pongal, payasam, vadai and fruit; read the Varalakshmi story.",
+      "Tie the yellow thread on your right wrist.",
+      "Invite women neighbours and give thamboolam."
+     ],
+     "ta": [
+      "வியாழனன்று வீட்டைச் சுத்தம் செய்து, கோலமிட்டு, தேங்காயும் அம்மன் முகமுமாகக் கலசம் தயார் செய்யுங்கள்.",
+      "வியாழன் மாலை பாடலுடனும் விளக்குடனும் வாசலில் அம்மனை வரவேற்று பூஜையிடத்துக்கு அழைத்து வாருங்கள்.",
+      "வெள்ளி காலை மலர், விளக்கு, சர்க்கரைப் பொங்கல், பாயசம், வடை, பழம் போன்ற நைவேத்தியங்களுடன் வழிபட்டு, வரலட்சுமி கதை படியுங்கள்.",
+      "வலது மணிக்கட்டில் மஞ்சள் சரடு கட்டுங்கள்.",
+      "அக்கம்பக்கப் பெண்களை அழைத்துத் தாம்பூலம் வழங்குங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Varalakshmi Vratam wishes to your home!",
+     "ta": "வரலட்சுமி விரத நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "gokulashtami",
+   "names": {
+    "en": "Krishna Jayanthi (Gokulashtami)",
+    "ta": "கிருஷ்ண ஜெயந்தி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "shravana",
+    "tithi": 23
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Krishna Jayanthi: Krishna's birth, with little footprints from the door to the puja room.",
+     "ta": "கிருஷ்ண ஜெயந்தி: கண்ணன் பிறப்பு, வாசலிலிருந்து பூஜையறை வரை குட்டிப் பாதச்சுவடுகளுடன்."
+    },
+    "traditions": {
+     "en": "In Tamil homes, small footprints are drawn with rice flour from the doorway to the puja room, as though baby Krishna has walked in. A cradle is decorated and Krishna is offered the snacks he loved: seedai, murukku, thattai, appam, aval (beaten rice) with jaggery and butter, and fruit. Children dress as Krishna, and the evening puja and bhajans run late. Uriyadi, breaking a hanging pot, is played in many villages.",
+     "ta": "தமிழ் வீடுகளில் குழந்தைக் கண்ணன் நடந்து வந்ததுபோல வாசலிலிருந்து பூஜையறை வரை அரிசி மாவால் சிறு பாதச்சுவடுகள் வரையப்படுகின்றன. தொட்டில் அலங்கரிக்கப்பட்டு, கண்ணன் விரும்பிய சீடை, முறுக்கு, தட்டை, அப்பம், வெல்லமும் வெண்ணெயும் சேர்த்த அவல், பழங்கள் படைக்கப்படுகின்றன. குழந்தைகள் கண்ணனாக வேடமிடுகின்றனர்; மாலை பூஜையும் பஜனையும் இரவு வரை நீள்கின்றன. பல கிராமங்களில் உறியடி விளையாடப்படுகிறது."
+    },
+    "story": {
+     "en": "Krishna was born at midnight in Kamsa's prison at Mathura, to Devaki and Vasudeva, on the eighth day of the dark fortnight under the Rohini star. The chains fell away and the doors opened, and Vasudeva carried the baby across the flooded Yamuna to Gokul, where Nanda and Yashoda raised him. The stories of his childhood, stealing butter, dancing on the serpent Kaliya, lifting Govardhan hill, are told and sung on this day, and the footprints on the floor welcome him into every home.",
+     "ta": "மதுரா நகரில் கம்சனின் சிறையில், தேவகிக்கும் வசுதேவருக்கும், தேய்பிறை அஷ்டமியில் ரோகிணி நட்சத்திரத்தில் நள்ளிரவில் கண்ணன் பிறந்தான். சங்கிலிகள் அவிழ்ந்து கதவுகள் திறக்க, வசுதேவர் குழந்தையை வெள்ளம் பெருகிய யமுனையைக் கடந்து கோகுலத்துக்குக் கொண்டு சென்றார்; அங்கே நந்தனும் யசோதையும் அவனை வளர்த்தனர். வெண்ணெய் திருடுதல், காளிங்கன் மீது நடனம், கோவர்த்தன மலையைத் தூக்குதல் என அவன் குழந்தைப் பருவக் கதைகள் இந்நாளில் சொல்லப்பட்டுப் பாடப்படுகின்றன; தரையிலுள்ள பாதச்சுவடுகள் ஒவ்வொரு வீட்டுக்கும் அவனை வரவேற்கின்றன."
+    },
+    "howTo": {
+     "en": [
+      "Make seedai, murukku, thattai or appam, and keep aval, butter, jaggery and fruit ready.",
+      "In the evening, draw small footprints with rice-flour paste from the doorway to the puja room.",
+      "Decorate a cradle with a picture or idol of baby Krishna, and light a lamp.",
+      "Offer the snacks, butter and tulsi, and sing Krishna songs; many keep a fast until the puja.",
+      "Share the snacks with neighbours and children."
+     ],
+     "ta": [
+      "சீடை, முறுக்கு, தட்டை அல்லது அப்பம் செய்து, அவல், வெண்ணெய், வெல்லம், பழம் தயாராக வையுங்கள்.",
+      "மாலையில் அரிசி மாவுக் கரைசலால் வாசலிலிருந்து பூஜையறை வரை சிறு பாதச்சுவடுகள் வரையுங்கள்.",
+      "குழந்தைக் கண்ணன் படம் அல்லது விக்கிரகத்துடன் தொட்டிலை அலங்கரித்து விளக்கேற்றுங்கள்.",
+      "பட்சணங்கள், வெண்ணெய், துளசி படைத்து, கண்ணன் பாடல்கள் பாடுங்கள்; பலர் பூஜை வரை விரதமிருக்கின்றனர்.",
+      "அக்கம்பக்கத்தாருடனும் குழந்தைகளுடனும் பட்சணங்களைப் பகிருங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Krishna Jayanthi! May little feet bring joy to your home.",
+     "ta": "இனிய கிருஷ்ண ஜெயந்தி நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "vinayagar-chathurthi",
+   "names": {
+    "en": "Vinayagar Chathurthi",
+    "ta": "விநாயகர் சதுர்த்தி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "bhadrapada",
+    "tithi": 4,
+    "observance": {
+     "kala": "madhyahna"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Ganesha's birthday, welcomed with a clay idol, kozhukattai and an umbrella.",
+     "ta": "விநாயகர் பிறந்த நாள்: களிமண் பிள்ளையார், கொழுக்கட்டை, சிறு குடையுடன் வரவேற்பு."
+    },
+    "traditions": {
+     "en": "Families bring home a small clay Pillaiyar with a little paper umbrella, place him on a plank with a kolam, and worship him with arugampul (durva grass), erukkam flower garlands and red flowers. The day's food is kozhukattai, steamed dumplings filled with coconut and jaggery, along with sundal, vadai and appam. After one to three days the idol is immersed in a well, tank or bucket. Large public idols are taken out in processions in Chennai and other cities.",
+     "ta": "குடும்பங்கள் சிறு காகிதக் குடையுடன் களிமண் பிள்ளையாரை வீட்டுக்குக் கொண்டுவந்து, கோலமிட்ட மணையில் வைத்து, அருகம்புல், எருக்கம்பூ மாலை, சிவப்பு மலர்களுடன் வழிபடுகின்றனர். அன்றைய உணவு தேங்காய்-வெல்லப் பூரணம் வைத்த கொழுக்கட்டை, சுண்டல், வடை, அப்பம். ஒன்று முதல் மூன்று நாட்களுக்குப் பின் கிணறு, குளம் அல்லது வாளியில் விசர்ஜனம். சென்னை உள்ளிட்ட நகரங்களில் பெரிய பொதுப் பிள்ளையார்கள் ஊர்வலமாகக் கொண்டு செல்லப்படுகின்றனர்."
+    },
+    "story": {
+     "en": "Parvati made a child from the turmeric paste of her bath and set him to guard her door. Shiva, coming home, was stopped by the boy who did not know him, and in the struggle that followed struck off his head. To console Parvati, Shiva gave the boy the head of an elephant and brought him back to life as Ganapati, lord of his ganas, to be worshipped first before every undertaking. Another story, told to children, is of the mango of wisdom: Ganesha won it from his brother Murugan by walking around his parents, Shiva and Parvati, saying they were his whole world.",
+     "ta": "பார்வதி தன் நீராடலின் மஞ்சள் விழுதிலிருந்து ஒரு குழந்தையை உருவாக்கி வாயிலைக் காக்க வைத்தாள். வீடு திரும்பிய சிவனை அவரை அறியாத சிறுவன் தடுக்க, நடந்த மோதலில் சிவன் அவன் தலையைக் கொய்தார். பார்வதியைத் தேற்ற, சிவன் சிறுவனுக்கு யானைத் தலை பொருத்தி உயிர்ப்பித்து, தன் கணங்களின் தலைவனான கணபதியாக்கி, ஒவ்வொரு செயலுக்கும் முன் முதலில் வழிபடப்படுவான் என்றார். குழந்தைகளுக்குச் சொல்லப்படும் இன்னொரு கதை ஞானப் பழம்: உலகைச் சுற்றி வருவதற்குப் பதில் தன் பெற்றோர் சிவன்-பார்வதியைச் சுற்றி வந்து, அவர்களே என் உலகம் என்று சொல்லி, விநாயகர் அதைத் தன் சகோதரன் முருகனிடமிருந்து வென்றார்."
+    },
+    "howTo": {
+     "en": [
+      "Buy a small clay Pillaiyar with an umbrella, plus arugampul, erukkam flowers and other flowers.",
+      "Draw a kolam on a plank and place the idol on it.",
+      "Make kozhukattai, sundal and vadai.",
+      "At midday (madhyahna; see the day view), light a lamp, offer the arugampul, flowers and food, and sing a Vinayagar song such as 'Vinayagar Agaval'.",
+      "Avoid looking at the Moon that night, as tradition asks.",
+      "After one to three days, immerse the idol in water at home and pour it on your plants."
+     ],
+     "ta": [
+      "குடையுடன் சிறு களிமண் பிள்ளையார், அருகம்புல், எருக்கம்பூ, பிற மலர்கள் வாங்குங்கள்.",
+      "மணையில் கோலமிட்டு விக்கிரகத்தை வையுங்கள்.",
+      "கொழுக்கட்டை, சுண்டல், வடை செய்யுங்கள்.",
+      "மதியம் (மத்தியானம்; நாள் விவரத்தில்) விளக்கேற்றி, அருகம்புல், மலர், நைவேத்தியம் படைத்து, 'விநாயகர் அகவல்' போன்ற பாடல் பாடுங்கள்.",
+      "மரபுப்படி அன்றிரவு சந்திரனைப் பார்ப்பதைத் தவிருங்கள்.",
+      "ஒன்று முதல் மூன்று நாட்களுக்குப் பின் வீட்டிலேயே நீரில் கரைத்து, அந்த நீரைச் செடிகளுக்கு ஊற்றுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Vinayagar Chathurthi!",
+     "ta": "இனிய விநாயகர் சதுர்த்தி நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "maha-bharani",
+   "names": {
+    "en": "Maha Bharani",
+    "ta": "மகா பரணி"
+   },
+   "rule": {
+    "type": "nakshatra-in-lunar-month",
+    "month": "bhadrapada",
+    "nakshatra": "bharani",
+    "paksha": "krishna",
+    "observance": {
+     "kala": "aparahna"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Bharani star in the Mahalaya fortnight, a special day for remembering ancestors.",
+     "ta": "மகாளய பட்சத்தில் வரும் பரணி நட்சத்திரம், முன்னோர்களை நினைவுகூரும் சிறப்பு நாள்."
+    },
+    "traditions": {
+     "en": "Within the fortnight of the ancestors, the day of the Bharani star is kept with particular care: families offer tarpanam and shraddha, especially for relatives who passed away recently or whose tithi is not known, and feed people in their memory. Bharani is the star ruled by Yama, which is why it carries this association.",
+     "ta": "முன்னோர்களின் பட்சத்தில் பரணி நட்சத்திர நாள் தனிக் கவனத்துடன் கடைப்பிடிக்கப்படுகிறது: குறிப்பாகச் சமீபத்தில் மறைந்த அல்லது திதி தெரியாத உறவினர்களுக்காகக் குடும்பங்கள் தர்ப்பணமும் சிராத்தமும் செய்து, அவர்கள் நினைவாகப் பிறருக்கு உணவளிக்கின்றன. பரணி யமனுக்குரிய நட்சத்திரம் என்பதால் இந்தத் தொடர்பு."
+    },
+    "story": {
+     "en": "The fortnight of the ancestors is remembered through the story of Karna, who in the afterlife found he had never offered food to his forebears and was allowed sixteen days on earth to do so. Maha Bharani falls within those days; tradition holds that offerings made on it reach the ancestors as fully as a pilgrimage to Gaya.",
+     "ta": "முன்னோர் பட்சம் கர்ணனின் கதையால் நினைவுகூரப்படுகிறது: மறுமையில் தான் ஒருபோதும் முன்னோர்களுக்கு உணவு அளிக்கவில்லை என்று உணர்ந்த கர்ணனுக்கு, அதைச் செய்யப் பதினாறு நாட்கள் பூமிக்கு வர அனுமதி கிடைத்தது. மகா பரணி அந்த நாட்களுக்குள் வருகிறது; இந்நாளில் செய்யும் அர்ப்பணம் கயைக்குச் சென்று செய்வதற்கு இணையாக முன்னோர்களைச் சேரும் என்பது மரபு."
+    },
+    "howTo": {
+     "en": [
+      "Bathe and, facing south, offer water with black sesame, naming your ancestors.",
+      "Remember especially those who passed recently or whose tithi you do not know.",
+      "Cook a simple meal, set a portion out for crows, and feed someone in need."
+     ],
+     "ta": [
+      "நீராடி, தெற்கு நோக்கி, முன்னோர்களின் பெயர் சொல்லி எள் கலந்த நீர் அளியுங்கள்.",
+      "சமீபத்தில் மறைந்தவர்களையும் திதி தெரியாதவர்களையும் சிறப்பாக நினைவுகூருங்கள்.",
+      "எளிய உணவு சமைத்து, ஒரு பகுதி காகங்களுக்கு வைத்து, தேவையுள்ள ஒருவருக்கு உணவளியுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "In remembrance, on Maha Bharani.",
+     "ta": "மகா பரணியில் முன்னோர் நினைவு."
+    }
+   }
+  },
+  {
+   "id": "mahalaya-amavasai",
+   "names": {
+    "en": "Mahalaya Amavasai",
+    "ta": "மகாளய அமாவாசை"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "bhadrapada",
+    "tithi": 30,
+    "observance": {
+     "kala": "aparahna"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The new moon that closes the fortnight of the ancestors, the day before Navarathiri.",
+     "ta": "முன்னோர் பட்சத்தை நிறைவு செய்யும் அமாவாசை, நவராத்திரிக்கு முந்தைய நாள்."
+    },
+    "traditions": {
+     "en": "Families offer tarpanam to all their ancestors at the sea, rivers or at home, feed people and give food and clothes. It is one of the three great days of remembrance in the Tamil year, with Aadi and Thai Amavasai. The next day, Navarathiri begins and the kolu dolls are set out.",
+     "ta": "குடும்பங்கள் கடலிலோ ஆற்றிலோ வீட்டிலோ அனைத்து முன்னோர்களுக்கும் தர்ப்பணம் அளித்து, பிறருக்கு உணவும் உடையும் அளிக்கின்றன. ஆடி, தை அமாவாசைகளுடன் தமிழ் ஆண்டின் மூன்று பெரும் நினைவு நாட்களில் இதுவும் ஒன்று. மறுநாள் நவராத்திரி தொடங்கிக் கொலு பொம்மைகள் அடுக்கப்படுகின்றன."
+    },
+    "story": {
+     "en": "As the last day of the fortnight granted to Karna, Mahalaya Amavasai gathers in every ancestor the family wishes to remember, including those whose day is not known. It also opens the season of the Goddess: tradition holds that as the ancestors depart, the Goddess arrives for the nine nights.",
+     "ta": "கர்ணனுக்கு அருளப்பட்ட பட்சத்தின் கடைசி நாளாக, மகாளய அமாவாசை குடும்பம் நினைவுகூர விரும்பும் அனைத்து முன்னோர்களையும், நாள் தெரியாதவர்களையும் சேர்த்து, உள்ளடக்குகிறது. அம்மனின் பருவத்தையும் இது திறக்கிறது: முன்னோர்கள் விடைபெறும்போது, ஒன்பது இரவுகளுக்கு அம்மன் வருகிறாள் என்பது மரபு."
+    },
+    "howTo": {
+     "en": [
+      "In the afternoon (aparahna; see the day view), offer water with black sesame, facing south, naming all your ancestors.",
+      "Cook a simple meal and set a portion out for crows.",
+      "Give food, clothes or grain to someone in need.",
+      "In the evening, begin preparing the kolu steps for Navarathiri."
+     ],
+     "ta": [
+      "மதியத்துக்குப் பின் (அபராஹ்னம்; நாள் விவரத்தில்), தெற்கு நோக்கி அனைத்து முன்னோர்களின் பெயர் சொல்லி எள் கலந்த நீர் அளியுங்கள்.",
+      "எளிய உணவு சமைத்து ஒரு பகுதி காகங்களுக்கு வையுங்கள்.",
+      "தேவையுள்ள ஒருவருக்கு உணவு, உடை அல்லது தானியம் அளியுங்கள்.",
+      "மாலையில் நவராத்திரிக் கொலுப் படிகளைத் தயார் செய்யத் தொடங்குங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Remembering our ancestors on Mahalaya Amavasai.",
+     "ta": "மகாளய அமாவாசையில் முன்னோர்களுக்கு வணக்கம்."
+    }
+   }
+  },
+  {
+   "id": "purattasi-sani",
+   "names": {
+    "en": "Purattasi Saturdays",
+    "ta": "புரட்டாசி சனி"
+   },
+   "rule": {
+    "type": "nth-weekday",
+    "weekday": "saturday",
+    "within": {
+     "type": "solar-month",
+     "month": "kanya"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Saturdays of Purattasi, kept for Perumal (Venkateswara).",
+     "ta": "பெருமாளுக்கு (வேங்கடேசருக்கு) உகந்த புரட்டாசி சனிக்கிழமைகள்."
+    },
+    "traditions": {
+     "en": "Purattasi is Perumal's month, and many families keep it vegetarian throughout. On each Saturday, they light a maavilakku, a lamp made of rice flour and jaggery with ghee, before Venkateswara, offer tulsi and a feast called thaligai, and visit Perumal temples, Tirupati above all. Some go from house to house collecting rice in the Perumal's name to cook as an offering.",
+     "ta": "புரட்டாசி பெருமாளின் மாதம்; பல குடும்பங்கள் மாதம் முழுதும் சைவம் கடைப்பிடிக்கின்றன. ஒவ்வொரு சனியும் வேங்கடேசர் முன் அரிசிமாவும் வெல்லமும் நெய்யும் கொண்ட மாவிளக்கு ஏற்றி, துளசியும் தளிகை என்ற விருந்தும் படைத்து, பெருமாள் கோயில்களுக்கு, எல்லாவற்றுக்கும் மேலாகத் திருப்பதிக்கு, செல்கின்றனர். சிலர் பெருமாள் பெயரால் வீடுவீடாக அரிசி பெற்று நைவேத்தியம் சமைக்கின்றனர்."
+    },
+    "story": {
+     "en": "Purattasi is said to be the month in which Venkateswara appeared on the Tirumala hills, and Saturday, Shani's day, is kept for him. The story told is of Bhima, a potter devoted to the Lord, who could not afford proper offerings and worshipped with flowers of clay each Saturday; the Lord accepted them over the king's golden ones. The custom of vegetarian food through the month also has a practical side: Purattasi is the transition from the hot season to the rains.",
+     "ta": "திருமலையில் வேங்கடேசர் எழுந்தருளியது புரட்டாசியில் என்றும், சனிக்கிழமை அவருக்கு உகந்தது என்றும் கூறப்படுகிறது. சொல்லப்படும் கதை: இறைவன் மீது பக்தி கொண்ட குயவன் பீமன், சிறந்த படையல் வாங்க வசதியின்றி ஒவ்வொரு சனியும் களிமண் மலர்களால் வழிபட்டான்; அரசனின் பொன் மலர்களைவிட இறைவன் அவற்றை ஏற்றார். மாதம் முழுதும் சைவ உணவு வழக்கத்துக்கு நடைமுறைக் காரணமும் உண்டு: புரட்டாசி வெயில் காலத்திலிருந்து மழைக் காலத்துக்கான மாற்றம்."
+    },
+    "howTo": {
+     "en": [
+      "Keep the household vegetarian on Saturdays, or through the month if your family does.",
+      "Make maavilakku with rice flour, jaggery and ghee, light it before Perumal, and offer tulsi.",
+      "Cook a simple thaligai feast as an offering and share it.",
+      "Visit a Perumal temple."
+     ],
+     "ta": [
+      "சனிக்கிழமைகளில், அல்லது குடும்ப வழக்கமெனில் மாதம் முழுதும், சைவம் கடைப்பிடியுங்கள்.",
+      "அரிசிமாவு, வெல்லம், நெய்யால் மாவிளக்கு செய்து பெருமாள் முன் ஏற்றி, துளசி சமர்ப்பியுங்கள்.",
+      "எளிய தளிகை சமைத்துப் படைத்துப் பகிருங்கள்.",
+      "பெருமாள் கோயிலுக்குச் செல்லுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Govinda! Purattasi Saturday greetings.",
+     "ta": "கோவிந்தா! புரட்டாசி சனி வாழ்த்துகள்."
+    }
+   }
+  },
+  {
+   "id": "navarathiri",
+   "names": {
+    "en": "Navarathiri",
+    "ta": "நவராத்திரி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 1
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 9,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Nine nights of the Goddess, with the kolu of dolls and evening visits.",
+     "ta": "அம்மனின் ஒன்பது இரவுகள், கொலு பொம்மைகளும் மாலைச் சந்திப்புகளுமாக."
+    },
+    "traditions": {
+     "en": "Tamil homes set up the kolu: an odd number of steps covered in cloth and filled with dolls, gods, saints, wedding scenes, village life, a marapachi couple of wooden dolls handed down through the family, and new dolls added each year. Each evening women and girls visit one another's kolus, singing a song, and are given sundal and thamboolam. The first three nights are for Durga, the next three for Lakshmi, the last three for Saraswati. Lamps and kolams are renewed daily.",
+     "ta": "தமிழ் வீடுகளில் கொலு அமைக்கப்படுகிறது: ஒற்றைப்படை எண்ணிக்கையில் துணி போர்த்திய படிகள், தெய்வங்கள், மகான்கள், திருமணக் காட்சிகள், கிராம வாழ்க்கை பொம்மைகளால் நிரப்பப்படுகின்றன; குடும்பத்தில் வழிவழியாக வரும் மரப்பாச்சி பொம்மைகளுடன், ஒவ்வொரு ஆண்டும் புதிய பொம்மைகள் சேர்க்கப்படுகின்றன. ஒவ்வொரு மாலையும் பெண்களும் சிறுமிகளும் ஒருவர் வீட்டுக் கொலுவுக்குச் சென்று பாடல் பாடி, சுண்டலும் தாம்பூலமும் பெறுகின்றனர். முதல் மூன்று இரவுகள் துர்கைக்கு, அடுத்த மூன்று லட்சுமிக்கு, கடைசி மூன்று சரஸ்வதிக்கு. விளக்கும் கோலமும் தினமும் புதுப்பிக்கப்படுகின்றன."
+    },
+    "story": {
+     "en": "The Goddess fought the buffalo-demon Mahishasura for nine days and nights, and the gods, having given her all their weapons and powers, stood still as statues to watch, which is one reason given for the kolu: the dolls are the gods and all of creation gathered to witness her. On the tenth day she overcame him, and Vijayadashami celebrates the victory. The nine nights move from strength (Durga), to wellbeing (Lakshmi), to wisdom (Saraswati).",
+     "ta": "அம்மன் மகிஷாசுரனுடன் ஒன்பது இரவு-பகல் போரிட்டாள்; தம் ஆயுதங்களையும் ஆற்றல்களையும் அவளுக்கு அளித்த தேவர்கள் சிலைகளாக நின்று பார்த்தனர்; கொலுவுக்குச் சொல்லப்படும் ஒரு காரணம் இது: பொம்மைகள், அவளைக் காணக் கூடிய தேவர்களும் எல்லா உயிர்களும். பத்தாம் நாள் அவள் வென்றாள்; விஜயதசமி அந்த வெற்றியைக் கொண்டாடுகிறது. ஒன்பது இரவுகள் வலிமையிலிருந்து (துர்கை), நலனுக்கு (லட்சுமி), ஞானத்துக்கு (சரஸ்வதி) நகர்கின்றன."
+    },
+    "howTo": {
+     "en": [
+      "On the first day, set up the kolu steps (3, 5, 7 or 9) with a cloth and arrange the dolls, with a kalasham at the top.",
+      "Each evening, draw a kolam, light lamps, and offer a different sundal: chickpea, green gram, peanut and so on.",
+      "Invite friends and neighbours to see the kolu; give them sundal and thamboolam.",
+      "Sing or play a song for the Goddess each evening, and read the Lalitha Sahasranamam if you can.",
+      "On Saraswati Pooja day, place books and instruments before the Goddess; take down the kolu after Vijayadashami."
+     ],
+     "ta": [
+      "முதல் நாள் கொலுப் படிகளை (3, 5, 7 அல்லது 9) துணி போர்த்தி அமைத்து, உச்சியில் கலசத்துடன் பொம்மைகளை அடுக்குங்கள்.",
+      "ஒவ்வொரு மாலையும் கோலமிட்டு, விளக்கேற்றி, கொண்டைக்கடலை, பாசிப்பயறு, வேர்க்கடலை என வெவ்வேறு சுண்டல் படையுங்கள்.",
+      "நண்பர்களையும் அக்கம்பக்கத்தாரையும் கொலு பார்க்க அழைத்து, சுண்டலும் தாம்பூலமும் வழங்குங்கள்.",
+      "ஒவ்வொரு மாலையும் அம்மனுக்குப் பாடுங்கள், முடிந்தால் லலிதா சகஸ்ரநாமம் படியுங்கள்.",
+      "சரஸ்வதி பூஜையன்று புத்தகங்களையும் இசைக்கருவிகளையும் அம்மன் முன் வையுங்கள்; விஜயதசமிக்குப் பின் கொலுவைக் கலையுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Navarathiri! May the Goddess fill your home with strength, grace and wisdom.",
+     "ta": "இனிய நவராத்திரி நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "ayutha-pooja",
+   "names": {
+    "en": "Saraswathi Poosai",
+    "ta": "சரஸ்வதி பூஜை, ஆயுத பூஜை"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 9
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-TN"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Navami: Saraswati Pooja for books and music, and Ayutha Pooja for tools and vehicles.",
+     "ta": "நவமி: புத்தகங்களுக்கும் இசைக்கும் சரஸ்வதி பூஜை, கருவிகளுக்கும் வாகனங்களுக்கும் ஆயுத பூஜை."
+    },
+    "traditions": {
+     "en": "Books, pens and musical instruments are placed before Saraswati, and no one studies or plays from them for the day. Tools, machines and vehicles are cleaned, marked with sandal paste and kumkum, garlanded and worshipped; shops and workshops hold puja with sweet pongal and sundal, and a pumpkin is broken at the entrance. Many homes leave their books with the Goddess until Vijayadashami morning.",
+     "ta": "புத்தகங்கள், பேனாக்கள், இசைக்கருவிகள் சரஸ்வதியின் முன் வைக்கப்பட்டு, அன்று படிப்பதோ இசைப்பதோ இல்லை. கருவிகள், இயந்திரங்கள், வாகனங்கள் சுத்தம் செய்யப்பட்டு, சந்தனம்-குங்குமம் இட்டு, மாலையிட்டு வழிபடப்படுகின்றன; கடைகளிலும் பட்டறைகளிலும் சர்க்கரைப் பொங்கல், சுண்டலுடன் பூஜை, வாசலில் பூசணிக்காய் உடைத்தல். பல வீடுகள் விஜயதசமி காலை வரை புத்தகங்களை அம்மனிடம் விடுகின்றன."
+    },
+    "story": {
+     "en": "On the ninth day, the Goddess's battle with Mahishasura reached its end, and the weapons the gods had given her were honoured. Ayutha Pooja remembers this, and extends the honour to every tool by which people earn their living. In the Mahabharata, Arjuna retrieved the weapons hidden in a shami tree at the end of the Pandavas' exile and worshipped them before battle. Saraswati Pooja honours the knowledge and arts that books and instruments carry.",
+     "ta": "ஒன்பதாம் நாள் மகிஷாசுரனுடனான அம்மனின் போர் முடிவை எட்டியது; தேவர்கள் அவளுக்கு அளித்த ஆயுதங்கள் போற்றப்பட்டன. ஆயுத பூஜை இதை நினைவுகூர்ந்து, மக்கள் வாழ்வாதாரம் ஈட்டும் ஒவ்வொரு கருவிக்கும் அந்த மரியாதையை நீட்டிக்கிறது. மகாபாரதத்தில், வனவாச முடிவில் வன்னி மரத்தில் மறைத்த ஆயுதங்களை அர்ஜுனன் மீட்டு, போருக்கு முன் வழிபட்டான். புத்தகங்களும் இசைக்கருவிகளும் சுமக்கும் ஞானத்தையும் கலைகளையும் சரஸ்வதி பூஜை போற்றுகிறது."
+    },
+    "howTo": {
+     "en": [
+      "Clean your tools, vehicle, computer or workspace, and mark them with sandal paste and kumkum.",
+      "Place books, pens and instruments before Saraswati's picture with flowers.",
+      "Offer sweet pongal, sundal, puffed rice and fruit, and light a lamp.",
+      "Break a pumpkin or a coconut at the entrance of a shop or vehicle if your family does.",
+      "Leave the books until Vijayadashami morning."
+     ],
+     "ta": [
+      "கருவிகள், வாகனம், கணினி அல்லது பணியிடத்தைச் சுத்தம் செய்து சந்தனம்-குங்குமம் இடுங்கள்.",
+      "புத்தகங்கள், பேனாக்கள், இசைக்கருவிகளை மலர்களுடன் சரஸ்வதி படத்தின் முன் வையுங்கள்.",
+      "சர்க்கரைப் பொங்கல், சுண்டல், பொரி, பழம் படைத்து விளக்கேற்றுங்கள்.",
+      "குடும்ப வழக்கமெனில் கடை அல்லது வாகன வாசலில் பூசணி அல்லது தேங்காய் உடையுங்கள்.",
+      "விஜயதசமி காலை வரை புத்தகங்களை அங்கேயே வையுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Saraswati and Ayutha Pooja!",
+     "ta": "சரஸ்வதி பூஜை, ஆயுத பூஜை நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "vijayadashami-ta",
+   "names": {
+    "en": "Vijayadashami",
+    "ta": "விஜயதசமி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 10,
+    "observance": {
+     "kala": "aparahna"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The tenth day: the Goddess's victory, and the day children begin learning.",
+     "ta": "பத்தாம் நாள்: அம்மனின் வெற்றி, குழந்தைகள் கல்வி தொடங்கும் நாள்."
+    },
+    "traditions": {
+     "en": "The books and instruments set before Saraswati are taken back with a short worship, and the first thing read or played that morning is a prayer or a lesson. Young children are initiated into learning (Vidyarambham): an elder or a teacher holds the child's finger and writes the first letters, in Tamil 'Hari Sri' or 'a', and in Kerala 'Hari Sri Ganapataye Namah', in a plate of rice. Music and dance students begin new lessons. In Kerala, Vidyarambham is held at temples such as Thunchan Parambu and Kollur Mookambika, and in Tamil Nadu at Koothanur's Saraswati temple.",
+     "ta": "சரஸ்வதி முன் வைத்த புத்தகங்களும் கருவிகளும் சிறு வழிபாட்டுடன் திரும்ப எடுக்கப்பட்டு, அன்று காலை முதலில் படிப்பதோ இசைப்பதோ ஒரு பிரார்த்தனையோ பாடமோ. சிறு குழந்தைகளுக்கு வித்யாரம்பம்: பெரியவரோ ஆசிரியரோ குழந்தையின் விரலைப் பிடித்து, அரிசி நிரப்பிய தட்டில் 'அ' என்றோ 'ஹரி ஸ்ரீ' என்றோ முதல் எழுத்துகளை எழுதுகிறார். இசை, நடன மாணவர்கள் புதிய பாடங்களைத் தொடங்குகின்றனர். கூத்தனூர் சரஸ்வதி கோயிலில் சிறப்பு வித்யாரம்பம்."
+    },
+    "story": {
+     "en": "On the tenth day the Goddess overcame Mahishasura after nine days of battle, and the gods rejoiced; 'Vijaya' means victory. In the Ramayana, Rama defeated Ravana on this day after worshipping the Goddess. Because victory over ignorance is the truest one, the day is held the best of the year for beginning to learn: whatever is begun on Vijayadashami is begun with the Goddess of learning's blessing.",
+     "ta": "ஒன்பது நாள் போருக்குப் பின் பத்தாம் நாள் அம்மன் மகிஷாசுரனை வென்றாள்; தேவர்கள் மகிழ்ந்தனர்; 'விஜய' என்றால் வெற்றி. ராமாயணத்தில், அம்மனை வழிபட்ட பின் ராமன் இந்நாளில் ராவணனை வென்றான். அறியாமையை வெல்வதே உண்மையான வெற்றி என்பதால், கல்வி தொடங்க ஆண்டின் சிறந்த நாளாக இது கருதப்படுகிறது: விஜயதசமியில் தொடங்குவது கலைமகளின் அருளோடு தொடங்குகிறது."
+    },
+    "howTo": {
+     "en": [
+      "In the morning, do a short puja and take back the books and instruments from before Saraswati.",
+      "Read a prayer or a page, write something, or play a few notes before anything else.",
+      "If a child is starting to learn, sit them on an elder's lap and guide their finger to write the first letters in a plate of rice.",
+      "Begin a new lesson or course you have been planning.",
+      "Take down the kolu if you set one up, keeping one doll lying down as a gentle goodbye till next year."
+     ],
+     "ta": [
+      "காலையில் சிறு பூஜை செய்து, சரஸ்வதி முன் வைத்த புத்தகங்களையும் கருவிகளையும் திரும்ப எடுங்கள்.",
+      "வேறு எதற்கும் முன், ஒரு பிரார்த்தனையோ ஒரு பக்கமோ படியுங்கள், ஏதேனும் எழுதுங்கள், அல்லது சில ஸ்வரங்கள் இசையுங்கள்.",
+      "கல்வி தொடங்கும் குழந்தையைப் பெரியவர் மடியில் அமர வைத்து, அரிசித் தட்டில் முதல் எழுத்துகளை எழுத விரலைப் பிடித்து வழிநடத்துங்கள்.",
+      "திட்டமிட்டிருந்த புதிய பாடம் அல்லது படிப்பைத் தொடங்குங்கள்.",
+      "கொலு வைத்திருந்தால் கலையுங்கள்; அடுத்த ஆண்டு வரையிலான மென்மையான விடைபெறலாக ஒரு பொம்மையைப் படுக்க வையுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Vijayadashami! May every new beginning be blessed.",
+     "ta": "விஜயதசமி நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "deepavali",
+   "names": {
+    "en": "Deepavali",
+    "ta": "தீபாவளி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 29
+   },
+   "tier": "major",
+   "holidayIn": [
+    "LK"
+   ],
+   "durationDays": 1,
+   "variations": [
+    "Kept as Naraka Chaturdashi, the day Krishna Chaturdashi holds at sunrise, with the oil bath before dawn. Lakshmi Puja on Amavasya, the North Indian Diwali, can fall the next day; far from India, as in North America, the two are often a day apart."
+   ],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Naraka Chaturdashi: the South Indian Deepavali, beginning with an oil bath before dawn.",
+     "ta": "நரக சதுர்த்தசி: தென்னிந்தியத் தீபாவளி, விடியலுக்கு முன் எண்ணெய்க் குளியலுடன் தொடங்குகிறது."
+    },
+    "traditions": {
+     "en": "Families wake long before dawn for the Ganga snanam: an elder applies warm sesame oil to each person's head, and everyone bathes, which tradition says is as good as bathing in the Ganga on this morning. Everyone wears new clothes, eats the Deepavali lehiyam (a digestive herbal paste) and a sweet, and lights crackers in the dark before sunrise. Sweets and savouries made for days, adhirasam, murukku, mysorepak, ribbon pakoda, are shared with neighbours. Lamps are lit at the door in the evening. 'Ganga snanam aacha?' (have you had your Ganga bath?) is the morning greeting.",
+     "ta": "குடும்பங்கள் விடியலுக்கு வெகு முன்பே கங்கா ஸ்நானத்துக்கு எழுகின்றன: பெரியவர் ஒவ்வொருவர் தலையிலும் வெதுவெதுப்பான நல்லெண்ணெய் வைக்க, அனைவரும் நீராடுகின்றனர்; இக்காலையின் குளியல் கங்கையில் நீராடுவதற்கு இணை என்பது மரபு. அனைவரும் புத்தாடை அணிந்து, தீபாவளி லேகியமும் இனிப்பும் உண்டு, சூரிய உதயத்துக்கு முன் இருளில் பட்டாசு வெடிக்கின்றனர். நாட்கணக்கில் செய்த அதிரசம், முறுக்கு, மைசூர்பாக், ரிப்பன் பக்கோடா அக்கம்பக்கத்தாருடன் பகிரப்படுகின்றன. மாலையில் வாசலில் விளக்கேற்றப்படுகிறது. 'கங்கா ஸ்நானம் ஆச்சா?' என்பதே காலை வாழ்த்து."
+    },
+    "story": {
+     "en": "Narakasura, son of Bhudevi, the Earth, grew powerful and arrogant, imprisoned sixteen thousand women and troubled the gods. Krishna, with Satyabhama, who was Bhudevi herself in a new birth, rode out against him, and at dawn on Chaturdashi Narakasura fell. As he died, he understood what he had done, and asked that the day be celebrated with lights, new clothes and joy, so that people would remember that even the darkest night ends. His mother agreed, and Deepavali morning in the South is kept as he asked.",
+     "ta": "பூமாதேவியின் மகனான நரகாசுரன் வலிமையும் ஆணவமும் கொண்டு, பதினாறாயிரம் பெண்களைச் சிறைப்படுத்தி, தேவர்களைத் துன்புறுத்தினான். மறுபிறவியில் பூமாதேவியே ஆன சத்யபாமாவுடன் கண்ணன் அவனை எதிர்த்தான்; சதுர்த்தசி விடியலில் நரகாசுரன் வீழ்ந்தான். இறக்கும் தருணத்தில் தன் செயல்களை உணர்ந்து, இருண்ட இரவும் முடிவுறும் என்பதை மக்கள் நினைவுகூர, இந்நாளை விளக்குகள், புத்தாடை, மகிழ்ச்சியுடன் கொண்டாட வேண்டும் என்று வேண்டினான். தாய் இசைந்தாள்; தென்னகத்தின் தீபாவளிக் காலை அவன் வேண்டியபடியே கொண்டாடப்படுகிறது."
+    },
+    "howTo": {
+     "en": [
+      "In the days before, make or buy sweets and savouries, new clothes, oil, shikakai and the Deepavali lehiyam.",
+      "Wake before dawn; an elder applies warm sesame oil to everyone's head. Bathe with shikakai.",
+      "Wear new clothes, worship at the family altar, and eat a little lehiyam and a sweet.",
+      "Light crackers before sunrise if you do; choose quieter ones, and keep children and animals safe.",
+      "Visit and share sweets with neighbours and relatives; light lamps at the door in the evening."
+     ],
+     "ta": [
+      "முந்தைய நாட்களில் இனிப்புகள், காரவகைகள், புத்தாடை, எண்ணெய், சீயக்காய், தீபாவளி லேகியம் தயார் செய்யுங்கள் அல்லது வாங்குங்கள்.",
+      "விடியலுக்கு முன் எழுங்கள்; பெரியவர் அனைவர் தலையிலும் வெதுவெதுப்பான நல்லெண்ணெய் வைப்பார். சீயக்காயுடன் நீராடுங்கள்.",
+      "புத்தாடை அணிந்து, பூஜையறையில் வழிபட்டு, சிறிது லேகியமும் இனிப்பும் உண்ணுங்கள்.",
+      "பட்டாசு வெடிப்பதாயின் சூரிய உதயத்துக்கு முன், குறைந்த சத்தமுடையவற்றைத் தேர்ந்து, குழந்தைகளையும் விலங்குகளையும் பாதுகாப்பாக வையுங்கள்.",
+      "அக்கம்பக்கத்தாரையும் உறவினரையும் சந்தித்து இனிப்பு பகிருங்கள்; மாலையில் வாசலில் விளக்கேற்றுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Deepavali! Ganga snanam aacha?",
+     "ta": "இனிய தீபாவளி நல்வாழ்த்துகள்! கங்கா ஸ்நானம் ஆச்சா?"
+    }
+   }
+  },
+  {
+   "id": "kedara-gowri",
+   "names": {
+    "en": "Kethara Gowri Viratham",
+    "ta": "கேதார கௌரி விரதம்"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 30,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Kethara Gowri Viratham: Sri Lankan Tamils' twenty-one-day vow to Shiva and Parvati, completed on this day.",
+     "ta": "கேதார கௌரி விரதம்: சிவனுக்கும் பார்வதிக்குமான இலங்கைத் தமிழரின் இருபத்தொரு நாள் விரதம், இன்று நிறைவடைகிறது."
+    },
+    "traditions": {
+     "en": "Many Sri Lankan Tamil families keep the Kethara Gowri Viratham for twenty-one days, often eating once a day, and complete it on the Amavasya of Aippasi with a puja at the kovil, when a sacred thread of twenty-one strands is tied on the wrist. It is kept for the wellbeing of the family.",
+     "ta": "பல இலங்கைத் தமிழ்க் குடும்பங்கள் கேதார கௌரி விரதத்தை இருபத்தொரு நாள், பெரும்பாலும் ஒருவேளை உணவுடன் கடைப்பிடித்து, ஐப்பசி அமாவாசையன்று கோவிலில் பூஜையுடன் நிறைவு செய்கின்றனர்; அப்போது இருபத்தொரு இழைகள் கொண்ட காப்பு நூல் கையில் கட்டப்படுகிறது. குடும்ப நலனுக்காக இது கடைப்பிடிக்கப்படுகிறது."
+    },
+    "story": {
+     "en": "The story told is of Parvati, who kept this vratham for twenty-one days to win the right to be united with Shiva as one body, and so Shiva became Ardhanarishvara, half Shiva and half Parvati. The vratham remembers that wish for complete partnership, and couples keep it together for the closeness of their own marriage.",
+     "ta": "சொல்லப்படும் கதை: சிவனுடன் ஒரே உடலாக இணையும் உரிமையைப் பெற பார்வதி இருபத்தொரு நாட்கள் இந்த விரதம் இருந்தாள்; அதனால் சிவன் பாதி சிவனும் பாதி பார்வதியுமான அர்த்தநாரீஸ்வரரானார். முழுமையான இணைவுக்கான அந்த விருப்பத்தை இந்த விரதம் நினைவுகூர்கிறது; தம் திருமண நெருக்கத்துக்காகத் தம்பதியர் இதை ஒன்றாகக் கடைப்பிடிக்கின்றனர்."
+    },
+    "howTo": {
+     "en": [
+      "Keep a fast through the day if your family does.",
+      "In the evening, set up a kalasham or a picture of Shiva and Parvati with the sacred threads.",
+      "Offer twenty-one kinds of flowers, fruits and sweets, adhirasam among them.",
+      "Tie the sacred thread on the wrist, hear the Kedara Gowri story, and break the fast."
+     ],
+     "ta": [
+      "குடும்ப வழக்கமெனில் நாள் முழுதும் விரதமிருங்கள்.",
+      "மாலையில் கலசம் அல்லது சிவன்-பார்வதி படத்துடன் நோன்புக் கயிறுகளை வையுங்கள்.",
+      "அதிரசம் உட்பட இருபத்தொரு வகை மலர், பழம், இனிப்பு படையுங்கள்.",
+      "மணிக்கட்டில் நோன்புக் கயிறு கட்டி, கேதார கௌரி கதை கேட்டு, விரதம் முடியுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Kedara Gowri Vratham wishes to every couple.",
+     "ta": "கேதார கௌரி விரத நல்வாழ்த்துகள்."
+    }
+   }
+  },
+  {
+   "id": "soorasamharam",
+   "names": {
+    "en": "Kandha Sashti (Soorasamharam)",
+    "ta": "கந்த சஷ்டி (சூரசம்ஹாரம்)"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "kartika",
+    "tithi": 6,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The sixth day of Kanda Sashti: Murugan overcomes Surapadman at Tiruchendur.",
+     "ta": "கந்த சஷ்டியின் ஆறாம் நாள்: திருச்செந்தூரில் முருகன் சூரபத்மனை வெல்லும் நாள்."
+    },
+    "traditions": {
+     "en": "Kanda Sashti is a six-day fast after Deepavali, ending on the sixth day of bright Aippasi. Devotees eat simply or fast, recite the Kanda Shashti Kavacham daily, and on the sixth evening watch Soorasamharam, the re-enactment of Murugan's victory, on the beach at Tiruchendur and at every Murugan temple. The next day, Murugan's wedding to Deivanai (thirukalyanam) is celebrated, and the fast is broken.",
+     "ta": "கந்த சஷ்டி தீபாவளிக்குப் பின் ஆறு நாள் விரதம்; ஐப்பசி வளர்பிறை சஷ்டியில் நிறைவு. பக்தர்கள் எளிமையாக உண்டு அல்லது விரதமிருந்து, தினமும் கந்த சஷ்டி கவசம் பாராயணம் செய்து, ஆறாம் நாள் மாலை திருச்செந்தூர் கடற்கரையிலும் எல்லா முருகன் கோயில்களிலும் முருகனின் வெற்றியின் நிகழ்த்துதலான சூரசம்ஹாரத்தைத் தரிசிக்கின்றனர். மறுநாள் முருகன்-தெய்வானை திருக்கல்யாணம்; விரதம் நிறைவடைகிறது."
+    },
+    "story": {
+     "en": "The asura Surapadman had won great boons and ruled the three worlds harshly. Murugan, born to face him, led the gods' army south to Tiruchendur, and the battle lasted six days. On the sixth, Surapadman took the form of a great mango tree in the sea; Murugan split it with his Vel. One half became a peacock, which Murugan took as his vehicle, and the other a rooster, which he placed on his banner. In this telling, even the defeated one is transformed and given a place beside him, which is why Soorasamharam is about change of heart as much as victory.",
+     "ta": "பெரும் வரங்கள் பெற்ற சூரபத்மன் மூவுலகையும் கடுமையாக ஆண்டான். அவனை எதிர்கொள்ளப் பிறந்த முருகன், தேவர்படையைத் தெற்கே திருச்செந்தூருக்கு வழிநடத்தினார்; போர் ஆறு நாட்கள் நீண்டது. ஆறாம் நாள் சூரபத்மன் கடலில் பெரிய மாமரமாக நின்றான்; முருகன் வேலால் அதைப் பிளந்தார். ஒரு பாதி மயிலாகி அவர் வாகனமானது; மறுபாதி சேவலாகி அவர் கொடியானது. இந்தக் கதையில் தோற்றவனும் மாற்றம் பெற்று அவர் அருகில் இடம் பெறுகிறான்; அதனால் சூரசம்ஹாரம் வெற்றியைப் போலவே மனமாற்றத்தையும் பற்றியது."
+    },
+    "howTo": {
+     "en": [
+      "Through the six days, eat simply, one meal or fruit and milk, if you keep the fast.",
+      "Recite the Kanda Shashti Kavacham each day, morning or evening.",
+      "On the sixth evening, watch Soorasamharam at a Murugan temple or on broadcast from Tiruchendur.",
+      "On the seventh day, celebrate the thirukalyanam and break the fast with a festive meal."
+     ],
+     "ta": [
+      "விரதமிருப்பவர்கள் ஆறு நாட்களும் எளிமையாக, ஒருவேளை உணவு அல்லது பழம்-பால், உண்ணுங்கள்.",
+      "தினமும் காலையோ மாலையோ கந்த சஷ்டி கவசம் பாராயணம் செய்யுங்கள்.",
+      "ஆறாம் நாள் மாலை முருகன் கோயிலிலோ திருச்செந்தூர் ஒளிபரப்பிலோ சூரசம்ஹாரத்தைத் தரிசியுங்கள்.",
+      "ஏழாம் நாள் திருக்கல்யாணம் கொண்டாடி, பண்டிகை உணவுடன் விரதம் முடியுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Vetrivel Muruganukku Arohara! Kanda Sashti greetings.",
+     "ta": "கந்த சஷ்டி நல்வாழ்த்துகள்! வெற்றிவேல் முருகனுக்கு அரோகரா!"
+    }
+   }
+  },
+  {
+   "id": "karthigai-deepam",
+   "names": {
+    "en": "Karthigai Deepam",
+    "ta": "கார்த்திகை தீபம்"
+   },
+   "rule": {
+    "type": "nakshatra-in-solar-month",
+    "month": "vrishchika",
+    "nakshatra": "krittika",
+    "observance": {
+     "prefer": "last",
+     "kala": "pradosh"
+    },
+    "nearTithi": 15
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Krittika star in Karthigai, near the full moon: rows of lamps and the great flame on Arunachala.",
+     "ta": "கார்த்திகை மாதப் பௌர்ணமியையொட்டிய கார்த்திகை நட்சத்திரம்: விளக்கு வரிசைகளும் அருணாசல மகாதீபமும்."
+    },
+    "traditions": {
+     "en": "At dusk, homes are lined with rows of small clay lamps (agal vilakku) at doorsteps, windows, walls and kolams, and the house glows. At Thiruvannamalai, at the moment of dusk, the Maha Deepam, a huge flame, is lit on top of the Arunachala hill and burns for days, seen for miles; lakhs gather. Families make pori urundai (puffed rice and jaggery balls), appam and adai. In Kerala, Thrikkarthika is kept the same way with lamps around homes and temples.",
+     "ta": "அந்தி வேளையில் வீடுகளின் வாசல்படிகள், சன்னல்கள், சுவர்கள், கோலங்களில் அகல் விளக்கு வரிசைகள் ஏற்றப்பட்டு, வீடே ஒளிர்கிறது. திருவண்ணாமலையில் அந்தி வேளையில் அருணாசல மலை உச்சியில் மகாதீபம் ஏற்றப்பட்டு, மைல்களுக்கு அப்பாலும் தெரியும்படி பல நாட்கள் எரிகிறது; லட்சக்கணக்கானோர் கூடுகின்றனர். குடும்பங்கள் பொரி உருண்டை, அப்பம், அடை செய்கின்றன."
+    },
+    "story": {
+     "en": "The story told is that Brahma and Vishnu once argued over which of them was greater. Between them appeared an endless column of fire. Vishnu, as a boar, dug down to find its base and Brahma, as a swan, flew up to find its top; neither could, and they understood that the flame was Shiva, beyond both. That column of light is Arunachala, the hill at Thiruvannamalai, and the Maha Deepam remembers it. Karthigai is also Murugan's star: the six Krittika maidens raised him as six infants.",
+     "ta": "ஒருமுறை பிரம்மனும் திருமாலும் தங்களில் யார் பெரியவர் என்று வாதிட்டனர். இருவருக்கும் நடுவே முடிவில்லாத ஒரு நெருப்புத் தூண் தோன்றியது. திருமால் வராகமாக அதன் அடியைத் தேடிக் கீழே தோண்டினார்; பிரம்மன் அன்னமாக அதன் முடியைத் தேடி மேலே பறந்தார்; இருவராலும் இயலவில்லை; அந்தச் சுடர் இருவருக்கும் அப்பாற்பட்ட சிவனே என்று உணர்ந்தனர். அந்த ஒளித்தூணே திருவண்ணாமலையின் அருணாசலம்; மகாதீபம் அதை நினைவுகூர்கிறது. கார்த்திகை முருகனின் நட்சத்திரமும் கூட: ஆறு கார்த்திகைப் பெண்கள் ஆறு குழந்தைகளாக அவரை வளர்த்தனர்."
+    },
+    "howTo": {
+     "en": [
+      "Clean and soak clay lamps the day before; buy wicks and oil or ghee.",
+      "Make pori urundai, appam or adai.",
+      "At dusk, light a lamp in the puja room first, then line the doorstep, windows and kolam with lamps.",
+      "Watch the Maha Deepam lighting from Thiruvannamalai if you can, live or on broadcast.",
+      "Keep the lamps burning for the evening, and share the sweets."
+     ],
+     "ta": [
+      "முந்தைய நாள் அகல் விளக்குகளைச் சுத்தம் செய்து ஊறவையுங்கள்; திரியும் எண்ணெயோ நெய்யோ வாங்குங்கள்.",
+      "பொரி உருண்டை, அப்பம் அல்லது அடை செய்யுங்கள்.",
+      "அந்தியில் முதலில் பூஜையறையில் விளக்கேற்றி, பின் வாசல்படி, சன்னல், கோலம் எங்கும் விளக்குகளை வரிசையாக ஏற்றுங்கள்.",
+      "முடிந்தால் திருவண்ணாமலை மகாதீபத்தை நேரிலோ ஒளிபரப்பிலோ தரிசியுங்கள்.",
+      "மாலை முழுதும் விளக்குகள் எரியட்டும்; இனிப்புகளைப் பகிருங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Karthigai Deepam! May every lamp tonight light up your home.",
+     "ta": "கார்த்திகை தீப நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "subrahmanya-sashti",
+   "names": {
+    "en": "Subrahmanya Sashti",
+    "ta": "சுப்ரமணிய சஷ்டி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "margashirsha",
+    "tithi": 6,
+    "observance": {
+     "prefer": "first",
+     "kala": "sunset"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Margazhi-month Sashti, a Murugan observance especially kept in Karnataka and Tamil Nadu.",
+     "ta": "மார்கழி சஷ்டி, குறிப்பாகக் கர்நாடகத்திலும் தமிழகத்திலும் கடைப்பிடிக்கப்படும் முருகன் விரதம்."
+    },
+    "traditions": {
+     "en": "Devotees fast and worship Murugan, often in his serpent form as Subrahmanya, with milk, flowers and panchamritam. At Kukke Subramanya in Karnataka and at Murugan temples in Tamil Nadu, there are special abhishekams and processions. Many recite the Kanda Shashti Kavacham.",
+     "ta": "பக்தர்கள் விரதமிருந்து, பெரும்பாலும் நாக வடிவில் சுப்ரமணியராக, முருகனைப் பால், மலர், பஞ்சாமிர்தத்துடன் வழிபடுகின்றனர். கர்நாடகத்தின் குக்கே சுப்ரமணியாவிலும் தமிழக முருகன் கோயில்களிலும் சிறப்பு அபிஷேகங்களும் ஊர்வலங்களும். பலர் கந்த சஷ்டி கவசம் பாராயணம் செய்கின்றனர்."
+    },
+    "story": {
+     "en": "Tradition holds that on this Sashti Murugan, having overcome the asura Tarakasura, came to rest at Kukke, where the serpent king Vasuki was keeping tapas for his protection, and Murugan gave him shelter. He is worshipped there as Subrahmanya, the protector of the serpents.",
+     "ta": "தாரகாசுரனை வென்ற முருகன் இந்த சஷ்டியில் குக்கேயில் தங்கினார்; அங்கே பாதுகாப்புக்காகத் தவமிருந்த நாகராஜன் வாசுகிக்கு அடைக்கலம் தந்தார் என்பது மரபு. நாகங்களின் காவலனான சுப்ரமணியராக அங்கே அவர் வழிபடப்படுகிறார்."
+    },
+    "howTo": {
+     "en": [
+      "Keep a fast or a simple vegetarian meal if your family does.",
+      "Worship Murugan with milk, flowers and panchamritam, and light a lamp.",
+      "Recite the Kanda Shashti Kavacham."
+     ],
+     "ta": [
+      "குடும்ப வழக்கமெனில் விரதமோ எளிய சைவ உணவோ கடைப்பிடியுங்கள்.",
+      "பால், மலர், பஞ்சாமிர்தத்துடன் முருகனை வழிபட்டு விளக்கேற்றுங்கள்.",
+      "கந்த சஷ்டி கவசம் பாராயணம் செய்யுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Subrahmanya Sashti greetings.",
+     "ta": "சுப்ரமணிய சஷ்டி நல்வாழ்த்துகள்."
+    }
+   }
+  },
+  {
+   "id": "vaikunta-ekadashi",
+   "names": {
+    "en": "Vaikunta Ekadashi",
+    "ta": "வைகுண்ட ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-solar-month",
+    "month": "dhanu",
+    "tithi": 11
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Shukla Ekadashi of Margazhi, when the Paramapada Vasal, the gate of Vaikuntha, opens at dawn.",
+     "ta": "மார்கழி வளர்பிறை ஏகாதசி: விடியலில் பரமபத வாசல் திறக்கும் நாள்."
+    },
+    "traditions": {
+     "en": "Devotees fast and keep vigil through the night before, singing and reciting. Before dawn, the northern door of Vishnu temples, the Paramapada Vasal or Sorga Vasal, is opened and the deity passes through it, followed by devotees. Srirangam's festival is the grandest, part of a twenty-day Adhyayana Utsavam of Divya Prabandham recitation; Tirumala, Thiruvallikeni and every Perumal temple draw huge crowds. Many play Paramapadam, the board game of snakes and ladders, through the night to stay awake.",
+     "ta": "பக்தர்கள் விரதமிருந்து முந்தைய இரவு முழுதும் பாடியும் பாராயணம் செய்தும் விழித்திருக்கின்றனர். விடியலுக்கு முன் பெருமாள் கோயில்களின் வடக்கு வாசலான பரமபத வாசல் (சொர்க்க வாசல்) திறக்கப்பட்டு, பெருமாள் அதன் வழியே எழுந்தருள, பக்தர்கள் பின்தொடர்கின்றனர். இருபது நாள் திவ்யப் பிரபந்த அத்யயன உற்சவத்தின் பகுதியான ஸ்ரீரங்கம் விழா மிகப் பெரியது; திருமலை, திருவல்லிக்கேணி, எல்லாப் பெருமாள் கோயில்களிலும் பெருந்திரள். விழித்திருக்கப் பலர் இரவு முழுதும் பரமபதம் விளையாடுகின்றனர்."
+    },
+    "story": {
+     "en": "The story told is that two asuras, Madhu and Kaitabha, who had been overcome by Vishnu, asked him a favour: that the gate of his realm be opened on this day for anyone who comes, and that they too might pass through. Vishnu granted it, and the northern door is opened each year in remembrance. Another telling links the day to Nammazhwar, whose verses are recited in full through the Adhyayana festival, and who is said to have reached Vaikuntha at its end.",
+     "ta": "சொல்லப்படும் கதை: திருமாலால் வெல்லப்பட்ட மது, கைடபன் என்ற இரு அசுரர்கள், இந்நாளில் வருவோர் அனைவருக்கும் தம் உலகின் வாசல் திறக்க வேண்டும், தாமும் அதன் வழியே செல்ல வேண்டும் என்று வேண்டினர். திருமால் அருளினார்; அதன் நினைவாக ஆண்டுதோறும் வடக்கு வாசல் திறக்கப்படுகிறது. இன்னொரு மரபு, அத்யயன உற்சவத்தில் முழுமையாகப் பாராயணம் செய்யப்படும் பாசுரங்களை அருளிய நம்மாழ்வார், உற்சவ முடிவில் வைகுந்தம் அடைந்ததாகக் கூறுகிறது."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light meal the evening before (Dasami) and begin the fast.",
+      "Keep vigil through the night, reciting the Thiruppavai, Vishnu Sahasranamam or Divya Prabandham; Paramapadam helps the children stay awake.",
+      "Before dawn, go to a Perumal temple to pass through the Paramapada Vasal, or watch the Srirangam broadcast.",
+      "Worship at home with tulsi and a lamp.",
+      "Break the fast the next morning, Dvadasi, with akathi keerai, nellikai and sundaikai, as tradition does."
+     ],
+     "ta": [
+      "முந்தைய மாலை (தசமி) லேசாக உண்டு விரதம் தொடங்குங்கள்.",
+      "திருப்பாவை, விஷ்ணு சகஸ்ரநாமம் அல்லது திவ்யப் பிரபந்தம் பாராயணம் செய்தபடி இரவு விழித்திருங்கள்; குழந்தைகள் விழித்திருக்கப் பரமபதம் உதவும்.",
+      "விடியலுக்கு முன் பெருமாள் கோயிலுக்குச் சென்று பரமபத வாசலைக் கடந்து செல்லுங்கள், அல்லது ஸ்ரீரங்கம் ஒளிபரப்பைப் பாருங்கள்.",
+      "வீட்டில் துளசியும் விளக்குமாக வழிபடுங்கள்.",
+      "மறுநாள் துவாதசி காலை, மரபுப்படி அகத்திக்கீரை, நெல்லிக்காய், சுண்டைக்காயுடன் விரதம் முடியுங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Govinda! Vaikunta Ekadashi greetings.",
+     "ta": "வைகுண்ட ஏகாதசி நல்வாழ்த்துகள்! கோவிந்தா!"
+    }
+   }
+  },
+  {
+   "id": "arudra-darshan",
+   "names": {
+    "en": "Arudra Darshan",
+    "ta": "ஆருத்ரா தரிசனம்"
+   },
+   "rule": {
+    "type": "nakshatra-in-solar-month",
+    "month": "dhanu",
+    "nakshatra": "ardra",
+    "nearTithi": 15
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Thiruvadhirai star in Margazhi: Nataraja's cosmic dance, celebrated at Chidambaram.",
+     "ta": "மார்கழித் திருவாதிரை: நடராஜரின் ஆனந்தத் தாண்டவம், சிதம்பரத்தில் கொண்டாட்டம்."
+    },
+    "traditions": {
+     "en": "At Chidambaram, the ten-day festival ends with the dawn abhishekam and darshan of Nataraja, the dancing Shiva, and his procession. Homes make thiruvadhirai kali, a sweet of rice, jaggery and coconut, with a mixed-vegetable kootu (ezhu kari kootu) of seven vegetables. Women keep a fast for their families. In Kerala the same night is Dhanu Thiruvathira, with the thiruvathirakali dance.",
+     "ta": "சிதம்பரத்தில் பத்து நாள் திருவிழா, நடனமாடும் சிவனான நடராஜரின் விடியல் அபிஷேகம், தரிசனம், ஊர்வலத்துடன் நிறைவடைகிறது. வீடுகளில் அரிசி, வெல்லம், தேங்காய் சேர்த்த திருவாதிரைக் களியும், ஏழு காய்கறிகள் கொண்ட ஏழுகறிக் கூட்டும் செய்யப்படுகின்றன. பெண்கள் குடும்பத்துக்காக விரதமிருக்கின்றனர். கேரளத்தில் இதே இரவு திருவாதிரைக்களி நடனத்துடன் தனு திருவாதிரை."
+    },
+    "story": {
+     "en": "The story told is that in the Daruka forest a group of sages, proud of their rituals, tried to overcome Shiva, who came to them as a beautiful mendicant. They sent a tiger, a serpent and the dwarf Muyalakan against him; Shiva wore the tiger's skin, the serpent as an ornament, and danced upon Muyalakan, who stands for ignorance. His dance, the Ananda Tandava, the dance of bliss that moves creation, was seen by the sages Patanjali and Vyaghrapada at Chidambaram on the Thiruvadhirai star of Margazhi. Another story is of Sendanar, a poor woodcutter who could offer only kali to Shiva; the Lord accepted it with delight, and kali has been the day's offering since.",
+     "ta": "சொல்லப்படும் கதை: தாருகாவனத்தில் தம் வேள்விகளில் கர்வம் கொண்ட முனிவர்கள், அழகிய பிட்சாடனராக வந்த சிவனை வெல்ல முயன்றனர். புலி, பாம்பு, முயலகன் என்ற குள்ளனை அவர்மீது ஏவினர்; சிவன் புலித்தோலை அணிந்து, பாம்பை அணிகலனாக்கி, அறியாமையின் வடிவான முயலகன் மீது நடனமாடினார். படைப்பை இயக்கும் அவரது ஆனந்தத் தாண்டவத்தை மார்கழித் திருவாதிரையன்று சிதம்பரத்தில் பதஞ்சலியும் வியாக்ரபாதரும் தரிசித்தனர். இன்னொரு கதை: சிவனுக்குக் களி மட்டுமே படைக்க முடிந்த ஏழை விறகுவெட்டி சேந்தனார்; இறைவன் அதை மகிழ்ந்து ஏற்றார்; அன்று முதல் களியே இந்நாளின் நைவேத்தியம்."
+    },
+    "howTo": {
+     "en": [
+      "Make thiruvadhirai kali and ezhu kari kootu.",
+      "Before dawn, bathe and offer the kali to Nataraja or Shiva with a lamp.",
+      "Watch the Arudra darshan from Chidambaram if you can, or visit a Shiva temple.",
+      "Sing Thiruvempavai verses, and share the kali."
+     ],
+     "ta": [
+      "திருவாதிரைக் களியும் ஏழுகறிக் கூட்டும் செய்யுங்கள்.",
+      "விடியலுக்கு முன் நீராடி, விளக்குடன் நடராஜருக்கு அல்லது சிவனுக்குக் களி படையுங்கள்.",
+      "முடிந்தால் சிதம்பரம் ஆருத்ரா தரிசனத்தைப் பாருங்கள், அல்லது சிவன் கோயிலுக்குச் செல்லுங்கள்.",
+      "திருவெம்பாவை பாடி, களியைப் பகிருங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Arudra Darshan!",
+     "ta": "ஆருத்ரா தரிசன நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "hanumath-jayanthi-ta",
+   "names": {
+    "en": "Hanumath Jayanthi",
+    "ta": "அனுமத் ஜெயந்தி"
+   },
+   "rule": {
+    "type": "tithi-in-solar-month",
+    "month": "dhanu",
+    "tithi": 30
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Moolam star with the new moon of Margazhi: Hanuman's birth in the Tamil tradition.",
+     "ta": "மார்கழி அமாவாசையுடன் மூல நட்சத்திரம்: தமிழ் மரபில் அனுமன் பிறந்த நாள்."
+    },
+    "traditions": {
+     "en": "In Tamil Nadu, Hanuman's birth is kept in Margazhi. Hanuman temples, at Namakkal, Suchindram and Nanganallur especially, are decorated with vadai malai, garlands of hundreds of vadai, and vennai kappu, a coating of butter. Devotees recite the Hanuman Chalisa and Sundarakandam, offer tulsi and betel garlands, and many fast.",
+     "ta": "தமிழகத்தில் அனுமன் பிறப்பு மார்கழியில் கொண்டாடப்படுகிறது. அனுமன் கோயில்கள், குறிப்பாக நாமக்கல், சுசீந்திரம், நங்கநல்லூர், வடைமாலை, நூற்றுக்கணக்கான வடைகளால் ஆன மாலை, வெண்ணெய்க் காப்பு ஆகியவற்றால் அலங்கரிக்கப்படுகின்றன. பக்தர்கள் அனுமன் சாலீசாவும் சுந்தரகாண்டமும் பாராயணம் செய்து, துளசி, வெற்றிலை மாலை சாற்றுகின்றனர்; பலர் விரதமிருக்கின்றனர்."
+    },
+    "story": {
+     "en": "Hanuman, son of Anjana and Vayu, the wind, leapt as a child to catch the rising Sun, thinking it a fruit; struck by Indra's thunderbolt, he fell, and the gods, to console Vayu, blessed him with great strength and wisdom. He grew to be Rama's devoted messenger, crossing the ocean to find Sita in Lanka and carrying a mountain of healing herbs to save Lakshmana. In Tamil tradition he is remembered with special affection as the one who asks nothing for himself.",
+     "ta": "அஞ்சனைக்கும் வாயுவுக்கும் மகனான அனுமன், குழந்தையாக இருக்கும்போது உதய சூரியனைப் பழம் என்று பிடிக்கத் தாவினான்; இந்திரனின் வஜ்ராயுதத்தால் வீழ்ந்தான்; வாயுவைத் தேற்றத் தேவர்கள் அவனுக்குப் பெரும் வலிமையும் ஞானமும் அருளினர். இலங்கையில் சீதையைக் கண்டுபிடிக்கக் கடலைக் கடந்தும், லட்சுமணனைக் காக்க மூலிகை மலையைச் சுமந்தும் ராமனின் பக்தத் தூதுவனானான். தனக்கென எதையும் கேட்காதவனாகத் தமிழ் மரபு அவனைத் தனிப் பாசத்துடன் நினைவுகூர்கிறது."
+    },
+    "howTo": {
+     "en": [
+      "Visit a Hanuman temple, or set up a picture of Hanuman at home.",
+      "Offer a vadai malai or a few vadai, butter, tulsi and a betel garland.",
+      "Recite the Hanuman Chalisa or a chapter of Sundarakandam.",
+      "Keep a fast if your family does, and share the prasad."
+     ],
+     "ta": [
+      "அனுமன் கோயிலுக்குச் செல்லுங்கள், அல்லது வீட்டில் அனுமன் படம் வையுங்கள்.",
+      "வடைமாலை அல்லது சில வடைகள், வெண்ணெய், துளசி, வெற்றிலை மாலை சாற்றுங்கள்.",
+      "அனுமன் சாலீசா அல்லது சுந்தரகாண்டத்தின் ஒரு சர்க்கம் பாராயணம் செய்யுங்கள்.",
+      "குடும்ப வழக்கமெனில் விரதமிருந்து பிரசாதம் பகிருங்கள்."
+     ]
+    },
+    "greeting": {
+     "en": "Jai Hanuman! Hanumath Jayanthi greetings.",
+     "ta": "அனுமத் ஜெயந்தி நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "thiruvempavai",
+   "names": {
+    "en": "Thiruvempavai",
+    "ta": "திருவெம்பாவை"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "arudra-darshan",
+    "offsetDays": -9
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 10,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Tamil calendar, Jaffna (https://www.drikpanchang.com/tamil/tamil-calendar.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The ten dawns before Arudra Darshan, when Manikkavachakar's Thiruvempavai is sung at temples and in the streets.",
+     "ta": "ஆருத்ரா தரிசனத்துக்கு முந்தைய பத்து விடியல்கள்; மாணிக்கவாசகரின் திருவெம்பாவை கோவில்களிலும் வீதிகளிலும் பாடப்படுகிறது."
+    },
+    "traditions": {
+     "en": "In the cool Margazhi dawns, especially in Sri Lanka, devotees rise before sunrise, bathe, and gather at Shiva temples to sing the twenty verses of Thiruvempavai, in which young women wake one another to go and worship Shiva. Groups walk the streets singing at dawn, and the ten days close with Arudra Darshan, the Nataraja festival.",
+     "ta": "குளிர்ந்த மார்கழி விடியல்களில், சிறப்பாக இலங்கையில், அடியார்கள் சூரிய உதயத்துக்கு முன் எழுந்து நீராடி சிவாலயங்களில் கூடி, சிவனை வழிபடச் செல்ல இளம்பெண்கள் ஒருவரையொருவர் எழுப்பும் திருவெம்பாவையின் இருபது பாடல்களைப் பாடுகின்றனர். குழுக்கள் விடியலில் பாடிக்கொண்டு வீதிவலம் வருகின்றன; பத்து நாட்களும் நடராஜரின் ஆருத்ரா தரிசனத்துடன் நிறைவடைகின்றன."
+    }
+   }
+  }
+ ],
+ "dailySignificance": [
+  {
+   "key": "ekadashi",
+   "names": {
+    "en": "Ekadashi",
+    "ta": "ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 11
+   },
+   "content": {
+    "summary": {
+     "en": "The eleventh day of each fortnight, kept by many with a fast and prayer to Vishnu.",
+     "ta": "ஒவ்வொரு பட்சத்தின் பதினொன்றாம் நாள்; பலர் விரதமும் திருமால் வழிபாடுமாகக் கடைப்பிடிக்கின்றனர்."
+    },
+    "traditions": {
+     "en": "Ekadashi comes twice a month. Those who keep it avoid grains and beans for the day, some eating fruit and milk, some keeping a stricter fast, and spend time in prayer, reading or chanting Vishnu's names. The fast is broken the next morning, during Dvadashi; the parana time is shown in almanacs. People who are unwell, pregnant, elderly or on medication keep a gentle version, which tradition fully accepts.",
+     "ta": "ஏகாதசி மாதம் இருமுறை வருகிறது. கடைப்பிடிப்பவர்கள் அன்று அரிசி, பருப்பு வகைகளைத் தவிர்க்கின்றனர்; சிலர் பழமும் பாலும், சிலர் கடுமையான விரதம்; பிரார்த்தனை, பாராயணம், திருமால் நாம ஜபத்தில் நேரம் செலவிடுகின்றனர். மறுநாள் காலை துவாதசியில் விரதம் முடிக்கப்படுகிறது. உடல்நலம் குன்றியோர், கர்ப்பிணிகள், முதியோர், மருந்து உட்கொள்வோர் லேசான விரதம் கடைப்பிடிக்கின்றனர்; மரபு அதை முழுமையாக ஏற்கிறது."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free supper the evening before.",
+      "On Ekadashi, avoid grains and beans; take fruit, milk or vrat food.",
+      "Light a lamp before Vishnu and offer tulsi.",
+      "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை அரிசியின்றி லேசாக உண்ணுங்கள்.",
+      "ஏகாதசியன்று அரிசி, பருப்பைத் தவிர்த்து பழம், பால் அல்லது விரத உணவு கொள்ளுங்கள்.",
+      "திருமால் முன் விளக்கேற்றி துளசி சமர்ப்பியுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதம் முடியுங்கள்."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Ekadashi fasting rules"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "ekadashi",
+   "names": {
+    "en": "Ekadashi",
+    "ta": "ஏகாதசி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 26
+   },
+   "content": {
+    "summary": {
+     "en": "The eleventh day of each fortnight, kept by many with a fast and prayer to Vishnu.",
+     "ta": "ஒவ்வொரு பட்சத்தின் பதினொன்றாம் நாள்; பலர் விரதமும் திருமால் வழிபாடுமாகக் கடைப்பிடிக்கின்றனர்."
+    },
+    "traditions": {
+     "en": "Ekadashi comes twice a month. Those who keep it avoid grains and beans for the day, some eating fruit and milk, some keeping a stricter fast, and spend time in prayer, reading or chanting Vishnu's names. The fast is broken the next morning, during Dvadashi; the parana time is shown in almanacs. People who are unwell, pregnant, elderly or on medication keep a gentle version, which tradition fully accepts.",
+     "ta": "ஏகாதசி மாதம் இருமுறை வருகிறது. கடைப்பிடிப்பவர்கள் அன்று அரிசி, பருப்பு வகைகளைத் தவிர்க்கின்றனர்; சிலர் பழமும் பாலும், சிலர் கடுமையான விரதம்; பிரார்த்தனை, பாராயணம், திருமால் நாம ஜபத்தில் நேரம் செலவிடுகின்றனர். மறுநாள் காலை துவாதசியில் விரதம் முடிக்கப்படுகிறது. உடல்நலம் குன்றியோர், கர்ப்பிணிகள், முதியோர், மருந்து உட்கொள்வோர் லேசான விரதம் கடைப்பிடிக்கின்றனர்; மரபு அதை முழுமையாக ஏற்கிறது."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free supper the evening before.",
+      "On Ekadashi, avoid grains and beans; take fruit, milk or vrat food.",
+      "Light a lamp before Vishnu and offer tulsi.",
+      "Break the fast the next morning during Dvadashi."
+     ],
+     "ta": [
+      "முந்தைய மாலை அரிசியின்றி லேசாக உண்ணுங்கள்.",
+      "ஏகாதசியன்று அரிசி, பருப்பைத் தவிர்த்து பழம், பால் அல்லது விரத உணவு கொள்ளுங்கள்.",
+      "திருமால் முன் விளக்கேற்றி துளசி சமர்ப்பியுங்கள்.",
+      "மறுநாள் காலை துவாதசியில் விரதம் முடியுங்கள்."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Ekadashi fasting rules"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "pournami",
+   "names": {
+    "en": "Pournami",
+    "ta": "பௌர்ணமி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 15
+   },
+   "content": {
+    "summary": {
+     "en": "The full moon, kept with temple visits, girivalam and the evening lamp.",
+     "ta": "முழுநிலவு நாள்: கோயில் தரிசனம், கிரிவலம், மாலை விளக்குடன்."
+    },
+    "traditions": {
+     "en": "On Pournami many families visit the Goddess's temple, and at Thiruvannamalai thousands walk the girivalam around Arunachala under the full moon. Some keep a fast and break it after seeing the Moon. Satyanarayana puja is held in many homes. Several festivals fall on the full moon of their month: Chitra Pournami, Masi Magam and Karthigai Deepam.",
+     "ta": "பௌர்ணமியன்று பல குடும்பங்கள் அம்மன் கோயிலுக்குச் செல்கின்றன; திருவண்ணாமலையில் முழுநிலவில் ஆயிரக்கணக்கானோர் அருணாசலத்தைக் கிரிவலம் வருகின்றனர். சிலர் விரதமிருந்து சந்திரனைக் கண்ட பின் முடிக்கின்றனர். பல வீடுகளில் சத்யநாராயண பூஜை. சித்ரா பௌர்ணமி, மாசி மகம், கார்த்திகை தீபம் போன்ற பல பண்டிகைகள் அந்தந்த மாதப் பௌர்ணமியில் வருகின்றன."
+    },
+    "howTo": {
+     "en": [
+      "Light a lamp in the evening and pray to the Goddess or Vishnu.",
+      "Visit a temple, or walk the girivalam if you are at Thiruvannamalai.",
+      "Look at the full Moon and offer it water if your family does."
+     ],
+     "ta": [
+      "மாலையில் விளக்கேற்றி அம்மனையோ திருமாலையோ வழிபடுங்கள்.",
+      "கோயிலுக்குச் செல்லுங்கள், திருவண்ணாமலையில் இருந்தால் கிரிவலம் செல்லுங்கள்.",
+      "குடும்ப வழக்கமெனில் முழுநிலவைக் கண்டு நீர் அர்ப்பணியுங்கள்."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Purnima"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "amavasai",
+   "names": {
+    "en": "Amavasai",
+    "ta": "அமாவாசை"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 30
+   },
+   "content": {
+    "summary": {
+     "en": "The new moon, for tarpanam and remembering ancestors.",
+     "ta": "அமாவாசை: தர்ப்பணமும் முன்னோர் நினைவும்."
+    },
+    "traditions": {
+     "en": "Each Amavasai, many Tamil families offer tarpanam, water with black sesame, to their ancestors, cook a simple meal and set a portion out for crows before eating, and give food to those in need. Aadi, Purattasi (Mahalaya) and Thai Amavasai are the three great days of remembrance in the year.",
+     "ta": "ஒவ்வொரு அமாவாசையிலும் பல தமிழ்க் குடும்பங்கள் முன்னோர்களுக்கு எள் கலந்த நீரால் தர்ப்பணம் அளித்து, எளிய உணவு சமைத்து உண்ணும் முன் ஒரு பகுதி காகங்களுக்கு வைத்து, தேவையுள்ளோருக்கு உணவளிக்கின்றன. ஆடி, புரட்டாசி (மகாளய), தை அமாவாசைகள் ஆண்டின் மூன்று பெரும் நினைவு நாட்கள்."
+    },
+    "howTo": {
+     "en": [
+      "Bathe and offer water with black sesame, facing south, naming your ancestors.",
+      "Set out a portion of the meal for crows first.",
+      "Give food to someone in need."
+     ],
+     "ta": [
+      "நீராடி, தெற்கு நோக்கி, முன்னோர் பெயர் சொல்லி எள் கலந்த நீர் அளியுங்கள்.",
+      "முதலில் உணவின் ஒரு பகுதியைக் காகங்களுக்கு வையுங்கள்.",
+      "தேவையுள்ள ஒருவருக்கு உணவளியுங்கள்."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Tamil calendar"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "pradosham",
+   "names": {
+    "en": "Pradosham",
+    "ta": "பிரதோஷம்"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 13,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "Trayodashi at dusk, when Shiva and Nandi are worshipped.",
+     "ta": "மாலையில் திரயோதசி: சிவனும் நந்தியும் வழிபடப்படும் நேரம்."
+    },
+    "traditions": {
+     "en": "Twice a month, at the pradosha kalam around sunset on Trayodashi, Shiva temples hold abhishekam for Nandi and Shiva, and the deity is taken around the temple. Devotees fast until the evening worship and offer bilva leaves, milk and flowers. Sani Pradosham and Soma Pradosham, on Saturday and Monday, draw the largest crowds.",
+     "ta": "மாதம் இருமுறை, திரயோதசியன்று சூரிய அஸ்தமன நேரப் பிரதோஷ காலத்தில், சிவன் கோயில்களில் நந்திக்கும் சிவனுக்கும் அபிஷேகம், பிரதோஷ மூர்த்தி பிரகார வலம் நடக்கின்றன. பக்தர்கள் மாலை வழிபாடு வரை விரதமிருந்து வில்வம், பால், மலர் சமர்ப்பிக்கின்றனர். சனி, திங்கள் கிழமைகளில் வரும் சனிப் பிரதோஷம், சோமப் பிரதோஷத்தில் பெருந்திரள்."
+    },
+    "howTo": {
+     "en": [
+      "Fast until the evening worship if you keep it.",
+      "At pradosham (around sunset), visit a Shiva temple or offer bilva and milk at home with a lamp.",
+      "Chant 'Om Namah Shivaya'."
+     ],
+     "ta": [
+      "கடைப்பிடிப்பவர்கள் மாலை வழிபாடு வரை விரதமிருங்கள்.",
+      "பிரதோஷ வேளையில் (சூரிய அஸ்தமனத்தையொட்டி) சிவன் கோயிலுக்குச் செல்லுங்கள், அல்லது வீட்டில் விளக்கேற்றி வில்வமும் பாலும் சமர்ப்பியுங்கள்.",
+      "'ஓம் நமசிவாய' ஜபியுங்கள்."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Pradosham"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "pradosham",
+   "names": {
+    "en": "Pradosham",
+    "ta": "பிரதோஷம்"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 28,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "Trayodashi at dusk, when Shiva and Nandi are worshipped.",
+     "ta": "மாலையில் திரயோதசி: சிவனும் நந்தியும் வழிபடப்படும் நேரம்."
+    },
+    "traditions": {
+     "en": "Twice a month, at the pradosha kalam around sunset on Trayodashi, Shiva temples hold abhishekam for Nandi and Shiva, and the deity is taken around the temple. Devotees fast until the evening worship and offer bilva leaves, milk and flowers. Sani Pradosham and Soma Pradosham, on Saturday and Monday, draw the largest crowds.",
+     "ta": "மாதம் இருமுறை, திரயோதசியன்று சூரிய அஸ்தமன நேரப் பிரதோஷ காலத்தில், சிவன் கோயில்களில் நந்திக்கும் சிவனுக்கும் அபிஷேகம், பிரதோஷ மூர்த்தி பிரகார வலம் நடக்கின்றன. பக்தர்கள் மாலை வழிபாடு வரை விரதமிருந்து வில்வம், பால், மலர் சமர்ப்பிக்கின்றனர். சனி, திங்கள் கிழமைகளில் வரும் சனிப் பிரதோஷம், சோமப் பிரதோஷத்தில் பெருந்திரள்."
+    },
+    "howTo": {
+     "en": [
+      "Fast until the evening worship if you keep it.",
+      "At pradosham (around sunset), visit a Shiva temple or offer bilva and milk at home with a lamp.",
+      "Chant 'Om Namah Shivaya'."
+     ],
+     "ta": [
+      "கடைப்பிடிப்பவர்கள் மாலை வழிபாடு வரை விரதமிருங்கள்.",
+      "பிரதோஷ வேளையில் (சூரிய அஸ்தமனத்தையொட்டி) சிவன் கோயிலுக்குச் செல்லுங்கள், அல்லது வீட்டில் விளக்கேற்றி வில்வமும் பாலும் சமர்ப்பியுங்கள்.",
+      "'ஓம் நமசிவாய' ஜபியுங்கள்."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Pradosham"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "sankatahara-chathurthi",
+   "names": {
+    "en": "Sankatahara Chathurthi",
+    "ta": "சங்கடஹர சதுர்த்தி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 19,
+    "observance": {
+     "kala": "moonrise"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "The Chaturthi after the full moon, kept for Vinayagar until moonrise.",
+     "ta": "பௌர்ணமிக்குப் பின் வரும் சதுர்த்தி, சந்திர உதயம் வரை விநாயகருக்காகக் கடைப்பிடிக்கப்படுகிறது."
+    },
+    "traditions": {
+     "en": "Devotees fast through the day, visit Pillaiyar temples in the evening for abhishekam and offer arugampul and kozhukattai, and break the fast after seeing the Moon. When it falls on a Tuesday it is Angaraka Chathurthi. Many recite the Vinayagar Agaval.",
+     "ta": "பக்தர்கள் பகல் முழுதும் விரதமிருந்து, மாலையில் பிள்ளையார் கோயில் அபிஷேகத்துக்குச் சென்று அருகம்புல்லும் கொழுக்கட்டையும் சமர்ப்பித்து, சந்திரனைக் கண்ட பின் விரதம் முடிக்கின்றனர். செவ்வாயன்று வந்தால் அங்காரக சதுர்த்தி. பலர் விநாயகர் அகவல் பாராயணம் செய்கின்றனர்."
+    },
+    "howTo": {
+     "en": [
+      "Fast through the day if you keep it.",
+      "In the evening, offer arugampul and kozhukattai to Pillaiyar.",
+      "After moonrise (see the day view), look at the Moon and break the fast."
+     ],
+     "ta": [
+      "கடைப்பிடிப்பவர்கள் பகல் முழுதும் விரதமிருங்கள்.",
+      "மாலையில் பிள்ளையாருக்கு அருகம்புல்லும் கொழுக்கட்டையும் சமர்ப்பியுங்கள்.",
+      "சந்திர உதயத்துக்குப் பின் (நாள் விவரத்தில்) சந்திரனைக் கண்டு விரதம் முடியுங்கள்."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Sankashti Chaturthi"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "shashti",
+   "names": {
+    "en": "Shashti",
+    "ta": "சஷ்டி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 6
+   },
+   "content": {
+    "summary": {
+     "en": "The sixth day of the bright fortnight, kept for Murugan.",
+     "ta": "வளர்பிறை ஆறாம் நாள், முருகனுக்கு உகந்தது."
+    },
+    "traditions": {
+     "en": "Each month, devotees of Murugan keep a fast or eat simply on Shashti, visit his temple, and recite the Kanda Shashti Kavacham. The Shashti of Aippasi, Kanda Sashti, is the great one, ending in Soorasamharam. In Kerala the Shashti vratham is widely kept by women for their children.",
+     "ta": "ஒவ்வொரு மாதமும் முருக பக்தர்கள் சஷ்டியில் விரதமிருந்தோ எளிமையாக உண்டோ, கோயிலுக்குச் சென்று, கந்த சஷ்டி கவசம் பாராயணம் செய்கின்றனர். ஐப்பசியின் கந்த சஷ்டி மிகப் பெரியது, சூரசம்ஹாரத்தில் நிறைவு."
+    },
+    "howTo": {
+     "en": [
+      "Keep a fast or eat simply until the evening.",
+      "Visit a Murugan temple, or offer milk and flowers at home with a lamp.",
+      "Recite the Kanda Shashti Kavacham."
+     ],
+     "ta": [
+      "மாலை வரை விரதமிருங்கள் அல்லது எளிமையாக உண்ணுங்கள்.",
+      "முருகன் கோயிலுக்குச் செல்லுங்கள், அல்லது வீட்டில் விளக்கேற்றிப் பாலும் மலரும் சமர்ப்பியுங்கள்.",
+      "கந்த சஷ்டி கவசம் பாராயணம் செய்யுங்கள்."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Skanda Sashti"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "karthigai",
+   "names": {
+    "en": "Karthigai",
+    "ta": "கார்த்திகை"
+   },
+   "rule": {
+    "type": "nakshatra-in-solar-month",
+    "month": null,
+    "nakshatra": "krittika"
+   },
+   "content": {
+    "summary": {
+     "en": "The monthly Krittika star day, kept for Murugan with a lamp.",
+     "ta": "மாதந்தோறும் வரும் கார்த்திகை நட்சத்திர நாள், விளக்கேற்றி முருகனுக்கு."
+    },
+    "traditions": {
+     "en": "Each month on the Krittika (Karthigai) star, the star of the six maidens who raised Murugan, devotees keep a fast, light lamps at home in the evening and visit Murugan temples. The Karthigai of the month of Karthigai is the great Karthigai Deepam.",
+     "ta": "முருகனை வளர்த்த ஆறு கார்த்திகைப் பெண்களின் நட்சத்திரமான கார்த்திகையில் மாதந்தோறும் பக்தர்கள் விரதமிருந்து, மாலையில் வீட்டில் விளக்கேற்றி, முருகன் கோயிலுக்குச் செல்கின்றனர். கார்த்திகை மாதக் கார்த்திகையே கார்த்திகை தீபம்."
+    },
+    "howTo": {
+     "en": [
+      "Keep a fast until the evening if you observe it.",
+      "At dusk, light a lamp at home, and visit a Murugan temple if you can."
+     ],
+     "ta": [
+      "கடைப்பிடிப்பவர்கள் மாலை வரை விரதமிருங்கள்.",
+      "அந்தியில் வீட்டில் விளக்கேற்றி, முடிந்தால் முருகன் கோயிலுக்குச் செல்லுங்கள்."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Masik Karthigai"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "theipirai-ashtami",
+   "names": {
+    "en": "Theipirai Ashtami",
+    "ta": "தேய்பிறை அஷ்டமி"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 23,
+    "observance": {
+     "kala": "nishita"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "The waning-moon Ashtami, kept for Bhairavar.",
+     "ta": "தேய்பிறை அஷ்டமி, பைரவருக்கு உகந்த நாள்."
+    },
+    "traditions": {
+     "en": "In Tamil Nadu the Ashtami of the waning moon is kept for Bhairavar, Shiva's guardian form whose shrine stands at the edge of every Shiva temple. In the evening devotees light lamps in a cut pumpkin or with sesame oil, offer red flowers and vadai garlands, and recite Bhairava's names.",
+     "ta": "தமிழகத்தில் தேய்பிறை அஷ்டமி, ஒவ்வொரு சிவாலயத்திலும் காவல் தெய்வமாக நிற்கும் பைரவருக்கு உரியது. மாலையில் பக்தர்கள் நல்லெண்ணெய் விளக்கு அல்லது பூசணி விளக்கு ஏற்றி, செவ்வரளி மலரும் வடை மாலையும் சமர்ப்பித்து, பைரவர் நாமங்களைச் சொல்கின்றனர்."
+    },
+    "howTo": {
+     "en": [
+      "Visit the Bhairavar shrine of a Shiva temple in the evening.",
+      "Light a sesame-oil lamp.",
+      "Offer red flowers and recite Bhairava's names."
+     ],
+     "ta": [
+      "மாலையில் சிவாலயத்தின் பைரவர் சன்னதிக்குச் செல்லுங்கள்.",
+      "நல்லெண்ணெய் விளக்கேற்றுங்கள்.",
+      "செவ்வரளி மலர் சமர்ப்பித்து பைரவர் நாமங்களைச் சொல்லுங்கள்."
+     ]
+    }
+   },
+   "sources": [
+    "Tamil Nadu temple practice; Drik Panchang, Kalashtami"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "somavara-vratham",
+   "names": {
+    "en": "Somavara vratham (Monday)",
+    "ta": "சோமவார விரதம்"
+   },
+   "rule": {
+    "type": "weekday",
+    "weekday": "monday"
+   },
+   "content": {
+    "summary": {
+     "en": "Monday, kept for Shiva; the Mondays of Karthigai most of all.",
+     "ta": "திங்கள், சிவனுக்கு உகந்தது; கார்த்திகை சோமவாரங்கள் சிறப்பு."
+    },
+    "traditions": {
+     "en": "Many in Tamil Nadu keep Mondays for Shiva, fasting until evening and visiting a Shiva temple, where abhishekam is offered. The Mondays of Karthigai, the Karthigai Somavarams, are especially kept, with 108 or 1008 conch abhishekams in the great temples.",
+     "ta": "தமிழகத்தில் பலர் திங்கள்கிழமைகளைச் சிவனுக்காக வைத்து, மாலை வரை விரதமிருந்து, சிவாலயத்தில் அபிஷேகம் காண்கின்றனர். கார்த்திகை மாத சோமவாரங்கள் சிறப்பாகக் கடைப்பிடிக்கப்படுகின்றன; பெரிய கோயில்களில் 108 அல்லது 1008 சங்காபிஷேகம் நடைபெறுகிறது."
+    },
+    "howTo": {
+     "en": [
+      "Fast until evening, or eat simply.",
+      "Visit a Shiva temple for the evening abhishekam.",
+      "Chant Om Namah Shivaya."
+     ],
+     "ta": [
+      "மாலை வரை விரதமிருங்கள், அல்லது எளிமையாக உண்ணுங்கள்.",
+      "மாலை அபிஷேகத்துக்குச் சிவாலயம் செல்லுங்கள்.",
+      "ஓம் நமசிவாய என்று ஜபியுங்கள்."
+     ]
+    }
+   },
+   "sources": [
+    "Tamil Nadu temple practice"
+   ],
+   "optIn": true
+  },
+  {
+   "key": "velli-vratham",
+   "names": {
+    "en": "Friday for the Goddess",
+    "ta": "வெள்ளிக்கிழமை விரதம்"
+   },
+   "rule": {
+    "type": "weekday",
+    "weekday": "friday"
+   },
+   "content": {
+    "summary": {
+     "en": "Friday, kept for the Goddess: Amman, Lakshmi, Bhagavathi.",
+     "ta": "வெள்ளிக்கிழமை, அம்மனுக்கும் லட்சுமிக்கும் உகந்தது."
+    },
+    "traditions": {
+     "en": "In the South, Friday is the Goddess's day. Homes are cleaned, a kolam is drawn and the lamp lit early; many visit an Amman or Bhagavathi temple and recite the Lalitha Sahasranamam or Abhirami Andhadhi. Some keep the day with a fast until evening. The Fridays of Aadi and Thai in Tamil Nadu are especially kept.",
+     "ta": "தென்னகத்தில் வெள்ளிக்கிழமை அம்மனுக்கு உரியது. வீட்டைத் தூய்மை செய்து, கோலமிட்டு, அதிகாலையில் விளக்கேற்றுகின்றனர்; பலர் அம்மன் கோயிலுக்குச் சென்று லலிதா சகஸ்ரநாமம் அல்லது அபிராமி அந்தாதி பாராயணம் செய்கின்றனர். ஆடி, தை வெள்ளிக்கிழமைகள் சிறப்பானவை."
+    },
+    "howTo": {
+     "en": [
+      "Clean the home, draw a kolam and light the lamp early.",
+      "Visit an Amman or Bhagavathi temple, or offer flowers at home.",
+      "Recite the Lalitha Sahasranamam."
+     ],
+     "ta": [
+      "வீட்டைத் தூய்மை செய்து, கோலமிட்டு, அதிகாலை விளக்கேற்றுங்கள்.",
+      "அம்மன் கோயிலுக்குச் செல்லுங்கள், அல்லது வீட்டில் மலர் சமர்ப்பியுங்கள்.",
+      "லலிதா சகஸ்ரநாமம் பாராயணம் செய்யுங்கள்."
+     ]
+    }
+   },
+   "sources": [
+    "Tamil Nadu and Kerala temple practice"
+   ],
+   "optIn": true
+  },
+  {
+   "key": "hanuman-vrat",
+   "names": {
+    "en": "Hanuman vrat",
+    "ta": "ஆஞ்சநேயர் விரதம் (சனிக்கிழமை)"
+   },
+   "rule": {
+    "type": "weekday",
+    "weekday": "saturday"
+   },
+   "content": {
+    "summary": {
+     "en": "A weekly day for Hanuman: Tuesday in the North, Saturday in much of the South.",
+     "ta": "ஆஞ்சநேயருக்கான வார நாள்: தென்னகத்தில் சனிக்கிழமை."
+    },
+    "traditions": {
+     "en": "Devotees of Hanuman keep one day a week for him, Tuesday in the North and Saturday in much of the South. Many eat a single simple meal, visit a Hanuman temple, and read the Hanuman Chalisa or the Sundara Kandam of the Ramayana. In the North sindoor and jasmine oil are offered; in Tamil Nadu a garland of vadai or betel leaves. Some keep a run of weeks, often 21, as a personal vow of discipline and devotion.",
+     "ta": "ஆஞ்சநேய பக்தர்கள் வாரத்தில் ஒரு நாளை, தென்னகத்தில் பெரும்பாலும் சனிக்கிழமையை, அவருக்காக வைக்கின்றனர். பலர் ஒருவேளை எளிய உணவு உண்டு, ஆஞ்சநேயர் கோயிலுக்குச் சென்று, ஹனுமான் சாலீசா அல்லது சுந்தர காண்டம் பாராயணம் செய்கின்றனர். வடை மாலை அல்லது வெற்றிலை மாலை சாற்றுவது தமிழகத்தின் வழக்கம்."
+    },
+    "howTo": {
+     "en": [
+      "Bathe early and keep the day simple: one meal, or fruit and milk.",
+      "Visit a Hanuman temple, or light a lamp before his picture at home.",
+      "Offer sindoor and jasmine oil (North) or a vadai or betel-leaf garland (South).",
+      "Read the Hanuman Chalisa or a chapter of the Sundara Kandam."
+     ],
+     "ta": [
+      "அதிகாலை நீராடி நாளை எளிமையாக வையுங்கள்: ஒருவேளை உணவு அல்லது பழமும் பாலும்.",
+      "ஆஞ்சநேயர் கோயிலுக்குச் செல்லுங்கள், அல்லது வீட்டில் அவர் படத்தின் முன் விளக்கேற்றுங்கள்.",
+      "வடை மாலை அல்லது வெற்றிலை மாலை சாற்றுங்கள்.",
+      "ஹனுமான் சாலீசா அல்லது சுந்தர காண்டம் பாராயணம் செய்யுங்கள்."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Mangalwar Vrat",
+    "Hanuman Chalisa (Tulsidas)"
+   ],
+   "optIn": true
+  },
+  {
+   "key": "shani-vrat",
+   "names": {
+    "en": "Shani vrat (Saturday)",
+    "ta": "சனிக்கிழமை விரதம்"
+   },
+   "rule": {
+    "type": "weekday",
+    "weekday": "saturday"
+   },
+   "content": {
+    "summary": {
+     "en": "Saturday, Shani's day, kept with a simple meal, a sesame-oil lamp and giving to others.",
+     "ta": "சனிக்கிழமை: எளிய உணவு, நல்லெண்ணெய் விளக்கு, பிறருக்கு உதவி."
+    },
+    "traditions": {
+     "en": "Saturday is Shani's day. Those who keep the Saturday vrat eat once, simply, often after sunset; light a lamp of sesame oil at a Shani shrine or under a peepal tree; and offer black sesame and blue or dark flowers. Giving food, oil or clothes to people who need them is at the heart of the day. Shani is honoured as the teacher of patience and fairness, and the vrat is kept as a weekly practice of steadiness and service. In Tamil Nadu the Saturdays of Purattasi are kept for Perumal as well.",
+     "ta": "சனிக்கிழமை சனி பகவானுக்கு உரிய நாள். விரதமிருப்போர் ஒருவேளை எளிமையாக உண்டு, சனி சன்னதியிலோ அரச மரத்தடியிலோ நல்லெண்ணெய் விளக்கேற்றி, எள்ளும் நீல மலரும் சமர்ப்பிக்கின்றனர். தேவைப்படுவோருக்கு உணவு, எண்ணெய், ஆடை வழங்குவது இந்நாளின் மையம். புரட்டாசி சனிக்கிழமைகள் பெருமாளுக்கும் உகந்தவை."
+    },
+    "howTo": {
+     "en": [
+      "Keep the day simple: one meal, often after sunset.",
+      "Light a sesame-oil lamp at a Shani shrine or under a peepal tree.",
+      "Offer black sesame and a dark flower.",
+      "Give food, oil or clothing to someone who needs it."
+     ],
+     "ta": [
+      "நாளை எளிமையாக வையுங்கள்: ஒருவேளை உணவு.",
+      "சனி சன்னதியிலோ அரச மரத்தடியிலோ நல்லெண்ணெய் விளக்கேற்றுங்கள்.",
+      "எள்ளும் நீல மலரும் சமர்ப்பியுங்கள்.",
+      "தேவைப்படுவோருக்கு உணவு, எண்ணெய் அல்லது ஆடை வழங்குங்கள்."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Shaniwar Vrat"
+   ],
+   "optIn": true
+  }
+ ],
+ "personal": {
+  "birthday": {
+   "basis": "nakshatra",
+   "observance": {
+    "kala": "sunrise"
+   },
+   "occurrence": "last"
+  },
+  "remembrance": {
+   "basis": "tithi",
+   "observance": {
+    "kala": "aparahna"
+   },
+   "occurrence": "first"
+  }
+ },
+ "muhurtham": {
+  "events": [
+   {
+    "id": "marriage",
+    "names": {
+     "en": "Marriage",
+     "ta": "திருமணம்"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "magha",
+     "uttara_phalguni",
+     "hasta",
+     "swati",
+     "anuradha",
+     "mula",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     22
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidSolarMonths": [
+     "karka",
+     "kanya",
+     "dhanu"
+    ]
+   },
+   {
+    "id": "engagement",
+    "names": {
+     "en": "Engagement",
+     "ta": "நிச்சயதார்த்தம்"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "magha",
+     "uttara_phalguni",
+     "hasta",
+     "swati",
+     "anuradha",
+     "mula",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     22
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidSolarMonths": [
+     "karka",
+     "kanya",
+     "dhanu"
+    ]
+   },
+   {
+    "id": "griha-pravesham",
+    "names": {
+     "en": "Housewarming",
+     "ta": "கிரகப்பிரவேசம்"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "uttara_phalguni",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidSolarMonths": [
+     "karka",
+     "kanya",
+     "dhanu"
+    ]
+   },
+   {
+    "id": "bhoomi-puja",
+    "names": {
+     "en": "Foundation (Bhoomi Puja)",
+     "ta": "பூமி பூஜை"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidSolarMonths": [
+     "karka",
+     "dhanu"
+    ]
+   },
+   {
+    "id": "property",
+    "names": {
+     "en": "Buying property",
+     "ta": "சொத்து வாங்குதல்"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "anuradha",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ]
+   },
+   {
+    "id": "vehicle",
+    "names": {
+     "en": "Buying a vehicle",
+     "ta": "வாகனம் வாங்குதல்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ]
+   },
+   {
+    "id": "business",
+    "names": {
+     "en": "Starting a business",
+     "ta": "தொழில் தொடக்கம்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ]
+   },
+   {
+    "id": "naming",
+    "names": {
+     "en": "Naming ceremony",
+     "ta": "பெயர் சூட்டுதல்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidAdhika": false,
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "annaprashana",
+    "names": {
+     "en": "First rice",
+     "ta": "அன்னப்பிராசனம்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "vidyarambham",
+    "names": {
+     "en": "Start of learning",
+     "ta": "வித்யாரம்பம்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "ardra",
+     "punarvasu",
+     "pushya",
+     "purva_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "mula",
+     "purva_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "purva_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "upanayanam",
+    "names": {
+     "en": "Upanayanam (sacred thread)",
+     "ta": "உபநயனம்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     10,
+     11,
+     12
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidLunarSpans": [
+     {
+      "from": {
+       "month": "ashadha",
+       "tithi": 1
+      },
+      "to": {
+       "month": "pausha",
+       "tithi": 30
+      }
+     }
+    ],
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "mundan",
+    "names": {
+     "en": "First haircut (Mundan)",
+     "ta": "முடி இறக்குதல் (சௌளம்)"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "chitra",
+     "swati",
+     "jyeshtha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     13,
+     17,
+     18,
+     20,
+     22
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "karnavedha",
+    "names": {
+     "en": "Ear piercing (Karnavedha)",
+     "ta": "காது குத்துதல்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     17,
+     18,
+     20,
+     21,
+     22
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "travel",
+    "names": {
+     "en": "Setting out on a journey",
+     "ta": "பயணம் புறப்படுதல்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "anuradha",
+     "shravana",
+     "dhanishta",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     17,
+     18,
+     20,
+     22
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidAdhika": false
+   },
+   {
+    "id": "jewellery",
+    "names": {
+     "en": "Buying gold & jewellery",
+     "ta": "தங்கம், நகை வாங்குதல்"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidAdhika": false
+   },
+   {
+    "id": "seemantham",
+    "names": {
+     "en": "Seemantham (baby shower)",
+     "ta": "சீமந்தம் (வளைகாப்பு)"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "mula",
+     "uttara_ashadha",
+     "shravana",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     13,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ]
+   }
+  ],
+  "sources": [
+   "Muhurta Chintamani (Daivajna Rama), vivaha, griha-pravesha, yatra and samskara prakaranas",
+   "Kerala Jyothisham practice: Karkidakam avoided for marriage and griha pravesham",
+   "Tamil panchangam practice: Aadi, Purattasi and Margazhi avoided for marriage",
+   "North Indian panchangam practice: kharmas, Chaturmas and Pitru Paksha"
+  ]
+ }
+}

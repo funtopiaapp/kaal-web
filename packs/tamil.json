@@ -1333,9 +1333,7 @@
     "month": "makara",
     "nakshatra": "pushya",
     "observance": {
-     "minCoverMinutes": 144,
-     "fallback": "begins",
-     "kala": "morning"
+     "kala": "daylight"
     },
     "nearTithi": 15
    },
@@ -2583,9 +2581,7 @@
     "nakshatra": "bharani",
     "paksha": "krishna",
     "observance": {
-     "kala": "morning",
-     "minCoverMinutes": 144,
-     "fallback": "begins"
+     "kala": "aparahna"
     }
    },
    "tier": "minor",
@@ -3099,6 +3095,7 @@
     "month": "vrishchika",
     "nakshatra": "krittika",
     "observance": {
+     "prefer": "last",
      "kala": "pradosh"
     },
     "nearTithi": 15
@@ -3158,7 +3155,8 @@
     "month": "margashirsha",
     "tithi": 6,
     "observance": {
-     "kala": "pradosh"
+     "prefer": "first",
+     "kala": "sunset"
     }
    },
    "tier": "regional",

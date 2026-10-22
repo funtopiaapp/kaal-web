@@ -14,6 +14,11 @@ const CULTURES = [
   { id: 'bengali', en: 'Bengali', native: 'বাংলা' },
   { id: 'odia', en: 'Odia', native: 'ଓଡ଼ିଆ' },
   { id: 'nepali', en: 'Nepali', native: 'नेपाली' },
+  { id: 'sri-lankan-tamil', en: 'Sri Lankan Tamil', native: 'இலங்கைத் தமிழ்' },
+  { id: 'malaysian-tamil', en: 'Malaysian & Singapore Tamil', native: 'மலேசிய, சிங்கப்பூர் தமிழ்' },
+  { id: 'caribbean', en: 'Caribbean', native: 'कैरिबियाई' },
+  { id: 'fijian', en: 'Fiji', native: 'फ़िजी' },
+  { id: 'mauritian', en: 'Mauritius', native: 'मॉरीशस' },
 ];
 const LIGHT = ['kaal', 'ivory', 'rose', 'sage'], DARK = ['kaal-dark', 'night', 'charcoal', 'peacock'];
 const TABS = [['home', 'hm.home'], ['today', 'tab.today'], ['calendar', 'tab.calendar'], ['festivals', 'tab.festivals'], ['muhurtham', 'tab.muhurtham'],
@@ -151,9 +156,10 @@ function shell() {
   const c = CULTURES.find(c => c.id === S.culture);
   $('#badge').textContent = c ? `☀ ${c.native} · ${c.en} ▾` : '';
   $('#badge').onclick = () => { tab = 'settings'; render(); };
-  $('#tabs').innerHTML = TABS.map(([id, k]) => `<button data-tab="${id}" class="${id === tab ? 'on' : ''}">${esc(t(k))}</button>`).join('');
+  const house = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>';
+  $('#tabs').innerHTML = TABS.map(([id, k]) => `<button data-tab="${id}" class="${id === tab ? 'on' : ''}">${id === 'home' ? house : ''}${esc(t(k))}</button>`).join('');
   $('#tabs').querySelectorAll('button').forEach(b => b.onclick = () => { tab = b.dataset.tab; if (tab === 'today') { dayDate = null; dayPlace = null; } render(); });
-  $('#foot').textContent = t('s.attribution');
+  $('#foot').innerHTML = `<div>© ${new Date().getFullYear()} Funtopia App Company</div><div>${esc(t('s.attribution'))}</div>`;
 }
 function loading() { $('#main').innerHTML = `<div class="loading"><div class="ring"><i></i></div><div class="muted">${esc(t('o.tagline'))}</div></div>`; }
 function sheet(html, onOpen) {
@@ -346,7 +352,7 @@ function windowsRow(k, ps, d) {
   return ps.length ? `<div class="row"><span>${esc(t(k))}</span><span class="v">${ps.map(p => esc(windowText(p.start, p.end, d))).join('<br>')}</span></div>` : '';
 }
 function mKind() {
-  return S.mKind || ({ tamil: 'gowri', telugu: 'gowri', malayalam: 'hora', kannada: 'hora' }[S.culture] || 'choghadiya');
+  return S.mKind || ({ tamil: 'gowri', 'sri-lankan-tamil': 'gowri', 'malaysian-tamil': 'gowri', telugu: 'gowri', malayalam: 'hora', kannada: 'hora' }[S.culture] || 'choghadiya');
 }
 function muhurtasCard(fine, d) {
   const k = mKind(), ps = { choghadiya: fine.choghadiya, gowri: fine.gowri, hora: fine.hora, lagna: fine.lagnas }[k];
@@ -547,7 +553,7 @@ async function jataka(p) {
 }
 const SIGNS = ['mesha', 'vrishabha', 'mithuna', 'karka', 'simha', 'kanya', 'tula', 'vrishchika', 'dhanu', 'makara', 'kumbha', 'meena'];
 const GCOL = { sun: '#E08A2E', moon: '#8FA7C4', mars: '#C6453A', mercury: '#3E9B5C', jupiter: '#E2B53A', venus: '#D58AB4', saturn: '#3D4F8F', rahu: '#6E6A63', ketu: '#9A6B45' };
-const chartStyle = () => S.chartStyle || ({ tamil: 'south', malayalam: 'south', telugu: 'south', kannada: 'south', bengali: 'east', odia: 'east' }[S.culture] || 'north');
+const chartStyle = () => S.chartStyle || ({ tamil: 'south', 'sri-lankan-tamil': 'south', 'malaysian-tamil': 'south', malayalam: 'south', telugu: 'south', kannada: 'south', bengali: 'east', odia: 'east' }[S.culture] || 'north');
 const vargaName = n => `D${n} · ${name('vargas', 'd' + n)}`;
 const dLabel = u => new Intl.DateTimeFormat(locale(), { day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(u * 1000));
 function periodName(p, system) {
@@ -709,19 +715,41 @@ function deityForVrat(k) {
   if (['santoshi', 'velli', 'durgashtami'].some(x => k.includes(x))) return 'devi';
   return null;
 }
+// As on iOS: nearest to the home location (or a city the user picks), by
+// deity, each deity's temples nearest first; a deity filter, All by default.
+let tmNear = null;
+function kmFrom(o, x) {
+  const r = Math.PI / 180, p1 = o.latitude * r, p2 = x.lat * r, dp = p2 - p1, dl = (x.lon - o.longitude) * r;
+  const h = Math.sin(dp / 2) ** 2 + Math.cos(p1) * Math.cos(p2) * Math.sin(dl / 2) ** 2;
+  return 2 * 6371 * Math.asin(Math.min(1, Math.sqrt(h)));
+}
+function distText(km) {
+  const miles = /^en-(US|GB|LR|MM)$/.test(navigator.language || '');
+  const v = miles ? km / 1.609344 : km;
+  return new Intl.NumberFormat(locale(), { style: 'unit', unit: miles ? 'mile' : 'kilometer', maximumFractionDigits: 0 }).format(v);
+}
 async function viewTemples() {
   TEMPLES ??= await (await fetch('temples.json')).json();
   const yours = [...new Set(S.vrats.map(deityForVrat).filter(Boolean))];
   const order = [...yours, ...TEMPLES.deities.filter(d => !yours.includes(d))];
-  const chosen = tmDeity || order[0];
-  const card = x => `<div class="card temple"><h2 class="serif">${esc(x.name)}</h2><div class="small muted">📍 ${esc(x.place)}</div><p>${esc(x.about)}</p>
-    ${x.donate ? `<a class="btn block" href="${esc(x.donate)}" target="_blank" rel="noopener">♥ ${esc(t('tm.donate'))}</a>` : `<p class="small muted">${esc(t('tm.noLink'))}</p>`}
+  const origin = tmNear || S.home;
+  const shown = tmDeity ? [tmDeity] : order;
+  const card = x => `<div class="card temple"><h2 class="serif">${esc(x.name)}</h2><div class="small muted tmplace"><span>📍 ${esc(x.place)}</span><span>${esc(distText(kmFrom(origin, x)))}</span></div><p>${esc(x.about)}</p>
+    ${x.donate ? `<a class="btn block" href="${esc(x.donate)}" target="_blank" rel="noopener">♥ ${esc(t('tm.donate'))}</a>` : x.site ? '' : `<p class="small muted">${esc(t('tm.noLink'))}</p>`}
     <div class="links">${x.site && x.site !== x.donate ? `<a href="${esc(x.site)}" target="_blank" rel="noopener">🌐 ${esc(t('tm.site'))}</a>` : ''}
     <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x.name + ', ' + x.place)}" target="_blank" rel="noopener">🗺 ${esc(t('tm.directions'))}</a></div></div>`;
-  $('#main').innerHTML = `${yours.length ? `<p class="label">${esc(t('tm.yours'))}</p>` : ''}
-    <div class="vc-chips">${order.map(d => `<button class="pill ${d === chosen ? 'on' : ''}" data-deity="${d}">${yours.includes(d) ? '☾ ' : ''}${esc(t('deity.' + d))}</button>`).join('')}</div>
-    ${TEMPLES.temples.filter(x => x.deity === chosen).map(card).join('')}<p class="small muted">${esc(t('tm.note'))}</p>`;
-  $('#main').querySelectorAll('[data-deity]').forEach(b => b.onclick = () => { tmDeity = b.dataset.deity; viewTemples(); });
+  const groups = shown.map(d => {
+    const list = TEMPLES.temples.filter(x => x.deity === d).sort((a, b) => kmFrom(origin, a) - kmFrom(origin, b));
+    return list.length ? `${tmDeity ? '' : `<h2 class="serif tmdeity">${esc(t('deity.' + d))}</h2>`}${list.map(card).join('')}` : '';
+  }).join('');
+  $('#main').innerHTML = `<div class="card tmnear"><div class="row" style="border:0;align-items:center"><b>📍 ${esc(t('tm.near', origin.name))}</b>
+      <span>${tmNear ? `<button class="btn soft" data-tmhome>${esc(t('dual.home'))}</button> ` : ''}<button class="btn soft" data-tmpick>${esc(t('cal.other'))}</button></span></div><div id="tmpp"></div></div>
+    ${yours.length ? `<p class="label">${esc(t('tm.yours'))}</p>` : ''}
+    <div class="vc-chips"><button class="pill ${!tmDeity ? 'on' : ''}" data-deity="">${esc(t('f.all'))}</button>${order.map(d => `<button class="pill ${d === tmDeity ? 'on' : ''}" data-deity="${d}">${yours.includes(d) ? '☾ ' : ''}${esc(t('deity.' + d))}</button>`).join('')}</div>
+    ${groups}<p class="small muted">${esc(t('tm.note'))}</p>`;
+  $('#main').querySelectorAll('[data-deity]').forEach(b => b.onclick = () => { tmDeity = b.dataset.deity || null; viewTemples(); });
+  $('#main').querySelector('[data-tmhome]')?.addEventListener('click', () => { tmNear = null; viewTemples(); });
+  $('#main').querySelector('[data-tmpick]').onclick = () => placePicker($('#tmpp'), p => { tmNear = p; viewTemples(); });
 }
 
 // ---------------------------------------------------------------- festival page
