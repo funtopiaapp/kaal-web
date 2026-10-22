@@ -588,8 +588,8 @@ const births = () => S.people.filter(p => p.kind !== 'remembrance' && p.place);
 // As on iOS (GunaMilanViews): each tradition's own matching - Porutham in the
 // South, Ashtakoota Guna Milan elsewhere. Guna Milan stays off until the corpus
 // (content/validation/ashtakoota-corpus.md) agrees with the reference almanac; ?gm=1 shows it for checking.
-const GUNA_MILAN_RELEASED = new URLSearchParams(location.search).has('gm');
-const matchesByPorutham = () => ['malayalam', 'tamil', 'telugu', 'kannada', 'sri-lankan-tamil', 'malaysian-tamil'].includes(S.culture);
+const GUNA_MILAN_RELEASED = true;
+const matchesByPorutham = () => PORUTHAM.includes(S.culture);
 async function gunaMilanSheet(bride, groom) {
   const side = p => ({ date: p.date, minutes: p.minutes ?? undefined, location: p.place });
   const r = await engine({ op: 'gunaMilan', bride: side(bride), groom: side(groom) });
@@ -597,7 +597,7 @@ async function gunaMilanSheet(bride, groom) {
   const sideName = (k, v) => k.key === 'bhakoot' ? name('rashis', v) : k.key === 'graha-maitri' ? name('grahas', v) : v.charAt(0).toUpperCase() + v.slice(1);
   const rule = (key, of) => `<div class="card" style="background:var(--sunken)"><p class="small">${esc(t(key))}</p><p class="small muted"><b>${esc(t('gm.cancel'))}</b></p>
     ${m.cancellations.filter(c => c.of === of).map(c => `<div class="small" style="color:${c.holds ? 'var(--accent)' : 'var(--muted)'}">· ${esc(t('gm.c.' + c.condition))}: ${esc(t(c.holds ? 'gm.holds' : 'gm.notHold'))}</div>`).join('')}</div>`;
-  const kuja = (p, list) => `<div class="small"><b>${esc(p.name)}</b>${list.map(k => `<div style="color:${k.listed ? 'var(--accent)' : 'var(--muted)'}">${esc(t('jk.kujaRow', k.house, k.from === 'lagna' ? t('jk.lagnaWord') : name('grahas', k.from)))} · ${esc(t(k.listed ? 'jk.kujaListed' : 'jk.kujaNot'))}</div>`).join('')}</div>`;
+  const kuja = (p, list) => `<div class="small"><b>${esc(p.name)}</b>${list.map(k => `<div style="color:${k.listed ? 'var(--accent)' : 'var(--muted)'}">${esc(t('jk.kujaRow', k.house, k.from === 'lagna' ? t('jk.lagnaWord') : name('grahas', k.from)))} · ${esc(t(k.listed ? 'mt.marsListed' : 'jk.kujaNot'))}</div>`).join('')}</div>`;
   sheet(`<h2 class="serif">${esc(t('gm.title'))}</h2><div style="font-size:24px;font-weight:700;color:var(--accent)">${esc(t('gm.total', pts(m.total)))}</div>
     <p style="font-weight:600">${esc(t('gm.band.' + m.band))}</p>
     <div class="card">${m.kootas.map(k => `<div class="row"><span>${esc(t('gm.' + k.key))}<small class="muted" style="display:block">${esc(t('gm.sides', sideName(k, k.bride), sideName(k, k.groom)))}</small></span><span class="v">${pts(k.points)} / ${pts(k.max)}</span></div>`).join('')}</div>
@@ -1220,23 +1220,26 @@ function renderResults() {
 // ---------------------------------------------------------------- matching
 // As on iOS (MatchViews): the tradition's matching under its own name - the ten
 // poruthams in the South, Ashtakoota Guna Milan elsewhere - laid out as the
-// Porutham app lays out a result. Free here, like everything on the web.
-const matchingAvailable = () => matchesByPorutham() || GUNA_MILAN_RELEASED;
-function matchTitle() {
-  const m = pack?.display?.matching;
-  return m ? (lang() !== 'en' ? m.native : m.en) : t('pr.title');
-}
+// Porutham app lays out a result. Any tradition can be chosen without changing
+// the app's own; Telugu and Kannada homes use either system. Free here.
+const matchingAvailable = () => true;
+const PORUTHAM = ['malayalam', 'tamil', 'telugu', 'kannada', 'sri-lankan-tamil', 'malaysian-tamil'], BOTH = ['telugu', 'kannada'];
+const matchTitle = (c = S.culture) => t('mt.n.' + c);
 const STAR_KEYS = ['ashwini', 'bharani', 'krittika', 'rohini', 'mrigashira', 'ardra', 'punarvasu', 'pushya', 'ashlesha', 'magha', 'purva_phalguni',
   'uttara_phalguni', 'hasta', 'chitra', 'swati', 'vishakha', 'anuradha', 'jyeshtha', 'mula', 'purva_ashadha', 'uttara_ashadha', 'shravana',
   'dhanishta', 'shatabhisha', 'purva_bhadrapada', 'uttara_bhadrapada', 'revati'];
-const MT = { bride: '', groom: '' };
+const MT = { bride: '', groom: '', culture: '', eight: false };
 async function viewMatch() {
+  const trad = MT.culture || S.culture, both = BOTH.includes(trad), ten = PORUTHAM.includes(trad) && !(both && MT.eight);
   const list = S.people.filter(p => p.kind !== 'remembrance' && p.anchor && p.place);
   if (!MT.bride) MT.bride = list.find(p => p.sex === 'female')?.id || '';
   if (!MT.groom) MT.groom = list.find(p => p.sex === 'male')?.id || '';
   const bride = list.find(p => p.id === MT.bride), groom = list.find(p => p.id === MT.groom);
   const opt = (l, sel) => `<option value="">${esc(t('m.choose'))}</option>` + l.map(p => `<option value="${p.id}" ${p.id === sel ? 'selected' : ''}>${esc(personLabel(p))}</option>`).join('') + `<option value="+">＋ ${esc(t('m.addProfile'))}</option>`;
-  $('#main').innerHTML = `<h2 class="serif" style="margin:0">${esc(matchTitle())}</h2><p class="muted" style="margin-top:2px">${esc(t(matchesByPorutham() ? 'mt.ten' : 'mt.eight'))}</p>
+  $('#main').innerHTML = `<label class="field"><span>${esc(t('mt.tradition'))}</span><select id="xc">${CULTURES.map(c => `<option value="${c.id}" ${c.id === trad ? 'selected' : ''}>${esc(matchTitle(c.id))} · ${esc(S.native ? c.native : c.en)}</option>`).join('')}</select></label>
+    <h2 class="serif" style="margin:0">${esc(matchTitle(trad))}</h2><p class="muted" style="margin-top:2px">${esc(t(ten ? 'mt.ten' : 'mt.eight'))}</p>
+    <p class="small" style="background:var(--soft);padding:12px;border-radius:12px">${esc(t('mt.d.' + trad))}</p>
+    ${both ? `<div class="seg" style="margin-bottom:10px"><button data-sys="0" class="${!MT.eight ? 'on' : ''}">${esc(t('mt.sysTen'))}</button><button data-sys="1" class="${MT.eight ? 'on' : ''}">${esc(t('mt.sysEight'))}</button></div>` : ''}
     <div class="card"><p class="label">${esc(t('m.couple'))}</p><p class="small muted">${esc(t('mt.choose'))}</p>
       <label class="field"><span>${esc(t('m.bride'))}</span><select id="xb">${opt(list.filter(p => p.sex !== 'male'), MT.bride)}</select><div class="small muted">${esc(natalLine(bride?.anchor))}</div></label>
       <label class="field"><span>${esc(t('m.groom'))}</span><select id="xg">${opt(list.filter(p => p.sex !== 'female'), MT.groom)}</select><div class="small muted">${esc(natalLine(groom?.anchor))}</div></label></div>
@@ -1246,12 +1249,14 @@ async function viewMatch() {
     else { MT[key] = sel.value; viewMatch(); }
   };
   pick($('#xb'), 'bride', 'female'); pick($('#xg'), 'groom', 'male');
+  $('#xc').onchange = () => { MT.culture = $('#xc').value; MT.eight = false; viewMatch(); };
+  $('#main').querySelectorAll('[data-sys]').forEach(b => b.onclick = () => { MT.eight = b.dataset.sys === '1'; viewMatch(); });
   if (!bride || !groom) return;
   $('#xres').innerHTML = '<div class="loading"><div class="ring"><i></i></div></div>';
   let r;
-  try { r = matchesByPorutham() ? await poruthamReport(bride, groom) : await gunaMilanReport(bride, groom); }
+  try { r = ten ? await poruthamReport(bride, groom) : await gunaMilanReport(bride, groom); }
   catch (e) { $('#xres').innerHTML = `<div class="card">${esc(t('c.error', e.message))}</div>`; return; }
-  if (tab !== 'match') return;
+  if (tab !== 'match' || (MT.culture || S.culture) !== trad) return;
   $('#xres').innerHTML = matchReportHtml(r);
 }
 const birthSide = p => ({ date: p.date, minutes: p.minutes ?? undefined, location: p.place });
@@ -1282,12 +1287,12 @@ async function gunaMilanReport(bride, groom) {
   });
   const mars = [[bride, c.brideKuja], [groom, c.groomKuja]].map(([p, kuja]) => ({ name: p.name, about: natalLine(p.anchor), matching: null,
     verdict: `${kuja.filter(k => k.listed).length} / ${kuja.length}`, tags: [],
-    sections: [[t('gm.manglik'), kuja.map(k => `${t('jk.kujaRow', k.house, k.from === 'lagna' ? t('jk.lagnaWord') : name('grahas', k.from))} · ${t(k.listed ? 'jk.kujaListed' : 'jk.kujaNot')}`).join('\n')]] }));
+    sections: [[t('gm.manglik'), kuja.map(k => `${t('jk.kujaRow', k.house, k.from === 'lagna' ? t('jk.lagnaWord') : name('grahas', k.from))} · ${t(k.listed ? 'mt.marsListed' : 'jk.kujaNot')}`).join('\n')]] }));
   const yes = rows.filter(x => x.matching), no = rows.filter(x => !x.matching);
   return { score: m.total, outOf: t('mt.outOf36'), band: t('gm.band.' + m.band), reading: null,
     bride: { label: t('m.bride'), star: natalLine(bride.anchor), sign: '' }, groom: { label: t('m.groom'), star: natalLine(groom.anchor), sign: '' },
     matching: t('mt.gave', yes.length), matchingNames: yes.map(x => x.name), notMatching: t('mt.gaveNone', no.length), notMatchingNames: no.map(x => x.name),
-    notes: [m.nadiZero && t('gm.nadiRule'), m.bhakootZero && t('gm.bhakootRule')].filter(Boolean), rows, deeperTitle: t('mt.mangalTitle'), deeper: mars,
+    notes: [m.nadiZero && t('gm.nadiRule'), m.bhakootZero && t('gm.bhakootRule')].filter(Boolean), rows, deeperTitle: t('mt.mangalTitle'), deeperNote: t('mt.marsNote'), deeper: mars,
     honestTitle: t('mt.honest'), honest: t('gm.note') };
 }
 function matchReportHtml(r) {
