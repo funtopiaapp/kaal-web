@@ -271,6 +271,52 @@ const PETALS = (() => {
   }
   return `<svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="1.2"><path d="${d}"/><circle cx="100" cy="100" r="18"/></svg>`;
 })();
+// The day's sky on the panchangam card, as on iOS (SkyStrip.swift): the sun's arc from sunrise
+// to sunset and the moon's from moonrise to moonset across the day's hours; on opening, both travel
+// to where they are now. Drawn as SVG; the sun glows and the stars twinkle in CSS.
+function skyStrip(p, tz) {
+  const W = 320, H = 84, hz = H - 24, lift = hz - 6, D = 86400;
+  const mid = (() => { const [y, m, d] = civilIn(p.sunrise).split('-').map(Number), probe = Date.UTC(y, m - 1, d) / 1000;
+    const off = (new Date(probe * 1000).toLocaleString('en-US', { timeZone: tz, hour12: false, hour: '2-digit', minute: '2-digit' })).split(':').map(Number);
+    const o = (off[0] % 24) * 3600 + off[1] * 60; return probe - (o > 43200 ? o - 86400 : o); })();
+  const x = t => ((t - mid) / D) * W;
+  const height = (t, rise, span, amp) => { let f = ((t - rise) % D + D) % D; return span > 0 && f <= span ? Math.sin(Math.PI * f / span) * amp : null; };
+  const arc = (rise, span, amp) => { let d = '', up = false;
+    for (let i = 0; i <= 240; i++) { const t = mid + i / 240 * D, h = height(t, rise, span, amp);
+      if (h !== null) { d += up ? `L${x(t).toFixed(1)} ${(hz - h).toFixed(1)}` : `M${x(t).toFixed(1)} ${hz}L${x(t).toFixed(1)} ${(hz - h).toFixed(1)}`; up = true; }
+      else if (up) { d += `V${hz}`; up = false; } }
+    return d; };
+  const sunSpan = p.sunset - p.sunrise, moonSpan = p.moonrise && p.moonset ? (((p.moonset - p.moonrise) % D) + D) % D || D : 0;
+  const now = Date.now() / 1000, night = now < p.sunrise || now > p.sunset;
+  const stars = night ? Array.from({ length: 14 }, (_, i) => `<circle class="star" style="animation-delay:${(i * .37 % 3).toFixed(2)}s" cx="${(i * 73 % 100) / 100 * W}" cy="${(i * 37 % 60) / 100 * hz + 4}" r="1"/>`).join('') : '';
+  const lab = (t, s) => `<text x="${Math.min(Math.max(x(t), 30), W - 30)}" y="${hz + 15}" text-anchor="middle">${esc(s)}</text>`;
+  return `<svg class="sky" viewBox="0 0 ${W} ${H}" data-mid="${mid}" data-rise="${p.sunrise}" data-sun="${sunSpan}" data-mrise="${p.moonrise || 0}" data-moon="${moonSpan}" aria-label="☀ ${esc(clock(p.sunrise))} – ${esc(clock(p.sunset))}">
+    <defs><linearGradient id="skyfill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="var(--gold)" stop-opacity=".4"/><stop offset="1" stop-color="var(--gold)" stop-opacity=".02"/></linearGradient></defs>
+    ${stars}${moonSpan ? `<path d="${arc(p.moonrise, moonSpan, lift * .72)}" fill="none" stroke="currentColor" stroke-opacity=".45" stroke-width="1.2" stroke-dasharray="3 4"/>` : ''}
+    <path d="${arc(p.sunrise, sunSpan, lift)}" fill="url(#skyfill)" stroke="var(--gold)" stroke-width="1.6"/>
+    <line x1="0" y1="${hz}" x2="${W}" y2="${hz}" stroke="currentColor" stroke-opacity=".35"/>
+    <line class="nowline" y1="4" y2="${hz}" stroke="currentColor" stroke-opacity=".2" stroke-dasharray="2 3"/>
+    <text class="moonnow" font-size="15" text-anchor="middle" dominant-baseline="central">${moonPhase(p.tithis[0]?.index)}</text>
+    <g class="sunnow"><circle class="glow" r="16" fill="var(--gold)" opacity=".15"/><circle r="11" fill="var(--gold)" opacity=".25"/><circle r="7" fill="var(--gold)"/></g>
+    ${lab(p.sunrise, '↑ ' + clock(p.sunrise))}${lab(p.sunset, '↓ ' + clock(p.sunset))}</svg>`;
+}
+// Move the sun and moon from midnight to now over a second and a half.
+function animateSky(svg) {
+  if (!svg) return;
+  const n = k => +svg.dataset[k], mid = n('mid'), W = 320, hz = 60, lift = hz - 6, D = 86400, t0 = performance.now();
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const height = (t, rise, span, amp) => { let f = ((t - rise) % D + D) % D; return span > 0 && f <= span ? Math.sin(Math.PI * f / span) * amp : null; };
+  const step = ts => {
+    const p = still ? 1 : Math.min(1, (ts - t0) / 1600), e = 1 - (1 - p) ** 3, real = Date.now() / 1000, now = mid + (real - mid) * e, x = (now - mid) / D * W;
+    const sh = height(now, n('rise'), n('sun'), lift), mh = n('moon') ? height(now, n('mrise'), n('moon'), lift * .72) : null;
+    const sun = svg.querySelector('.sunnow'), moon = svg.querySelector('.moonnow'), line = svg.querySelector('.nowline');
+    line.setAttribute('x1', x); line.setAttribute('x2', x);
+    sun.style.display = sh === null ? 'none' : ''; if (sh !== null) sun.setAttribute('transform', `translate(${x} ${hz - sh})`);
+    moon.style.display = mh === null ? 'none' : ''; if (mh !== null) { moon.setAttribute('x', x); moon.setAttribute('y', hz - mh); }
+    if (p < 1 && svg.isConnected) requestAnimationFrame(step);
+  };
+  requestAnimationFrame(step);
+}
 const TILE_STYLES = ['classic', 'mosaic', 'colourful', 'minimal'];
 // Reorder Home's tiles, put what's coming soonest first, juggle, and pick a style.
 function arrangeSheet(keys, x) {
@@ -378,7 +424,8 @@ async function viewHome() {
         <span class="herosub">${esc(tithi)}</span>
         <span class="herosub small">${esc(yearLabel(p.year))}</span>
         ${p.tithis[0] ? (() => { const x = p.tithis[0], f = Math.min(1, Math.max(0, (now - x.start) / (x.end - x.start))); return `<span class="tprog"><span style="width:${Math.max(2, f * 100)}%"></span></span><span class="herosub small">${esc(t('hm.tithiDone', name('tithis', x.key), Math.round(f * 100)))}</span>`; })() : ''}
-        <span class="hcells">${[[t('p.nakshatra'), p.nakshatras[0] ? name('nakshatras', p.nakshatras[0].key) : '–'], [t('sun.sunrise'), clock(p.sunrise)], [t('sun.sunset'), clock(p.sunset)]]
+        <span class="skywrap">${skyStrip(p, S.home.tz)}</span>
+        <span class="hcells">${[[t('p.nakshatra'), p.nakshatras[0] ? name('nakshatras', p.nakshatras[0].key) : '–'], [t('sun.moonrise'), p.moonrise ? clock(p.moonrise) : t('sun.none')], [t('sun.moonset'), p.moonset ? clock(p.moonset) : t('sun.none')]]
           .map(([l, v]) => `<span class="hcell"><span>${esc(l)}</span><b>${esc(v)}</b></span>`).join('')}</span>
         <span class="rahu">${esc(t('time.rahu'))} ${esc(span(p.rahuKalam))}</span>
       </button>
@@ -390,6 +437,7 @@ async function viewHome() {
     <div class="tiles style-${esc(S.tileStyle)}">${orderTiles(tiles).join('')}</div>
     <div class="small muted" style="text-align:center;margin-top:8px">Kaal · ${esc(t('o.tagline'))}</div></div>`;
   $('#main').querySelectorAll('[data-go]').forEach(b => b.onclick = () => { tab = b.dataset.go; render(); scrollTo(0, 0); });
+  animateSky($('#main').querySelector('svg.sky'));
   $('#main').querySelectorAll('[data-ts]').forEach(b => b.onclick = () => { S.textSize = Math.max(0, Math.min(TEXT_SIZES.length - 1, S.textSize + +b.dataset.ts)); save(); applyTextSize(); });
   $('#main').querySelector('[data-arrange]').onclick = () => arrangeSheet(tiles.map(x => x.match(/data-k="([^"]+)"/)[1]), { fest, greet, vrat, person, d });
   // Drag a tile onto another to put it there.
@@ -700,6 +748,35 @@ function adoptFamilyless() {
 }
 const personLabel = p => p.relation ? `${p.name} · ${t('rel.' + p.relation)}` : p.name;
 let jkFamily = null;
+// Choose people from any family for the dasha sandhis, as on iOS (PeoplePicker).
+function peoplePicker(ps) {
+  const pick = new Set(S.sandhiPick || []);
+  const groups = [...S.families.map(f => [f.name, ps.filter(p => p.family === f.id)]), [t('fam.default'), ps.filter(p => !S.families.some(f => f.id === p.family))]].filter(([, l]) => l.length);
+  const o = sheet(`<h2 class="serif">${esc(t('fg.choose'))}</h2>${groups.map(([n, l]) => `<p class="label">${esc(n)}</p><div class="card">${l.map(p => `<label class="list-row"><input type="checkbox" data-pp="${p.id}" ${pick.has(p.id) ? 'checked' : ''}><span class="grow">${esc(personLabel(p))}</span></label>`).join('')}</div>`).join('')}
+    <button class="btn block" data-ok>${esc(t('c.done'))}</button>`);
+  o.querySelector('[data-ok]').onclick = () => {
+    S.sandhiPick = [...o.querySelectorAll('[data-pp]:checked')].map(x => x.dataset.pp); save();
+    jkFamily = S.sandhiPick.length ? 'pick' : null; o.remove(); viewJathakam();
+  };
+}
+// Make, rename and remove families, and say who belongs to each, as on iOS (FamiliesManager).
+function familiesManager() {
+  defaultFamily();
+  const o = sheet('<div id="fm"></div>');
+  const draw = () => {
+    const ps = S.people.filter(p => p.anchor);
+    o.querySelector('#fm').innerHTML = `<h2 class="serif">${esc(t('fg.manage'))}</h2>${S.families.map(f => `<div class="card"><div style="display:flex;align-items:center;gap:8px"><b class="grow">${esc(f.name)}</b>
+        <button class="linkbtn" data-rn="${f.id}" style="padding:0">${esc(t('fg.rename'))}</button>${S.families.length > 1 ? `<button class="linkbtn" data-rm="${f.id}" style="padding:0">🗑</button>` : ''}</div>
+        ${ps.map(p => `<label class="list-row"><input type="checkbox" data-in="${f.id}|${p.id}" ${p.family === f.id ? 'checked disabled' : ''}><span class="grow">${esc(p.name)}</span>${p.family !== f.id ? `<span class="small muted">${esc(S.families.find(x => x.id === p.family)?.name || '')}</span>` : ''}</label>`).join('')}</div>`).join('')}
+      <button class="btn soft block" data-new>＋ ${esc(t('fam.new'))}</button><p class="small muted">${esc(t('fg.note'))}</p><button class="btn block" data-ok>${esc(t('c.done'))}</button>`;
+    o.querySelectorAll('[data-in]').forEach(c => c.onchange = () => { const [f, id] = c.dataset.in.split('|'); const p = S.people.find(x => x.id === id); if (p) p.family = f; save(); draw(); });
+    o.querySelectorAll('[data-rn]').forEach(b => b.onclick = () => { const f = S.families.find(x => x.id === b.dataset.rn); const n = prompt(t('fam.name'), f.name)?.trim(); if (n) { f.name = n; save(); draw(); } });
+    o.querySelectorAll('[data-rm]').forEach(b => b.onclick = () => { const id = b.dataset.rm, other = S.families.find(x => x.id !== id); S.people.forEach(p => { if (p.family === id) p.family = other.id; }); S.families = S.families.filter(x => x.id !== id); if (jkFamily === id) jkFamily = null; save(); draw(); });
+    o.querySelector('[data-new]').onclick = () => { const n = prompt(t('fam.name'))?.trim(); if (n) { S.families.push({ id: crypto.randomUUID(), name: n }); save(); draw(); } };
+    o.querySelector('[data-ok]').onclick = () => { o.remove(); viewJathakam(); };
+  };
+  draw();
+}
 
 // ---------------------------------------------------------------- jathakam
 // As on iOS (Views/JatakamViews.swift): the chart and its vargas in South,
@@ -850,7 +927,8 @@ async function viewJathakam() {
   if (j && jkSection === 3 && j.strength) body += strengthHtml(j);
   if (jkSection === 2) {
     adoptFamilyless();
-    const fam = []; for (const p of ps.filter(x => !jkFamily || x.family === jkFamily)) fam.push([p, await jataka(p)]);
+    const pick = S.sandhiPick || [], fam = [];
+    for (const p of ps.filter(x => !jkFamily || (jkFamily === 'pick' ? pick.includes(x.id) : x.family === jkFamily))) fam.push([p, await jataka(p)]);
     const Y = 31557600, from = jkAhead ? now : now - jkSpan * Y, to = jkAhead ? now + jkSpan * Y : now;
     const sandhis = [];
     for (const [p, jj] of fam) { const ms = jj.vimshottari.periods; for (let i = 1; i < ms.length; i++) if (ms[i].start >= from && ms[i].start < to) sandhis.push({ p, a: ms[i - 1], b: ms[i], s: ms[i - 1].children.at(-1).start, e: ms[i].children[0].end }); }
@@ -858,7 +936,8 @@ async function viewJathakam() {
     const pct = u => ((Math.min(Math.max(u, from), to) - from) / (to - from) * 100).toFixed(2);
     body += `<div style="display:flex;gap:8px;align-items:center"><div class="seg" style="flex:1"><button data-ahead="1" class="${jkAhead ? 'on' : ''}">${esc(t('jk.ahead'))}</button><button data-ahead="0" class="${!jkAhead ? 'on' : ''}">${esc(t('jk.past'))}</button></div>
       <select id="jkspan" style="width:auto">${[10, 20, 40].map(n => `<option value="${n}" ${n === jkSpan ? 'selected' : ''}>${esc(t('jk.span', n))}</option>`).join('')}</select></div>
-      ${S.families.length > 1 ? `<div class="vc-chips"><button class="pill ${!jkFamily ? 'on' : ''}" data-jf="">${esc(t('f.all'))}</button>${S.families.map(f => `<button class="pill ${jkFamily === f.id ? 'on' : ''}" data-jf="${f.id}">${esc(f.name)}</button>`).join('')}</div>` : ''}
+      <div class="vc-chips"><button class="pill ${!jkFamily ? 'on' : ''}" data-jf="">${esc(t('f.all'))}</button>${S.families.map(f => `<button class="pill ${jkFamily === f.id ? 'on' : ''}" data-jf="${f.id}">${esc(f.name)}</button>`).join('')}
+        <button class="pill ${jkFamily === 'pick' ? 'on' : ''}" data-pick>☑ ${esc(jkFamily === 'pick' ? t('fg.picked', pick.length) : t('fg.choose'))}</button><button class="linkbtn" data-fams style="padding:0 6px">👪 ${esc(t('fg.manage'))}</button></div>
       <p class="small muted">${esc(t('jk.sandhiNote'))}</p>
       ${!fam.length ? `<div class="card"><p>${esc(t('jk.noFamily'))}</p><button class="btn" data-add>＋ ${esc(t('m.addProfile'))}</button></div>` : `
       <div class="card"><div class="small muted" style="display:flex;justify-content:space-between"><span>${esc(dLabel(from))}</span><span>${esc(dLabel(to))}</span></div>
@@ -877,6 +956,8 @@ async function viewJathakam() {
   qa('[data-sys]').forEach(b => b.onclick = () => { jkSystem = b.dataset.sys; viewJathakam(); });
   qa('[data-ahead]').forEach(b => b.onclick = () => { jkAhead = b.dataset.ahead === '1'; viewJathakam(); });
   qa('[data-jf]').forEach(b => b.onclick = () => { jkFamily = b.dataset.jf || null; viewJathakam(); });
+  q('[data-pick]')?.addEventListener('click', () => peoplePicker(ps));
+  q('[data-fams]')?.addEventListener('click', familiesManager);
   qa('[data-add]').forEach(b => b.onclick = () => personEditor(null, '', rec => { jkPerson = rec.id; viewJathakam(); }));
   q('[data-edit]')?.addEventListener('click', () => personEditor(person, '', () => viewJathakam()));
 }
@@ -1440,9 +1521,37 @@ async function viewGreetings() {
 }
 const cardBg = (m, p) => `background:linear-gradient(${PALETTES[p][0]},${PALETTES[p][1]})`;
 const cardArt = (m, p) => `background:${PALETTES[p][4]};-webkit-mask:url(cards/${m || 'lotus'}.svg) center/100% 100%;mask:url(cards/${m || 'lotus'}.svg) center/100% 100%;opacity:.85`;
+// Movement over a card, as on iOS (CardMotion.swift): each loops every four seconds.
+const MOTIONS = ['still', 'glow', 'petals', 'sparkle', 'rays', 'fireworks'];
+const suggestedMotion = m => ({ diya: 'glow', lakshmi: 'glow', shiva: 'glow', bonfire: 'glow', tulsi: 'glow', pookalam: 'petals', holi: 'petals', swing: 'petals', krishna: 'petals', lotus: 'petals', pooram: 'petals',
+  sun: 'rays', pongal: 'rays', kite: 'rays', newyear: 'rays', chariot: 'rays' })[m] || 'sparkle';
+function drawMotion(g, kind, t, w, h, light, accent) {
+  const f = (t / 4) % 1, TAU = Math.PI * 2, seed = (i, k) => { const v = Math.sin((i * 127 + k * 311) * 12.9898) * 43758.5453; return v - Math.floor(v); };
+  const dot = (x, y, r, c, a) => { g.globalAlpha = Math.max(0, a); g.fillStyle = c; g.beginPath(); g.arc(x, y, r, 0, TAU); g.fill(); };
+  g.save();
+  if (kind === 'glow') {
+    const b = .5 + .5 * Math.sin(TAU * f), rg = g.createRadialGradient(w / 2, h * .92, 0, w / 2, h * .92, w * .8);
+    rg.addColorStop(0, accent); rg.addColorStop(1, 'transparent'); g.globalAlpha = .14 + .14 * b; g.fillStyle = rg; g.fillRect(0, 0, w, h);
+    for (let i = 0; i < 18; i++) { const p = (f + seed(i, 1)) % 1; dot(seed(i, 2) * w + Math.sin(TAU * (f * 2 + seed(i, 3))) * 10 * w / 320, h * .95 - p * h * .75, (1.5 + 2 * seed(i, 4)) * w / 320, accent, .9 * Math.sin(Math.PI * p)); }
+  } else if (kind === 'petals') {
+    for (let i = 0; i < 22; i++) { const p = (f + seed(i, 1)) % 1; g.save(); g.translate(seed(i, 2) * w + Math.sin(TAU * (f * 2 + seed(i, 3))) * 18 * w / 320, p * (h + 40) - 20); g.rotate(TAU * (f + seed(i, 4)));
+      g.globalAlpha = .75; g.fillStyle = i % 3 ? accent : light; g.beginPath(); g.ellipse(0, 0, 6 * w / 320, 3 * w / 320, 0, 0, TAU); g.fill(); g.restore(); }
+  } else if (kind === 'sparkle') {
+    for (let i = 0; i < 26; i++) { const a = Math.max(0, Math.sin(TAU * (f * (1 + i % 2) + seed(i, 5)))), x = seed(i, 6) * w, y = seed(i, 7) * h, r = (3 + 6 * a) * w / 320;
+      g.globalAlpha = .85 * a; g.fillStyle = light; g.beginPath(); g.moveTo(x, y - r); g.lineTo(x + r * .25, y - r * .25); g.lineTo(x + r, y); g.lineTo(x + r * .25, y + r * .25); g.lineTo(x, y + r); g.lineTo(x - r * .25, y + r * .25); g.lineTo(x - r, y); g.lineTo(x - r * .25, y - r * .25); g.fill(); }
+  } else if (kind === 'rays') {
+    const cx = w / 2, cy = h * .12, r = Math.max(w, h) * 1.2; g.globalAlpha = .07; g.fillStyle = light;
+    for (let i = 0; i < 16; i++) { const a0 = TAU * (i + f) / 16; g.beginPath(); g.moveTo(cx, cy); g.lineTo(cx + Math.cos(a0) * r, cy + Math.sin(a0) * r); g.lineTo(cx + Math.cos(a0 + Math.PI / 32) * r, cy + Math.sin(a0 + Math.PI / 32) * r); g.fill(); }
+  } else if (kind === 'fireworks') {
+    for (let b = 0; b < 3; b++) { const age = (f + b / 3) % 1, cx = w * (.22 + .28 * b), cy = h * (.18 + .08 * (b % 2)), r = 70 * Math.sqrt(age) * w / 320;
+      for (let i = 0; i < 18; i++) { const a = TAU * i / 18; dot(cx + Math.cos(a) * r, cy + Math.sin(a) * r + 20 * age * age * w / 320, 2 * w / 320, b === 1 ? accent : light, .9 * (1 - age)); } }
+  }
+  g.restore();
+}
 function cardMaker(f, date) {
-  const st = { p: cardPalette(f.card), to: '', from: '', msg: '' };
+  const st = { p: cardPalette(f.card), to: '', from: '', msg: '', motion: suggestedMotion(f.card) };
   const o = sheet(`<h2 class="serif">${esc(t('gr.card'))}</h2><div id="gcard" class="gcard"></div>
+    <p class="label">${esc(t('card.motion'))}</p><div class="chips" id="gmo">${MOTIONS.map(m => `<button class="chip" data-mo="${m}">${esc(t('card.m.' + m))}</button>`).join('')}</div>
     <p class="label">${esc(t('card.colour'))}</p><div style="display:flex;gap:8px;flex-wrap:wrap">${PALETTES.map((_, i) => `<button class="cardthumb" data-p="${i}" style="${cardBg(f.card, i)}"><i style="${cardArt(f.card, i)}"></i></button>`).join('')}</div>
     <label class="field"><span>${esc(t('card.to'))}</span><input id="gto" maxlength="40"></label>
     <label class="field"><span>${esc(t('card.from'))}</span><input id="gfrom" maxlength="40"></label>
@@ -1457,20 +1566,51 @@ function cardMaker(f, date) {
       <div class="gtext">${st.to ? `<div class="gdear">${esc(t('card.dear', st.to))}</div>` : ''}${native ? `<div class="gnat" style="color:${P[3]}">${esc(native)}</div>` : ''}
       <div class="serif gname">${esc(fname(f))}</div><div class="gdate">${esc(greg(date, { day: 'numeric', month: 'long', year: 'numeric' }))}</div>
       ${line() ? `<div class="gline">${esc(line())}</div>` : ''}${st.from ? `<div class="gfrom" style="color:${P[3]}">${esc(t('card.with', st.from))}</div>` : ''}</div>
-      <div class="gbrand"><img src="icon-192.png" alt="">Kaal</div></div>`;
+      <canvas class="gmotion" width="640" height="800"></canvas><div class="gbrand"><img src="icon-192.png" alt="">Kaal</div></div>`;
+    o.querySelectorAll('[data-mo]').forEach(b => b.classList.toggle('on', b.dataset.mo === st.motion));
   };
+  // The preview's motion, drawn every frame while the card maker is open.
+  const t0 = performance.now(), still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const tick = ts => {
+    if (!o.isConnected) return;
+    const cv = o.querySelector('.gmotion');
+    if (cv) { const g = cv.getContext('2d'); g.clearRect(0, 0, 640, 800); if (st.motion !== 'still') drawMotion(g, st.motion, still ? 0 : (ts - t0) / 1000, 640, 800, PALETTES[st.p][4], PALETTES[st.p][3]); }
+    requestAnimationFrame(tick);
+  };
+  requestAnimationFrame(tick);
   o.querySelectorAll('[data-p]').forEach(b => b.onclick = () => { st.p = +b.dataset.p; draw(); });
+  o.querySelectorAll('[data-mo]').forEach(b => b.onclick = () => { st.motion = b.dataset.mo; draw(); });
   o.querySelector('#gto').oninput = e => { st.to = e.target.value; draw(); };
   o.querySelector('#gfrom').oninput = e => { st.from = e.target.value; draw(); };
   o.querySelector('#gmsg').oninput = e => { st.msg = e.target.value; draw(); };
   o.querySelectorAll('[data-w]').forEach(b => b.onclick = () => { st.msg = b.dataset.w; o.querySelector('#gmsg').value = st.msg; draw(); });
   o.querySelector('#gshare').onclick = async () => {
-    const blob = await cardImage(f, date, st, native, line());
-    const file = new File([blob], `${f.id}.png`, { type: 'image/png' });
+    const btn = o.querySelector('#gshare'), label = btn.textContent;
+    let blob = await cardImage(f, date, st, native, line()), type = 'image/png', ext = 'png';
+    // A moving card goes out as an eight-second looping video, recorded from a canvas.
+    if (st.motion !== 'still' && window.MediaRecorder) {
+      btn.disabled = true; btn.textContent = t('card.making');
+      const vid = await cardVideo(blob, st).catch(() => null);
+      btn.disabled = false; btn.textContent = label;
+      if (vid) { blob = vid; type = vid.type.split(';')[0]; ext = type.includes('mp4') ? 'mp4' : 'webm'; }
+    }
+    const file = new File([blob], `${f.id}.${ext}`, { type });
     if (navigator.canShare?.({ files: [file] })) { try { await navigator.share({ files: [file] }); return; } catch {} }
     const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = file.name; a.click();
   };
   draw();
+}
+async function cardVideo(png, st) {
+  const base = await createImageBitmap(png), c = document.createElement('canvas'); c.width = 720; c.height = 900;
+  const g = c.getContext('2d'), P = PALETTES[st.p];
+  const mime = ['video/mp4;codecs=avc1', 'video/mp4', 'video/webm;codecs=vp9', 'video/webm'].find(m => MediaRecorder.isTypeSupported(m));
+  const rec = new MediaRecorder(c.captureStream(30), { mimeType: mime, videoBitsPerSecond: 2500000 }), chunks = [];
+  rec.ondataavailable = e => e.data.size && chunks.push(e.data);
+  const done = new Promise(r => rec.onstop = r);
+  const t0 = performance.now(); rec.start();
+  await new Promise(res => { const step = ts => { const t = (ts - t0) / 1000; g.drawImage(base, 0, 0, 720, 900); drawMotion(g, st.motion, t, 720, 900, P[4], P[3]); if (t < 8) requestAnimationFrame(step); else res(); }; requestAnimationFrame(step); });
+  rec.stop(); await done;
+  return new Blob(chunks, { type: mime });
 }
 // The card as a 1080 x 1350 image: gradient, tinted art, then the words.
 async function cardImage(f, date, st, native, line) {

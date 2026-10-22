@@ -285,3 +285,13 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .tprog > span { display: block; height: 100%; border-radius: 99px; background: var(--gold); }
 .wide { background: linear-gradient(90deg, var(--goldsoft), var(--soft)) !important; border: 1px solid color-mix(in srgb, var(--gold) 35%, transparent) !important; }
 .wide .ic { background: linear-gradient(135deg, var(--gold), var(--accent)) !important; color: #fff !important; }
+
+.skywrap { display: block; }
+.sky { display: block; width: 100%; height: auto; overflow: visible; color: inherit; }
+.sky text { fill: currentColor; font-size: 10px; font-weight: 600; opacity: .9; }
+.sky .star { fill: currentColor; animation: twinkle 2.6s ease-in-out infinite; }
+.sky .glow { animation: glow 3s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes twinkle { 0%, 100% { opacity: .2; } 50% { opacity: .75; } }
+@keyframes glow { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
+@media (prefers-reduced-motion: reduce) { .sky .star, .sky .glow { animation: none; } }
+.gcard-in .gmotion { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
