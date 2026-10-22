@@ -1002,6 +1002,16 @@
    "en": "Kundali Milan",
    "native": "कुण्डली मिलान"
   },
+  "timeUnits": {
+   "en": [
+    "ghadi",
+    "pala"
+   ],
+   "native": [
+    "घडी",
+    "पला"
+   ]
+  },
   "terms": [
    [
     "Kuja dosha",

@@ -1000,6 +1000,16 @@
   "matching": {
    "en": "Vivaha Porutham",
    "native": "വിവാഹപ്പൊരുത്തം"
+  },
+  "timeUnits": {
+   "en": [
+    "nazhika",
+    "vinazhika"
+   ],
+   "native": [
+    "നാഴിക",
+    "വിനാഴിക"
+   ]
   }
  },
  "regions": {

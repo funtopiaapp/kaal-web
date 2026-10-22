@@ -1241,6 +1241,16 @@
   "matching": {
    "en": "Thirumana Porutham",
    "native": "திருமணப் பொருத்தம்"
+  },
+  "timeUnits": {
+   "en": [
+    "nazhigai",
+    "vinazhigai"
+   ],
+   "native": [
+    "நாழிகை",
+    "விநாழிகை"
+   ]
   }
  },
  "regions": {

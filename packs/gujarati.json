@@ -1237,6 +1237,16 @@
    "en": "Kundli Melap",
    "native": "કુંડળી મેળાપ"
   },
+  "timeUnits": {
+   "en": [
+    "ghadi",
+    "pal"
+   ],
+   "native": [
+    "ઘડી",
+    "પળ"
+   ]
+  },
   "terms": [
    [
     "Kuja dosha",

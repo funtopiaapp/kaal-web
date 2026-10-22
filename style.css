@@ -245,3 +245,9 @@ details.factor .grow { flex: 1; }
 .gtext { position: absolute; inset: 29% 22px 25% 22px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-align: center; }
 .gdear { font: italic 16px Georgia, serif; } .gnat { font-weight: 700; font-size: 26px; } .gname { font-size: 24px; font-weight: 700; }
 .gdate { font-size: 13px; opacity: .85; } .gline { font: italic 13px Georgia, serif; opacity: .92; } .gfrom { font: 600 14px Georgia, serif; }
+.gbrand { position: absolute; left: 0; right: 0; bottom: 6px; display: flex; justify-content: center; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; opacity: .7; }
+.gbrand img { width: 12px; height: 12px; border-radius: 3px; }
+.badges { display: flex; gap: 6px; align-items: center; }
+.dicon { display: inline-block; vertical-align: -3px; background: currentColor; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; color: var(--accent); }
+.pill.on .dicon { color: #fff; }
+input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font: inherit; margin-bottom: 8px; }

@@ -1232,6 +1232,16 @@
   "matching": {
    "en": "Vivaha Ponthana",
    "native": "వివాహ పొంతన"
+  },
+  "timeUnits": {
+   "en": [
+    "ghadiya",
+    "vighadiya"
+   ],
+   "native": [
+    "ఘడియ",
+    "విఘడియ"
+   ]
   }
  },
  "regions": {

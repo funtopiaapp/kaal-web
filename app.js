@@ -174,6 +174,8 @@ function shell() {
   const c = CULTURES.find(c => c.id === S.culture);
   $('#badge').textContent = c ? `☀ ${c.native} · ${c.en} ▾` : '';
   $('#badge').onclick = () => { tab = 'settings'; render(); };
+  // English or the tradition's language, beside the tradition picker.
+  if (pack) { $('#langbadge').textContent = `🗣 ${S.native ? pack.display.nameNative : 'English'} ▾`; $('#langbadge').onclick = () => { S.native = !S.native; save(); render(); }; }
   const house = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>';
   $('#tabs').innerHTML = TABS.filter(([id]) => id !== 'match' || matchingAvailable()).map(([id, k]) => `<button data-tab="${id}" class="${id === tab ? 'on' : ''}">${id === 'home' ? house : ''}${esc(t(k))}</button>`).join('');
   $('#tabs').querySelectorAll('button').forEach(b => b.onclick = () => { tab = b.dataset.tab; if (tab === 'today') { dayDate = null; dayPlace = null; } render(); });
@@ -223,13 +225,25 @@ function onboarding() {
 // ---------------------------------------------------------------- home
 // As on iOS (HomeView): today's panchangam above a tile for every feature,
 // each with one live fact; a tile opens its tab.
+// "10:42 AM Kollam · 6:12 AM Dubai".
+function clocks() {
+  return [S.home, S.away].filter(Boolean).map(p => `${new Intl.DateTimeFormat(locale(), { hour: 'numeric', minute: '2-digit', timeZone: p.tz }).format(new Date())} ${p.name}`).join(' · ');
+}
+// The time since sunrise in the tradition's units (24 minutes, 24 seconds).
+function sinceSunrise(sunrise) {
+  const u = pack?.display?.timeUnits; if (!u || !sunrise) return '';
+  const names = (lang() === 'en' ? u.en : u.native) || u.en;
+  let s = Date.now() / 1000 - sunrise; if (s < 0) s += 86400;
+  return t('hm.sinceSunrise', `${Math.floor(s / 1440)} ${names[0]} ${Math.floor((s % 1440) / 24)} ${names[1]}`);
+}
+let homeTick = null;
 async function viewHome() {
   const d = today();
   dayDate = null; dayPlace = null;
   loading();
   const p = await day(d);
   const fine = await engine({ op: 'timings', handle: await cal(+d.slice(0, 4)), date: d }).catch(() => null);
-  const fest = (await upcoming(d, 90))[0];
+  const fest = (await upcoming(d, 90)).find(x => x.f.tier !== 'minor');
   const vrat = (await vratDays(d, addDays(d, 14)))[0];
   const now = Date.now() / 1000;
   let person = null;
@@ -285,7 +299,8 @@ async function viewHome() {
     tile('settings', 'settings', 'quiet', t('tab.settings'), c ? (S.native ? c.native : c.en) : '', t('s.notifications')),
   ];
   $('#main').innerHTML = `<div class="home">
-    <div class="homehead"><div><div class="small muted"><b>${esc(greg(d))}</b></div><div class="serif wordmark">Kaal</div></div>
+    <div class="homehead"><div><div class="small muted"><b>${esc(greg(d))} · ${esc(cultureDate(p.solar, p.lunar))}</b></div><div class="serif wordmark">Kaal</div>
+      <div class="small"><b id="clocks">${esc(clocks())}</b></div><div class="small muted" id="nazhika">${esc(sinceSunrise(p.sunrise))}</div></div>
       <button class="placepill" data-go="settings">📍 ${esc(S.home.name)}</button></div>
     <div class="homehero">
       <button class="hero" data-go="today">
@@ -303,6 +318,8 @@ async function viewHome() {
     <div class="tiles">${tiles.join('')}</div>
     <div class="small muted" style="text-align:center;margin-top:8px">Kaal · ${esc(t('o.tagline'))}</div></div>`;
   $('#main').querySelectorAll('[data-go]').forEach(b => b.onclick = () => { tab = b.dataset.go; render(); scrollTo(0, 0); });
+  clearInterval(homeTick);
+  homeTick = setInterval(() => { if (tab !== 'home' || !$('#clocks')) return clearInterval(homeTick); $('#clocks').textContent = clocks(); $('#nazhika').textContent = sinceSunrise(p.sunrise); }, 30000);
   // The year's sky takes a few seconds; its tile fills in when ready, next year only if this one is over.
   const y = +d.slice(0, 4);
   let sky = (await skyEvents(y).catch(() => [])).find(e => e.at > now);
@@ -846,14 +863,21 @@ function deityForVrat(k) {
 }
 // As on iOS: nearest to the home location (or a city the user picks), by
 // deity, each deity's temples nearest first; a deity filter, All by default.
-let tmNear = null, tmRegion = null;
+let tmNear = null, tmRegion = null, tmQuery = '';
+const deityIcon = (d, size = 18) => `<i class="dicon" style="width:${size}px;height:${size}px;-webkit-mask-image:url(icons/${d}.svg);mask-image:url(icons/${d}.svg)"></i>`;
+const compass = (o, x) => {
+  const r = Math.PI / 180, y = Math.sin((x.lon - o.longitude) * r) * Math.cos(x.lat * r);
+  const z = Math.cos(o.latitude * r) * Math.sin(x.lat * r) - Math.sin(o.latitude * r) * Math.cos(x.lat * r) * Math.cos((x.lon - o.longitude) * r);
+  return ['n', 'ne', 'e', 'se', 's', 'sw', 'w', 'nw'][Math.round(((Math.atan2(y, z) / r + 360) % 360) / 45) % 8];
+};
 function kmFrom(o, x) {
   const r = Math.PI / 180, p1 = o.latitude * r, p2 = x.lat * r, dp = p2 - p1, dl = (x.lon - o.longitude) * r;
   const h = Math.sin(dp / 2) ** 2 + Math.cos(p1) * Math.cos(p2) * Math.sin(dl / 2) ** 2;
   return 2 * 6371 * Math.asin(Math.min(1, Math.sqrt(h)));
 }
+// Miles where roads are signed in miles (the United States, Britain), kilometres elsewhere: by the home country.
 function distText(km) {
-  const miles = /^en-(US|GB|LR|MM)$/.test(navigator.language || '');
+  const miles = ['US', 'GB', 'LR', 'MM'].includes(S.home?.country);
   const v = miles ? km / 1.609344 : km;
   return new Intl.NumberFormat(locale(), { style: 'unit', unit: miles ? 'mile' : 'kilometer', maximumFractionDigits: 0 }).format(v);
 }
@@ -866,22 +890,38 @@ async function viewTemples() {
   const shown = tmDeity ? [tmDeity, ...TEMPLES.deities.filter(d => TEMPLES.parents?.[d] === tmDeity)] : order;
   const region = x => x.place.split(', ').pop();
   const regions = [...new Set(TEMPLES.temples.map(region))].sort();
-  const card = x => `<div class="card temple"><h2 class="serif">${esc(x.name)}</h2><div class="small muted tmplace"><span>📍 ${esc(x.place)}</span><span>${esc(distText(kmFrom(origin, x)))}</span></div><p>${esc(x.about)}</p>
+  const travel = x => {
+    const rows = [];
+    if (x.air?.length) rows.push(['✈︎', t('tm.air'), x.air.map(a => `${a[0]} (${a[1]}), ${distText(a[2])}`).join(' · ')]);
+    if (x.rail?.length) rows.push(['🚆', t('tm.rail'), x.rail.map(r => `${r[0]}, ${distText(r[1])}`).join(' · ')]);
+    const k = kmFrom(origin, x);
+    if (k > 2) rows.push(['🚗', t('tm.road'), t('tm.roadFrom', distText(k), t('dir.' + compass(origin, x)), origin.name)]);
+    return `<p class="label">${esc(t('tm.getting'))}</p>${rows.map(([i, h, v]) => `<div class="small" style="margin:4px 0">${i} <b>${esc(h)}</b> · ${esc(v)}</div>`).join('')}`;
+  };
+  const card = x => `<div class="card temple"><h2 class="serif">${deityIcon(x.deity, 20)} ${esc(x.name)}</h2><div class="small muted tmplace"><span>📍 ${esc(x.place)}</span><span>${esc(distText(kmFrom(origin, x)))}</span></div>
+    ${x.built ? `<div class="small" style="color:var(--accent);font-weight:700">🕰 ${esc(t('tm.built', x.built))}</div>` : ''}
+    <p class="label">${esc(t('tm.significance'))}</p><p>${esc(x.about)}</p>
+    ${x.tips?.length ? `<p class="label">${esc(t('tm.tips'))}</p>${x.tips.map(tp => `<div class="small">💡 ${esc(tp)}</div>`).join('')}` : ''}
+    ${travel(x)}
     ${x.donate ? `<a class="btn block" href="${esc(x.donate)}" target="_blank" rel="noopener">♥ ${esc(t('tm.donate'))}</a>` : x.site ? '' : `<p class="small muted">${esc(t('tm.noLink'))}</p>`}
     <div class="links">${x.site && x.site !== x.donate ? `<a href="${esc(x.site)}" target="_blank" rel="noopener">🌐 ${esc(t('tm.site'))}</a>` : ''}
+    ${x.wiki ? `<a href="${esc(x.wiki)}" target="_blank" rel="noopener">📖 ${esc(t('tm.wiki'))}</a>` : ''}
     <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(x.name + ', ' + x.place)}" target="_blank" rel="noopener">🗺 ${esc(t('tm.directions'))}</a></div></div>`;
   const groups = shown.map(d => {
-    const list = TEMPLES.temples.filter(x => x.deity === d && (!tmRegion || region(x) === tmRegion)).sort((a, b) => kmFrom(origin, a) - kmFrom(origin, b));
-    return list.length ? `${tmDeity ? '' : `<h2 class="serif tmdeity">${esc(t('deity.' + d))}</h2>`}${list.map(card).join('')}` : '';
+    const q = tmQuery.trim().toLowerCase();
+    const list = TEMPLES.temples.filter(x => x.deity === d && (!tmRegion || region(x) === tmRegion) && (!q || x.name.toLowerCase().includes(q) || x.place.toLowerCase().includes(q))).sort((a, b) => kmFrom(origin, a) - kmFrom(origin, b));
+    return list.length ? `${tmDeity && shown.length === 1 ? '' : `<h2 class="serif tmdeity">${deityIcon(d, 22)} ${esc(t('deity.' + d))}</h2>`}${list.map(card).join('')}` : '';
   }).join('');
   $('#main').innerHTML = `<div class="card tmnear"><div class="row" style="border:0;align-items:center"><b>📍 ${esc(t('tm.near', origin.name))}</b>
       <span>${tmNear ? `<button class="btn soft" data-tmhome>${esc(t('dual.home'))}</button> ` : ''}<button class="btn soft" data-tmpick>${esc(t('cal.other'))}</button></span></div><div id="tmpp"></div></div>
+    <input class="search" id="tmq" placeholder="${esc(t('tm.search'))}" value="${esc(tmQuery)}">
     <label class="field"><span>${esc(t('tm.where'))}</span><select id="tmregion"><option value="">${esc(t('tm.everywhere'))}</option>${regions.map(r => `<option ${r === tmRegion ? 'selected' : ''}>${esc(r)}</option>`).join('')}</select></label>
     ${yours.length ? `<p class="label">${esc(t('tm.yours'))}</p>` : ''}
-    <div class="vc-chips"><button class="pill ${!tmDeity ? 'on' : ''}" data-deity="">${esc(t('f.all'))}</button>${order.map(d => `<button class="pill ${d === tmDeity ? 'on' : ''}" data-deity="${d}">${yours.includes(d) ? '☾ ' : ''}${esc(t('deity.' + d))}</button>`).join('')}</div>
+    <div class="vc-chips"><button class="pill ${!tmDeity ? 'on' : ''}" data-deity="">${esc(t('f.all'))}</button>${order.map(d => `<button class="pill ${d === tmDeity ? 'on' : ''}" data-deity="${d}">${yours.includes(d) ? '☾ ' : ''}${deityIcon(d, 14)} ${esc(t('deity.' + d))}</button>`).join('')}</div>
     ${groups}<p class="small muted">${esc(t('tm.note'))}</p>`;
   $('#main').querySelectorAll('[data-deity]').forEach(b => b.onclick = () => { tmDeity = b.dataset.deity || null; viewTemples(); });
   $('#tmregion').onchange = e => { tmRegion = e.target.value || null; viewTemples(); };
+  $('#tmq').oninput = e => { tmQuery = e.target.value; clearTimeout(viewTemples.t); viewTemples.t = setTimeout(() => { viewTemples().then(() => { const i = $('#tmq'); i.focus(); i.setSelectionRange(i.value.length, i.value.length); }); }, 250); };
   $('#main').querySelector('[data-tmhome]')?.addEventListener('click', () => { tmNear = null; viewTemples(); });
   $('#main').querySelector('[data-tmpick]').onclick = () => placePicker($('#tmpp'), p => { tmNear = p; viewTemples(); });
 }
@@ -1083,6 +1123,8 @@ function personEditor(person, presetSex, onSaved) {
     <button class="btn block" id="psave" style="margin-top:12px">${esc(t('c.save'))}</button>
     ${person ? `<button class="btn soft block" id="pdel" style="margin-top:8px">${esc(t('pp.delete'))}</button>` : ''}`, o2 => {
       const q = s => o2.querySelector(s);
+  // From Matching or Muhurtham only the birth matters: family, relation and kind stay optional and out of the way.
+  if (!person && presetSex) ['#pfam', '#prel', '[data-kind]'].forEach(sel => o.querySelector(sel)?.closest('.field')?.setAttribute('hidden', ''));
       const preview = async () => {
         const d = q('#pd').value; if (!d || !p.place) { q('#preview').innerHTML = `<span class="small muted">${esc(t('bs.choosePlace'))}</span>`; return; }
         const tm = q('#pt').value; const minutes = tm ? +tm.slice(0, 2) * 60 + +tm.slice(3) : null;
@@ -1279,7 +1321,8 @@ function cardMaker(f, date) {
     o.querySelector('#gcard').innerHTML = `<div class="gcard-in" style="${cardBg(f.card, st.p)};color:${P[2]}"><i style="${cardArt(f.card, st.p)}"></i>
       <div class="gtext">${st.to ? `<div class="gdear">${esc(t('card.dear', st.to))}</div>` : ''}${native ? `<div class="gnat" style="color:${P[3]}">${esc(native)}</div>` : ''}
       <div class="serif gname">${esc(fname(f))}</div><div class="gdate">${esc(greg(date, { day: 'numeric', month: 'long', year: 'numeric' }))}</div>
-      ${line() ? `<div class="gline">${esc(line())}</div>` : ''}${st.from ? `<div class="gfrom" style="color:${P[3]}">${esc(t('card.with', st.from))}</div>` : ''}</div></div>`;
+      ${line() ? `<div class="gline">${esc(line())}</div>` : ''}${st.from ? `<div class="gfrom" style="color:${P[3]}">${esc(t('card.with', st.from))}</div>` : ''}</div>
+      <div class="gbrand"><img src="icon-192.png" alt="">Kaal</div></div>`;
   };
   o.querySelectorAll('[data-p]').forEach(b => b.onclick = () => { st.p = +b.dataset.p; draw(); });
   o.querySelector('#gto').oninput = e => { st.to = e.target.value; draw(); };
@@ -1317,6 +1360,10 @@ async function cardImage(f, date, st, native, line) {
   put(greg(date, { day: 'numeric', month: 'long', year: 'numeric' }), '500 38px sans-serif', P[2], 80);
   if (line) put(line, 'italic 40px Georgia, serif', P[2], 54, 5);
   if (st.from) { y += 16; put(t('card.with', st.from), '600 44px Georgia, serif', P[3], 60); }
+  // A small Kaal mark at the foot, for the brand.
+  const logo = new Image(); logo.src = 'icon-192.png'; await logo.decode().catch(() => {});
+  g.globalAlpha = .75; if (logo.complete) g.drawImage(logo, W / 2 - 70, H - 64, 34, 34);
+  g.font = '600 30px sans-serif'; g.fillStyle = P[2]; g.textAlign = 'left'; g.fillText('Kaal', W / 2 - 28, H - 36); g.globalAlpha = 1;
   return new Promise(r => c.toBlob(r, 'image/png'));
 }
 
@@ -1347,8 +1394,7 @@ const READ_LANGS = [['en', 'English'], ['ml', 'മലയാളം'], ['ta', 'த
 async function viewMatch() {
   const trad = MT.culture || S.culture, both = BOTH.includes(trad), ten = PORUTHAM.includes(trad) && !(both && MT.eight), L = MT.lang || lang();
   const list = S.people.filter(p => p.kind !== 'remembrance' && p.anchor && p.place);
-  if (!MT.bride) MT.bride = list.find(p => p.sex === 'female')?.id || '';
-  if (!MT.groom) MT.groom = list.find(p => p.sex === 'male')?.id || '';
+  // Each slot holds only whom the user chose.
   const bride = list.find(p => p.id === MT.bride), groom = list.find(p => p.id === MT.groom);
   const opt = (l, sel) => `<option value="">${esc(t('m.choose'))}</option>` + l.map(p => `<option value="${p.id}" ${p.id === sel ? 'selected' : ''}>${esc(personLabel(p))}</option>`).join('') + `<option value="+">＋ ${esc(t('m.addProfile'))}</option>`;
   $('#main').innerHTML = `<label class="field"><span>${esc(t('mt.tradition'))}</span><select id="xc">${CULTURES.map(c => `<option value="${c.id}" ${c.id === trad ? 'selected' : ''}>${esc(matchTitle(c.id))} · ${esc(S.native ? c.native : c.en)}</option>`).join('')}</select></label>

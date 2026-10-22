@@ -1242,6 +1242,16 @@
    "en": "Jotok Bichar",
    "native": "যোটক বিচার"
   },
+  "timeUnits": {
+   "en": [
+    "danda",
+    "pal"
+   ],
+   "native": [
+    "দণ্ড",
+    "পল"
+   ]
+  },
   "terms": [
    [
     "Kuja dosha",

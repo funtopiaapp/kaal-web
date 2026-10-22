@@ -991,6 +991,16 @@
    "en": "Kundli Milan",
    "native": "कुंडली मिलान"
   },
+  "timeUnits": {
+   "en": [
+    "ghati",
+    "pal"
+   ],
+   "native": [
+    "घटी",
+    "पल"
+   ]
+  },
   "terms": [
    [
     "Kuja dosha",

@@ -1233,6 +1233,16 @@
    "en": "Gun Milan",
    "native": "गुणमेलन"
   },
+  "timeUnits": {
+   "en": [
+    "ghatika",
+    "pal"
+   ],
+   "native": [
+    "घटिका",
+    "पळ"
+   ]
+  },
   "terms": [
    [
     "Kuja dosha",

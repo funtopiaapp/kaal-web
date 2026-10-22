@@ -1233,6 +1233,16 @@
    "en": "Vivaha Hondanike",
    "native": "ವಿವಾಹ ಹೊಂದಾಣಿಕೆ"
   },
+  "timeUnits": {
+   "en": [
+    "ghalige",
+    "vighalige"
+   ],
+   "native": [
+    "ಘಳಿಗೆ",
+    "ವಿಘಳಿಗೆ"
+   ]
+  },
   "terms": [
    [
     "Muhurtham Finder",
