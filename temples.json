@@ -13,6 +13,7 @@
   "murugan",
   "hanuman",
   "ayyappa",
+  "naga",
   "shani",
   "surya",
   "many"
@@ -223,7 +224,7 @@
   },
   {
    "id": "kolhapur-mahalakshmi",
-   "deity": "devi",
+   "deity": "lakshmi",
    "name": "Shri Mahalaxmi (Ambabai) Temple",
    "place": "Kolhapur, Maharashtra",
    "lat": 16.695,
@@ -3092,6 +3093,267 @@
    "lat": 27.158,
    "lon": 88.364,
    "about": "A pilgrimage centre on Solophok hill with replicas of the twelve Jyotirlingas and the Char Dham around a great Shiva."
+  },
+  {
+   "id": "pazhamudircholai",
+   "deity": "murugan",
+   "name": "Pazhamudircholai Murugan Temple",
+   "place": "Alagar Kovil, Tamil Nadu",
+   "lat": 10.095,
+   "lon": 78.214,
+   "about": "The sixth of the Arupadai Veedu, in the forest above Alagar Kovil, where Murugan is said to have tested the poet Avvaiyar."
+  },
+  {
+   "id": "vadapalani",
+   "deity": "murugan",
+   "name": "Vadapalani Murugan Temple",
+   "place": "Chennai, Tamil Nadu",
+   "lat": 13.052,
+   "lon": 80.212,
+   "about": "Chennai's best-loved Murugan temple, where thousands of weddings take place each year."
+  },
+  {
+   "id": "kandakottam",
+   "deity": "murugan",
+   "name": "Kandaswamy Temple",
+   "place": "Chennai, Tamil Nadu",
+   "lat": 13.092,
+   "lon": 80.285,
+   "about": "Kandakottam in George Town, among the oldest Murugan temples of Chennai, sung by Ramalinga Swamigal."
+  },
+  {
+   "id": "marudamalai",
+   "deity": "murugan",
+   "name": "Marudamalai Murugan Temple",
+   "place": "Coimbatore, Tamil Nadu",
+   "lat": 11.046,
+   "lon": 76.851,
+   "about": "On a hill of the Western Ghats outside Coimbatore, counted by devotees as Murugan's seventh abode."
+  },
+  {
+   "id": "sikkal",
+   "deity": "murugan",
+   "name": "Sikkal Singaravelan Temple",
+   "place": "Sikkal, Tamil Nadu",
+   "lat": 10.757,
+   "lon": 79.8,
+   "about": "Where Murugan is said to have received the vel from Parvati before the battle with Surapadman; the image is said to sweat at the Soorasamharam festival."
+  },
+  {
+   "id": "thiruporur",
+   "deity": "murugan",
+   "name": "Thiruporur Kandaswamy Temple",
+   "place": "Thiruporur, Tamil Nadu",
+   "lat": 12.726,
+   "lon": 80.189,
+   "about": "An ancient Murugan temple on the road from Chennai to Mahabalipuram, restored by Chidambara Swamigal."
+  },
+  {
+   "id": "vallakottai",
+   "deity": "murugan",
+   "name": "Vallakottai Murugan Temple",
+   "place": "Vallakottai, Tamil Nadu",
+   "lat": 12.881,
+   "lon": 79.95,
+   "about": "Home to one of the tallest images of Murugan, sung by Arunagirinathar in the Thiruppugazh."
+  },
+  {
+   "id": "ettukudi",
+   "deity": "murugan",
+   "name": "Ettukudi Murugan Temple",
+   "place": "Ettukudi, Tamil Nadu",
+   "lat": 10.62,
+   "lon": 79.72,
+   "about": "Murugan on a peacock, carved, as the story goes, by a sculptor whose work came alive."
+  },
+  {
+   "id": "payyanur-subrahmanya",
+   "deity": "murugan",
+   "name": "Payyanur Subrahmanya Swamy Temple",
+   "place": "Payyanur, Kerala",
+   "lat": 12.1,
+   "lon": 75.2,
+   "about": "One of the oldest Subrahmanya temples of Kerala, associated with Parashurama."
+  },
+  {
+   "id": "ghati-subramanya",
+   "deity": "murugan",
+   "name": "Ghati Subramanya Temple",
+   "place": "Doddaballapur, Karnataka",
+   "lat": 13.37,
+   "lon": 77.51,
+   "about": "Subrahmanya and Narasimha in one image, a great centre of the Shashti festival near Bengaluru."
+  },
+  {
+   "id": "skandagiri",
+   "deity": "murugan",
+   "name": "Skandagiri Temple",
+   "place": "Hyderabad, Telangana",
+   "lat": 17.45,
+   "lon": 78.5,
+   "about": "A hill temple of Murugan in Secunderabad, built in the Tamil style."
+  },
+  {
+   "id": "mopidevi",
+   "deity": "murugan",
+   "name": "Subrahmanyeswara Swamy Temple",
+   "place": "Mopidevi, Andhra Pradesh",
+   "lat": 16.07,
+   "lon": 80.97,
+   "about": "A much-visited Murugan temple of the Krishna delta."
+  },
+  {
+   "id": "kumaraswamy-sandur",
+   "deity": "murugan",
+   "name": "Kumaraswamy Temple",
+   "place": "Sandur, Karnataka",
+   "lat": 15.09,
+   "lon": 76.55,
+   "about": "An early Chalukya temple of Kartikeya in the Sandur hills, among the oldest in Karnataka."
+  },
+  {
+   "id": "kataragama",
+   "deity": "murugan",
+   "name": "Kataragama Temple",
+   "place": "Kataragama, Sri Lanka",
+   "lat": 6.413,
+   "lon": 81.334,
+   "about": "Revered by Hindus, Buddhists and others alike, where Murugan is said to have met Valli; the July festival draws pilgrims who walk the Pada Yatra from Jaffna."
+  },
+  {
+   "id": "mannarasala",
+   "deity": "naga",
+   "name": "Mannarasala Sree Nagaraja Temple",
+   "place": "Haripad, Kerala",
+   "lat": 9.29,
+   "lon": 76.46,
+   "about": "A serpent grove with over thirty thousand images of serpents, where the chief priest is a woman of the family. Its Ayilyam festival in Thulam is its great day."
+  },
+  {
+   "id": "vettikode",
+   "deity": "naga",
+   "name": "Vettikode Sree Nagaraja Swamy Temple",
+   "place": "Vettikode, Kerala",
+   "lat": 9.17,
+   "lon": 76.62,
+   "about": "One of Kerala's oldest Nagaraja temples, famed for its Ayilyam festival in Kanni."
+  },
+  {
+   "id": "pambummekkattu",
+   "deity": "naga",
+   "name": "Pambummekkattu Mana",
+   "place": "Mala, Kerala",
+   "lat": 10.25,
+   "lon": 76.26,
+   "about": "A Namboodiri household that has kept serpent worship in its grove for centuries."
+  },
+  {
+   "id": "nagercoil-nagaraja",
+   "deity": "naga",
+   "name": "Nagaraja Temple",
+   "place": "Nagercoil, Tamil Nadu",
+   "lat": 8.18,
+   "lon": 77.41,
+   "about": "The temple that gave Nagercoil its name, with the five-headed Nagaraja in a sanctum still thatched as in old times."
+  },
+  {
+   "id": "ujjain-nagchandreshwar",
+   "deity": "naga",
+   "name": "Nagchandreshwar Temple",
+   "place": "Ujjain, Madhya Pradesh",
+   "lat": 23.1828,
+   "lon": 75.768,
+   "about": "On the top floor of Mahakaleshwar, Shiva and Parvati seated on a serpent; opened only once a year, on Nag Panchami."
+  },
+  {
+   "id": "nag-vasuki",
+   "deity": "naga",
+   "name": "Nag Vasuki Temple",
+   "place": "Prayagraj, Uttar Pradesh",
+   "lat": 25.456,
+   "lon": 81.87,
+   "about": "The temple of Vasuki on the Ganga at Prayagraj, visited by pilgrims at the Kumbh and on Nag Panchami."
+  },
+  {
+   "id": "bhujia-nag",
+   "deity": "naga",
+   "name": "Bhujang Nag Temple",
+   "place": "Bhuj, Gujarat",
+   "lat": 23.24,
+   "lon": 69.67,
+   "about": "Atop the Bhujia hill that gave Bhuj its name, honouring the serpent Bhujang; a fair is held on Nag Panchami."
+  },
+  {
+   "id": "sripuram",
+   "deity": "lakshmi",
+   "name": "Sripuram Golden Temple",
+   "place": "Vellore, Tamil Nadu",
+   "lat": 12.874,
+   "lon": 79.089,
+   "about": "A temple of Lakshmi Narayani clad in gold, set in a star-shaped path through gardens."
+  },
+  {
+   "id": "ashtalakshmi-chennai",
+   "deity": "lakshmi",
+   "name": "Ashtalakshmi Temple",
+   "place": "Chennai, Tamil Nadu",
+   "lat": 12.998,
+   "lon": 80.272,
+   "about": "On Elliot's Beach in Besant Nagar, the eight forms of Lakshmi on four levels."
+  },
+  {
+   "id": "ashtalakshmi-hyderabad",
+   "deity": "lakshmi",
+   "name": "Ashtalakshmi Temple",
+   "place": "Hyderabad, Telangana",
+   "lat": 17.369,
+   "lon": 78.532,
+   "about": "The eight forms of Lakshmi in Vasavi Colony, modelled on the Chennai temple."
+  },
+  {
+   "id": "tiruchanur",
+   "deity": "lakshmi",
+   "name": "Sri Padmavathi Ammavari Temple",
+   "place": "Tiruchanur, Andhra Pradesh",
+   "lat": 13.606,
+   "lon": 79.457,
+   "about": "Lakshmi as Padmavathi, consort of Venkateswara, visited by pilgrims before Tirumala."
+  },
+  {
+   "id": "goravanahalli",
+   "deity": "lakshmi",
+   "name": "Goravanahalli Mahalakshmi Temple",
+   "place": "Goravanahalli, Karnataka",
+   "lat": 13.44,
+   "lon": 77.15,
+   "about": "A much-loved Mahalakshmi temple near Tumakuru, crowded on Fridays."
+  },
+  {
+   "id": "dahanu-mahalaxmi",
+   "deity": "lakshmi",
+   "name": "Mahalaxmi Temple",
+   "place": "Dahanu, Maharashtra",
+   "lat": 19.97,
+   "lon": 72.73,
+   "about": "The Goddess of the Warli country, with a great fair in Chaitra."
+  },
+  {
+   "id": "ratlam-mahalakshmi",
+   "deity": "lakshmi",
+   "name": "Mahalakshmi Temple",
+   "place": "Ratlam, Madhya Pradesh",
+   "lat": 23.33,
+   "lon": 75.04,
+   "about": "Famous for being decorated with devotees' jewellery and money for the five days of Diwali, all returned afterwards."
+  },
+  {
+   "id": "bandora-mahalakshmi",
+   "deity": "lakshmi",
+   "name": "Shri Mahalakshmi Temple",
+   "place": "Bandora, Goa",
+   "lat": 15.41,
+   "lon": 73.98,
+   "about": "The family deity of many Goan families, among the oldest temples of Lakshmi in Goa."
   }
  ],
  "parents": {

@@ -1250,7 +1250,8 @@ const PALETTES = [
   ['#11113E', '#2A1F5C', '#fff', '#E8C25A', '#F3D98C'], ['#B5523B', '#7E2E1E', '#fff', '#FFE2B8', '#FFE9CC'],
   ['#F4A62A', '#E0701B', '#3B1B07', '#7A1F0E', '#FFF3D6'], ['#0D6E6E', '#123E5C', '#fff', '#F0D27A', '#BDE6E0'],
   ['#4A1942', '#2B0F2A', '#fff', '#F2B6D0', '#F6D6E6'], ['#FAF6EF', '#F1E7D6', '#2B2420', '#B5523B', '#C9814F']];
-const cardPalette = m => ({ diya: 0, shiva: 0, moon: 0, pongal: 1, ganesha: 1, murugan: 1, pookalam: 2, holi: 3, krishna: 3, newyear: 3 })[m] ?? 4;
+const cardPalette = m => ({ diya: 0, shiva: 0, moon: 0, ayyappa: 0, bonfire: 0, vishnu: 0, pongal: 1, ganesha: 1, murugan: 1, rakhi: 1, swing: 1, chariot: 1, hanuman: 1,
+  pookalam: 2, sun: 2, lakshmi: 2, pooram: 2, kite: 2, holi: 3, krishna: 3, newyear: 3, water: 3, boat: 3, tree: 3, tulsi: 3, naga: 3 })[m] ?? 4;
 async function viewGreetings() {
   loading();
   const list = (await upcoming(today(), 180)).filter(x => x.f.tier !== 'minor');
