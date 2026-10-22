@@ -160,3 +160,43 @@ footer.foot { max-width: 760px; margin: 0 auto; padding: 0 16px 40px; font-size:
   .card { break-inside: avoid; border-color: #ccc; }
   main::after { content: "Generated with the Kaal app"; display: block; margin-top: 24px; font-size: 11px; color: #a33; }
 }
+
+/* ---------------------------------------------------------------- home */
+.home { --goldsoft: #F4EAD3; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .home { --goldsoft: #3A3222; } }
+:root[data-theme="dark"] .home { --goldsoft: #3A3222; }
+.homehead { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; margin: 4px 4px 14px; }
+.wordmark { font-size: 36px; font-weight: 700; color: var(--accent); line-height: 1.05; }
+.placepill { min-height: 44px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font: inherit; font-weight: 600; font-size: 14px; cursor: pointer; }
+.homehero { display: grid; gap: 12px; margin-bottom: 12px; }
+@media (min-width: 720px) { .homehero { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); } }
+.hero { display: flex; flex-direction: column; gap: 10px; text-align: left; padding: 20px; border: 0; border-radius: 24px; background: var(--accent); color: #fff; font: inherit; cursor: pointer; }
+:root[data-theme="dark"] .hero { color: #1A1512; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .hero { color: #1A1512; } }
+.herotop { display: flex; justify-content: space-between; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.herodate { font-size: 28px; font-weight: 600; line-height: 1.15; }
+.herosub { font-size: 14px; opacity: .92; }
+.hcells { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; margin-top: 4px; }
+.hcell { display: flex; flex-direction: column; gap: 2px; padding: 10px; border-radius: 14px; background: rgba(255,255,255,.16); font-size: 11px; font-weight: 600; min-width: 0; }
+.hcell b { font-size: 15px; }
+@media (max-width: 420px) { .hcell b { font-size: 13px; } }
+.rahu { align-self: flex-start; font-size: 13px; font-weight: 700; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.16); }
+.wide { display: flex; align-items: center; gap: 14px; padding: 16px 18px; border: 0; border-radius: 20px; background: var(--soft); color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
+.wide .ic { flex: none; width: 52px; height: 52px; border-radius: 16px; background: var(--card); color: var(--accent); display: flex; align-items: center; justify-content: center; }
+.wide .big { font-size: 20px; font-weight: 600; }
+.wide .chev { color: var(--accent); font-size: 26px; }
+.tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+@media (min-width: 720px) { .tiles { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
+.tile { display: flex; flex-direction: column; justify-content: space-between; gap: 12px; min-height: 148px; padding: 16px; border-radius: 20px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
+.tile .ic { width: 40px; height: 40px; border-radius: 12px; background: var(--soft); color: var(--accent); display: flex; align-items: center; justify-content: center; }
+.tile.gold .ic { background: var(--goldsoft); color: var(--gold); }
+.tile.warm { background: var(--goldsoft); border-color: transparent; }
+.tile.warm .ic { background: var(--card); color: var(--gold); }
+.tile.quiet { background: var(--sunken); border-color: transparent; }
+.tile.quiet .ic { background: var(--card); color: var(--muted); }
+.tx { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.tx .lb { font-size: 12px; font-weight: 700; color: var(--muted); }
+.tx b { font-size: 16px; line-height: 1.25; }
+.tx .dt { font-size: 13px; color: var(--muted); }
+.tile:hover, .wide:hover, .hero:hover { filter: brightness(.98); }
+.tile:focus-visible, .wide:focus-visible, .hero:focus-visible, .placepill:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

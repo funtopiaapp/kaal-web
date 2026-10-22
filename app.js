@@ -16,7 +16,7 @@ const CULTURES = [
   { id: 'nepali', en: 'Nepali', native: 'नेपाली' },
 ];
 const LIGHT = ['kaal', 'ivory', 'rose', 'sage'], DARK = ['kaal-dark', 'night', 'charcoal', 'peacock'];
-const TABS = [['today', 'tab.today'], ['calendar', 'tab.calendar'], ['festivals', 'tab.festivals'], ['muhurtham', 'tab.muhurtham'],
+const TABS = [['home', 'hm.home'], ['today', 'tab.today'], ['calendar', 'tab.calendar'], ['festivals', 'tab.festivals'], ['muhurtham', 'tab.muhurtham'],
   ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
 
 // ---------------------------------------------------------------- state
@@ -24,7 +24,7 @@ const saved = (() => { try { return JSON.parse(localStorage.getItem('kaal-web') 
 const S = Object.assign({ culture: '', native: false, home: null, theme: 'system', light: 'kaal', dark: 'kaal-dark', people: [], vrats: [], vratLog: {}, families: [] }, saved);
 function save() { try { localStorage.setItem('kaal-web', JSON.stringify(S)); } catch {} }
 
-let STR = {}, pack = null, packJson = '', tab = 'today', dayDate = null, monthDate = null;
+let STR = {}, pack = null, packJson = '', tab = 'home', dayDate = null, monthDate = null;
 const handles = new Map();
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -168,6 +168,7 @@ async function render() {
   applyTheme(); shell();
   if (!S.culture || !S.home) return onboarding();
   try {
+    if (tab === 'home') return await viewHome();
     if (tab === 'today') return await viewDay();
     if (tab === 'calendar') return await viewMonth();
     if (tab === 'festivals') return await viewFestivals();
@@ -190,6 +191,90 @@ function onboarding() {
     <div class="card"><p class="label">${esc(t('o.where'))}</p><p class="small muted">${esc(t('o.whereNote'))}</p><div id="pp"></div></div>`;
   $('#main').querySelectorAll('[data-c]').forEach(b => b.onclick = async () => { S.culture = b.dataset.c; save(); await loadPack(); onboarding(); });
   placePicker($('#pp'), async p => { S.home = p; save(); await resetCalendars(); render(); });
+}
+
+// ---------------------------------------------------------------- home
+// As on iOS (HomeView): today's panchangam above a tile for every feature,
+// each with one live fact; a tile opens its tab.
+async function viewHome() {
+  const d = today();
+  dayDate = null; dayPlace = null;
+  loading();
+  const p = await day(d);
+  const fine = await engine({ op: 'timings', handle: await cal(+d.slice(0, 4)), date: d }).catch(() => null);
+  const fest = (await upcoming(d, 90))[0];
+  const vrat = (await vratDays(d, addDays(d, 14)))[0];
+  const now = Date.now() / 1000;
+  let person = null;
+  for (const x of S.people) {
+    if (!x.anchor) continue;
+    for (const y of [+d.slice(0, 4), +d.slice(0, 4) + 1]) {
+      const ds = await engine({ op: 'personalDates', handle: await cal(y), anchor: x.anchor, kind: x.kind || 'birthday', basis: x.basis }).catch(() => []);
+      const next = ds.find(s => s >= d && s <= addDays(d, 60));
+      if (next && (!person || next < person.date)) person = { p: x, date: next };
+    }
+  }
+  const when = s => { const n = daysBetween(d, s); return n === 0 ? t('day.today') : n === 1 ? t('day.tomorrow') : t('day.inDays', n); };
+  const ch = fine?.choghadiya || [], i = ch.findIndex(c => now >= c.start && now < c.end);
+  const chog = i < 0 ? null : [`${t('dm.choghadiya')}: ${name('choghadiya', ch[i].key)}`, t('p.until', clock(ch[i].end)) + (ch[i + 1] ? ', ' + t('p.then', name('choghadiya', ch[i + 1].key)) : '')];
+  const kept = Object.values(S.vratLog).filter(Boolean).length;
+  const c = CULTURES.find(c => c.id === S.culture);
+  // A lunar tradition's date already names the tithi; a solar one's does not.
+  const tithi = p.tithis[0] ? `${pack.display.primary === 'solar' ? `${p.lunar ? name('paksha', p.lunar.paksha) + ' ' : ''}${name('tithis', p.tithis[0].key)} · ` : ''}${t('p.until', clock(p.tithis[0].end))}${p.tithis[1] ? ', ' + t('p.then', name('tithis', p.tithis[1].key)) : ''}` : '';
+  const events = (pack.muhurtham?.events || []).slice(0, 3).map(e => e.names[lang()] ?? e.names.en);
+  const icon = k => ({
+    festivals: '<path d="M12 3c1.8 2.2 2.6 3.9 2.6 5.3A2.6 2.6 0 0 1 12 11a2.6 2.6 0 0 1-2.6-2.7C9.4 6.9 10.2 5.2 12 3z"/><path d="M4 14h16c0 3.3-3.6 6-8 6s-8-2.7-8-6z"/><path d="M12 11v3"/>',
+    day: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+    vrats: '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',
+    calendar: '<rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
+    jathakam: '<rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/><path d="M3.5 3.5l17 17M20.5 3.5l-17 17M12 3.5L20.5 12 12 20.5 3.5 12z"/>',
+    sky: '<circle cx="12" cy="12" r="3.5"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(-20 12 12)"/>',
+    temples: '<path d="M12 2.5v2M9.5 8h5l-1-3.5h-3zM8 12h8l-1.5-4h-5zM6 20.5h12V12H6z"/><path d="M10.5 20.5v-4a1.5 1.5 0 0 1 3 0v4M4 20.5h16"/>',
+    people: '<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9.5" r="2.3"/><path d="M3.5 19c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5M15 14c3 0 5.5 1.8 5.5 5"/>',
+    birthstar: '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/><path d="M17 3v4M15 5h4"/>',
+    settings: '<path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/>',
+    muhurtham: '<circle cx="9" cy="14" r="5"/><circle cx="15" cy="14" r="5"/><path d="M10 4l2 3 2-3"/>',
+  }[k]);
+  const svg = k => `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icon(k)}</svg>`;
+  const tile = (k, go, tone, label, value, detail) => `<button class="tile ${tone}" data-go="${go}"><span class="ic">${svg(k)}</span>
+    <span class="tx"><span class="lb">${esc(label)}</span><b>${esc(value)}</b>${detail ? `<span class="dt">${esc(detail)}</span>` : ''}</span></button>`;
+  const tiles = [
+    tile('festivals', 'festivals', 'warm', t('tab.festivals'), fest ? fname(fest.f) : t('f.upcoming'), fest ? when(fest.date) : ''),
+    tile('day', 'today', 'accent', t('dm.title'), chog ? chog[0] : t('time.section'), chog ? chog[1] : ''),
+    tile('vrats', 'vrats', 'gold', t('vj.title'), vrat ? recName(vrat.key) : t('v.title'), vrat ? when(vrat.date) : kept ? t('vj.keptOf', String(kept)) : ''),
+    tile('calendar', 'calendar', 'accent', t('tab.calendar'), greg(d, { month: 'long', year: 'numeric' }), yearLabel(p.year)),
+    tile('jathakam', 'jathakam', 'accent', t('jk.chart'), t('jk.title'), [t('jk.vimshottari'), t('jk.yogini'), t('jk.chara')].join(' · ')),
+    tile('sky', 'sky', 'gold', t('sk.title'), t('sk.now'), ''),
+    tile('temples', 'temples', 'warm', t('tm.title'), t('tm.deity'), ['vishnu', 'shiva', 'devi'].map(x => t('deity.' + x)).join(' · ')),
+    tile('people', 'people', 'accent', t('fam.family'), person ? t(person.p.kind === 'remembrance' ? 'pp.remembranceOf' : 'pp.birthdayOf', person.p.name) : t('pp.title'), person ? when(person.date) : t('pp.add')),
+    tile('birthstar', 'birthstar', 'gold', t('bs.result'), t('bs.title'), ''),
+    tile('settings', 'settings', 'quiet', t('tab.settings'), c ? (S.native ? c.native : c.en) : '', t('s.notifications')),
+  ];
+  $('#main').innerHTML = `<div class="home">
+    <div class="homehead"><div><div class="small muted"><b>${esc(greg(d))}</b></div><div class="serif wordmark">Kaal</div></div>
+      <button class="placepill" data-go="settings">📍 ${esc(S.home.name)}</button></div>
+    <div class="homehero">
+      <button class="hero" data-go="today">
+        <span class="herotop"><span>${esc(t('p.panchang'))}</span><span aria-hidden="true">☀</span></span>
+        <span class="serif herodate">${esc(cultureDate(p.solar, p.lunar))}</span>
+        <span class="herosub">${esc(tithi)}</span>
+        <span class="herosub small">${esc(yearLabel(p.year))}</span>
+        <span class="hcells">${[[t('p.nakshatra'), p.nakshatras[0] ? name('nakshatras', p.nakshatras[0].key) : '–'], [t('sun.sunrise'), clock(p.sunrise)], [t('sun.sunset'), clock(p.sunset)]]
+          .map(([l, v]) => `<span class="hcell"><span>${esc(l)}</span><b>${esc(v)}</b></span>`).join('')}</span>
+        <span class="rahu">${esc(t('time.rahu'))} ${esc(span(p.rahuKalam))}</span>
+      </button>
+      <button class="wide" data-go="muhurtham"><span class="ic">${svg('muhurtham')}</span>
+        <span class="tx"><span class="lb">${esc(t('tab.muhurtham'))}</span><span class="serif big">${esc(t('m.pwTitle'))}</span><span class="dt">${esc(events.join(', '))}…</span></span><span class="chev" aria-hidden="true">›</span></button>
+    </div>
+    <div class="tiles">${tiles.join('')}</div>
+    <div class="small muted" style="text-align:center;margin-top:8px">Kaal · ${esc(t('o.tagline'))}</div></div>`;
+  $('#main').querySelectorAll('[data-go]').forEach(b => b.onclick = () => { tab = b.dataset.go; render(); scrollTo(0, 0); });
+  // The year's sky takes a few seconds; its tile fills in when ready, next year only if this one is over.
+  const y = +d.slice(0, 4);
+  let sky = (await skyEvents(y).catch(() => [])).find(e => e.at > now);
+  if (!sky) sky = (await skyEvents(y + 1).catch(() => [])).find(e => e.at > now);
+  const el = tab === 'home' && $('#main .tile[data-go="sky"] .tx');
+  if (el && sky) el.innerHTML = `<span class="lb">${esc(t('sk.title'))}</span><b>${esc(skyTitle(sky))}</b><span class="dt">${esc(new Intl.DateTimeFormat(locale(), { day: 'numeric', month: 'short', year: 'numeric', timeZone: S.home.tz }).format(new Date(sky.at * 1000)))}</span>`;
 }
 
 // ---------------------------------------------------------------- today / day
