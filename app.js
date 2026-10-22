@@ -243,7 +243,9 @@ async function viewHome() {
   loading();
   const p = await day(d);
   const fine = await engine({ op: 'timings', handle: await cal(+d.slice(0, 4)), date: d }).catch(() => null);
-  const fest = (await upcoming(d, 90)).find(x => x.f.tier !== 'minor');
+  const coming = await upcoming(d, 180);
+  const fest = coming.find(x => x.f.tier !== 'minor' && x.date <= addDays(d, 90));
+  const greet = coming.find(x => x.f.tier !== 'minor');
   const vrat = (await vratDays(d, addDays(d, 14)))[0];
   const now = Date.now() / 1000;
   let person = null;
@@ -279,12 +281,15 @@ async function viewHome() {
     people: '<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9.5" r="2.3"/><path d="M3.5 19c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5M15 14c3 0 5.5 1.8 5.5 5"/>',
     birthstar: '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/><path d="M17 3v4M15 5h4"/>',
     match: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
+    greetings: '<path d="M3.5 9.5 12 4l8.5 5.5V19a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1z"/><path d="M3.5 9.5 12 15l8.5-5.5"/>',
     settings: '<path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/>',
     muhurtham: '<circle cx="9" cy="14" r="5"/><circle cx="15" cy="14" r="5"/><path d="M10 4l2 3 2-3"/>',
   }[k]);
   const svg = k => `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icon(k)}</svg>`;
-  const tile = (k, go, tone, label, value, detail) => `<button class="tile ${tone}" data-go="${go}"><span class="ic">${svg(k)}</span>
-    <span class="tx"><span class="lb">${esc(label)}</span><b>${esc(value)}</b>${detail ? `<span class="dt">${esc(detail)}</span>` : ''}</span></button>`;
+  // The symbol and the feature's name on one line, then what it holds now; the same symbol large and faint in the corner.
+  const tile = (k, go, tone, label, value, detail) => `<button class="tile ${tone}" data-go="${go}"><span class="tbg" aria-hidden="true">${svg(k)}</span>
+    <span class="trow"><span class="ic">${svg(k)}</span><span class="lb">${esc(label)}</span></span>
+    <span class="tx"><b>${esc(value)}</b>${detail ? `<span class="dt">${esc(detail)}</span>` : ''}</span></button>`;
   const tiles = [
     tile('festivals', 'festivals', 'warm', t('tab.festivals'), fest ? fname(fest.f) : t('f.upcoming'), fest ? when(fest.date) : ''),
     tile('day', 'today', 'accent', t('dm.title'), chog ? chog[0] : t('time.section'), chog ? chog[1] : ''),
@@ -295,6 +300,7 @@ async function viewHome() {
     tile('temples', 'temples', 'warm', t('tm.title'), t('tm.deity'), ['vishnu', 'shiva', 'devi'].map(x => t('deity.' + x)).join(' · ')),
     tile('people', 'people', 'accent', t('fam.family'), person ? t(person.p.kind === 'remembrance' ? 'pp.remembranceOf' : 'pp.birthdayOf', person.p.name) : t('pp.title'), person ? when(person.date) : t('pp.add')),
     ...(matchingAvailable() ? [tile('match', 'match', 'accent', t('mt.label'), matchTitle(), t(matchesByPorutham() ? 'mt.ten' : 'mt.eight'))] : []),
+    tile('greetings', 'greetings', 'gold', t('gr.title'), greet ? t('gr.send', fname(greet.f)) : t('gr.card'), greet ? when(greet.date) : ''),
     tile('birthstar', 'birthstar', 'gold', t('bs.result'), t('bs.title'), ''),
     tile('settings', 'settings', 'quiet', t('tab.settings'), c ? (S.native ? c.native : c.en) : '', t('s.notifications')),
   ];
@@ -325,7 +331,7 @@ async function viewHome() {
   let sky = (await skyEvents(y).catch(() => [])).find(e => e.at > now);
   if (!sky) sky = (await skyEvents(y + 1).catch(() => [])).find(e => e.at > now);
   const el = tab === 'home' && $('#main .tile[data-go="sky"] .tx');
-  if (el && sky) el.innerHTML = `<span class="lb">${esc(t('sk.title'))}</span><b>${esc(skyTitle(sky))}</b><span class="dt">${esc(new Intl.DateTimeFormat(locale(), { day: 'numeric', month: 'short', year: 'numeric', timeZone: S.home.tz }).format(new Date(sky.at * 1000)))}</span>`;
+  if (el && sky) el.innerHTML = `<b>${esc(skyTitle(sky))}</b><span class="dt">${esc(new Intl.DateTimeFormat(locale(), { day: 'numeric', month: 'short', year: 'numeric', timeZone: S.home.tz }).format(new Date(sky.at * 1000)))}</span>`;
 }
 
 // ---------------------------------------------------------------- today / day
