@@ -970,6 +970,70 @@
     "en": "Shashtiamsa",
     "or": "ଷଷ୍ଟ୍ୟଂଶ"
    }
+  },
+  "choghadiya": {
+   "udvega": {
+    "en": "Udvega",
+    "or": "ଉଦ୍ୱେଗ"
+   },
+   "chara": {
+    "en": "Chara",
+    "or": "ଚର"
+   },
+   "labha": {
+    "en": "Labha",
+    "or": "ଲାଭ"
+   },
+   "amrita": {
+    "en": "Amrita",
+    "or": "ଅମୃତ"
+   },
+   "kala": {
+    "en": "Kala",
+    "or": "କାଲ"
+   },
+   "shubha": {
+    "en": "Shubha",
+    "or": "ଶୁଭ"
+   },
+   "roga": {
+    "en": "Roga",
+    "or": "ରୋଗ"
+   }
+  },
+  "gowri": {
+   "uthi": {
+    "en": "Udyogam",
+    "or": "ଉଦ୍ୟୋଗ"
+   },
+   "amirdha": {
+    "en": "Amirtham",
+    "or": "ଅମୃତ"
+   },
+   "rogam": {
+    "en": "Rogam",
+    "or": "ରୋଗ"
+   },
+   "laabam": {
+    "en": "Labham",
+    "or": "ଲାଭ"
+   },
+   "dhanam": {
+    "en": "Dhanam",
+    "or": "ଧନ"
+   },
+   "sugam": {
+    "en": "Sugam",
+    "or": "ସୁଖ"
+   },
+   "soram": {
+    "en": "Soram",
+    "or": "ଚୋର"
+   },
+   "visham": {
+    "en": "Visham",
+    "or": "ବିଷ"
+   }
   }
  },
  "display": {
@@ -2889,6 +2953,268 @@
      "friday"
     ],
     "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "upanayanam",
+    "names": {
+     "en": "Upanayanam (sacred thread)",
+     "or": "ଉପନୟନ (ବ୍ରତଘର)"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     10,
+     11,
+     12
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidLunarSpans": [
+     {
+      "from": {
+       "month": "ashadha",
+       "tithi": 1
+      },
+      "to": {
+       "month": "pausha",
+       "tithi": 30
+      }
+     }
+    ],
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "mundan",
+    "names": {
+     "en": "First haircut (Mundan)",
+     "or": "ମୁଣ୍ଡନ (ଚୂଡ଼ାକରଣ)"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "chitra",
+     "swati",
+     "jyeshtha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     13,
+     17,
+     18,
+     20,
+     22
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "karnavedha",
+    "names": {
+     "en": "Ear piercing (Karnavedha)",
+     "or": "କର୍ଣ୍ଣବେଧ"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     17,
+     18,
+     20,
+     21,
+     22
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "travel",
+    "names": {
+     "en": "Setting out on a journey",
+     "or": "ଯାତ୍ରା ଆରମ୍ଭ"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "anuradha",
+     "shravana",
+     "dhanishta",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     17,
+     18,
+     20,
+     22
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidAdhika": false
+   },
+   {
+    "id": "jewellery",
+    "names": {
+     "en": "Buying gold & jewellery",
+     "or": "ସୁନା ଓ ଅଳଙ୍କାର କିଣିବା"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidAdhika": false
+   },
+   {
+    "id": "seemantham",
+    "names": {
+     "en": "Seemantham (baby shower)",
+     "or": "ସାଧ ଭକ୍ଷଣ"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "mula",
+     "uttara_ashadha",
+     "shravana",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     13,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ]
    }
   ],
   "sources": [

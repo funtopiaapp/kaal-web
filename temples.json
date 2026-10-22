@@ -107,6 +107,13 @@
    "about": "Shani is worshipped here as a five-and-a-half-foot black stone in the open, without a roof. The village is famous for homes built without doors, a mark of its trust in Shani, and devotees pour oil over the stone, especially on Saturdays and Shani Amavasya.",
    "site": "https://www.shanidev.com/", "donate": "https://www.shanidev.com/donation/"},
   {"id": "thirunallar", "deity": "shani", "name": "Sri Dharbaranyeswarar Temple", "place": "Thirunallar, Puducherry", "lat": 10.9256, "lon": 79.7930,
-   "about": "In this Shiva temple near Karaikal, Shani Bhagavan has his own shrine, and it is the Navagraha temple for Saturn. Pilgrims bathe in the Nala Theertham, and the temple is busiest at Sani Peyarchi, when Saturn moves into a new sign."}
+   "about": "In this Shiva temple near Karaikal, Shani Bhagavan has his own shrine, and it is the Navagraha temple for Saturn. Pilgrims bathe in the Nala Theertham, and the temple is busiest at Sani Peyarchi, when Saturn moves into a new sign."},
+  {"id": "pashupatinath", "deity": "shiva", "name": "Pashupatinath Temple", "place": "Kathmandu, Nepal", "lat": 27.7104, "lon": 85.3488,
+   "about": "On the banks of the Bagmati, Pashupatinath is Shiva as Lord of all beings and the most sacred temple of Nepal. Its pagoda with gilded roofs and silver doors stands amid hundreds of shrines and ashrams, and on Maha Shivaratri sadhus and pilgrims from across Nepal and India fill its grounds. A UNESCO World Heritage site.",
+   "site": "https://pashupati.org.np/", "donate": "https://pashupati.org.np/"},
+  {"id": "muktinath", "deity": "vishnu", "name": "Muktinath Temple", "place": "Mustang, Nepal", "lat": 28.8167, "lon": 83.8714,
+   "about": "High in the Mustang valley at about 3,700 metres, Muktinath is one of the 108 Divya Desams sung by the Alvars, sacred to Vishnu and also to Buddhists. Pilgrims bathe under its 108 water spouts and see the eternal flame burning over water at the nearby Jwala Mai shrine; the Kali Gandaki below gives the shaligram stones."},
+  {"id": "janaki-mandir", "deity": "vishnu", "name": "Janaki Mandir", "place": "Janakpur, Nepal", "lat": 26.7307, "lon": 85.9256,
+   "about": "Janakpur is held to be the city of King Janaka, where Sita was born and married Rama. The white marble Janaki Mandir, built in 1910 in Mughal and Rajput style, is the heart of Vivaha Panchami, when the wedding of Sita and Rama is celebrated, and of Ram Navami in the Mithila region."}
  ]
 }

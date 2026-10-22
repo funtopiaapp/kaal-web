@@ -1,0 +1,3316 @@
+{
+ "schemaVersion": 1,
+ "culture": "nepali",
+ "packVersion": 1,
+ "language": "ne",
+ "calendarSystem": "solar",
+ "lunarMonthSystem": "purnimanta",
+ "solarDayRule": {
+  "type": "daytime-fraction",
+  "fraction": 0.6
+ },
+ "era": "bikram-sambat",
+ "solarDayPlace": {
+  "latitude": 27.7,
+  "longitude": 85.32,
+  "utcOffsetMinutes": 345
+ },
+ "officialMonths": "nepal",
+ "names": {
+  "solarMonths": {
+   "mesha": {
+    "en": "Baishakh",
+    "ne": "वैशाख"
+   },
+   "vrishabha": {
+    "en": "Jestha",
+    "ne": "जेठ"
+   },
+   "mithuna": {
+    "en": "Asar",
+    "ne": "असार"
+   },
+   "karka": {
+    "en": "Saun",
+    "ne": "साउन"
+   },
+   "simha": {
+    "en": "Bhadau",
+    "ne": "भदौ"
+   },
+   "kanya": {
+    "en": "Asoj",
+    "ne": "असोज"
+   },
+   "tula": {
+    "en": "Kattik",
+    "ne": "कात्तिक"
+   },
+   "vrishchika": {
+    "en": "Mangsir",
+    "ne": "मंसिर"
+   },
+   "dhanu": {
+    "en": "Push",
+    "ne": "पुस"
+   },
+   "makara": {
+    "en": "Magh",
+    "ne": "माघ"
+   },
+   "kumbha": {
+    "en": "Fagun",
+    "ne": "फागुन"
+   },
+   "meena": {
+    "en": "Chait",
+    "ne": "चैत"
+   }
+  },
+  "lunarMonths": {
+   "chaitra": {
+    "en": "Chaitra",
+    "ne": "चैत्र"
+   },
+   "vaishakha": {
+    "en": "Baishakh",
+    "ne": "वैशाख"
+   },
+   "jyeshtha": {
+    "en": "Jestha",
+    "ne": "ज्येष्ठ"
+   },
+   "ashadha": {
+    "en": "Ashadh",
+    "ne": "आषाढ"
+   },
+   "shravana": {
+    "en": "Shrawan",
+    "ne": "श्रावण"
+   },
+   "bhadrapada": {
+    "en": "Bhadra",
+    "ne": "भाद्र"
+   },
+   "ashvin": {
+    "en": "Ashwin",
+    "ne": "आश्विन"
+   },
+   "kartika": {
+    "en": "Kartik",
+    "ne": "कार्तिक"
+   },
+   "margashirsha": {
+    "en": "Mangsir",
+    "ne": "मार्गशीर्ष"
+   },
+   "pausha": {
+    "en": "Poush",
+    "ne": "पौष"
+   },
+   "magha": {
+    "en": "Magh",
+    "ne": "माघ"
+   },
+   "phalguna": {
+    "en": "Falgun",
+    "ne": "फाल्गुन"
+   }
+  },
+  "nakshatras": {
+   "ashwini": {
+    "en": "Ashwini",
+    "ne": "अश्विनी"
+   },
+   "bharani": {
+    "en": "Bharani",
+    "ne": "भरणी"
+   },
+   "krittika": {
+    "en": "Krittika",
+    "ne": "कृत्तिका"
+   },
+   "rohini": {
+    "en": "Rohini",
+    "ne": "रोहिणी"
+   },
+   "mrigashira": {
+    "en": "Mrigashira",
+    "ne": "मृगशिरा"
+   },
+   "ardra": {
+    "en": "Ardra",
+    "ne": "आर्द्रा"
+   },
+   "punarvasu": {
+    "en": "Punarvasu",
+    "ne": "पुनर्वसु"
+   },
+   "pushya": {
+    "en": "Pushya",
+    "ne": "पुष्य"
+   },
+   "ashlesha": {
+    "en": "Ashlesha",
+    "ne": "आश्लेषा"
+   },
+   "magha": {
+    "en": "Magha",
+    "ne": "मघा"
+   },
+   "purva_phalguni": {
+    "en": "Purva Phalguni",
+    "ne": "पूर्वा फाल्गुनी"
+   },
+   "uttara_phalguni": {
+    "en": "Uttara Phalguni",
+    "ne": "उत्तरा फाल्गुनी"
+   },
+   "hasta": {
+    "en": "Hasta",
+    "ne": "हस्त"
+   },
+   "chitra": {
+    "en": "Chitra",
+    "ne": "चित्रा"
+   },
+   "swati": {
+    "en": "Swati",
+    "ne": "स्वाति"
+   },
+   "vishakha": {
+    "en": "Vishakha",
+    "ne": "विशाखा"
+   },
+   "anuradha": {
+    "en": "Anuradha",
+    "ne": "अनुराधा"
+   },
+   "jyeshtha": {
+    "en": "Jyeshtha",
+    "ne": "ज्येष्ठा"
+   },
+   "mula": {
+    "en": "Mula",
+    "ne": "मूल"
+   },
+   "purva_ashadha": {
+    "en": "Purva Ashadha",
+    "ne": "पूर्वाषाढ़ा"
+   },
+   "uttara_ashadha": {
+    "en": "Uttara Ashadha",
+    "ne": "उत्तराषाढ़ा"
+   },
+   "shravana": {
+    "en": "Shravana",
+    "ne": "श्रवण"
+   },
+   "dhanishta": {
+    "en": "Dhanishta",
+    "ne": "धनिष्ठा"
+   },
+   "shatabhisha": {
+    "en": "Shatabhisha",
+    "ne": "शतभिषा"
+   },
+   "purva_bhadrapada": {
+    "en": "Purva Bhadrapada",
+    "ne": "पूर्वा भाद्रपद"
+   },
+   "uttara_bhadrapada": {
+    "en": "Uttara Bhadrapada",
+    "ne": "उत्तरा भाद्रपद"
+   },
+   "revati": {
+    "en": "Revati",
+    "ne": "रेवती"
+   }
+  },
+  "tithis": {
+   "pratipada": {
+    "en": "Pratipada",
+    "ne": "प्रतिपदा"
+   },
+   "dvitiya": {
+    "en": "Dwitiya",
+    "ne": "द्वितीया"
+   },
+   "tritiya": {
+    "en": "Tritiya",
+    "ne": "तृतीया"
+   },
+   "chaturthi": {
+    "en": "Chaturthi",
+    "ne": "चतुर्थी"
+   },
+   "panchami": {
+    "en": "Panchami",
+    "ne": "पञ्चमी"
+   },
+   "shashthi": {
+    "en": "Shashthi",
+    "ne": "षष्ठी"
+   },
+   "saptami": {
+    "en": "Saptami",
+    "ne": "सप्तमी"
+   },
+   "ashtami": {
+    "en": "Ashtami",
+    "ne": "अष्टमी"
+   },
+   "navami": {
+    "en": "Navami",
+    "ne": "नवमी"
+   },
+   "dashami": {
+    "en": "Dashami",
+    "ne": "दशमी"
+   },
+   "ekadashi": {
+    "en": "Ekadashi",
+    "ne": "एकादशी"
+   },
+   "dvadashi": {
+    "en": "Dwadashi",
+    "ne": "द्वादशी"
+   },
+   "trayodashi": {
+    "en": "Trayodashi",
+    "ne": "त्रयोदशी"
+   },
+   "chaturdashi": {
+    "en": "Chaturdashi",
+    "ne": "चतुर्दशी"
+   },
+   "purnima": {
+    "en": "Purnima",
+    "ne": "पूर्णिमा"
+   },
+   "amavasya": {
+    "en": "Aunsi",
+    "ne": "औंसी"
+   }
+  },
+  "weekdays": {
+   "sunday": {
+    "en": "Aaitabar",
+    "ne": "आइतबार"
+   },
+   "monday": {
+    "en": "Sombar",
+    "ne": "सोमबार"
+   },
+   "tuesday": {
+    "en": "Mangalbar",
+    "ne": "मङ्गलबार"
+   },
+   "wednesday": {
+    "en": "Budhabar",
+    "ne": "बुधबार"
+   },
+   "thursday": {
+    "en": "Bihibar",
+    "ne": "बिहीबार"
+   },
+   "friday": {
+    "en": "Shukrabar",
+    "ne": "शुक्रबार"
+   },
+   "saturday": {
+    "en": "Shanibar",
+    "ne": "शनिबार"
+   }
+  },
+  "paksha": {
+   "shukla": {
+    "en": "Shukla Paksha",
+    "ne": "शुक्ल पक्ष"
+   },
+   "krishna": {
+    "en": "Krishna Paksha",
+    "ne": "कृष्ण पक्ष"
+   }
+  },
+  "yogas": {
+   "vishkambha": {
+    "en": "Vishkambha",
+    "ne": "विष्कम्भ"
+   },
+   "priti": {
+    "en": "Priti",
+    "ne": "प्रीति"
+   },
+   "ayushman": {
+    "en": "Ayushman",
+    "ne": "आयुष्मान"
+   },
+   "saubhagya": {
+    "en": "Saubhagya",
+    "ne": "सौभाग्य"
+   },
+   "shobhana": {
+    "en": "Shobhana",
+    "ne": "शोभन"
+   },
+   "atiganda": {
+    "en": "Atiganda",
+    "ne": "अतिगण्ड"
+   },
+   "sukarma": {
+    "en": "Sukarma",
+    "ne": "सुकर्मा"
+   },
+   "dhriti": {
+    "en": "Dhriti",
+    "ne": "धृति"
+   },
+   "shula": {
+    "en": "Shula",
+    "ne": "शूल"
+   },
+   "ganda": {
+    "en": "Ganda",
+    "ne": "गण्ड"
+   },
+   "vriddhi": {
+    "en": "Vriddhi",
+    "ne": "वृद्धि"
+   },
+   "dhruva": {
+    "en": "Dhruva",
+    "ne": "ध्रुव"
+   },
+   "vyaghata": {
+    "en": "Vyaghata",
+    "ne": "व्याघात"
+   },
+   "harshana": {
+    "en": "Harshana",
+    "ne": "हर्षण"
+   },
+   "vajra": {
+    "en": "Vajra",
+    "ne": "वज्र"
+   },
+   "siddhi": {
+    "en": "Siddhi",
+    "ne": "सिद्धि"
+   },
+   "vyatipata": {
+    "en": "Vyatipata",
+    "ne": "व्यतीपात"
+   },
+   "variyan": {
+    "en": "Variyan",
+    "ne": "वरीयान"
+   },
+   "parigha": {
+    "en": "Parigha",
+    "ne": "परिघ"
+   },
+   "shiva": {
+    "en": "Shiva",
+    "ne": "शिव"
+   },
+   "siddha": {
+    "en": "Siddha",
+    "ne": "सिद्ध"
+   },
+   "sadhya": {
+    "en": "Sadhya",
+    "ne": "साध्य"
+   },
+   "shubha": {
+    "en": "Shubha",
+    "ne": "शुभ"
+   },
+   "shukla": {
+    "en": "Shukla",
+    "ne": "शुक्ल"
+   },
+   "brahma": {
+    "en": "Brahma",
+    "ne": "ब्रह्म"
+   },
+   "indra": {
+    "en": "Indra",
+    "ne": "इन्द्र"
+   },
+   "vaidhriti": {
+    "en": "Vaidhriti",
+    "ne": "वैधृति"
+   }
+  },
+  "karanas": {
+   "bava": {
+    "en": "Bava",
+    "ne": "बव"
+   },
+   "balava": {
+    "en": "Balava",
+    "ne": "बालव"
+   },
+   "kaulava": {
+    "en": "Kaulava",
+    "ne": "कौलव"
+   },
+   "taitila": {
+    "en": "Taitila",
+    "ne": "तैतिल"
+   },
+   "garaja": {
+    "en": "Garaja",
+    "ne": "गर"
+   },
+   "vanija": {
+    "en": "Vanija",
+    "ne": "वणिज"
+   },
+   "vishti": {
+    "en": "Vishti",
+    "ne": "विष्टि"
+   },
+   "shakuni": {
+    "en": "Shakuni",
+    "ne": "शकुनि"
+   },
+   "chatushpada": {
+    "en": "Chatushpada",
+    "ne": "चतुष्पद"
+   },
+   "naga": {
+    "en": "Naga",
+    "ne": "नाग"
+   },
+   "kimstughna": {
+    "en": "Kimstughna",
+    "ne": "किंस्तुघ्न"
+   }
+  },
+  "adhika": {
+   "adhika": {
+    "en": "Adhik",
+    "ne": "अधिक"
+   }
+  },
+  "rashis": {
+   "mesha": {
+    "en": "Mesh",
+    "ne": "मेष"
+   },
+   "vrishabha": {
+    "en": "Vrishabh",
+    "ne": "वृषभ"
+   },
+   "mithuna": {
+    "en": "Mithun",
+    "ne": "मिथुन"
+   },
+   "karka": {
+    "en": "Kark",
+    "ne": "कर्क"
+   },
+   "simha": {
+    "en": "Singh",
+    "ne": "सिंह"
+   },
+   "kanya": {
+    "en": "Kanya",
+    "ne": "कन्या"
+   },
+   "tula": {
+    "en": "Tula",
+    "ne": "तुला"
+   },
+   "vrishchika": {
+    "en": "Vrishchik",
+    "ne": "वृश्चिक"
+   },
+   "dhanu": {
+    "en": "Dhanu",
+    "ne": "धनु"
+   },
+   "makara": {
+    "en": "Makar",
+    "ne": "मकर"
+   },
+   "kumbha": {
+    "en": "Kumbh",
+    "ne": "कुंभ"
+   },
+   "meena": {
+    "en": "Meen",
+    "ne": "मीन"
+   }
+  },
+  "grahas": {
+   "sun": {
+    "en": "Sun",
+    "ne": "सूर्य"
+   },
+   "moon": {
+    "en": "Moon",
+    "ne": "चन्द्र"
+   },
+   "mars": {
+    "en": "Mars",
+    "ne": "मङ्गल"
+   },
+   "mercury": {
+    "en": "Mercury",
+    "ne": "बुध"
+   },
+   "jupiter": {
+    "en": "Jupiter",
+    "ne": "बृहस्पति"
+   },
+   "venus": {
+    "en": "Venus",
+    "ne": "शुक्र"
+   },
+   "saturn": {
+    "en": "Saturn",
+    "ne": "शनि"
+   },
+   "rahu": {
+    "en": "Rahu",
+    "ne": "राहु"
+   },
+   "ketu": {
+    "en": "Ketu",
+    "ne": "केतु"
+   }
+  },
+  "grahaShort": {
+   "sun": {
+    "en": "Su",
+    "ne": "सू"
+   },
+   "moon": {
+    "en": "Mo",
+    "ne": "चं"
+   },
+   "mars": {
+    "en": "Ma",
+    "ne": "मं"
+   },
+   "mercury": {
+    "en": "Me",
+    "ne": "बु"
+   },
+   "jupiter": {
+    "en": "Ju",
+    "ne": "गु"
+   },
+   "venus": {
+    "en": "Ve",
+    "ne": "शु"
+   },
+   "saturn": {
+    "en": "Sa",
+    "ne": "श"
+   },
+   "rahu": {
+    "en": "Ra",
+    "ne": "रा"
+   },
+   "ketu": {
+    "en": "Ke",
+    "ne": "के"
+   },
+   "lagna": {
+    "en": "As",
+    "ne": "ल"
+   }
+  },
+  "yoginis": {
+   "mangala": {
+    "en": "Mangala",
+    "ne": "मंगला"
+   },
+   "pingala": {
+    "en": "Pingala",
+    "ne": "पिंगला"
+   },
+   "dhanya": {
+    "en": "Dhanya",
+    "ne": "धान्या"
+   },
+   "bhramari": {
+    "en": "Bhramari",
+    "ne": "भ्रामरी"
+   },
+   "bhadrika": {
+    "en": "Bhadrika",
+    "ne": "भद्रिका"
+   },
+   "ulka": {
+    "en": "Ulka",
+    "ne": "उल्का"
+   },
+   "siddha": {
+    "en": "Siddha",
+    "ne": "सिद्धा"
+   },
+   "sankata": {
+    "en": "Sankata",
+    "ne": "संकटा"
+   }
+  },
+  "vargas": {
+   "d1": {
+    "en": "Rasi",
+    "ne": "राशि"
+   },
+   "d2": {
+    "en": "Hora",
+    "ne": "होरा"
+   },
+   "d3": {
+    "en": "Drekkana",
+    "ne": "द्रेष्काण"
+   },
+   "d4": {
+    "en": "Chaturthamsa",
+    "ne": "चतुर्थांश"
+   },
+   "d7": {
+    "en": "Saptamsa",
+    "ne": "सप्तांश"
+   },
+   "d9": {
+    "en": "Navamsa",
+    "ne": "नवांश"
+   },
+   "d10": {
+    "en": "Dasamsa",
+    "ne": "दशांश"
+   },
+   "d12": {
+    "en": "Dwadasamsa",
+    "ne": "द्वादशांश"
+   },
+   "d16": {
+    "en": "Shodasamsa",
+    "ne": "षोडशांश"
+   },
+   "d20": {
+    "en": "Vimsamsa",
+    "ne": "विंशांश"
+   },
+   "d24": {
+    "en": "Chaturvimsamsa",
+    "ne": "चतुर्विंशांश"
+   },
+   "d27": {
+    "en": "Saptavimsamsa",
+    "ne": "सप्तविंशांश"
+   },
+   "d30": {
+    "en": "Trimsamsa",
+    "ne": "त्रिंशांश"
+   },
+   "d40": {
+    "en": "Khavedamsa",
+    "ne": "खवेदांश"
+   },
+   "d45": {
+    "en": "Akshavedamsa",
+    "ne": "अक्षवेदांश"
+   },
+   "d60": {
+    "en": "Shashtiamsa",
+    "ne": "षष्ट्यंश"
+   }
+  },
+  "choghadiya": {
+   "udvega": {
+    "en": "Udvega",
+    "ne": "उद्वेग"
+   },
+   "chara": {
+    "en": "Chara",
+    "ne": "चर"
+   },
+   "labha": {
+    "en": "Labha",
+    "ne": "लाभ"
+   },
+   "amrita": {
+    "en": "Amrita",
+    "ne": "अमृत"
+   },
+   "kala": {
+    "en": "Kala",
+    "ne": "काल"
+   },
+   "shubha": {
+    "en": "Shubha",
+    "ne": "शुभ"
+   },
+   "roga": {
+    "en": "Roga",
+    "ne": "रोग"
+   }
+  },
+  "gowri": {
+   "uthi": {
+    "en": "Udyogam",
+    "ne": "उद्योग"
+   },
+   "amirdha": {
+    "en": "Amirtham",
+    "ne": "अमृत"
+   },
+   "rogam": {
+    "en": "Rogam",
+    "ne": "रोग"
+   },
+   "laabam": {
+    "en": "Labham",
+    "ne": "लाभ"
+   },
+   "dhanam": {
+    "en": "Dhanam",
+    "ne": "धन"
+   },
+   "sugam": {
+    "en": "Sugam",
+    "ne": "सुख"
+   },
+   "soram": {
+    "en": "Soram",
+    "ne": "चोर"
+   },
+   "visham": {
+    "en": "Visham",
+    "ne": "विष"
+   }
+  },
+  "eras": {
+   "bikram-sambat": {
+    "en": "Bikram Sambat",
+    "ne": "विक्रम संवत्"
+   }
+  }
+ },
+ "display": {
+  "primary": "solar",
+  "nameEn": "Nepali",
+  "nameNative": "नेपाली",
+  "newYear": "nepali-new-year",
+  "referencePlace": "Kathmandu"
+ },
+ "festivals": [
+  {
+   "id": "maghe-sankranti",
+   "names": {
+    "en": "Maghe Sankranti",
+    "ne": "माघे संक्रान्ति"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "makara",
+    "day": 1
+   },
+   "tier": "major",
+   "holidayIn": [
+    "NP"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Sun enters Makara: the harvest festival that marks the start of Uttarayana, the Sun's northward journey."
+    },
+    "traditions": {
+     "en": "Families wake early for a bath, many in a river, and offer water to the Sun. Sesame and jaggery sweets (til-gud, gajak, rewari) are made and shared, and khichdi is cooked and given away. Kites fill the sky in Gujarat and Rajasthan, where the day is Uttarayan. In Punjab the evening before is Lohri; in Tamil Nadu the same day is Thai Pongal and in Assam it is Magh Bihu. Giving warm clothes, blankets and grain to those who need them is a common part of the day."
+    },
+    "story": {
+     "en": "The story told for this day is of the Sun god, Surya, visiting his son Shani. The two had long been distant, and Surya's journey into Makara, the sign Shani rules, is remembered as a father setting aside old differences to see his son. Shani is said to have welcomed him with black sesame, the only thing he had, and Surya accepted it gladly. That is why sesame is at the heart of the day's food and gifts. The day is also remembered in the Mahabharata: Bhishma, who could choose the moment of his passing, waited on his bed of arrows for Uttarayana to begin. And many tell that on this day the Ganga, following King Bhagiratha, reached the sea at Ganga Sagar, where a great bathing fair is held every year."
+    },
+    "howTo": {
+     "en": [
+      "The day before, make til-gud laddoos or buy gajak and rewari, and soak rice and moong dal for khichdi.",
+      "Wake before sunrise and bathe; add a few sesame seeds to the bath water if your family does.",
+      "Offer water to the rising Sun from a copper vessel, facing east.",
+      "Cook khichdi and share it, along with sesame sweets, with neighbours and anyone who visits.",
+      "Set aside grain, sesame, a blanket or warm clothes to give to someone who needs them.",
+      "Spend the afternoon outdoors: fly kites in Gujarat and Rajasthan, or visit family elsewhere.",
+      "Greet elders with til-gud; in Maharashtra the words are 'til-gul ghya, god god bola' (take sweets and speak sweetly)."
+     ]
+    },
+    "greeting": {
+     "en": "May the Sun's new journey bring warmth to your home. Happy Makar Sankranti!"
+    }
+   }
+  },
+  {
+   "id": "shree-panchami",
+   "names": {
+    "en": "Shree Panchami (Saraswati Puja)",
+    "ne": "श्रीपञ्चमी"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "magha",
+    "tithi": 5
+   },
+   "tier": "major",
+   "holidayIn": [
+    "NP"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The fifth day of bright Magha, welcoming spring and honouring Saraswati, goddess of learning and the arts."
+    },
+    "traditions": {
+     "en": "Yellow is the colour of the day, for the mustard fields in bloom: people wear yellow, and cook yellow sweet rice, kesari halwa or boondi. Saraswati is worshipped at home, in schools and in music and dance schools, with books, pens and instruments placed before her. In Bengal and Odisha, Saraswati Puja is a major festival for students. Many families choose this day for a young child's first letters, called Vidyarambh or Akshar Abhyas. In Punjab and Rajasthan, people fly kites."
+    },
+    "story": {
+     "en": "The story told for this day is of creation itself. When Brahma first made the world, it is said, everything was in place but silent: no sound, no speech, no music. He sprinkled water from his kamandalu, and from it rose a radiant goddess holding a veena, a book and a string of beads. She played, and the rivers began to murmur, the wind to rustle and living beings to speak. Brahma named her Saraswati, she who flows, and Vak, speech itself. Vasant Panchami is kept as her day of appearance. Another telling links the day to Kamadeva, god of love, and to the arrival of spring, when the fields turn yellow and the koel begins to sing."
+    },
+    "howTo": {
+     "en": [
+      "Clean the puja space and set up a picture or idol of Saraswati on a yellow or white cloth.",
+      "Wear yellow if you can, and keep yellow flowers such as marigolds ready.",
+      "In the morning (the purvahna, before midday), light a lamp and incense before her.",
+      "Place books, notebooks, pens and musical instruments near her; many families do not study or play from them for the rest of the day.",
+      "Offer yellow sweets, fruit and flowers, and recite or play a Saraswati vandana ('Ya kundendu tusharahara dhavala').",
+      "If a child is starting to learn, guide their hand to write their first letters on a slate or in rice.",
+      "Share the prasad and spend the afternoon outdoors, enjoying the first days of spring."
+     ]
+    },
+    "greeting": {
+     "en": "May Saraswati fill your days with learning, music and light. Happy Vasant Panchami!"
+    }
+   }
+  },
+  {
+   "id": "maha-shivaratri-ne",
+   "names": {
+    "en": "Maha Shivaratri",
+    "ne": "महाशिवरात्रि"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "magha",
+    "tithi": 29,
+    "observance": {
+     "kala": "nishita"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "NP"
+   ],
+   "durationDays": 1,
+   "variations": [
+    "Pashupatinath in Kathmandu draws pilgrims from across Nepal and India through the night."
+   ],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The great night of Shiva, kept with fasting, night-long worship and the chanting of 'Om Namah Shivaya'."
+    },
+    "traditions": {
+     "en": "Devotees fast through the day, some taking only fruit and milk, and stay awake through the night. Temples hold four worships (prahara puja) across the night, bathing the Shiva linga in milk, curd, honey, ghee and water and offering bilva leaves. At home, families chant 'Om Namah Shivaya', read or listen to Shiva stories and sing bhajans. In Tamil Nadu temples hold the night's four abhishekams; in Kerala, the Aluva riverbank fills with people keeping vigil; in the North, kanwariyas carry Ganga water to Shiva temples. The fast is broken the next morning."
+    },
+    "story": {
+     "en": "Several stories are told for this night. In one, when the gods and asuras churned the ocean for nectar, a deadly poison, Halahala, rose first and threatened every living thing. Shiva drank it to protect the world, and Parvati held his throat so it would not go further; his throat turned blue, and he is called Neelakantha. The gods kept awake all night to watch over him, and devotees keep that vigil still. Another story tells of a hunter lost in the forest at night who climbed a bilva tree to stay safe. Restless, he plucked leaves and dropped them, not knowing a Shiva linga stood below; by morning he had kept a night's worship without meaning to, and his heart was changed. Many also remember this as the night of Shiva and Parvati's wedding."
+    },
+    "howTo": {
+     "en": [
+      "Decide how you will fast: a full fast, fruit and milk, or one simple meal; elders, children and anyone unwell often keep a light version.",
+      "Gather bilva leaves, milk, water, curd, honey, flowers and a lamp.",
+      "In the evening, bathe and visit a Shiva temple, or set up a small linga or picture at home.",
+      "Bathe the linga with water and milk, offer bilva leaves and flowers, and light the lamp.",
+      "Chant 'Om Namah Shivaya', read the Shiva Purana or listen to bhajans; many keep awake through the four quarters of the night.",
+      "The night's main worship is at Nishita, around midnight; the app's day view shows the time.",
+      "Break the fast the next morning after a bath and a short prayer, with simple food."
+     ]
+    },
+    "greeting": {
+     "en": "Om Namah Shivaya. Peaceful wishes on Maha Shivaratri."
+    }
+   }
+  },
+  {
+   "id": "fagu-purnima",
+   "names": {
+    "en": "Fagu Purnima (Holi)",
+    "ne": "फागु पूर्णिमा"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "phalguna",
+    "tithi": 15
+   },
+   "tier": "major",
+   "holidayIn": [
+    "NP"
+   ],
+   "durationDays": 1,
+   "variations": [
+    "The hills keep Holi on the Purnima; the Terai plays colours the day after."
+   ],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The festival of colours, the morning after Holika Dahan: spring, play and setting differences aside."
+    },
+    "traditions": {
+     "en": "Friends, families and whole streets play with coloured powder (gulal) and coloured water, chasing one another with pichkaris and water balloons. The greeting is 'Holi hai!' and 'Bura na mano, Holi hai' (don't mind, it's Holi). Homes make gujiya, malpua, dahi bhalle and thandai. By afternoon everyone washes up, dresses in fresh clothes and visits relatives and friends. In Braj, around Mathura and Vrindavan, Holi is celebrated for days, with Lathmar Holi at Barsana and flower Holi in the temples."
+    },
+    "story": {
+     "en": "Holi carries two stories. The first follows from the night before: the morning after Holika's fire, people celebrated Prahlad's safe return, and the colours are that celebration. The second is the story of Krishna in Braj. As a child Krishna worried that his dark skin set him apart from fair Radha. His mother Yashoda laughed and told him to colour Radha's face with whatever colour he liked. He did, and Radha and the gopis coloured him back, and the game spread through Gokul and Vrindavan. That playful spirit, in which no one minds being coloured and everyone is equal for a day, is what Holi is about. Coming at the end of winter, it is also a celebration of spring."
+    },
+    "howTo": {
+     "en": [
+      "A day or two before, buy natural or skin-safe gulal, and make or order gujiya and thandai.",
+      "Before playing, rub coconut or mustard oil on your skin and hair so colours wash off easily; wear old clothes.",
+      "In the morning, start with a small prayer and a pinch of gulal offered to Krishna or the family deity.",
+      "Greet elders by touching their feet and putting a little gulal on their cheeks or feet.",
+      "Play with friends and neighbours; ask before colouring someone, and keep colour away from eyes and away from animals.",
+      "Around midday, wash, change into clean clothes and share sweets.",
+      "In the afternoon or evening, visit relatives and friends, and make peace with anyone you have drifted from."
+     ]
+    },
+    "greeting": {
+     "en": "Wishing you a Holi full of colour, laughter and old friends. Happy Holi!"
+    }
+   }
+  },
+  {
+   "id": "ram-navami-ne",
+   "names": {
+    "en": "Ram Nawami",
+    "ne": "रामनवमी"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "chaitra",
+    "tithi": 9
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The birth of Rama, on the ninth day of bright Chaitra, at midday."
+    },
+    "traditions": {
+     "en": "Temples and homes celebrate Rama's birth at midday, the hour he is said to have been born, with a small cradle holding an image of baby Rama rocked to songs. Many people fast until noon or through the day. The Ramayana or Ramcharitmanas is read, sometimes over all nine days of Navratri, finishing today. Processions (shobha yatras) carry images of Rama, Sita, Lakshmana and Hanuman through towns, and Ayodhya draws large crowds. Panakam (a jaggery and pepper drink) and kosambari are offered in the South, and in the North a sweet called panjiri is shared."
+    },
+    "story": {
+     "en": "King Dasharatha of Ayodhya ruled well but had no children. On the advice of the sage Vasishtha, a great yajna was performed, and from its fire came a bowl of sweet payasam, which the king shared among his three queens. In time Kausalya gave birth to Rama on the ninth day of bright Chaitra, at midday; Kaikeyi to Bharata; and Sumitra to the twins Lakshmana and Shatrughna. Tradition remembers Rama as Maryada Purushottama, the one who kept to what was right even when it cost him most: he gave up his throne and went to the forest for fourteen years to keep his father's word. Ram Navami celebrates his birth and the life he went on to live."
+    },
+    "howTo": {
+     "en": [
+      "Clean the puja space and decorate a small cradle or a picture of Rama with flowers.",
+      "Keep a fast through the morning if your family does; fruit and milk are usual.",
+      "Prepare panjiri, payasam or kheer, fruit and tulsi leaves for the offering.",
+      "Check the madhyahna (midday) time in the day view; that is the hour of Rama's birth.",
+      "At midday, light a lamp, rock the cradle gently, sing 'Bhaye prakat kripala' or another birth song, and offer the food.",
+      "Read a passage from the Ramayana or Ramcharitmanas, or listen to it together.",
+      "Share the prasad, break the fast with a simple meal, and join a local procession if there is one."
+     ]
+    },
+    "greeting": {
+     "en": "Jai Shri Ram! Warm wishes on Ram Navami."
+    }
+   }
+  },
+  {
+   "id": "hanuman-jayanti-ne",
+   "names": {
+    "en": "Hanuman Jayanti",
+    "ne": "हनुमान जयन्ती"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "chaitra",
+    "tithi": 15
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The birth of Hanuman, celebrated on Chaitra Purnima across North India."
+    },
+    "traditions": {
+     "en": "Devotees visit Hanuman temples from early morning, since Hanuman is said to have been born at sunrise. The idol is offered sindoor mixed with jasmine oil, a garland of betel leaves, and boondi or besan laddoos. The Hanuman Chalisa is recited, often many times over, and the Sundarkand of the Ramcharitmanas is read. Many keep a fast for the day. Celebrations are large at Salasar Balaji in Rajasthan and in Hanuman temples across Uttar Pradesh. In Tamil Nadu and Kerala the day is kept in Margazhi, and in Andhra Pradesh and Telangana in Vaishakha."
+    },
+    "story": {
+     "en": "Hanuman was born to Anjana and Kesari, and is called the son of Vayu, the wind, who watched over him. The story told of his childhood is that, seeing the rising Sun, he took it for a ripe fruit and leapt into the sky to catch it. Indra, alarmed, struck him with his thunderbolt, and the child fell, wounding his jaw (hanu), which gave him his name. Vayu, grieving, withdrew the air from the world until the gods came together to revive the child and gave him gifts of strength, wisdom and long life. Hanuman grew up to become Rama's devoted friend and messenger, who leapt across the ocean to find Sita in Lanka. He is remembered for strength used in service, and for humility."
+    },
+    "howTo": {
+     "en": [
+      "Wake early and bathe before sunrise, the hour of Hanuman's birth.",
+      "Visit a Hanuman temple, or set up a picture of Hanuman at home with a red cloth.",
+      "Offer sindoor (or a little vermilion), a red flower garland, and boondi or besan laddoos.",
+      "Light a lamp with ghee or jasmine oil.",
+      "Recite the Hanuman Chalisa, once or as many times as you like; read the Sundarkand if you have time.",
+      "Keep a fast for the day if your family does, eating once in the evening.",
+      "Share the laddoos as prasad, and if you can, help someone who needs it, in Hanuman's spirit of service."
+     ]
+    },
+    "greeting": {
+     "en": "Jai Hanuman! Wishing you strength and a steady heart on Hanuman Jayanti."
+    }
+   }
+  },
+  {
+   "id": "nepali-new-year",
+   "names": {
+    "en": "Nepali New Year (Baishakh 1)",
+    "ne": "नयाँ वर्ष"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "mesha",
+    "day": 1
+   },
+   "tier": "major",
+   "holidayIn": [
+    "NP"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Baishakh 1: the Nepali New Year, the first day of the new Bikram Sambat.",
+     "ne": "वैशाख १: नेपाली नयाँ वर्ष, नयाँ विक्रम संवत्को पहिलो दिन।"
+    },
+    "traditions": {
+     "en": "Families visit temples in the morning and greet each other with 'Naya Barsha ko Shubhakamana'. In Bhaktapur the new year coincides with Bisket Jatra, when a tall pole (lingo) is raised and then pulled down, and the chariots of Bhairav and Bhadrakali are drawn through the city. Many people picnic and share a festive meal.",
+     "ne": "बिहान परिवारहरू मन्दिर जान्छन् र 'नयाँ वर्षको शुभकामना' भन्दै एकअर्कालाई शुभकामना दिन्छन्। भक्तपुरमा नयाँ वर्षसँगै बिस्का जात्रा पर्छ, जहाँ अग्लो लिङ्गो ठड्याइन्छ र ढालिन्छ, र भैरव तथा भद्रकालीका रथ सहरमा तानिन्छन्। धेरैजना वनभोज र विशेष भोजन गर्छन्।"
+    }
+   }
+  },
+  {
+   "id": "parashuram-jayanti-ne",
+   "names": {
+    "en": "Parashuram Jayanti",
+    "ne": "परशुराम जयन्ती"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "vaishakha",
+    "tithi": 3,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The birth of Parashurama, Vishnu's sixth avatar, kept at dusk on Vaishakha Shukla Tritiya."
+    },
+    "traditions": {
+     "en": "Parashurama is worshipped in the evening, the time he is said to have been born, with flowers, sandal paste and tulsi. Brahmin communities across India hold processions and gatherings, and in Kerala, Konkan and coastal Karnataka, which tradition says Parashurama reclaimed from the sea, he is remembered as the founder of the land. Many keep a fast until the evening worship. The day usually falls together with Akshaya Tritiya."
+    },
+    "story": {
+     "en": "Parashurama, 'Rama with the axe', was born to the sage Jamadagni and Renuka. A devoted student of Shiva, he received from him the axe (parashu) that gave him his name. The stories remember him as a fierce teacher of the martial arts: he trained Bhishma, Drona and Karna. In Kerala the story is told that after his long wars he wished to give land away, and threw his axe from Gokarna into the sea; the waters drew back as far as it flew, and the land that rose became Kerala. He is one of the chiranjeevis, the long-lived ones, said to be still in meditation on the Mahendra mountain."
+    },
+    "howTo": {
+     "en": [
+      "Keep a fast through the day if your family does.",
+      "At dusk, set up a picture of Parashurama or Vishnu and light a lamp.",
+      "Offer flowers, sandal paste, tulsi and fruit, and recite a Vishnu stotra.",
+      "Share the prasad and break the fast."
+     ]
+    },
+    "greeting": {
+     "en": "Warm wishes on Parashurama Jayanti."
+    }
+   }
+  },
+  {
+   "id": "akshaya-tritiya-ne",
+   "names": {
+    "en": "Akshaya Tritiya",
+    "ne": "अक्षय तृतीया"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "vaishakha",
+    "tithi": 3
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The third day of bright Vaishakha, traditionally favoured for new beginnings and for giving."
+    },
+    "traditions": {
+     "en": "'Akshaya' means 'that which does not diminish', and the day is traditionally seen as good for starting things: a business, a house, a course of study, a marriage. Many families buy a little gold or silver, and many more give: water and cooling drinks, fans, umbrellas, grain and clothes, since it falls in the hot season. Vishnu and Lakshmi are worshipped, and in Odisha the building of the chariots for the Puri Rath Yatra begins today. Parashurama Jayanti falls on or near the same day, and Jain families break the year-long varshi tapa fast with sugarcane juice."
+    },
+    "story": {
+     "en": "Several stories meet on this day. In one, Krishna's childhood friend Sudama, a poor Brahmin, walked to Dwarka to see him, carrying only a little beaten rice (poha) tied in a cloth as a gift. Krishna embraced him, ate the poha with delight, and sent him home without Sudama asking for anything; when Sudama returned, his family's hardship had ended. In another, during the Pandavas' exile, Krishna gave Draupadi the Akshaya Patra, a vessel that never ran empty until she had eaten, so no guest at their door went hungry. Tradition also holds that the Treta Yuga began on this day, that the Ganga descended to earth, and that Vyasa began dictating the Mahabharata to Ganesha."
+    },
+    "howTo": {
+     "en": [
+      "In the morning, bathe and offer a lamp, flowers and tulsi to Vishnu and Lakshmi at home.",
+      "Offer something simple and cooling: barley, sattu, cucumber, jaggery water or panakam.",
+      "If you were planning to start something, a course, a savings plan or a small venture, many families choose today to begin.",
+      "Give something in the spirit of the day: water or buttermilk to passers-by, an umbrella, a fan, grain or clothes.",
+      "If your family buys gold or silver, keep it small and meaningful; the giving matters more in the tradition.",
+      "Share a simple meal, and if you can, feed a guest or someone who needs it."
+     ]
+    },
+    "greeting": {
+     "en": "May what you begin today grow steadily. Happy Akshaya Tritiya!"
+    }
+   }
+  },
+  {
+   "id": "sita-jayanti",
+   "names": {
+    "en": "Sita Jayanti (Janaki Navami)",
+    "ne": "सीता जयन्ती"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "vaishakha",
+    "tithi": 9,
+    "observance": {
+     "kala": "madhyahna"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Vaishakha Shukla Navami: the birth of Sita, found in a furrow by King Janaka."
+    },
+    "traditions": {
+     "en": "Sita is worshipped at midday, often together with Rama, with flowers, sweets and the items of a married woman's adornment. Many married women keep a fast for the day. In Janakpur in Nepal and at Sitamarhi in Bihar, both linked with her birth, large celebrations are held, and the Ramayana is read in temples."
+    },
+    "story": {
+     "en": "King Janaka of Mithila was ploughing a field to prepare for a yajna when his plough struck a golden box in the earth. Inside lay a baby girl. Janaka took her as his own daughter and named her Sita, the furrow, and she is also called Bhumija, daughter of the earth, and Janaki and Maithili after her father and his kingdom. She grew up to marry Rama, and is remembered in the Ramayana for her courage and her steadiness through exile and captivity. At the end of her story she returns to the earth she came from."
+    },
+    "howTo": {
+     "en": [
+      "Keep a fast if your family does, and prepare the puja space with flowers.",
+      "At midday, set up a picture of Sita and Rama, light a lamp and offer flowers, fruit and sweets.",
+      "Married women may offer bangles, sindoor and a red cloth.",
+      "Read the account of Sita's birth or listen to a Sita bhajan, then share the prasad."
+     ]
+    },
+    "greeting": {
+     "en": "Jai Siya Ram! Wishes on Sita Navami."
+    }
+   }
+  },
+  {
+   "id": "buddha-jayanti-ne",
+   "names": {
+    "en": "Buddha Jayanti",
+    "ne": "बुद्ध जयन्ती"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "vaishakha",
+    "tithi": 15
+   },
+   "tier": "major",
+   "holidayIn": [
+    "NP"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The full moon of Vaishakha, remembering the birth, enlightenment and passing of the Buddha."
+    },
+    "traditions": {
+     "en": "Buddhists and many Hindus mark the day with visits to viharas and temples, offerings of flowers, candles and incense, and readings of the Buddha's teachings. At Bodh Gaya, Sarnath and Kushinagar, pilgrims gather in large numbers. Many people keep the day vegetarian, give food and water, and some release caged birds. Hindu tradition counts the Buddha among the avatars of Vishnu, and Satyanarayan katha is held in many homes on this full moon."
+    },
+    "story": {
+     "en": "Prince Siddhartha was born in the Lumbini garden to Queen Mayadevi, on the full moon of Vaishakha. Raised in comfort, he left the palace as a young man after seeing old age, illness and death for the first time, and set out to understand suffering. After years of searching he sat beneath a pipal tree at Bodh Gaya and resolved not to rise until he understood. On the full moon of Vaishakha he attained enlightenment and became the Buddha, the awakened one. He spent the rest of his life teaching the middle way. Tradition holds that his passing, at Kushinagar, also fell on this full moon."
+    },
+    "howTo": {
+     "en": [
+      "Keep the day simple and vegetarian.",
+      "Light a lamp or candle and offer flowers before an image of the Buddha, or visit a vihara.",
+      "Read or listen to a passage of the Buddha's teaching, such as the Dhammapada, and sit quietly for a while.",
+      "Give food, water or help to someone who needs it."
+     ]
+    },
+    "greeting": {
+     "en": "Peaceful wishes on Buddha Purnima."
+    }
+   }
+  },
+  {
+   "id": "janai-purnima",
+   "names": {
+    "en": "Janai Purnima (Rakshya Bandhan)",
+    "ne": "जनै पूर्णिमा"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "shravana",
+    "tithi": 15
+   },
+   "tier": "major",
+   "holidayIn": [
+    "NP"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Shrawan Purnima: men renew the sacred thread (janai), and everyone ties the protective raksha bandhan thread.",
+     "ne": "श्रावण पूर्णिमा: पुरुषहरूले जनै फेर्छन् र सबैले रक्षाबन्धनको डोरो बाँध्छन्।"
+    },
+    "traditions": {
+     "en": "Those who wear the janai change it after a bath and mantras, and priests tie a yellow or saffron raksha bandhan thread on everyone's wrist, kept until Laxmi Puja. Pilgrims gather at Gosaikunda and at Kumbheshwar in Patan. Kwati, a soup of nine sprouted beans, is eaten that day. In the Terai sisters tie rakhi on their brothers.",
+     "ne": "जनै लगाउनेहरूले स्नान र मन्त्रपछि जनै फेर्छन्, र पुरोहितहरूले सबैको नाडीमा पहेँलो वा केसरी रक्षाबन्धन बाँध्छन्, जुन लक्ष्मीपूजासम्म राखिन्छ। तीर्थयात्रीहरू गोसाइँकुण्ड र पाटनको कुम्भेश्वरमा भेला हुन्छन्। त्यस दिन नौ थरी गेडागुडीको क्वाँटी खाइन्छ। तराईमा दिदीबहिनीले दाजुभाइलाई राखी बाँध्छन्।"
+    }
+   }
+  },
+  {
+   "id": "gai-jatra",
+   "names": {
+    "en": "Gai Jatra",
+    "ne": "गाईजात्रा"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "janai-purnima",
+    "offsetDays": 1
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The day after Janai Purnima: Kathmandu Valley's procession remembering those who died in the past year.",
+     "ne": "जनै पूर्णिमाको भोलिपल्ट: गत वर्ष दिवंगत भएकाहरूको सम्झनामा काठमाडौं उपत्यकाको जात्रा।"
+    },
+    "traditions": {
+     "en": "Families who lost someone in the year walk in procession with a cow, or a child dressed as a cow, believed to guide the departed. Begun, it is said, by King Pratap Malla to console his grieving queen, the day also turned into one of satire and humour, with street plays and comic performances.",
+     "ne": "वर्षभित्र कसैलाई गुमाएका परिवारहरू गाई, वा गाई बनेको बालकसँग जात्रामा हिँड्छन्, जसले दिवंगतलाई बाटो देखाउँछ भन्ने विश्वास छ। राजा प्रताप मल्लले शोकाकुल रानीलाई सान्त्वना दिन सुरु गरेको भनिने यो दिन व्यंग्य र हास्यको पनि बन्यो, सडक नाटक र हास्य प्रस्तुति हुन्छन्।"
+    }
+   }
+  },
+  {
+   "id": "janmashtami-ne",
+   "names": {
+    "en": "Shree Krishna Janmashtami",
+    "ne": "श्रीकृष्ण जन्माष्टमी"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "shravana",
+    "tithi": 23
+   },
+   "tier": "major",
+   "holidayIn": [
+    "NP"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The birth of Krishna, kept with a fast and a midnight celebration."
+    },
+    "traditions": {
+     "en": "Devotees fast through the day and gather at midnight, the hour of Krishna's birth, to bathe an image of baby Krishna (Laddu Gopal) in milk and curd, dress him and rock him in a decorated cradle while singing bhajans. Homes and temples set up jhankis, scenes from his life, and children dress up as Krishna and Radha. Mathura and Vrindavan celebrate for days. In Maharashtra, the next day is Dahi Handi, when human pyramids climb to break pots of curd hung high, as young Krishna stole butter. The fast is broken after midnight with makhan-mishri and panjiri."
+    },
+    "story": {
+     "en": "King Kamsa of Mathura was told that the eighth child of his sister Devaki would end his rule, so he imprisoned her and her husband Vasudeva. Krishna was born at midnight in that prison, on the eighth day of the dark fortnight, under Rohini nakshatra, in a storm. The story goes that the guards fell asleep and the chains and doors opened. Vasudeva carried the baby in a basket through the flooded Yamuna, which parted for them, with the serpent Shesha spreading his hoods over the child against the rain. In Gokul he exchanged Krishna for the newborn daughter of Nanda and Yashoda, who raised Krishna as their own. He grew up among the cowherds, beloved for his mischief, his flute, and his care for everyone around him."
+    },
+    "howTo": {
+     "en": [
+      "Decorate a small cradle and set up an image of baby Krishna (Laddu Gopal); make a jhanki if you like.",
+      "Fast through the day: many take fruit and milk; elders and children often keep it light.",
+      "Prepare panchamrit (milk, curd, ghee, honey, sugar), makhan-mishri, panjiri and tulsi leaves.",
+      "Sing bhajans and read the story of Krishna's birth in the evening.",
+      "Check the day view for the Nishita time around midnight; at that moment bathe the image with panchamrit, dress it and place it in the cradle.",
+      "Rock the cradle, sing 'Nand ke anand bhayo', and offer the food and tulsi.",
+      "Share the prasad and break the fast."
+     ]
+    },
+    "greeting": {
+     "en": "Jai Shri Krishna! Happy Janmashtami."
+    }
+   }
+  },
+  {
+   "id": "haritalika-teej",
+   "names": {
+    "en": "Haritalika Teej",
+    "ne": "हरितालिका तीज"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "bhadrapada",
+    "tithi": 3
+   },
+   "tier": "major",
+   "holidayIn": [
+    "NP"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Bhadrapada Shukla Tritiya: a strict fast remembering how Parvati's friends helped her keep her vow for Shiva."
+    },
+    "traditions": {
+     "en": "Women, married and unmarried, keep a strict fast, many without water, from sunrise until the next morning. Clay or sand images of Shiva, Parvati and Parvati's friend are made and worshipped at dusk with bel leaves, flowers and the sixteen adornments. Women stay awake through the night singing bhajans, and the images are immersed the next morning before the fast is broken. It is widely kept in Uttar Pradesh, Bihar, Rajasthan, Madhya Pradesh, Maharashtra and Nepal."
+    },
+    "story": {
+     "en": "'Hartalika' joins 'harat', taken away, and 'aalika', friend. Parvati had set her heart on Shiva, but her father Himavan promised her to Vishnu. Her friends, seeing her distress, took her away into the forest, where she made a linga of sand and kept a fast and night-long worship for Shiva on Bhadrapada Shukla Tritiya. Shiva, moved by her resolve, appeared and agreed to marry her, and her father, learning of it, gave his blessing. The festival honours both Parvati's determination and her friends' loyalty."
+    },
+    "howTo": {
+     "en": [
+      "Decide how you will fast; those with health conditions often keep it with water or fruit.",
+      "Make or buy small clay images of Shiva and Parvati, and gather bel leaves, flowers, and adornments such as bangles and sindoor.",
+      "At dusk, set up the images, light a lamp and worship them, listening to the Hartalika story.",
+      "Keep a night vigil with bhajans if you can.",
+      "The next morning, worship again, immerse the images in water, and break the fast."
+     ]
+    },
+    "greeting": {
+     "en": "Wishes on Hartalika Teej to every woman keeping the vrat."
+    }
+   }
+  },
+  {
+   "id": "ganesh-chaturthi-ne",
+   "names": {
+    "en": "Ganesh Chaturthi",
+    "ne": "गणेश चतुर्थी"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "bhadrapada",
+    "tithi": 4,
+    "observance": {
+     "kala": "madhyahna"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Bhadrapada Shukla Chaturthi: Ganesha's birthday, welcomed home for up to ten days."
+    },
+    "traditions": {
+     "en": "Families bring home a clay image of Ganesha and install it at midday with the pranapratishtha prayer, and many neighbourhoods set up large public pandals. Ganesha is offered modaks, durva grass, red flowers and the 21 leaves of the patri puja, with aartis morning and evening. Homes keep him for one and a half, three, five, seven or ten days, then carry him in procession to water for immersion (visarjan) with the cry 'Ganpati Bappa Morya, pudhchya varshi lavkar ya!' (come again soon next year). Maharashtra, Goa, Karnataka and Andhra Pradesh celebrate most grandly. Tradition asks that the Moon not be looked at on this night."
+    },
+    "story": {
+     "en": "Parvati, it is said, made a boy from the turmeric paste she used for her bath, breathed life into him, and set him to guard her door. When Shiva came home, the boy, who did not know him, would not let him in, and in the struggle that followed Shiva struck off the boy's head. Parvati's grief was so great that Shiva promised to restore him, and sent his attendants to bring the head of the first creature they found facing north. They returned with an elephant's head, and Shiva set it on the boy and brought him back to life, naming him Ganapati, lord of his ganas, and declaring that he would be worshipped first before every undertaking. The Moon, it is told, laughed at Ganesha's round belly that night, and so the Moon is not looked at on Ganesh Chaturthi."
+    },
+    "howTo": {
+     "en": [
+      "Choose an eco-friendly clay image; decorate a small platform (mandap) with flowers and lights.",
+      "Prepare modaks or laddoos, durva grass, red flowers and a lamp.",
+      "At madhyahna (midday; see the day view), install Ganesha with a prayer inviting him into the image, and offer the durva, flowers and modaks.",
+      "Perform aarti morning and evening for as many days as your family keeps him.",
+      "On the day of visarjan, do a final aarti, carry Ganesha to water, or immerse him at home in a bucket and pour the water on plants.",
+      "Avoid looking at the Moon on the night of Chaturthi, as tradition asks."
+     ]
+    },
+    "greeting": {
+     "en": "Ganpati Bappa Morya! Happy Ganesh Chaturthi."
+    }
+   }
+  },
+  {
+   "id": "rishi-panchami-ne",
+   "names": {
+    "en": "Rishi Panchami",
+    "ne": "ऋषिपञ्चमी"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "bhadrapada",
+    "tithi": 5,
+    "observance": {
+     "kala": "madhyahna"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Bhadrapada Shukla Panchami: honouring the seven sages, the Saptarishis."
+    },
+    "traditions": {
+     "en": "Women, especially, keep a fast and bathe with special care, traditionally with the herb apamarga, and worship the seven sages, Kashyapa, Atri, Bharadvaja, Vishvamitra, Gautama, Jamadagni and Vasishtha, together with Arundhati. Many eat only food that grows without ploughing on this day. It is kept mainly in Maharashtra, Gujarat, Nepal and parts of North India."
+    },
+    "story": {
+     "en": "The Saptarishis are remembered as the seers who first heard the Vedas in meditation and passed them on, and as the stars of the Great Bear, circling the pole star. The day honours them as the source of the knowledge families have handed down. Arundhati, Vasishtha's wife, is worshipped with them as the model of a companion in learning, and her faint star beside Vasishtha's is shown to couples at their weddings."
+    },
+    "howTo": {
+     "en": [
+      "Bathe in the morning; if your family does, with apamarga leaves.",
+      "Draw or place seven betel nuts or small images for the seven sages and Arundhati on a clean cloth.",
+      "Offer flowers, sandal paste, fruit and a lamp, and recite their names.",
+      "Eat simple food that grows without ploughing, such as fruit or wild rice, if you keep the custom."
+     ]
+    },
+    "greeting": {
+     "en": "With respect to the seven sages, wishes on Rishi Panchami."
+    }
+   }
+  },
+  {
+   "id": "indra-jatra",
+   "names": {
+    "en": "Indra Jatra",
+    "ne": "इन्द्रजात्रा"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "bhadrapada",
+    "tithi": 14
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [
+    "Kathmandu's festival of Indra and of the living goddess Kumari, whose chariot is drawn through the old city."
+   ],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Bhadra Shukla Chaturdashi: Kathmandu's festival of Indra and of the living goddess Kumari.",
+     "ne": "भाद्र शुक्ल चतुर्दशी: इन्द्र र जीवित देवी कुमारीको काठमाडौंको पर्व।"
+    },
+    "traditions": {
+     "en": "A tall pole (yosin) is raised at Hanuman Dhoka, masked dances such as the Lakhe and Sawa Bhakku fill the streets, and the face of Akash Bhairav is displayed. On the main day the Kumari's chariot, with those of Ganesh and Bhairav, is drawn through the old city, and she blesses the head of state.",
+     "ne": "हनुमानढोकामा अग्लो लिङ्गो (योसिं) ठड्याइन्छ, लाखे र सवाँ भक्कु जस्ता मुकुण्डो नाच सडकभरि हुन्छन्, र आकाश भैरवको मुख देखाइन्छ। मुख्य दिन गणेश र भैरवसँगै कुमारीको रथ पुरानो सहरमा तानिन्छ, र कुमारीले राष्ट्रप्रमुखलाई आशीर्वाद दिन्छिन्।"
+    }
+   }
+  },
+  {
+   "id": "bishwakarma-puja-ne",
+   "names": {
+    "en": "Bishwakarma Puja",
+    "ne": "विश्वकर्मा पूजा"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "kanya",
+    "day": 1
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Kanya Sankranti: honouring Vishwakarma, the divine architect, and the tools of every trade."
+    },
+    "traditions": {
+     "en": "Factories, workshops, offices and homes honour Vishwakarma on the day the Sun enters Kanya. Machines and tools are cleaned, decorated with flowers and given a rest, and an image of Vishwakarma riding his elephant is worshipped. Workers and owners share a meal together. Kite-flying fills the skies in Bengal, Bihar and Jharkhand. Engineers, craftspeople, drivers and artisans of every kind celebrate it."
+    },
+    "story": {
+     "en": "Vishwakarma is remembered as the architect of the gods. The stories credit him with building Indra's heaven, the golden city of Lanka, Krishna's Dwarka, the Pandavas' Indraprastha and the weapons of the gods, including Shiva's trident and Vishnu's discus. He is the patron of all who make and build, and the day reminds people to honour the tools, machines and skills that their livelihoods depend on."
+    },
+    "howTo": {
+     "en": [
+      "Clean your tools, machines, vehicle or work desk, and decorate them with flowers.",
+      "Set up a picture of Vishwakarma and light a lamp; offer flowers, fruit and sweets.",
+      "Give the tools a rest for the day if you can.",
+      "Share a meal with the people you work with."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Vishwakarma Puja to everyone who builds and makes!"
+    }
+   }
+  },
+  {
+   "id": "pitri-paksha-ne",
+   "names": {
+    "en": "Sorha Shraddha begins",
+    "ne": "सोह्र श्राद्ध"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "bhadrapada",
+    "tithi": 16
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 16,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The fortnight for remembering ancestors, from the day after Bhadrapada Purnima to the new moon."
+    },
+    "traditions": {
+     "en": "For sixteen days, families remember their ancestors with shraddha, offerings of food and water. On the tithi on which a parent or grandparent passed away, the family offers tarpan, water mixed with black sesame, and pinda, rice balls, often guided by a priest, then feeds Brahmins, cows, crows and dogs, and gives food to those in need. Many families avoid buying new things or starting celebrations during these weeks, as a time of remembrance. Gaya, Varanasi and Prayagraj are visited for shraddha."
+    },
+    "story": {
+     "en": "The story told is of Karna, who in life gave gold and jewels generously but never food. When he reached the afterlife, he was offered gold to eat. Asking why, he was told that he had never offered food to his ancestors. Karna said he had not known who his ancestors were, and was allowed to return to earth for sixteen days to make offerings of food and water in their memory. Those sixteen days became Pitru Paksha. The fortnight is a time to remember those who came before, say their names, and give in their memory."
+    },
+    "howTo": {
+     "en": [
+      "Find the tithi of your parent's or grandparent's passing; the app shows each day's tithi.",
+      "On that day, bathe and, facing south, offer water with black sesame, and rice balls if your family does, saying their names; a priest can guide the full shraddha.",
+      "Cook a simple meal they liked, and offer a portion to crows, cows or dogs.",
+      "Feed a Brahmin or anyone in need, and give clothes or grain.",
+      "If you do not know the tithi, the last day, Sarva Pitru Amavasya, is for remembering all ancestors."
+     ]
+    },
+    "greeting": {
+     "en": "In remembrance of those who came before us."
+    }
+   }
+  },
+  {
+   "id": "ghatasthapana",
+   "names": {
+    "en": "Ghatasthapana (Dashain begins)",
+    "ne": "घटस्थापना"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 1
+   },
+   "tier": "major",
+   "holidayIn": [
+    "NP"
+   ],
+   "durationDays": 15,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Ashwin Shukla Pratipada: Dashain begins, Nepal's greatest festival, with jamara sown in the puja room.",
+     "ne": "आश्विन शुक्ल प्रतिपदा: नेपालको सबैभन्दा ठूलो चाड दशैं सुरु, पूजा कोठामा जमरा राखिन्छ।"
+    },
+    "traditions": {
+     "en": "At the auspicious hour a kalash of water is set up and barley and maize are sown in sand in a dark room; the yellow shoots, jamara, grow over the next nine days and are worn at Tika. Families clean and decorate their homes, and relatives start travelling home for the fifteen days of Dashain.",
+     "ne": "साइतमा जलले भरिएको कलश स्थापना गरिन्छ र अँध्यारो कोठामा बालुवामा जौ र मकै छरिन्छ; पहेँलो जमरा नौ दिनमा उम्रन्छ र टीकामा लगाइन्छ। परिवारहरू घर सफा गरी सजाउँछन्, र आफन्तहरू दशैंका पन्ध्र दिनका लागि घर फर्कन थाल्छन्।"
+    }
+   }
+  },
+  {
+   "id": "phulpati",
+   "names": {
+    "en": "Phulpati",
+    "ne": "फूलपाती"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 7,
+    "observance": {
+     "kala": "madhyahna"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "NP"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Ashwin Shukla Saptami: the 'sacred flowers' are carried from Gorkha to Hanuman Dhoka in Kathmandu.",
+     "ne": "आश्विन शुक्ल सप्तमी: फूलपाती गोरखाबाट काठमाडौंको हनुमानढोकामा भित्र्याइन्छ।"
+    },
+    "traditions": {
+     "en": "A procession brings the phulpati - a bundle of banana stalk, jamara, sugar cane and other plants tied with red cloth - from the old royal house of Gorkha to Kathmandu, welcomed with a ceremonial parade and gun salute at Tundikhel. In homes the phulpati is brought into the puja room beside the jamara.",
+     "ne": "केराको थाम, जमरा, उखु र अन्य बोटबिरुवालाई रातो कपडाले बाँधिएको फूलपाती गोरखा दरबारबाट जात्राका साथ काठमाडौं ल्याइन्छ, र टुँडिखेलमा परेड र तोपको सलामीसहित स्वागत गरिन्छ। घरमा पनि फूलपाती जमराको छेउमा पूजा कोठामा भित्र्याइन्छ।"
+    }
+   }
+  },
+  {
+   "id": "maha-ashtami-ne",
+   "names": {
+    "en": "Maha Ashtami",
+    "ne": "महाअष्टमी"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 8,
+    "observance": {
+     "kala": "madhyahna"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "NP"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The eighth day of Navratri: Durga as Mahagauri, with kanya puja and Sandhi puja."
+    },
+    "traditions": {
+     "en": "Many families hold kanya puja today, inviting nine young girls (and often a young boy as Bhairav) home to be honoured as the Goddess, with their feet washed and a meal of puri, black chana and halwa. In Bengal, Durga Ashtami is one of the main days of Durga Puja, with the pushpanjali offering of flowers in the morning and the Sandhi puja at the moment Ashtami ends and Navami begins, lit by 108 lamps."
+    },
+    "story": {
+     "en": "In the Devi Mahatmya, the fierce demons Chanda and Munda were sent against the Goddess, and from her brow emerged Chamunda, who overcame them. The Sandhi puja marks the moment, at the junction of Ashtami and Navami, when the battle reached its height. The kanya puja honours the Goddess as she is present in every young girl, and on Ashtami she is worshipped as Mahagauri, radiant and calm after her long tapas."
+    },
+    "howTo": {
+     "en": [
+      "Cook puri, black chana and halwa in the morning.",
+      "Invite young girls of the family or neighbourhood; wash their feet, apply a tilak and tie a red thread on their wrists.",
+      "Serve them the meal, give a small gift, and touch their feet for their blessing.",
+      "Worship Mahagauri with flowers and an aarti."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Durga Ashtami! Jai Mata Di."
+    }
+   }
+  },
+  {
+   "id": "maha-navami-ne",
+   "names": {
+    "en": "Maha Navami",
+    "ne": "महानवमी"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 9
+   },
+   "tier": "major",
+   "holidayIn": [
+    "NP"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The ninth day of Navratri: Durga as Siddhidatri, the day before Vijayadashami."
+    },
+    "traditions": {
+     "en": "Navratri's final worship is kept today with a havan in many homes, and kanya puja for those who keep it on Navami. In the South, Ayudha Puja falls today: tools, vehicles, books and instruments are cleaned, decorated and worshipped. In Bengal it is the last full day of Durga Puja, with the Navami bhog."
+    },
+    "story": {
+     "en": "On Navami the Goddess is worshipped as Siddhidatri, the giver of accomplishment, said in the Devi Purana to be the form from which even Shiva received his powers. In the story of Mahishasura, the ninth day is the last before the final victory, and the worship of weapons and tools today remembers the instruments the gods gave Durga for her battle."
+    },
+    "howTo": {
+     "en": [
+      "Worship Siddhidatri with flowers and an aarti, and perform a small havan if your family does.",
+      "Hold kanya puja if you keep it on Navami.",
+      "Clean and decorate your tools, books, instruments or vehicle, and honour them.",
+      "Prepare to end the fast and conclude the Navratri worship."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Maha Navami!"
+    }
+   }
+  },
+  {
+   "id": "vijaya-dashami-ne",
+   "names": {
+    "en": "Vijaya Dashami (Dashain Tika)",
+    "ne": "विजया दशमी"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 10
+   },
+   "tier": "major",
+   "holidayIn": [
+    "NP"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Ashwin Shukla Dashami: Dashain Tika, when elders give red tika and jamara with their blessings.",
+     "ne": "आश्विन शुक्ल दशमी: दशैंको टीका, ठूलाबडाले रातो टीका र जमरासहित आशीर्वाद दिन्छन्।"
+    },
+    "traditions": {
+     "en": "At the hour fixed by the Nepal Panchanga committee, families gather and the eldest place tika of rice, yoghurt and vermilion on the foreheads of the younger, tuck jamara behind their ears and give dakshina and blessings. Over the following days, until Kojagrat Purnima, people travel to receive tika from elders across the family.",
+     "ne": "नेपाल पञ्चाङ्ग निर्णायक समितिले तोकेको साइतमा परिवार भेला हुन्छ र ठूलाले साना सदस्यको निधारमा अक्षता, दही र सिन्दूरको टीका लगाइदिन्छन्, कानमा जमरा सिउरिदिन्छन् र दक्षिणासहित आशीर्वाद दिन्छन्। त्यसपछि कोजाग्रत पूर्णिमासम्म मान्छेहरू परिवारका ठूलाबडासँग टीका थाप्न जान्छन्।"
+    }
+   }
+  },
+  {
+   "id": "kojagrat-purnima",
+   "names": {
+    "en": "Kojagrat Purnima",
+    "ne": "कोजाग्रत पूर्णिमा"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 15,
+    "observance": {
+     "kala": "nishita"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The autumn full moon of Ashvin: kheer under the moonlight, and Kojagari Lakshmi worship."
+    },
+    "traditions": {
+     "en": "On the brightest full moon of the year, families cook rice kheer and leave it out in the moonlight for some hours, then eat it as prasad. Many stay awake into the night, singing and playing games, and in Bengal and Odisha Lakshmi is worshipped as Kojagari Lakshmi. In Braj, the night is remembered as the night of Krishna's Raas Leela with the gopis."
+    },
+    "story": {
+     "en": "'Kojagari' comes from 'ko jagarti', who is awake? The story told is that on this night Lakshmi walks the earth asking that question, and visits the homes where people are awake and lamps are lit. Braj tradition remembers it as the night Krishna played his flute in the forest and the gopis came to dance the Maha Raas with him, each feeling that Krishna danced with her alone. The moon is said to be full in all sixteen of its kalas, and its light especially gentle, which is why the kheer is left out to take it in."
+    },
+    "howTo": {
+     "en": [
+      "Cook rice kheer in the evening.",
+      "After moonrise, cover it with a thin cloth and leave it on a terrace or balcony in the moonlight for a few hours.",
+      "Light lamps and worship Lakshmi, or Radha-Krishna, with flowers and an aarti.",
+      "Stay up with family for a while, then share the kheer as prasad."
+     ]
+    },
+    "greeting": {
+     "en": "Wishing you a bright, peaceful Sharad Purnima."
+    }
+   }
+  },
+  {
+   "id": "kag-tihar",
+   "names": {
+    "en": "Kag Tihar (Tihar begins)",
+    "ne": "काग तिहार"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 28,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 5,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Kartik Krishna Trayodashi: Tihar begins, the five days of lights, with crows honoured first.",
+     "ne": "कार्तिक कृष्ण त्रयोदशी: पाँच दिने उज्यालोको पर्व तिहार सुरु, पहिले काग पुजिन्छ।"
+    },
+    "traditions": {
+     "en": "In the morning food is set out for crows, regarded as messengers of Yama. Homes are cleaned and lamps lit for the five nights of Tihar, and the evening is Dhanteras for many, with new utensils and metal bought.",
+     "ne": "बिहान यमदूत मानिने कागलाई खाना राखिन्छ। तिहारका पाँच रातका लागि घर सफा गरिन्छ र दियो बालिन्छ, र धेरैका लागि साँझ धनतेरस हुन्छ, नयाँ भाँडा र धातु किनिन्छ।"
+    }
+   }
+  },
+  {
+   "id": "kukur-tihar",
+   "names": {
+    "en": "Kukur Tihar",
+    "ne": "कुकुर तिहार"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 29
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Kartik Krishna Chaturdashi: dogs are honoured with garlands, tika and a good meal.",
+     "ne": "कार्तिक कृष्ण चतुर्दशी: कुकुरलाई माला, टीका र मीठो भोजनसहित सम्मान गरिन्छ।"
+    },
+    "traditions": {
+     "en": "Dogs, the companions of Yama and loyal friends of the household, are given a marigold garland, a red tika and special food. Pet dogs, street dogs and police dogs alike are honoured across Nepal.",
+     "ne": "यमराजका साथी र घरका वफादार मित्र कुकुरलाई सयपत्रीको माला, रातो टीका र विशेष खाना दिइन्छ। घरपालुवा, सडकका र प्रहरीका कुकुर सबैलाई नेपालभरि सम्मान गरिन्छ।"
+    }
+   }
+  },
+  {
+   "id": "laxmi-puja-ne",
+   "names": {
+    "en": "Laxmi Puja (Gai Tihar)",
+    "ne": "लक्ष्मी पूजा"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "ashvin",
+    "tithi": 30,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "NP"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Kartika Amavasya: the festival of lights, with Lakshmi Puja at dusk."
+    },
+    "traditions": {
+     "en": "Homes are filled with diyas and lights, the doorway is marked with rangoli and small footprints of Lakshmi, and families wear new clothes. At dusk, Lakshmi and Ganesha are worshipped together, with account books and cash boxes blessed in business families. Sweets and dry fruits are exchanged with neighbours and relatives, and the evening is lit with lamps and fireworks. For Jains it marks Mahavira's nirvana, and for Sikhs it is Bandi Chhor Divas."
+    },
+    "story": {
+     "en": "Diwali remembers Rama's return to Ayodhya after fourteen years of exile and his victory in Lanka. The people of Ayodhya, overjoyed, lit rows of lamps (deepavali) along every street on the dark new-moon night to welcome Rama, Sita and Lakshmana home. Lakshmi, who rose from the churning of the ocean and chose Vishnu, is worshipped on this night as the goddess of wellbeing and abundance, together with Ganesha, the remover of obstacles, so that every beginning in the new season is made well."
+    },
+    "howTo": {
+     "en": [
+      "In the days before, clean the house thoroughly, and buy diyas, wicks, oil, flowers and sweets.",
+      "In the afternoon, draw a rangoli at the entrance and set out lamps.",
+      "Check the Lakshmi Puja time in the day view (pradosh, after sunset).",
+      "Set up Lakshmi and Ganesha on a red cloth, with a kalash, coins, rice, flowers, sweets and a lamp; worship them together, Ganesha first.",
+      "After the puja, light diyas at the door, windows, balcony and every room.",
+      "Share sweets with family and neighbours; if you light crackers, choose quieter ones and keep them away from children and animals."
+     ]
+    },
+    "greeting": {
+     "en": "Happy Diwali! May every lamp tonight bring light and warmth to your home."
+    }
+   }
+  },
+  {
+   "id": "mha-puja",
+   "names": {
+    "en": "Mha Puja & Nepal Sambat New Year (Goru Tihar)",
+    "ne": "म्ह पूजा"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "kartika",
+    "tithi": 1,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "NP"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Kartik Shukla Pratipada: Goru Tihar, Govardhan Puja and, for the Newar community, Mha Puja and Nepal Sambat New Year.",
+     "ne": "कार्तिक शुक्ल प्रतिपदा: गोरु तिहार, गोवर्धन पूजा र नेवार समुदायका लागि म्ह पूजा तथा नेपाल संवत् नयाँ वर्ष।"
+    },
+    "traditions": {
+     "en": "Oxen are honoured with garlands and food, and cow-dung hills are shaped for Govardhan Puja. Newar families perform Mha Puja, the worship of one's own body: each member sits before a mandala of colours, lamps and fruit for a blessing of long life. Nepal Sambat, the Newar era, begins its new year the same day.",
+     "ne": "गोरुलाई माला र खाना दिएर सम्मान गरिन्छ, र गोवर्धन पूजाका लागि गोबरको पर्वत बनाइन्छ। नेवार परिवारहरू म्ह पूजा गर्छन्, आफ्नै शरीरको पूजा: प्रत्येक सदस्य रङ, दियो र फलफूलको मण्डलअगाडि बसेर दीर्घायुको आशीर्वाद लिन्छ। नेवारहरूको संवत्, नेपाल संवत्को नयाँ वर्ष पनि यही दिन सुरु हुन्छ।"
+    }
+   }
+  },
+  {
+   "id": "bhai-tika",
+   "names": {
+    "en": "Bhai Tika",
+    "ne": "भाइटीका"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "mha-puja",
+    "offsetDays": 1
+   },
+   "tier": "major",
+   "holidayIn": [
+    "NP"
+   ],
+   "durationDays": 1,
+   "variations": [
+    "The last of Tihar's five days, the day after Goru Tihar and Mha Puja, as Nepal's almanacs keep it."
+   ],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The last day of Tihar: sisters give their brothers a seven-coloured tika and pray for their long life.",
+     "ne": "तिहारको अन्तिम दिन: दिदीबहिनीले दाजुभाइलाई सप्तरङ्गी टीका लगाइदिई दीर्घायुको कामना गर्छन्।"
+    },
+    "traditions": {
+     "en": "Sisters draw a protective line of oil and water around their brothers, place a seven-coloured tika on their foreheads, garland them with makhamali (globe amaranth) flowers that do not wilt, and feed them sweets and dried fruit. Brothers give gifts and the tika in return. Those without a brother or sister often receive tika from a cousin or friend.",
+     "ne": "दिदीबहिनीले दाजुभाइको वरिपरि तेल र पानीको रेखा कोर्छन्, निधारमा सप्तरङ्गी टीका लगाइदिन्छन्, नओइलाउने मखमली फूलको माला लगाइदिन्छन्, र मिठाई तथा मसला खुवाउँछन्। दाजुभाइले उपहार र टीका फर्काउँछन्। दाजुभाइ वा दिदीबहिनी नहुनेले प्रायः आफन्त वा साथीबाट टीका थाप्छन्।"
+    }
+   }
+  },
+  {
+   "id": "chhath-ne",
+   "names": {
+    "en": "Chhath",
+    "ne": "छठ"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "kartika",
+    "tithi": 6,
+    "observance": {
+     "kala": "aparahna"
+    }
+   },
+   "tier": "major",
+   "holidayIn": [
+    "NP"
+   ],
+   "durationDays": 1,
+   "variations": [],
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Drik Panchang Nepali Patro, Kathmandu (https://www.drikpanchang.com/nepali/calendar/nepali-festivals.html)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Bihar's four-day worship of the Sun and Chhathi Maiya, with offerings at sunset and sunrise from the water."
+    },
+    "traditions": {
+     "en": "Chhath is among the most demanding observances. On the first day (Nahay Khay) the vratis, mostly women, bathe and eat one simple meal; on the second (Kharna) they fast all day and break it at night with kheer of jaggery and rice; then they fast without water for some thirty-six hours. On the third evening families walk to rivers and ponds carrying bamboo baskets of thekua, fruit and sugarcane, and the vratis stand in the water to offer arghya to the setting Sun, singing Chhath songs. Before dawn on the fourth day they return to offer to the rising Sun, and then break the fast. It is kept by Bihar, Jharkhand, eastern Uttar Pradesh and the Nepal Terai, and their communities everywhere."
+    },
+    "story": {
+     "en": "Chhath honours Surya, who sustains all life, and Chhathi Maiya, the goddess said to be his sister, who watches over children. Stories trace it to the Ramayana, when Sita and Rama are said to have kept a fast for the Sun on returning to Ayodhya, and to the Mahabharata, where Karna, son of Surya, stood in water every day offering to the Sun, and Draupadi kept the vrat during the Pandavas' hard times. It is unusual in honouring the setting Sun as well as the rising one: a reminder, people say, that whoever has stood by you through the day deserves thanks at its end too."
+    },
+    "howTo": {
+     "en": [
+      "Clean the house thoroughly; the whole observance is kept with great care for purity.",
+      "Day one (Nahay Khay): bathe and eat one sattvic meal, traditionally rice, chana dal and lauki.",
+      "Day two (Kharna): fast all day; at night prepare and eat gur-kheer and roti, then begin the waterless fast.",
+      "Day three: prepare thekua and arrange bamboo baskets with fruit, sugarcane and a lamp; at sunset, stand in the water and offer arghya to the setting Sun.",
+      "Day four: before dawn, return to the water and offer arghya to the rising Sun, then break the fast with prasad.",
+      "If you are not a vrati, help carry the baskets, sing Chhath songs, and share the prasad."
+     ]
+    },
+    "greeting": {
+     "en": "Jai Chhathi Maiya! Warm wishes on Chhath Puja."
+    }
+   }
+  }
+ ],
+ "dailySignificance": [
+  {
+   "key": "ekadashi",
+   "names": {
+    "en": "Ekadashi",
+    "ne": "एकादशी"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 11,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "The eleventh day of each fortnight, kept by many with a fast and prayer to Vishnu."
+    },
+    "traditions": {
+     "en": "Ekadashi comes twice a month. Those who keep it avoid grains and beans for the day, some eating fruit and milk, some keeping a stricter fast, and spend time in prayer, reading or chanting Vishnu's names. The fast is broken the next morning, during Dvadashi; the parana time is shown in almanacs. People who are unwell, pregnant, elderly or on medication keep a gentle version, which tradition fully accepts."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free supper the evening before.",
+      "On Ekadashi, avoid grains and beans; take fruit, milk or vrat food.",
+      "Light a lamp before Vishnu and offer tulsi.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Ekadashi fasting rules"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "ekadashi",
+   "names": {
+    "en": "Ekadashi",
+    "ne": "एकादशी"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 26,
+    "observance": {
+     "kala": "ekadashi"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "The eleventh day of each fortnight, kept by many with a fast and prayer to Vishnu."
+    },
+    "traditions": {
+     "en": "Ekadashi comes twice a month. Those who keep it avoid grains and beans for the day, some eating fruit and milk, some keeping a stricter fast, and spend time in prayer, reading or chanting Vishnu's names. The fast is broken the next morning, during Dvadashi; the parana time is shown in almanacs. People who are unwell, pregnant, elderly or on medication keep a gentle version, which tradition fully accepts."
+    },
+    "howTo": {
+     "en": [
+      "Eat a light, grain-free supper the evening before.",
+      "On Ekadashi, avoid grains and beans; take fruit, milk or vrat food.",
+      "Light a lamp before Vishnu and offer tulsi.",
+      "Break the fast the next morning during Dvadashi."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Ekadashi fasting rules"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "purnima",
+   "names": {
+    "en": "Purnima",
+    "ne": "पूर्णिमा"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 15
+   },
+   "content": {
+    "summary": {
+     "en": "The full moon, a day for worship, Satyanarayan katha and giving."
+    },
+    "traditions": {
+     "en": "Each full moon is kept by many families with a morning bath, worship of Vishnu, and in the evening the Satyanarayan katha with sheera prasad. Some keep a fast until moonrise and offer water to the Moon. Giving food or clothes is valued on the full moon. Many festivals fall on Purnima: Holi, Guru Purnima, Raksha Bandhan and Sharad Purnima among them."
+    },
+    "howTo": {
+     "en": [
+      "Bathe in the morning and light a lamp before Vishnu.",
+      "Hold or listen to the Satyanarayan katha in the evening if your family does.",
+      "Offer water to the rising Moon.",
+      "Give food or clothes to someone in need."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Purnima"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "amavasya",
+   "names": {
+    "en": "Amavasya",
+    "ne": "औंसी (अमावस्या)"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 30
+   },
+   "content": {
+    "summary": {
+     "en": "The new moon, a day for remembering ancestors with water and sesame."
+    },
+    "traditions": {
+     "en": "On the new moon many families offer tarpan, water with black sesame, to their ancestors, give food to those in need, and feed cows, crows or dogs. Some keep a fast. It is traditionally a quiet day, and many prefer to begin new ventures on other days. When the new moon falls on a Monday it is Somvati Amavasya, and on a Saturday, Shani Amavasya."
+    },
+    "howTo": {
+     "en": [
+      "In the morning, bathe and offer water with black sesame, facing south, naming your ancestors.",
+      "Give food to someone in need, and feed a cow, crow or dog.",
+      "Light a lamp in the evening."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Amavasya"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "pradosh",
+   "names": {
+    "en": "Pradosh Vrat",
+    "ne": "प्रदोष व्रत"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 13,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "The thirteenth day, kept at dusk for Shiva."
+    },
+    "traditions": {
+     "en": "Twice a month, on Trayodashi, devotees of Shiva fast through the day and worship him in the pradosh kaal, the hour and a half around sunset, with bel leaves, milk and a lamp. It is named for its weekday: Som Pradosh on Monday, Shani Pradosh on Saturday. Temples hold abhishekam, and Nandi is honoured too."
+    },
+    "howTo": {
+     "en": [
+      "Fast through the day if you keep the vrat.",
+      "At pradosh (around sunset; see the day view), offer water, milk and bel leaves to Shiva and light a lamp.",
+      "Chant 'Om Namah Shivaya', then break the fast."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Pradosh Vrat"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "pradosh",
+   "names": {
+    "en": "Pradosh Vrat",
+    "ne": "प्रदोष व्रत"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 28,
+    "observance": {
+     "kala": "pradosh"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "The thirteenth day, kept at dusk for Shiva."
+    },
+    "traditions": {
+     "en": "Twice a month, on Trayodashi, devotees of Shiva fast through the day and worship him in the pradosh kaal, the hour and a half around sunset, with bel leaves, milk and a lamp. It is named for its weekday: Som Pradosh on Monday, Shani Pradosh on Saturday. Temples hold abhishekam, and Nandi is honoured too."
+    },
+    "howTo": {
+     "en": [
+      "Fast through the day if you keep the vrat.",
+      "At pradosh (around sunset; see the day view), offer water, milk and bel leaves to Shiva and light a lamp.",
+      "Chant 'Om Namah Shivaya', then break the fast."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Pradosh Vrat"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "sankashti-chaturthi",
+   "names": {
+    "en": "Sankashti Chaturthi",
+    "ne": "संकष्टी चतुर्थी"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": null,
+    "tithi": 19,
+    "observance": {
+     "kala": "moonrise"
+    }
+   },
+   "content": {
+    "summary": {
+     "en": "The fourth day after the full moon, kept for Ganesha and broken at moonrise."
+    },
+    "traditions": {
+     "en": "Each month, on Krishna Chaturthi, devotees of Ganesha fast through the day, worship him in the evening with durva grass, modak and red flowers, and break the fast after seeing the Moon and offering it water. When it falls on a Tuesday it is called Angaraki Chaturthi."
+    },
+    "howTo": {
+     "en": [
+      "Fast through the day if you keep it.",
+      "In the evening, worship Ganesha with durva and modak or laddoos.",
+      "Check moonrise in the day view; offer water to the Moon, then break the fast."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Sankashti Chaturthi"
+   ],
+   "optIn": false
+  },
+  {
+   "key": "somvar-vrat",
+   "names": {
+    "en": "Somvar vrat (Monday)",
+    "ne": "सोमबार व्रत"
+   },
+   "rule": {
+    "type": "weekday",
+    "weekday": "monday"
+   },
+   "content": {
+    "summary": {
+     "en": "Monday, kept for Shiva and Parvati."
+    },
+    "traditions": {
+     "en": "Monday is Shiva's day, and many keep it with a fast until evening, water or milk poured over a Shiva linga, bel leaves and white flowers, and the chant Om Namah Shivaya. Some keep sixteen Mondays (Solah Somvar) as a vow; the Mondays of Sawan are especially loved. The Somvar katha is read or heard in the evening before the fast is broken."
+    },
+    "howTo": {
+     "en": [
+      "Fast until evening, or take fruit and milk.",
+      "Pour water or milk over a Shiva linga and offer bel leaves.",
+      "Chant Om Namah Shivaya.",
+      "Read the Somvar katha in the evening, then break the fast."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Somwar Vrat"
+   ],
+   "optIn": true
+  },
+  {
+   "key": "hanuman-vrat",
+   "names": {
+    "en": "Hanuman vrat",
+    "ne": "हनुमान व्रत (मङ्गलबार)"
+   },
+   "rule": {
+    "type": "weekday",
+    "weekday": "tuesday"
+   },
+   "content": {
+    "summary": {
+     "en": "A weekly day for Hanuman: Tuesday in the North, Saturday in much of the South."
+    },
+    "traditions": {
+     "en": "Devotees of Hanuman keep one day a week for him, Tuesday in the North and Saturday in much of the South. Many eat a single simple meal, visit a Hanuman temple, and read the Hanuman Chalisa or the Sundara Kandam of the Ramayana. In the North sindoor and jasmine oil are offered; in Tamil Nadu a garland of vadai or betel leaves. Some keep a run of weeks, often 21, as a personal vow of discipline and devotion."
+    },
+    "howTo": {
+     "en": [
+      "Bathe early and keep the day simple: one meal, or fruit and milk.",
+      "Visit a Hanuman temple, or light a lamp before his picture at home.",
+      "Offer sindoor and jasmine oil (North) or a vadai or betel-leaf garland (South).",
+      "Read the Hanuman Chalisa or a chapter of the Sundara Kandam."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Mangalwar Vrat",
+    "Hanuman Chalisa (Tulsidas)"
+   ],
+   "optIn": true
+  },
+  {
+   "key": "shani-vrat",
+   "names": {
+    "en": "Shani vrat (Saturday)",
+    "ne": "शनिबार व्रत"
+   },
+   "rule": {
+    "type": "weekday",
+    "weekday": "saturday"
+   },
+   "content": {
+    "summary": {
+     "en": "Saturday, Shani's day, kept with a simple meal, a sesame-oil lamp and giving to others."
+    },
+    "traditions": {
+     "en": "Saturday is Shani's day. Those who keep the Saturday vrat eat once, simply, often after sunset; light a lamp of sesame oil at a Shani shrine or under a peepal tree; and offer black sesame and blue or dark flowers. Giving food, oil or clothes to people who need them is at the heart of the day. Shani is honoured as the teacher of patience and fairness, and the vrat is kept as a weekly practice of steadiness and service. In Tamil Nadu the Saturdays of Purattasi are kept for Perumal as well."
+    },
+    "howTo": {
+     "en": [
+      "Keep the day simple: one meal, often after sunset.",
+      "Light a sesame-oil lamp at a Shani shrine or under a peepal tree.",
+      "Offer black sesame and a dark flower.",
+      "Give food, oil or clothing to someone who needs it."
+     ]
+    }
+   },
+   "sources": [
+    "Drik Panchang, Shaniwar Vrat"
+   ],
+   "optIn": true
+  }
+ ],
+ "personal": {
+  "birthday": {
+   "basis": "tithi",
+   "observance": {
+    "kala": "sunrise"
+   }
+  },
+  "remembrance": {
+   "basis": "tithi",
+   "observance": {
+    "kala": "aparahna"
+   }
+  }
+ },
+ "muhurtham": {
+  "events": [
+   {
+    "id": "marriage",
+    "names": {
+     "en": "Marriage",
+     "ne": "विवाह"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "magha",
+     "uttara_phalguni",
+     "hasta",
+     "swati",
+     "anuradha",
+     "mula",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     22
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidSolarMonths": [
+     "dhanu",
+     "meena"
+    ],
+    "avoidLunarSpans": [
+     {
+      "from": {
+       "month": "ashadha",
+       "tithi": 11
+      },
+      "to": {
+       "month": "kartika",
+       "tithi": 11
+      }
+     }
+    ]
+   },
+   {
+    "id": "engagement",
+    "names": {
+     "en": "Engagement",
+     "ne": "लगन गाँठो (सगाई)"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "magha",
+     "uttara_phalguni",
+     "hasta",
+     "swati",
+     "anuradha",
+     "mula",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     22
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidSolarMonths": [
+     "dhanu",
+     "meena"
+    ],
+    "avoidLunarSpans": [
+     {
+      "from": {
+       "month": "ashadha",
+       "tithi": 11
+      },
+      "to": {
+       "month": "kartika",
+       "tithi": 11
+      }
+     }
+    ]
+   },
+   {
+    "id": "griha-pravesham",
+    "names": {
+     "en": "Housewarming",
+     "ne": "गृहप्रवेश"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "uttara_phalguni",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidSolarMonths": [
+     "dhanu",
+     "meena"
+    ],
+    "avoidLunarSpans": [
+     {
+      "from": {
+       "month": "ashadha",
+       "tithi": 11
+      },
+      "to": {
+       "month": "kartika",
+       "tithi": 11
+      }
+     }
+    ]
+   },
+   {
+    "id": "bhoomi-puja",
+    "names": {
+     "en": "Foundation (Bhoomi Puja)",
+     "ne": "भूमि पूजा"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidSolarMonths": [
+     "dhanu",
+     "meena"
+    ],
+    "avoidLunarSpans": [
+     {
+      "from": {
+       "month": "ashadha",
+       "tithi": 11
+      },
+      "to": {
+       "month": "kartika",
+       "tithi": 11
+      }
+     }
+    ]
+   },
+   {
+    "id": "property",
+    "names": {
+     "en": "Buying property",
+     "ne": "घरजग्गा खरिद"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "anuradha",
+     "uttara_ashadha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidLunarSpans": [
+     {
+      "from": {
+       "month": "bhadrapada",
+       "tithi": 16
+      },
+      "to": {
+       "month": "bhadrapada",
+       "tithi": 30
+      }
+     }
+    ]
+   },
+   {
+    "id": "vehicle",
+    "names": {
+     "en": "Buying a vehicle",
+     "ne": "सवारी साधन खरिद"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     21,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidLunarSpans": [
+     {
+      "from": {
+       "month": "bhadrapada",
+       "tithi": 16
+      },
+      "to": {
+       "month": "bhadrapada",
+       "tithi": 30
+      }
+     }
+    ]
+   },
+   {
+    "id": "business",
+    "names": {
+     "en": "Starting a business",
+     "ne": "व्यापार सुरु"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidLunarSpans": [
+     {
+      "from": {
+       "month": "bhadrapada",
+       "tithi": 16
+      },
+      "to": {
+       "month": "bhadrapada",
+       "tithi": 30
+      }
+     }
+    ]
+   },
+   {
+    "id": "naming",
+    "names": {
+     "en": "Naming ceremony",
+     "ne": "न्वारन (नामकरण)"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20,
+     22,
+     25,
+     26,
+     27
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidAdhika": false,
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "annaprashana",
+    "names": {
+     "en": "First rice",
+     "ne": "पास्नी (अन्नप्राशन)"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "vidyarambham",
+    "names": {
+     "en": "Start of learning",
+     "ne": "विद्यारम्भ"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "ardra",
+     "punarvasu",
+     "pushya",
+     "purva_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "mula",
+     "purva_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "purva_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "upanayanam",
+    "names": {
+     "en": "Upanayanam (sacred thread)",
+     "ne": "व्रतबन्ध (उपनयन)"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     10,
+     11,
+     12
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidLunarSpans": [
+     {
+      "from": {
+       "month": "ashadha",
+       "tithi": 1
+      },
+      "to": {
+       "month": "pausha",
+       "tithi": 30
+      }
+     }
+    ],
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "mundan",
+    "names": {
+     "en": "First haircut (Mundan)",
+     "ne": "छेवर (मुण्डन)"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "chitra",
+     "swati",
+     "jyeshtha",
+     "shravana",
+     "dhanishta",
+     "shatabhisha",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     13,
+     17,
+     18,
+     20,
+     22
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "karnavedha",
+    "names": {
+     "en": "Ear piercing (Karnavedha)",
+     "ne": "कान छेड्ने (कर्णवेध)"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     6,
+     7,
+     10,
+     11,
+     12,
+     13,
+     17,
+     18,
+     20,
+     21,
+     22
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidJanmaNakshatra": false
+   },
+   {
+    "id": "travel",
+    "names": {
+     "en": "Setting out on a journey",
+     "ne": "यात्रा सुरु"
+    },
+    "nakshatras": [
+     "ashwini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "hasta",
+     "anuradha",
+     "shravana",
+     "dhanishta",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     17,
+     18,
+     20,
+     22
+    ],
+    "weekdays": [
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidAdhika": false
+   },
+   {
+    "id": "jewellery",
+    "names": {
+     "en": "Buying gold & jewellery",
+     "ne": "सुन र गहना खरिद"
+    },
+    "nakshatras": [
+     "ashwini",
+     "rohini",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "chitra",
+     "swati",
+     "anuradha",
+     "uttara_ashadha",
+     "shravana",
+     "dhanishta",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     12,
+     13,
+     15,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ],
+    "avoidAdhika": false
+   },
+   {
+    "id": "seemantham",
+    "names": {
+     "en": "Seemantham (baby shower)",
+     "ne": "सीमन्तोन्नयन"
+    },
+    "nakshatras": [
+     "rohini",
+     "mrigashira",
+     "punarvasu",
+     "pushya",
+     "uttara_phalguni",
+     "hasta",
+     "mula",
+     "uttara_ashadha",
+     "shravana",
+     "uttara_bhadrapada",
+     "revati"
+    ],
+    "tithis": [
+     2,
+     3,
+     5,
+     7,
+     10,
+     11,
+     13,
+     17,
+     18,
+     20
+    ],
+    "weekdays": [
+     "sunday",
+     "monday",
+     "wednesday",
+     "thursday",
+     "friday"
+    ]
+   }
+  ],
+  "sources": [
+   "Muhurta Chintamani (Daivajna Rama), vivaha, griha-pravesha, yatra and samskara prakaranas",
+   "Kerala Jyothisham practice: Karkidakam avoided for marriage and griha pravesham",
+   "Tamil panchangam practice: Aadi, Purattasi and Margazhi avoided for marriage",
+   "North Indian panchangam practice: kharmas, Chaturmas and Pitru Paksha"
+  ]
+ }
+}

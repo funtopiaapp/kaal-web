@@ -13,14 +13,15 @@ const CULTURES = [
   { id: 'marathi', en: 'Marathi', native: 'मराठी' },
   { id: 'bengali', en: 'Bengali', native: 'বাংলা' },
   { id: 'odia', en: 'Odia', native: 'ଓଡ଼ିଆ' },
+  { id: 'nepali', en: 'Nepali', native: 'नेपाली' },
 ];
 const LIGHT = ['kaal', 'ivory', 'rose', 'sage'], DARK = ['kaal-dark', 'night', 'charcoal', 'peacock'];
 const TABS = [['today', 'tab.today'], ['calendar', 'tab.calendar'], ['festivals', 'tab.festivals'], ['muhurtham', 'tab.muhurtham'],
-  ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['temples', 'tm.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
+  ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
 
 // ---------------------------------------------------------------- state
 const saved = (() => { try { return JSON.parse(localStorage.getItem('kaal-web') || '{}'); } catch { return {}; } })();
-const S = Object.assign({ culture: '', native: false, home: null, theme: 'system', light: 'kaal', dark: 'kaal-dark', people: [], vrats: [], vratLog: {} }, saved);
+const S = Object.assign({ culture: '', native: false, home: null, theme: 'system', light: 'kaal', dark: 'kaal-dark', people: [], vrats: [], vratLog: {}, families: [] }, saved);
 function save() { try { localStorage.setItem('kaal-web', JSON.stringify(S)); } catch {} }
 
 let STR = {}, pack = null, packJson = '', tab = 'today', dayDate = null, monthDate = null;
@@ -175,6 +176,7 @@ async function render() {
     if (tab === 'vrats') return await viewVrats();
     if (tab === 'jathakam') return await viewJathakam();
     if (tab === 'temples') return await viewTemples();
+    if (tab === 'sky') return await viewSky();
     if (tab === 'people') return await viewPeople();
     if (tab === 'settings') return viewSettings();
   } catch (e) { $('#main').innerHTML = `<div class="card">${esc(t('c.error', e.message))}</div>`; }
@@ -195,6 +197,7 @@ async function viewDay() {
   const d = dayDate || today();
   loading();
   const p = await day(d, here());
+  const fine = await engine({ op: 'timings', handle: await cal(+d.slice(0, 4), here()), date: d }).catch(() => null);
   const prev = dayPlace ? null : await day(addDays(d, -1)).catch(() => null);
   const parana = prev && prev.occurrences.some(o => o.id === 'ekadashi') ? await engine({ op: 'parana', handle: await cal(+addDays(d, -1).slice(0, 4)), date: addDays(d, -1) }) : null;
   const limb = (list, table) => {
@@ -207,6 +210,7 @@ async function viewDay() {
   const recs = [...new Set(p.occurrences.filter(o => o.recurring && (!pack.dailySignificance.find(r => r.key === o.id)?.optIn || S.vrats.includes(o.id))).map(o => o.id))];
   const people = await peopleOn(d);
   const checkIns = d === today() && !dayPlace ? await vratCheckIns() : [];
+  const skyToday = dayPlace ? [] : (await skyEvents(+d.slice(0, 4)).catch(() => [])).filter(e => new Intl.DateTimeFormat('en-CA', { timeZone: S.home.tz }).format(new Date(e.at * 1000)) === d);
   $('#main').innerHTML = `
     ${checkIns.slice(0, 3).map(checkInCard).join('')}
     <div class="dayhead"><div class="nav"><button class="arrow" data-shift="-1" aria-label="Previous day">‹</button>
@@ -214,7 +218,8 @@ async function viewDay() {
       <div class="small muted">📍 ${esc(t('f.forPlace', here().name))}</div></div>
       <button class="arrow" data-shift="1" aria-label="Next day">›</button></div>
       ${d !== today() ? `<button class="btn soft noprint" data-today>${esc(t('day.jumpToday'))}</button>` : ''}</div>
-    ${fests.length || recs.length || people.length ? `<p class="label">${esc(t('day.observances'))}</p>` : ''}
+    ${fests.length || recs.length || people.length || skyToday.length ? `<p class="label">${esc(t('day.observances'))}</p>` : ''}
+    ${skyToday.map(e => `<div class="rec" data-goto-sky style="cursor:pointer">✦ ${esc(skyTitle(e))} · ${esc(clock(e.at))}</div>`).join('')}
     ${fests.map(({ f, o }) => `<div class="fest ${f.tier === 'major' ? 'major' : ''}" data-f="${esc(f.id)}" data-d="${o.date}"><div class="bar2"></div><div><b>${esc(fname(f))}</b><div class="small muted">${esc(fother(f))}</div><div class="small muted">${esc(text(f.content?.summary))}</div></div><div class="when">›</div></div>`).join('')}
     ${people.map(x => `<div class="rec">🎁 <b>${esc(x.title)}</b> <span class="small muted">${esc(x.line)}</span></div>`).join('')}
     ${recs.map(k => { const r = pack.dailySignificance.find(r => r.key === k); return `<div class="rec">🌙 <b>${esc(recName(k))}</b><div class="small muted">${esc(text(r?.content?.summary))}</div></div>`; }).join('')}
@@ -226,13 +231,54 @@ async function viewDay() {
         .map(([k, u]) => `<div><b>${u ? esc(clock(u)) : esc(t('sun.none'))}</b><span class="small muted">${esc(t(k))}</span></div>`).join('')}</div>
     <div class="card"><p class="label">${esc(t('time.section'))}</p><div class="small muted">${esc(t('time.avoid'))}</div>
       ${[['time.rahu', p.rahuKalam], ['time.yama', p.yamagandam], ['time.gulika', p.gulikaKalam]].map(([k, w]) => `<div class="row"><span>${esc(t(k))}</span><span class="v">${esc(span(w))}</span></div>`).join('')}
+      ${fine ? [['time.durmuhurtam', fine.durmuhurtam], ['time.varjyam', fine.varjyam], ['time.bhadra', fine.bhadra], ['time.panchaka', fine.panchaka]].map(([k, ps]) => windowsRow(k, ps, d)).join('') : ''}
       <div class="small muted" style="margin-top:8px">${esc(t('time.favoured'))}</div>
-      ${[['time.abhijit', p.abhijit], ['time.brahma', p.brahmaMuhurta]].map(([k, w]) => `<div class="row"><span>${esc(t(k))}</span><span class="v">${esc(span(w))}</span></div>`).join('')}</div>
+      ${[['time.abhijit', p.abhijit]].map(([k, w]) => `<div class="row"><span>${esc(t(k))}</span><span class="v">${esc(span(w))}</span></div>`).join('')}
+      ${fine ? windowsRow('time.amrit', fine.amritKalam, d) : ''}
+      ${[['time.brahma', p.brahmaMuhurta]].map(([k, w]) => `<div class="row"><span>${esc(t(k))}</span><span class="v">${esc(span(w))}</span></div>`).join('')}</div>
+    ${fine ? `<div class="card" id="mcard">${muhurtasCard(fine, d)}</div>` : ''}
     <button class="btn soft block noprint" onclick="window.print()">🖨 ${esc(t('pdf.share'))}</button>`;
   $('#main').querySelectorAll('[data-shift]').forEach(b => b.onclick = () => { dayDate = addDays(d, +b.dataset.shift); tab = 'today'; viewDay(); });
   $('#main').querySelector('[data-today]')?.addEventListener('click', () => { dayDate = null; viewDay(); });
   wireCheckIns();
+  $('#main').querySelectorAll('[data-goto-sky]').forEach(x => x.onclick = () => { tab = 'sky'; render(); });
+  wireMuhurtas(fine, d);
   wireFestivals();
+}
+
+// ---------------------------------------------------------------- the day in parts
+// As on iOS (MuhurtasCard): Choghadiya, Gowri, Hora or the lagna table, the
+// tradition's own first; the current and next periods, the rest on request.
+const FAVOURED = new Set(['amrita', 'shubha', 'labha', 'chara', 'amirdha', 'uthi', 'laabam', 'dhanam', 'sugam']);
+let mAll = false;
+function civilIn(u) { return new Intl.DateTimeFormat('en-CA', { timeZone: here().tz, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(u * 1000)); }
+function stamp(u, d) {
+  if (civilIn(u) === d) return clock(u);
+  return new Intl.DateTimeFormat(locale(), { day: 'numeric', month: 'short', timeZone: here().tz }).format(new Date(u * 1000)) + ' ' + clock(u);
+}
+function windowText(a, b, d) { return civilIn(a) === civilIn(b) ? `${stamp(a, d)} – ${clock(b)}` : `${stamp(a, d)} – ${stamp(b, d)}`; }
+function windowsRow(k, ps, d) {
+  return ps.length ? `<div class="row"><span>${esc(t(k))}</span><span class="v">${ps.map(p => esc(windowText(p.start, p.end, d))).join('<br>')}</span></div>` : '';
+}
+function mKind() {
+  return S.mKind || ({ tamil: 'gowri', telugu: 'gowri', malayalam: 'hora', kannada: 'hora' }[S.culture] || 'choghadiya');
+}
+function muhurtasCard(fine, d) {
+  const k = mKind(), ps = { choghadiya: fine.choghadiya, gowri: fine.gowri, hora: fine.hora, lagna: fine.lagnas }[k];
+  const label = key => k === 'hora' ? name('grahas', key) : k === 'lagna' ? name('rashis', key) : name(k, key);
+  const now = Date.now() / 1000, cur = ps.findIndex(p => now >= p.start && now < p.end);
+  const from = mAll ? 0 : Math.max(cur, 0), list = ps.slice(from, mAll ? ps.length : from + 3);
+  return `<p class="label">${esc(t('dm.title'))}</p>
+    <div class="seg" style="margin-bottom:8px">${['choghadiya', 'gowri', 'hora', 'lagna'].map(x => `<button data-mk="${x}" class="${k === x ? 'on' : ''}">${esc(t('dm.' + x))}</button>`).join('')}</div>
+    ${list.map((p, j) => { const i = from + j, marked = k === 'choghadiya' || k === 'gowri';
+      const night = mAll && i > 0 && p.night && !ps[i - 1].night ? `<div class="small muted" style="margin-top:6px;font-weight:700">${esc(t('dm.night'))}</div>` : '';
+      return `${night}<div class="mrow ${i === cur ? 'now' : ''}"><span class="mdot ${marked ? (FAVOURED.has(p.key) ? 'fav' : 'ring') : ''}"></span><span class="grow">${esc(label(p.key))}${i === cur ? ` <b class="small">${esc(t('dm.now'))}</b>` : ''}</span><span class="muted">${esc(windowText(p.start, p.end, d))}</span></div>`; }).join('')}
+    <button class="linkbtn" data-mall>${mAll ? '⌃ ' + esc(t('c.done')) : '⌄ ' + esc(t('f.all'))}</button>`;
+}
+function wireMuhurtas(fine, d) {
+  const c = $('#mcard'); if (!c) return;
+  c.querySelectorAll('[data-mk]').forEach(b => b.onclick = () => { S.mKind = b.dataset.mk; save(); c.innerHTML = muhurtasCard(fine, d); wireMuhurtas(fine, d); });
+  c.querySelector('[data-mall]').onclick = () => { mAll = !mAll; c.innerHTML = muhurtasCard(fine, d); wireMuhurtas(fine, d); };
 }
 function wireFestivals(root = $('#main')) {
   root.querySelectorAll('[data-f]').forEach(el => el.onclick = () => festivalSheet(el.dataset.f, el.dataset.d));
@@ -382,6 +428,26 @@ async function viewVrats() {
   $('#main').querySelectorAll('[data-vf]').forEach(b => b.onclick = () => { vcFilter = b.dataset.vf || null; viewVrats(); });
 }
 
+// ---------------------------------------------------------------- families
+// As on iOS (Core/Personal.swift): people kept in families, each with a relation.
+const RELATIONS = ['self', 'wife', 'husband', 'son', 'daughter', 'father', 'mother', 'brother', 'sister', 'grandfather', 'grandmother', 'grandson',
+  'granddaughter', 'fatherInLaw', 'motherInLaw', 'sonInLaw', 'daughterInLaw', 'uncle', 'aunt', 'nephew', 'niece', 'cousin', 'other'];
+function relationSex(r) {
+  if (['wife', 'daughter', 'mother', 'sister', 'grandmother', 'granddaughter', 'motherInLaw', 'daughterInLaw', 'aunt', 'niece'].includes(r)) return 'female';
+  if (['husband', 'son', 'father', 'brother', 'grandfather', 'grandson', 'fatherInLaw', 'sonInLaw', 'uncle', 'nephew'].includes(r)) return 'male';
+  return null;
+}
+function defaultFamily() {
+  if (!S.families.length) { S.families.push({ id: crypto.randomUUID(), name: t('fam.default') }); save(); }
+  return S.families[0];
+}
+function adoptFamilyless() {
+  if (!S.people.some(p => !p.family)) return;
+  const f = defaultFamily(); S.people.forEach(p => { p.family ||= f.id; }); save();
+}
+const personLabel = p => p.relation ? `${p.name} · ${t('rel.' + p.relation)}` : p.name;
+let jkFamily = null;
+
 // ---------------------------------------------------------------- jathakam
 // As on iOS (Views/JatakamViews.swift): the chart and its vargas in South,
 // North or East Indian style, three dasha systems, and the family's dasha
@@ -442,7 +508,7 @@ async function viewJathakam() {
   const person = ps.find(p => p.id === jkPerson) || ps[0];
   let body = '';
   if (jkSection < 2) {
-    body += `<div class="card"><p class="label">${esc(t('jk.whose'))}</p><div style="display:flex;gap:8px"><select id="jkp">${ps.map(p => `<option value="${p.id}" ${p === person ? 'selected' : ''}>${esc(p.name)}</option>`).join('')}</select>
+    body += `<div class="card"><p class="label">${esc(t('jk.whose'))}</p><div style="display:flex;gap:8px"><select id="jkp">${ps.map(p => `<option value="${p.id}" ${p === person ? 'selected' : ''}>${esc(personLabel(p))}</option>`).join('')}</select>
       <button class="btn soft" data-add>＋</button>${person ? `<button class="btn soft" data-edit>${esc(t('c.edit'))}</button>` : ''}</div>
       ${person ? `<div class="small muted" style="margin-top:6px">${esc(greg(person.date, { day: 'numeric', month: 'short', year: 'numeric' }))}${person.minutes != null ? ` · ${pad(Math.floor(person.minutes / 60))}:${pad(person.minutes % 60)}` : ''} · ${esc(person.place.name)}</div>` : `<p class="small muted">${esc(t('jk.noFamily'))}</p>`}</div>`;
   }
@@ -471,7 +537,8 @@ async function viewJathakam() {
       <div class="dashas">${dashaTree(d.periods, sys, now, 0)}</div>`;
   }
   if (jkSection === 2) {
-    const fam = []; for (const p of ps) fam.push([p, await jataka(p)]);
+    adoptFamilyless();
+    const fam = []; for (const p of ps.filter(x => !jkFamily || x.family === jkFamily)) fam.push([p, await jataka(p)]);
     const Y = 31557600, from = jkAhead ? now : now - jkSpan * Y, to = jkAhead ? now + jkSpan * Y : now;
     const sandhis = [];
     for (const [p, jj] of fam) { const ms = jj.vimshottari.periods; for (let i = 1; i < ms.length; i++) if (ms[i].start >= from && ms[i].start < to) sandhis.push({ p, a: ms[i - 1], b: ms[i], s: ms[i - 1].children.at(-1).start, e: ms[i].children[0].end }); }
@@ -479,10 +546,11 @@ async function viewJathakam() {
     const pct = u => ((Math.min(Math.max(u, from), to) - from) / (to - from) * 100).toFixed(2);
     body += `<div style="display:flex;gap:8px;align-items:center"><div class="seg" style="flex:1"><button data-ahead="1" class="${jkAhead ? 'on' : ''}">${esc(t('jk.ahead'))}</button><button data-ahead="0" class="${!jkAhead ? 'on' : ''}">${esc(t('jk.past'))}</button></div>
       <select id="jkspan" style="width:auto">${[10, 20, 40].map(n => `<option value="${n}" ${n === jkSpan ? 'selected' : ''}>${esc(t('jk.span', n))}</option>`).join('')}</select></div>
+      ${S.families.length > 1 ? `<div class="vc-chips"><button class="pill ${!jkFamily ? 'on' : ''}" data-jf="">${esc(t('f.all'))}</button>${S.families.map(f => `<button class="pill ${jkFamily === f.id ? 'on' : ''}" data-jf="${f.id}">${esc(f.name)}</button>`).join('')}</div>` : ''}
       <p class="small muted">${esc(t('jk.sandhiNote'))}</p>
       ${!fam.length ? `<div class="card"><p>${esc(t('jk.noFamily'))}</p><button class="btn" data-add>＋ ${esc(t('m.addProfile'))}</button></div>` : `
       <div class="card"><div class="small muted" style="display:flex;justify-content:space-between"><span>${esc(dLabel(from))}</span><span>${esc(dLabel(to))}</span></div>
-        ${fam.map(([p, jj]) => `<div style="margin-top:10px"><b>${esc(p.name)}</b><div class="tl">${jj.vimshottari.periods.filter(m => m.end > from && m.start < to).map(m => `<span class="seg-m" style="left:${pct(m.start)}%;width:${(pct(m.end) - pct(m.start)).toFixed(2)}%;background:${GCOL[m.key]}">${pct(m.end) - pct(m.start) > 6 ? esc(name('grahaShort', m.key)) : ''}</span>`).join('')}
+        ${fam.map(([p, jj]) => `<div style="margin-top:10px"><b>${esc(personLabel(p))}</b><div class="tl">${jj.vimshottari.periods.filter(m => m.end > from && m.start < to).map(m => `<span class="seg-m" style="left:${pct(m.start)}%;width:${(pct(m.end) - pct(m.start)).toFixed(2)}%;background:${GCOL[m.key]}">${pct(m.end) - pct(m.start) > 6 ? esc(name('grahaShort', m.key)) : ''}</span>`).join('')}
           ${sandhis.filter(x => x.p === p).map(x => `<span class="band" style="left:${pct(x.s)}%;width:${Math.max(.8, pct(x.e) - pct(x.s)).toFixed(2)}%"></span>`).join('')}</div></div>`).join('')}</div>
       ${sandhis.length ? `<div class="card"><p class="label">${esc(t('jk.sandhi'))}</p>${sandhis.map(x => `<div class="list-row"><div class="grow"><b>${esc(x.p.name)}</b><div><span style="color:${GCOL[x.a.key]}">●</span> ${esc(name('grahas', x.a.key))} → <span style="color:${GCOL[x.b.key]}">●</span> ${esc(name('grahas', x.b.key))}</div><div class="small muted">${esc(dLabel(x.s))} – ${esc(dLabel(x.e))}</div></div><b style="color:var(--accent)">${esc(dLabel(x.b.start))}</b></div>`).join('')}</div>` : ''}
       <button class="btn soft" data-add>＋ ${esc(t('m.addProfile'))}</button>`}`;
@@ -496,8 +564,50 @@ async function viewJathakam() {
   q('#jkspan')?.addEventListener('change', e => { jkSpan = +e.target.value; viewJathakam(); });
   qa('[data-sys]').forEach(b => b.onclick = () => { jkSystem = b.dataset.sys; viewJathakam(); });
   qa('[data-ahead]').forEach(b => b.onclick = () => { jkAhead = b.dataset.ahead === '1'; viewJathakam(); });
+  qa('[data-jf]').forEach(b => b.onclick = () => { jkFamily = b.dataset.jf || null; viewJathakam(); });
   qa('[data-add]').forEach(b => b.onclick = () => personEditor(null, '', rec => { jkPerson = rec.id; viewJathakam(); }));
   q('[data-edit]')?.addEventListener('click', () => personEditor(person, '', () => viewJathakam()));
+}
+
+// ---------------------------------------------------------------- planets & eclipses
+// As on iOS (Views/SkyView.swift): the planets now and the year's sign
+// changes, stations and eclipses for home. Events only.
+const skyCache = new Map();
+let skyYear = new Date().getFullYear(), skyFilter = 'all';
+async function skyEvents(y) {
+  const key = `${y}|${S.home.id}`;
+  if (!skyCache.has(key)) skyCache.set(key, engine({ op: 'sky', year: y, location: S.home }));
+  return skyCache.get(key);
+}
+function skyTitle(e) {
+  if (e.kind === 'ingress') return t('sk.enters', name('grahas', e.graha), name('rashis', e.sign));
+  if (e.kind === 'retrograde') return t('sk.retro', name('grahas', e.graha));
+  if (e.kind === 'direct') return t('sk.direct', name('grahas', e.graha));
+  return `${t(e.kind === 'solar-eclipse' ? 'sk.solar' : 'sk.lunar')} · ${t('sk.' + e.eclipse)}`;
+}
+async function viewSky() {
+  loading();
+  const tz = S.home.tz, nowLocal = new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()).split(':');
+  const now = await engine({ op: 'jataka', date: today(), minutes: +nowLocal[0] * 60 + +nowLocal[1], location: S.home });
+  const ev = (await skyEvents(skyYear)).filter(e => skyFilter === 'all' || (skyFilter === 'eclipses' ? e.kind.endsWith('eclipse') : skyFilter === 'ingress' ? e.kind === 'ingress' : e.kind === 'retrograde' || e.kind === 'direct'));
+  const month = u => new Intl.DateTimeFormat(locale(), { month: 'long', year: 'numeric', timeZone: tz }).format(new Date(u * 1000));
+  let html = `<div class="card"><p class="label">${esc(t('sk.now'))}</p><div class="planets">${now.grahas.map(g => `<div><span style="color:${GCOL[g.graha]}">●</span> <b>${esc(name('grahas', g.graha))}${g.retrograde ? ' ᴿ' : ''}</b><div class="small muted">${esc(name('rashis', g.sign))} ${Math.floor(g.degrees)}° · ${esc(name('nakshatras', g.nakshatra))}</div></div>`).join('')}</div></div>
+    <div class="dayhead" style="margin:0"><div class="nav"><button class="arrow" data-sy="-1">‹</button><b class="serif" style="font-size:22px">${skyYear}</b><button class="arrow" data-sy="1">›</button></div></div>
+    <div class="seg" style="margin:8px 0 14px">${[['all', 'f.all'], ['eclipses', 'sk.eclipses'], ['ingress', 'sk.ingress'], ['stations', 'sk.stations']].map(([k, l]) => `<button data-sf="${k}" class="${skyFilter === k ? 'on' : ''}">${esc(t(l))}</button>`).join('')}</div>`;
+  let cur = '';
+  for (const e of ev) {
+    const m = month(e.at);
+    if (m !== cur) { html += `${cur ? '</div>' : ''}<p class="label" style="margin-top:12px">${esc(m)}</p><div class="card">`; cur = m; }
+    const icon = e.kind === 'ingress' ? '→' : e.kind.endsWith('eclipse') ? (e.kind === 'solar-eclipse' ? '☀' : '☾') : '↺';
+    html += `<div class="list-row"><span style="font-size:20px;width:24px;text-align:center;color:${e.kind.endsWith('eclipse') ? 'var(--accent)' : GCOL[e.graha] || 'var(--muted)'}">${icon}</span><div class="grow"><b>${esc(skyTitle(e))}</b>
+      <div class="small muted">${esc(dLabel(e.at))} · ${esc(clock(e.at))}</div>
+      ${e.visible !== undefined ? `<div class="small" style="font-weight:700;color:${e.visible ? 'var(--accent)' : 'var(--muted)'}">${esc(t(e.visible ? 'sk.visible' : 'sk.notVisible', S.home.name))}</div>` : ''}
+      ${e.start ? `<div class="small muted">${esc(clock(e.start))} – ${esc(clock(e.end))} · ${esc(t('sk.greatest', clock(e.at)))}</div>` : ''}</div></div>`;
+  }
+  html += (cur ? '</div>' : '') + `<p class="small muted">${esc(t('sk.note'))}</p>`;
+  $('#main').innerHTML = html;
+  $('#main').querySelectorAll('[data-sy]').forEach(b => b.onclick = () => { skyYear += +b.dataset.sy; viewSky(); });
+  $('#main').querySelectorAll('[data-sf]').forEach(b => b.onclick = () => { skyFilter = b.dataset.sf; viewSky(); });
 }
 
 // ---------------------------------------------------------------- temples
@@ -653,11 +763,14 @@ async function viewPeople() {
       const ds = p.anchor ? await engine({ op: 'personalDates', handle: await cal(y), anchor: p.anchor, kind: p.kind || 'birthday', basis: p.basis }).catch(() => []) : [];
       next = ds.find(d => d >= today()); if (next) break;
     }
-    rows.push(`<div class="list-row"><div class="grow"><b>${esc(t(p.kind === 'remembrance' ? 'pp.remembranceOf' : 'pp.birthdayOf', p.name))}</b> <span class="small muted">${esc(p.sex === 'female' ? t('pp.female') : p.sex === 'male' ? t('pp.male') : '')}</span>
+    rows.push(`<div class="list-row"><div class="grow"><b>${esc(t(p.kind === 'remembrance' ? 'pp.remembranceOf' : 'pp.birthdayOf', p.name))}</b> <span class="small" style="color:var(--accent);font-weight:700">${p.relation ? esc(t('rel.' + p.relation)) : ''}</span>
       <div class="small muted">${esc(natalLine(p.anchor))}</div>${next ? `<div class="small" style="color:var(--accent)">${esc(greg(next))}</div>` : ''}</div>
       <button class="btn soft" data-edit="${p.id}">${esc(t('c.edit'))}</button></div>`);
   }
-  $('#main').innerHTML = `<div class="card"><p class="label">${esc(t('pp.title'))}</p><p class="small muted">${esc(t('pp.intro'))}</p>${rows.join('') || ''}</div>
+  adoptFamilyless();
+  const groups = [...S.families.map(f => [f.name, S.people.map((p, i) => [p, rows[i]]).filter(([p]) => p.family === f.id)])].filter(([, l]) => l.length);
+  $('#main').innerHTML = `<p class="label">${esc(t('pp.title'))}</p><p class="small muted">${esc(t('pp.intro'))}</p>
+    ${groups.map(([n, l]) => `<div class="card"><p class="label">${esc(n)}</p>${l.map(([, r]) => r).join('')}</div>`).join('')}
     <button class="btn block" data-add>＋ ${esc(t('pp.add'))}</button>`;
   $('#main').querySelector('[data-add]').onclick = () => personEditor(null);
   $('#main').querySelectorAll('[data-edit]').forEach(b => b.onclick = () => personEditor(S.people.find(p => p.id === b.dataset.edit)));
@@ -666,6 +779,9 @@ function personEditor(person, presetSex, onSaved) {
   const p = Object.assign({ _seq: 0 }, person || { id: crypto.randomUUID(), name: '', sex: presetSex || '', kind: 'birthday', date: '', minutes: null, place: S.home });
   const o = sheet(`<h2 class="serif">${esc(person ? p.name : t('pp.add'))}</h2>
     <label class="field"><span>${esc(t('pp.name'))}</span><input type="text" id="pn" value="${esc(p.name)}"></label>
+    <div class="field"><span>${esc(t('fam.family'))}</span><select id="pfam">${S.families.map(f => `<option value="${f.id}" ${f.id === (p.family || S.families[0]?.id) ? 'selected' : ''}>${esc(f.name)}</option>`).join('')}
+      ${S.families.length ? '' : `<option value="" selected>${esc(t('fam.default'))}</option>`}<option value="+">＋ ${esc(t('fam.new'))}</option></select></div>
+    <label class="field"><span>${esc(t('fam.relation'))}</span><select id="prel"><option value="">–</option>${RELATIONS.map(r => `<option value="${r}" ${p.relation === r ? 'selected' : ''}>${esc(t('rel.' + r))}</option>`).join('')}</select></label>
     <div class="field"><span>${esc(t('pp.sex'))}</span><div class="seg"><button data-sex="female" class="${p.sex === 'female' ? 'on' : ''}">${esc(t('pp.female'))}</button><button data-sex="male" class="${p.sex === 'male' ? 'on' : ''}">${esc(t('pp.male'))}</button></div></div>
     <div class="field"><span>${esc(t('pp.kind'))}</span><div class="seg"><button data-kind="birthday" class="${p.kind !== 'remembrance' ? 'on' : ''}">${esc(t('pp.birthday'))}</button><button data-kind="remembrance" class="${p.kind === 'remembrance' ? 'on' : ''}">${esc(t('pp.remembrance'))}</button></div></div>
     <label class="field"><span>${esc(t('pp.born'))}</span><input type="date" id="pd" min="1900-01-01" max="${today()}" value="${esc(p.date)}"></label>
@@ -689,6 +805,14 @@ function personEditor(person, presetSex, onSaved) {
         catch (e) { if (mine === p._seq) q('#preview').textContent = t('pp.failed'); }
       };
       o2.querySelectorAll('[data-sex]').forEach(b => b.onclick = () => { p.sex = b.dataset.sex; o2.querySelectorAll('[data-sex]').forEach(x => x.classList.toggle('on', x === b)); });
+      q('#prel').onchange = e => { const sx = relationSex(e.target.value); if (sx) { p.sex = sx; o2.querySelectorAll('[data-sex]').forEach(x => x.classList.toggle('on', x.dataset.sex === sx)); } };
+      q('#pfam').onchange = e => {
+        if (e.target.value !== '+') return;
+        const n = (prompt(t('fam.name')) || '').trim();
+        if (!n) { e.target.value = S.families[0]?.id || ''; return; }
+        const f = { id: crypto.randomUUID(), name: n }; S.families.push(f); save();
+        e.target.insertAdjacentHTML('afterbegin', `<option value="${f.id}">${esc(n)}</option>`); e.target.value = f.id;
+      };
       o2.querySelectorAll('[data-kind]').forEach(b => b.onclick = () => { p.kind = b.dataset.kind; o2.querySelectorAll('[data-kind]').forEach(x => x.classList.toggle('on', x === b)); });
       q('#pd').onchange = preview; q('#pt').onchange = preview;
       placePicker(q('#ppick'), pl => { p.place = pl; q('#pplace').textContent = pl.name; q('#ppick').querySelector('.results').innerHTML = ''; preview(); });
@@ -703,7 +827,8 @@ function personEditor(person, presetSex, onSaved) {
         await preview();
         btn.disabled = false; btn.textContent = t('c.save');
         if (!p._anchor) { q('#perr').textContent = '⚠ ' + t('pp.failed'); return; }
-        const rec = { id: p.id, name: p.name, sex: p.sex, kind: p.kind, date: p.date, minutes: p._minutes ?? null, place: p.place, anchor: p._anchor };
+        const fam = q('#pfam').value && q('#pfam').value !== '+' ? q('#pfam').value : defaultFamily().id;
+        const rec = { id: p.id, name: p.name, sex: p.sex, kind: p.kind, date: p.date, minutes: p._minutes ?? null, place: p.place, anchor: p._anchor, family: fam, relation: q('#prel').value || null };
         const i = S.people.findIndex(x => x.id === p.id); if (i >= 0) S.people[i] = rec; else S.people.push(rec);
         save(); o2.remove(); onSaved ? onSaved(rec) : render();
       };
@@ -745,7 +870,7 @@ function viewMuhurtham() {
   const events = pack.muhurtham?.events || [];
   const couple = ['marriage', 'engagement'].includes(M.event);
   const births = S.people.filter(p => p.kind !== 'remembrance' && p.anchor);
-  const opt = (list, sel, none) => `${none ? `<option value="">${esc(none)}</option>` : `<option value="">${esc(t('m.choose'))}</option>`}` + list.map(p => `<option value="${p.id}" ${p.id === sel ? 'selected' : ''}>${esc(p.name)}</option>`).join('') + `<option value="+">＋ ${esc(t('m.addProfile'))}</option>`;
+  const opt = (list, sel, none) => `${none ? `<option value="">${esc(none)}</option>` : `<option value="">${esc(t('m.choose'))}</option>`}` + list.map(p => `<option value="${p.id}" ${p.id === sel ? 'selected' : ''}>${esc(personLabel(p))}</option>`).join('') + `<option value="+">＋ ${esc(t('m.addProfile'))}</option>`;
   const bride = births.find(p => p.id === M.bride), groom = births.find(p => p.id === M.groom);
   const ready = !couple || (bride && groom);
   $('#main').innerHTML = `<p class="muted">${esc(t('m.intro'))}</p>
