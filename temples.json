@@ -9,6 +9,7 @@
   "shiva",
   "devi",
   "lakshmi",
+  "saraswati",
   "ganesha",
   "murugan",
   "hanuman",
@@ -5561,7 +5562,7 @@
   },
   {
    "id": "basara",
-   "deity": "devi",
+   "deity": "saraswati",
    "name": "Gnana Saraswati Temple",
    "place": "Basara, Telangana",
    "lat": 18.87778,
@@ -13706,7 +13707,7 @@
   },
   {
    "id": "sringeri-2",
-   "deity": "devi",
+   "deity": "saraswati",
    "name": "Sharadamba Temple",
    "place": "Sringeri, Karnataka",
    "lat": 13.418,
@@ -17092,6 +17093,169 @@
    "rail": [],
    "wiki": "https://en.wikipedia.org/wiki/Thakurbari_Temple,_Gangtok",
    "built": "1935 CE"
+  },
+  {
+   "id": "koothanur",
+   "deity": "saraswati",
+   "name": "Koothanur Maha Saraswathi Temple",
+   "place": "Koothanur, Tamil Nadu",
+   "lat": 10.93319,
+   "lon": 79.64566,
+   "about": "One of the very few temples in Tamil Nadu where Saraswati is the main deity, associated with the poet Ottakoothar; children are brought here on Vijayadashami to begin their learning.",
+   "wiki": "https://en.wikipedia.org/wiki/Koothanur_Maha_Saraswathi_Temple",
+   "air": [
+    [
+     "Tiruchirappalli International Airport",
+     "TRZ",
+     103
+    ],
+    [
+     "Pondicherry Airport",
+     "PNY",
+     116
+    ]
+   ],
+   "rail": [
+    [
+     "Peralam Junction",
+     3.0
+    ],
+    [
+     "Nannilam",
+     5.4
+    ]
+   ]
+  },
+  {
+   "id": "panachikkadu",
+   "deity": "saraswati",
+   "name": "Panachikkad Dakshina Mookambika Temple",
+   "place": "Panachikkad, Kottayam, Kerala",
+   "lat": 9.53681,
+   "lon": 76.55039,
+   "about": "Saraswati in a spring-fed shrine in a grove, the Mookambika of the south; through Navaratri the temple is crowded, and on Vijayadashami thousands of children write their first letters here.",
+   "wiki": "https://en.wikipedia.org/wiki/Panachikkad",
+   "air": [
+    [
+     "Cochin International Airport",
+     "COK",
+     70
+    ],
+    [
+     "Thiruvananthapuram International Airport",
+     "TRV",
+     124
+    ]
+   ],
+   "rail": [
+    [
+     "Chingavanam",
+     2.9
+    ],
+    [
+     "Kottayam",
+     6.7
+    ]
+   ],
+   "tips": [
+    "Kerala temples keep a traditional dress code: men in mundu, usually without a shirt inside; women in saree, set-mundu or salwar."
+   ]
+  },
+  {
+   "id": "wargal",
+   "deity": "saraswati",
+   "name": "Wargal Saraswathi Temple",
+   "place": "Wargal, Telangana",
+   "lat": 17.77611,
+   "lon": 78.61528,
+   "about": "A hill temple of Saraswati in Siddipet district, built by the Sri Vidya Saraswathi Shani Temple trust; Aksharabhyasam ceremonies are held here every day.",
+   "wiki": "https://en.wikipedia.org/wiki/Wargal_Saraswati_Temple",
+   "air": [
+    [
+     "Rajiv Gandhi International Airport",
+     "HYD",
+     64
+    ],
+    [
+     "Nanded Airport",
+     "NDC",
+     208
+    ]
+   ],
+   "rail": [
+    [
+     "Iranagaram",
+     9.9
+    ],
+    [
+     "Gajwel",
+     10.8
+    ]
+   ]
+  },
+  {
+   "id": "pilani-sharda",
+   "deity": "saraswati",
+   "name": "Sharda Peeth",
+   "place": "Pilani, Rajasthan",
+   "lat": 28.36388,
+   "lon": 75.58702,
+   "about": "A white-marble temple of Saraswati on the campus of BITS Pilani, completed in 1960, its walls carved with figures of sages and scholars.",
+   "wiki": "https://en.wikipedia.org/wiki/BITS_Pilani",
+   "air": [
+    [
+     "Maharaja Agrasen International Airport",
+     "HSS",
+     93
+    ],
+    [
+     "Indira Gandhi International Airport",
+     "DEL",
+     149
+    ]
+   ],
+   "rail": [
+    [
+     "Surajgarh",
+     15.9
+    ],
+    [
+     "Chirawa",
+     16.8
+    ]
+   ]
+  },
+  {
+   "id": "pehowa",
+   "deity": "saraswati",
+   "name": "Prithudak Tirtha",
+   "place": "Pehowa, Haryana",
+   "lat": 29.98,
+   "lon": 76.58,
+   "about": "On the old course of the Saraswati, a tirtha where families perform rites for their ancestors; the temples of the town honour the river goddess.",
+   "wiki": "https://en.wikipedia.org/wiki/Pehowa",
+   "air": [
+    [
+     "Shaheed Bhagat Singh International Airport",
+     "IXC",
+     80
+    ],
+    [
+     "Maharaja Agrasen International Airport",
+     "HSS",
+     120
+    ]
+   ],
+   "rail": [
+    [
+     "Pehowa Road",
+     11.4
+    ],
+    [
+     "Pindarsi",
+     13.8
+    ]
+   ]
   }
  ],
  "parents": {
@@ -17099,6 +17263,7 @@
   "krishna": "vishnu",
   "rama": "vishnu",
   "jagannath": "vishnu",
-  "lakshmi": "devi"
+  "lakshmi": "devi",
+  "saraswati": "devi"
  }
 }
