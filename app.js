@@ -36,11 +36,13 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 
 // ---------------------------------------------------------------- text
 const lang = () => (S.native && pack ? pack.language : 'en');
-function t(key, ...args) {
+function t(key, ...args) { return tIn(lang(), key, ...args); }
+// The same in a given language: a matching reading can be read in any of them.
+function tIn(L, key, ...args) {
   const e = STR[key];
-  let s = e ? (e[lang()] ?? e.en) : key;
+  let s = e ? (e[L] ?? e.en) : key;
   // English in the tradition's own vocabulary ("Muhurtham" -> "Shubh Muhurat").
-  if (lang() === 'en') for (const [a, b] of pack?.display?.terms || []) s = s.split(a).join(b);
+  if (L === 'en') for (const [a, b] of pack?.display?.terms || []) s = s.split(a).join(b);
   let i = 0;
   return s.replace(/%(?:(\d+)\$)?([@d])/g, (_, n) => String(args[n ? Number(n) - 1 : i++] ?? ''));
 }
@@ -1228,9 +1230,11 @@ const matchTitle = (c = S.culture) => t('mt.n.' + c);
 const STAR_KEYS = ['ashwini', 'bharani', 'krittika', 'rohini', 'mrigashira', 'ardra', 'punarvasu', 'pushya', 'ashlesha', 'magha', 'purva_phalguni',
   'uttara_phalguni', 'hasta', 'chitra', 'swati', 'vishakha', 'anuradha', 'jyeshtha', 'mula', 'purva_ashadha', 'uttara_ashadha', 'shravana',
   'dhanishta', 'shatabhisha', 'purva_bhadrapada', 'uttara_bhadrapada', 'revati'];
-const MT = { bride: '', groom: '', culture: '', eight: false };
+const MT = { bride: '', groom: '', culture: '', eight: false, lang: '' };
+const READ_LANGS = [['en', 'English'], ['ml', 'മലയാളം'], ['ta', 'தமிழ்'], ['hi', 'हिन्दी'], ['te', 'తెలుగు'], ['kn', 'ಕನ್ನಡ'],
+  ['gu', 'ગુજરાતી'], ['mr', 'मराठी'], ['bn', 'বাংলা'], ['or', 'ଓଡ଼ିଆ'], ['ne', 'नेपाली']];
 async function viewMatch() {
-  const trad = MT.culture || S.culture, both = BOTH.includes(trad), ten = PORUTHAM.includes(trad) && !(both && MT.eight);
+  const trad = MT.culture || S.culture, both = BOTH.includes(trad), ten = PORUTHAM.includes(trad) && !(both && MT.eight), L = MT.lang || lang();
   const list = S.people.filter(p => p.kind !== 'remembrance' && p.anchor && p.place);
   if (!MT.bride) MT.bride = list.find(p => p.sex === 'female')?.id || '';
   if (!MT.groom) MT.groom = list.find(p => p.sex === 'male')?.id || '';
@@ -1238,7 +1242,8 @@ async function viewMatch() {
   const opt = (l, sel) => `<option value="">${esc(t('m.choose'))}</option>` + l.map(p => `<option value="${p.id}" ${p.id === sel ? 'selected' : ''}>${esc(personLabel(p))}</option>`).join('') + `<option value="+">＋ ${esc(t('m.addProfile'))}</option>`;
   $('#main').innerHTML = `<label class="field"><span>${esc(t('mt.tradition'))}</span><select id="xc">${CULTURES.map(c => `<option value="${c.id}" ${c.id === trad ? 'selected' : ''}>${esc(matchTitle(c.id))} · ${esc(S.native ? c.native : c.en)}</option>`).join('')}</select></label>
     <h2 class="serif" style="margin:0">${esc(matchTitle(trad))}</h2><p class="muted" style="margin-top:2px">${esc(t(ten ? 'mt.ten' : 'mt.eight'))}</p>
-    <p class="small" style="background:var(--soft);padding:12px;border-radius:12px">${esc(t('mt.d.' + trad))}</p>
+    <p class="small" style="background:var(--soft);padding:12px;border-radius:12px">${esc(tIn(L, 'mt.d.' + trad))}</p>
+    <label class="field"><span>${esc(t('mt.readIn'))}</span><select id="xl">${READ_LANGS.map(([c, n]) => `<option value="${c}" ${c === L ? 'selected' : ''}>${esc(n)}</option>`).join('')}</select></label>
     ${both ? `<div class="seg" style="margin-bottom:10px"><button data-sys="0" class="${!MT.eight ? 'on' : ''}">${esc(t('mt.sysTen'))}</button><button data-sys="1" class="${MT.eight ? 'on' : ''}">${esc(t('mt.sysEight'))}</button></div>` : ''}
     <div class="card"><p class="label">${esc(t('m.couple'))}</p><p class="small muted">${esc(t('mt.choose'))}</p>
       <label class="field"><span>${esc(t('m.bride'))}</span><select id="xb">${opt(list.filter(p => p.sex !== 'male'), MT.bride)}</select><div class="small muted">${esc(natalLine(bride?.anchor))}</div></label>
@@ -1250,27 +1255,34 @@ async function viewMatch() {
   };
   pick($('#xb'), 'bride', 'female'); pick($('#xg'), 'groom', 'male');
   $('#xc').onchange = () => { MT.culture = $('#xc').value; MT.eight = false; viewMatch(); };
+  $('#xl').onchange = () => { MT.lang = $('#xl').value; viewMatch(); };
   $('#main').querySelectorAll('[data-sys]').forEach(b => b.onclick = () => { MT.eight = b.dataset.sys === '1'; viewMatch(); });
   if (!bride || !groom) return;
   $('#xres').innerHTML = '<div class="loading"><div class="ring"><i></i></div></div>';
   let r;
-  try { r = ten ? await poruthamReport(bride, groom) : await gunaMilanReport(bride, groom); }
+  // Dasa Sandhi is a South Indian check: with the eight kootas only where those homes use them.
+  try { r = ten ? await poruthamReport(bride, groom, L) : await gunaMilanReport(bride, groom, L, PORUTHAM.includes(trad)); }
   catch (e) { $('#xres').innerHTML = `<div class="card">${esc(t('c.error', e.message))}</div>`; return; }
-  if (tab !== 'match' || (MT.culture || S.culture) !== trad) return;
+  if (tab !== 'match' || (MT.culture || S.culture) !== trad || (MT.lang || lang()) !== L) return;
   $('#xres').innerHTML = matchReportHtml(r);
 }
 const birthSide = p => ({ date: p.date, minutes: p.minutes ?? undefined, location: p.place });
-async function poruthamReport(bride, groom) {
+async function poruthamReport(bride, groom, L) {
   const m = await engine({ op: 'poruthamMatch', bride: birthSide(bride), groom: birthSide(groom) });
-  // The Porutham app's text has English, Malayalam, Tamil and Hindi; stars and signs as this tradition names them.
-  const L = ['ml', 'ta', 'hi'].includes(lang()) ? lang() : 'en';
+  // Stars and signs as this tradition names them when it names them in L; otherwise the reading's own.
   const nm = (table, k) => { const e = pack?.names?.[table]?.[k]; return e ? (e[L] ?? e.en) : k; };
+  const has = L === 'en' || pack?.names?.nakshatras?.ashwini?.[L];
   return JSON.parse(window.PoruthamRender(L, m, { bride: bride.name, groom: groom.name, now: Date.now() / 1000,
-    stars: STAR_KEYS.map(k => nm('nakshatras', k)), signs: SIGNS.map(k => nm('rashis', k)) }));
+    ...(has ? { stars: STAR_KEYS.map(k => nm('nakshatras', k)), signs: SIGNS.map(k => nm('rashis', k)) } : {}) }));
 }
-async function gunaMilanReport(bride, groom) {
+async function gunaMilanReport(bride, groom, L, dasa) {
   const c = await engine({ op: 'gunaMilan', bride: birthSide(bride), groom: birthSide(groom) });
   const m = c.milan;
+  // Text in L; star, sign and graha names from the reading text in L.
+  const t = (k, ...a) => tIn(L, k, ...a);
+  const N = (window.PoruthamText[L] || window.PoruthamText.en).names;
+  const name = (table, k) => table === 'rashis' ? (N.signs[SIGNS.indexOf(k)] ?? k) : (N.lords[k] ?? k);
+  const natalLine = a => a ? [N.stars[STAR_KEYS.indexOf(a.nakshatra)] + (a.pada ? ' · ' + t('bs.pada', a.pada) : ''), a.moonSign && name('rashis', a.moonSign)].filter(Boolean).join(' · ') : '';
   const pts = x => Number.isInteger(x) ? String(x) : x % 1 === 0.5 ? (Math.floor(x) || '') + '½' : x.toFixed(1);
   const value = (k, v) => k.key === 'bhakoot' ? name('rashis', v) : k.key === 'graha-maitri' ? name('grahas', v) : t('gmv.' + v);
   const rows = m.kootas.map(k => {
@@ -1289,11 +1301,14 @@ async function gunaMilanReport(bride, groom) {
     verdict: `${kuja.filter(k => k.listed).length} / ${kuja.length}`, tags: [],
     sections: [[t('gm.manglik'), kuja.map(k => `${t('jk.kujaRow', k.house, k.from === 'lagna' ? t('jk.lagnaWord') : name('grahas', k.from))} · ${t(k.listed ? 'mt.marsListed' : 'jk.kujaNot')}`).join('\n')]] }));
   const yes = rows.filter(x => x.matching), no = rows.filter(x => !x.matching);
-  return { score: m.total, outOf: t('mt.outOf36'), band: t('gm.band.' + m.band), reading: null,
+  const r = { score: m.total, outOf: t('mt.outOf36'), band: t('gm.band.' + m.band), reading: null,
     bride: { label: t('m.bride'), star: natalLine(bride.anchor), sign: '' }, groom: { label: t('m.groom'), star: natalLine(groom.anchor), sign: '' },
     matching: t('mt.gave', yes.length), matchingNames: yes.map(x => x.name), notMatching: t('mt.gaveNone', no.length), notMatchingNames: no.map(x => x.name),
     notes: [m.nadiZero && t('gm.nadiRule'), m.bhakootZero && t('gm.bhakootRule')].filter(Boolean), rows, deeperTitle: t('mt.mangalTitle'), deeperNote: t('mt.marsNote'), deeper: mars,
     honestTitle: t('mt.honest'), honest: t('gm.note') };
+  // Dasa Sandhi, read as the ten-porutham reading reads it.
+  if (dasa) { const p = await poruthamReport(bride, groom, L); r.deeper.push(p.deeper[p.deeper.length - 1]); r.deeperTitle = p.deeperTitle; }
+  return r;
 }
 function matchReportHtml(r) {
   const br = s => esc(s).replace(/\n/g, '<br>');
