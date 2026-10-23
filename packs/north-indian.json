@@ -4667,6 +4667,153 @@
    }
   },
   {
+   "id": "nahay-khay",
+   "names": {
+    "en": "Nahay Khay (Chhath, day 1)",
+    "hi": "नहाय खाय"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "chhath",
+    "offsetDays": -2
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "sun",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, New Delhi",
+    "HinduPad Hindu festivals 2027 (https://hindupad.com/hindu-festivals-2027/)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The first day of Chhath: a purifying bath and a single sattvik meal.",
+     "hi": "छठ का पहला दिन: पवित्र स्नान और एक सात्त्विक भोजन।"
+    },
+    "traditions": {
+     "en": "The vratis, most often the women of the house, bathe in a river or pond, or at home with Ganga water, and clean the house and kitchen thoroughly. They eat one meal, cooked without onion or garlic, often rice, chana dal and lauki (bottle gourd), and this begins the four days of Chhath.",
+     "hi": "व्रती, प्रायः घर की स्त्रियाँ, नदी या तालाब में या घर पर गंगाजल से स्नान करती हैं और घर व रसोई को अच्छी तरह साफ़ करती हैं। वे बिना प्याज़-लहसुन का एक भोजन करती हैं, प्रायः चावल, चने की दाल और लौकी, और यहीं से छठ के चार दिन शुरू होते हैं।"
+    },
+    "howTo": {
+     "en": [
+      "Bathe early, in a river or pond if one is near, or at home.",
+      "Clean the house and kitchen.",
+      "Cook and eat one sattvik meal: rice, chana dal and lauki are traditional."
+     ],
+     "hi": [
+      "सुबह जल्दी स्नान करें, पास हो तो नदी या तालाब में, नहीं तो घर पर।",
+      "घर और रसोई की सफ़ाई करें।",
+      "एक सात्त्विक भोजन बनाकर खाएँ: चावल, चने की दाल और लौकी पारंपरिक हैं।"
+     ]
+    }
+   }
+  },
+  {
+   "id": "kharna",
+   "names": {
+    "en": "Kharna (Chhath, day 2)",
+    "hi": "खरना"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "chhath",
+    "offsetDays": -1
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "sun",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, New Delhi",
+    "HinduPad Hindu festivals 2027 (https://hindupad.com/hindu-festivals-2027/)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The second day of Chhath: a fast through the day, broken in the evening with kheer and roti offered to Chhathi Maiya.",
+     "hi": "छठ का दूसरा दिन: दिनभर उपवास, शाम को छठी मैया को खीर-रोटी का भोग लगाकर व्रत खोलना।"
+    },
+    "traditions": {
+     "en": "The vratis fast all day without water. In the evening they cook rasiya, kheer made with jaggery, and roti on a fresh earthen stove, offer it to Chhathi Maiya, and then eat it as prasad. Family and neighbours come to share the prasad. From this evening begins the thirty-six hour fast without water that lasts until the dawn offering.",
+     "hi": "व्रती दिनभर निर्जल उपवास रखती हैं। शाम को नए मिट्टी के चूल्हे पर गुड़ की खीर (रसियाव) और रोटी बनाकर छठी मैया को भोग लगाती हैं, फिर उसे प्रसाद के रूप में ग्रहण करती हैं। परिवार और पड़ोसी प्रसाद लेने आते हैं। इसी शाम से छत्तीस घंटे का निर्जल व्रत शुरू होता है, जो भोर के अर्घ्य तक चलता है।"
+    },
+    "howTo": {
+     "en": [
+      "Fast through the day, if you are keeping the vrat; those who are unwell, pregnant or elderly keep a gentle fast.",
+      "In the evening, cook kheer with jaggery and roti, and offer them to Chhathi Maiya.",
+      "Eat the prasad and share it with family and neighbours."
+     ],
+     "hi": [
+      "व्रत रखती हों तो दिनभर उपवास करें; अस्वस्थ, गर्भवती या बुज़ुर्ग हल्का व्रत रखें।",
+      "शाम को गुड़ की खीर और रोटी बनाकर छठी मैया को भोग लगाएँ।",
+      "प्रसाद ग्रहण करें और परिवार व पड़ोसियों में बाँटें।"
+     ]
+    }
+   }
+  },
+  {
+   "id": "usha-arghya",
+   "names": {
+    "en": "Usha Arghya (Chhath, day 4)",
+    "hi": "उषा अर्घ्य"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "chhath",
+    "offsetDays": 1
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "sun",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, New Delhi",
+    "HinduPad Hindu festivals 2027 (https://hindupad.com/hindu-festivals-2027/)"
+   ],
+   "content": {
+    "summary": {
+     "en": "The fourth and last day of Chhath: arghya to the rising sun, and the fast is broken.",
+     "hi": "छठ का चौथा और अंतिम दिन: उगते सूर्य को अर्घ्य, और व्रत का पारण।"
+    },
+    "traditions": {
+     "en": "Before dawn the families return to the ghats with the soop and daura, baskets of thekua, fruit and sugarcane, and the vratis stand in the water facing east. As the sun rises they offer arghya, water or milk poured from the soop, and pray for the family's wellbeing. They then break the fast with prasad, a little ginger and water, and the thekua is shared with everyone at the ghat and at home.",
+     "hi": "भोर से पहले परिवार सूप और दउरा, ठेकुआ, फल और गन्ने की टोकरियाँ लेकर घाट पर लौटते हैं, और व्रती पूर्व की ओर मुँह कर जल में खड़ी होती हैं। सूर्य उगते ही वे सूप से जल या दूध का अर्घ्य देती हैं और परिवार के कल्याण की प्रार्थना करती हैं। फिर प्रसाद, थोड़ा अदरक और जल लेकर व्रत खोलती हैं, और ठेकुआ घाट पर और घर में सबमें बाँटा जाता है।"
+    },
+    "howTo": {
+     "en": [
+      "Reach the ghat before dawn with the soop and daura.",
+      "Offer arghya to the rising sun, standing in the water facing east.",
+      "Break the fast with prasad, and share thekua with everyone."
+     ],
+     "hi": [
+      "सूप और दउरा लेकर भोर से पहले घाट पहुँचें।",
+      "जल में पूर्व की ओर खड़े होकर उगते सूर्य को अर्घ्य दें।",
+      "प्रसाद से व्रत खोलें और सबमें ठेकुआ बाँटें।"
+     ]
+    }
+   }
+  },
+  {
    "id": "tulsi-vivah",
    "names": {
     "en": "Tulsi Vivah",

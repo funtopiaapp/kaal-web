@@ -2050,6 +2050,110 @@
    }
   },
   {
+   "id": "suna-besha",
+   "names": {
+    "en": "Suna Besha",
+    "or": "ସୁନା ବେଶ"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "bahuda-yatra",
+    "offsetDays": 1
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "chariot",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, Bhubaneswar"
+   ],
+   "content": {
+    "summary": {
+     "en": "Ashadha Shukla Ekadashi in Puri: Jagannath, Balabhadra and Subhadra are adorned in gold on their chariots.",
+     "or": "ପୁରୀରେ ଆଷାଢ଼ ଶୁକ୍ଳ ଏକାଦଶୀ: ରଥ ଉପରେ ଜଗନ୍ନାଥ, ବଳଭଦ୍ର ଓ ସୁଭଦ୍ରାଙ୍କ ସୁନା ବେଶ।"
+    },
+    "traditions": {
+     "en": "The day after the Bahuda Yatra brings the chariots back to the Jagannath temple, the three deities, still on their chariots outside the Lion Gate, are dressed in gold: hands, feet, crowns and ornaments of gold are fitted to them in the evening. Lakhs of devotees fill the Bada Danda to see the Suna Besha, and the darshan continues late into the night. Across Odisha and in Jagannath temples elsewhere, the deities are adorned in their finest on this day.",
+     "or": "ବାହୁଡ଼ା ଯାତ୍ରାରେ ରଥ ଜଗନ୍ନାଥ ମନ୍ଦିରକୁ ଫେରିବା ପରଦିନ, ସିଂହଦ୍ୱାର ବାହାରେ ରଥ ଉପରେ ଥିବା ତିନି ଠାକୁରଙ୍କୁ ସୁନାରେ ସଜାଯାଏ: ସନ୍ଧ୍ୟାରେ ସୁନାର ହାତ, ପାଦ, ମୁକୁଟ ଓ ଅଳଙ୍କାର ଲାଗେ। ସୁନା ବେଶ ଦେଖିବାକୁ ଲକ୍ଷ ଲକ୍ଷ ଭକ୍ତ ବଡ଼ଦାଣ୍ଡରେ ଭରିଯାଆନ୍ତି, ଦର୍ଶନ ରାତି ଯାଏ ଚାଲେ। ଓଡ଼ିଶାସାରା ଓ ଅନ୍ୟତ୍ର ଜଗନ୍ନାଥ ମନ୍ଦିରରେ ଏହି ଦିନ ଠାକୁରଙ୍କୁ ସର୍ବୋତ୍ତମ ବେଶରେ ସଜାଯାଏ।"
+    },
+    "story": {
+     "en": "The custom is traced to the fifteenth-century reign of King Kapilendra Deva, who, returning victorious from the south, is said to have offered the wealth he brought back to Jagannath. Since then the Lord has been adorned in gold on this day as the king of Puri, receiving his people at the temple's door before he re-enters it.",
+     "or": "ଏହି ପରମ୍ପରା ପଞ୍ଚଦଶ ଶତାବ୍ଦୀର ରାଜା କପିଳେନ୍ଦ୍ର ଦେବଙ୍କ ସମୟରୁ ବୋଲି କୁହାଯାଏ; ଦକ୍ଷିଣରୁ ବିଜୟୀ ହୋଇ ଫେରି ସେ ଆଣିଥିବା ଧନ ଜଗନ୍ନାଥଙ୍କୁ ଅର୍ପଣ କରିଥିଲେ। ସେବେଠାରୁ ଏହି ଦିନ ପ୍ରଭୁ ପୁରୀର ରାଜା ଭାବେ ସୁନାରେ ସଜ୍ଜିତ ହୋଇ ମନ୍ଦିରରେ ପୁନଃପ୍ରବେଶ ପୂର୍ବରୁ ମନ୍ଦିର ଦ୍ୱାରରେ ଭକ୍ତଙ୍କୁ ଦର୍ଶନ ଦିଅନ୍ତି।"
+    },
+    "howTo": {
+     "en": [
+      "If you are in Puri, plan for large crowds on the Bada Danda in the evening; darshan continues into the night.",
+      "Elsewhere, visit a Jagannath temple, or watch the live broadcast with family.",
+      "Offer a lamp and tulsi to Jagannath at home, and sing a bhajan."
+     ],
+     "or": [
+      "ପୁରୀରେ ଥିଲେ ସନ୍ଧ୍ୟାରେ ବଡ଼ଦାଣ୍ଡରେ ବହୁତ ଭିଡ଼ ପାଇଁ ପ୍ରସ୍ତୁତ ରୁହନ୍ତୁ; ଦର୍ଶନ ରାତି ଯାଏ ଚାଲେ।",
+      "ଅନ୍ୟତ୍ର ଜଗନ୍ନାଥ ମନ୍ଦିରକୁ ଯାଆନ୍ତୁ, ବା ପରିବାର ସହ ସିଧା ପ୍ରସାରଣ ଦେଖନ୍ତୁ।",
+      "ଘରେ ଜଗନ୍ନାଥଙ୍କୁ ଦୀପ ଓ ତୁଳସୀ ଅର୍ପଣ କରି ଭଜନ ଗାଆନ୍ତୁ।"
+     ]
+    }
+   }
+  },
+  {
+   "id": "chandan-yatra",
+   "names": {
+    "en": "Chandan Yatra",
+    "or": "ଚନ୍ଦନ ଯାତ୍ରା"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "vaishakha",
+    "tithi": 3
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "boat",
+   "local": {},
+   "durationDays": 21,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, Bhubaneswar"
+   ],
+   "content": {
+    "summary": {
+     "en": "Twenty-one days from Akshaya Tritiya when Jagannath's festival images are taken out in boats on the Narendra tank, cooled with sandalwood.",
+     "or": "ଅକ୍ଷୟ ତୃତୀୟାରୁ ଏକୋଇଶ ଦିନ: ଜଗନ୍ନାଥଙ୍କ ବିଜେ ପ୍ରତିମା ଚନ୍ଦନ ଲାଗି ନରେନ୍ଦ୍ର ପୁଷ୍କରିଣୀରେ ନୌକା ବିହାର କରନ୍ତି।"
+    },
+    "traditions": {
+     "en": "In the heat of summer, the festival images of Jagannath, Madanmohana, with Rama, Krishna and the Pancha Pandava Shivas, are carried in procession each evening to the Narendra tank in Puri, anointed with sandalwood paste and taken out on decorated boats, the chapa. The first twenty-one days are the outer Chandan Yatra; another twenty-one inside the temple follow. Akshaya Tritiya, the first day, is also when the wood is consecrated and work begins on the chariots for the Rath Yatra.",
+     "or": "ଗ୍ରୀଷ୍ମର ତାପରେ ଜଗନ୍ନାଥଙ୍କ ବିଜେ ପ୍ରତିମା ମଦନମୋହନ, ରାମ, କୃଷ୍ଣ ଓ ପଞ୍ଚ ପାଣ୍ଡବ ଶିବଙ୍କ ସହ ପ୍ରତି ସନ୍ଧ୍ୟାରେ ଶୋଭାଯାତ୍ରାରେ ପୁରୀର ନରେନ୍ଦ୍ର ପୁଷ୍କରିଣୀକୁ ଯାଆନ୍ତି, ଚନ୍ଦନ ଲାଗି ସଜ୍ଜିତ ଚାପରେ ନୌକା ବିହାର କରନ୍ତି। ପ୍ରଥମ ଏକୋଇଶ ଦିନ ବାହାର ଚନ୍ଦନ ଯାତ୍ରା; ପରେ ମନ୍ଦିର ଭିତରେ ଆଉ ଏକୋଇଶ ଦିନ। ପ୍ରଥମ ଦିନ ଅକ୍ଷୟ ତୃତୀୟାରେ ରଥ ଯାତ୍ରା ପାଇଁ ରଥ ନିର୍ମାଣ କାଠ ପୂଜା କରି ଆରମ୍ଭ ହୁଏ।"
+    },
+    "story": {
+     "en": "Chandan, sandalwood, is offered to cool the Lord in the hottest weeks of the year. Tradition says Jagannath himself asked King Indradyumna for the sandalwood and the water play, and the festival is mentioned in the temple's oldest records. Its start on Akshaya Tritiya ties the season to the Rath Yatra to come: the same day the chariot builders begin.",
+     "or": "ବର୍ଷର ସବୁଠୁ ଗରମ ସପ୍ତାହରେ ପ୍ରଭୁଙ୍କୁ ଶୀତଳ କରିବାକୁ ଚନ୍ଦନ ଅର୍ପଣ କରାଯାଏ। ପରମ୍ପରା କହେ, ଜଗନ୍ନାଥ ନିଜେ ରାଜା ଇନ୍ଦ୍ରଦ୍ୟୁମ୍ନଙ୍କୁ ଚନ୍ଦନ ଓ ଜଳକ୍ରୀଡ଼ା ମାଗିଥିଲେ; ମନ୍ଦିରର ପୁରୁଣା ଅଭିଲେଖରେ ଏହି ଯାତ୍ରାର ଉଲ୍ଲେଖ ଅଛି। ଅକ୍ଷୟ ତୃତୀୟାରେ ଆରମ୍ଭ ହେବା ଏହାକୁ ଆଗାମୀ ରଥ ଯାତ୍ରା ସହ ଯୋଡ଼େ: ସେହି ଦିନ ରଥ ନିର୍ମାଣ ଆରମ୍ଭ ହୁଏ।"
+    },
+    "howTo": {
+     "en": [
+      "If you are in Puri, watch the evening procession and the boats at the Narendra tank.",
+      "At home, offer sandalwood paste and cool water to Jagannath or Krishna in the evening.",
+      "On Akshaya Tritiya, the first day, many begin a new undertaking or give in charity."
+     ],
+     "or": [
+      "ପୁରୀରେ ଥିଲେ ସନ୍ଧ୍ୟାର ଶୋଭାଯାତ୍ରା ଓ ନରେନ୍ଦ୍ର ପୁଷ୍କରିଣୀର ନୌକା ବିହାର ଦେଖନ୍ତୁ।",
+      "ଘରେ ସନ୍ଧ୍ୟାରେ ଜଗନ୍ନାଥ ବା କୃଷ୍ଣଙ୍କୁ ଚନ୍ଦନ ଓ ଶୀତଳ ଜଳ ଅର୍ପଣ କରନ୍ତୁ।",
+      "ପ୍ରଥମ ଦିନ ଅକ୍ଷୟ ତୃତୀୟାରେ ଅନେକେ ନୂଆ କାମ ଆରମ୍ଭ କରନ୍ତି ବା ଦାନ କରନ୍ତି।"
+     ]
+    }
+   }
+  },
+  {
    "id": "gamha-purnima",
    "names": {
     "en": "Gamha Purnima (Rakhi)",

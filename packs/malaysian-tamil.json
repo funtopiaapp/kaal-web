@@ -2518,6 +2518,61 @@
    }
   },
   {
+   "id": "aadi-pooram",
+   "names": {
+    "en": "Aadi Pooram",
+    "ta": "ஆடிப்பூரம்"
+   },
+   "rule": {
+    "type": "nakshatra-in-solar-month",
+    "month": "karka",
+    "nakshatra": "purva_phalguni",
+    "nearTithi": 4
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "tulsi",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, Kuala Lumpur"
+   ],
+   "content": {
+    "summary": {
+     "en": "The day of Pooram star in the month of Aadi, kept as the birthday of Andal and of the Goddess.",
+     "ta": "ஆடி மாதப் பூர நட்சத்திர நாள்; ஆண்டாளின் அவதார நாளாகவும் அம்மனின் திருநாளாகவும் கொண்டாடப்படுகிறது."
+    },
+    "traditions": {
+     "en": "At Srivilliputhur, where Andal was found as a child in the tulsi garden, the temple holds its great festival, with the car drawn through the streets. Amman temples across Tamil Nadu celebrate the Goddess with valaikappu, offering her bangles as at a woman's baby shower; the bangles are later given to women who come for darshan. Many women keep the day with prayer, wear new bangles, and sing Andal's Thiruppavai and Nachiyar Thirumozhi.",
+     "ta": "ஆண்டாள் துளசித் தோட்டத்தில் குழந்தையாகக் கண்டெடுக்கப்பட்ட ஸ்ரீவில்லிபுத்தூரில் கோயிலின் பெருவிழா நடைபெறுகிறது; தேர் வீதிகளில் இழுக்கப்படுகிறது. தமிழகமெங்கும் அம்மன் கோயில்களில் வளைகாப்பு நடைபெறுகிறது; அம்மனுக்கு வளையல்கள் சாற்றப்பட்டு, பின்னர் தரிசனத்துக்கு வரும் பெண்களுக்கு வழங்கப்படுகின்றன. பல பெண்கள் இந்நாளில் வழிபட்டு, புதிய வளையல்கள் அணிந்து, ஆண்டாளின் திருப்பாவையையும் நாச்சியார் திருமொழியையும் பாடுகின்றனர்."
+    },
+    "story": {
+     "en": "Periyazhwar, a devotee who tended the flower garden of the Srivilliputhur temple, found a baby girl beneath a tulsi plant on the day of Pooram in Aadi. He named her Kodhai and raised her in devotion. As she grew, she wove the garlands meant for the Lord, and in secret wore each one first to see whether she was fit to be his bride. Discovering this, her father was troubled, but the Lord told him in a dream that he would accept only the garlands Kodhai had worn. She came to be called Andal, 'she who ruled the Lord', and her songs, the Thiruppavai and Nachiyar Thirumozhi, are sung to this day.",
+     "ta": "ஸ்ரீவில்லிபுத்தூர் கோயிலின் நந்தவனத்தைப் பேணிய பக்தரான பெரியாழ்வார், ஆடிப் பூர நாளில் ஒரு துளசிச் செடியின் அடியில் ஒரு பெண் குழந்தையைக் கண்டெடுத்தார். அவளுக்குக் கோதை என்று பெயரிட்டுப் பக்தியுடன் வளர்த்தார். அவள் வளர்ந்து இறைவனுக்கான மாலைகளைத் தொடுத்தாள்; தான் அவருக்கு மணமகளாகத் தகுதியானவளா என்று பார்க்க ஒவ்வொரு மாலையையும் ரகசியமாக முதலில் தானே அணிந்து பார்த்தாள். இதை அறிந்த தந்தை கலங்கினார்; ஆனால் கோதை அணிந்த மாலைகளையே ஏற்பேன் என்று இறைவன் கனவில் கூறினார். 'இறைவனை ஆண்டவள்' என்ற பொருளில் அவள் ஆண்டாள் என்று அழைக்கப்பட்டாள்; அவளது திருப்பாவையும் நாச்சியார் திருமொழியும் இன்றும் பாடப்படுகின்றன."
+    },
+    "howTo": {
+     "en": [
+      "Visit an Amman temple or a Perumal temple, or worship at home with a lamp and flowers.",
+      "Offer bangles to the Goddess, and wear new ones yourself if you like.",
+      "Sing or listen to the Thiruppavai, or read Andal's story.",
+      "Share sweet pongal or a simple prasadam with family and neighbours."
+     ],
+     "ta": [
+      "அம்மன் கோயிலுக்கோ பெருமாள் கோயிலுக்கோ செல்லுங்கள், அல்லது வீட்டில் விளக்கும் மலர்களும் கொண்டு வழிபடுங்கள்.",
+      "அம்மனுக்கு வளையல்கள் சாற்றுங்கள்; விரும்பினால் நீங்களும் புதிய வளையல்கள் அணியுங்கள்.",
+      "திருப்பாவையைப் பாடுங்கள் அல்லது கேளுங்கள், அல்லது ஆண்டாளின் கதையைப் படியுங்கள்.",
+      "சர்க்கரைப் பொங்கல் அல்லது எளிய பிரசாதத்தைக் குடும்பத்துடனும் அண்டை வீட்டாருடனும் பகிருங்கள்."
+     ]
+    }
+   }
+  },
+  {
    "id": "aadi-amavasai",
    "names": {
     "en": "Aadi Amavasai",
@@ -3845,6 +3900,60 @@
     "greeting": {
      "en": "Happy Arudra Darshan!",
      "ta": "ஆருத்ரா தரிசன நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "thyagaraja-aradhana",
+   "names": {
+    "en": "Thyagaraja Aradhana",
+    "ta": "தியாகராஜ ஆராதனை"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "pausha",
+    "tithi": 20
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "veena",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, Kuala Lumpur"
+   ],
+   "content": {
+    "summary": {
+     "en": "The day Saint Thyagaraja attained samadhi, Pushya Bahula Panchami, kept with music at Thiruvaiyaru.",
+     "ta": "தியாகராஜ சுவாமிகள் சமாதி அடைந்த புஷ்ய பகுள பஞ்சமி; திருவையாற்றில் இசையுடன் கொண்டாடப்படுகிறது."
+    },
+    "traditions": {
+     "en": "On the banks of the Kaveri at Thiruvaiyaru, where Thyagaraja lived, musicians gather for several days of the Aradhana. On the main morning, hundreds of singers and instrumentalists sit together and sing his five Pancharatna kritis in unison, an offering to the composer rather than a concert. Music schools and sabhas around the world hold Aradhanas of their own, and students, teachers and listeners sing his songs together.",
+     "ta": "தியாகராஜர் வாழ்ந்த திருவையாற்றில் காவிரிக் கரையில் இசைக்கலைஞர்கள் பல நாள் ஆராதனைக்காகக் கூடுகின்றனர். முக்கிய நாள் காலையில் நூற்றுக்கணக்கான பாடகர்களும் வாத்தியக் கலைஞர்களும் ஒன்றாக அமர்ந்து அவரது ஐந்து பஞ்சரத்ன கீர்த்தனைகளை ஒரே குரலில் பாடுகின்றனர்; இது கச்சேரி அல்ல, அந்த மகானுக்குச் செய்யும் அர்ப்பணம். உலகெங்கும் இசைப்பள்ளிகளும் சபாக்களும் தங்கள் ஆராதனைகளை நடத்துகின்றன; மாணவர்களும் ஆசிரியர்களும் ரசிகர்களும் சேர்ந்து அவர் பாடல்களைப் பாடுகின்றனர்."
+    },
+    "story": {
+     "en": "Thyagaraja, born in 1767 in Tiruvarur and raised in Thiruvaiyaru, gave his life to Rama and to music. He composed thousands of songs in Telugu, sung in praise of Rama, and is remembered with Muthuswami Dikshitar and Syama Sastri as one of the three great composers of Carnatic music. It is said that when the king of Thanjavur invited him to court with gifts, he declined, singing 'Nidhi chala sukhama', asking whether wealth could bring more joy than the Lord's presence. He took sannyasa near the end of his life and attained samadhi in 1847 on Pushya Bahula Panchami, the day now kept as his Aradhana.",
+     "ta": "1767-இல் திருவாரூரில் பிறந்து திருவையாற்றில் வளர்ந்த தியாகராஜர் தம் வாழ்வை ராமனுக்கும் இசைக்கும் அர்ப்பணித்தார். ராமனைப் போற்றித் தெலுங்கில் ஆயிரக்கணக்கான பாடல்களை இயற்றினார்; முத்துசுவாமி தீட்சிதர், சியாமா சாஸ்திரி ஆகியோருடன் கர்நாடக இசையின் மும்மூர்த்திகளில் ஒருவராகப் போற்றப்படுகிறார். தஞ்சை மன்னன் பரிசுகளுடன் அவரை அரசவைக்கு அழைத்தபோது, 'நிதி சால சுகமா' என்று பாடி, இறைவனின் சந்நிதியை விடச் செல்வம் அதிக இன்பம் தருமா என்று கேட்டு மறுத்தார் என்பர். வாழ்வின் இறுதியில் சந்நியாசம் ஏற்று, 1847-இல் புஷ்ய பகுள பஞ்சமியில் சமாதி அடைந்தார்; அந்நாளே அவரது ஆராதனையாகக் கொண்டாடப்படுகிறது."
+    },
+    "howTo": {
+     "en": [
+      "Listen to or sing the Pancharatna kritis, alone or with others.",
+      "Attend an Aradhana at a local music school, sabha or temple if there is one.",
+      "Offer a lamp and flowers before a picture of Rama or of Thyagaraja.",
+      "If you play or sing, offer a song of his as a tribute."
+     ],
+     "ta": [
+      "பஞ்சரத்ன கீர்த்தனைகளைத் தனியாகவோ பிறருடனோ கேளுங்கள் அல்லது பாடுங்கள்.",
+      "உள்ளூர் இசைப்பள்ளி, சபா அல்லது கோயிலில் ஆராதனை இருந்தால் கலந்துகொள்ளுங்கள்.",
+      "ராமன் அல்லது தியாகராஜர் படத்தின் முன் விளக்கும் மலர்களும் அர்ப்பணியுங்கள்.",
+      "நீங்கள் பாடுபவரோ வாசிப்பவரோ என்றால், அவரது ஒரு பாடலை அஞ்சலியாக அர்ப்பணியுங்கள்."
+     ]
     }
    }
   },

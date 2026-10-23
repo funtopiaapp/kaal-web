@@ -2286,6 +2286,60 @@
    }
   },
   {
+   "id": "maha-shashthi",
+   "names": {
+    "en": "Maha Shashthi (Bodhon)",
+    "bn": "মহাষষ্ঠী"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "maha-saptami",
+    "offsetDays": -1
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "navratri",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, Kolkata"
+   ],
+   "content": {
+    "summary": {
+     "en": "Ashvin Shukla Shashthi, the first day of Durga Puja: the Goddess is awakened and her face unveiled.",
+     "bn": "আশ্বিন শুক্লা ষষ্ঠী, দুর্গাপূজার প্রথম দিন: দেবীর বোধন ও মুখ উন্মোচন।"
+    },
+    "traditions": {
+     "en": "On the evening of Shashthi the Goddess is awakened with the Bodhon, performed before a bel tree, and the Amantran and Adhivas invite her to stay. In the pandals the covered face of the image is unveiled, and the dhak drums begin. Families visit the first pandals in new clothes, and the city's five days of Durga Puja begin in earnest. Many mothers keep a fast on this day for their children, the Shashthi vrat.",
+     "bn": "ষষ্ঠীর সন্ধ্যায় বেলগাছের তলায় বোধন করে দেবীকে জাগানো হয়, আর আমন্ত্রণ ও অধিবাসে তাঁকে থাকার আহ্বান জানানো হয়। মণ্ডপে প্রতিমার ঢাকা মুখ উন্মোচন হয়, ঢাক বাজতে শুরু করে। পরিবারেরা নতুন জামা পরে প্রথম মণ্ডপগুলোয় যায়, আর পাঁচ দিনের দুর্গাপূজা পুরোদমে শুরু হয়। অনেক মা এই দিন সন্তানের জন্য ষষ্ঠীর ব্রত রাখেন।"
+    },
+    "story": {
+     "en": "The Bodhon recalls the story told in the Bengali Ramayana of Krittivas: before his battle with Ravana, Rama sought the Goddess's blessing, and since her worship was traditionally in spring, he awakened her out of season, in autumn, beneath a bel tree. This 'untimely awakening', akal bodhon, is why Bengal's great Durga Puja is in Ashvin, and why the festival begins on Shashthi with her awakening.",
+     "bn": "বোধন কৃত্তিবাসী রামায়ণের কাহিনি মনে করায়: রাবণের সঙ্গে যুদ্ধের আগে রাম দেবীর আশীর্বাদ চেয়েছিলেন; দেবীর পূজা প্রথাগতভাবে বসন্তে হলেও তিনি শরতে, অসময়ে, বেলগাছের তলায় দেবীকে জাগিয়েছিলেন। এই অকালবোধনের জন্যই বাংলার দুর্গাপূজা আশ্বিনে, আর উৎসব শুরু হয় ষষ্ঠীতে দেবীর বোধন দিয়ে।"
+    },
+    "howTo": {
+     "en": [
+      "Join the Bodhon at your local pandal in the evening, or watch the unveiling.",
+      "If you keep the Shashthi vrat, fast through the day and break it after the puja.",
+      "Visit pandals with family in new clothes.",
+      "Offer flowers and a lamp to the Goddess at home if you keep a small puja."
+     ],
+     "bn": [
+      "সন্ধ্যায় পাড়ার মণ্ডপে বোধনে যোগ দিন, বা মুখ উন্মোচন দেখুন।",
+      "ষষ্ঠীর ব্রত রাখলে দিনভর উপবাস করে পূজার পরে ভাঙুন।",
+      "নতুন জামা পরে পরিবারের সঙ্গে মণ্ডপে মণ্ডপে ঘুরুন।",
+      "বাড়িতে ছোট পূজা করলে দেবীকে ফুল ও প্রদীপ নিবেদন করুন।"
+     ]
+    }
+   }
+  },
+  {
    "id": "maha-saptami",
    "names": {
     "en": "Maha Saptami",
