@@ -1828,7 +1828,7 @@ function cardMaker(f, date) {
     o.querySelector('#gpal').style.display = st.design === 'classic' ? '' : 'none';
     if (st.design !== 'classic') {
       // A designed card: drawn on a canvas, the same drawing as the shared image.
-      o.querySelector('#gcard').innerHTML = `<div class="gcard-in"><canvas class="gdesign" width="640" height="800" style="position:absolute;inset:0;width:100%;height:100%"></canvas><canvas class="gmotion" width="640" height="800"></canvas><div class="gbrand"><img src="icon-192.png" alt="">Eka Panchang</div></div>`;
+      o.querySelector('#gcard').innerHTML = `<div class="gcard-in"><canvas class="gdesign" width="640" height="800" style="position:absolute;inset:0;width:100%;height:100%"></canvas><canvas class="gmotion" width="640" height="800"></canvas><div class="gbrand"><img src="icon-192.png" alt="">Eka</div></div>`;
       drawDesign(o.querySelector('.gdesign').getContext('2d'), 640, 800, st.design, f, date, native, line(), st);
       o.querySelectorAll('[data-mo]').forEach(b => b.classList.toggle('on', b.dataset.mo === st.motion));
       return;
@@ -1837,7 +1837,7 @@ function cardMaker(f, date) {
       <div class="gtext">${st.to ? `<div class="gdear">${esc(t('card.dear', st.to))}</div>` : ''}${native ? `<div class="gnat" style="color:${P[3]}">${esc(native)}</div>` : ''}
       <div class="serif gname">${esc(fname(f))}</div><div class="gdate">${esc(greg(date, { day: 'numeric', month: 'long', year: 'numeric' }))}</div>
       ${line() ? `<div class="gline">${esc(line())}</div>` : ''}${st.from ? `<div class="gfrom" style="color:${P[3]}">${esc(t('card.with', st.from))}</div>` : ''}</div>
-      <canvas class="gmotion" width="640" height="800"></canvas><div class="gbrand"><img src="icon-192.png" alt="">Eka Panchang</div></div>`;
+      <canvas class="gmotion" width="640" height="800"></canvas><div class="gbrand"><img src="icon-192.png" alt="">Eka</div></div>`;
     o.querySelectorAll('[data-mo]').forEach(b => b.classList.toggle('on', b.dataset.mo === st.motion));
   };
   // The preview's motion, drawn every frame while the card maker is open.
@@ -1893,10 +1893,10 @@ async function cardImage(f, date, st, native, line) {
     await drawDesign(g, 1080, 1350, st.design, f, date, native, line, st);
     const logo = new Image(); logo.src = 'icon-192.png'; await logo.decode().catch(() => {});
     // The mark in the bottom corner, inside the border.
-    const mx = 1080 - 96 - 300, my = 1350 - 82 - 60;
-    g.fillStyle = 'rgba(0,0,0,.2)'; g.beginPath(); g.roundRect(mx, my, 300, 60, 30); g.fill();
-    if (logo.complete) g.drawImage(logo, mx + 12, my + 8, 44, 44);
-    g.font = '700 32px sans-serif'; g.fillStyle = '#fff'; g.textAlign = 'left'; g.fillText('Eka Panchang', mx + 66, my + 42);
+    // A quiet signature in the bottom corner: the icon and "Eka".
+    const C = DCOL[st.design === 'arch' ? 'arch' : st.design === 'mandala' ? 'mandala' : 'light'];
+    g.globalAlpha = .55; if (logo.complete) g.drawImage(logo, 1080 - 86 - 74, 1350 - 76 - 24, 26, 26);
+    g.font = '600 24px Georgia, serif'; g.fillStyle = C.ink; g.textAlign = 'left'; g.fillText('Eka', 1080 - 86 - 42, 1350 - 80); g.globalAlpha = 1;
     return new Promise(r => c.toBlob(r, 'image/png'));
   }
   const P = PALETTES[st.p], W = 1080, H = 1350, c = document.createElement('canvas'); c.width = W; c.height = H;
@@ -1922,10 +1922,9 @@ async function cardImage(f, date, st, native, line) {
   if (st.from) { y += 16; put(t('card.with', st.from), '600 44px Georgia, serif', P[3], 60); }
   // A small Kaal mark at the foot, for the brand.
   const logo = new Image(); logo.src = 'icon-192.png'; await logo.decode().catch(() => {});
-  const mx = W - 40 - 300, my = H - 36 - 60;
-  g.fillStyle = '#0003'; g.beginPath(); g.roundRect(mx, my, 300, 60, 30); g.fill();
-  if (logo.complete) g.drawImage(logo, mx + 12, my + 8, 44, 44);
-  g.font = '700 32px sans-serif'; g.fillStyle = '#fff'; g.textAlign = 'left'; g.fillText('Eka Panchang', mx + 66, my + 42);
+  // A quiet signature in the bottom corner: the icon and "Eka".
+  g.globalAlpha = .6; if (logo.complete) g.drawImage(logo, W - 40 - 74, H - 34 - 24, 26, 26);
+  g.font = '600 24px Georgia, serif'; g.fillStyle = P[2]; g.textAlign = 'left'; g.fillText('Eka', W - 40 - 42, H - 38); g.globalAlpha = 1;
   return new Promise(r => c.toBlob(r, 'image/png'));
 }
 

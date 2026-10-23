@@ -245,8 +245,8 @@ details.factor .grow { flex: 1; }
 .gtext { position: absolute; inset: 29% 22px 25% 22px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-align: center; }
 .gdear { font: italic 16px Georgia, serif; } .gnat { font-weight: 700; font-size: 26px; } .gname { font-size: 24px; font-weight: 700; }
 .gdate { font-size: 13px; opacity: .85; } .gline { font: italic 13px Georgia, serif; opacity: .92; } .gfrom { font: 600 14px Georgia, serif; }
-.gbrand { position: absolute; right: 22px; bottom: 18px; display: flex; align-items: center; gap: 6px; padding: 3px 10px 3px 4px; border-radius: 99px; background: #0003; color: #fff; font-size: 13px; font-weight: 700; letter-spacing: .3px; }
-.gbrand img { width: 18px; height: 18px; border-radius: 5px; }
+.gbrand { position: absolute; right: 22px; bottom: 16px; background: none !important; padding: 0 !important; font-family: Georgia, serif; font-size: 10px !important; font-weight: 600; opacity: .6; color: inherit !important; display: flex; align-items: center; gap: 6px; padding: 3px 10px 3px 4px; border-radius: 99px; background: #0003; color: #fff; font-size: 13px; font-weight: 700; letter-spacing: .3px; }
+.gbrand img { width: 12px; height: 12px; border-radius: 3px; }
 .badges { display: flex; gap: 6px; align-items: center; }
 .dicon { display: inline-block; vertical-align: -3px; background: currentColor; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; color: var(--accent); }
 .pill.on .dicon { color: #fff; }

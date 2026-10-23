@@ -1415,13 +1415,16 @@
    ],
    "content": {
     "summary": {
-     "en": "The Sun enters Makara: the harvest festival that marks the start of Uttarayana, the Sun's northward journey."
+     "en": "The Sun enters Makara: the harvest festival that marks the start of Uttarayana, the Sun's northward journey.",
+     "bn": "সূর্য মকর রাশিতে প্রবেশ করেন: ফসল তোলার এই উৎসব উত্তরায়ণের, অর্থাৎ সূর্যের উত্তরমুখী যাত্রার সূচনা চিহ্নিত করে।"
     },
     "traditions": {
-     "en": "Families wake early for a bath, many in a river, and offer water to the Sun. Sesame and jaggery sweets (til-gud, gajak, rewari) are made and shared, and khichdi is cooked and given away. Kites fill the sky in Gujarat and Rajasthan, where the day is Uttarayan. In Punjab the evening before is Lohri; in Tamil Nadu the same day is Thai Pongal and in Assam it is Magh Bihu. Giving warm clothes, blankets and grain to those who need them is a common part of the day."
+     "en": "Families wake early for a bath, many in a river, and offer water to the Sun. Sesame and jaggery sweets (til-gud, gajak, rewari) are made and shared, and khichdi is cooked and given away. Kites fill the sky in Gujarat and Rajasthan, where the day is Uttarayan. In Punjab the evening before is Lohri; in Tamil Nadu the same day is Thai Pongal and in Assam it is Magh Bihu. Giving warm clothes, blankets and grain to those who need them is a common part of the day.",
+     "bn": "পরিবারের সবাই ভোরে উঠে স্নান করেন, অনেকে নদীতে, এবং সূর্যকে জল অর্পণ করেন। তিল আর গুড়ের মিষ্টি (তিল-গুড়, গজক, রেউড়ি) তৈরি করে সবার সঙ্গে ভাগ করে নেওয়া হয়, আর খিচুড়ি রান্না করে বিলিয়ে দেওয়া হয়। গুজরাট ও রাজস্থানে আকাশ ভরে ওঠে ঘুড়িতে, সেখানে দিনটির নাম উত্তরায়ণ। পাঞ্জাবে আগের সন্ধ্যাটি লোহরি; তামিলনাড়ুতে একই দিনে থাই পোঙ্গল, আর অসমে মাঘ বিহু। যাঁদের প্রয়োজন, তাঁদের গরম জামাকাপড়, কম্বল ও শস্য দান করা এই দিনের এক চেনা অঙ্গ।"
     },
     "story": {
-     "en": "The story told for this day is of the Sun god, Surya, visiting his son Shani. The two had long been distant, and Surya's journey into Makara, the sign Shani rules, is remembered as a father setting aside old differences to see his son. Shani is said to have welcomed him with black sesame, the only thing he had, and Surya accepted it gladly. That is why sesame is at the heart of the day's food and gifts. The day is also remembered in the Mahabharata: Bhishma, who could choose the moment of his passing, waited on his bed of arrows for Uttarayana to begin. And many tell that on this day the Ganga, following King Bhagiratha, reached the sea at Ganga Sagar, where a great bathing fair is held every year."
+     "en": "The story told for this day is of the Sun god, Surya, visiting his son Shani. The two had long been distant, and Surya's journey into Makara, the sign Shani rules, is remembered as a father setting aside old differences to see his son. Shani is said to have welcomed him with black sesame, the only thing he had, and Surya accepted it gladly. That is why sesame is at the heart of the day's food and gifts. The day is also remembered in the Mahabharata: Bhishma, who could choose the moment of his passing, waited on his bed of arrows for Uttarayana to begin. And many tell that on this day the Ganga, following King Bhagiratha, reached the sea at Ganga Sagar, where a great bathing fair is held every year.",
+     "bn": "এই দিনের কাহিনি সূর্যদেবের, যিনি তাঁর পুত্র শনির কাছে যান। বহুদিন দুজনের মধ্যে দূরত্ব ছিল, আর শনির অধীন রাশি মকরে সূর্যের এই যাত্রাকে মনে রাখা হয় এক পিতার পুরোনো মনোমালিন্য সরিয়ে রেখে ছেলেকে দেখতে যাওয়া হিসেবে। বলা হয়, শনি তাঁর কাছে যা ছিল, সেই কালো তিল দিয়েই পিতাকে বরণ করেছিলেন, আর সূর্য আনন্দে তা গ্রহণ করেছিলেন। তাই এই দিনের খাবার আর উপহারের কেন্দ্রে থাকে তিল। মহাভারতেও দিনটি স্মরণীয়: ইচ্ছামৃত্যুর বর পাওয়া ভীষ্ম শরশয্যায় শুয়ে উত্তরায়ণ শুরু হওয়ার অপেক্ষা করেছিলেন। আর অনেকে বলেন, এই দিনেই রাজা ভগীরথকে অনুসরণ করে গঙ্গা গঙ্গাসাগরে সমুদ্রে মিলেছিলেন, যেখানে প্রতি বছর বিশাল স্নানমেলা বসে।"
     },
     "howTo": {
      "en": [
@@ -1432,10 +1435,20 @@
       "Set aside grain, sesame, a blanket or warm clothes to give to someone who needs them.",
       "Spend the afternoon outdoors: fly kites in Gujarat and Rajasthan, or visit family elsewhere.",
       "Greet elders with til-gud; in Maharashtra the words are 'til-gul ghya, god god bola' (take sweets and speak sweetly)."
+     ],
+     "bn": [
+      "আগের দিন তিল-গুড়ের নাড়ু বানিয়ে রাখুন বা গজক আর রেউড়ি কিনে আনুন, আর খিচুড়ির জন্য চাল ও মুগ ডাল ভিজিয়ে রাখুন।",
+      "সূর্যোদয়ের আগে উঠে স্নান করুন; আপনার পরিবারে প্রচলন থাকলে স্নানের জলে কয়েকটি তিল দিন।",
+      "পূর্বমুখী হয়ে তামার পাত্র থেকে উদীয়মান সূর্যকে জল অর্পণ করুন।",
+      "খিচুড়ি রান্না করে তিলের মিষ্টির সঙ্গে প্রতিবেশী আর অতিথিদের সঙ্গে ভাগ করে নিন।",
+      "প্রয়োজন আছে এমন কাউকে দেওয়ার জন্য শস্য, তিল, একটি কম্বল বা গরম জামাকাপড় আলাদা করে রাখুন।",
+      "বিকেলটা বাইরে কাটান: গুজরাট ও রাজস্থানে ঘুড়ি ওড়ান, অন্যত্র আত্মীয়দের বাড়ি যান।",
+      "গুরুজনদের তিল-গুড় দিয়ে শুভেচ্ছা জানান; মহারাষ্ট্রে বলা হয় ‘তিল-গুল ঘ্যা, গোড় গোড় বোলা’ (মিষ্টি নাও, মিষ্টি কথা বলো)।"
      ]
     },
     "greeting": {
-     "en": "May the Sun's new journey bring warmth to your home. Happy Makar Sankranti!"
+     "en": "May the Sun's new journey bring warmth to your home. Happy Makar Sankranti!",
+     "bn": "সূর্যের নতুন যাত্রা আপনার ঘরে উষ্ণতা নিয়ে আসুক। মকর সংক্রান্তির শুভেচ্ছা!"
     }
    }
   },
@@ -1468,13 +1481,16 @@
    ],
    "content": {
     "summary": {
-     "en": "The fifth day of bright Magha, welcoming spring and honouring Saraswati, goddess of learning and the arts."
+     "en": "The fifth day of bright Magha, welcoming spring and honouring Saraswati, goddess of learning and the arts.",
+     "bn": "মাঘ মাসের শুক্লপক্ষের পঞ্চমী: বসন্তকে স্বাগত জানানো, আর বিদ্যা ও শিল্পকলার দেবী সরস্বতীর আরাধনা।"
     },
     "traditions": {
-     "en": "Yellow is the colour of the day, for the mustard fields in bloom: people wear yellow, and cook yellow sweet rice, kesari halwa or boondi. Saraswati is worshipped at home, in schools and in music and dance schools, with books, pens and instruments placed before her. In Bengal and Odisha, Saraswati Puja is a major festival for students. Many families choose this day for a young child's first letters, called Vidyarambh or Akshar Abhyas. In Punjab and Rajasthan, people fly kites."
+     "en": "Yellow is the colour of the day, for the mustard fields in bloom: people wear yellow, and cook yellow sweet rice, kesari halwa or boondi. Saraswati is worshipped at home, in schools and in music and dance schools, with books, pens and instruments placed before her. In Bengal and Odisha, Saraswati Puja is a major festival for students. Many families choose this day for a young child's first letters, called Vidyarambh or Akshar Abhyas. In Punjab and Rajasthan, people fly kites.",
+     "bn": "এই দিনের রং হলুদ, ফুলে ভরা সরষে খেতের রং: সবাই হলুদ পোশাক পরেন, আর রান্না হয় হলুদ মিষ্টি ভাত, কেশরি হালুয়া বা বোঁদে। বাড়িতে, স্কুলে, গান ও নাচের শিক্ষালয়ে সরস্বতীর পুজো হয়, তাঁর সামনে রাখা হয় বই, কলম আর বাদ্যযন্ত্র। বাংলা ও ওড়িশায় সরস্বতী পুজো ছাত্রছাত্রীদের এক বড় উৎসব। অনেক পরিবার শিশুর হাতেখড়ি, যাকে বিদ্যারম্ভ বা অক্ষর অভ্যাস বলে, এই দিনেই দেন। পাঞ্জাব ও রাজস্থানে লোকে ঘুড়ি ওড়ান।"
     },
     "story": {
-     "en": "The story told for this day is of creation itself. When Brahma first made the world, it is said, everything was in place but silent: no sound, no speech, no music. He sprinkled water from his kamandalu, and from it rose a radiant goddess holding a veena, a book and a string of beads. She played, and the rivers began to murmur, the wind to rustle and living beings to speak. Brahma named her Saraswati, she who flows, and Vak, speech itself. Vasant Panchami is kept as her day of appearance. Another telling links the day to Kamadeva, god of love, and to the arrival of spring, when the fields turn yellow and the koel begins to sing."
+     "en": "The story told for this day is of creation itself. When Brahma first made the world, it is said, everything was in place but silent: no sound, no speech, no music. He sprinkled water from his kamandalu, and from it rose a radiant goddess holding a veena, a book and a string of beads. She played, and the rivers began to murmur, the wind to rustle and living beings to speak. Brahma named her Saraswati, she who flows, and Vak, speech itself. Vasant Panchami is kept as her day of appearance. Another telling links the day to Kamadeva, god of love, and to the arrival of spring, when the fields turn yellow and the koel begins to sing.",
+     "bn": "এই দিনের কাহিনি স্বয়ং সৃষ্টির। বলা হয়, ব্রহ্মা যখন প্রথম জগৎ সৃষ্টি করলেন, সবকিছু যথাস্থানে থাকলেও চারদিক ছিল নিঃশব্দ: না কোনো ধ্বনি, না কথা, না সুর। তিনি কমণ্ডলু থেকে জল ছিটিয়ে দিলেন, আর তা থেকে আবির্ভূত হলেন বীণা, পুস্তক ও জপমালা হাতে এক জ্যোতির্ময়ী দেবী। তিনি বীণা বাজালেন, আর নদী কলকল করে উঠল, বাতাস মর্মরিত হল, প্রাণীরা কথা বলতে শুরু করল। ব্রহ্মা তাঁর নাম রাখলেন সরস্বতী, অর্থাৎ যিনি প্রবাহিত হন, আর বাক, অর্থাৎ স্বয়ং বাণী। বসন্ত পঞ্চমী তাঁর আবির্ভাবের দিন হিসেবে পালিত হয়। আরেকটি কাহিনিতে দিনটি প্রেমের দেবতা কামদেবের সঙ্গে, আর বসন্তের আগমনের সঙ্গে যুক্ত, যখন খেত হলুদ হয়ে ওঠে আর কোকিল ডাকতে শুরু করে।"
     },
     "howTo": {
      "en": [
@@ -1485,10 +1501,20 @@
       "Offer yellow sweets, fruit and flowers, and recite or play a Saraswati vandana ('Ya kundendu tusharahara dhavala').",
       "If a child is starting to learn, guide their hand to write their first letters on a slate or in rice.",
       "Share the prasad and spend the afternoon outdoors, enjoying the first days of spring."
+     ],
+     "bn": [
+      "পুজোর জায়গা পরিষ্কার করে হলুদ বা সাদা কাপড়ের ওপর সরস্বতীর ছবি বা প্রতিমা স্থাপন করুন।",
+      "পারলে হলুদ পোশাক পরুন, আর গাঁদার মতো হলুদ ফুল তৈরি রাখুন।",
+      "সকালে (পূর্বাহ্ণে, দুপুরের আগে) দেবীর সামনে প্রদীপ ও ধূপ জ্বালান।",
+      "তাঁর কাছে বই, খাতা, কলম আর বাদ্যযন্ত্র রাখুন; অনেক পরিবারে দিনের বাকি সময় সেগুলি দিয়ে পড়াশোনা বা বাজনা করা হয় না।",
+      "হলুদ মিষ্টি, ফল ও ফুল নিবেদন করুন, আর সরস্বতী বন্দনা (‘যা কুন্দেন্দু তুষারহার ধবলা’) পাঠ করুন বা বাজান।",
+      "কোনো শিশু পড়াশোনা শুরু করলে, তার হাত ধরে স্লেটে বা চালের ওপর প্রথম অক্ষর লেখান।",
+      "প্রসাদ ভাগ করে নিন, আর বিকেলটা বাইরে কাটিয়ে বসন্তের প্রথম দিনগুলি উপভোগ করুন।"
      ]
     },
     "greeting": {
-     "en": "May Saraswati fill your days with learning, music and light. Happy Vasant Panchami!"
+     "en": "May Saraswati fill your days with learning, music and light. Happy Vasant Panchami!",
+     "bn": "দেবী সরস্বতী আপনার দিনগুলি বিদ্যা, সুর আর আলোয় ভরিয়ে তুলুন। বসন্ত পঞ্চমীর শুভেচ্ছা!"
     }
    }
   },
@@ -1523,7 +1549,10 @@
    "durationDays": 1,
    "variations": [],
    "variationsNative": [],
-   "localNative": {},
+   "localNative": {
+    "MU": "মরিশাসে মহাশিবরাত্রি সরকারি ছুটির দিন; তার আগের কয়েক দিন তীর্থযাত্রীরা কাঁওয়ার কাঁধে নিয়ে হেঁটে গঙ্গা তালাও (গ্র্যান্ড বাসাঁ) যান।",
+    "LK": "শ্রীলঙ্কায় মহাশিবরাত্রি সরকারি ছুটির দিন।"
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1531,13 +1560,16 @@
    ],
    "content": {
     "summary": {
-     "en": "The great night of Shiva, kept with fasting, night-long worship and the chanting of 'Om Namah Shivaya'."
+     "en": "The great night of Shiva, kept with fasting, night-long worship and the chanting of 'Om Namah Shivaya'.",
+     "bn": "শিবের মহারাত্রি, পালিত হয় উপবাস, সারারাতের পুজো আর ‘ওঁ নমঃ শিবায়’ জপে।"
     },
     "traditions": {
-     "en": "Devotees fast through the day, some taking only fruit and milk, and stay awake through the night. Temples hold four worships (prahara puja) across the night, bathing the Shiva linga in milk, curd, honey, ghee and water and offering bilva leaves. At home, families chant 'Om Namah Shivaya', read or listen to Shiva stories and sing bhajans. In Tamil Nadu temples hold the night's four abhishekams; in Kerala, the Aluva riverbank fills with people keeping vigil; in the North, kanwariyas carry Ganga water to Shiva temples. The fast is broken the next morning."
+     "en": "Devotees fast through the day, some taking only fruit and milk, and stay awake through the night. Temples hold four worships (prahara puja) across the night, bathing the Shiva linga in milk, curd, honey, ghee and water and offering bilva leaves. At home, families chant 'Om Namah Shivaya', read or listen to Shiva stories and sing bhajans. In Tamil Nadu temples hold the night's four abhishekams; in Kerala, the Aluva riverbank fills with people keeping vigil; in the North, kanwariyas carry Ganga water to Shiva temples. The fast is broken the next morning.",
+     "bn": "ভক্তরা সারাদিন উপবাস করেন, কেউ কেবল ফল আর দুধ খান, আর সারারাত জেগে থাকেন। মন্দিরে রাত জুড়ে চার প্রহরের পুজো হয়, দুধ, দই, মধু, ঘি আর জলে শিবলিঙ্গকে স্নান করিয়ে বেলপাতা নিবেদন করা হয়। বাড়িতে পরিবারের সবাই ‘ওঁ নমঃ শিবায়’ জপ করেন, শিবের কাহিনি পড়েন বা শোনেন, ভজন গান। তামিলনাড়ুর মন্দিরে রাতের চারটি অভিষেক হয়; কেরলে আলুভার নদীতীর রাত জাগা মানুষে ভরে যায়; উত্তর ভারতে কাঁওয়ারিয়ারা গঙ্গাজল বয়ে নিয়ে যান শিবমন্দিরে। পরদিন সকালে উপবাস ভাঙা হয়।"
     },
     "story": {
-     "en": "Several stories are told for this night. In one, when the gods and asuras churned the ocean for nectar, a deadly poison, Halahala, rose first and threatened every living thing. Shiva drank it to protect the world, and Parvati held his throat so it would not go further; his throat turned blue, and he is called Neelakantha. The gods kept awake all night to watch over him, and devotees keep that vigil still. Another story tells of a hunter lost in the forest at night who climbed a bilva tree to stay safe. Restless, he plucked leaves and dropped them, not knowing a Shiva linga stood below; by morning he had kept a night's worship without meaning to, and his heart was changed. Many also remember this as the night of Shiva and Parvati's wedding."
+     "en": "Several stories are told for this night. In one, when the gods and asuras churned the ocean for nectar, a deadly poison, Halahala, rose first and threatened every living thing. Shiva drank it to protect the world, and Parvati held his throat so it would not go further; his throat turned blue, and he is called Neelakantha. The gods kept awake all night to watch over him, and devotees keep that vigil still. Another story tells of a hunter lost in the forest at night who climbed a bilva tree to stay safe. Restless, he plucked leaves and dropped them, not knowing a Shiva linga stood below; by morning he had kept a night's worship without meaning to, and his heart was changed. Many also remember this as the night of Shiva and Parvati's wedding.",
+     "bn": "এই রাত নিয়ে একাধিক কাহিনি প্রচলিত। একটিতে, দেবতা ও অসুরেরা যখন অমৃতের জন্য সমুদ্রমন্থন করছিলেন, প্রথমেই উঠে এল হলাহল নামে প্রাণঘাতী বিষ, যা সমস্ত জীবকে বিপন্ন করে তুলল। জগৎকে রক্ষা করতে শিব সেই বিষ পান করলেন, আর পার্বতী তাঁর কণ্ঠ চেপে ধরলেন যাতে তা আর নিচে না নামে; তাঁর কণ্ঠ নীল হয়ে গেল, তাই তিনি নীলকণ্ঠ। দেবতারা সারারাত জেগে তাঁকে পাহারা দিয়েছিলেন, আর ভক্তরা আজও সেই রাত জাগেন। আরেকটি কাহিনি এক শিকারির, যিনি রাতে বনে পথ হারিয়ে নিরাপদে থাকতে একটি বেলগাছে উঠেছিলেন। অস্থির হয়ে তিনি পাতা ছিঁড়ে নিচে ফেলছিলেন, না জেনেই যে নিচে একটি শিবলিঙ্গ ছিল; সকাল হতে হতে অজান্তেই তাঁর সারারাতের পুজো হয়ে গেল, আর তাঁর হৃদয় বদলে গেল। অনেকে এই রাতকে শিব ও পার্বতীর বিবাহের রাত হিসেবেও স্মরণ করেন।"
     },
     "howTo": {
      "en": [
@@ -1548,10 +1580,20 @@
       "Chant 'Om Namah Shivaya', read the Shiva Purana or listen to bhajans; many keep awake through the four quarters of the night.",
       "The night's main worship is at Nishita, around midnight; the app's day view shows the time.",
       "Break the fast the next morning after a bath and a short prayer, with simple food."
+     ],
+     "bn": [
+      "কীভাবে উপবাস করবেন ঠিক করুন: সম্পূর্ণ উপবাস, ফল আর দুধ, নাকি একবেলা সাধারণ আহার; বয়স্ক, শিশু বা অসুস্থরা প্রায়ই হালকাভাবে পালন করেন।",
+      "বেলপাতা, দুধ, জল, দই, মধু, ফুল আর একটি প্রদীপ জোগাড় করে রাখুন।",
+      "সন্ধ্যায় স্নান করে শিবমন্দিরে যান, অথবা বাড়িতে একটি ছোট শিবলিঙ্গ বা ছবি স্থাপন করুন।",
+      "জল ও দুধে শিবলিঙ্গকে স্নান করান, বেলপাতা ও ফুল নিবেদন করুন, প্রদীপ জ্বালান।",
+      "‘ওঁ নমঃ শিবায়’ জপ করুন, শিবপুরাণ পড়ুন বা ভজন শুনুন; অনেকে রাতের চার প্রহর জেগে থাকেন।",
+      "রাতের প্রধান পুজো নিশীথকালে, মধ্যরাতের কাছাকাছি; অ্যাপের দিনের পাতায় সময়টি দেখানো থাকে।",
+      "পরদিন সকালে স্নান ও সংক্ষিপ্ত প্রার্থনার পর সাধারণ খাবার দিয়ে উপবাস ভাঙুন।"
      ]
     },
     "greeting": {
-     "en": "Om Namah Shivaya. Peaceful wishes on Maha Shivaratri."
+     "en": "Om Namah Shivaya. Peaceful wishes on Maha Shivaratri.",
+     "bn": "ওঁ নমঃ শিবায়। মহাশিবরাত্রির শান্তিময় শুভেচ্ছা।"
     }
    }
   },
@@ -1622,7 +1664,9 @@
    "durationDays": 1,
    "variations": [],
    "variationsNative": [],
-   "localNative": {},
+   "localNative": {
+    "FJ": "ফিজিতে রাম নৌমীর দিনে মণ্ডলীগুলির নয় রাতের রামায়ণ পাঠ শেষ হয়।"
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -1630,13 +1674,16 @@
    ],
    "content": {
     "summary": {
-     "en": "The birth of Rama, on the ninth day of bright Chaitra, at midday."
+     "en": "The birth of Rama, on the ninth day of bright Chaitra, at midday.",
+     "bn": "চৈত্র মাসের শুক্লপক্ষের নবমীতে, মধ্যাহ্নে, রামের জন্ম।"
     },
     "traditions": {
-     "en": "Temples and homes celebrate Rama's birth at midday, the hour he is said to have been born, with a small cradle holding an image of baby Rama rocked to songs. Many people fast until noon or through the day. The Ramayana or Ramcharitmanas is read, sometimes over all nine days of Navratri, finishing today. Processions (shobha yatras) carry images of Rama, Sita, Lakshmana and Hanuman through towns, and Ayodhya draws large crowds. Panakam (a jaggery and pepper drink) and kosambari are offered in the South, and in the North a sweet called panjiri is shared."
+     "en": "Temples and homes celebrate Rama's birth at midday, the hour he is said to have been born, with a small cradle holding an image of baby Rama rocked to songs. Many people fast until noon or through the day. The Ramayana or Ramcharitmanas is read, sometimes over all nine days of Navratri, finishing today. Processions (shobha yatras) carry images of Rama, Sita, Lakshmana and Hanuman through towns, and Ayodhya draws large crowds. Panakam (a jaggery and pepper drink) and kosambari are offered in the South, and in the North a sweet called panjiri is shared.",
+     "bn": "মন্দিরে আর বাড়িতে মধ্যাহ্নে, যে সময়ে রামের জন্ম হয়েছিল বলে বলা হয়, তাঁর জন্মোৎসব পালিত হয়; একটি ছোট দোলনায় শিশু রামের মূর্তি রেখে গানের সঙ্গে দোলানো হয়। অনেকে দুপুর পর্যন্ত বা সারাদিন উপবাস করেন। রামায়ণ বা রামচরিতমানস পাঠ হয়, কখনও নবরাত্রির নয় দিন ধরে, যা শেষ হয় আজ। শোভাযাত্রায় রাম, সীতা, লক্ষ্মণ ও হনুমানের মূর্তি নিয়ে শহর ঘোরা হয়, আর অযোধ্যায় বিপুল ভিড় হয়। দক্ষিণে পানকম (গুড় আর গোলমরিচের পানীয়) ও কোসাম্বরি নিবেদন করা হয়, আর উত্তরে পাঞ্জিরি নামে একটি মিষ্টি বিতরণ করা হয়।"
     },
     "story": {
-     "en": "King Dasharatha of Ayodhya ruled well but had no children. On the advice of the sage Vasishtha, a great yajna was performed, and from its fire came a bowl of sweet payasam, which the king shared among his three queens. In time Kausalya gave birth to Rama on the ninth day of bright Chaitra, at midday; Kaikeyi to Bharata; and Sumitra to the twins Lakshmana and Shatrughna. Tradition remembers Rama as Maryada Purushottama, the one who kept to what was right even when it cost him most: he gave up his throne and went to the forest for fourteen years to keep his father's word. Ram Navami celebrates his birth and the life he went on to live."
+     "en": "King Dasharatha of Ayodhya ruled well but had no children. On the advice of the sage Vasishtha, a great yajna was performed, and from its fire came a bowl of sweet payasam, which the king shared among his three queens. In time Kausalya gave birth to Rama on the ninth day of bright Chaitra, at midday; Kaikeyi to Bharata; and Sumitra to the twins Lakshmana and Shatrughna. Tradition remembers Rama as Maryada Purushottama, the one who kept to what was right even when it cost him most: he gave up his throne and went to the forest for fourteen years to keep his father's word. Ram Navami celebrates his birth and the life he went on to live.",
+     "bn": "অযোধ্যার রাজা দশরথ সুশাসক ছিলেন, কিন্তু তাঁর কোনো সন্তান ছিল না। ঋষি বশিষ্ঠের পরামর্শে এক মহাযজ্ঞ হল, আর তার অগ্নি থেকে উঠে এল এক পাত্র মিষ্টি পায়েস, যা রাজা তিন রানির মধ্যে ভাগ করে দিলেন। যথাসময়ে চৈত্রের শুক্লা নবমীতে মধ্যাহ্নে কৌশল্যা জন্ম দিলেন রামকে; কৈকেয়ী ভরতকে; আর সুমিত্রা যমজ লক্ষ্মণ ও শত্রুঘ্নকে। ঐতিহ্যে রাম স্মরণীয় মর্যাদা পুরুষোত্তম রূপে, যিনি সবচেয়ে বড় মূল্য দিয়েও ন্যায়ের পথ ছাড়েননি: পিতার কথা রাখতে তিনি সিংহাসন ছেড়ে চোদ্দো বছরের জন্য বনে গিয়েছিলেন। রামনবমী তাঁর জন্ম আর তাঁর পরবর্তী জীবনের উদ্‌যাপন।"
     },
     "howTo": {
      "en": [
@@ -1647,10 +1694,20 @@
       "At midday, light a lamp, rock the cradle gently, sing 'Bhaye prakat kripala' or another birth song, and offer the food.",
       "Read a passage from the Ramayana or Ramcharitmanas, or listen to it together.",
       "Share the prasad, break the fast with a simple meal, and join a local procession if there is one."
+     ],
+     "bn": [
+      "পুজোর জায়গা পরিষ্কার করে একটি ছোট দোলনা বা রামের ছবি ফুল দিয়ে সাজান।",
+      "আপনার পরিবারে প্রচলন থাকলে সকাল পর্যন্ত উপবাস রাখুন; সাধারণত ফল আর দুধ খাওয়া হয়।",
+      "নৈবেদ্যের জন্য পাঞ্জিরি, পায়েস বা ক্ষীর, ফল আর তুলসীপাতা প্রস্তুত করুন।",
+      "দিনের পাতায় মধ্যাহ্নের সময় দেখে নিন; সেটিই রামের জন্মক্ষণ।",
+      "মধ্যাহ্নে প্রদীপ জ্বালান, আলতো করে দোলনা দোলান, ‘ভয়ে প্রকট কৃপালা’ বা অন্য কোনো জন্মগীতি গান, আর নৈবেদ্য নিবেদন করুন।",
+      "রামায়ণ বা রামচরিতমানস থেকে একটি অংশ পড়ুন, অথবা সবাই মিলে শুনুন।",
+      "প্রসাদ ভাগ করে নিন, সাধারণ খাবারে উপবাস ভাঙুন, আর কাছাকাছি শোভাযাত্রা থাকলে তাতে যোগ দিন।"
      ]
     },
     "greeting": {
-     "en": "Jai Shri Ram! Warm wishes on Ram Navami."
+     "en": "Jai Shri Ram! Warm wishes on Ram Navami.",
+     "bn": "জয় শ্রীরাম! রামনবমীর আন্তরিক শুভেচ্ছা।"
     }
    }
   },
@@ -1738,13 +1795,16 @@
    ],
    "content": {
     "summary": {
-     "en": "The third day of bright Vaishakha, traditionally favoured for new beginnings and for giving."
+     "en": "The third day of bright Vaishakha, traditionally favoured for new beginnings and for giving.",
+     "bn": "বৈশাখ মাসের শুক্লপক্ষের তৃতীয়া, ঐতিহ্যগতভাবে নতুন কাজের সূচনা আর দানের জন্য প্রিয় একটি দিন।"
     },
     "traditions": {
-     "en": "'Akshaya' means 'that which does not diminish', and the day is traditionally seen as good for starting things: a business, a house, a course of study, a marriage. Many families buy a little gold or silver, and many more give: water and cooling drinks, fans, umbrellas, grain and clothes, since it falls in the hot season. Vishnu and Lakshmi are worshipped, and in Odisha the building of the chariots for the Puri Rath Yatra begins today. Parashurama Jayanti falls on or near the same day, and Jain families break the year-long varshi tapa fast with sugarcane juice."
+     "en": "'Akshaya' means 'that which does not diminish', and the day is traditionally seen as good for starting things: a business, a house, a course of study, a marriage. Many families buy a little gold or silver, and many more give: water and cooling drinks, fans, umbrellas, grain and clothes, since it falls in the hot season. Vishnu and Lakshmi are worshipped, and in Odisha the building of the chariots for the Puri Rath Yatra begins today. Parashurama Jayanti falls on or near the same day, and Jain families break the year-long varshi tapa fast with sugarcane juice.",
+     "bn": "‘অক্ষয়’ মানে ‘যার ক্ষয় নেই’, আর ঐতিহ্যগতভাবে দিনটিকে কোনো কিছু শুরু করার পক্ষে ভালো বলে ধরা হয়: ব্যবসা, বাড়ি, পড়াশোনা, বিবাহ। অনেক পরিবার সামান্য সোনা বা রুপো কেনেন, আর তার চেয়েও বেশি পরিবার দান করেন: যেহেতু দিনটি গরমের সময়ে পড়ে, তাই জল ও ঠান্ডা পানীয়, পাখা, ছাতা, শস্য আর বস্ত্র। বিষ্ণু ও লক্ষ্মীর পুজো হয়, আর ওড়িশায় আজ থেকেই পুরীর রথযাত্রার রথ তৈরির কাজ শুরু হয়। পরশুরাম জয়ন্তী একই দিনে বা তার কাছাকাছি পড়ে, আর জৈন পরিবারগুলি আখের রস দিয়ে বছরব্যাপী বর্ষী তপের উপবাস ভাঙেন।"
     },
     "story": {
-     "en": "Several stories meet on this day. In one, Krishna's childhood friend Sudama, a poor Brahmin, walked to Dwarka to see him, carrying only a little beaten rice (poha) tied in a cloth as a gift. Krishna embraced him, ate the poha with delight, and sent him home without Sudama asking for anything; when Sudama returned, his family's hardship had ended. In another, during the Pandavas' exile, Krishna gave Draupadi the Akshaya Patra, a vessel that never ran empty until she had eaten, so no guest at their door went hungry. Tradition also holds that the Treta Yuga began on this day, that the Ganga descended to earth, and that Vyasa began dictating the Mahabharata to Ganesha."
+     "en": "Several stories meet on this day. In one, Krishna's childhood friend Sudama, a poor Brahmin, walked to Dwarka to see him, carrying only a little beaten rice (poha) tied in a cloth as a gift. Krishna embraced him, ate the poha with delight, and sent him home without Sudama asking for anything; when Sudama returned, his family's hardship had ended. In another, during the Pandavas' exile, Krishna gave Draupadi the Akshaya Patra, a vessel that never ran empty until she had eaten, so no guest at their door went hungry. Tradition also holds that the Treta Yuga began on this day, that the Ganga descended to earth, and that Vyasa began dictating the Mahabharata to Ganesha.",
+     "bn": "এই দিনে একাধিক কাহিনি মিলেছে। একটিতে, কৃষ্ণের ছেলেবেলার বন্ধু, দরিদ্র ব্রাহ্মণ সুদামা, উপহার হিসেবে কাপড়ে বাঁধা সামান্য চিঁড়ে নিয়ে হেঁটে দ্বারকায় তাঁর সঙ্গে দেখা করতে যান। কৃষ্ণ তাঁকে আলিঙ্গন করলেন, পরম আনন্দে সেই চিঁড়ে খেলেন, আর সুদামা কিছু না চাইতেই তাঁকে বাড়ি ফেরত পাঠালেন; সুদামা ফিরে দেখলেন তাঁর পরিবারের অভাব দূর হয়ে গেছে। আরেকটিতে, পাণ্ডবদের বনবাসের সময় কৃষ্ণ দ্রৌপদীকে অক্ষয় পাত্র দেন, যা দ্রৌপদীর খাওয়া না হওয়া পর্যন্ত কখনও খালি হত না, ফলে তাঁদের দুয়ারে আসা কোনো অতিথি অভুক্ত ফিরতেন না। ঐতিহ্য আরও বলে, এই দিনেই ত্রেতাযুগের শুরু, গঙ্গা পৃথিবীতে অবতরণ করেন, আর ব্যাস গণেশকে মহাভারতের শ্রুতিলিখন দিতে শুরু করেন।"
     },
     "howTo": {
      "en": [
@@ -1754,10 +1814,19 @@
       "Give something in the spirit of the day: water or buttermilk to passers-by, an umbrella, a fan, grain or clothes.",
       "If your family buys gold or silver, keep it small and meaningful; the giving matters more in the tradition.",
       "Share a simple meal, and if you can, feed a guest or someone who needs it."
+     ],
+     "bn": [
+      "সকালে স্নান করে বাড়িতে বিষ্ণু ও লক্ষ্মীকে প্রদীপ, ফুল আর তুলসী নিবেদন করুন।",
+      "সহজ ও শীতল কিছু নিবেদন করুন: যব, ছাতু, শসা, গুড়ের জল বা পানকম।",
+      "কোনো কিছু শুরু করার কথা ভাবছিলেন, যেমন একটি পাঠক্রম, সঞ্চয়ের পরিকল্পনা বা ছোট কোনো উদ্যোগ, তবে অনেক পরিবার আজকের দিনটিই বেছে নেন।",
+      "দিনটির ভাব মেনে কিছু দান করুন: পথচারীদের জল বা ঘোল, একটি ছাতা, পাখা, শস্য বা বস্ত্র।",
+      "আপনার পরিবার সোনা বা রুপো কিনলে, তা অল্প ও অর্থপূর্ণ রাখুন; ঐতিহ্যে দানের গুরুত্বই বেশি।",
+      "সাধারণ খাবার ভাগ করে খান, আর পারলে কোনো অতিথি বা প্রয়োজন আছে এমন কাউকে খাওয়ান।"
      ]
     },
     "greeting": {
-     "en": "May what you begin today grow steadily. Happy Akshaya Tritiya!"
+     "en": "May what you begin today grow steadily. Happy Akshaya Tritiya!",
+     "bn": "আজ যা শুরু করছেন, তা ধীরে ধীরে বেড়ে উঠুক। অক্ষয় তৃতীয়ার শুভেচ্ছা!"
     }
    }
   },
@@ -1828,13 +1897,16 @@
    ],
    "content": {
     "summary": {
-     "en": "The full moon of Vaishakha, remembering the birth, enlightenment and passing of the Buddha."
+     "en": "The full moon of Vaishakha, remembering the birth, enlightenment and passing of the Buddha.",
+     "bn": "বৈশাখী পূর্ণিমা, বুদ্ধের জন্ম, বোধিলাভ আর মহাপরিনির্বাণের স্মরণে।"
     },
     "traditions": {
-     "en": "Buddhists and many Hindus mark the day with visits to viharas and temples, offerings of flowers, candles and incense, and readings of the Buddha's teachings. At Bodh Gaya, Sarnath and Kushinagar, pilgrims gather in large numbers. Many people keep the day vegetarian, give food and water, and some release caged birds. Hindu tradition counts the Buddha among the avatars of Vishnu, and Satyanarayan katha is held in many homes on this full moon."
+     "en": "Buddhists and many Hindus mark the day with visits to viharas and temples, offerings of flowers, candles and incense, and readings of the Buddha's teachings. At Bodh Gaya, Sarnath and Kushinagar, pilgrims gather in large numbers. Many people keep the day vegetarian, give food and water, and some release caged birds. Hindu tradition counts the Buddha among the avatars of Vishnu, and Satyanarayan katha is held in many homes on this full moon.",
+     "bn": "বৌদ্ধরা এবং বহু হিন্দু দিনটি পালন করেন বিহার ও মন্দিরে গিয়ে, ফুল, মোমবাতি ও ধূপ নিবেদন করে, আর বুদ্ধের উপদেশ পাঠ করে। বোধগয়া, সারনাথ ও কুশীনগরে বিপুল সংখ্যায় তীর্থযাত্রী সমবেত হন। অনেকে দিনটি নিরামিষ রাখেন, খাদ্য ও জল দান করেন, আর কেউ কেউ খাঁচার পাখি মুক্ত করে দেন। হিন্দু ঐতিহ্যে বুদ্ধকে বিষ্ণুর অবতারদের মধ্যে গণ্য করা হয়, আর এই পূর্ণিমায় বহু বাড়িতে সত্যনারায়ণের কথা হয়।"
     },
     "story": {
-     "en": "Prince Siddhartha was born in the Lumbini garden to Queen Mayadevi, on the full moon of Vaishakha. Raised in comfort, he left the palace as a young man after seeing old age, illness and death for the first time, and set out to understand suffering. After years of searching he sat beneath a pipal tree at Bodh Gaya and resolved not to rise until he understood. On the full moon of Vaishakha he attained enlightenment and became the Buddha, the awakened one. He spent the rest of his life teaching the middle way. Tradition holds that his passing, at Kushinagar, also fell on this full moon."
+     "en": "Prince Siddhartha was born in the Lumbini garden to Queen Mayadevi, on the full moon of Vaishakha. Raised in comfort, he left the palace as a young man after seeing old age, illness and death for the first time, and set out to understand suffering. After years of searching he sat beneath a pipal tree at Bodh Gaya and resolved not to rise until he understood. On the full moon of Vaishakha he attained enlightenment and became the Buddha, the awakened one. He spent the rest of his life teaching the middle way. Tradition holds that his passing, at Kushinagar, also fell on this full moon.",
+     "bn": "বৈশাখী পূর্ণিমায় লুম্বিনীর উদ্যানে রানি মায়াদেবীর কোলে জন্ম নেন রাজকুমার সিদ্ধার্থ। স্বাচ্ছন্দ্যে বড় হয়ে ওঠা সিদ্ধার্থ যৌবনে প্রথমবার বার্ধক্য, রোগ আর মৃত্যু দেখে প্রাসাদ ছেড়ে বেরিয়ে পড়েন দুঃখের স্বরূপ বুঝতে। বহু বছরের সন্ধানের পর তিনি বোধগয়ায় এক অশ্বত্থ গাছের নিচে বসে সংকল্প করলেন, বোধ না হওয়া পর্যন্ত উঠবেন না। বৈশাখী পূর্ণিমায় তিনি বোধিলাভ করে বুদ্ধ, অর্থাৎ জাগ্রত পুরুষ, হলেন। বাকি জীবন তিনি মধ্যপথের শিক্ষা দিয়ে গেছেন। ঐতিহ্য মতে, কুশীনগরে তাঁর মহাপরিনির্বাণও এই পূর্ণিমাতেই হয়েছিল।"
     },
     "howTo": {
      "en": [
@@ -1842,10 +1914,17 @@
       "Light a lamp or candle and offer flowers before an image of the Buddha, or visit a vihara.",
       "Read or listen to a passage of the Buddha's teaching, such as the Dhammapada, and sit quietly for a while.",
       "Give food, water or help to someone who needs it."
+     ],
+     "bn": [
+      "দিনটি সরল ও নিরামিষ রাখুন।",
+      "বুদ্ধের মূর্তির সামনে প্রদীপ বা মোমবাতি জ্বালিয়ে ফুল নিবেদন করুন, অথবা কোনো বিহারে যান।",
+      "বুদ্ধের উপদেশের একটি অংশ, যেমন ধম্মপদ, পড়ুন বা শুনুন, আর কিছুক্ষণ চুপচাপ বসে থাকুন।",
+      "প্রয়োজন আছে এমন কাউকে খাবার, জল বা সাহায্য দিন।"
      ]
     },
     "greeting": {
-     "en": "Peaceful wishes on Buddha Purnima."
+     "en": "Peaceful wishes on Buddha Purnima.",
+     "bn": "বুদ্ধ পূর্ণিমার শান্তিময় শুভেচ্ছা।"
     }
    }
   },
@@ -1877,13 +1956,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Jyeshtha Shukla Dashami: the day the Ganga descended from heaven to earth."
+     "en": "Jyeshtha Shukla Dashami: the day the Ganga descended from heaven to earth.",
+     "bn": "জ্যৈষ্ঠ শুক্লা দশমী: যেদিন গঙ্গা স্বর্গ থেকে পৃথিবীতে নেমে এসেছিলেন।"
     },
     "traditions": {
-     "en": "Pilgrims bathe in the Ganga at Haridwar, Rishikesh, Prayagraj, Varanasi and Garhmukteshwar, and the evening aartis on the ghats are among the largest of the year. Ten is the number of the day: people offer ten kinds of flowers, ten lamps, and give ten items in charity, such as fruit, fans, water pots and grain. Kites are flown in some towns, and sherbet and water are given out in the summer heat. In a year with an adhika Jyeshtha, many almanacs place it in the adhika month."
+     "en": "Pilgrims bathe in the Ganga at Haridwar, Rishikesh, Prayagraj, Varanasi and Garhmukteshwar, and the evening aartis on the ghats are among the largest of the year. Ten is the number of the day: people offer ten kinds of flowers, ten lamps, and give ten items in charity, such as fruit, fans, water pots and grain. Kites are flown in some towns, and sherbet and water are given out in the summer heat. In a year with an adhika Jyeshtha, many almanacs place it in the adhika month.",
+     "bn": "তীর্থযাত্রীরা হরিদ্বার, ঋষিকেশ, প্রয়াগরাজ, বারাণসী আর গড়মুক্তেশ্বরে গঙ্গাস্নান করেন, আর ঘাটে ঘাটে সন্ধ্যার আরতি বছরের সবচেয়ে বড় আরতিগুলির মধ্যে একটি। এই দিনের সংখ্যা দশ: লোকে দশ রকমের ফুল, দশটি প্রদীপ নিবেদন করেন, আর দশটি জিনিস দান করেন, যেমন ফল, পাখা, জলের কলসি আর শস্য। কোনো কোনো শহরে ঘুড়ি ওড়ানো হয়, আর গ্রীষ্মের গরমে শরবত ও জল বিতরণ করা হয়। যে বছর অধিক জ্যৈষ্ঠ থাকে, অনেক পঞ্জিকা দিনটিকে অধিক মাসেই রাখে।"
     },
     "story": {
-     "en": "King Sagara's sixty thousand sons had been reduced to ashes by the sage Kapila's gaze, and only the waters of the Ganga, then flowing in heaven, could give them peace. Generations of their descendants tried and failed to bring her down, until King Bhagiratha kept such a long tapas that Brahma agreed. But the force of the Ganga falling from heaven would have shattered the earth. Bhagiratha prayed to Shiva, who caught her in his matted hair and let her flow gently down in streams. She followed Bhagiratha's chariot across the plains to the sea, and gave peace to his ancestors. That descent is remembered on Jyeshtha Shukla Dashami, and 'Bhagiratha's effort' still means an untiring one."
+     "en": "King Sagara's sixty thousand sons had been reduced to ashes by the sage Kapila's gaze, and only the waters of the Ganga, then flowing in heaven, could give them peace. Generations of their descendants tried and failed to bring her down, until King Bhagiratha kept such a long tapas that Brahma agreed. But the force of the Ganga falling from heaven would have shattered the earth. Bhagiratha prayed to Shiva, who caught her in his matted hair and let her flow gently down in streams. She followed Bhagiratha's chariot across the plains to the sea, and gave peace to his ancestors. That descent is remembered on Jyeshtha Shukla Dashami, and 'Bhagiratha's effort' still means an untiring one.",
+     "bn": "ঋষি কপিলের দৃষ্টিতে রাজা সগরের ষাট হাজার পুত্র ভস্ম হয়ে গিয়েছিলেন, আর তখন স্বর্গে প্রবাহিত গঙ্গার জলই কেবল তাঁদের শান্তি দিতে পারত। তাঁদের বংশধরেরা প্রজন্মের পর প্রজন্ম চেষ্টা করেও গঙ্গাকে নামিয়ে আনতে পারেননি, শেষে রাজা ভগীরথ এমন দীর্ঘ তপস্যা করলেন যে ব্রহ্মা সম্মত হলেন। কিন্তু স্বর্গ থেকে নেমে আসা গঙ্গার বেগে পৃথিবী চূর্ণ হয়ে যেত। ভগীরথ শিবের কাছে প্রার্থনা করলেন, আর শিব তাঁকে নিজের জটায় ধারণ করে ধীরে ধীরে ধারায় ধারায় নামতে দিলেন। গঙ্গা ভগীরথের রথ অনুসরণ করে সমভূমি পেরিয়ে সমুদ্রে পৌঁছলেন, আর তাঁর পূর্বপুরুষদের শান্তি দিলেন। সেই অবতরণ স্মরণ করা হয় জ্যৈষ্ঠ শুক্লা দশমীতে, আর ‘ভগীরথের প্রয়াস’ আজও অক্লান্ত চেষ্টার অর্থে বলা হয়।"
     },
     "howTo": {
      "en": [
@@ -1891,10 +1973,17 @@
       "Offer ten flowers or ten lamps to the river or to a vessel of Ganga water.",
       "Give ten items to those in need: water, fruit, a fan, grain, sherbet, clothes.",
       "In the evening, watch or join a Ganga aarti, and float a lamp if you are at a ghat."
+     ],
+     "bn": [
+      "পারলে গঙ্গায় স্নান করুন, নয়তো বাড়িতে সামান্য গঙ্গাজল মিশিয়ে স্নান করুন।",
+      "নদীতে বা গঙ্গাজলের পাত্রে দশটি ফুল বা দশটি প্রদীপ নিবেদন করুন।",
+      "প্রয়োজন আছে এমন মানুষদের দশটি জিনিস দিন: জল, ফল, পাখা, শস্য, শরবত, বস্ত্র।",
+      "সন্ধ্যায় গঙ্গারতি দেখুন বা তাতে যোগ দিন, আর ঘাটে থাকলে একটি প্রদীপ ভাসিয়ে দিন।"
      ]
     },
     "greeting": {
-     "en": "Har Har Gange! Wishes on Ganga Dussehra."
+     "en": "Har Har Gange! Wishes on Ganga Dussehra.",
+     "bn": "হর হর গঙ্গে! গঙ্গা দশহরার শুভেচ্ছা।"
     }
    }
   },
@@ -1961,13 +2050,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Ashadha Shukla Dwitiya: Jagannath, Balabhadra and Subhadra ride their chariots through Puri."
+     "en": "Ashadha Shukla Dwitiya: Jagannath, Balabhadra and Subhadra ride their chariots through Puri.",
+     "bn": "আষাঢ় শুক্লা দ্বিতীয়া: জগন্নাথ, বলভদ্র ও সুভদ্রা রথে চড়ে পুরী পরিক্রমা করেন।"
     },
     "traditions": {
-     "en": "In Puri, the three deities are brought out of the Jagannath temple and placed on three huge wooden chariots, built new every year. After the king of Puri sweeps the chariots with a golden broom (chhera pahanra), thousands of devotees pull them with ropes along the Bada Danda to the Gundicha temple, where the deities stay for a week before the return journey. Rath yatras are held in towns and cities around the world. At home, people watch the broadcast, offer khichdi and sweets, and sing bhajans."
+     "en": "In Puri, the three deities are brought out of the Jagannath temple and placed on three huge wooden chariots, built new every year. After the king of Puri sweeps the chariots with a golden broom (chhera pahanra), thousands of devotees pull them with ropes along the Bada Danda to the Gundicha temple, where the deities stay for a week before the return journey. Rath yatras are held in towns and cities around the world. At home, people watch the broadcast, offer khichdi and sweets, and sing bhajans.",
+     "bn": "পুরীতে তিন বিগ্রহকে জগন্নাথ মন্দির থেকে বের করে প্রতি বছর নতুন করে তৈরি তিনটি বিশাল কাঠের রথে বসানো হয়। পুরীর রাজা সোনার ঝাড়ু দিয়ে রথ ঝাঁট দেওয়ার (ছেরা পহঁরা) পর হাজার হাজার ভক্ত দড়ি ধরে রথ টেনে বড় দাণ্ড ধরে গুণ্ডিচা মন্দিরে নিয়ে যান, যেখানে ফিরতি যাত্রার আগে বিগ্রহেরা এক সপ্তাহ থাকেন। পৃথিবী জুড়ে নানা শহরে রথযাত্রা হয়। বাড়িতে লোকে সম্প্রচার দেখেন, খিচুড়ি আর মিষ্টি নিবেদন করেন, ভজন গান।"
     },
     "story": {
-     "en": "The story told is that Jagannath's chariot journey is a visit to his aunt's home at the Gundicha temple, his birthplace, where he stays for nine days. A popular telling adds that Lakshmi, left behind, comes looking for him and, finding him away with his siblings, breaks a piece of his chariot in mild displeasure, and that on his return he has to win her over with sweets before the temple doors open to him. The chariots are pulled by anyone who comes, with no distinction of caste or status, and it is said that the deities come out of the temple once a year so that everyone can see them."
+     "en": "The story told is that Jagannath's chariot journey is a visit to his aunt's home at the Gundicha temple, his birthplace, where he stays for nine days. A popular telling adds that Lakshmi, left behind, comes looking for him and, finding him away with his siblings, breaks a piece of his chariot in mild displeasure, and that on his return he has to win her over with sweets before the temple doors open to him. The chariots are pulled by anyone who comes, with no distinction of caste or status, and it is said that the deities come out of the temple once a year so that everyone can see them.",
+     "bn": "কাহিনি অনুযায়ী, জগন্নাথের রথযাত্রা হল গুণ্ডিচা মন্দিরে, তাঁর জন্মস্থানে, মাসির বাড়ি বেড়াতে যাওয়া, যেখানে তিনি নয় দিন থাকেন। একটি জনপ্রিয় কাহিনি যোগ করে, পিছনে পড়ে থাকা লক্ষ্মী তাঁকে খুঁজতে আসেন, আর তিনি ভাইবোনদের সঙ্গে বেড়াতে গেছেন দেখে খানিক অভিমানে তাঁর রথের একটি অংশ ভেঙে দেন; ফিরে এসে মন্দিরের দরজা খোলানোর আগে জগন্নাথকে মিষ্টি দিয়ে তাঁর মান ভাঙাতে হয়। যে-ই আসুন, জাত বা মর্যাদার কোনো ভেদ ছাড়াই রথ টানতে পারেন, আর বলা হয়, সবাই যাতে দর্শন পান, সেই জন্যই বছরে একবার বিগ্রহেরা মন্দিরের বাইরে আসেন।"
     },
     "howTo": {
      "en": [
@@ -1975,10 +2067,17 @@
       "At home, offer khichdi, fruit and a sweet to a picture of Jagannath.",
       "Light a lamp and sing or listen to Jagannath bhajans.",
       "Share the prasad, and if you join a procession, take a turn pulling the rope."
+     ],
+     "bn": [
+      "আপনার শহরের রথযাত্রায় যোগ দিন, অথবা পুরীর শোভাযাত্রা দেখুন।",
+      "বাড়িতে জগন্নাথের ছবির সামনে খিচুড়ি, ফল আর একটি মিষ্টি নিবেদন করুন।",
+      "প্রদীপ জ্বালিয়ে জগন্নাথের ভজন গান বা শুনুন।",
+      "প্রসাদ ভাগ করে নিন, আর শোভাযাত্রায় গেলে একবার রথের দড়ি টানুন।"
      ]
     },
     "greeting": {
-     "en": "Jai Jagannath! Wishes on the Rath Yatra."
+     "en": "Jai Jagannath! Wishes on the Rath Yatra.",
+     "bn": "জয় জগন্নাথ! রথযাত্রার শুভেচ্ছা।"
     }
    }
   },
@@ -2009,13 +2108,16 @@
    ],
    "content": {
     "summary": {
-     "en": "The full moon of Ashadha, for honouring teachers, remembering Vyasa."
+     "en": "The full moon of Ashadha, for honouring teachers, remembering Vyasa.",
+     "bn": "আষাঢ়ী পূর্ণিমা, শিক্ষকদের সম্মান জানানো আর ব্যাসদেবকে স্মরণ করার দিন।"
     },
     "traditions": {
-     "en": "Students visit and thank their teachers, and disciples gather at ashrams and with their spiritual guides. Music and dance students offer flowers and a performance to their gurus. Many families honour parents and elders as their first teachers. Ashrams hold Vyasa puja, and the day begins the four months of chaturmas, when wandering monks stay in one place for the monsoon. Buddhists remember it as the day the Buddha gave his first teaching at Sarnath."
+     "en": "Students visit and thank their teachers, and disciples gather at ashrams and with their spiritual guides. Music and dance students offer flowers and a performance to their gurus. Many families honour parents and elders as their first teachers. Ashrams hold Vyasa puja, and the day begins the four months of chaturmas, when wandering monks stay in one place for the monsoon. Buddhists remember it as the day the Buddha gave his first teaching at Sarnath.",
+     "bn": "ছাত্রছাত্রীরা শিক্ষকদের কাছে গিয়ে কৃতজ্ঞতা জানায়, আর শিষ্যরা আশ্রমে ও তাঁদের আধ্যাত্মিক পথপ্রদর্শকদের কাছে সমবেত হন। গান ও নাচের শিক্ষার্থীরা গুরুকে ফুল আর একটি পরিবেশনা নিবেদন করে। অনেক পরিবার বাবা-মা ও গুরুজনদের প্রথম শিক্ষক হিসেবে সম্মান জানান। আশ্রমে ব্যাসপুজো হয়, আর এই দিন থেকে শুরু হয় চাতুর্মাস্যের চার মাস, যখন পরিব্রাজক সন্ন্যাসীরা বর্ষার জন্য এক জায়গায় থাকেন। বৌদ্ধরা দিনটিকে স্মরণ করেন সারনাথে বুদ্ধের প্রথম উপদেশ দেওয়ার দিন হিসেবে।"
     },
     "story": {
-     "en": "Guru Purnima is the birthday of Veda Vyasa, born to the sage Parashara and Satyavati on an island in the Yamuna. Tradition credits him with dividing the one Veda into four so that it could be learned, composing the Mahabharata, and compiling the Puranas, which is why he is honoured as the teacher of teachers and the day is also called Vyasa Purnima. Yogic tradition adds that on this full moon Shiva, the Adiyogi, sat facing south and began to teach the first seven disciples, the Saptarishis, becoming the first guru."
+     "en": "Guru Purnima is the birthday of Veda Vyasa, born to the sage Parashara and Satyavati on an island in the Yamuna. Tradition credits him with dividing the one Veda into four so that it could be learned, composing the Mahabharata, and compiling the Puranas, which is why he is honoured as the teacher of teachers and the day is also called Vyasa Purnima. Yogic tradition adds that on this full moon Shiva, the Adiyogi, sat facing south and began to teach the first seven disciples, the Saptarishis, becoming the first guru.",
+     "bn": "গুরু পূর্ণিমা বেদব্যাসের জন্মদিন, যিনি যমুনার এক দ্বীপে ঋষি পরাশর ও সত্যবতীর পুত্র হয়ে জন্মেছিলেন। ঐতিহ্য মতে তিনি এক বেদকে চার ভাগে ভাগ করেছিলেন যাতে তা শেখা যায়, মহাভারত রচনা করেছিলেন, আর পুরাণগুলি সংকলন করেছিলেন; তাই তাঁকে গুরুদের গুরু হিসেবে সম্মান করা হয়, আর দিনটিকে ব্যাস পূর্ণিমাও বলা হয়। যোগ ঐতিহ্য যোগ করে, এই পূর্ণিমায় আদিযোগী শিব দক্ষিণমুখী হয়ে বসে প্রথম সাত শিষ্য, সপ্তর্ষিদের, শিক্ষা দিতে শুরু করেন এবং প্রথম গুরু হন।"
     },
     "howTo": {
      "en": [
@@ -2024,10 +2126,18 @@
       "At home, light a lamp before a picture of Vyasa, your guru or your family deity, and offer flowers.",
       "Touch the feet of your parents and elders, your first teachers.",
       "Spend a little time studying or practising something you have learned, in your teacher's honour."
+     ],
+     "bn": [
+      "যে শিক্ষকেরা আপনাকে গড়ে তুলেছেন, তাঁদের কথা ভাবুন: স্কুলে, গানে বা কোনো কারুকাজে, বাড়িতে, কিংবা আধ্যাত্মিক পথে।",
+      "তাঁদের কারও কাছে গিয়ে বা ফোন করে কৃতজ্ঞতা জানান; দেখা করতে গেলে ফুল, ফল বা ছোট কোনো উপহার নিয়ে যান।",
+      "বাড়িতে ব্যাসদেব, আপনার গুরু বা কুলদেবতার ছবির সামনে প্রদীপ জ্বালিয়ে ফুল নিবেদন করুন।",
+      "আপনার প্রথম শিক্ষক, বাবা-মা ও গুরুজনদের প্রণাম করুন।",
+      "শিক্ষকের সম্মানে, যা শিখেছেন তার কিছুটা পড়ে বা অনুশীলন করে খানিক সময় কাটান।"
      ]
     },
     "greeting": {
-     "en": "With gratitude to every teacher. Happy Guru Purnima!"
+     "en": "With gratitude to every teacher. Happy Guru Purnima!",
+     "bn": "প্রত্যেক শিক্ষকের প্রতি কৃতজ্ঞতা জানিয়ে, গুরু পূর্ণিমার শুভেচ্ছা!"
     }
    }
   },
@@ -2058,13 +2168,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Shravana Purnima: sisters tie a rakhi on their brothers' wrists, and brothers promise to stand by them."
+     "en": "Shravana Purnima: sisters tie a rakhi on their brothers' wrists, and brothers promise to stand by them.",
+     "bn": "শ্রাবণী পূর্ণিমা: বোনেরা ভাইয়ের কবজিতে রাখি বাঁধেন, আর ভাইয়েরা পাশে থাকার প্রতিশ্রুতি দেন।"
     },
     "traditions": {
-     "en": "In the morning sisters prepare a thali with a rakhi, roli, rice, a lamp and sweets. They apply a tilak to their brother's forehead, tie the rakhi on his right wrist, wave the lamp and feed him a sweet; the brother gives a gift and a promise of support. Cousins and friends tie rakhis too, and sisters far away post them. Rakhi is tied outside the Bhadra period, which the day view shows. In Maharashtra the same full moon is Narali Purnima, when fishing communities offer coconuts to the sea, and in the South it is Avani Avittam, when the sacred thread is renewed."
+     "en": "In the morning sisters prepare a thali with a rakhi, roli, rice, a lamp and sweets. They apply a tilak to their brother's forehead, tie the rakhi on his right wrist, wave the lamp and feed him a sweet; the brother gives a gift and a promise of support. Cousins and friends tie rakhis too, and sisters far away post them. Rakhi is tied outside the Bhadra period, which the day view shows. In Maharashtra the same full moon is Narali Purnima, when fishing communities offer coconuts to the sea, and in the South it is Avani Avittam, when the sacred thread is renewed.",
+     "bn": "সকালে বোনেরা রাখি, রোলি, চাল, প্রদীপ আর মিষ্টি দিয়ে একটি থালা সাজান। তাঁরা ভাইয়ের কপালে তিলক দেন, ডান কবজিতে রাখি বাঁধেন, প্রদীপ ঘুরিয়ে আরতি করেন আর মিষ্টি খাওয়ান; ভাই উপহার দেন আর পাশে থাকার প্রতিশ্রুতি দেন। তুতো ভাইবোন ও বন্ধুরাও রাখি বাঁধেন, আর দূরে থাকা বোনেরা ডাকে পাঠান। রাখি বাঁধা হয় ভদ্রাকালের বাইরে, যা দিনের পাতায় দেখানো থাকে। মহারাষ্ট্রে একই পূর্ণিমা নারলী পূর্ণিমা, যখন মৎস্যজীবী সম্প্রদায় সমুদ্রকে নারকেল নিবেদন করেন, আর দক্ষিণে এটি আবণী অবিট্টম, যখন উপবীত নতুন করে ধারণ করা হয়।"
     },
     "story": {
-     "en": "Many stories are told. In the Mahabharata, Krishna cut his finger, and Draupadi tore a strip from her sari to bind it; Krishna promised to repay the kindness, and did so when he protected her honour in the Kaurava court. In another, the asura king Bali had kept Vishnu as his doorkeeper, and Lakshmi, wanting him home, tied a thread on Bali's wrist as a sister and asked for her husband back as her gift; Bali gladly agreed. A story from history tells of Rani Karnavati of Mewar sending a rakhi to the emperor Humayun to ask for help. In all of them, the thread is a promise of care between people who choose to stand by one another."
+     "en": "Many stories are told. In the Mahabharata, Krishna cut his finger, and Draupadi tore a strip from her sari to bind it; Krishna promised to repay the kindness, and did so when he protected her honour in the Kaurava court. In another, the asura king Bali had kept Vishnu as his doorkeeper, and Lakshmi, wanting him home, tied a thread on Bali's wrist as a sister and asked for her husband back as her gift; Bali gladly agreed. A story from history tells of Rani Karnavati of Mewar sending a rakhi to the emperor Humayun to ask for help. In all of them, the thread is a promise of care between people who choose to stand by one another.",
+     "bn": "অনেক কাহিনি প্রচলিত। মহাভারতে কৃষ্ণের আঙুল কেটে গেলে দ্রৌপদী নিজের শাড়ির একটি ফালি ছিঁড়ে তা বেঁধে দিয়েছিলেন; কৃষ্ণ এই স্নেহের প্রতিদান দেওয়ার প্রতিশ্রুতি দেন, আর কৌরবসভায় দ্রৌপদীর সম্মান রক্ষা করে তা রেখেছিলেন। আরেকটিতে, অসুররাজ বলি বিষ্ণুকে নিজের দ্বাররক্ষী করে রেখেছিলেন, আর স্বামীকে ঘরে ফেরাতে চেয়ে লক্ষ্মী বোন হিসেবে বলির কবজিতে সুতো বেঁধে উপহার হিসেবে স্বামীকে ফিরে চাইলেন; বলি সানন্দে সম্মত হলেন। ইতিহাসের একটি কাহিনি বলে, মেবারের রানি কর্ণাবতী সাহায্য চেয়ে সম্রাট হুমায়ুনকে রাখি পাঠিয়েছিলেন। সব কাহিনিতেই এই সুতো এমন মানুষদের মধ্যে যত্নের প্রতিশ্রুতি, যাঁরা একে অপরের পাশে থাকা বেছে নেন।"
     },
     "howTo": {
      "en": [
@@ -2074,10 +2187,19 @@
       "The brother sits facing east; the sister applies a tilak, tilts a few grains of rice on it, and ties the rakhi on his right wrist.",
       "She waves the lamp, feeds him a sweet, and he gives her a gift and his blessing or promise.",
       "Call or video-call siblings you cannot meet, and share a meal with the family."
+     ],
+     "bn": [
+      "রাখি বেছে নিন, আর আগের দিন মিষ্টি কিনে বা বানিয়ে রাখুন; দূরে থাকা ভাইবোনদের জন্য আগেভাগে রাখি পাঠিয়ে দিন।",
+      "দিনের পাতায় ভদ্রাকাল দেখে নিন, আর তা শেষ হওয়ার পর অনুষ্ঠানের পরিকল্পনা করুন।",
+      "একটি থালা সাজান: রাখি, রোলি বা কুমকুম, চাল, একটি ছোট প্রদীপ আর মিষ্টি।",
+      "ভাই পূর্বমুখী হয়ে বসেন; বোন তিলক দেন, তার ওপর কয়েকটি চালের দানা দেন, আর ডান কবজিতে রাখি বাঁধেন।",
+      "বোন প্রদীপ ঘুরিয়ে আরতি করেন, মিষ্টি খাওয়ান, আর ভাই উপহার দিয়ে আশীর্বাদ বা প্রতিশ্রুতি দেন।",
+      "যাঁদের সঙ্গে দেখা হচ্ছে না, সেই ভাইবোনদের ফোন বা ভিডিও কল করুন, আর পরিবারের সঙ্গে একসঙ্গে খান।"
      ]
     },
     "greeting": {
-     "en": "Happy Raksha Bandhan to every brother and sister!"
+     "en": "Happy Raksha Bandhan to every brother and sister!",
+     "bn": "প্রত্যেক ভাই আর বোনকে রাখি বন্ধনের শুভেচ্ছা!"
     }
    }
   },
@@ -2110,13 +2232,16 @@
    ],
    "content": {
     "summary": {
-     "en": "The birth of Krishna, kept with a fast and a midnight celebration."
+     "en": "The birth of Krishna, kept with a fast and a midnight celebration.",
+     "bn": "কৃষ্ণের জন্ম, পালিত হয় উপবাস আর মধ্যরাতের উৎসবে।"
     },
     "traditions": {
-     "en": "Devotees fast through the day and gather at midnight, the hour of Krishna's birth, to bathe an image of baby Krishna (Laddu Gopal) in milk and curd, dress him and rock him in a decorated cradle while singing bhajans. Homes and temples set up jhankis, scenes from his life, and children dress up as Krishna and Radha. Mathura and Vrindavan celebrate for days. In Maharashtra, the next day is Dahi Handi, when human pyramids climb to break pots of curd hung high, as young Krishna stole butter. The fast is broken after midnight with makhan-mishri and panjiri."
+     "en": "Devotees fast through the day and gather at midnight, the hour of Krishna's birth, to bathe an image of baby Krishna (Laddu Gopal) in milk and curd, dress him and rock him in a decorated cradle while singing bhajans. Homes and temples set up jhankis, scenes from his life, and children dress up as Krishna and Radha. Mathura and Vrindavan celebrate for days. In Maharashtra, the next day is Dahi Handi, when human pyramids climb to break pots of curd hung high, as young Krishna stole butter. The fast is broken after midnight with makhan-mishri and panjiri.",
+     "bn": "ভক্তরা সারাদিন উপবাস করেন আর কৃষ্ণের জন্মক্ষণ মধ্যরাতে সমবেত হয়ে শিশু কৃষ্ণের মূর্তিকে (লাড্ডু গোপাল) দুধ ও দইয়ে স্নান করান, সাজিয়ে দেন, আর ভজন গাইতে গাইতে সাজানো দোলনায় দোলান। বাড়ি আর মন্দিরে তাঁর জীবনের দৃশ্য নিয়ে ঝাঁকি সাজানো হয়, আর শিশুরা কৃষ্ণ ও রাধা সাজে। মথুরা আর বৃন্দাবনে কয়েক দিন ধরে উৎসব চলে। মহারাষ্ট্রে পরদিন দহি হান্ডি, যখন মানুষের পিরামিড উঁচুতে ঝোলানো দইয়ের হাঁড়ি ভাঙতে ওঠে, যেমন বালক কৃষ্ণ মাখন চুরি করতেন। মধ্যরাতের পর মাখন-মিছরি আর পাঞ্জিরি দিয়ে উপবাস ভাঙা হয়।"
     },
     "story": {
-     "en": "King Kamsa of Mathura was told that the eighth child of his sister Devaki would end his rule, so he imprisoned her and her husband Vasudeva. Krishna was born at midnight in that prison, on the eighth day of the dark fortnight, under Rohini nakshatra, in a storm. The story goes that the guards fell asleep and the chains and doors opened. Vasudeva carried the baby in a basket through the flooded Yamuna, which parted for them, with the serpent Shesha spreading his hoods over the child against the rain. In Gokul he exchanged Krishna for the newborn daughter of Nanda and Yashoda, who raised Krishna as their own. He grew up among the cowherds, beloved for his mischief, his flute, and his care for everyone around him."
+     "en": "King Kamsa of Mathura was told that the eighth child of his sister Devaki would end his rule, so he imprisoned her and her husband Vasudeva. Krishna was born at midnight in that prison, on the eighth day of the dark fortnight, under Rohini nakshatra, in a storm. The story goes that the guards fell asleep and the chains and doors opened. Vasudeva carried the baby in a basket through the flooded Yamuna, which parted for them, with the serpent Shesha spreading his hoods over the child against the rain. In Gokul he exchanged Krishna for the newborn daughter of Nanda and Yashoda, who raised Krishna as their own. He grew up among the cowherds, beloved for his mischief, his flute, and his care for everyone around him.",
+     "bn": "মথুরার রাজা কংসকে বলা হয়েছিল যে তাঁর বোন দেবকীর অষ্টম সন্তান তাঁর রাজত্বের অবসান ঘটাবে, তাই তিনি দেবকী ও তাঁর স্বামী বসুদেবকে কারাগারে বন্দি করেন। সেই কারাগারেই কৃষ্ণপক্ষের অষ্টমীতে, রোহিণী নক্ষত্রে, ঝড়ের রাতে মধ্যরাতে কৃষ্ণের জন্ম হয়। কাহিনি বলে, প্রহরীরা ঘুমিয়ে পড়ল আর শিকল ও দরজা খুলে গেল। বসুদেব শিশুকে ঝুড়িতে করে উত্তাল যমুনা পার করলেন, যমুনা তাঁদের পথ করে দিল, আর বৃষ্টি থেকে শিশুকে আড়াল করতে নাগ শেষ ফণা মেলে ধরলেন। গোকুলে তিনি কৃষ্ণকে নন্দ ও যশোদার সদ্যোজাত কন্যার সঙ্গে বদল করলেন, আর নন্দ-যশোদা কৃষ্ণকে নিজের সন্তানের মতো মানুষ করলেন। তিনি বড় হলেন গোপালকদের মাঝে, তাঁর দুষ্টুমি, বাঁশি আর চারপাশের সবার প্রতি যত্নের জন্য সবার প্রিয় হয়ে।"
     },
     "howTo": {
      "en": [
@@ -2127,10 +2252,20 @@
       "Check the day view for the Nishita time around midnight; at that moment bathe the image with panchamrit, dress it and place it in the cradle.",
       "Rock the cradle, sing 'Nand ke anand bhayo', and offer the food and tulsi.",
       "Share the prasad and break the fast."
+     ],
+     "bn": [
+      "একটি ছোট দোলনা সাজিয়ে শিশু কৃষ্ণের (লাড্ডু গোপাল) মূর্তি স্থাপন করুন; ইচ্ছে হলে একটি ঝাঁকি সাজান।",
+      "সারাদিন উপবাস রাখুন: অনেকে ফল আর দুধ খান; বয়স্ক ও শিশুরা প্রায়ই হালকাভাবে পালন করেন।",
+      "পঞ্চামৃত (দুধ, দই, ঘি, মধু, চিনি), মাখন-মিছরি, পাঞ্জিরি আর তুলসীপাতা প্রস্তুত করুন।",
+      "সন্ধ্যায় ভজন গান আর কৃষ্ণের জন্মকাহিনি পড়ুন।",
+      "দিনের পাতায় মধ্যরাতের কাছাকাছি নিশীথকাল দেখে নিন; সেই মুহূর্তে মূর্তিকে পঞ্চামৃতে স্নান করিয়ে, সাজিয়ে দোলনায় বসান।",
+      "দোলনা দোলান, ‘নন্দ কে আনন্দ ভয়ো’ গান, আর নৈবেদ্য ও তুলসী নিবেদন করুন।",
+      "প্রসাদ ভাগ করে নিয়ে উপবাস ভাঙুন।"
      ]
     },
     "greeting": {
-     "en": "Jai Shri Krishna! Happy Janmashtami."
+     "en": "Jai Shri Krishna! Happy Janmashtami.",
+     "bn": "জয় শ্রীকৃষ্ণ! জন্মাষ্টমীর শুভেচ্ছা।"
     }
    }
   },
@@ -2164,13 +2299,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Kanya Sankranti: honouring Vishwakarma, the divine architect, and the tools of every trade."
+     "en": "Kanya Sankranti: honouring Vishwakarma, the divine architect, and the tools of every trade.",
+     "bn": "কন্যা সংক্রান্তি: দেবশিল্পী বিশ্বকর্মা আর সব পেশার যন্ত্রপাতির প্রতি শ্রদ্ধা।"
     },
     "traditions": {
-     "en": "Factories, workshops, offices and homes honour Vishwakarma on the day the Sun enters Kanya. Machines and tools are cleaned, decorated with flowers and given a rest, and an image of Vishwakarma riding his elephant is worshipped. Workers and owners share a meal together. Kite-flying fills the skies in Bengal, Bihar and Jharkhand. Engineers, craftspeople, drivers and artisans of every kind celebrate it."
+     "en": "Factories, workshops, offices and homes honour Vishwakarma on the day the Sun enters Kanya. Machines and tools are cleaned, decorated with flowers and given a rest, and an image of Vishwakarma riding his elephant is worshipped. Workers and owners share a meal together. Kite-flying fills the skies in Bengal, Bihar and Jharkhand. Engineers, craftspeople, drivers and artisans of every kind celebrate it.",
+     "bn": "সূর্য কন্যা রাশিতে প্রবেশ করার দিন কারখানা, কর্মশালা, অফিস আর বাড়িতে বিশ্বকর্মার পুজো হয়। যন্ত্র ও যন্ত্রপাতি পরিষ্কার করে ফুল দিয়ে সাজানো হয় আর বিশ্রাম দেওয়া হয়, আর হাতির পিঠে বসা বিশ্বকর্মার মূর্তির পুজো হয়। শ্রমিক আর মালিক একসঙ্গে খাওয়াদাওয়া করেন। বাংলা, বিহার আর ঝাড়খণ্ডের আকাশ ঘুড়িতে ভরে যায়। ইঞ্জিনিয়ার, কারিগর, চালক আর সব ধরনের শিল্পী এই দিনটি পালন করেন।"
     },
     "story": {
-     "en": "Vishwakarma is remembered as the architect of the gods. The stories credit him with building Indra's heaven, the golden city of Lanka, Krishna's Dwarka, the Pandavas' Indraprastha and the weapons of the gods, including Shiva's trident and Vishnu's discus. He is the patron of all who make and build, and the day reminds people to honour the tools, machines and skills that their livelihoods depend on."
+     "en": "Vishwakarma is remembered as the architect of the gods. The stories credit him with building Indra's heaven, the golden city of Lanka, Krishna's Dwarka, the Pandavas' Indraprastha and the weapons of the gods, including Shiva's trident and Vishnu's discus. He is the patron of all who make and build, and the day reminds people to honour the tools, machines and skills that their livelihoods depend on.",
+     "bn": "বিশ্বকর্মা দেবতাদের স্থপতি হিসেবে স্মরণীয়। কাহিনিগুলি বলে, তিনিই নির্মাণ করেছিলেন ইন্দ্রের স্বর্গ, সোনার লঙ্কা, কৃষ্ণের দ্বারকা, পাণ্ডবদের ইন্দ্রপ্রস্থ, আর দেবতাদের অস্ত্র, শিবের ত্রিশূল ও বিষ্ণুর সুদর্শন চক্র সমেত। যাঁরা কিছু তৈরি করেন বা গড়েন, তিনি তাঁদের সবার পৃষ্ঠপোষক, আর এই দিনটি মনে করিয়ে দেয় সেই যন্ত্রপাতি, মেশিন আর দক্ষতাকে সম্মান জানাতে, যার ওপর মানুষের জীবিকা নির্ভর করে।"
     },
     "howTo": {
      "en": [
@@ -2178,10 +2316,17 @@
       "Set up a picture of Vishwakarma and light a lamp; offer flowers, fruit and sweets.",
       "Give the tools a rest for the day if you can.",
       "Share a meal with the people you work with."
+     ],
+     "bn": [
+      "আপনার যন্ত্রপাতি, মেশিন, গাড়ি বা কাজের টেবিল পরিষ্কার করে ফুল দিয়ে সাজান।",
+      "বিশ্বকর্মার একটি ছবি রেখে প্রদীপ জ্বালান; ফুল, ফল আর মিষ্টি নিবেদন করুন।",
+      "পারলে সেদিন যন্ত্রপাতিকে বিশ্রাম দিন।",
+      "সহকর্মীদের সঙ্গে একসঙ্গে খাওয়াদাওয়া করুন।"
      ]
     },
     "greeting": {
-     "en": "Happy Vishwakarma Puja to everyone who builds and makes!"
+     "en": "Happy Vishwakarma Puja to everyone who builds and makes!",
+     "bn": "যাঁরা গড়েন আর তৈরি করেন, তাঁদের সবাইকে বিশ্বকর্মা পুজোর শুভেচ্ছা!"
     }
    }
   },
@@ -2217,13 +2362,16 @@
    ],
    "content": {
     "summary": {
-     "en": "The new moon that closes the fortnight of the ancestors, the day before Navarathiri."
+     "en": "The new moon that closes the fortnight of the ancestors, the day before Navarathiri.",
+     "bn": "যে অমাবস্যায় পিতৃপক্ষের সমাপ্তি, নবরাত্রির আগের দিন।"
     },
     "traditions": {
-     "en": "Families offer tarpanam to all their ancestors at the sea, rivers or at home, feed people and give food and clothes. It is one of the three great days of remembrance in the Tamil year, with Aadi and Thai Amavasai. The next day, Navarathiri begins and the kolu dolls are set out."
+     "en": "Families offer tarpanam to all their ancestors at the sea, rivers or at home, feed people and give food and clothes. It is one of the three great days of remembrance in the Tamil year, with Aadi and Thai Amavasai. The next day, Navarathiri begins and the kolu dolls are set out.",
+     "bn": "পরিবারগুলি সমুদ্রে, নদীতে বা বাড়িতে সব পূর্বপুরুষের উদ্দেশে তর্পণ করেন, মানুষকে খাওয়ান, খাদ্য ও বস্ত্র দান করেন। তামিল বছরে আডি ও থাই অমাবস্যার সঙ্গে এটি স্মরণের তিনটি বড় দিনের একটি। পরদিন নবরাত্রি শুরু হয় আর কোলুর পুতুল সাজানো হয়।"
     },
     "story": {
-     "en": "As the last day of the fortnight granted to Karna, Mahalaya Amavasai gathers in every ancestor the family wishes to remember, including those whose day is not known. It also opens the season of the Goddess: tradition holds that as the ancestors depart, the Goddess arrives for the nine nights."
+     "en": "As the last day of the fortnight granted to Karna, Mahalaya Amavasai gathers in every ancestor the family wishes to remember, including those whose day is not known. It also opens the season of the Goddess: tradition holds that as the ancestors depart, the Goddess arrives for the nine nights.",
+     "bn": "কর্ণকে দেওয়া পক্ষকালের শেষ দিন হিসেবে মহালয়া অমাবস্যায় পরিবার যত পূর্বপুরুষকে স্মরণ করতে চায়, সবাইকে একসঙ্গে স্মরণ করা হয়, যাঁদের তিথি জানা নেই তাঁদেরও। এই দিনেই দেবীপক্ষের সূচনা: ঐতিহ্য মতে, পিতৃপুরুষেরা বিদায় নেওয়ার সঙ্গে সঙ্গে নয় রাতের জন্য দেবীর আগমন হয়।"
     },
     "howTo": {
      "en": [
@@ -2231,10 +2379,17 @@
       "Cook a simple meal and set a portion out for crows.",
       "Give food, clothes or grain to someone in need.",
       "In the evening, begin preparing the kolu steps for Navarathiri."
+     ],
+     "bn": [
+      "অপরাহ্ণে (দিনের পাতা দেখুন) দক্ষিণমুখী হয়ে সব পূর্বপুরুষের নাম করে কালো তিল মেশানো জল অর্পণ করুন।",
+      "সাধারণ খাবার রান্না করে তার একটি অংশ কাকের জন্য রাখুন।",
+      "প্রয়োজন আছে এমন কাউকে খাদ্য, বস্ত্র বা শস্য দিন।",
+      "সন্ধ্যায় নবরাত্রির জন্য কোলুর ধাপ সাজানোর প্রস্তুতি শুরু করুন।"
      ]
     },
     "greeting": {
-     "en": "Remembering our ancestors on Mahalaya Amavasai."
+     "en": "Remembering our ancestors on Mahalaya Amavasai.",
+     "bn": "মহালয়া অমাবস্যায় আমাদের পূর্বপুরুষদের স্মরণ করি।"
     }
    }
   },
@@ -2267,8 +2422,14 @@
    "variations": [
     "When Shashthi holds at two sunrises, Bengal keeps Bodhon on the second, the eve of Saptami (as on 17 October 2026)."
    ],
-   "variationsNative": [],
-   "localNative": {},
+   "variationsNative": [
+    "ষষ্ঠী যখন দুটি সূর্যোদয় জুড়ে থাকে, বাংলায় বোধন হয় দ্বিতীয় দিনে, সপ্তমীর আগের দিন (যেমন ১৭ অক্টোবর ২০২৬)।"
+   ],
+   "localNative": {
+    "US": "মার্কিন যুক্তরাষ্ট্রে নবরাত্রির গরবা আর ডান্ডিয়ার রাতে কমিউনিটি হল আর কনভেনশন সেন্টার ভরে ওঠে, বেশিরভাগই নয় রাতের মধ্যে পড়া সপ্তাহান্তগুলিতে।",
+    "GB": "যুক্তরাজ্যে নবরাত্রিতে প্রতি রাতে মন্দির আর হলে গরবা হয়, সবচেয়ে বড় সমাবেশ হয় লেস্টার আর উত্তর-পশ্চিম লন্ডনে।",
+    "CA": "কানাডায় নবরাত্রির গরবার রাত হয় মন্দির আর কমিউনিটি হলে, সবচেয়ে বড় সমাবেশ হয় সপ্তাহান্তে।"
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2406,13 +2567,16 @@
    ],
    "content": {
     "summary": {
-     "en": "The eighth day of Navratri: Durga as Mahagauri, with kanya puja and Sandhi puja."
+     "en": "The eighth day of Navratri: Durga as Mahagauri, with kanya puja and Sandhi puja.",
+     "bn": "নবরাত্রির অষ্টম দিন: মহাগৌরী রূপে দুর্গা, কুমারী পুজো আর সন্ধিপুজো।"
     },
     "traditions": {
-     "en": "Many families hold kanya puja today, inviting nine young girls (and often a young boy as Bhairav) home to be honoured as the Goddess, with their feet washed and a meal of puri, black chana and halwa. In Bengal, Durga Ashtami is one of the main days of Durga Puja, with the pushpanjali offering of flowers in the morning and the Sandhi puja at the moment Ashtami ends and Navami begins, lit by 108 lamps."
+     "en": "Many families hold kanya puja today, inviting nine young girls (and often a young boy as Bhairav) home to be honoured as the Goddess, with their feet washed and a meal of puri, black chana and halwa. In Bengal, Durga Ashtami is one of the main days of Durga Puja, with the pushpanjali offering of flowers in the morning and the Sandhi puja at the moment Ashtami ends and Navami begins, lit by 108 lamps.",
+     "bn": "অনেক পরিবার আজ কুমারী পুজো করেন, নয়টি ছোট মেয়েকে (প্রায়ই সঙ্গে ভৈরব রূপে একটি ছোট ছেলেকেও) বাড়িতে নিমন্ত্রণ করে দেবী রূপে সম্মান জানান, তাদের পা ধুইয়ে দিয়ে পুরি, কালো ছোলা আর হালুয়া খাওয়ান। বাংলায় দুর্গাষ্টমী দুর্গাপুজোর প্রধান দিনগুলির একটি, সকালে পুষ্পাঞ্জলি, আর অষ্টমী শেষ হয়ে নবমী শুরু হওয়ার মুহূর্তে ১০৮টি প্রদীপ জ্বেলে সন্ধিপুজো।"
     },
     "story": {
-     "en": "In the Devi Mahatmya, the fierce demons Chanda and Munda were sent against the Goddess, and from her brow emerged Chamunda, who overcame them. The Sandhi puja marks the moment, at the junction of Ashtami and Navami, when the battle reached its height. The kanya puja honours the Goddess as she is present in every young girl, and on Ashtami she is worshipped as Mahagauri, radiant and calm after her long tapas."
+     "en": "In the Devi Mahatmya, the fierce demons Chanda and Munda were sent against the Goddess, and from her brow emerged Chamunda, who overcame them. The Sandhi puja marks the moment, at the junction of Ashtami and Navami, when the battle reached its height. The kanya puja honours the Goddess as she is present in every young girl, and on Ashtami she is worshipped as Mahagauri, radiant and calm after her long tapas.",
+     "bn": "দেবীমাহাত্ম্যে, ভয়ংকর অসুর চণ্ড আর মুণ্ডকে দেবীর বিরুদ্ধে পাঠানো হয়েছিল, আর দেবীর ললাট থেকে আবির্ভূত হলেন চামুণ্ডা, যিনি তাদের পরাস্ত করলেন। সন্ধিপুজো চিহ্নিত করে অষ্টমী ও নবমীর সন্ধিক্ষণের সেই মুহূর্ত, যখন যুদ্ধ চরমে পৌঁছেছিল। কুমারী পুজোয় সম্মান জানানো হয় দেবীকে, যিনি প্রতিটি ছোট মেয়ের মধ্যে বিরাজমান, আর অষ্টমীতে তাঁর পুজো হয় মহাগৌরী রূপে, দীর্ঘ তপস্যার পর যিনি উজ্জ্বল ও শান্ত।"
     },
     "howTo": {
      "en": [
@@ -2420,10 +2584,17 @@
       "Invite young girls of the family or neighbourhood; wash their feet, apply a tilak and tie a red thread on their wrists.",
       "Serve them the meal, give a small gift, and touch their feet for their blessing.",
       "Worship Mahagauri with flowers and an aarti."
+     ],
+     "bn": [
+      "সকালে পুরি, কালো ছোলা আর হালুয়া রান্না করুন।",
+      "পরিবার বা পাড়ার ছোট মেয়েদের নিমন্ত্রণ করুন; তাদের পা ধুইয়ে দিন, তিলক দিন, আর কবজিতে লাল সুতো বেঁধে দিন।",
+      "তাদের খাবার পরিবেশন করুন, একটি ছোট উপহার দিন, আর প্রণাম করে আশীর্বাদ নিন।",
+      "ফুল আর আরতি দিয়ে মহাগৌরীর পুজো করুন।"
      ]
     },
     "greeting": {
-     "en": "Happy Durga Ashtami! Jai Mata Di."
+     "en": "Happy Durga Ashtami! Jai Mata Di.",
+     "bn": "দুর্গাষ্টমীর শুভেচ্ছা! জয় মা দুর্গা।"
     }
    }
   },
@@ -2456,13 +2627,16 @@
    ],
    "content": {
     "summary": {
-     "en": "The ninth day of Navratri: Durga as Siddhidatri, the day before Vijayadashami."
+     "en": "The ninth day of Navratri: Durga as Siddhidatri, the day before Vijayadashami.",
+     "bn": "নবরাত্রির নবম দিন: সিদ্ধিদাত্রী রূপে দুর্গা, বিজয়া দশমীর আগের দিন।"
     },
     "traditions": {
-     "en": "Navratri's final worship is kept today with a havan in many homes, and kanya puja for those who keep it on Navami. In the South, Ayudha Puja falls today: tools, vehicles, books and instruments are cleaned, decorated and worshipped. In Bengal it is the last full day of Durga Puja, with the Navami bhog."
+     "en": "Navratri's final worship is kept today with a havan in many homes, and kanya puja for those who keep it on Navami. In the South, Ayudha Puja falls today: tools, vehicles, books and instruments are cleaned, decorated and worshipped. In Bengal it is the last full day of Durga Puja, with the Navami bhog.",
+     "bn": "নবরাত্রির শেষ পুজো আজ বহু বাড়িতে হোম দিয়ে পালিত হয়, আর যাঁরা নবমীতে কুমারী পুজো করেন, তাঁরা আজ তা করেন। দক্ষিণে আজ আয়ুধ পুজো: যন্ত্রপাতি, গাড়ি, বই আর বাদ্যযন্ত্র পরিষ্কার করে সাজিয়ে পুজো করা হয়। বাংলায় এটি দুর্গাপুজোর শেষ পূর্ণ দিন, নবমীর ভোগ সমেত।"
     },
     "story": {
-     "en": "On Navami the Goddess is worshipped as Siddhidatri, the giver of accomplishment, said in the Devi Purana to be the form from which even Shiva received his powers. In the story of Mahishasura, the ninth day is the last before the final victory, and the worship of weapons and tools today remembers the instruments the gods gave Durga for her battle."
+     "en": "On Navami the Goddess is worshipped as Siddhidatri, the giver of accomplishment, said in the Devi Purana to be the form from which even Shiva received his powers. In the story of Mahishasura, the ninth day is the last before the final victory, and the worship of weapons and tools today remembers the instruments the gods gave Durga for her battle.",
+     "bn": "নবমীতে দেবীর পুজো হয় সিদ্ধিদাত্রী রূপে, যিনি সিদ্ধি দান করেন; দেবীপুরাণে বলা হয়েছে, এই রূপ থেকেই স্বয়ং শিবও তাঁর শক্তি পেয়েছিলেন। মহিষাসুরের কাহিনিতে নবম দিনটি চূড়ান্ত বিজয়ের আগের শেষ দিন, আর আজকের অস্ত্র ও যন্ত্রপাতির পুজো স্মরণ করায় সেই অস্ত্রগুলিকে, যা দেবতারা দুর্গাকে যুদ্ধের জন্য দিয়েছিলেন।"
     },
     "howTo": {
      "en": [
@@ -2470,10 +2644,17 @@
       "Hold kanya puja if you keep it on Navami.",
       "Clean and decorate your tools, books, instruments or vehicle, and honour them.",
       "Prepare to end the fast and conclude the Navratri worship."
+     ],
+     "bn": [
+      "ফুল আর আরতি দিয়ে সিদ্ধিদাত্রীর পুজো করুন, আর আপনার পরিবারে প্রচলন থাকলে একটি ছোট হোম করুন।",
+      "নবমীতে কুমারী পুজো করার প্রচলন থাকলে তা করুন।",
+      "আপনার যন্ত্রপাতি, বই, বাদ্যযন্ত্র বা গাড়ি পরিষ্কার করে সাজান, আর সেগুলিকে সম্মান জানান।",
+      "উপবাস ভাঙার আর নবরাত্রির পুজো সমাপ্ত করার প্রস্তুতি নিন।"
      ]
     },
     "greeting": {
-     "en": "Happy Maha Navami!"
+     "en": "Happy Maha Navami!",
+     "bn": "মহানবমীর শুভেচ্ছা!"
     }
    }
   },
@@ -2506,13 +2687,16 @@
    ],
    "content": {
     "summary": {
-     "en": "The tenth day: the Goddess's victory, and the day children begin learning."
+     "en": "The tenth day: the Goddess's victory, and the day children begin learning.",
+     "bn": "দশম দিন: দেবীর বিজয়, আর শিশুদের বিদ্যারম্ভের দিন।"
     },
     "traditions": {
-     "en": "The books and instruments set before Saraswati are taken back with a short worship, and the first thing read or played that morning is a prayer or a lesson. Young children are initiated into learning (Vidyarambham): an elder or a teacher holds the child's finger and writes the first letters, in Tamil 'Hari Sri' or 'a', and in Kerala 'Hari Sri Ganapataye Namah', in a plate of rice. Music and dance students begin new lessons. In Kerala, Vidyarambham is held at temples such as Thunchan Parambu and Kollur Mookambika, and in Tamil Nadu at Koothanur's Saraswati temple."
+     "en": "The books and instruments set before Saraswati are taken back with a short worship, and the first thing read or played that morning is a prayer or a lesson. Young children are initiated into learning (Vidyarambham): an elder or a teacher holds the child's finger and writes the first letters, in Tamil 'Hari Sri' or 'a', and in Kerala 'Hari Sri Ganapataye Namah', in a plate of rice. Music and dance students begin new lessons. In Kerala, Vidyarambham is held at temples such as Thunchan Parambu and Kollur Mookambika, and in Tamil Nadu at Koothanur's Saraswati temple.",
+     "bn": "সরস্বতীর সামনে রাখা বই আর বাদ্যযন্ত্র একটি সংক্ষিপ্ত পুজোর পর তুলে নেওয়া হয়, আর সেদিন সকালে প্রথম যা পড়া বা বাজানো হয় তা একটি প্রার্থনা বা একটি পাঠ। ছোট শিশুদের বিদ্যারম্ভ হয়: একজন গুরুজন বা শিক্ষক শিশুর আঙুল ধরে থালায় রাখা চালের ওপর প্রথম অক্ষর লেখান, তামিলে ‘হরি শ্রী’ বা ‘অ’, আর কেরলে ‘হরি শ্রী গণপতয়ে নমঃ’। গান ও নাচের শিক্ষার্থীরা নতুন পাঠ শুরু করে। কেরলে তুঞ্চন পরম্বু ও কোল্লুর মূকাম্বিকার মতো মন্দিরে, আর তামিলনাড়ুতে কূত্তনূরের সরস্বতী মন্দিরে বিদ্যারম্ভ হয়।"
     },
     "story": {
-     "en": "On the tenth day the Goddess overcame Mahishasura after nine days of battle, and the gods rejoiced; 'Vijaya' means victory. In the Ramayana, Rama defeated Ravana on this day after worshipping the Goddess. Because victory over ignorance is the truest one, the day is held the best of the year for beginning to learn: whatever is begun on Vijayadashami is begun with the Goddess of learning's blessing."
+     "en": "On the tenth day the Goddess overcame Mahishasura after nine days of battle, and the gods rejoiced; 'Vijaya' means victory. In the Ramayana, Rama defeated Ravana on this day after worshipping the Goddess. Because victory over ignorance is the truest one, the day is held the best of the year for beginning to learn: whatever is begun on Vijayadashami is begun with the Goddess of learning's blessing.",
+     "bn": "নয় দিনের যুদ্ধের পর দশম দিনে দেবী মহিষাসুরকে পরাস্ত করলেন, আর দেবতারা আনন্দে মেতে উঠলেন; ‘বিজয়া’ মানে জয়। রামায়ণে, দেবীর আরাধনার পর রাম এই দিনেই রাবণকে পরাজিত করেছিলেন। যেহেতু অজ্ঞানের ওপর জয়ই সবচেয়ে সত্যিকারের জয়, তাই দিনটিকে বছরের মধ্যে শেখা শুরু করার শ্রেষ্ঠ দিন ধরা হয়: বিজয়া দশমীতে যা শুরু হয়, তা শুরু হয় বিদ্যাদেবীর আশীর্বাদ নিয়ে।"
     },
     "howTo": {
      "en": [
@@ -2521,10 +2705,18 @@
       "If a child is starting to learn, sit them on an elder's lap and guide their finger to write the first letters in a plate of rice.",
       "Begin a new lesson or course you have been planning.",
       "Take down the kolu if you set one up, keeping one doll lying down as a gentle goodbye till next year."
+     ],
+     "bn": [
+      "সকালে একটি ছোট পুজো করে সরস্বতীর সামনে থেকে বই আর বাদ্যযন্ত্র তুলে নিন।",
+      "অন্য কিছু করার আগে একটি প্রার্থনা বা একটি পাতা পড়ুন, কিছু লিখুন, বা কয়েকটি সুর বাজান।",
+      "কোনো শিশু শেখা শুরু করলে, তাকে গুরুজনের কোলে বসিয়ে আঙুল ধরে থালায় রাখা চালের ওপর প্রথম অক্ষর লেখান।",
+      "যে নতুন পাঠ বা পাঠক্রমের পরিকল্পনা করছিলেন, তা শুরু করুন।",
+      "কোলু সাজিয়ে থাকলে তা তুলে ফেলুন, আগামী বছর পর্যন্ত এক মৃদু বিদায়ের চিহ্ন হিসেবে একটি পুতুলকে শুইয়ে রাখুন।"
      ]
     },
     "greeting": {
-     "en": "Happy Vijayadashami! May every new beginning be blessed."
+     "en": "Happy Vijayadashami! May every new beginning be blessed.",
+     "bn": "শুভ বিজয়া! প্রতিটি নতুন শুরু আশীর্বাদধন্য হোক।"
     }
    }
   },
@@ -2560,13 +2752,16 @@
    ],
    "content": {
     "summary": {
-     "en": "The autumn full moon of Ashvin: kheer under the moonlight, and Kojagari Lakshmi worship."
+     "en": "The autumn full moon of Ashvin: kheer under the moonlight, and Kojagari Lakshmi worship.",
+     "bn": "আশ্বিনের শারদ পূর্ণিমা: জ্যোৎস্নায় রাখা ক্ষীর, আর কোজাগরী লক্ষ্মীপুজো।"
     },
     "traditions": {
-     "en": "On the brightest full moon of the year, families cook rice kheer and leave it out in the moonlight for some hours, then eat it as prasad. Many stay awake into the night, singing and playing games, and in Bengal and Odisha Lakshmi is worshipped as Kojagari Lakshmi. In Braj, the night is remembered as the night of Krishna's Raas Leela with the gopis."
+     "en": "On the brightest full moon of the year, families cook rice kheer and leave it out in the moonlight for some hours, then eat it as prasad. Many stay awake into the night, singing and playing games, and in Bengal and Odisha Lakshmi is worshipped as Kojagari Lakshmi. In Braj, the night is remembered as the night of Krishna's Raas Leela with the gopis.",
+     "bn": "বছরের সবচেয়ে উজ্জ্বল পূর্ণিমায় পরিবারগুলি চালের ক্ষীর রান্না করে কয়েক ঘণ্টা জ্যোৎস্নায় রেখে দেন, তারপর প্রসাদ হিসেবে খান। অনেকে রাত জেগে গান আর খেলায় মেতে থাকেন, আর বাংলা ও ওড়িশায় কোজাগরী লক্ষ্মী রূপে লক্ষ্মীর পুজো হয়। ব্রজে এই রাতটি স্মরণ করা হয় গোপীদের সঙ্গে কৃষ্ণের রাসলীলার রাত হিসেবে।"
     },
     "story": {
-     "en": "'Kojagari' comes from 'ko jagarti', who is awake? The story told is that on this night Lakshmi walks the earth asking that question, and visits the homes where people are awake and lamps are lit. Braj tradition remembers it as the night Krishna played his flute in the forest and the gopis came to dance the Maha Raas with him, each feeling that Krishna danced with her alone. The moon is said to be full in all sixteen of its kalas, and its light especially gentle, which is why the kheer is left out to take it in."
+     "en": "'Kojagari' comes from 'ko jagarti', who is awake? The story told is that on this night Lakshmi walks the earth asking that question, and visits the homes where people are awake and lamps are lit. Braj tradition remembers it as the night Krishna played his flute in the forest and the gopis came to dance the Maha Raas with him, each feeling that Krishna danced with her alone. The moon is said to be full in all sixteen of its kalas, and its light especially gentle, which is why the kheer is left out to take it in.",
+     "bn": "‘কোজাগরী’ এসেছে ‘কো জাগর্তি’ থেকে, কে জেগে আছ? কাহিনি অনুযায়ী, এই রাতে লক্ষ্মী এই প্রশ্ন করতে করতে পৃথিবীতে ঘুরে বেড়ান, আর যে বাড়িতে মানুষ জেগে আছে ও প্রদীপ জ্বলছে, সেখানে যান। ব্রজের ঐতিহ্যে এটি সেই রাত, যখন কৃষ্ণ বনে বাঁশি বাজালেন আর গোপীরা তাঁর সঙ্গে মহারাসে নাচতে এলেন, প্রত্যেকে অনুভব করলেন কৃষ্ণ কেবল তাঁরই সঙ্গে নাচছেন। বলা হয়, এই রাতে চাঁদ ষোলো কলায় পূর্ণ, আর তার আলো বিশেষ কোমল, সেই জন্যই ক্ষীর বাইরে রাখা হয় যাতে সেই আলো তাতে মেশে।"
     },
     "howTo": {
      "en": [
@@ -2574,10 +2769,17 @@
       "After moonrise, cover it with a thin cloth and leave it on a terrace or balcony in the moonlight for a few hours.",
       "Light lamps and worship Lakshmi, or Radha-Krishna, with flowers and an aarti.",
       "Stay up with family for a while, then share the kheer as prasad."
+     ],
+     "bn": [
+      "সন্ধ্যায় চালের ক্ষীর রান্না করুন।",
+      "চাঁদ ওঠার পর পাতলা কাপড়ে ঢেকে কয়েক ঘণ্টা ছাদে বা বারান্দায় জ্যোৎস্নায় রেখে দিন।",
+      "প্রদীপ জ্বালিয়ে ফুল আর আরতি দিয়ে লক্ষ্মী, অথবা রাধা-কৃষ্ণের পুজো করুন।",
+      "পরিবারের সঙ্গে কিছুক্ষণ রাত জাগুন, তারপর প্রসাদ হিসেবে ক্ষীর ভাগ করে নিন।"
      ]
     },
     "greeting": {
-     "en": "Wishing you a bright, peaceful Sharad Purnima."
+     "en": "Wishing you a bright, peaceful Sharad Purnima.",
+     "bn": "শারদ পূর্ণিমা উজ্জ্বল ও শান্তিময় হোক।"
     }
    }
   },
@@ -2648,7 +2850,22 @@
    "durationDays": 1,
    "variations": [],
    "variationsNative": [],
-   "localNative": {},
+   "localNative": {
+    "TT": "ত্রিনিদাদ ও টোবাগোতে দিওয়ালি সরকারি ছুটির দিন। তার আগে কয়েক দিন ধরে চাগুয়ানাসে দিওয়ালি নগর চলে, আর বাড়ি ও উঠোন প্রদীপে আলোকিত হয়।",
+    "GY": "গায়ানায় দিওয়ালি সরকারি ছুটির দিন, আর আগের রাতটি আলোকসজ্জিত গাড়ির শোভাযাত্রায় ঝলমল করে।",
+    "SR": "সুরিনামে দিওয়ালি সরকারি ছুটির দিন, পালিত হয় প্রদীপ, প্রার্থনা আর মিষ্টিতে।",
+    "FJ": "ফিজিতে দিওয়ালি সরকারি ছুটির দিন; বাড়িগুলি প্রদীপে আলোকিত হয়, আর সব ধর্মের প্রতিবেশীদের সঙ্গে মিষ্টি ভাগ করে নেওয়া হয়।",
+    "MU": "মরিশাসে দিওয়ালি সরকারি ছুটির দিন; বাড়িগুলি মাটির প্রদীপে আলোকিত হয়, আর সবাই মিলে গাতো পাতাত (মিষ্টি আলুর পিঠে) ভাগ করে খান।",
+    "MY": "মালয়েশিয়ায় সারাওয়াক ছাড়া সব রাজ্যে দীপাবলি সরকারি ছুটির দিন, আর সব ধর্মের বন্ধুদের জন্য খোলা থাকে বাড়ির দরজা (ওপেন হাউস)।",
+    "SG": "সিঙ্গাপুরে দীপাবলি সরকারি ছুটির দিন, আর তার কয়েক সপ্তাহ আগে থেকেই লিটল ইন্ডিয়া আলোয় সেজে ওঠে।",
+    "ZA": "দক্ষিণ আফ্রিকায় দিওয়ালি সরকারি ছুটির দিন নয়; ডারবান, জোহানেসবার্গ ও অন্যত্র পরিবারগুলি প্রদীপ, প্রার্থনা আর আতশবাজিতে দিনটি পালন করেন।",
+    "LK": "শ্রীলঙ্কায় দীপাবলি সরকারি ছুটির দিন।",
+    "US": "মার্কিন যুক্তরাষ্ট্রে দিওয়ালি ফেডারেল ছুটির দিন নয়; তবে নিউ ইয়র্ক সিটির সরকারি স্কুলগুলি এই দিন বন্ধ থাকে, কয়েকটি রাজ্য দিনটিকে স্বীকৃতি দেয়, আর মন্দির ও কমিউনিটি সংগঠনগুলি মেলা ও আতশবাজির আয়োজন করে, প্রায়ই কাছাকাছি সপ্তাহান্তে।",
+    "GB": "যুক্তরাজ্যে দিওয়ালি ব্যাংক হলিডে নয়; লেস্টারের বেলগ্রেভ রোডে ভারতের বাইরে সবচেয়ে বড় দিওয়ালি উৎসবগুলির একটি হয়, আর লন্ডনে ট্রাফালগার স্কোয়ারে ‘দিওয়ালি অন দ্য স্কোয়ার’ দিয়ে দিনটি পালিত হয়।",
+    "CA": "কানাডায় দিওয়ালি বিধিবদ্ধ ছুটির দিন নয়; পরিবারগুলি মন্দির আর কমিউনিটি হলে সমবেত হন, আর ব্র্যাম্পটন ও টরন্টোর মতো শহরে উৎসবের আয়োজন হয়, প্রায়ই কাছাকাছি সপ্তাহান্তে।",
+    "AE": "সংযুক্ত আরব আমিরশাহিতে দিওয়ালি সরকারি ছুটির দিন নয়; তবে দুবাই আলোয় সেজে ওঠে, জেবেল আলির মন্দিরে বিপুল ভিড় হয়, আর অনেক ভারতীয় স্কুল দিনটি ছুটি দেয়।",
+    "AU": "অস্ট্রেলিয়ায় দিওয়ালি সরকারি ছুটির দিন নয়; সিডনি আর মেলবোর্নে বড় দিওয়ালি মেলা হয়, আর মন্দিরগুলিতে ঠিক সেই রাতেই পুজো হয়।"
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2694,13 +2911,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Kartika Shukla Dwitiya: sisters welcome their brothers home, the last day of Diwali."
+     "en": "Kartika Shukla Dwitiya: sisters welcome their brothers home, the last day of Diwali.",
+     "bn": "কার্তিক শুক্লা দ্বিতীয়া: বোনেরা ভাইদের ঘরে বরণ করেন, দিওয়ালির শেষ দিন।"
     },
     "traditions": {
-     "en": "Brothers visit their sisters' homes, where the sister applies a tilak to his forehead, waves a lamp, feeds him sweets and a meal she has cooked, and prays for his long life; he gives her a gift. It is Bhau Beej in Maharashtra, Bhai Phonta in Bengal and Bhai Tika in Nepal. Sisters who cannot meet their brothers pray for them, and many call or video-call."
+     "en": "Brothers visit their sisters' homes, where the sister applies a tilak to his forehead, waves a lamp, feeds him sweets and a meal she has cooked, and prays for his long life; he gives her a gift. It is Bhau Beej in Maharashtra, Bhai Phonta in Bengal and Bhai Tika in Nepal. Sisters who cannot meet their brothers pray for them, and many call or video-call.",
+     "bn": "ভাইয়েরা বোনের বাড়ি যান, যেখানে বোন তাঁর কপালে তিলক দেন, প্রদীপ ঘুরিয়ে আরতি করেন, মিষ্টি আর নিজের হাতে রান্না করা খাবার খাওয়ান, আর তাঁর দীর্ঘায়ু কামনা করে প্রার্থনা করেন; ভাই বোনকে উপহার দেন। মহারাষ্ট্রে এটি ভাউবীজ, বাংলায় ভাইফোঁটা, আর নেপালে ভাই টিকা। যে বোনেরা ভাইয়ের সঙ্গে দেখা করতে পারেন না, তাঁরা ভাইয়ের জন্য প্রার্থনা করেন, আর অনেকে ফোন বা ভিডিও কল করেন।"
     },
     "story": {
-     "en": "The story told is of Yamuna and her brother Yama. Yamuna had long asked her brother to visit, but he was always busy. On Kartika Shukla Dwitiya he finally came. Delighted, she welcomed him with a tilak and an aarti, cooked his favourite food and fed him with her own hands. Moved, Yama asked what she wished for, and she asked that every brother who visits his sister on this day and receives her tilak be blessed with a long life. Yama granted it, and the day is also called Yama Dwitiya."
+     "en": "The story told is of Yamuna and her brother Yama. Yamuna had long asked her brother to visit, but he was always busy. On Kartika Shukla Dwitiya he finally came. Delighted, she welcomed him with a tilak and an aarti, cooked his favourite food and fed him with her own hands. Moved, Yama asked what she wished for, and she asked that every brother who visits his sister on this day and receives her tilak be blessed with a long life. Yama granted it, and the day is also called Yama Dwitiya.",
+     "bn": "কাহিনিটি যমুনা ও তাঁর ভাই যমের। যমুনা বহুদিন ধরে ভাইকে আসতে বলছিলেন, কিন্তু যম সবসময় ব্যস্ত থাকতেন। কার্তিক শুক্লা দ্বিতীয়ায় অবশেষে তিনি এলেন। আনন্দে আত্মহারা হয়ে যমুনা তিলক আর আরতি দিয়ে তাঁকে বরণ করলেন, তাঁর প্রিয় খাবার রান্না করে নিজের হাতে খাওয়ালেন। আপ্লুত হয়ে যম জানতে চাইলেন বোন কী চান, আর যমুনা চাইলেন, এই দিনে যে ভাই বোনের বাড়ি গিয়ে তাঁর তিলক নেবেন, তিনি যেন দীর্ঘায়ু হন। যম সেই বর দিলেন, আর দিনটিকে যমদ্বিতীয়াও বলা হয়।"
     },
     "howTo": {
      "en": [
@@ -2708,10 +2928,17 @@
       "Prepare a thali with roli, rice, a lamp, sweets and a coconut or dry fruit.",
       "At aparahna (afternoon; see the day view), seat your brother, apply the tilak, wave the lamp and feed him a sweet.",
       "Serve a meal you have cooked; the brother gives a gift and his blessing."
+     ],
+     "bn": [
+      "ভাইকে বাড়িতে নিমন্ত্রণ করুন, বা বোনের বাড়ি যাওয়ার পরিকল্পনা করুন; দূরে থাকা ভাইবোনদের ফোন করুন।",
+      "রোলি, চাল, প্রদীপ, মিষ্টি আর একটি নারকেল বা শুকনো ফল দিয়ে একটি থালা সাজান।",
+      "অপরাহ্ণে (বিকেলে; দিনের পাতা দেখুন) ভাইকে বসিয়ে তিলক দিন, প্রদীপ ঘুরিয়ে আরতি করুন আর মিষ্টি খাওয়ান।",
+      "নিজের রান্না করা খাবার পরিবেশন করুন; ভাই উপহার দিয়ে আশীর্বাদ জানান।"
      ]
     },
     "greeting": {
-     "en": "Happy Bhai Dooj to every brother and sister!"
+     "en": "Happy Bhai Dooj to every brother and sister!",
+     "bn": "প্রত্যেক ভাই আর বোনকে ভাইফোঁটার শুভেচ্ছা!"
     }
    }
   },
@@ -2781,13 +3008,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Bihar's four-day worship of the Sun and Chhathi Maiya, with offerings at sunset and sunrise from the water."
+     "en": "Bihar's four-day worship of the Sun and Chhathi Maiya, with offerings at sunset and sunrise from the water.",
+     "bn": "বিহারের চার দিনের সূর্য ও ছঠী মাইয়ার আরাধনা, সূর্যাস্ত ও সূর্যোদয়ে জলে দাঁড়িয়ে অর্ঘ্য নিবেদন।"
     },
     "traditions": {
-     "en": "Chhath is among the most demanding observances. On the first day (Nahay Khay) the vratis, mostly women, bathe and eat one simple meal; on the second (Kharna) they fast all day and break it at night with kheer of jaggery and rice; then they fast without water for some thirty-six hours. On the third evening families walk to rivers and ponds carrying bamboo baskets of thekua, fruit and sugarcane, and the vratis stand in the water to offer arghya to the setting Sun, singing Chhath songs. Before dawn on the fourth day they return to offer to the rising Sun, and then break the fast. It is kept by Bihar, Jharkhand, eastern Uttar Pradesh and the Nepal Terai, and their communities everywhere."
+     "en": "Chhath is among the most demanding observances. On the first day (Nahay Khay) the vratis, mostly women, bathe and eat one simple meal; on the second (Kharna) they fast all day and break it at night with kheer of jaggery and rice; then they fast without water for some thirty-six hours. On the third evening families walk to rivers and ponds carrying bamboo baskets of thekua, fruit and sugarcane, and the vratis stand in the water to offer arghya to the setting Sun, singing Chhath songs. Before dawn on the fourth day they return to offer to the rising Sun, and then break the fast. It is kept by Bihar, Jharkhand, eastern Uttar Pradesh and the Nepal Terai, and their communities everywhere.",
+     "bn": "ছট সবচেয়ে কঠিন ব্রতগুলির অন্যতম। প্রথম দিন (নহায় খায়) ব্রতীরা, যাঁদের বেশিরভাগই মহিলা, স্নান করে একবেলা সাধারণ খাবার খান; দ্বিতীয় দিন (খরনা) সারাদিন উপবাস করে রাতে গুড় আর চালের ক্ষীর খেয়ে উপবাস ভাঙেন; তারপর প্রায় ছত্রিশ ঘণ্টা নির্জলা উপবাস। তৃতীয় দিন সন্ধ্যায় পরিবারের সবাই ঠেকুয়া, ফল আর আখ ভরা বাঁশের ঝুড়ি নিয়ে নদী ও পুকুরে যান, আর ব্রতীরা জলে দাঁড়িয়ে ছটের গান গাইতে গাইতে অস্তগামী সূর্যকে অর্ঘ্য দেন। চতুর্থ দিন ভোরের আগে আবার ফিরে এসে উদীয়মান সূর্যকে অর্ঘ্য দিয়ে উপবাস ভাঙেন। বিহার, ঝাড়খণ্ড, পূর্ব উত্তরপ্রদেশ আর নেপালের তরাই অঞ্চলের মানুষ, এবং যেখানেই তাঁদের সম্প্রদায় আছে, সেখানে এই ব্রত পালিত হয়।"
     },
     "story": {
-     "en": "Chhath honours Surya, who sustains all life, and Chhathi Maiya, the goddess said to be his sister, who watches over children. Stories trace it to the Ramayana, when Sita and Rama are said to have kept a fast for the Sun on returning to Ayodhya, and to the Mahabharata, where Karna, son of Surya, stood in water every day offering to the Sun, and Draupadi kept the vrat during the Pandavas' hard times. It is unusual in honouring the setting Sun as well as the rising one: a reminder, people say, that whoever has stood by you through the day deserves thanks at its end too."
+     "en": "Chhath honours Surya, who sustains all life, and Chhathi Maiya, the goddess said to be his sister, who watches over children. Stories trace it to the Ramayana, when Sita and Rama are said to have kept a fast for the Sun on returning to Ayodhya, and to the Mahabharata, where Karna, son of Surya, stood in water every day offering to the Sun, and Draupadi kept the vrat during the Pandavas' hard times. It is unusual in honouring the setting Sun as well as the rising one: a reminder, people say, that whoever has stood by you through the day deserves thanks at its end too.",
+     "bn": "ছটে সম্মান জানানো হয় সমস্ত প্রাণের ধারক সূর্যকে, আর ছঠী মাইয়াকে, যাঁকে সূর্যের বোন বলা হয় এবং যিনি শিশুদের রক্ষা করেন। কাহিনিগুলি এর সূত্র খোঁজে রামায়ণে, যেখানে বলা হয় অযোধ্যায় ফিরে সীতা ও রাম সূর্যের উদ্দেশে উপবাস করেছিলেন, আর মহাভারতে, যেখানে সূর্যপুত্র কর্ণ প্রতিদিন জলে দাঁড়িয়ে সূর্যকে অর্ঘ্য দিতেন, আর পাণ্ডবদের দুঃসময়ে দ্রৌপদী এই ব্রত পালন করেছিলেন। উদীয়মান সূর্যের সঙ্গে অস্তগামী সূর্যকেও সম্মান জানানো এই ব্রতের এক বিশেষত্ব: লোকে বলেন, এ এক মনে করিয়ে দেওয়া যে, যিনি সারাদিন আপনার পাশে থেকেছেন, দিনের শেষেও তিনি ধন্যবাদের যোগ্য।"
     },
     "howTo": {
      "en": [
@@ -2797,10 +3027,19 @@
       "Day three: prepare thekua and arrange bamboo baskets with fruit, sugarcane and a lamp; at sunset, stand in the water and offer arghya to the setting Sun.",
       "Day four: before dawn, return to the water and offer arghya to the rising Sun, then break the fast with prasad.",
       "If you are not a vrati, help carry the baskets, sing Chhath songs, and share the prasad."
+     ],
+     "bn": [
+      "বাড়ি ভালো করে পরিষ্কার করুন; পুরো ব্রতটি শুচিতার প্রতি গভীর যত্ন নিয়ে পালিত হয়।",
+      "প্রথম দিন (নহায় খায়): স্নান করে একবেলা সাত্ত্বিক খাবার খান, প্রথা অনুযায়ী ভাত, ছোলার ডাল আর লাউ।",
+      "দ্বিতীয় দিন (খরনা): সারাদিন উপবাস করুন; রাতে গুড়ের ক্ষীর আর রুটি তৈরি করে খান, তারপর নির্জলা উপবাস শুরু করুন।",
+      "তৃতীয় দিন: ঠেকুয়া তৈরি করে বাঁশের ঝুড়িতে ফল, আখ আর একটি প্রদীপ সাজান; সূর্যাস্তে জলে দাঁড়িয়ে অস্তগামী সূর্যকে অর্ঘ্য দিন।",
+      "চতুর্থ দিন: ভোরের আগে আবার জলে গিয়ে উদীয়মান সূর্যকে অর্ঘ্য দিন, তারপর প্রসাদ দিয়ে উপবাস ভাঙুন।",
+      "আপনি ব্রতী না হলে, ঝুড়ি বইতে সাহায্য করুন, ছটের গান গান, আর প্রসাদ ভাগ করে নিন।"
      ]
     },
     "greeting": {
-     "en": "Jai Chhathi Maiya! Warm wishes on Chhath Puja."
+     "en": "Jai Chhathi Maiya! Warm wishes on Chhath Puja.",
+     "bn": "জয় ছঠী মাইয়া! ছট পুজোর আন্তরিক শুভেচ্ছা।"
     }
    }
   },
@@ -2834,13 +3073,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Chaitra Shukla Ekadashi, the first Ekadashi of the new year."
+     "en": "Chaitra Shukla Ekadashi, the first Ekadashi of the new year.",
+     "bn": "চৈত্র শুক্লা একাদশী, নতুন বছরের প্রথম একাদশী।"
     },
     "traditions": {
-     "en": "As with every Ekadashi, devotees of Vishnu fast from grains and beans, many on fruit and milk, spend time in prayer and break the fast the next morning during Dvadashi. Coming just after Rama Navami, Kamada Ekadashi is often kept with readings from the Ramayana and the singing of Vishnu's names."
+     "en": "As with every Ekadashi, devotees of Vishnu fast from grains and beans, many on fruit and milk, spend time in prayer and break the fast the next morning during Dvadashi. Coming just after Rama Navami, Kamada Ekadashi is often kept with readings from the Ramayana and the singing of Vishnu's names.",
+     "bn": "প্রতিটি একাদশীর মতোই বিষ্ণুভক্তরা শস্য ও ডালজাতীয় খাবার থেকে বিরত থাকেন, অনেকে ফল আর দুধ খান, প্রার্থনায় সময় কাটান, আর পরদিন সকালে দ্বাদশীতে উপবাস ভাঙেন। রামনবমীর ঠিক পরে আসায় কামদা একাদশী প্রায়ই রামায়ণ পাঠ আর বিষ্ণুর নামগানের মধ্য দিয়ে পালিত হয়।"
     },
     "story": {
-     "en": "The story told is of Lalit and Lalita, a gandharva couple at the court of King Pundarika. Lalit, distracted by thoughts of his wife, sang out of tune before the king, and the king in his anger declared that he would take the form of a fearsome rakshasa. Lalita followed her husband through the forests, caring for him, until she met the sage Shringi, who told her of the Ekadashi of Chaitra. She kept the fast with full devotion and offered its merit to her husband, and Lalit was restored to his own form. The two returned home together."
+     "en": "The story told is of Lalit and Lalita, a gandharva couple at the court of King Pundarika. Lalit, distracted by thoughts of his wife, sang out of tune before the king, and the king in his anger declared that he would take the form of a fearsome rakshasa. Lalita followed her husband through the forests, caring for him, until she met the sage Shringi, who told her of the Ekadashi of Chaitra. She kept the fast with full devotion and offered its merit to her husband, and Lalit was restored to his own form. The two returned home together.",
+     "bn": "কাহিনিটি রাজা পুণ্ডরীকের সভার এক গন্ধর্ব দম্পতি ললিত আর ললিতার। স্ত্রীর চিন্তায় অন্যমনস্ক ললিত রাজার সামনে বেসুরো গেয়ে ফেললেন, আর রাজা রেগে গিয়ে ঘোষণা করলেন যে ললিত এক ভয়ংকর রাক্ষসের রূপ পাবেন। ললিতা স্বামীর সঙ্গে বনে বনে ঘুরে তাঁর সেবা করে চললেন, শেষে দেখা পেলেন ঋষি শৃঙ্গীর, যিনি তাঁকে চৈত্রের একাদশীর কথা বললেন। ললিতা পূর্ণ ভক্তিতে সেই উপবাস পালন করে তার পুণ্য স্বামীকে নিবেদন করলেন, আর ললিত নিজের রূপ ফিরে পেলেন। দুজনে একসঙ্গে ঘরে ফিরলেন।"
     },
     "howTo": {
      "en": [
@@ -2849,6 +3091,13 @@
       "Worship Vishnu with tulsi, flowers and a lamp, and read or listen to the day's story.",
       "Chant Vishnu's names or the Vishnu Sahasranama, and keep the day calm.",
       "Break the fast the next morning within the Dvadashi time, with simple food."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় (দশমীতে) রাতে শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থাকুন; ফল, দুধ আর বাদাম খান, অথবা পারলে আরও কঠোর উপবাস রাখুন।",
+      "তুলসী, ফুল আর প্রদীপ দিয়ে বিষ্ণুর পুজো করুন, আর দিনের কাহিনিটি পড়ুন বা শুনুন।",
+      "বিষ্ণুর নাম বা বিষ্ণু সহস্রনাম জপ করুন, আর দিনটি শান্তভাবে কাটান।",
+      "পরদিন সকালে দ্বাদশীর সময়ের মধ্যে সাধারণ খাবার দিয়ে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -2883,13 +3132,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Vaishakha Krishna Ekadashi (Chaitra in the amanta reckoning), the Ekadashi of protection."
+     "en": "Vaishakha Krishna Ekadashi (Chaitra in the amanta reckoning), the Ekadashi of protection.",
+     "bn": "বৈশাখ কৃষ্ণা একাদশী (অমান্ত মতে চৈত্র), রক্ষার একাদশী।"
     },
     "traditions": {
-     "en": "Devotees fast and worship Vishnu in his Vamana form. Tradition especially values giving on this day: food, water in the summer heat, and help to students. Many avoid honey, meat, betel and gambling, and keep the day quiet."
+     "en": "Devotees fast and worship Vishnu in his Vamana form. Tradition especially values giving on this day: food, water in the summer heat, and help to students. Many avoid honey, meat, betel and gambling, and keep the day quiet.",
+     "bn": "ভক্তরা উপবাস করে বামন রূপে বিষ্ণুর পুজো করেন। ঐতিহ্যে এই দিনে দানকে বিশেষ মূল্য দেওয়া হয়: খাবার, গ্রীষ্মের গরমে জল, আর ছাত্রছাত্রীদের সাহায্য। অনেকে মধু, আমিষ, পান আর জুয়া এড়িয়ে চলেন, আর দিনটি নিরিবিলিতে কাটান।"
     },
     "story": {
-     "en": "The story told is of King Mandhata, a just and generous ruler on the banks of the Narmada, who was absorbed in tapas when a bear attacked him and dragged him into the forest. He did not abandon his calm, but prayed to Vishnu, who came and freed him; but the king's foot was badly injured. Vishnu told him to keep the Varuthini Ekadashi at Mathura and worship his Varaha form, and the king, keeping the observance, was made whole. 'Varuthini' means 'the one that shields', and the day is remembered as a time of shelter."
+     "en": "The story told is of King Mandhata, a just and generous ruler on the banks of the Narmada, who was absorbed in tapas when a bear attacked him and dragged him into the forest. He did not abandon his calm, but prayed to Vishnu, who came and freed him; but the king's foot was badly injured. Vishnu told him to keep the Varuthini Ekadashi at Mathura and worship his Varaha form, and the king, keeping the observance, was made whole. 'Varuthini' means 'the one that shields', and the day is remembered as a time of shelter.",
+     "bn": "কাহিনিটি রাজা মান্ধাতার, নর্মদার তীরের এক ন্যায়পরায়ণ ও উদার শাসক, যিনি তপস্যায় মগ্ন থাকার সময় একটি ভালুক তাঁকে আক্রমণ করে বনের ভেতর টেনে নিয়ে যায়। তিনি স্থিরতা হারালেন না, বিষ্ণুর কাছে প্রার্থনা করলেন, আর বিষ্ণু এসে তাঁকে মুক্ত করলেন; কিন্তু রাজার পা গুরুতর আহত হয়েছিল। বিষ্ণু তাঁকে মথুরায় বরুথিনী একাদশী পালন করে বরাহ রূপের পুজো করতে বললেন, আর রাজা সেই ব্রত পালন করে সম্পূর্ণ সুস্থ হলেন। ‘বরুথিনী’ মানে ‘যিনি আড়াল করে রাখেন’, আর দিনটিকে আশ্রয়ের সময় হিসেবে স্মরণ করা হয়।"
     },
     "howTo": {
      "en": [
@@ -2898,6 +3150,13 @@
       "Worship Vishnu with tulsi and a lamp, and hear the story of King Mandhata.",
       "Give water, food or help to someone, in the spirit of the day.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন; সাধারণত ফল আর দুধ খাওয়া হয়।",
+      "তুলসী আর প্রদীপ দিয়ে বিষ্ণুর পুজো করুন, আর রাজা মান্ধাতার কাহিনি শুনুন।",
+      "দিনটির ভাব মেনে কাউকে জল, খাবার বা সাহায্য দিন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -2932,13 +3191,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Vaishakha Shukla Ekadashi, named for Vishnu's Mohini form."
+     "en": "Vaishakha Shukla Ekadashi, named for Vishnu's Mohini form.",
+     "bn": "বৈশাখ শুক্লা একাদশী, বিষ্ণুর মোহিনী রূপের নামে।"
     },
     "traditions": {
-     "en": "Devotees fast and worship Vishnu, remembering the form in which he appeared during the churning of the ocean. In temples, especially in Gujarat and the South, the deity is adorned as Mohini. The day is kept with prayer, reading and singing of Vishnu's names."
+     "en": "Devotees fast and worship Vishnu, remembering the form in which he appeared during the churning of the ocean. In temples, especially in Gujarat and the South, the deity is adorned as Mohini. The day is kept with prayer, reading and singing of Vishnu's names.",
+     "bn": "ভক্তরা উপবাস করে বিষ্ণুর পুজো করেন, স্মরণ করেন সমুদ্রমন্থনের সময় তিনি যে রূপে আবির্ভূত হয়েছিলেন। মন্দিরে, বিশেষত গুজরাট আর দক্ষিণে, বিগ্রহকে মোহিনী রূপে সাজানো হয়। দিনটি প্রার্থনা, পাঠ আর বিষ্ণুর নামগানে কাটে।"
     },
     "story": {
-     "en": "When the gods and asuras churned the ocean and the pot of amrit rose, the asuras seized it. Vishnu took the form of Mohini, an enchanting woman, and offered to share the nectar fairly; captivated, the asuras agreed, and Mohini served it to the gods. The day also carries the story of Dhrishtabuddhi, a merchant's son who wasted his inheritance and lost his way, until the sage Kaundinya told him of this Ekadashi. He kept it sincerely, and his life turned toward steadiness and kindness."
+     "en": "When the gods and asuras churned the ocean and the pot of amrit rose, the asuras seized it. Vishnu took the form of Mohini, an enchanting woman, and offered to share the nectar fairly; captivated, the asuras agreed, and Mohini served it to the gods. The day also carries the story of Dhrishtabuddhi, a merchant's son who wasted his inheritance and lost his way, until the sage Kaundinya told him of this Ekadashi. He kept it sincerely, and his life turned toward steadiness and kindness.",
+     "bn": "দেবতা ও অসুরেরা যখন সমুদ্রমন্থন করলেন আর অমৃতের কলস উঠে এল, অসুরেরা তা কেড়ে নিল। বিষ্ণু মোহিনী নামে এক মনোমুগ্ধকর নারীর রূপ ধরে ন্যায্যভাবে অমৃত ভাগ করে দেওয়ার প্রস্তাব দিলেন; মুগ্ধ অসুরেরা রাজি হল, আর মোহিনী দেবতাদের অমৃত পরিবেশন করলেন। এই দিনের সঙ্গে আরও জড়িয়ে আছে ধৃষ্টবুদ্ধির কাহিনি, এক বণিকের ছেলে যে পৈতৃক সম্পত্তি নষ্ট করে পথ হারিয়েছিল, যতক্ষণ না ঋষি কৌণ্ডিন্য তাকে এই একাদশীর কথা বললেন। সে আন্তরিকভাবে তা পালন করল, আর তার জীবন স্থিরতা ও দয়ার দিকে ফিরল।"
     },
     "howTo": {
      "en": [
@@ -2947,6 +3209,13 @@
       "Worship Vishnu with tulsi, yellow flowers and a lamp; hear the story of the churning and of Dhrishtabuddhi.",
       "Spend time in prayer or reading, and avoid harsh speech.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন।",
+      "তুলসী, হলুদ ফুল আর প্রদীপ দিয়ে বিষ্ণুর পুজো করুন; সমুদ্রমন্থন আর ধৃষ্টবুদ্ধির কাহিনি শুনুন।",
+      "প্রার্থনা বা পাঠে সময় কাটান, আর কটু কথা এড়িয়ে চলুন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -2981,13 +3250,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Jyeshtha Krishna Ekadashi (Vaishakha in the amanta reckoning), also called Achala Ekadashi."
+     "en": "Jyeshtha Krishna Ekadashi (Vaishakha in the amanta reckoning), also called Achala Ekadashi.",
+     "bn": "জ্যৈষ্ঠ কৃষ্ণা একাদশী (অমান্ত মতে বৈশাখ), যাকে অচলা একাদশীও বলা হয়।"
     },
     "traditions": {
-     "en": "'Apara' means boundless. Devotees fast and worship Vishnu as Trivikrama, the form that measured the worlds in three steps. In Odisha the day is called Jalakrida Ekadashi, and in Punjab and Haryana, Bhadrakali Ekadashi. As the summer heat peaks, giving water and cooling drinks is a common practice."
+     "en": "'Apara' means boundless. Devotees fast and worship Vishnu as Trivikrama, the form that measured the worlds in three steps. In Odisha the day is called Jalakrida Ekadashi, and in Punjab and Haryana, Bhadrakali Ekadashi. As the summer heat peaks, giving water and cooling drinks is a common practice.",
+     "bn": "‘অপরা’ মানে অসীম। ভক্তরা উপবাস করে ত্রিবিক্রম রূপে বিষ্ণুর পুজো করেন, যে রূপে তিনি তিন পায়ে ত্রিভুবন মেপেছিলেন। ওড়িশায় দিনটিকে বলা হয় জলক্রীড়া একাদশী, আর পাঞ্জাব ও হরিয়ানায় ভদ্রকালী একাদশী। গ্রীষ্মের তাপ চরমে থাকায় জল আর ঠান্ডা পানীয় দান করা এক প্রচলিত রীতি।"
     },
     "story": {
-     "en": "The story told is of King Mahidhvaja, a righteous king whose younger brother Vajradhvaja, jealous, took his life and buried him beneath a peepal tree. The king's spirit could not rest, and troubled travellers who passed that way. The sage Dhaumya, passing by, understood what had happened, kept the Apara Ekadashi and offered its merit to the king, and Mahidhvaja found peace. The story is told to show how far a single sincere observance, made for another, can reach."
+     "en": "The story told is of King Mahidhvaja, a righteous king whose younger brother Vajradhvaja, jealous, took his life and buried him beneath a peepal tree. The king's spirit could not rest, and troubled travellers who passed that way. The sage Dhaumya, passing by, understood what had happened, kept the Apara Ekadashi and offered its merit to the king, and Mahidhvaja found peace. The story is told to show how far a single sincere observance, made for another, can reach.",
+     "bn": "কাহিনিটি রাজা মহীধ্বজের, এক ধর্মপরায়ণ রাজা, যাঁর ঈর্ষাকাতর ছোট ভাই বজ্রধ্বজ তাঁর প্রাণ নিয়ে তাঁকে একটি অশ্বত্থ গাছের নিচে পুঁতে দেয়। রাজার আত্মা শান্তি পাচ্ছিল না, আর সেই পথে যাওয়া পথিকদের বিরক্ত করত। পথ দিয়ে যাওয়ার সময় ঋষি ধৌম্য বুঝলেন কী ঘটেছে, অপরা একাদশী পালন করে তার পুণ্য রাজাকে নিবেদন করলেন, আর মহীধ্বজ শান্তি পেলেন। কাহিনিটি বলা হয় এটা বোঝাতে যে, অন্যের জন্য করা একটি আন্তরিক ব্রত কত দূর পৌঁছতে পারে।"
     },
     "howTo": {
      "en": [
@@ -2996,6 +3268,13 @@
       "Worship Vishnu as Trivikrama with tulsi and a lamp, and hear the story of King Mahidhvaja.",
       "Offer water or sherbet to people in the heat.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন।",
+      "তুলসী আর প্রদীপ দিয়ে ত্রিবিক্রম রূপে বিষ্ণুর পুজো করুন, আর রাজা মহীধ্বজের কাহিনি শুনুন।",
+      "গরমে মানুষকে জল বা শরবত দিন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3030,13 +3309,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Jyeshtha Shukla Ekadashi, the strictest Ekadashi, kept without even water."
+     "en": "Jyeshtha Shukla Ekadashi, the strictest Ekadashi, kept without even water.",
+     "bn": "জ্যৈষ্ঠ শুক্লা একাদশী, সবচেয়ে কঠোর একাদশী, পালিত হয় জল পর্যন্ত না খেয়ে।"
     },
     "traditions": {
-     "en": "'Nirjala' means without water. Those who keep it fully go from sunrise to the next sunrise without food or water, in the hottest weeks of the year. Because of the hardship, tradition places great value on giving water: people set up stalls with cold water and sherbet, and give earthen pots, fans and umbrellas. It is also called Bhimseni Ekadashi. Those who cannot fast without water, for reasons of health or age, keep a gentler fast, which tradition fully accepts."
+     "en": "'Nirjala' means without water. Those who keep it fully go from sunrise to the next sunrise without food or water, in the hottest weeks of the year. Because of the hardship, tradition places great value on giving water: people set up stalls with cold water and sherbet, and give earthen pots, fans and umbrellas. It is also called Bhimseni Ekadashi. Those who cannot fast without water, for reasons of health or age, keep a gentler fast, which tradition fully accepts.",
+     "bn": "‘নির্জলা’ মানে জল ছাড়া। যাঁরা পুরোপুরি পালন করেন, তাঁরা বছরের সবচেয়ে গরম সপ্তাহগুলিতে এক সূর্যোদয় থেকে পরের সূর্যোদয় পর্যন্ত খাদ্য ও জল ছাড়া থাকেন। এই কষ্টের জন্যই ঐতিহ্যে জল দানকে বিরাট মূল্য দেওয়া হয়: লোকে ঠান্ডা জল আর শরবতের ছাউনি বসান, আর মাটির কলসি, পাখা ও ছাতা দান করেন। একে ভীমসেনী একাদশীও বলা হয়। স্বাস্থ্য বা বয়সের কারণে যাঁরা জল ছাড়া উপবাস করতে পারেন না, তাঁরা হালকা উপবাস রাখেন, যা ঐতিহ্য পুরোপুরি মেনে নেয়।"
     },
     "story": {
-     "en": "Bhima, the strongest of the Pandavas, loved his food and could not keep the twenty-four Ekadashis that his mother and brothers kept. He went to the sage Vyasa and asked if there were any way. Vyasa told him to keep just one Ekadashi, Jyeshtha Shukla Ekadashi, without food or water from sunrise to sunrise, and it would hold the place of all the others. Bhima kept it, and the day has been called Bhimseni Ekadashi since. The story is a gentle one: it makes room for those who find the full discipline hard."
+     "en": "Bhima, the strongest of the Pandavas, loved his food and could not keep the twenty-four Ekadashis that his mother and brothers kept. He went to the sage Vyasa and asked if there were any way. Vyasa told him to keep just one Ekadashi, Jyeshtha Shukla Ekadashi, without food or water from sunrise to sunrise, and it would hold the place of all the others. Bhima kept it, and the day has been called Bhimseni Ekadashi since. The story is a gentle one: it makes room for those who find the full discipline hard.",
+     "bn": "পাণ্ডবদের মধ্যে সবচেয়ে বলবান ভীম খেতে ভালোবাসতেন, আর তাঁর মা ও ভাইয়েরা যে চব্বিশটি একাদশী পালন করতেন, তা তিনি পারতেন না। তিনি ঋষি ব্যাসের কাছে গিয়ে জানতে চাইলেন কোনো উপায় আছে কি না। ব্যাস তাঁকে কেবল একটি একাদশী, জ্যৈষ্ঠ শুক্লা একাদশী, সূর্যোদয় থেকে সূর্যোদয় পর্যন্ত খাদ্য ও জল ছাড়া পালন করতে বললেন, আর বললেন তা বাকি সবগুলির জায়গা নেবে। ভীম তা পালন করলেন, আর তখন থেকে দিনটির নাম ভীমসেনী একাদশী। কাহিনিটি কোমল: যাঁদের কাছে পূর্ণ নিয়ম কঠিন, তাঁদের জন্যও এতে জায়গা আছে।"
     },
     "howTo": {
      "en": [
@@ -3046,6 +3328,14 @@
       "Give water: fill pots, set up a water stall, or give earthen pots, fans or umbrellas.",
       "Keep the day calm and indoors in the heat; chant or read.",
       "Break the fast the next morning during Dvadashi, starting with water and something light."
+     ],
+     "bn": [
+      "কীভাবে পালন করবেন, তা সৎভাবে ঠিক করুন; কোনো শারীরিক সমস্যা থাকলে, অন্তঃসত্ত্বা হলে, বয়স্ক হলে বা ওষুধ খেলে, জল খেয়ে হালকা উপবাস রাখুন।",
+      "আগের সন্ধ্যায় ভালো করে খাওয়াদাওয়া ও জলপান করুন।",
+      "একাদশীর সকালে তুলসী আর প্রদীপ দিয়ে বিষ্ণুর পুজো করুন।",
+      "জল দান করুন: কলসি ভরে রাখুন, জলসত্র বসান, অথবা মাটির কলসি, পাখা বা ছাতা দিন।",
+      "গরমে দিনটি শান্তভাবে ঘরের ভেতরে কাটান; জপ বা পাঠ করুন।",
+      "পরদিন সকালে দ্বাদশীতে প্রথমে জল আর হালকা কিছু দিয়ে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3080,13 +3370,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Ashadha Krishna Ekadashi (Jyeshtha in the amanta reckoning)."
+     "en": "Ashadha Krishna Ekadashi (Jyeshtha in the amanta reckoning).",
+     "bn": "আষাঢ় কৃষ্ণা একাদশী (অমান্ত মতে জ্যৈষ্ঠ)।"
     },
     "traditions": {
-     "en": "Coming just before the monsoon, Yogini Ekadashi is kept with a fast, worship of Vishnu and the peepal tree, and giving to those in need. Tradition holds it in especially high regard, and many keep it as a day of prayer and quiet."
+     "en": "Coming just before the monsoon, Yogini Ekadashi is kept with a fast, worship of Vishnu and the peepal tree, and giving to those in need. Tradition holds it in especially high regard, and many keep it as a day of prayer and quiet.",
+     "bn": "বর্ষার ঠিক আগে আসা যোগিনী একাদশী পালিত হয় উপবাস, বিষ্ণু ও অশ্বত্থ গাছের পুজো, আর অভাবী মানুষদের দানের মধ্য দিয়ে। ঐতিহ্যে এর বিশেষ মর্যাদা, আর অনেকে দিনটি প্রার্থনা ও নীরবতায় কাটান।"
     },
     "story": {
-     "en": "The story told is of Hemamali, a gardener in the service of Kubera, whose task was to bring fresh flowers each morning for Kubera's worship of Shiva. One morning, lingering with his wife, he did not come. Kubera, angered, sent him from Alaka, and Hemamali wandered the earth, unwell and unhappy. At last he reached the ashram of the sage Markandeya, who listened kindly and told him of Yogini Ekadashi. Hemamali kept it with a full heart, his health returned, and he went home to Alaka."
+     "en": "The story told is of Hemamali, a gardener in the service of Kubera, whose task was to bring fresh flowers each morning for Kubera's worship of Shiva. One morning, lingering with his wife, he did not come. Kubera, angered, sent him from Alaka, and Hemamali wandered the earth, unwell and unhappy. At last he reached the ashram of the sage Markandeya, who listened kindly and told him of Yogini Ekadashi. Hemamali kept it with a full heart, his health returned, and he went home to Alaka.",
+     "bn": "কাহিনিটি হেমমালীর, কুবেরের সেবায় নিযুক্ত এক মালী, যার কাজ ছিল কুবেরের শিবপুজোর জন্য প্রতিদিন সকালে টাটকা ফুল আনা। এক সকালে স্ত্রীর সঙ্গে সময় কাটাতে গিয়ে সে এল না। ক্রুদ্ধ কুবের তাকে অলকা থেকে বিদায় করে দিলেন, আর হেমমালী অসুস্থ ও অসুখী হয়ে পৃথিবীতে ঘুরে বেড়াতে লাগল। শেষে সে ঋষি মার্কণ্ডেয়র আশ্রমে পৌঁছল, যিনি সস্নেহে তার কথা শুনে তাকে যোগিনী একাদশীর কথা বললেন। হেমমালী পূর্ণ হৃদয়ে তা পালন করল, তার স্বাস্থ্য ফিরে এল, আর সে অলকায় ঘরে ফিরে গেল।"
     },
     "howTo": {
      "en": [
@@ -3095,6 +3388,13 @@
       "Worship Vishnu with tulsi and a lamp, and offer water at a peepal tree if one is near.",
       "Hear the story of Hemamali and give food or water to someone.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন।",
+      "তুলসী আর প্রদীপ দিয়ে বিষ্ণুর পুজো করুন, আর কাছে অশ্বত্থ গাছ থাকলে তার গোড়ায় জল দিন।",
+      "হেমমালীর কাহিনি শুনুন, আর কাউকে খাবার বা জল দিন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3129,13 +3429,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Ashadha Shukla Ekadashi: Vishnu goes into his four-month yogic sleep; chaturmas begins."
+     "en": "Ashadha Shukla Ekadashi: Vishnu goes into his four-month yogic sleep; chaturmas begins.",
+     "bn": "আষাঢ় শুক্লা একাদশী: বিষ্ণু চার মাসের যোগনিদ্রায় যান; চাতুর্মাস্য শুরু হয়।"
     },
     "traditions": {
-     "en": "Also called Ashadhi Ekadashi and Padma Ekadashi, it begins chaturmas, the four months of the monsoon when many people take on a discipline: giving up a food, eating once a day, or reading daily. In Maharashtra, the great Pandharpur Wari reaches its end: lakhs of warkaris walk for weeks, singing abhangs, to see Vitthal on this day. Traditionally, weddings and housewarmings are not held until Vishnu wakes on Devutthana Ekadashi."
+     "en": "Also called Ashadhi Ekadashi and Padma Ekadashi, it begins chaturmas, the four months of the monsoon when many people take on a discipline: giving up a food, eating once a day, or reading daily. In Maharashtra, the great Pandharpur Wari reaches its end: lakhs of warkaris walk for weeks, singing abhangs, to see Vitthal on this day. Traditionally, weddings and housewarmings are not held until Vishnu wakes on Devutthana Ekadashi.",
+     "bn": "একে আষাঢ়ী একাদশী ও পদ্মা একাদশীও বলা হয়; এই দিন থেকে শুরু চাতুর্মাস্য, বর্ষার চার মাস, যখন অনেকে কোনো একটি নিয়ম গ্রহণ করেন: কোনো খাবার ত্যাগ, দিনে একবার খাওয়া, বা রোজ পাঠ। মহারাষ্ট্রে পান্ধারপুরের বিশাল ওয়ারি আজ শেষ হয়: লক্ষ লক্ষ ওয়ারকরি সপ্তাহের পর সপ্তাহ অভঙ্গ গাইতে গাইতে হেঁটে আজকের দিনে বিঠ্ঠলের দর্শনে পৌঁছন। ঐতিহ্যগতভাবে দেবোত্থান একাদশীতে বিষ্ণু জেগে না ওঠা পর্যন্ত বিবাহ আর গৃহপ্রবেশ হয় না।"
     },
     "story": {
-     "en": "The story told is that on this Ekadashi Vishnu lies down on the serpent Shesha in the ocean of milk and enters yoga nidra, a sleep of deep meditation, for four months, waking on Kartika Shukla Ekadashi. Another story, told in Maharashtra, is of Pundalik, a young man devoted to his parents. When Vishnu, as Vitthal, came to his door, Pundalik was massaging his father's feet, and without rising he tossed Vitthal a brick to stand on until he was done. Vitthal waited, standing on the brick with his hands on his hips, and stands that way in Pandharpur to this day."
+     "en": "The story told is that on this Ekadashi Vishnu lies down on the serpent Shesha in the ocean of milk and enters yoga nidra, a sleep of deep meditation, for four months, waking on Kartika Shukla Ekadashi. Another story, told in Maharashtra, is of Pundalik, a young man devoted to his parents. When Vishnu, as Vitthal, came to his door, Pundalik was massaging his father's feet, and without rising he tossed Vitthal a brick to stand on until he was done. Vitthal waited, standing on the brick with his hands on his hips, and stands that way in Pandharpur to this day.",
+     "bn": "কাহিনি অনুযায়ী, এই একাদশীতে বিষ্ণু ক্ষীরসাগরে শেষনাগের ওপর শুয়ে চার মাসের জন্য যোগনিদ্রায়, অর্থাৎ গভীর ধ্যানের ঘুমে, যান, আর জাগেন কার্তিক শুক্লা একাদশীতে। মহারাষ্ট্রে বলা আরেকটি কাহিনি পুণ্ডলীকের, বাবা-মায়ের প্রতি নিবেদিত এক যুবক। বিষ্ণু যখন বিঠ্ঠল রূপে তাঁর দরজায় এলেন, পুণ্ডলীক তখন বাবার পা টিপে দিচ্ছিলেন, আর না উঠেই বিঠ্ঠলের দিকে একটি ইট ছুড়ে দিলেন, যাতে কাজ শেষ না হওয়া পর্যন্ত তিনি তার ওপর দাঁড়িয়ে থাকেন। বিঠ্ঠল কোমরে হাত রেখে ইটের ওপর দাঁড়িয়ে অপেক্ষা করলেন, আর আজও পান্ধারপুরে সেভাবেই দাঁড়িয়ে আছেন।"
     },
     "howTo": {
      "en": [
@@ -3144,6 +3447,13 @@
       "If you wish, choose a small discipline for the four months of chaturmas.",
       "Join a local dindi or temple procession if there is one.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন।",
+      "তুলসী আর প্রদীপ দিয়ে বিষ্ণু বা বিঠ্ঠলের পুজো করুন; অভঙ্গ বা ভজন গান।",
+      "ইচ্ছে হলে চাতুর্মাস্যের চার মাসের জন্য ছোট একটি নিয়ম বেছে নিন।",
+      "কাছাকাছি দিণ্ডি বা মন্দিরের শোভাযাত্রা থাকলে তাতে যোগ দিন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3178,13 +3488,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Shravana Krishna Ekadashi (Ashadha in the amanta reckoning), the first Ekadashi of chaturmas's dark fortnight."
+     "en": "Shravana Krishna Ekadashi (Ashadha in the amanta reckoning), the first Ekadashi of chaturmas's dark fortnight.",
+     "bn": "শ্রাবণ কৃষ্ণা একাদশী (অমান্ত মতে আষাঢ়), চাতুর্মাস্যের কৃষ্ণপক্ষের প্রথম একাদশী।"
     },
     "traditions": {
-     "en": "Devotees fast, worship Vishnu, and especially honour the tulsi plant: watering it, lighting a lamp before it and offering its leaves. Many light a ghee lamp before Vishnu through the evening. It falls in the rains, a season of reflection."
+     "en": "Devotees fast, worship Vishnu, and especially honour the tulsi plant: watering it, lighting a lamp before it and offering its leaves. Many light a ghee lamp before Vishnu through the evening. It falls in the rains, a season of reflection.",
+     "bn": "ভক্তরা উপবাস করেন, বিষ্ণুর পুজো করেন, আর বিশেষভাবে তুলসী গাছকে সম্মান জানান: তাতে জল দেন, তার সামনে প্রদীপ জ্বালান, আর তার পাতা নিবেদন করেন। অনেকে সারা সন্ধ্যা বিষ্ণুর সামনে ঘিয়ের প্রদীপ জ্বালিয়ে রাখেন। দিনটি পড়ে বর্ষায়, আত্মচিন্তার এক ঋতুতে।"
     },
     "story": {
-     "en": "The story told is of a hot-tempered landowner who, in a quarrel, struck a Brahmin, who fell and did not survive. Overwhelmed with remorse, the landowner wished to make amends, but the village would not let him take part in its rites. A sage told him to keep Kamika Ekadashi with sincerity, worshipping Vishnu with tulsi, and he did so. The story is told of how heartfelt remorse and a turn toward goodness are honoured in tradition, and how the village took him back."
+     "en": "The story told is of a hot-tempered landowner who, in a quarrel, struck a Brahmin, who fell and did not survive. Overwhelmed with remorse, the landowner wished to make amends, but the village would not let him take part in its rites. A sage told him to keep Kamika Ekadashi with sincerity, worshipping Vishnu with tulsi, and he did so. The story is told of how heartfelt remorse and a turn toward goodness are honoured in tradition, and how the village took him back.",
+     "bn": "কাহিনিটি এক বদমেজাজি জমিদারের, যিনি এক ঝগড়ায় এক ব্রাহ্মণকে আঘাত করেন, আর ব্রাহ্মণ পড়ে গিয়ে আর বাঁচেননি। গভীর অনুশোচনায় ভেঙে পড়া জমিদার নিজের ভুল শোধরাতে চাইলেন, কিন্তু গ্রামের লোক তাঁকে তাদের কোনো অনুষ্ঠানে যোগ দিতে দিল না। এক ঋষি তাঁকে আন্তরিকভাবে কামিকা একাদশী পালন করে তুলসী দিয়ে বিষ্ণুর পুজো করতে বললেন, আর তিনি তাই করলেন। কাহিনিটি বলা হয় এটা দেখাতে যে, অন্তর থেকে আসা অনুশোচনা আর ভালোর দিকে ফেরাকে ঐতিহ্য কীভাবে সম্মান করে, আর কীভাবে গ্রাম তাঁকে আবার আপন করে নিল।"
     },
     "howTo": {
      "en": [
@@ -3193,6 +3506,13 @@
       "Water the tulsi plant, light a lamp before it and offer tulsi leaves to Vishnu.",
       "Keep a ghee lamp lit before Vishnu in the evening.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন।",
+      "তুলসী গাছে জল দিন, তার সামনে প্রদীপ জ্বালান, আর বিষ্ণুকে তুলসীপাতা নিবেদন করুন।",
+      "সন্ধ্যায় বিষ্ণুর সামনে ঘিয়ের প্রদীপ জ্বালিয়ে রাখুন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3227,13 +3547,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Shravana Shukla Ekadashi, traditionally kept by couples praying for children."
+     "en": "Shravana Shukla Ekadashi, traditionally kept by couples praying for children.",
+     "bn": "শ্রাবণ শুক্লা একাদশী, ঐতিহ্যগতভাবে সন্তান কামনায় দম্পতিরা যে ব্রত পালন করেন।"
     },
     "traditions": {
-     "en": "'Putrada' means 'giver of children'. Couples hoping for a child often keep this fast together, and parents keep it for their children's wellbeing. Vishnu is worshipped as Bal Gopal, the child Krishna. In the South this Ekadashi is also called Pavitropana Ekadashi, when a pavitra, a woven thread, is offered to Vishnu."
+     "en": "'Putrada' means 'giver of children'. Couples hoping for a child often keep this fast together, and parents keep it for their children's wellbeing. Vishnu is worshipped as Bal Gopal, the child Krishna. In the South this Ekadashi is also called Pavitropana Ekadashi, when a pavitra, a woven thread, is offered to Vishnu.",
+     "bn": "‘পুত্রদা’ মানে ‘সন্তানদাত্রী’। সন্তানের আশায় থাকা দম্পতিরা প্রায়ই একসঙ্গে এই উপবাস করেন, আর বাবা-মায়েরা সন্তানের মঙ্গলের জন্য পালন করেন। বিষ্ণুর পুজো হয় বালগোপাল, অর্থাৎ শিশু কৃষ্ণ রূপে। দক্ষিণে এই একাদশীকে পবিত্রোপণ একাদশীও বলা হয়, যখন বিষ্ণুকে পবিত্র, অর্থাৎ বোনা সুতোর মালা, নিবেদন করা হয়।"
     },
     "story": {
-     "en": "King Mahijit of Mahishmati ruled his people well but had no children, and the sorrow weighed on him and his kingdom. His ministers went to the sage Lomasha, who saw that the king in an earlier life had once turned a thirsty cow away from water. He advised that the king and his people keep the Shravana Shukla Ekadashi together and offer its merit to the king. They did, and in time a son was born to the royal couple, and the kingdom celebrated."
+     "en": "King Mahijit of Mahishmati ruled his people well but had no children, and the sorrow weighed on him and his kingdom. His ministers went to the sage Lomasha, who saw that the king in an earlier life had once turned a thirsty cow away from water. He advised that the king and his people keep the Shravana Shukla Ekadashi together and offer its merit to the king. They did, and in time a son was born to the royal couple, and the kingdom celebrated.",
+     "bn": "মাহিষ্মতীর রাজা মহীজিৎ প্রজাদের সুশাসন করতেন, কিন্তু তাঁর কোনো সন্তান ছিল না, আর সেই দুঃখ তাঁকে ও তাঁর রাজ্যকে ভারাক্রান্ত করে রেখেছিল। তাঁর মন্ত্রীরা ঋষি লোমশের কাছে গেলেন, যিনি দেখলেন, পূর্বজন্মে রাজা একবার এক তৃষ্ণার্ত গাভীকে জল থেকে সরিয়ে দিয়েছিলেন। তিনি পরামর্শ দিলেন, রাজা ও প্রজারা সবাই মিলে শ্রাবণ শুক্লা একাদশী পালন করে তার পুণ্য রাজাকে নিবেদন করুন। তাঁরা তাই করলেন, আর যথাসময়ে রাজদম্পতির একটি পুত্র জন্মাল, আর রাজ্য জুড়ে উৎসব হল।"
     },
     "howTo": {
      "en": [
@@ -3242,6 +3565,13 @@
       "Worship Bal Gopal or Vishnu with tulsi, butter and a lamp; hear the story of King Mahijit.",
       "Give water to animals and food to children in need.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন; দম্পতিরা একসঙ্গে পালন করতে পারেন।",
+      "তুলসী, মাখন আর প্রদীপ দিয়ে বালগোপাল বা বিষ্ণুর পুজো করুন; রাজা মহীজিতের কাহিনি শুনুন।",
+      "পশুদের জল দিন, আর অভাবী শিশুদের খাবার দিন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3276,13 +3606,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Bhadrapada Krishna Ekadashi (Shravana in the amanta reckoning), also called Annada Ekadashi."
+     "en": "Bhadrapada Krishna Ekadashi (Shravana in the amanta reckoning), also called Annada Ekadashi.",
+     "bn": "ভাদ্র কৃষ্ণা একাদশী (অমান্ত মতে শ্রাবণ), যাকে অন্নদা একাদশীও বলা হয়।"
     },
     "traditions": {
-     "en": "Coming a few days after Janmashtami, Aja Ekadashi is kept with a fast, worship of Vishnu and a night of bhajans in many homes. The story of King Harishchandra is read, and people reflect on keeping one's word through hard times."
+     "en": "Coming a few days after Janmashtami, Aja Ekadashi is kept with a fast, worship of Vishnu and a night of bhajans in many homes. The story of King Harishchandra is read, and people reflect on keeping one's word through hard times.",
+     "bn": "জন্মাষ্টমীর কয়েক দিন পরে আসা অজা একাদশী বহু বাড়িতে পালিত হয় উপবাস, বিষ্ণুপুজো আর রাতভর ভজনে। রাজা হরিশ্চন্দ্রের কাহিনি পড়া হয়, আর কঠিন সময়েও কথা রাখার বিষয়টি নিয়ে মানুষ ভাবেন।"
     },
     "story": {
-     "en": "Harishchandra, king of Ayodhya, was famed for never telling a lie. Tested by the sage Vishvamitra, he gave up his kingdom to keep a promise, and to pay the sage's fee he sold his wife and son and himself, ending as a keeper of the cremation ground at Kashi. Through every hardship he did not break his word. When his young son died and his wife came to the ground unable to pay the fee, Harishchandra, heartbroken, still asked for it as his duty required. The sage Gautama had told him of Aja Ekadashi, which he kept, and the story ends with the gods appearing, restoring his son and kingdom, and honouring his truthfulness."
+     "en": "Harishchandra, king of Ayodhya, was famed for never telling a lie. Tested by the sage Vishvamitra, he gave up his kingdom to keep a promise, and to pay the sage's fee he sold his wife and son and himself, ending as a keeper of the cremation ground at Kashi. Through every hardship he did not break his word. When his young son died and his wife came to the ground unable to pay the fee, Harishchandra, heartbroken, still asked for it as his duty required. The sage Gautama had told him of Aja Ekadashi, which he kept, and the story ends with the gods appearing, restoring his son and kingdom, and honouring his truthfulness.",
+     "bn": "অযোধ্যার রাজা হরিশ্চন্দ্র কখনও মিথ্যা না বলার জন্য বিখ্যাত ছিলেন। ঋষি বিশ্বামিত্রের পরীক্ষায় তিনি প্রতিশ্রুতি রাখতে রাজ্য ছেড়ে দিলেন, আর ঋষির দক্ষিণা মেটাতে স্ত্রী, পুত্র এবং নিজেকেও বিক্রি করে শেষে কাশীর শ্মশানের রক্ষী হলেন। প্রতিটি কষ্টের মধ্যেও তিনি কথার খেলাপ করেননি। যখন তাঁর শিশুপুত্র মারা গেল আর তাঁর স্ত্রী শ্মশানে এসে শুল্ক দিতে পারলেন না, ভগ্নহৃদয় হরিশ্চন্দ্র তবুও কর্তব্য মেনে তা চাইলেন। ঋষি গৌতম তাঁকে অজা একাদশীর কথা বলেছিলেন, যা তিনি পালন করেছিলেন, আর কাহিনি শেষ হয় দেবতাদের আবির্ভাবে, যাঁরা তাঁর পুত্র ও রাজ্য ফিরিয়ে দিয়ে তাঁর সত্যনিষ্ঠাকে সম্মান জানালেন।"
     },
     "howTo": {
      "en": [
@@ -3291,6 +3624,13 @@
       "Worship Vishnu with tulsi and a lamp, and read the story of Harishchandra.",
       "Sing bhajans in the evening, and reflect on a promise you mean to keep.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন।",
+      "তুলসী আর প্রদীপ দিয়ে বিষ্ণুর পুজো করুন, আর হরিশ্চন্দ্রের কাহিনি পড়ুন।",
+      "সন্ধ্যায় ভজন গান, আর যে প্রতিশ্রুতি রাখতে চান, তা নিয়ে ভাবুন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3325,13 +3665,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Bhadrapada Shukla Ekadashi: Vishnu turns onto his side in his sleep; also Vamana Ekadashi."
+     "en": "Bhadrapada Shukla Ekadashi: Vishnu turns onto his side in his sleep; also Vamana Ekadashi.",
+     "bn": "ভাদ্র শুক্লা একাদশী: ঘুমের মধ্যে বিষ্ণু পাশ ফেরেন; একে বামন একাদশীও বলা হয়।"
     },
     "traditions": {
-     "en": "Also called Parivartini Ekadashi, from 'turning'. Devotees fast and worship Vishnu in his Vamana form, the dwarf brahmin, with curd rice and flowers. In Maharashtra it falls during Ganeshotsav, and it is a day of quiet worship in the middle of chaturmas."
+     "en": "Also called Parivartini Ekadashi, from 'turning'. Devotees fast and worship Vishnu in his Vamana form, the dwarf brahmin, with curd rice and flowers. In Maharashtra it falls during Ganeshotsav, and it is a day of quiet worship in the middle of chaturmas.",
+     "bn": "‘পরিবর্তন’ বা পাশ ফেরা থেকে এর আরেক নাম পরিবর্তিনী একাদশী। ভক্তরা উপবাস করে বিষ্ণুর বামন রূপের, অর্থাৎ বামন ব্রাহ্মণের, পুজো করেন দই-ভাত আর ফুল দিয়ে। মহারাষ্ট্রে দিনটি গণেশোৎসবের মধ্যে পড়ে, আর চাতুর্মাস্যের মাঝখানে এটি শান্ত আরাধনার দিন।"
     },
     "story": {
-     "en": "The asura king Bali, grandson of Prahlad, was generous and powerful and had come to rule the three worlds. Vishnu came to his sacrifice as Vamana, a small brahmin boy, and asked for just three steps of land. Bali, against his teacher's warning, gladly agreed. Vamana grew to cosmic size: with one step he covered the earth, with the second the heavens, and for the third Bali offered his own head. Moved by his generosity, Vishnu gave him the underworld to rule and promised to stay as his guardian. On this Ekadashi, tradition says, Vishnu, sleeping through chaturmas, turns onto his side."
+     "en": "The asura king Bali, grandson of Prahlad, was generous and powerful and had come to rule the three worlds. Vishnu came to his sacrifice as Vamana, a small brahmin boy, and asked for just three steps of land. Bali, against his teacher's warning, gladly agreed. Vamana grew to cosmic size: with one step he covered the earth, with the second the heavens, and for the third Bali offered his own head. Moved by his generosity, Vishnu gave him the underworld to rule and promised to stay as his guardian. On this Ekadashi, tradition says, Vishnu, sleeping through chaturmas, turns onto his side.",
+     "bn": "প্রহ্লাদের পৌত্র অসুররাজ বলি ছিলেন উদার ও পরাক্রমী, আর ত্রিভুবন শাসন করতেন। বিষ্ণু বামন, এক ছোট্ট ব্রাহ্মণ বালক রূপে, তাঁর যজ্ঞে এসে কেবল তিন পা জমি চাইলেন। গুরুর সতর্কবাণী উপেক্ষা করে বলি সানন্দে রাজি হলেন। বামন বিরাট রূপ ধারণ করলেন: এক পায়ে পৃথিবী, দ্বিতীয় পায়ে আকাশ ঢেকে দিলেন, আর তৃতীয় পায়ের জন্য বলি নিজের মাথা পেতে দিলেন। তাঁর উদারতায় মুগ্ধ হয়ে বিষ্ণু তাঁকে পাতালের রাজত্ব দিলেন আর তাঁর রক্ষক হয়ে থাকার প্রতিশ্রুতি দিলেন। ঐতিহ্য বলে, চাতুর্মাস্য জুড়ে ঘুমিয়ে থাকা বিষ্ণু এই একাদশীতে পাশ ফেরেন।"
     },
     "howTo": {
      "en": [
@@ -3340,6 +3683,13 @@
       "Worship Vamana or Vishnu with tulsi, flowers and curd, and hear the story of Bali.",
       "Give something with an open hand, as Bali did.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন।",
+      "তুলসী, ফুল আর দই দিয়ে বামন বা বিষ্ণুর পুজো করুন, আর বলির কাহিনি শুনুন।",
+      "বলির মতো খোলা হাতে কিছু দান করুন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3374,13 +3724,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Ashvin Krishna Ekadashi (Bhadrapada in the amanta reckoning), in Pitru Paksha, kept for ancestors."
+     "en": "Ashvin Krishna Ekadashi (Bhadrapada in the amanta reckoning), in Pitru Paksha, kept for ancestors.",
+     "bn": "আশ্বিন কৃষ্ণা একাদশী (অমান্ত মতে ভাদ্র), পিতৃপক্ষে, পূর্বপুরুষদের স্মরণে পালিত।"
     },
     "traditions": {
-     "en": "Falling within Pitru Paksha, Indira Ekadashi joins the Ekadashi fast to the remembrance of ancestors. Families keep the fast, worship Vishnu as Shaligram, and many perform a shraddha for their forebears on this day, offering food to Brahmins, cows and crows."
+     "en": "Falling within Pitru Paksha, Indira Ekadashi joins the Ekadashi fast to the remembrance of ancestors. Families keep the fast, worship Vishnu as Shaligram, and many perform a shraddha for their forebears on this day, offering food to Brahmins, cows and crows.",
+     "bn": "পিতৃপক্ষের মধ্যে পড়ায় ইন্দিরা একাদশী একাদশীর উপবাসকে পূর্বপুরুষদের স্মরণের সঙ্গে মিলিয়ে দেয়। পরিবারগুলি উপবাস করেন, শালগ্রাম রূপে বিষ্ণুর পুজো করেন, আর অনেকে এই দিনে পূর্বপুরুষদের জন্য শ্রাদ্ধ করেন, ব্রাহ্মণ, গরু আর কাককে খাবার দেন।"
     },
     "story": {
-     "en": "King Indrasena of Mahishmati was visited by the sage Narada, who brought news of the king's late father: in the afterlife, he wished his son would remember him. Narada told Indrasena how to keep the Ekadashi of Ashvin's dark fortnight, with shraddha for his father on the day before and fasting and worship on Ekadashi, and to offer its merit to him. The king kept it with his family and his people, and Narada later told him that his father was at peace. The story is the reason this Ekadashi is kept in remembrance of one's elders."
+     "en": "King Indrasena of Mahishmati was visited by the sage Narada, who brought news of the king's late father: in the afterlife, he wished his son would remember him. Narada told Indrasena how to keep the Ekadashi of Ashvin's dark fortnight, with shraddha for his father on the day before and fasting and worship on Ekadashi, and to offer its merit to him. The king kept it with his family and his people, and Narada later told him that his father was at peace. The story is the reason this Ekadashi is kept in remembrance of one's elders.",
+     "bn": "মাহিষ্মতীর রাজা ইন্দ্রসেনের কাছে ঋষি নারদ এসে রাজার প্রয়াত পিতার খবর দিলেন: পরলোকে তিনি চাইছেন তাঁর পুত্র যেন তাঁকে স্মরণ করেন। নারদ ইন্দ্রসেনকে আশ্বিনের কৃষ্ণপক্ষের একাদশী পালনের নিয়ম বললেন, আগের দিন পিতার শ্রাদ্ধ আর একাদশীতে উপবাস ও পুজো, আর তার পুণ্য পিতাকে নিবেদন করতে বললেন। রাজা পরিবার ও প্রজাদের নিয়ে তা পালন করলেন, আর পরে নারদ তাঁকে জানালেন যে তাঁর পিতা শান্তিতে আছেন। এই কাহিনির জন্যই এই একাদশী গুরুজনদের স্মরণে পালিত হয়।"
     },
     "howTo": {
      "en": [
@@ -3389,6 +3742,13 @@
       "Worship Vishnu with tulsi and a lamp, and remember your ancestors by name.",
       "If your family does, offer food to Brahmins, cows or crows, and give to those in need.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন।",
+      "তুলসী আর প্রদীপ দিয়ে বিষ্ণুর পুজো করুন, আর নাম ধরে পূর্বপুরুষদের স্মরণ করুন।",
+      "আপনার পরিবারে প্রচলন থাকলে ব্রাহ্মণ, গরু বা কাককে খাবার দিন, আর অভাবী মানুষদের দান করুন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3423,13 +3783,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Ashvin Shukla Ekadashi, the day after Dussehra."
+     "en": "Ashvin Shukla Ekadashi, the day after Dussehra.",
+     "bn": "আশ্বিন শুক্লা একাদশী, দশেরার পরের দিন।"
     },
     "traditions": {
-     "en": "Coming right after Vijayadashami, Papankusha Ekadashi is kept with a fast and worship of Vishnu as Padmanabha, the lotus-naveled. Giving is especially valued: food, clothes, grain, an umbrella or footwear. The name speaks of an 'ankusha', the goad that steers an elephant, and the day is seen as a time to steer oneself back toward good conduct."
+     "en": "Coming right after Vijayadashami, Papankusha Ekadashi is kept with a fast and worship of Vishnu as Padmanabha, the lotus-naveled. Giving is especially valued: food, clothes, grain, an umbrella or footwear. The name speaks of an 'ankusha', the goad that steers an elephant, and the day is seen as a time to steer oneself back toward good conduct.",
+     "bn": "বিজয়া দশমীর ঠিক পরে আসা এই একাদশী পালিত হয় উপবাস আর পদ্মনাভ, অর্থাৎ যাঁর নাভিতে পদ্ম, রূপে বিষ্ণুর পুজোয়। দানকে বিশেষ মূল্য দেওয়া হয়: খাবার, বস্ত্র, শস্য, ছাতা বা জুতো। নামটিতে আছে ‘অঙ্কুশ’-এর কথা, যে অঙ্কুশ দিয়ে হাতিকে চালনা করা হয়, আর দিনটিকে নিজেকে আবার সদাচরণের দিকে ফিরিয়ে আনার সময় হিসেবে দেখা হয়।"
     },
     "story": {
-     "en": "The story told is of Krodhana, a hunter in the Vindhya mountains who lived harshly and gave no thought to others. Near the end of his life, frightened and alone, he came to the ashram of the sage Angira and asked whether a life like his could still turn toward good. Angira told him of the Ekadashi of Ashvin's bright fortnight. Krodhana kept it with complete sincerity, and the story says that he found peace. The name 'Papankusha' is read as the goad that turns a person away from wrongdoing, at any point in life."
+     "en": "The story told is of Krodhana, a hunter in the Vindhya mountains who lived harshly and gave no thought to others. Near the end of his life, frightened and alone, he came to the ashram of the sage Angira and asked whether a life like his could still turn toward good. Angira told him of the Ekadashi of Ashvin's bright fortnight. Krodhana kept it with complete sincerity, and the story says that he found peace. The name 'Papankusha' is read as the goad that turns a person away from wrongdoing, at any point in life.",
+     "bn": "কাহিনিটি বিন্ধ্য পর্বতের এক শিকারি ক্রোধনের, যে কঠোর জীবন কাটাত আর অন্যের কথা ভাবত না। জীবনের শেষ প্রান্তে, ভীত আর একা, সে ঋষি অঙ্গিরার আশ্রমে এসে জানতে চাইল, তার মতো জীবনও কি এখনও ভালোর দিকে ফিরতে পারে। অঙ্গিরা তাকে আশ্বিনের শুক্লপক্ষের একাদশীর কথা বললেন। ক্রোধন সম্পূর্ণ আন্তরিকতায় তা পালন করল, আর কাহিনি বলে, সে শান্তি পেল। এই একাদশীর নামের অর্থ ধরা হয় সেই অঙ্কুশ, যা জীবনের যে-কোনো সময়ে মানুষকে অন্যায় থেকে ফিরিয়ে আনে।"
     },
     "howTo": {
      "en": [
@@ -3438,6 +3801,13 @@
       "Worship Vishnu as Padmanabha with lotuses or other flowers, tulsi and a lamp.",
       "Give food, clothes or something useful to someone in need.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন।",
+      "পদ্ম বা অন্য ফুল, তুলসী আর প্রদীপ দিয়ে পদ্মনাভ রূপে বিষ্ণুর পুজো করুন।",
+      "অভাবী কাউকে খাবার, বস্ত্র বা কাজে লাগে এমন কিছু দিন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3472,13 +3842,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Kartika Krishna Ekadashi (Ashvin in the amanta reckoning), four days before Diwali."
+     "en": "Kartika Krishna Ekadashi (Ashvin in the amanta reckoning), four days before Diwali.",
+     "bn": "কার্তিক কৃষ্ণা একাদশী (অমান্ত মতে আশ্বিন), দিওয়ালির চার দিন আগে।"
     },
     "traditions": {
-     "en": "Named after Rama, a name of Lakshmi, this Ekadashi is kept with a fast and worship of Vishnu and Lakshmi together, as homes are being cleaned and readied for Diwali. Many light lamps before tulsi in the evening, as is done throughout Kartika."
+     "en": "Named after Rama, a name of Lakshmi, this Ekadashi is kept with a fast and worship of Vishnu and Lakshmi together, as homes are being cleaned and readied for Diwali. Many light lamps before tulsi in the evening, as is done throughout Kartika.",
+     "bn": "লক্ষ্মীর এক নাম রমা, আর তাঁর নামেই এই একাদশী; যখন দিওয়ালির জন্য বাড়িঘর পরিষ্কার করে সাজানো হচ্ছে, তখন উপবাস আর বিষ্ণু ও লক্ষ্মীর যুগল পুজোয় দিনটি পালিত হয়। পুরো কার্তিক মাসের মতোই অনেকে সন্ধ্যায় তুলসীর সামনে প্রদীপ জ্বালান।"
     },
     "story": {
-     "en": "King Muchukunda, a devotee of Vishnu, had his whole kingdom keep Ekadashi. His daughter Chandrabhaga married Prince Shobhana, who was frail and found fasting very hard. When Rama Ekadashi came while Shobhana was visiting, Chandrabhaga, torn, encouraged him to keep it with everyone, and Shobhana, too weak, passed away in the night. Through the merit of the fast, the story says, he was given a beautiful city on Mount Mandarachala, but it could not last without a devotee's support. Chandrabhaga, who had kept every Ekadashi since childhood, journeyed there, offered him the merit of her own fasts, and the two lived together in the city, steadied by her devotion."
+     "en": "King Muchukunda, a devotee of Vishnu, had his whole kingdom keep Ekadashi. His daughter Chandrabhaga married Prince Shobhana, who was frail and found fasting very hard. When Rama Ekadashi came while Shobhana was visiting, Chandrabhaga, torn, encouraged him to keep it with everyone, and Shobhana, too weak, passed away in the night. Through the merit of the fast, the story says, he was given a beautiful city on Mount Mandarachala, but it could not last without a devotee's support. Chandrabhaga, who had kept every Ekadashi since childhood, journeyed there, offered him the merit of her own fasts, and the two lived together in the city, steadied by her devotion.",
+     "bn": "বিষ্ণুভক্ত রাজা মুচুকুন্দ তাঁর সমগ্র রাজ্যে একাদশী পালন করাতেন। তাঁর কন্যা চন্দ্রভাগার বিয়ে হয়েছিল রাজকুমার শোভনের সঙ্গে, যিনি ছিলেন দুর্বল, আর উপবাস তাঁর কাছে খুবই কঠিন ছিল। শোভন যখন শ্বশুরবাড়িতে, তখন রমা একাদশী এল, আর দ্বিধাগ্রস্ত চন্দ্রভাগা তাঁকে সবার সঙ্গে পালন করতে উৎসাহ দিলেন; অতি দুর্বল শোভন রাতে প্রাণ হারালেন। কাহিনি বলে, উপবাসের পুণ্যে তিনি মন্দরাচল পর্বতে এক সুন্দর নগর পেলেন, কিন্তু কোনো ভক্তের সহায়তা ছাড়া তা টিকে থাকতে পারত না। ছেলেবেলা থেকে প্রতিটি একাদশী পালন করা চন্দ্রভাগা সেখানে গিয়ে নিজের উপবাসের পুণ্য তাঁকে নিবেদন করলেন, আর তাঁর ভক্তিতে স্থির হয়ে দুজনে সেই নগরে একসঙ্গে থাকলেন।"
     },
     "howTo": {
      "en": [
@@ -3487,6 +3860,13 @@
       "Worship Vishnu and Lakshmi together with tulsi, flowers and a lamp.",
       "Light a lamp before the tulsi plant in the evening.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন; উপবাস কঠিন হলে, কাহিনিটি নিজেই যেমন ইঙ্গিত দেয়, হালকা উপবাস রাখুন।",
+      "তুলসী, ফুল আর প্রদীপ দিয়ে বিষ্ণু ও লক্ষ্মীর একসঙ্গে পুজো করুন।",
+      "সন্ধ্যায় তুলসী গাছের সামনে প্রদীপ জ্বালান।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3521,13 +3901,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Kartika Shukla Ekadashi: Vishnu wakes from his four-month sleep; chaturmas ends."
+     "en": "Kartika Shukla Ekadashi: Vishnu wakes from his four-month sleep; chaturmas ends.",
+     "bn": "কার্তিক শুক্লা একাদশী: চার মাসের ঘুম ভেঙে বিষ্ণু জেগে ওঠেন; চাতুর্মাস্য শেষ হয়।"
     },
     "traditions": {
-     "en": "Also called Prabodhini Ekadashi and Dev Uthani Ekadashi, it ends chaturmas. In the evening, families draw Vishnu's footprints and a sugarcane canopy in the courtyard, place seasonal produce, water chestnuts, sugarcane, sweet potato and jujube, under it, and wake the god with bells, conch and songs: 'Utho Dev, baitho Dev'. Disciplines kept since Devshayani Ekadashi end today. Tulsi Vivah follows, and the season for weddings begins. In Pandharpur, the Kartiki Wari reaches Vitthal."
+     "en": "Also called Prabodhini Ekadashi and Dev Uthani Ekadashi, it ends chaturmas. In the evening, families draw Vishnu's footprints and a sugarcane canopy in the courtyard, place seasonal produce, water chestnuts, sugarcane, sweet potato and jujube, under it, and wake the god with bells, conch and songs: 'Utho Dev, baitho Dev'. Disciplines kept since Devshayani Ekadashi end today. Tulsi Vivah follows, and the season for weddings begins. In Pandharpur, the Kartiki Wari reaches Vitthal.",
+     "bn": "একে প্রবোধিনী একাদশী ও দেব উঠনী একাদশীও বলা হয়; এই দিনে চাতুর্মাস্য শেষ হয়। সন্ধ্যায় পরিবারগুলি উঠোনে বিষ্ণুর পদচিহ্ন আঁকেন আর আখ দিয়ে একটি চাঁদোয়া তৈরি করেন, তার নিচে রাখেন মরসুমি ফসল, পানিফল, আখ, রাঙা আলু আর কুল, আর ঘণ্টা, শাঁখ আর গান দিয়ে দেবতাকে জাগান: ‘উঠো দেব, বৈঠো দেব’। দেবশয়নী একাদশী থেকে পালন করা নিয়ম আজ শেষ হয়। এরপর তুলসী বিবাহ, আর শুরু হয় বিয়ের মরসুম। পান্ধারপুরে কার্তিকী ওয়ারি বিঠ্ঠলের কাছে পৌঁছয়।"
     },
     "story": {
-     "en": "Having entered yoga nidra on Devshayani Ekadashi, Vishnu wakes on this day after four months. One telling explains the sleep itself: after a long struggle against the asura Shankhasura, Vishnu rested in the ocean of milk, and the gods agreed to keep watch through the rains. Another tells that Vishnu promised Bali, ruler of the underworld, that he would dwell with him for four months of every year; on Devutthana Ekadashi he returns. Either way, the household wakes him with joy, and the year's celebrations can begin again."
+     "en": "Having entered yoga nidra on Devshayani Ekadashi, Vishnu wakes on this day after four months. One telling explains the sleep itself: after a long struggle against the asura Shankhasura, Vishnu rested in the ocean of milk, and the gods agreed to keep watch through the rains. Another tells that Vishnu promised Bali, ruler of the underworld, that he would dwell with him for four months of every year; on Devutthana Ekadashi he returns. Either way, the household wakes him with joy, and the year's celebrations can begin again.",
+     "bn": "দেবশয়নী একাদশীতে যোগনিদ্রায় যাওয়া বিষ্ণু চার মাস পর এই দিনে জাগেন। একটি কাহিনি ঘুমের কারণ ব্যাখ্যা করে: অসুর শঙ্খাসুরের সঙ্গে দীর্ঘ যুদ্ধের পর বিষ্ণু ক্ষীরসাগরে বিশ্রাম নিলেন, আর দেবতারা বর্ষাকাল জুড়ে পাহারা দিতে সম্মত হলেন। আরেকটি কাহিনি বলে, বিষ্ণু পাতালের রাজা বলিকে প্রতিশ্রুতি দিয়েছিলেন যে প্রতি বছর চার মাস তাঁর সঙ্গে থাকবেন; দেবোত্থান একাদশীতে তিনি ফিরে আসেন। যেভাবেই হোক, গৃহস্থ আনন্দে তাঁকে জাগায়, আর বছরের উৎসবগুলি আবার শুরু হতে পারে।"
     },
     "howTo": {
      "en": [
@@ -3536,6 +3919,13 @@
       "Place seasonal fruit and vegetables under it, light lamps around it, and worship Vishnu.",
       "Wake him with a bell or conch and the song 'Utho Dev, baitho Dev'.",
       "End any chaturmas discipline today, and break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন।",
+      "সন্ধ্যায় উঠোনে চালের গুঁড়ো বা খড়ি দিয়ে বিষ্ণুর পদচিহ্ন আঁকুন, আর আখ দিয়ে একটি ছোট চাঁদোয়া তৈরি করুন।",
+      "তার নিচে মরসুমি ফল ও সবজি রাখুন, চারপাশে প্রদীপ জ্বালান, আর বিষ্ণুর পুজো করুন।",
+      "ঘণ্টা বা শাঁখ বাজিয়ে আর ‘উঠো দেব, বৈঠো দেব’ গান গেয়ে তাঁকে জাগান।",
+      "চাতুর্মাস্যের যে-কোনো নিয়ম আজ শেষ করুন, আর পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3570,13 +3960,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Margashirsha Krishna Ekadashi (Kartika in the amanta reckoning): the birth of Ekadashi herself."
+     "en": "Margashirsha Krishna Ekadashi (Kartika in the amanta reckoning): the birth of Ekadashi herself.",
+     "bn": "অগ্রহায়ণ কৃষ্ণা একাদশী (অমান্ত মতে কার্তিক): স্বয়ং একাদশী দেবীর জন্ম।"
     },
     "traditions": {
-     "en": "'Utpanna' means 'arisen'. This is traditionally the Ekadashi on which people who wish to begin keeping Ekadashis start, since it remembers the day Ekadashi was born. Devotees fast and worship Vishnu, and hear the story of Ekadashi Devi."
+     "en": "'Utpanna' means 'arisen'. This is traditionally the Ekadashi on which people who wish to begin keeping Ekadashis start, since it remembers the day Ekadashi was born. Devotees fast and worship Vishnu, and hear the story of Ekadashi Devi.",
+     "bn": "‘উৎপন্না’ মানে ‘যিনি উদ্ভূত হয়েছেন’। যাঁরা একাদশী পালন শুরু করতে চান, ঐতিহ্যগতভাবে তাঁরা এই একাদশী থেকেই শুরু করেন, কারণ এটি একাদশীর জন্মদিন স্মরণ করে। ভক্তরা উপবাস করে বিষ্ণুর পুজো করেন, আর একাদশী দেবীর কাহিনি শোনেন।"
     },
     "story": {
-     "en": "The asura Mura had driven the gods from heaven, and Vishnu fought him for a thousand years. Tired, Vishnu went to rest in a cave at Badrikashram. Mura followed him there, meaning to strike while he slept. From Vishnu's body arose a radiant goddess, who faced Mura and overcame him. When Vishnu woke and saw what had happened, he named her Ekadashi, since she had appeared on the eleventh day, and granted that those who keep her day would be dear to him. From that day, the story says, Ekadashi has been kept."
+     "en": "The asura Mura had driven the gods from heaven, and Vishnu fought him for a thousand years. Tired, Vishnu went to rest in a cave at Badrikashram. Mura followed him there, meaning to strike while he slept. From Vishnu's body arose a radiant goddess, who faced Mura and overcame him. When Vishnu woke and saw what had happened, he named her Ekadashi, since she had appeared on the eleventh day, and granted that those who keep her day would be dear to him. From that day, the story says, Ekadashi has been kept.",
+     "bn": "অসুর মুর দেবতাদের স্বর্গ থেকে তাড়িয়ে দিয়েছিল, আর বিষ্ণু তার সঙ্গে হাজার বছর যুদ্ধ করলেন। ক্লান্ত হয়ে বিষ্ণু বদরিকাশ্রমের এক গুহায় বিশ্রাম নিতে গেলেন। মুর সেখানেও তাঁর পিছু নিল, ঘুমন্ত অবস্থায় আঘাত করার উদ্দেশ্যে। বিষ্ণুর শরীর থেকে আবির্ভূত হলেন এক জ্যোতির্ময়ী দেবী, যিনি মুরের মুখোমুখি হয়ে তাকে পরাস্ত করলেন। জেগে উঠে কী ঘটেছে দেখে বিষ্ণু তাঁর নাম রাখলেন একাদশী, কারণ তিনি একাদশ দিনে আবির্ভূত হয়েছিলেন, আর বর দিলেন যে, যাঁরা তাঁর দিনটি পালন করবেন তাঁরা বিষ্ণুর প্রিয় হবেন। কাহিনি বলে, সেই দিন থেকেই একাদশী পালিত হয়ে আসছে।"
     },
     "howTo": {
      "en": [
@@ -3585,6 +3978,13 @@
       "Fast on Ekadashi from grains and beans.",
       "Worship Vishnu with tulsi and a lamp, and hear the story of Ekadashi Devi.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "একাদশী উপবাস শুরু করতে চাইলে, এটিই প্রথাগত দিন; ফল আর দুধ দিয়ে ধীরে ধীরে শুরু করুন।",
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন।",
+      "তুলসী আর প্রদীপ দিয়ে বিষ্ণুর পুজো করুন, আর একাদশী দেবীর কাহিনি শুনুন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3619,13 +4019,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Margashirsha Shukla Ekadashi: the Gita's day, also Vaikunta Ekadashi in many traditions."
+     "en": "Margashirsha Shukla Ekadashi: the Gita's day, also Vaikunta Ekadashi in many traditions.",
+     "bn": "অগ্রহায়ণ শুক্লা একাদশী: গীতার দিন, বহু ঐতিহ্যে বৈকুণ্ঠ একাদশীও।"
     },
     "traditions": {
-     "en": "Mokshada Ekadashi coincides with Gita Jayanti, and many people read the Bhagavad Gita through the day while keeping the fast. In South India the Ekadashi of the solar month of Margazhi (often this one or the next) is Vaikunta Ekadashi, when the northern 'gate of Vaikuntha' in Vishnu temples is opened at dawn."
+     "en": "Mokshada Ekadashi coincides with Gita Jayanti, and many people read the Bhagavad Gita through the day while keeping the fast. In South India the Ekadashi of the solar month of Margazhi (often this one or the next) is Vaikunta Ekadashi, when the northern 'gate of Vaikuntha' in Vishnu temples is opened at dawn.",
+     "bn": "মোক্ষদা একাদশী আর গীতা জয়ন্তী একই দিনে পড়ে, আর অনেকে উপবাস রেখে সারাদিন ভগবদ্গীতা পাঠ করেন। দক্ষিণ ভারতে সৌর মাস মার্গঝির একাদশী (প্রায়ই এটি বা পরেরটি) হল বৈকুণ্ঠ একাদশী, যখন বিষ্ণুমন্দিরের উত্তর দিকের ‘বৈকুণ্ঠদ্বার’ ভোরে খোলা হয়।"
     },
     "story": {
-     "en": "King Vaikhanasa of Champaka dreamt that his late father was unhappy in the afterlife. Troubled, he asked the learned men of his court, who sent him to the sage Parvata. The sage saw that his father had once been unkind to his own wife, and advised the king to keep the Ekadashi of Margashirsha's bright fortnight and offer its merit to his father. Vaikhanasa kept it with his family, and the story says his father appeared to him in a dream, at peace, and blessed him. 'Mokshada' means 'the giver of freedom'."
+     "en": "King Vaikhanasa of Champaka dreamt that his late father was unhappy in the afterlife. Troubled, he asked the learned men of his court, who sent him to the sage Parvata. The sage saw that his father had once been unkind to his own wife, and advised the king to keep the Ekadashi of Margashirsha's bright fortnight and offer its merit to his father. Vaikhanasa kept it with his family, and the story says his father appeared to him in a dream, at peace, and blessed him. 'Mokshada' means 'the giver of freedom'.",
+     "bn": "চম্পকের রাজা বৈখানস স্বপ্নে দেখলেন, তাঁর প্রয়াত পিতা পরলোকে অসুখী। চিন্তিত হয়ে তিনি রাজসভার পণ্ডিতদের জিজ্ঞাসা করলেন, আর তাঁরা তাঁকে ঋষি পর্বতের কাছে পাঠালেন। ঋষি দেখলেন, রাজার পিতা একসময় নিজের স্ত্রীর প্রতি নির্দয় ছিলেন, আর রাজাকে অগ্রহায়ণের শুক্লপক্ষের একাদশী পালন করে তার পুণ্য পিতাকে নিবেদন করতে পরামর্শ দিলেন। বৈখানস পরিবার নিয়ে তা পালন করলেন, আর কাহিনি বলে, তাঁর পিতা স্বপ্নে শান্ত রূপে দেখা দিয়ে তাঁকে আশীর্বাদ করলেন। ‘মোক্ষদা’ মানে ‘মুক্তিদাত্রী’।"
     },
     "howTo": {
      "en": [
@@ -3634,6 +4037,13 @@
       "Worship Krishna or Vishnu with tulsi and a lamp, and read the Bhagavad Gita, all or in part.",
       "Remember your elders, and hear the story of King Vaikhanasa.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন।",
+      "তুলসী আর প্রদীপ দিয়ে কৃষ্ণ বা বিষ্ণুর পুজো করুন, আর ভগবদ্গীতা, পুরো বা কিছু অংশ, পাঠ করুন।",
+      "গুরুজনদের স্মরণ করুন, আর রাজা বৈখানসের কাহিনি শুনুন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3668,13 +4078,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Pausha Krishna Ekadashi (Margashirsha in the amanta reckoning)."
+     "en": "Pausha Krishna Ekadashi (Margashirsha in the amanta reckoning).",
+     "bn": "পৌষ কৃষ্ণা একাদশী (অমান্ত মতে অগ্রহায়ণ)।"
     },
     "traditions": {
-     "en": "'Saphala' means fruitful. Devotees fast, worship Vishnu with seasonal fruit, and keep a night vigil with bhajans and lamps. Offering fruit and giving it away is a characteristic custom of the day."
+     "en": "'Saphala' means fruitful. Devotees fast, worship Vishnu with seasonal fruit, and keep a night vigil with bhajans and lamps. Offering fruit and giving it away is a characteristic custom of the day.",
+     "bn": "‘সফলা’ মানে ফলপ্রসূ। ভক্তরা উপবাস করেন, মরসুমি ফল দিয়ে বিষ্ণুর পুজো করেন, আর ভজন ও প্রদীপ নিয়ে রাত জাগেন। ফল নিবেদন আর বিলিয়ে দেওয়া এই দিনের বিশেষ রীতি।"
     },
     "story": {
-     "en": "King Mahishmata of Champavati had four sons, and the eldest, Lumpaka, lived recklessly and was sent away from the kingdom. He lived in the forest under a peepal tree, surviving on fruit. On Dashami night he was too cold to sleep, and through Ekadashi too weak to gather food; he gathered some fruit, offered it under the tree to Vishnu, and stayed awake that night, without knowing he was keeping Saphala Ekadashi. The story says his heart changed through that unknowing vigil, and he returned to his father, who welcomed him. He became a good king."
+     "en": "King Mahishmata of Champavati had four sons, and the eldest, Lumpaka, lived recklessly and was sent away from the kingdom. He lived in the forest under a peepal tree, surviving on fruit. On Dashami night he was too cold to sleep, and through Ekadashi too weak to gather food; he gathered some fruit, offered it under the tree to Vishnu, and stayed awake that night, without knowing he was keeping Saphala Ekadashi. The story says his heart changed through that unknowing vigil, and he returned to his father, who welcomed him. He became a good king.",
+     "bn": "চম্পাবতীর রাজা মহিষ্মতের চার পুত্র ছিল, আর জ্যেষ্ঠ পুত্র লুম্পক বেপরোয়া জীবন কাটানোয় তাকে রাজ্য থেকে দূরে পাঠিয়ে দেওয়া হয়। সে বনে এক অশ্বত্থ গাছের নিচে থাকত, ফল খেয়ে বাঁচত। দশমীর রাতে শীতে সে ঘুমোতে পারল না, আর একাদশী জুড়ে এত দুর্বল ছিল যে খাবার জোগাড় করতে পারল না; কিছু ফল কুড়িয়ে গাছের নিচে বিষ্ণুকে নিবেদন করল, আর সেই রাত জেগে কাটাল, না জেনেই যে সে সফলা একাদশী পালন করছে। কাহিনি বলে, সেই অজান্তে রাত জাগায় তার হৃদয় বদলে গেল, আর সে পিতার কাছে ফিরে গেল, যিনি তাকে সাদরে গ্রহণ করলেন। সে পরে এক ভালো রাজা হয়েছিল।"
     },
     "howTo": {
      "en": [
@@ -3683,6 +4096,13 @@
       "Worship Vishnu with seasonal fruit, tulsi and a lamp.",
       "Keep a vigil with bhajans for part of the night, and give fruit to others.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন।",
+      "মরসুমি ফল, তুলসী আর প্রদীপ দিয়ে বিষ্ণুর পুজো করুন।",
+      "রাতের কিছুটা সময় ভজনে জেগে কাটান, আর অন্যদের ফল দিন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3717,13 +4137,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Pausha Shukla Ekadashi, the winter Putrada Ekadashi."
+     "en": "Pausha Shukla Ekadashi, the winter Putrada Ekadashi.",
+     "bn": "পৌষ শুক্লা একাদশী, শীতের পুত্রদা একাদশী।"
     },
     "traditions": {
-     "en": "Like Shravana Putrada Ekadashi, this day is traditionally kept by couples hoping for children and by parents for their children's wellbeing. Vishnu is worshipped with tulsi, and many give warm clothes and food in the cold of Pausha. In the South it often coincides with Vaikunta Ekadashi."
+     "en": "Like Shravana Putrada Ekadashi, this day is traditionally kept by couples hoping for children and by parents for their children's wellbeing. Vishnu is worshipped with tulsi, and many give warm clothes and food in the cold of Pausha. In the South it often coincides with Vaikunta Ekadashi.",
+     "bn": "শ্রাবণ পুত্রদা একাদশীর মতোই, ঐতিহ্যগতভাবে এই দিনটি পালন করেন সন্তানের আশায় থাকা দম্পতিরা, আর সন্তানের মঙ্গলের জন্য বাবা-মায়েরা। তুলসী দিয়ে বিষ্ণুর পুজো হয়, আর পৌষের ঠান্ডায় অনেকে গরম জামাকাপড় ও খাবার দান করেন। দক্ষিণে এটি প্রায়ই বৈকুণ্ঠ একাদশীর সঙ্গে মিলে যায়।"
     },
     "story": {
-     "en": "King Suketuman of Bhadravati and Queen Shaibya had no children, and the king, worrying about who would carry the family forward, grew so troubled that he went alone into the forest. There, by a lotus lake, he found a gathering of sages who told him it was Pausha Shukla Ekadashi and advised him to keep it. He did, with full faith, and returning home kept the observance with the queen. In time a son was born to them, who grew into a kind and capable king."
+     "en": "King Suketuman of Bhadravati and Queen Shaibya had no children, and the king, worrying about who would carry the family forward, grew so troubled that he went alone into the forest. There, by a lotus lake, he found a gathering of sages who told him it was Pausha Shukla Ekadashi and advised him to keep it. He did, with full faith, and returning home kept the observance with the queen. In time a son was born to them, who grew into a kind and capable king.",
+     "bn": "ভদ্রাবতীর রাজা সুকেতুমান ও রানি শৈব্যার কোনো সন্তান ছিল না, আর বংশ কে এগিয়ে নিয়ে যাবে সেই দুশ্চিন্তায় রাজা এতটাই কাতর হয়ে পড়লেন যে একা বনে চলে গেলেন। সেখানে এক পদ্মসরোবরের ধারে তিনি একদল ঋষির দেখা পেলেন, যাঁরা তাঁকে জানালেন যে সেদিন পৌষ শুক্লা একাদশী, আর তা পালন করতে পরামর্শ দিলেন। তিনি পূর্ণ বিশ্বাসে তা পালন করলেন, আর ঘরে ফিরে রানির সঙ্গেও ব্রতটি পালন করলেন। যথাসময়ে তাঁদের একটি পুত্র জন্মাল, যে বড় হয়ে এক দয়ালু ও যোগ্য রাজা হল।"
     },
     "howTo": {
      "en": [
@@ -3732,6 +4155,13 @@
       "Worship Vishnu with tulsi and a lamp, and hear the story of King Suketuman.",
       "Give warm clothes or food to someone in the cold.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন; দম্পতিরা একসঙ্গে পালন করতে পারেন।",
+      "তুলসী আর প্রদীপ দিয়ে বিষ্ণুর পুজো করুন, আর রাজা সুকেতুমানের কাহিনি শুনুন।",
+      "ঠান্ডায় কাউকে গরম জামাকাপড় বা খাবার দিন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3766,13 +4196,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Magha Krishna Ekadashi (Pausha in the amanta reckoning): the Ekadashi of sesame, used in six ways."
+     "en": "Magha Krishna Ekadashi (Pausha in the amanta reckoning): the Ekadashi of sesame, used in six ways.",
+     "bn": "মাঘ কৃষ্ণা একাদশী (অমান্ত মতে পৌষ): তিলের একাদশী, ছয়ভাবে তিলের ব্যবহার।"
     },
     "traditions": {
-     "en": "'Shat-tila' means 'six sesames'. Tradition uses sesame six ways on this day: in a paste for bathing, in the bath water, in a small fire offering, in water offered to ancestors, in food, and as a gift. Sesame laddoos and sesame given to those in need are central to the day, in the depth of winter."
+     "en": "'Shat-tila' means 'six sesames'. Tradition uses sesame six ways on this day: in a paste for bathing, in the bath water, in a small fire offering, in water offered to ancestors, in food, and as a gift. Sesame laddoos and sesame given to those in need are central to the day, in the depth of winter.",
+     "bn": "‘ষট্‌তিলা’ মানে ‘ছয় তিল’। ঐতিহ্য মেনে এই দিনে ছয়ভাবে তিল ব্যবহার করা হয়: স্নানের জন্য তিলের বাটায়, স্নানের জলে, ছোট একটি হোমে, পূর্বপুরুষদের উদ্দেশে অর্পিত জলে, খাবারে, আর দানে। গভীর শীতের এই সময়ে তিলের নাড়ু আর অভাবীদের তিল দান এই দিনের কেন্দ্রে থাকে।"
     },
     "story": {
-     "en": "The story told is of a devout woman who kept every fast with great discipline but had never given food to anyone. Vishnu came to her door as a mendicant to ask for alms, and she, irritated, dropped a lump of clay into his bowl. In the afterlife she was given a beautiful house, but it was empty of food and grain. Vishnu explained why, and told her to ask the celestial women who came to visit her about Shattila Ekadashi. She kept it, with sesame given generously, and her house was filled. The story is about the kindness that should go along with discipline."
+     "en": "The story told is of a devout woman who kept every fast with great discipline but had never given food to anyone. Vishnu came to her door as a mendicant to ask for alms, and she, irritated, dropped a lump of clay into his bowl. In the afterlife she was given a beautiful house, but it was empty of food and grain. Vishnu explained why, and told her to ask the celestial women who came to visit her about Shattila Ekadashi. She kept it, with sesame given generously, and her house was filled. The story is about the kindness that should go along with discipline.",
+     "bn": "কাহিনিটি এক ধর্মপ্রাণা নারীর, যিনি প্রতিটি উপবাস অত্যন্ত নিষ্ঠার সঙ্গে পালন করতেন, কিন্তু কখনও কাউকে খাবার দেননি। বিষ্ণু ভিক্ষুকের বেশে তাঁর দুয়ারে ভিক্ষা চাইতে এলেন, আর বিরক্ত হয়ে তিনি ভিক্ষাপাত্রে একতাল মাটি ফেলে দিলেন। পরলোকে তিনি একটি সুন্দর বাড়ি পেলেন, কিন্তু তাতে খাবার বা শস্য কিছুই ছিল না। বিষ্ণু তাঁকে কারণ বুঝিয়ে বললেন, আর তাঁর কাছে বেড়াতে আসা দেবকন্যাদের কাছে ষট্‌তিলা একাদশীর কথা জেনে নিতে বললেন। তিনি তা পালন করলেন, অকাতরে তিল দান করলেন, আর তাঁর বাড়ি ভরে উঠল। কাহিনিটি সেই দয়ার কথা বলে, যা নিষ্ঠার সঙ্গে সঙ্গে থাকা উচিত।"
     },
     "howTo": {
      "en": [
@@ -3781,6 +4214,13 @@
       "Fast from grains and beans; sesame sweets are commonly eaten.",
       "Worship Vishnu with sesame, tulsi and a lamp, and offer water with sesame for your ancestors.",
       "Give sesame, sesame sweets, or warm food to someone in need, then break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে সামান্য তিলবাটা মেখে, বা স্নানের জলে তিল দিয়ে স্নান করুন।",
+      "শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন; সাধারণত তিলের মিষ্টি খাওয়া হয়।",
+      "তিল, তুলসী আর প্রদীপ দিয়ে বিষ্ণুর পুজো করুন, আর পূর্বপুরুষদের উদ্দেশে তিল মেশানো জল অর্পণ করুন।",
+      "অভাবী কাউকে তিল, তিলের মিষ্টি বা গরম খাবার দিন, তারপর পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3815,13 +4255,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Magha Shukla Ekadashi, a few days after Vasant Panchami."
+     "en": "Magha Shukla Ekadashi, a few days after Vasant Panchami.",
+     "bn": "মাঘ শুক্লা একাদশী, বসন্ত পঞ্চমীর কয়েক দিন পরে।"
     },
     "traditions": {
-     "en": "'Jaya' means victory. Devotees fast and worship Vishnu, and many keep a night vigil. In parts of the South this day is also called Bhumi Ekadashi or Bhishma Ekadashi, and the Vishnu Sahasranama, recited by Bhishma, is chanted."
+     "en": "'Jaya' means victory. Devotees fast and worship Vishnu, and many keep a night vigil. In parts of the South this day is also called Bhumi Ekadashi or Bhishma Ekadashi, and the Vishnu Sahasranama, recited by Bhishma, is chanted.",
+     "bn": "‘জয়া’ মানে বিজয়। ভক্তরা উপবাস করে বিষ্ণুর পুজো করেন, আর অনেকে রাত জাগেন। দক্ষিণের কোনো কোনো অঞ্চলে দিনটিকে ভূমি একাদশী বা ভীষ্ম একাদশীও বলা হয়, আর ভীষ্মের মুখে উচ্চারিত বিষ্ণু সহস্রনাম জপ করা হয়।"
     },
     "story": {
-     "en": "At Indra's court, the gandharva Malyavan and the dancer Pushpavati fell in love, and lost in each other, sang and danced carelessly before Indra. In his displeasure, Indra sent them down to the Himalayas as pishachas, restless spirits. They wandered in the cold, unhappy, unable to sleep or eat. One Magha Shukla Ekadashi they were too cold and miserable to eat anything, and sat awake all night beneath a peepal tree, remembering Vishnu. Without meaning to, they had kept Jaya Ekadashi. The next morning they were restored to their own forms and returned to heaven, where even Indra welcomed them."
+     "en": "At Indra's court, the gandharva Malyavan and the dancer Pushpavati fell in love, and lost in each other, sang and danced carelessly before Indra. In his displeasure, Indra sent them down to the Himalayas as pishachas, restless spirits. They wandered in the cold, unhappy, unable to sleep or eat. One Magha Shukla Ekadashi they were too cold and miserable to eat anything, and sat awake all night beneath a peepal tree, remembering Vishnu. Without meaning to, they had kept Jaya Ekadashi. The next morning they were restored to their own forms and returned to heaven, where even Indra welcomed them.",
+     "bn": "ইন্দ্রের সভায় গন্ধর্ব মাল্যবান আর নর্তকী পুষ্পবতী প্রেমে পড়লেন, আর পরস্পরে মগ্ন হয়ে ইন্দ্রের সামনে অমনোযোগী হয়ে নাচগান করলেন। অসন্তুষ্ট ইন্দ্র তাঁদের পিশাচ, অর্থাৎ অশান্ত আত্মা, করে হিমালয়ে পাঠিয়ে দিলেন। তাঁরা ঠান্ডায় অসুখী হয়ে ঘুরে বেড়াতেন, না ঘুমোতে পারতেন, না খেতে। এক মাঘ শুক্লা একাদশীতে ঠান্ডায় আর কষ্টে তাঁরা কিছুই খেতে পারলেন না, আর সারারাত এক অশ্বত্থ গাছের নিচে জেগে বসে বিষ্ণুকে স্মরণ করলেন। অজান্তেই তাঁদের জয়া একাদশী পালন হয়ে গেল। পরদিন সকালে তাঁরা নিজেদের রূপ ফিরে পেয়ে স্বর্গে ফিরলেন, যেখানে স্বয়ং ইন্দ্রও তাঁদের স্বাগত জানালেন।"
     },
     "howTo": {
      "en": [
@@ -3830,6 +4273,13 @@
       "Worship Vishnu with tulsi and a lamp, and chant the Vishnu Sahasranama.",
       "Keep a vigil with bhajans for part of the night if you can.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন।",
+      "তুলসী আর প্রদীপ দিয়ে বিষ্ণুর পুজো করুন, আর বিষ্ণু সহস্রনাম জপ করুন।",
+      "পারলে রাতের কিছুটা সময় ভজনে জেগে কাটান।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3864,13 +4314,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Phalguna Krishna Ekadashi (Magha in the amanta reckoning), kept by Rama before crossing to Lanka."
+     "en": "Phalguna Krishna Ekadashi (Magha in the amanta reckoning), kept by Rama before crossing to Lanka.",
+     "bn": "ফাল্গুন কৃষ্ণা একাদশী (অমান্ত মতে মাঘ), লঙ্কায় যাওয়ার আগে রাম যা পালন করেছিলেন।"
     },
     "traditions": {
-     "en": "'Vijaya' also means victory. Devotees fast, worship Vishnu or Rama, and in some homes place a kalash with seven grains and a coconut for the puja. People facing a hard task often keep this Ekadashi before beginning it."
+     "en": "'Vijaya' also means victory. Devotees fast, worship Vishnu or Rama, and in some homes place a kalash with seven grains and a coconut for the puja. People facing a hard task often keep this Ekadashi before beginning it.",
+     "bn": "‘বিজয়া’ শব্দের অর্থও জয়। ভক্তরা উপবাস করে বিষ্ণু বা রামের পুজো করেন, আর কোনো কোনো বাড়িতে পুজোর জন্য সাত রকম শস্য আর একটি নারকেল দিয়ে একটি কলস স্থাপন করা হয়। কোনো কঠিন কাজের মুখোমুখি হলে অনেকে তা শুরু করার আগে এই একাদশী পালন করেন।"
     },
     "story": {
-     "en": "Rama, with Lakshmana and the vanara army, reached the shore of the ocean on his way to Lanka to bring Sita back, and did not know how to cross. Lakshmana suggested they ask the sage Vakadalbhya, whose ashram was nearby. The sage advised Rama to keep the Ekadashi of the dark fortnight of Phalguna, with a kalash of grains and worship of Vishnu. Rama kept it with his companions, and the story continues with the building of the bridge to Lanka and the victory that followed."
+     "en": "Rama, with Lakshmana and the vanara army, reached the shore of the ocean on his way to Lanka to bring Sita back, and did not know how to cross. Lakshmana suggested they ask the sage Vakadalbhya, whose ashram was nearby. The sage advised Rama to keep the Ekadashi of the dark fortnight of Phalguna, with a kalash of grains and worship of Vishnu. Rama kept it with his companions, and the story continues with the building of the bridge to Lanka and the victory that followed.",
+     "bn": "সীতাকে ফিরিয়ে আনতে লঙ্কা যাওয়ার পথে রাম, লক্ষ্মণ আর বানরসেনা নিয়ে সমুদ্রতীরে পৌঁছে বুঝতে পারলেন না কীভাবে পার হবেন। লক্ষ্মণ পরামর্শ দিলেন কাছেই আশ্রম থাকা ঋষি বকদাল্‌ভ্যের কাছে যেতে। ঋষি রামকে ফাল্গুনের কৃষ্ণপক্ষের একাদশী পালন করতে বললেন, শস্যভরা কলস আর বিষ্ণুপুজো সমেত। রাম সঙ্গীদের নিয়ে তা পালন করলেন, আর কাহিনি এগিয়ে চলে লঙ্কা পর্যন্ত সেতুবন্ধন আর তার পরের বিজয়ের দিকে।"
     },
     "howTo": {
      "en": [
@@ -3879,6 +4332,13 @@
       "If your family does, set up a kalash with seven kinds of grain and a coconut, and worship Vishnu or Rama with tulsi and a lamp.",
       "Hear the story of Rama at the seashore, and begin preparing for a task you have been putting off.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন।",
+      "আপনার পরিবারে প্রচলন থাকলে সাত রকম শস্য আর একটি নারকেল দিয়ে কলস স্থাপন করুন, আর তুলসী ও প্রদীপ দিয়ে বিষ্ণু বা রামের পুজো করুন।",
+      "সমুদ্রতীরে রামের কাহিনি শুনুন, আর যে কাজটি পিছিয়ে রাখছিলেন, তার প্রস্তুতি শুরু করুন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3913,13 +4373,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Phalguna Shukla Ekadashi, honouring the amla tree, a few days before Holi."
+     "en": "Phalguna Shukla Ekadashi, honouring the amla tree, a few days before Holi.",
+     "bn": "ফাল্গুন শুক্লা একাদশী, আমলকী গাছের প্রতি শ্রদ্ধা, হোলির কয়েক দিন আগে।"
     },
     "traditions": {
-     "en": "Devotees fast and worship Vishnu beneath or beside an amla (Indian gooseberry) tree, said to be dear to him, offering water, flowers and thread, and walking around it. Amla is eaten or given that day. In Varanasi it is Rangbhari Ekadashi, when Shiva is said to bring Parvati home after their wedding and the colours of Holi begin, with gulal at Kashi Vishwanath."
+     "en": "Devotees fast and worship Vishnu beneath or beside an amla (Indian gooseberry) tree, said to be dear to him, offering water, flowers and thread, and walking around it. Amla is eaten or given that day. In Varanasi it is Rangbhari Ekadashi, when Shiva is said to bring Parvati home after their wedding and the colours of Holi begin, with gulal at Kashi Vishwanath.",
+     "bn": "ভক্তরা উপবাস করে আমলকী গাছের নিচে বা পাশে বিষ্ণুর পুজো করেন, যে গাছ তাঁর প্রিয় বলে বলা হয়; জল, ফুল আর সুতো নিবেদন করে গাছটি প্রদক্ষিণ করেন। সেদিন আমলকী খাওয়া হয় বা দান করা হয়। বারাণসীতে এটি রংভরী একাদশী, যখন বলা হয় বিয়ের পর শিব পার্বতীকে ঘরে নিয়ে আসেন আর হোলির রং শুরু হয়, কাশী বিশ্বনাথে আবির দিয়ে।"
     },
     "story": {
-     "en": "The story told is of King Chitrasena of Vaidisha, whose whole kingdom kept Amalaki Ekadashi together beneath a great amla tree, singing and keeping vigil through the night. A hunter who happened to be there that night, tired and hungry, stayed to watch and listen till dawn. Though he understood little, the story says, his life turned toward good, and in a later birth he became a just king. Tradition holds the amla tree as one in which Vishnu dwells, which is why it is honoured today."
+     "en": "The story told is of King Chitrasena of Vaidisha, whose whole kingdom kept Amalaki Ekadashi together beneath a great amla tree, singing and keeping vigil through the night. A hunter who happened to be there that night, tired and hungry, stayed to watch and listen till dawn. Though he understood little, the story says, his life turned toward good, and in a later birth he became a just king. Tradition holds the amla tree as one in which Vishnu dwells, which is why it is honoured today.",
+     "bn": "কাহিনিটি বৈদিশের রাজা চিত্রসেনের, যাঁর সমগ্র রাজ্য একটি বিশাল আমলকী গাছের নিচে একসঙ্গে আমলকী একাদশী পালন করত, গান গেয়ে সারারাত জেগে। সেই রাতে ঘটনাচক্রে সেখানে উপস্থিত এক শিকারি, ক্লান্ত আর ক্ষুধার্ত, ভোর পর্যন্ত থেকে সব দেখল আর শুনল। কাহিনি বলে, সে প্রায় কিছুই না বুঝলেও তার জীবন ভালোর দিকে ফিরল, আর পরজন্মে সে এক ন্যায়পরায়ণ রাজা হল। ঐতিহ্য মতে আমলকী গাছে বিষ্ণুর বাস, সেই জন্যই আজ তাকে সম্মান জানানো হয়।"
     },
     "howTo": {
      "en": [
@@ -3928,6 +4391,13 @@
       "Worship Vishnu beside an amla tree if there is one, offering water, flowers and thread and walking around it; otherwise worship with amla fruit at home.",
       "Eat amla and give some to others.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন।",
+      "কাছে আমলকী গাছ থাকলে তার পাশে বিষ্ণুর পুজো করুন, জল, ফুল আর সুতো নিবেদন করে গাছটি প্রদক্ষিণ করুন; না হলে বাড়িতে আমলকী ফল দিয়ে পুজো করুন।",
+      "আমলকী খান আর অন্যদেরও কিছু দিন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3962,13 +4432,16 @@
    ],
    "content": {
     "summary": {
-     "en": "Chaitra Krishna Ekadashi (Phalguna in the amanta reckoning), the last Ekadashi of the year."
+     "en": "Chaitra Krishna Ekadashi (Phalguna in the amanta reckoning), the last Ekadashi of the year.",
+     "bn": "চৈত্র কৃষ্ণা একাদশী (অমান্ত মতে ফাল্গুন), বছরের শেষ একাদশী।"
     },
     "traditions": {
-     "en": "Falling between Holi and the new year, the year's last Ekadashi is kept as a time of reflection: devotees fast, worship Vishnu, and look back on the year, setting right what they can. The name speaks of release from wrongdoing, and many use the day to apologise to someone or let go of a grudge."
+     "en": "Falling between Holi and the new year, the year's last Ekadashi is kept as a time of reflection: devotees fast, worship Vishnu, and look back on the year, setting right what they can. The name speaks of release from wrongdoing, and many use the day to apologise to someone or let go of a grudge.",
+     "bn": "হোলি আর নতুন বছরের মাঝখানে পড়া বছরের শেষ একাদশী আত্মচিন্তার সময় হিসেবে পালিত হয়: ভক্তরা উপবাস করেন, বিষ্ণুর পুজো করেন, আর বছরটির দিকে ফিরে তাকিয়ে যতটা পারেন শুধরে নেন। নামটি অন্যায় থেকে মুক্তির কথা বলে, আর অনেকে দিনটিকে কারও কাছে ক্ষমা চাওয়া বা কোনো ক্ষোভ ছেড়ে দেওয়ার জন্য কাজে লাগান।"
     },
     "story": {
-     "en": "The sage Medhavi was deep in tapas in the Chaitraratha forest when the apsara Manjughosha, sent to distract him, sang and danced nearby. Medhavi was drawn away from his practice, and years passed before he realised how long he had lost. In his dismay he spoke harshly to her, and she was changed into a pishachini. Both were unhappy: she in her new form, he at having broken his discipline and spoken in anger. Medhavi's father, the sage Chyavana, told them both to keep the Chaitra Krishna Ekadashi. They did, sincerely, and each was restored, she to her own form and he to his practice. The story is about setting things right."
+     "en": "The sage Medhavi was deep in tapas in the Chaitraratha forest when the apsara Manjughosha, sent to distract him, sang and danced nearby. Medhavi was drawn away from his practice, and years passed before he realised how long he had lost. In his dismay he spoke harshly to her, and she was changed into a pishachini. Both were unhappy: she in her new form, he at having broken his discipline and spoken in anger. Medhavi's father, the sage Chyavana, told them both to keep the Chaitra Krishna Ekadashi. They did, sincerely, and each was restored, she to her own form and he to his practice. The story is about setting things right.",
+     "bn": "চৈত্ররথ বনে ঋষি মেধাবী গভীর তপস্যায় মগ্ন ছিলেন, তখন তাঁর মন বিক্ষিপ্ত করতে পাঠানো অপ্সরা মঞ্জুঘোষা কাছেই নাচগান করতে লাগলেন। মেধাবী সাধনা থেকে সরে গেলেন, আর বহু বছর কেটে যাওয়ার পর বুঝলেন কতটা সময় হারিয়েছেন। হতাশায় তিনি মঞ্জুঘোষাকে কঠোর কথা বললেন, আর মঞ্জুঘোষা পিশাচিনীতে রূপান্তরিত হলেন। দুজনেই অসুখী হলেন: তিনি তাঁর নতুন রূপে, আর মেধাবী নিয়মভঙ্গ আর রাগের মাথায় কথা বলার জন্য। মেধাবীর পিতা ঋষি চ্যবন দুজনকেই চৈত্র কৃষ্ণা একাদশী পালন করতে বললেন। তাঁরা আন্তরিকভাবে তা পালন করলেন, আর দুজনেই নিজেদের অবস্থায় ফিরলেন, মঞ্জুঘোষা তাঁর নিজের রূপে আর মেধাবী তাঁর সাধনায়। কাহিনিটি ভুল শুধরে নেওয়ার কথা বলে।"
     },
     "howTo": {
      "en": [
@@ -3977,6 +4450,13 @@
       "Worship Vishnu with tulsi and a lamp, and hear the story of Medhavi and Manjughosha.",
       "Take a quiet moment to look back on the year; apologise to someone or let go of a grudge if you can.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা খাবার খান।",
+      "একাদশীতে শস্য ও ডাল থেকে বিরত থেকে উপবাস করুন।",
+      "তুলসী আর প্রদীপ দিয়ে বিষ্ণুর পুজো করুন, আর মেধাবী ও মঞ্জুঘোষার কাহিনি শুনুন।",
+      "নিরিবিলিতে কিছুক্ষণ বছরটির দিকে ফিরে তাকান; পারলে কারও কাছে ক্ষমা চান বা কোনো ক্ষোভ ছেড়ে দিন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    }
@@ -3999,10 +4479,12 @@
    },
    "content": {
     "summary": {
-     "en": "The eleventh day of each fortnight, kept by many with a fast and prayer to Vishnu."
+     "en": "The eleventh day of each fortnight, kept by many with a fast and prayer to Vishnu.",
+     "bn": "প্রতিটি পক্ষের একাদশ দিন, অনেকে উপবাস আর বিষ্ণুর প্রার্থনায় পালন করেন।"
     },
     "traditions": {
-     "en": "Ekadashi comes twice a month. Those who keep it avoid grains and beans for the day, some eating fruit and milk, some keeping a stricter fast, and spend time in prayer, reading or chanting Vishnu's names. The fast is broken the next morning, during Dvadashi; the parana time is shown in almanacs. People who are unwell, pregnant, elderly or on medication keep a gentle version, which tradition fully accepts."
+     "en": "Ekadashi comes twice a month. Those who keep it avoid grains and beans for the day, some eating fruit and milk, some keeping a stricter fast, and spend time in prayer, reading or chanting Vishnu's names. The fast is broken the next morning, during Dvadashi; the parana time is shown in almanacs. People who are unwell, pregnant, elderly or on medication keep a gentle version, which tradition fully accepts.",
+     "bn": "মাসে দুবার একাদশী আসে। যাঁরা পালন করেন, তাঁরা সেদিন শস্য ও ডাল এড়িয়ে চলেন, কেউ ফল আর দুধ খান, কেউ আরও কঠোর উপবাস রাখেন, আর প্রার্থনা, পাঠ বা বিষ্ণুর নামজপে সময় কাটান। পরদিন সকালে দ্বাদশীতে উপবাস ভাঙা হয়; পারণের সময় পঞ্জিকায় দেওয়া থাকে। যাঁরা অসুস্থ, অন্তঃসত্ত্বা, বয়স্ক বা ওষুধ খান, তাঁরা হালকাভাবে পালন করেন, যা ঐতিহ্য পুরোপুরি মেনে নেয়।"
     },
     "howTo": {
      "en": [
@@ -4010,6 +4492,12 @@
       "On Ekadashi, avoid grains and beans; take fruit, milk or vrat food.",
       "Light a lamp before Vishnu and offer tulsi.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা রাতের খাবার খান।",
+      "একাদশীতে শস্য ও ডাল এড়িয়ে চলুন; ফল, দুধ বা ব্রতের খাবার খান।",
+      "বিষ্ণুর সামনে প্রদীপ জ্বালিয়ে তুলসী নিবেদন করুন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    },
@@ -4034,10 +4522,12 @@
    },
    "content": {
     "summary": {
-     "en": "The eleventh day of each fortnight, kept by many with a fast and prayer to Vishnu."
+     "en": "The eleventh day of each fortnight, kept by many with a fast and prayer to Vishnu.",
+     "bn": "প্রতিটি পক্ষের একাদশ দিন, অনেকে উপবাস আর বিষ্ণুর প্রার্থনায় পালন করেন।"
     },
     "traditions": {
-     "en": "Ekadashi comes twice a month. Those who keep it avoid grains and beans for the day, some eating fruit and milk, some keeping a stricter fast, and spend time in prayer, reading or chanting Vishnu's names. The fast is broken the next morning, during Dvadashi; the parana time is shown in almanacs. People who are unwell, pregnant, elderly or on medication keep a gentle version, which tradition fully accepts."
+     "en": "Ekadashi comes twice a month. Those who keep it avoid grains and beans for the day, some eating fruit and milk, some keeping a stricter fast, and spend time in prayer, reading or chanting Vishnu's names. The fast is broken the next morning, during Dvadashi; the parana time is shown in almanacs. People who are unwell, pregnant, elderly or on medication keep a gentle version, which tradition fully accepts.",
+     "bn": "মাসে দুবার একাদশী আসে। যাঁরা পালন করেন, তাঁরা সেদিন শস্য ও ডাল এড়িয়ে চলেন, কেউ ফল আর দুধ খান, কেউ আরও কঠোর উপবাস রাখেন, আর প্রার্থনা, পাঠ বা বিষ্ণুর নামজপে সময় কাটান। পরদিন সকালে দ্বাদশীতে উপবাস ভাঙা হয়; পারণের সময় পঞ্জিকায় দেওয়া থাকে। যাঁরা অসুস্থ, অন্তঃসত্ত্বা, বয়স্ক বা ওষুধ খান, তাঁরা হালকাভাবে পালন করেন, যা ঐতিহ্য পুরোপুরি মেনে নেয়।"
     },
     "howTo": {
      "en": [
@@ -4045,6 +4535,12 @@
       "On Ekadashi, avoid grains and beans; take fruit, milk or vrat food.",
       "Light a lamp before Vishnu and offer tulsi.",
       "Break the fast the next morning during Dvadashi."
+     ],
+     "bn": [
+      "আগের সন্ধ্যায় শস্য ছাড়া হালকা রাতের খাবার খান।",
+      "একাদশীতে শস্য ও ডাল এড়িয়ে চলুন; ফল, দুধ বা ব্রতের খাবার খান।",
+      "বিষ্ণুর সামনে প্রদীপ জ্বালিয়ে তুলসী নিবেদন করুন।",
+      "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
     }
    },
@@ -4066,10 +4562,12 @@
    },
    "content": {
     "summary": {
-     "en": "The full moon, a day for worship, Satyanarayan katha and giving."
+     "en": "The full moon, a day for worship, Satyanarayan katha and giving.",
+     "bn": "পূর্ণিমা, পুজো, সত্যনারায়ণের কথা আর দানের দিন।"
     },
     "traditions": {
-     "en": "Each full moon is kept by many families with a morning bath, worship of Vishnu, and in the evening the Satyanarayan katha with sheera prasad. Some keep a fast until moonrise and offer water to the Moon. Giving food or clothes is valued on the full moon. Many festivals fall on Purnima: Holi, Guru Purnima, Raksha Bandhan and Sharad Purnima among them."
+     "en": "Each full moon is kept by many families with a morning bath, worship of Vishnu, and in the evening the Satyanarayan katha with sheera prasad. Some keep a fast until moonrise and offer water to the Moon. Giving food or clothes is valued on the full moon. Many festivals fall on Purnima: Holi, Guru Purnima, Raksha Bandhan and Sharad Purnima among them.",
+     "bn": "অনেক পরিবার প্রতি পূর্ণিমায় সকালে স্নান করে বিষ্ণুর পুজো করেন, আর সন্ধ্যায় সুজির প্রসাদ সমেত সত্যনারায়ণের কথা হয়। কেউ কেউ চাঁদ ওঠা পর্যন্ত উপবাস রেখে চাঁদকে জল অর্পণ করেন। পূর্ণিমায় খাবার বা বস্ত্র দানকে মূল্য দেওয়া হয়। বহু উৎসব পূর্ণিমায় পড়ে: হোলি, গুরু পূর্ণিমা, রাখি বন্ধন আর শারদ পূর্ণিমা তার মধ্যে কয়েকটি।"
     },
     "howTo": {
      "en": [
@@ -4077,6 +4575,12 @@
       "Hold or listen to the Satyanarayan katha in the evening if your family does.",
       "Offer water to the rising Moon.",
       "Give food or clothes to someone in need."
+     ],
+     "bn": [
+      "সকালে স্নান করে বিষ্ণুর সামনে প্রদীপ জ্বালান।",
+      "আপনার পরিবারে প্রচলন থাকলে সন্ধ্যায় সত্যনারায়ণের কথা করুন বা শুনুন।",
+      "উদীয়মান চাঁদকে জল অর্পণ করুন।",
+      "অভাবী কাউকে খাবার বা বস্ত্র দিন।"
      ]
     }
    },
@@ -4098,16 +4602,23 @@
    },
    "content": {
     "summary": {
-     "en": "The new moon, a day for remembering ancestors with water and sesame."
+     "en": "The new moon, a day for remembering ancestors with water and sesame.",
+     "bn": "অমাবস্যা, জল আর তিল দিয়ে পূর্বপুরুষদের স্মরণের দিন।"
     },
     "traditions": {
-     "en": "On the new moon many families offer tarpan, water with black sesame, to their ancestors, give food to those in need, and feed cows, crows or dogs. Some keep a fast. It is traditionally a quiet day, and many prefer to begin new ventures on other days. When the new moon falls on a Monday it is Somvati Amavasya, and on a Saturday, Shani Amavasya."
+     "en": "On the new moon many families offer tarpan, water with black sesame, to their ancestors, give food to those in need, and feed cows, crows or dogs. Some keep a fast. It is traditionally a quiet day, and many prefer to begin new ventures on other days. When the new moon falls on a Monday it is Somvati Amavasya, and on a Saturday, Shani Amavasya.",
+     "bn": "অমাবস্যায় অনেক পরিবার পূর্বপুরুষদের উদ্দেশে তর্পণ করেন, কালো তিল মেশানো জল দিয়ে, অভাবীদের খাবার দেন, আর গরু, কাক বা কুকুরকে খাওয়ান। কেউ কেউ উপবাস রাখেন। ঐতিহ্যগতভাবে এটি নিরিবিলি দিন, আর অনেকে নতুন উদ্যোগ অন্য দিনে শুরু করতে পছন্দ করেন। অমাবস্যা সোমবারে পড়লে তা সোমবতী অমাবস্যা, আর শনিবারে পড়লে শনি অমাবস্যা।"
     },
     "howTo": {
      "en": [
       "In the morning, bathe and offer water with black sesame, facing south, naming your ancestors.",
       "Give food to someone in need, and feed a cow, crow or dog.",
       "Light a lamp in the evening."
+     ],
+     "bn": [
+      "সকালে স্নান করে দক্ষিণমুখী হয়ে পূর্বপুরুষদের নাম করে কালো তিল মেশানো জল অর্পণ করুন।",
+      "অভাবী কাউকে খাবার দিন, আর একটি গরু, কাক বা কুকুরকে খাওয়ান।",
+      "সন্ধ্যায় একটি প্রদীপ জ্বালান।"
      ]
     }
    },
@@ -4132,16 +4643,23 @@
    },
    "content": {
     "summary": {
-     "en": "The thirteenth day, kept at dusk for Shiva."
+     "en": "The thirteenth day, kept at dusk for Shiva.",
+     "bn": "ত্রয়োদশী, সন্ধ্যাবেলা শিবের উদ্দেশে পালিত।"
     },
     "traditions": {
-     "en": "Twice a month, on Trayodashi, devotees of Shiva fast through the day and worship him in the pradosh kaal, the hour and a half around sunset, with bel leaves, milk and a lamp. It is named for its weekday: Som Pradosh on Monday, Shani Pradosh on Saturday. Temples hold abhishekam, and Nandi is honoured too."
+     "en": "Twice a month, on Trayodashi, devotees of Shiva fast through the day and worship him in the pradosh kaal, the hour and a half around sunset, with bel leaves, milk and a lamp. It is named for its weekday: Som Pradosh on Monday, Shani Pradosh on Saturday. Temples hold abhishekam, and Nandi is honoured too.",
+     "bn": "মাসে দুবার, ত্রয়োদশীতে, শিবভক্তরা সারাদিন উপবাস করে প্রদোষকালে, সূর্যাস্তের আশেপাশের দেড় ঘণ্টায়, বেলপাতা, দুধ আর প্রদীপ দিয়ে শিবের পুজো করেন। বারের নামে এর নাম হয়: সোমবারে সোম প্রদোষ, শনিবারে শনি প্রদোষ। মন্দিরে অভিষেক হয়, আর নন্দীকেও সম্মান জানানো হয়।"
     },
     "howTo": {
      "en": [
       "Fast through the day if you keep the vrat.",
       "At pradosh (around sunset; see the day view), offer water, milk and bel leaves to Shiva and light a lamp.",
       "Chant 'Om Namah Shivaya', then break the fast."
+     ],
+     "bn": [
+      "ব্রত পালন করলে সারাদিন উপবাস রাখুন।",
+      "প্রদোষকালে (সূর্যাস্তের কাছাকাছি; দিনের পাতা দেখুন) শিবকে জল, দুধ আর বেলপাতা নিবেদন করে প্রদীপ জ্বালান।",
+      "‘ওঁ নমঃ শিবায়’ জপ করুন, তারপর উপবাস ভাঙুন।"
      ]
     }
    },
@@ -4166,16 +4684,23 @@
    },
    "content": {
     "summary": {
-     "en": "The thirteenth day, kept at dusk for Shiva."
+     "en": "The thirteenth day, kept at dusk for Shiva.",
+     "bn": "ত্রয়োদশী, সন্ধ্যাবেলা শিবের উদ্দেশে পালিত।"
     },
     "traditions": {
-     "en": "Twice a month, on Trayodashi, devotees of Shiva fast through the day and worship him in the pradosh kaal, the hour and a half around sunset, with bel leaves, milk and a lamp. It is named for its weekday: Som Pradosh on Monday, Shani Pradosh on Saturday. Temples hold abhishekam, and Nandi is honoured too."
+     "en": "Twice a month, on Trayodashi, devotees of Shiva fast through the day and worship him in the pradosh kaal, the hour and a half around sunset, with bel leaves, milk and a lamp. It is named for its weekday: Som Pradosh on Monday, Shani Pradosh on Saturday. Temples hold abhishekam, and Nandi is honoured too.",
+     "bn": "মাসে দুবার, ত্রয়োদশীতে, শিবভক্তরা সারাদিন উপবাস করে প্রদোষকালে, সূর্যাস্তের আশেপাশের দেড় ঘণ্টায়, বেলপাতা, দুধ আর প্রদীপ দিয়ে শিবের পুজো করেন। বারের নামে এর নাম হয়: সোমবারে সোম প্রদোষ, শনিবারে শনি প্রদোষ। মন্দিরে অভিষেক হয়, আর নন্দীকেও সম্মান জানানো হয়।"
     },
     "howTo": {
      "en": [
       "Fast through the day if you keep the vrat.",
       "At pradosh (around sunset; see the day view), offer water, milk and bel leaves to Shiva and light a lamp.",
       "Chant 'Om Namah Shivaya', then break the fast."
+     ],
+     "bn": [
+      "ব্রত পালন করলে সারাদিন উপবাস রাখুন।",
+      "প্রদোষকালে (সূর্যাস্তের কাছাকাছি; দিনের পাতা দেখুন) শিবকে জল, দুধ আর বেলপাতা নিবেদন করে প্রদীপ জ্বালান।",
+      "‘ওঁ নমঃ শিবায়’ জপ করুন, তারপর উপবাস ভাঙুন।"
      ]
     }
    },
@@ -4197,10 +4722,12 @@
    },
    "content": {
     "summary": {
-     "en": "The full-moon puja to Vishnu as Satyanarayan, with the katha and sheera prasad."
+     "en": "The full-moon puja to Vishnu as Satyanarayan, with the katha and sheera prasad.",
+     "bn": "পূর্ণিমায় সত্যনারায়ণ রূপে বিষ্ণুর পুজো, কথা আর সুজির প্রসাদ সমেত।"
     },
     "traditions": {
-     "en": "Many families perform the Satyanarayan puja on Purnima, and on any day of thanksgiving: a new home, a wedding, a child's milestone. Vishnu is worshipped as Satyanarayan, the Lord of truth, with tulsi, panchamrit and a prasad of sheera or panjiri. The five chapters of the katha are read, and family and neighbours are invited to share the prasad."
+     "en": "Many families perform the Satyanarayan puja on Purnima, and on any day of thanksgiving: a new home, a wedding, a child's milestone. Vishnu is worshipped as Satyanarayan, the Lord of truth, with tulsi, panchamrit and a prasad of sheera or panjiri. The five chapters of the katha are read, and family and neighbours are invited to share the prasad.",
+     "bn": "অনেক পরিবার পূর্ণিমায়, আর যে-কোনো কৃতজ্ঞতার দিনে, সত্যনারায়ণের পুজো করেন: নতুন বাড়ি, বিয়ে, শিশুর জীবনের কোনো বিশেষ মুহূর্ত। বিষ্ণুর পুজো হয় সত্যনারায়ণ, অর্থাৎ সত্যের প্রভু রূপে, তুলসী, পঞ্চামৃত আর সুজি বা পাঞ্জিরির প্রসাদ দিয়ে। কথার পাঁচটি অধ্যায় পাঠ করা হয়, আর পরিবার ও প্রতিবেশীদের প্রসাদ নিতে ডাকা হয়।"
     },
     "howTo": {
      "en": [
@@ -4208,6 +4735,12 @@
       "Offer tulsi, panchamrit, fruit and a sheera or panjiri prasad.",
       "Read the five chapters of the katha, then the aarti.",
       "Share the prasad with everyone present."
+     ],
+     "bn": [
+      "কলাপাতার চাঁদোয়া, একটি কলস আর বিষ্ণুর ছবি দিয়ে একটি ছোট বেদি সাজান।",
+      "তুলসী, পঞ্চামৃত, ফল আর সুজি বা পাঞ্জিরির প্রসাদ নিবেদন করুন।",
+      "কথার পাঁচটি অধ্যায় পাঠ করুন, তারপর আরতি।",
+      "উপস্থিত সবার সঙ্গে প্রসাদ ভাগ করে নিন।"
      ]
     }
    },
@@ -4229,10 +4762,12 @@
    },
    "content": {
     "summary": {
-     "en": "Monday, kept for Shiva and Parvati."
+     "en": "Monday, kept for Shiva and Parvati.",
+     "bn": "সোমবার, শিব ও পার্বতীর উদ্দেশে পালিত।"
     },
     "traditions": {
-     "en": "Monday is Shiva's day, and many keep it with a fast until evening, water or milk poured over a Shiva linga, bel leaves and white flowers, and the chant Om Namah Shivaya. Some keep sixteen Mondays (Solah Somvar) as a vow; the Mondays of Sawan are especially loved. The Somvar katha is read or heard in the evening before the fast is broken."
+     "en": "Monday is Shiva's day, and many keep it with a fast until evening, water or milk poured over a Shiva linga, bel leaves and white flowers, and the chant Om Namah Shivaya. Some keep sixteen Mondays (Solah Somvar) as a vow; the Mondays of Sawan are especially loved. The Somvar katha is read or heard in the evening before the fast is broken.",
+     "bn": "সোমবার শিবের দিন, আর অনেকে সন্ধ্যা পর্যন্ত উপবাস রেখে, শিবলিঙ্গে জল বা দুধ ঢেলে, বেলপাতা আর সাদা ফুল দিয়ে, ‘ওঁ নমঃ শিবায়’ জপ করে দিনটি পালন করেন। কেউ কেউ ব্রত হিসেবে ষোলোটি সোমবার (ষোল সোমবার) পালন করেন; শ্রাবণের সোমবারগুলি বিশেষ প্রিয়। উপবাস ভাঙার আগে সন্ধ্যায় সোমবারের ব্রতকথা পড়া বা শোনা হয়।"
     },
     "howTo": {
      "en": [
@@ -4240,6 +4775,12 @@
       "Pour water or milk over a Shiva linga and offer bel leaves.",
       "Chant Om Namah Shivaya.",
       "Read the Somvar katha in the evening, then break the fast."
+     ],
+     "bn": [
+      "সন্ধ্যা পর্যন্ত উপবাস রাখুন, অথবা ফল আর দুধ খান।",
+      "শিবলিঙ্গে জল বা দুধ ঢালুন আর বেলপাতা নিবেদন করুন।",
+      "‘ওঁ নমঃ শিবায়’ জপ করুন।",
+      "সন্ধ্যায় সোমবারের ব্রতকথা পড়ুন, তারপর উপবাস ভাঙুন।"
      ]
     }
    },
@@ -4260,10 +4801,12 @@
    },
    "content": {
     "summary": {
-     "en": "Saturday, Shani's day, kept with a simple meal, a sesame-oil lamp and giving to others."
+     "en": "Saturday, Shani's day, kept with a simple meal, a sesame-oil lamp and giving to others.",
+     "bn": "শনিবার, শনিদেবের দিন, পালিত হয় সাধারণ আহার, তিলের তেলের প্রদীপ আর অন্যদের দানের মধ্য দিয়ে।"
     },
     "traditions": {
-     "en": "Saturday is Shani's day. Those who keep the Saturday vrat eat once, simply, often after sunset; light a lamp of sesame oil at a Shani shrine or under a peepal tree; and offer black sesame and blue or dark flowers. Giving food, oil or clothes to people who need them is at the heart of the day. Shani is honoured as the teacher of patience and fairness, and the vrat is kept as a weekly practice of steadiness and service. In Tamil Nadu the Saturdays of Purattasi are kept for Perumal as well."
+     "en": "Saturday is Shani's day. Those who keep the Saturday vrat eat once, simply, often after sunset; light a lamp of sesame oil at a Shani shrine or under a peepal tree; and offer black sesame and blue or dark flowers. Giving food, oil or clothes to people who need them is at the heart of the day. Shani is honoured as the teacher of patience and fairness, and the vrat is kept as a weekly practice of steadiness and service. In Tamil Nadu the Saturdays of Purattasi are kept for Perumal as well.",
+     "bn": "শনিবার শনিদেবের দিন। যাঁরা শনিবারের ব্রত রাখেন, তাঁরা একবেলা সাধারণ খাবার খান, প্রায়ই সূর্যাস্তের পরে; শনির থানে বা অশ্বত্থ গাছের নিচে তিলের তেলের প্রদীপ জ্বালান; আর কালো তিল ও নীল বা গাঢ় রঙের ফুল নিবেদন করেন। যাঁদের প্রয়োজন, তাঁদের খাবার, তেল বা বস্ত্র দান এই দিনের মূল কথা। শনিদেবকে সম্মান করা হয় ধৈর্য আর ন্যায়ের শিক্ষক হিসেবে, আর ব্রতটি পালিত হয় স্থিরতা ও সেবার সাপ্তাহিক অনুশীলন হিসেবে। তামিলনাড়ুতে পুরট্টাসি মাসের শনিবারগুলি পেরুমালের উদ্দেশেও পালিত হয়।"
     },
     "howTo": {
      "en": [
@@ -4271,6 +4814,12 @@
       "Light a sesame-oil lamp at a Shani shrine or under a peepal tree.",
       "Offer black sesame and a dark flower.",
       "Give food, oil or clothing to someone who needs it."
+     ],
+     "bn": [
+      "দিনটি সাদামাটা রাখুন: একবেলা খাবার, প্রায়ই সূর্যাস্তের পরে।",
+      "শনির থানে বা অশ্বত্থ গাছের নিচে তিলের তেলের প্রদীপ জ্বালান।",
+      "কালো তিল আর একটি গাঢ় রঙের ফুল নিবেদন করুন।",
+      "যাঁর প্রয়োজন, তাঁকে খাবার, তেল বা বস্ত্র দিন।"
      ]
     }
    },
