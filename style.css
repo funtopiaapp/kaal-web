@@ -245,7 +245,7 @@ details.factor .grow { flex: 1; }
 .gtext { position: absolute; inset: 29% 22px 25% 22px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; text-align: center; }
 .gdear { font: italic 16px Georgia, serif; } .gnat { font-weight: 700; font-size: 26px; } .gname { font-size: 24px; font-weight: 700; }
 .gdate { font-size: 13px; opacity: .85; } .gline { font: italic 13px Georgia, serif; opacity: .92; } .gfrom { font: 600 14px Georgia, serif; }
-.gbrand { position: absolute; left: 50%; bottom: 10px; transform: translateX(-50%); display: flex; align-items: center; gap: 6px; padding: 3px 10px 3px 4px; border-radius: 99px; background: #0003; color: #fff; font-size: 13px; font-weight: 700; letter-spacing: .3px; }
+.gbrand { position: absolute; right: 22px; bottom: 18px; display: flex; align-items: center; gap: 6px; padding: 3px 10px 3px 4px; border-radius: 99px; background: #0003; color: #fff; font-size: 13px; font-weight: 700; letter-spacing: .3px; }
 .gbrand img { width: 18px; height: 18px; border-radius: 5px; }
 .badges { display: flex; gap: 6px; align-items: center; }
 .dicon { display: inline-block; vertical-align: -3px; background: currentColor; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; color: var(--accent); }
@@ -359,3 +359,36 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
   .c2, .c2.emb { background: transparent !important; }
   html, body, main, #main { background: transparent !important; }
 }
+
+/* The month as squares (as on iOS MonthView): the date and the star mark on top, the tradition's day and the star beneath. */
+.g2 { gap: 4px; }
+.c2 { aspect-ratio: .82; min-height: 0; padding: 4px; display: flex; flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 1px; text-align: left;
+  background: var(--card); border: .5px solid var(--line); border-radius: 8px; overflow: hidden; }
+.c2 .top { display: flex; align-items: flex-start; gap: 2px; }
+.c2 .top .grow { flex: 1; }
+.c2 .num { width: auto; height: auto; min-width: 22px; min-height: 22px; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; border-radius: 50%; outline: none !important; }
+.c2.today { border: 1.5px solid var(--accent); }
+.c2.today .num { background: var(--accent); color: #fff; }
+.c2 .moon { position: static; font-size: 7px; margin-top: 3px; }
+.c2 .mk, .calleg .mk { color: var(--gold); font-size: 11px; font-style: normal; line-height: 1; }
+.c2 .t { margin-top: auto; font-size: 9px; font-weight: 600; color: var(--muted); }
+.c2 .t.maj { color: var(--accent); }
+.c2 .n { font-size: 8.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.c2.emb::before { inset: auto -2px -2px auto; width: 80%; height: 70%; opacity: .28; -webkit-mask-position: bottom right; mask-position: bottom right; }
+.c2.cs-classic { min-height: 0; }
+
+/* The mark blooming (as on iOS LogoBloom): the ring draws in, the petals open in turn, the globe turns. */
+.bloom { width: 170px; height: 170px; display: block; margin: 0 auto 18px; }
+.loading.splash { background: radial-gradient(circle at 50% 40%, #0A5C55, #004B45 70%); color: #E9C266; min-height: 100vh; margin: -16px; padding-top: 18vh; }
+.loading.splash .muted { color: #E9C266cc; }
+.bloom .rg { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.2s ease-out forwards; transform: rotate(-90deg); }
+.bloom .pt > path { transform-origin: 0 0; transform: scale(0); animation: open .7s cubic-bezier(.2,.8,.2,1) forwards; animation-delay: calc(.25s + var(--i) * .12s); }
+.bloom .dm { opacity: 0; animation: fade .4s ease forwards 1s; }
+.bloom .gl { opacity: 0; animation: fade .5s ease forwards .6s; }
+.bloom .mer { animation: turn 3s linear infinite; transform-origin: 0 0; }
+.bloom .m2 { animation-delay: -1.5s; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes open { to { transform: scale(1); } }
+@keyframes fade { to { opacity: 1; } }
+@keyframes turn { 0% { transform: scaleX(1); } 50% { transform: scaleX(.05); } 100% { transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce) { .bloom * { animation: none !important; opacity: 1 !important; transform: none; stroke-dashoffset: 0 !important; } .bloom .pt > path { transform: scale(1); } }
