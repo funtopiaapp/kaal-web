@@ -1919,7 +1919,10 @@
    "localNames": {},
    "card": "ganesha",
    "local": {
-    "MU": "In Mauritius, Ganesh Chaturthi is a public holiday."
+    "MU": "In Mauritius, Ganesh Chaturthi is a public holiday.",
+    "US": "In the United States, Ganesh Chaturthi is celebrated at temples and in homes; visarjan is usually in a temple tank or a bucket at home, since most cities restrict immersions in open water.",
+    "GB": "In the United Kingdom, temples hold Ganesh Chaturthi pujas; visarjan is often done at home or in temple-arranged water, as rivers and the sea need permission.",
+    "CA": "In Canada, temples hold Ganesh Chaturthi pujas, and eco-friendly clay murtis immersed at home are widely used."
    },
    "durationDays": 1,
    "variations": [],
@@ -2544,7 +2547,12 @@
     "MY": "In Malaysia, Deepavali is a public holiday in every state except Sarawak, with open houses for friends of every faith.",
     "SG": "In Singapore, Deepavali is a public holiday, and Little India is lit for weeks before.",
     "ZA": "In South Africa, Diwali is not a public holiday; families in Durban, Johannesburg and beyond mark it with lamps, prayers and fireworks.",
-    "LK": "In Sri Lanka, Deepavali is a public holiday."
+    "LK": "In Sri Lanka, Deepavali is a public holiday.",
+    "US": "In the United States, Diwali is not a federal holiday; New York City public schools close for it, several states recognise it, and temples and community groups hold melas and fireworks, often on the nearest weekend.",
+    "GB": "In the United Kingdom, Diwali is not a bank holiday; Leicester's Belgrave Road holds one of the largest celebrations outside India, and London marks it with Diwali on the Square in Trafalgar Square.",
+    "CA": "In Canada, Diwali is not a statutory holiday; families gather at mandirs and community halls, and cities such as Brampton and Toronto hold celebrations, often on the nearest weekend.",
+    "AE": "In the United Arab Emirates, Diwali is not a public holiday; Dubai lights up for it, the temple in Jebel Ali draws large crowds, and many Indian schools give the day off.",
+    "AU": "In Australia, Diwali is not a public holiday; Sydney and Melbourne hold large Diwali fairs, and temples keep the puja on the night itself."
    },
    "durationDays": 1,
    "variations": [],

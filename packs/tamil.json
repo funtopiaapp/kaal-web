@@ -1388,7 +1388,10 @@
    "localNames": {},
    "card": "pongal",
    "local": {
-    "LK": "In Sri Lanka, Thai Pongal is a public holiday."
+    "LK": "In Sri Lanka, Thai Pongal is a public holiday.",
+    "US": "In the United States, Tamil associations hold Pongal celebrations, and some counties and states recognise January as Tamil Heritage Month.",
+    "CA": "In Canada, January is Tamil Heritage Month, recognised nationally; Pongal is celebrated at temples and community events, especially around Toronto.",
+    "GB": "In the United Kingdom, Tamil families and temples celebrate Thai Pongal, with community events in London."
    },
    "durationDays": 1,
    "variations": [
@@ -1398,7 +1401,10 @@
     "வாக்கிய பஞ்சாங்கத்தைப் பின்பற்றும் பஞ்சாங்கங்கள் தை 1-ஐயும், அதனால் பொங்கலையும், ஒரு நாள் தள்ளி வைக்கலாம்; தமிழ்நாடு அரசின் 2026 விடுமுறைப் பட்டியல் பொங்கலை ஜனவரி 15 அன்று வைத்துள்ளது."
    ],
    "localNative": {
-    "LK": "இலங்கையில் தைப்பொங்கல் பொது விடுமுறை நாள்."
+    "LK": "இலங்கையில் தைப்பொங்கல் பொது விடுமுறை நாள்.",
+    "US": "அமெரிக்காவில் தமிழ்ச் சங்கங்கள் பொங்கல் கொண்டாட்டங்களை நடத்துகின்றன; சில கவுண்டிகளும் மாநிலங்களும் ஜனவரியைத் தமிழ் மரபு மாதமாக அங்கீகரிக்கின்றன.",
+    "CA": "கனடாவில் ஜனவரி தேசிய அளவில் அங்கீகரிக்கப்பட்ட தமிழ் மரபு மாதம்; குறிப்பாக டொராண்டோவைச் சுற்றிக் கோயில்களிலும் சமூக நிகழ்வுகளிலும் பொங்கல் கொண்டாடப்படுகிறது.",
+    "GB": "ஐக்கிய இராச்சியத்தில் தமிழ்க் குடும்பங்களும் கோயில்களும் தைப்பொங்கலைக் கொண்டாடுகின்றன; லண்டனில் சமூக நிகழ்வுகள் நடைபெறுகின்றன."
    },
    "hidden": false,
    "overrides": {},
@@ -2714,11 +2720,15 @@
    "holidayIn": [],
    "localNames": {},
    "card": "lotus",
-   "local": {},
+   "local": {
+    "ZA": "In South Africa, the month of Aadi is the season of the Mariamman porridge prayer (Kanji), held at temples and in homes on a Friday or Sunday of the month."
+   },
    "durationDays": 1,
    "variations": [],
    "variationsNative": [],
-   "localNative": {},
+   "localNative": {
+    "ZA": "தென்னாப்பிரிக்காவில் ஆடி மாதம் மாரியம்மன் கஞ்சி வழிபாட்டின் காலம்; மாதத்தின் ஒரு வெள்ளி அல்லது ஞாயிறன்று கோயில்களிலும் வீடுகளிலும் நடைபெறுகிறது."
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2984,13 +2994,19 @@
    "localNames": {},
    "card": "ganesha",
    "local": {
-    "MU": "In Mauritius, Ganesh Chaturthi is a public holiday."
+    "MU": "In Mauritius, Ganesh Chaturthi is a public holiday.",
+    "US": "In the United States, Ganesh Chaturthi is celebrated at temples and in homes; visarjan is usually in a temple tank or a bucket at home, since most cities restrict immersions in open water.",
+    "GB": "In the United Kingdom, temples hold Ganesh Chaturthi pujas; visarjan is often done at home or in temple-arranged water, as rivers and the sea need permission.",
+    "CA": "In Canada, temples hold Ganesh Chaturthi pujas, and eco-friendly clay murtis immersed at home are widely used."
    },
    "durationDays": 1,
    "variations": [],
    "variationsNative": [],
    "localNative": {
-    "MU": "மொரிஷியஸில் விநாயகர் சதுர்த்தி பொது விடுமுறை நாள்."
+    "MU": "மொரிஷியஸில் விநாயகர் சதுர்த்தி பொது விடுமுறை நாள்.",
+    "US": "அமெரிக்காவில் விநாயகர் சதுர்த்தி கோயில்களிலும் வீடுகளிலும் கொண்டாடப்படுகிறது; திறந்த நீர்நிலைகளில் கரைப்பதற்குப் பெரும்பாலான நகரங்களில் கட்டுப்பாடு உள்ளதால், கோயில் குளத்திலோ வீட்டில் ஒரு வாளியிலோ விசர்ஜனம் செய்யப்படுகிறது.",
+    "GB": "ஐக்கிய இராச்சியத்தில் கோயில்கள் விநாயகர் சதுர்த்தி பூஜைகள் நடத்துகின்றன; ஆறுகளுக்கும் கடலுக்கும் அனுமதி தேவைப்படுவதால் விசர்ஜனம் பெரும்பாலும் வீட்டிலோ கோயில் ஏற்பாடு செய்யும் நீரிலோ நடைபெறுகிறது.",
+    "CA": "கனடாவில் கோயில்கள் விநாயகர் சதுர்த்தி பூஜைகள் நடத்துகின்றன; வீட்டிலேயே கரைக்கும் சுற்றுச்சூழலுக்கு உகந்த களிமண் சிலைகள் பரவலாகப் பயன்படுகின்றன."
    },
    "hidden": false,
    "overrides": {},
@@ -3174,11 +3190,15 @@
    "holidayIn": [],
    "localNames": {},
    "card": "lotus",
-   "local": {},
+   "local": {
+    "ZA": "In South Africa, Purattasi, often called Purtassi, is kept as a month of fasting from meat, with Saturday prayers to Vishnu as Govindha and a family prayer to close the month."
+   },
    "durationDays": 1,
    "variations": [],
    "variationsNative": [],
-   "localNative": {},
+   "localNative": {
+    "ZA": "தென்னாப்பிரிக்காவில் 'பர்டாசி' என்றும் அழைக்கப்படும் புரட்டாசி, இறைச்சி தவிர்க்கும் விரத மாதமாகக் கடைப்பிடிக்கப்படுகிறது; சனிக்கிழமைகளில் கோவிந்தனாகத் திருமாலுக்கு வழிபாடும் மாத இறுதியில் குடும்ப வழிபாடும் உண்டு."
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3232,11 +3252,19 @@
    "holidayIn": [],
    "localNames": {},
    "card": "navratri",
-   "local": {},
+   "local": {
+    "US": "In the United States, Navratri garba and dandiya nights fill community halls and convention centres, mostly on the weekends of the nine nights.",
+    "GB": "In the United Kingdom, Navratri garba is held nightly at temples and halls, with the largest gatherings in Leicester and north-west London.",
+    "CA": "In Canada, Navratri garba nights are held at mandirs and community halls, with the biggest gatherings on the weekends."
+   },
    "durationDays": 9,
    "variations": [],
    "variationsNative": [],
-   "localNative": {},
+   "localNative": {
+    "US": "அமெரிக்காவில் நவராத்திரி கர்பா, தாண்டியா இரவுகள் சமூக மண்டபங்களையும் மாநாட்டு அரங்குகளையும் நிறைக்கின்றன, பெரும்பாலும் ஒன்பது இரவுகளின் வார இறுதிகளில்.",
+    "GB": "ஐக்கிய இராச்சியத்தில் நவராத்திரி கர்பா ஒவ்வோர் இரவும் கோயில்களிலும் மண்டபங்களிலும் நடைபெறுகிறது; மிகப் பெரிய கூட்டங்கள் லெஸ்டரிலும் வடமேற்கு லண்டனிலும்.",
+    "CA": "கனடாவில் நவராத்திரி கர்பா இரவுகள் கோயில்களிலும் சமூக மண்டபங்களிலும் நடைபெறுகின்றன; மிகப் பெரிய கூட்டங்கள் வார இறுதிகளில்."
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -3465,7 +3493,12 @@
     "MY": "In Malaysia, Deepavali is a public holiday in every state except Sarawak, with open houses for friends of every faith.",
     "SG": "In Singapore, Deepavali is a public holiday, and Little India is lit for weeks before.",
     "ZA": "In South Africa, Diwali is not a public holiday; families in Durban, Johannesburg and beyond mark it with lamps, prayers and fireworks.",
-    "LK": "In Sri Lanka, Deepavali is a public holiday."
+    "LK": "In Sri Lanka, Deepavali is a public holiday.",
+    "US": "In the United States, Diwali is not a federal holiday; New York City public schools close for it, several states recognise it, and temples and community groups hold melas and fireworks, often on the nearest weekend.",
+    "GB": "In the United Kingdom, Diwali is not a bank holiday; Leicester's Belgrave Road holds one of the largest celebrations outside India, and London marks it with Diwali on the Square in Trafalgar Square.",
+    "CA": "In Canada, Diwali is not a statutory holiday; families gather at mandirs and community halls, and cities such as Brampton and Toronto hold celebrations, often on the nearest weekend.",
+    "AE": "In the United Arab Emirates, Diwali is not a public holiday; Dubai lights up for it, the temple in Jebel Ali draws large crowds, and many Indian schools give the day off.",
+    "AU": "In Australia, Diwali is not a public holiday; Sydney and Melbourne hold large Diwali fairs, and temples keep the puja on the night itself."
    },
    "durationDays": 1,
    "variations": [
@@ -3483,7 +3516,12 @@
     "MY": "மலேசியாவில் சரவாக் தவிர எல்லா மாநிலங்களிலும் தீபாவளி பொது விடுமுறை; எல்லா மதத்தினரான நண்பர்களுக்கும் வீடுகள் திறந்து வைக்கப்படுகின்றன.",
     "SG": "சிங்கப்பூரில் தீபாவளி பொது விடுமுறை; வாரங்களுக்கு முன்பே லிட்டில் இந்தியா ஒளிரத் தொடங்குகிறது.",
     "ZA": "தென்னாப்பிரிக்காவில் தீபாவளி பொது விடுமுறை அல்ல; டர்பன், ஜோகன்னஸ்பர்க் மற்றும் பிற இடங்களில் உள்ள குடும்பங்கள் விளக்குகள், பிரார்த்தனை, பட்டாசுகளுடன் கொண்டாடுகின்றன.",
-    "LK": "இலங்கையில் தீபாவளி பொது விடுமுறை நாள்."
+    "LK": "இலங்கையில் தீபாவளி பொது விடுமுறை நாள்.",
+    "US": "அமெரிக்காவில் தீபாவளி கூட்டாட்சி விடுமுறை அல்ல; நியூயார்க் நகரப் பொதுப் பள்ளிகளுக்கு அன்று விடுமுறை, பல மாநிலங்கள் இதை அங்கீகரிக்கின்றன; கோயில்களும் சமூக அமைப்புகளும் மேளாக்களும் வாணவேடிக்கையும் நடத்துகின்றன, பெரும்பாலும் அருகிலுள்ள வார இறுதியில்.",
+    "GB": "ஐக்கிய இராச்சியத்தில் தீபாவளி வங்கி விடுமுறை அல்ல; இந்தியாவுக்கு வெளியே மிகப் பெரிய கொண்டாட்டங்களில் ஒன்று லெஸ்டரின் பெல்கிரேவ் சாலையில் நடைபெறுகிறது; லண்டன் டிராஃபல்கர் சதுக்கத்தில் 'திவாலி ஆன் தி ஸ்கொயர்' நடத்துகிறது.",
+    "CA": "கனடாவில் தீபாவளி சட்டப்பூர்வ விடுமுறை அல்ல; குடும்பங்கள் கோயில்களிலும் சமூக மண்டபங்களிலும் கூடுகின்றன; பிராம்ப்டன், டொராண்டோ போன்ற நகரங்கள் கொண்டாட்டங்களை நடத்துகின்றன, பெரும்பாலும் அருகிலுள்ள வார இறுதியில்.",
+    "AE": "ஐக்கிய அரபு அமீரகத்தில் தீபாவளி பொது விடுமுறை அல்ல; துபாய் ஒளிர்கிறது, ஜெபல் அலியில் உள்ள கோயிலுக்குப் பெருங்கூட்டம் வருகிறது, பல இந்தியப் பள்ளிகளுக்கு அன்று விடுமுறை.",
+    "AU": "ஆஸ்திரேலியாவில் தீபாவளி பொது விடுமுறை அல்ல; சிட்னியிலும் மெல்போர்னிலும் பெரிய தீபாவளிச் சந்தைகள் நடைபெறுகின்றன; கோயில்களில் பூஜை அன்றிரவே."
    },
    "hidden": false,
    "overrides": {},

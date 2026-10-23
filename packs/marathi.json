@@ -2771,7 +2771,11 @@
    "holidayIn": [],
    "localNames": {},
    "card": "navratri",
-   "local": {},
+   "local": {
+    "US": "In the United States, Navratri garba and dandiya nights fill community halls and convention centres, mostly on the weekends of the nine nights.",
+    "GB": "In the United Kingdom, Navratri garba is held nightly at temples and halls, with the largest gatherings in Leicester and north-west London.",
+    "CA": "In Canada, Navratri garba nights are held at mandirs and community halls, with the biggest gatherings on the weekends."
+   },
    "durationDays": 9,
    "variations": [],
    "variationsNative": [],
@@ -3108,7 +3112,12 @@
     "MY": "In Malaysia, Deepavali is a public holiday in every state except Sarawak, with open houses for friends of every faith.",
     "SG": "In Singapore, Deepavali is a public holiday, and Little India is lit for weeks before.",
     "ZA": "In South Africa, Diwali is not a public holiday; families in Durban, Johannesburg and beyond mark it with lamps, prayers and fireworks.",
-    "LK": "In Sri Lanka, Deepavali is a public holiday."
+    "LK": "In Sri Lanka, Deepavali is a public holiday.",
+    "US": "In the United States, Diwali is not a federal holiday; New York City public schools close for it, several states recognise it, and temples and community groups hold melas and fireworks, often on the nearest weekend.",
+    "GB": "In the United Kingdom, Diwali is not a bank holiday; Leicester's Belgrave Road holds one of the largest celebrations outside India, and London marks it with Diwali on the Square in Trafalgar Square.",
+    "CA": "In Canada, Diwali is not a statutory holiday; families gather at mandirs and community halls, and cities such as Brampton and Toronto hold celebrations, often on the nearest weekend.",
+    "AE": "In the United Arab Emirates, Diwali is not a public holiday; Dubai lights up for it, the temple in Jebel Ali draws large crowds, and many Indian schools give the day off.",
+    "AU": "In Australia, Diwali is not a public holiday; Sydney and Melbourne hold large Diwali fairs, and temples keep the puja on the night itself."
    },
    "durationDays": 1,
    "variations": [],

@@ -16,6 +16,7 @@ const CULTURES = [
   { id: 'nepali', en: 'Nepali', native: 'नेपाली' },
   { id: 'sri-lankan-tamil', en: 'Sri Lankan Tamil', native: 'இலங்கைத் தமிழ்' },
   { id: 'malaysian-tamil', en: 'Malaysian & Singapore Tamil', native: 'மலேசிய, சிங்கப்பூர் தமிழ்' },
+  { id: 'south-african-tamil', en: 'South African Tamil', native: 'தென்னாப்பிரிக்கத் தமிழ்' },
   { id: 'caribbean', en: 'Caribbean', native: 'कैरिबियाई' },
   { id: 'fijian', en: 'Fiji', native: 'फ़िजी' },
   { id: 'mauritian', en: 'Mauritius', native: 'मॉरीशस' },
@@ -674,7 +675,7 @@ function windowsRow(k, ps, d) {
 }
 // As on iOS (dayPartKinds): the tradition's own ways of dividing the day, its own first.
 function mKinds() {
-  if (['tamil', 'sri-lankan-tamil', 'malaysian-tamil', 'telugu'].includes(S.culture)) return ['gowri', 'hora', 'lagna'];
+  if (['tamil', 'sri-lankan-tamil', 'malaysian-tamil', 'south-african-tamil', 'telugu'].includes(S.culture)) return ['gowri', 'hora', 'lagna'];
   if (['malayalam', 'kannada'].includes(S.culture)) return ['hora', 'lagna'];
   return ['choghadiya', 'hora', 'lagna'];
 }
@@ -940,7 +941,7 @@ async function jataka(p) {
 }
 const SIGNS = ['mesha', 'vrishabha', 'mithuna', 'karka', 'simha', 'kanya', 'tula', 'vrishchika', 'dhanu', 'makara', 'kumbha', 'meena'];
 const GCOL = { sun: '#E08A2E', moon: '#8FA7C4', mars: '#C6453A', mercury: '#3E9B5C', jupiter: '#E2B53A', venus: '#D58AB4', saturn: '#3D4F8F', rahu: '#6E6A63', ketu: '#9A6B45' };
-const chartStyle = () => S.chartStyle || ({ tamil: 'south', 'sri-lankan-tamil': 'south', 'malaysian-tamil': 'south', malayalam: 'south', telugu: 'south', kannada: 'south', bengali: 'east', odia: 'east' }[S.culture] || 'north');
+const chartStyle = () => S.chartStyle || ({ tamil: 'south', 'sri-lankan-tamil': 'south', 'malaysian-tamil': 'south', 'south-african-tamil': 'south', malayalam: 'south', telugu: 'south', kannada: 'south', bengali: 'east', odia: 'east' }[S.culture] || 'north');
 const vargaName = n => `D${n} · ${name('vargas', 'd' + n)}`;
 const dLabel = u => dtf({ day: 'numeric', month: 'short', year: 'numeric' }).format(new Date(u * 1000));
 function periodName(p, system) {
@@ -1249,6 +1250,10 @@ function explainHow(how) {
   const kala = k => STR['rk.' + k] ? t('rk.' + k) : k;
   const dv = name('tithis', 'dvadashi');
   const rules = [
+    [/^(.*) prevails from arunodaya; kept that day by the Vaishnava rule$/, m => t('r.vPure', ruleTerm(m[1]))],
+    [/^(.*) is touched by Dashami at arunodaya; kept the next day by the Vaishnava rule$/, m => t('r.vViddha', ruleTerm(m[1]), name('tithis', 'dashami'))],
+    [/^(.*) prevails at two sunrises; kept on the second by the Vaishnava rule$/, m => t('r.vTwo', ruleTerm(m[1]))],
+    [/^(.*) sees no sunrise; kept the next day by the Vaishnava rule$/, m => t('r.vNone', ruleTerm(m[1]))],
     [/^(.*) prevails at two sunrises; observed on the second, with Dvadashi for parana$/, m => t('r.ekSecond', ruleTerm(m[1]), dv)],
     [/^(.*) prevails at two sunrises; observed on the first$/, m => t('r.ekFirst', ruleTerm(m[1]))],
     [/^(.*) prevails at sunrise, but Dvadashi ends before the next sunrise; observed the day before$/, m => t('r.ekBefore', ruleTerm(m[1]), dv)],
@@ -1828,7 +1833,7 @@ function viewGuide() {
 // Porutham app lays out a result. Any tradition can be chosen without changing
 // the app's own; Telugu and Kannada homes use either system. Free here.
 const matchingAvailable = () => true;
-const PORUTHAM = ['malayalam', 'tamil', 'telugu', 'kannada', 'sri-lankan-tamil', 'malaysian-tamil'], BOTH = ['telugu', 'kannada'];
+const PORUTHAM = ['malayalam', 'tamil', 'telugu', 'kannada', 'sri-lankan-tamil', 'malaysian-tamil', 'south-african-tamil'], BOTH = ['telugu', 'kannada'];
 const matchTitle = (c = S.culture) => t('mt.n.' + c);
 const STAR_KEYS = ['ashwini', 'bharani', 'krittika', 'rohini', 'mrigashira', 'ardra', 'punarvasu', 'pushya', 'ashlesha', 'magha', 'purva_phalguni',
   'uttara_phalguni', 'hasta', 'chitra', 'swati', 'vishakha', 'anuradha', 'jyeshtha', 'mula', 'purva_ashadha', 'uttara_ashadha', 'shravana',
@@ -1956,6 +1961,7 @@ function viewSettings() {
       <div class="seg">${['system', 'light', 'dark'].map(m => `<button data-th="${m}" class="${S.theme === m ? 'on' : ''}">${esc(t('s.' + m))}</button>`).join('')}</div>
       <p class="small muted" style="margin-top:10px">${esc(t('th.light'))}</p><div class="chips">${LIGHT.map(id => `<button class="chip ${S.light === id ? 'on' : ''}" data-lt="${id}">${esc(t('th.' + id))}</button>`).join('')}</div>
       <p class="small muted" style="margin-top:10px">${esc(t('th.dark'))}</p><div class="chips">${DARK.map(id => `<button class="chip ${S.dark === id ? 'on' : ''}" data-dk="${id}">${esc(t('th.' + id))}</button>`).join('')}</div></div>
+    <div class="card"><label class="list-row"><input type="checkbox" id="vaish" ${S.vaishnava ? 'checked' : ''}><span class="grow"><b>${esc(t('s.vaishnava'))}</b><div class="small muted">${esc(t('s.vaishnavaNote'))}</div></span></label></div>
     <div class="card"><p class="label">${esc(t('s.clock'))}</p><div class="seg">${[[0, 's.clockSystem'], [12, 's.clock12'], [24, 's.clock24']].map(([v, k]) => `<button data-ck="${v}" class="${(S.clock || 0) === v ? 'on' : ''}">${esc(t(k))}</button>`).join('')}</div></div>
     <div class="card"><p class="label">${esc(t('ts.title'))}</p><div class="seg">${TEXT_SIZES.map((z, i) => `<button data-tz="${i}" class="${S.textSize === i ? 'on' : ''}" style="font-size:${Math.round(12 * z + (i - 1) * 2)}px">A</button>`).join('')}</div>
       <p class="small muted" style="margin-top:8px">${esc(t('ts.sample'))}</p></div>
@@ -1965,6 +1971,7 @@ function viewSettings() {
   $('#main').querySelectorAll('[data-c]').forEach(b => b.onclick = async () => { S.culture = b.dataset.c; save(); await loadPack(); await resetCalendars(); render(); });
   $('#main').querySelectorAll('[data-l]').forEach(b => b.onclick = () => { S.native = b.dataset.l === '1'; save(); render(); });
   $('#main').querySelectorAll('[data-th]').forEach(b => b.onclick = () => { S.theme = b.dataset.th; save(); render(); });
+  $('#main').querySelector('#vaish').onchange = async e => { S.vaishnava = e.target.checked; save(); await loadPack(); await resetCalendars(); render(); };
   $('#main').querySelectorAll('[data-ck]').forEach(b => b.onclick = () => { S.clock = +b.dataset.ck; save(); render(); });
   $('#main').querySelectorAll('[data-tz]').forEach(b => b.onclick = () => { S.textSize = +b.dataset.tz; save(); render(); });
   $('#main').querySelectorAll('[data-lt]').forEach(b => b.onclick = () => { S.light = b.dataset.lt; save(); render(); });
@@ -1976,6 +1983,8 @@ function viewSettings() {
 async function loadPack() {
   if (!S.culture) return;
   packJson = await (await fetch(`packs/${S.culture}.json`)).text();
+  // Every Ekadashi by the Vaishnava rule when chosen, as on iOS (Pack.vaishnava).
+  if (S.vaishnava) packJson = packJson.replace(/"kala":\s*"ekadashi"/g, '"kala": "ekadashi-vaishnava"');
   pack = JSON.parse(packJson);
 }
 (async () => {

@@ -1628,7 +1628,11 @@
     "GY": "In Guyana, Phagwah is a public holiday, played with abeer and powder and welcomed with chowtal singing.",
     "SR": "In Suriname, Holi Phagwa is a public holiday.",
     "FJ": "In Fiji, Holi is welcomed with phag songs through Phalgun. It is not a public holiday.",
-    "MU": "In Mauritius, Holi is played with colours. It is not a public holiday."
+    "MU": "In Mauritius, Holi is played with colours. It is not a public holiday.",
+    "US": "In the United States, Holi is not a public holiday; temples and campus groups hold colour festivals, usually on the weekend nearest the date.",
+    "GB": "In the United Kingdom, Holi is not a bank holiday; temples and community groups hold colour festivals on the nearest weekend.",
+    "CA": "In Canada, Holi is not a statutory holiday; colour festivals are held at mandirs and in parks once the weather allows, often a little after the date.",
+    "AU": "In Australia, Holi falls in early autumn; colour festivals are held in parks and at temples on the nearest weekend."
    },
    "durationDays": 1,
    "variations": [],
@@ -2593,7 +2597,10 @@
    "localNames": {},
    "card": "ganesha",
    "local": {
-    "MU": "In Mauritius, Ganesh Chaturthi is a public holiday."
+    "MU": "In Mauritius, Ganesh Chaturthi is a public holiday.",
+    "US": "In the United States, Ganesh Chaturthi is celebrated at temples and in homes; visarjan is usually in a temple tank or a bucket at home, since most cities restrict immersions in open water.",
+    "GB": "In the United Kingdom, temples hold Ganesh Chaturthi pujas; visarjan is often done at home or in temple-arranged water, as rivers and the sea need permission.",
+    "CA": "In Canada, temples hold Ganesh Chaturthi pujas, and eco-friendly clay murtis immersed at home are widely used."
    },
    "durationDays": 10,
    "variations": [],
@@ -2957,7 +2964,11 @@
    "holidayIn": [],
    "localNames": {},
    "card": "navratri",
-   "local": {},
+   "local": {
+    "US": "In the United States, Navratri garba and dandiya nights fill community halls and convention centres, mostly on the weekends of the nine nights.",
+    "GB": "In the United Kingdom, Navratri garba is held nightly at temples and halls, with the largest gatherings in Leicester and north-west London.",
+    "CA": "In Canada, Navratri garba nights are held at mandirs and community halls, with the biggest gatherings on the weekends."
+   },
    "durationDays": 9,
    "variations": [],
    "variationsNative": [],
@@ -3428,7 +3439,12 @@
     "MY": "In Malaysia, Deepavali is a public holiday in every state except Sarawak, with open houses for friends of every faith.",
     "SG": "In Singapore, Deepavali is a public holiday, and Little India is lit for weeks before.",
     "ZA": "In South Africa, Diwali is not a public holiday; families in Durban, Johannesburg and beyond mark it with lamps, prayers and fireworks.",
-    "LK": "In Sri Lanka, Deepavali is a public holiday."
+    "LK": "In Sri Lanka, Deepavali is a public holiday.",
+    "US": "In the United States, Diwali is not a federal holiday; New York City public schools close for it, several states recognise it, and temples and community groups hold melas and fireworks, often on the nearest weekend.",
+    "GB": "In the United Kingdom, Diwali is not a bank holiday; Leicester's Belgrave Road holds one of the largest celebrations outside India, and London marks it with Diwali on the Square in Trafalgar Square.",
+    "CA": "In Canada, Diwali is not a statutory holiday; families gather at mandirs and community halls, and cities such as Brampton and Toronto hold celebrations, often on the nearest weekend.",
+    "AE": "In the United Arab Emirates, Diwali is not a public holiday; Dubai lights up for it, the temple in Jebel Ali draws large crowds, and many Indian schools give the day off.",
+    "AU": "In Australia, Diwali is not a public holiday; Sydney and Melbourne hold large Diwali fairs, and temples keep the puja on the night itself."
    },
    "durationDays": 1,
    "variations": [],

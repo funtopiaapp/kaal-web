@@ -2211,11 +2211,21 @@
    ],
    "localNames": {},
    "card": "pookalam",
-   "local": {},
+   "local": {
+    "US": "In the United States, Malayali associations hold Onam sadya and pookalam contests on the weekend nearest Thiruvonam.",
+    "GB": "In the United Kingdom, Malayali associations hold Onam celebrations with sadya and pookalam, often on the weekend after Thiruvonam.",
+    "AE": "In the United Arab Emirates, Onam is widely celebrated by Malayali families; restaurants serve Onam sadya, and associations hold celebrations through the following weeks.",
+    "AU": "In Australia, Malayali associations hold Onam celebrations with sadya, usually on a weekend near Thiruvonam."
+   },
    "durationDays": 1,
    "variations": [],
    "variationsNative": [],
-   "localNative": {},
+   "localNative": {
+    "US": "അമേരിക്കയിൽ മലയാളി സംഘടനകൾ തിരുവോണത്തിനടുത്ത വാരാന്ത്യത്തിൽ ഓണസദ്യയും പൂക്കള മത്സരങ്ങളും നടത്തുന്നു.",
+    "GB": "യുകെയിൽ മലയാളി സംഘടനകൾ സദ്യയും പൂക്കളവുമായി ഓണാഘോഷം നടത്തുന്നു, പലപ്പോഴും തിരുവോണം കഴിഞ്ഞുള്ള വാരാന്ത്യത്തിൽ.",
+    "AE": "യുഎഇയിൽ മലയാളി കുടുംബങ്ങൾ ഓണം വിപുലമായി ആഘോഷിക്കുന്നു; ഭക്ഷണശാലകൾ ഓണസദ്യ വിളമ്പുന്നു, സംഘടനകൾ തുടർന്നുള്ള ആഴ്ചകളിലും ആഘോഷങ്ങൾ നടത്തുന്നു.",
+    "AU": "ഓസ്ട്രേലിയയിൽ മലയാളി സംഘടനകൾ സദ്യയോടെ ഓണാഘോഷം നടത്തുന്നു, സാധാരണ തിരുവോണത്തിനടുത്ത ഒരു വാരാന്ത്യത്തിൽ."
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2470,13 +2480,19 @@
    "localNames": {},
    "card": "ganesha",
    "local": {
-    "MU": "In Mauritius, Ganesh Chaturthi is a public holiday."
+    "MU": "In Mauritius, Ganesh Chaturthi is a public holiday.",
+    "US": "In the United States, Ganesh Chaturthi is celebrated at temples and in homes; visarjan is usually in a temple tank or a bucket at home, since most cities restrict immersions in open water.",
+    "GB": "In the United Kingdom, temples hold Ganesh Chaturthi pujas; visarjan is often done at home or in temple-arranged water, as rivers and the sea need permission.",
+    "CA": "In Canada, temples hold Ganesh Chaturthi pujas, and eco-friendly clay murtis immersed at home are widely used."
    },
    "durationDays": 1,
    "variations": [],
    "variationsNative": [],
    "localNative": {
-    "MU": "മൗറീഷ്യസിൽ വിനായക ചതുർഥി പൊതു അവധിയാണ്."
+    "MU": "മൗറീഷ്യസിൽ വിനായക ചതുർഥി പൊതു അവധിയാണ്.",
+    "US": "അമേരിക്കയിൽ വിനായക ചതുർഥി ക്ഷേത്രങ്ങളിലും വീടുകളിലും ആഘോഷിക്കുന്നു; തുറന്ന ജലാശയങ്ങളിൽ നിമജ്ജനത്തിന് മിക്ക നഗരങ്ങളിലും നിയന്ത്രണമുള്ളതിനാൽ ക്ഷേത്രക്കുളത്തിലോ വീട്ടിൽ ഒരു പാത്രത്തിലോ ആണ് നിമജ്ജനം.",
+    "GB": "യുകെയിൽ ക്ഷേത്രങ്ങൾ വിനായക ചതുർഥി പൂജകൾ നടത്തുന്നു; പുഴകൾക്കും കടലിനും അനുമതി വേണ്ടതിനാൽ നിമജ്ജനം പലപ്പോഴും വീട്ടിലോ ക്ഷേത്രം ഒരുക്കുന്ന ജലത്തിലോ ആണ്.",
+    "CA": "കാനഡയിൽ ക്ഷേത്രങ്ങൾ വിനായക ചതുർഥി പൂജകൾ നടത്തുന്നു; വീട്ടിൽ നിമജ്ജനം ചെയ്യുന്ന പരിസ്ഥിതി സൗഹൃദ കളിമൺ വിഗ്രഹങ്ങൾ വ്യാപകമാണ്."
    },
    "hidden": false,
    "overrides": {},
@@ -2531,11 +2547,19 @@
    "holidayIn": [],
    "localNames": {},
    "card": "navratri",
-   "local": {},
+   "local": {
+    "US": "In the United States, Navratri garba and dandiya nights fill community halls and convention centres, mostly on the weekends of the nine nights.",
+    "GB": "In the United Kingdom, Navratri garba is held nightly at temples and halls, with the largest gatherings in Leicester and north-west London.",
+    "CA": "In Canada, Navratri garba nights are held at mandirs and community halls, with the biggest gatherings on the weekends."
+   },
    "durationDays": 9,
    "variations": [],
    "variationsNative": [],
-   "localNative": {},
+   "localNative": {
+    "US": "അമേരിക്കയിൽ നവരാത്രിയിലെ ഗർബ, ദാണ്ഡിയ രാവുകൾ കമ്മ്യൂണിറ്റി ഹാളുകളിലും കൺവെൻഷൻ സെന്ററുകളിലും നിറയുന്നു, കൂടുതലും ഒമ്പതു രാത്രികളിലെ വാരാന്ത്യങ്ങളിൽ.",
+    "GB": "യുകെയിൽ നവരാത്രി ഗർബ എല്ലാ രാത്രിയും ക്ഷേത്രങ്ങളിലും ഹാളുകളിലും നടക്കുന്നു; ഏറ്റവും വലിയ കൂട്ടായ്മകൾ ലെസ്റ്ററിലും വടക്കുപടിഞ്ഞാറൻ ലണ്ടനിലും.",
+    "CA": "കാനഡയിൽ നവരാത്രി ഗർബ രാവുകൾ ക്ഷേത്രങ്ങളിലും കമ്മ്യൂണിറ്റി ഹാളുകളിലും നടക്കുന്നു; ഏറ്റവും വലിയ കൂട്ടായ്മകൾ വാരാന്ത്യങ്ങളിൽ."
+   },
    "hidden": false,
    "overrides": {},
    "sources": [
@@ -2805,7 +2829,12 @@
     "MY": "In Malaysia, Deepavali is a public holiday in every state except Sarawak, with open houses for friends of every faith.",
     "SG": "In Singapore, Deepavali is a public holiday, and Little India is lit for weeks before.",
     "ZA": "In South Africa, Diwali is not a public holiday; families in Durban, Johannesburg and beyond mark it with lamps, prayers and fireworks.",
-    "LK": "In Sri Lanka, Deepavali is a public holiday."
+    "LK": "In Sri Lanka, Deepavali is a public holiday.",
+    "US": "In the United States, Diwali is not a federal holiday; New York City public schools close for it, several states recognise it, and temples and community groups hold melas and fireworks, often on the nearest weekend.",
+    "GB": "In the United Kingdom, Diwali is not a bank holiday; Leicester's Belgrave Road holds one of the largest celebrations outside India, and London marks it with Diwali on the Square in Trafalgar Square.",
+    "CA": "In Canada, Diwali is not a statutory holiday; families gather at mandirs and community halls, and cities such as Brampton and Toronto hold celebrations, often on the nearest weekend.",
+    "AE": "In the United Arab Emirates, Diwali is not a public holiday; Dubai lights up for it, the temple in Jebel Ali draws large crowds, and many Indian schools give the day off.",
+    "AU": "In Australia, Diwali is not a public holiday; Sydney and Melbourne hold large Diwali fairs, and temples keep the puja on the night itself."
    },
    "durationDays": 1,
    "variations": [
@@ -2823,7 +2852,12 @@
     "MY": "മലേഷ്യയിൽ സരവാക്ക് ഒഴികെ എല്ലാ സംസ്ഥാനങ്ങളിലും ദീപാവലി പൊതു അവധിയാണ്; എല്ലാ വിശ്വാസങ്ങളിലുമുള്ള സുഹൃത്തുക്കൾക്കായി വീടുകൾ തുറന്നിടുന്നു.",
     "SG": "സിംഗപ്പൂരിൽ ദീപാവലി പൊതു അവധിയാണ്; ആഴ്ചകൾക്കു മുമ്പേ ലിറ്റിൽ ഇന്ത്യ ദീപാലംകൃതമാകുന്നു.",
     "ZA": "ദക്ഷിണാഫ്രിക്കയിൽ ദീപാവലി പൊതു അവധിയല്ല; ഡർബനിലും ജോഹന്നാസ്ബർഗിലും മറ്റിടങ്ങളിലുമുള്ള കുടുംബങ്ങൾ ദീപങ്ങളും പ്രാർഥനയും പടക്കങ്ങളുമായി ആഘോഷിക്കുന്നു.",
-    "LK": "ശ്രീലങ്കയിൽ ദീപാവലി പൊതു അവധിയാണ്."
+    "LK": "ശ്രീലങ്കയിൽ ദീപാവലി പൊതു അവധിയാണ്.",
+    "US": "അമേരിക്കയിൽ ദീപാവലി ഫെഡറൽ അവധിയല്ല; ന്യൂയോർക്ക് നഗരത്തിലെ പൊതുവിദ്യാലയങ്ങൾക്ക് അന്ന് അവധിയാണ്, പല സംസ്ഥാനങ്ങളും ഇതിനെ അംഗീകരിക്കുന്നു; ക്ഷേത്രങ്ങളും കൂട്ടായ്മകളും മേളകളും വെടിക്കെട്ടും നടത്തുന്നു, പലപ്പോഴും അടുത്ത വാരാന്ത്യത്തിൽ.",
+    "GB": "യുകെയിൽ ദീപാവലി ബാങ്ക് അവധിയല്ല; ഇന്ത്യക്ക് പുറത്തെ ഏറ്റവും വലിയ ആഘോഷങ്ങളിലൊന്ന് ലെസ്റ്ററിലെ ബെൽഗ്രേവ് റോഡിലാണ്; ലണ്ടൻ ട്രഫാൽഗർ സ്ക്വയറിൽ 'ദിവാലി ഓൺ ദ സ്ക്വയർ' നടത്തുന്നു.",
+    "CA": "കാനഡയിൽ ദീപാവലി നിയമപരമായ അവധിയല്ല; കുടുംബങ്ങൾ ക്ഷേത്രങ്ങളിലും കമ്മ്യൂണിറ്റി ഹാളുകളിലും ഒത്തുകൂടുന്നു; ബ്രാംപ്ടൺ, ടൊറന്റോ പോലുള്ള നഗരങ്ങൾ ആഘോഷങ്ങൾ നടത്തുന്നു, പലപ്പോഴും അടുത്ത വാരാന്ത്യത്തിൽ.",
+    "AE": "യുഎഇയിൽ ദീപാവലി പൊതു അവധിയല്ല; ദുബായ് ദീപാലംകൃതമാകുന്നു, ജബൽ അലിയിലെ ക്ഷേത്രത്തിൽ വലിയ തിരക്കാണ്, പല ഇന്ത്യൻ സ്കൂളുകൾക്കും അന്ന് അവധിയാണ്.",
+    "AU": "ഓസ്ട്രേലിയയിൽ ദീപാവലി പൊതു അവധിയല്ല; സിഡ്നിയിലും മെൽബണിലും വലിയ ദീപാവലി മേളകൾ നടക്കുന്നു; ക്ഷേത്രങ്ങളിൽ പൂജ അന്നു രാത്രി തന്നെ."
    },
    "hidden": false,
    "overrides": {},
