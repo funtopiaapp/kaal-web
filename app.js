@@ -330,6 +330,112 @@ function animateSky(svg) {
   };
   requestAnimationFrame(step);
 }
+// ---------------------------------------------------------------- tarabalam
+// As on iOS (Core/Tara.swift): a day's nakshatra counted from a person's birth star in nines.
+const STARS27 = ['ashwini', 'bharani', 'krittika', 'rohini', 'mrigashira', 'ardra', 'punarvasu', 'pushya', 'ashlesha', 'magha', 'purva_phalguni',
+  'uttara_phalguni', 'hasta', 'chitra', 'swati', 'vishakha', 'anuradha', 'jyeshtha', 'mula', 'purva_ashadha', 'uttara_ashadha', 'shravana',
+  'dhanishta', 'shatabhisha', 'purva_bhadrapada', 'uttara_bhadrapada', 'revati'];
+const RASHIS12 = ['mesha', 'vrishabha', 'mithuna', 'karka', 'simha', 'kanya', 'tula', 'vrishchika', 'dhanu', 'makara', 'kumbha', 'meena'];
+const starPerson = () => { const ps = S.people.filter(p => p.kind !== 'remembrance' && p.anchor?.nakshatra); return ps.find(p => p.id === S.starPerson) || ps.find(p => p.relation === 'self') || ps[0]; };
+const taraOf = (birth, day) => { const b = STARS27.indexOf(birth), d = STARS27.indexOf(day); return b < 0 || d < 0 ? 0 : ((d - b + 27) % 27) % 9 + 1; };
+const taraBand = t => [2, 4, 6, 8, 9].includes(t) ? 0 : t === 1 ? 1 : 2;
+function starLine(p, nak, end) {
+  const tr = taraOf(p.anchor.nakshatra, nak); if (!tr) return '';
+  const b = taraBand(tr);
+  return b === 0 ? t('star.good', p.name, clock(end), t('taraN.' + tr)) : b === 1 ? t('star.janma', p.name, clock(end)) : t('star.other', p.name, t('taraN.' + tr), clock(end));
+}
+const chandrashtamam = (natal, moon) => { const a = RASHIS12.indexOf(natal), b = RASHIS12.indexOf(moon); return a >= 0 && b >= 0 && (b - a + 12) % 12 === 7; };
+
+// The day for one person's star, as on iOS (StarCard): each nakshatra's tara, and Chandrashtamam.
+function starCard(sp, p, fine, d) {
+  const rows = p.nakshatras.map(n => { const tr = taraOf(sp.anchor.nakshatra, n.key); return tr ? `<div class="row"><span><i class="ringdot rb${taraBand(tr)}"></i>${esc(name('nakshatras', n.key))} · ${esc(t('taraN.' + tr))}</span><span class="v small">${esc(windowText(n.start, n.end, d))}</span></div>` : ''; }).join('');
+  const ch = (fine.moonSigns || []).filter(m => chandrashtamam(sp.anchor.moonSign, m.key)).map(m => `<p class="small muted">${esc(t('today.chandrashtamam', sp.name, clock(m.end)))}</p>`).join('');
+  return `<div class="card"><p class="label">${esc(t('today.forStar', sp.name))}</p>${rows}${ch}</div>`;
+}
+
+// ---------------------------------------------------------------- dial
+// As on iOS (DialView): the day as a dial - what is running now, when it ends, what comes next.
+// Outer ring: the half's eight Choghadiyas or twelve horas; inner ring: Rahu, Yama and Gulika,
+// with Abhijit and Brahma Muhurta as diamonds. Drag to look at another hour; tap a period for its details.
+const DIAL = { mode: 0, half: null, scrub: null };
+async function openDial(date) {
+  const o = sheet('<div id="dial" class="dialwrap"></div>');
+  o.classList.add('full');
+  let d = date, cur = null;
+  const cache = {};
+  const draw = async () => {
+    const now = Date.now() / 1000;
+    if (!cur) { const td = today(), p0 = await day(td); cur = now < p0.sunrise ? addDays(td, -1) : td; if (d === td && cur !== td) d = cur; }
+    // Fetched once per date, so dragging redraws without asking the engine again.
+    const [p, nx, fine] = cache[d] ||= await Promise.all([day(d), day(addDays(d, 1)), engine({ op: 'timings', handle: await cal(+d.slice(0, 4)), date: d })]);
+    const isDay = DIAL.half ?? (d !== cur ? true : now >= p.sunrise && now < p.sunset);
+    const a = isDay ? p.sunrise : p.sunset, b = isDay ? p.sunset : nx.sunrise;
+    const kind = DIAL.mode === 1 ? 'hora' : 'choghadiya';
+    const segs = DIAL.mode === 2 ? [] : fine[kind].filter(x => x.start >= a - 60 && x.end <= b + 60).map(x => ({ ...x, kind }));
+    const wins = [['rahu', p.rahuKalam], ['yama', p.yamagandam], ['gulika', p.gulikaKalam]].map(([k, w]) => ({ key: k, start: w.start, end: w.end, kind: 'window' })).filter(w => w.end > a && w.start < b);
+    const marks = [...(p.weekday !== 'wednesday' ? [{ key: 'abhijit', ...p.abhijit, kind: 'window' }] : []), { key: 'brahma', ...nx.brahmaMuhurta, kind: 'window' }].filter(m => m.start >= a && m.end <= b);
+    const nm = x => x.kind === 'hora' ? name('grahas', x.key) : x.kind === 'choghadiya' ? name('choghadiya', x.key) : t({ rahu: 'time.rahu', yama: 'time.yama', gulika: 'time.gulika', abhijit: 'time.abhijit', brahma: 'time.brahma' }[x.key]);
+    const short = x => x.kind === 'hora' ? name('grahaShort', x.key) : nm(x);
+    const nature = x => x.kind === 'choghadiya' ? (['amrita', 'shubha', 'labha'].includes(x.key) ? 0 : x.key === 'chara' ? 1 : 2) : x.kind === 'hora' ? (['moon', 'mercury', 'jupiter', 'venus'].includes(x.key) ? 0 : 1) : 2;
+    const W = 360, C = 180, R = 138, band = 34, inner = R - band - 12, TAU = Math.PI * 2;
+    const ang = u => (u - a) / (b - a) * TAU - Math.PI / 2, pt = (r, an) => [C + Math.cos(an) * r, C + Math.sin(an) * r];
+    const arc = (r, u0, u1) => { const [x0, y0] = pt(r, ang(u0)), [x1, y1] = pt(r, ang(u1)), large = ang(u1) - ang(u0) > Math.PI ? 1 : 0; return `M${x0.toFixed(1)} ${y0.toFixed(1)}A${r} ${r} 0 ${large} 1 ${x1.toFixed(1)} ${y1.toFixed(1)}`; };
+    const showNow = d === cur && now >= a && now < b, tt = DIAL.scrub ?? now;
+    const list = DIAL.mode === 2 ? [...wins, ...marks].sort((x, y) => x.start - y.start) : segs;
+    const run = list.find(x => tt >= x.start && tt < x.end), nxt = list.find(x => x.start > tt);
+    const wr = DIAL.mode === 2 ? R - band / 2 : inner, ww = DIAL.mode === 2 ? band - 6 : 12;
+    let svg = DIAL.mode === 2 ? `<circle cx="${C}" cy="${C}" r="${R - band / 2}" fill="none" stroke="var(--sunken)" stroke-width="${band}"/>` : '';
+    segs.forEach((x, i) => { const n = nature(x);
+      svg += `<path data-seg="${i}" d="${arc(R - band / 2, x.start, x.end)}" fill="none" stroke="${n === 0 ? 'var(--accent)' : n === 1 ? 'color-mix(in srgb, var(--accent) 45%, transparent)' : 'var(--sunken)'}" stroke-width="${band - 2}"/>`;
+      if (n === 2) svg += `<path d="${arc(R - band + 1, x.start, x.end)}" fill="none" stroke="var(--muted)" stroke-opacity=".45"/><path d="${arc(R - 1, x.start, x.end)}" fill="none" stroke="var(--muted)" stroke-opacity=".45"/>`;
+      const [lx, ly] = pt(R - band / 2, ang((x.start + x.end) / 2));
+      svg += `<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" class="dl ${n === 0 ? 'on' : ''}" style="font-weight:${n === 2 ? 400 : 700}">${esc(short(x))}</text>`; });
+    if (DIAL.mode !== 2) svg += `<circle cx="${C}" cy="${C}" r="${inner}" fill="none" stroke="var(--line)"/>`;
+    wins.forEach((w, i) => { const s0 = Math.max(w.start, a), s1 = Math.min(w.end, b), [lx, ly] = pt(DIAL.mode === 2 ? R - band - 14 : inner - 18, ang((s0 + s1) / 2));
+      svg += `<path data-win="${i}" d="${arc(wr, s0, s1)}" fill="none" stroke="var(--ink)" stroke-opacity=".7" stroke-width="${ww}" stroke-linecap="round"/><path d="${arc(wr, s0, s1)}" fill="none" stroke="url(#hatch)" stroke-width="${ww - 4}" stroke-linecap="round" pointer-events="none"/>
+        <text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" class="dl" style="font-weight:600">${esc(t('dial.w.' + w.key))}</text>`; });
+    marks.forEach(m => { const [x, y] = pt(inner, ang((m.start + m.end) / 2)); svg += `<path d="M${x} ${y - 8}L${x + 6} ${y}L${x} ${y + 8}L${x - 6} ${y}Z" fill="var(--gold)"><title>${esc(nm(m))}</title></path>`; });
+    const edges = segs.length ? segs.map(x => x.start) : [...wins, ...marks].flatMap(x => [x.start, x.end]);
+    [...new Set(edges)].filter(u => u >= a && u < b).forEach(u => { const [x, y] = pt(R + 16, ang(u)); svg += `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" class="dt">${esc(clock(u))}</text>`; });
+    if (showNow || DIAL.scrub != null) { const e = ang(tt), [x0, y0] = pt(inner - 10, e), [x1, y1] = pt(R + 6, e), col = DIAL.scrub == null ? 'var(--accent)' : 'var(--gold)';
+      svg += `<line x1="${x0}" y1="${y0}" x2="${x1}" y2="${y1}" stroke="${col}" stroke-width="3" stroke-linecap="round"/><circle cx="${x1}" cy="${y1}" r="5" fill="${col}"/>`; }
+    const sp = starPerson(), nk = p.nakshatras.find(n => tt < n.end) || p.nakshatras.at(-1), pl = sp && nk ? starLine(sp, nk.key, nk.end) : '';
+    const mins = run ? Math.floor((run.end - now) / 60) : 0;
+    const centre = DIAL.scrub != null ? `<div class="small" style="font-weight:600">${esc(t('dial.at', clock(DIAL.scrub), run ? nm(run) : '–', run ? clock(run.end) : ''))}</div><button class="linkbtn" data-now>${esc(t('dial.backNow'))}</button>`
+      : run && showNow ? `<div class="serif dbig">${esc(nm(run))}</div><div class="small" style="color:var(--accent);font-weight:700">${esc(t('dial.endsIn', nm(run), mins >= 60 ? t('dial.hm', Math.floor(mins / 60), mins % 60) : t('dial.m', mins)))}</div>`
+      : list[0] ? `<div class="serif dbig">${esc(nm(list[0]))}</div><div class="small muted">${esc(clock(list[0].start))} – ${esc(clock(list[0].end))}</div>` : '';
+    const after = DIAL.scrub == null ? (nxt ? `<div class="small muted">${esc(t('dial.nextAt', nm(nxt), clock(nxt.start)))}</div>` : showNow ? `<div class="small muted">${esc(t(isDay ? 'sun.sunset' : 'sun.sunrise'))} ${esc(clock(b))}</div>` : '') : '';
+    o.querySelector('#dial').innerHTML = `
+      <div class="dialdate"><button class="arrow" data-dd="-1">‹</button><div><b>${esc(greg(d))}</b><div class="small muted">${esc(cultureDate(p.solar, p.lunar))}</div>${d !== cur ? `<button class="linkbtn" data-dcur>${esc(t('day.jumpToday'))}</button>` : ''}</div><button class="arrow" data-dd="1">›</button></div>
+      <div style="display:flex;gap:8px"><div class="seg" style="flex:1">${['dm.choghadiya', 'dm.hora', 'dial.windows'].map((k, i) => `<button data-dm="${i}" class="${DIAL.mode === i ? 'on' : ''}">${esc(t(k))}</button>`).join('')}</div>
+        <div class="seg"><button data-dh="1" class="${isDay ? 'on' : ''}" aria-label="${esc(t('dm.day'))}">☀</button><button data-dh="0" class="${!isDay ? 'on' : ''}" aria-label="${esc(t('dm.night'))}">☾</button></div></div>
+      <div class="dialbox"><svg viewBox="0 0 ${W} ${W}" class="dialsvg"><defs><pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="var(--paper)"/><line x1="0" y1="0" x2="0" y2="5" stroke="var(--ink)" stroke-opacity=".5" stroke-width="1.2"/></pattern></defs>${svg}</svg>
+        <div class="dialc">${centre}${after}${pl ? `<div class="pchip">${esc(pl)}</div>` : ''}</div></div>
+      <div class="diallegend">${DIAL.mode !== 2 ? `<span><i style="background:var(--accent)"></i>${esc(t(DIAL.mode === 1 ? 'dial.benefic' : 'nature.s'))}</span>${DIAL.mode === 0 ? `<span><i style="background:color-mix(in srgb, var(--accent) 45%, transparent)"></i>${esc(t('nature.m'))}</span>` : ''}${DIAL.mode === 0 ? `<span><i style="border:1px solid var(--muted)"></i>${esc(t('nature.a'))}</span>` : `<span><i style="background:color-mix(in srgb, var(--accent) 45%, transparent)"></i>${esc(t('dial.other'))}</span>`}<br>` : ''}
+        <span>⟋ ${esc(t('dial.kalams'))}</span><span style="color:var(--gold)">◆</span> ${esc(t('dial.muhurtas'))}</div>
+      <div id="dialdetail"></div>`;
+    const q = (x, f) => o.querySelectorAll(x).forEach(f);
+    q('[data-dd]', b2 => b2.onclick = () => { d = addDays(d, +b2.dataset.dd); DIAL.scrub = null; draw(); });
+    q('[data-dcur]', b2 => b2.onclick = () => { d = cur; DIAL.scrub = null; draw(); });
+    q('[data-dm]', b2 => b2.onclick = () => { DIAL.mode = +b2.dataset.dm; draw(); });
+    q('[data-dh]', b2 => b2.onclick = () => { DIAL.half = b2.dataset.dh === '1'; DIAL.scrub = null; draw(); });
+    q('[data-now]', b2 => b2.onclick = () => { DIAL.scrub = null; draw(); });
+    const detail = x => { const n = nature(x), m = Math.round((x.end - x.start) / 60);
+      o.querySelector('#dialdetail').innerHTML = `<div class="card"><h3 class="serif" style="margin:0">${esc(nm(x))}</h3><div style="color:var(--accent);font-weight:700">${esc(clock(x.start))} – ${esc(clock(x.end))} · ${esc(t('dial.min', m))}</div>
+        ${x.kind === 'choghadiya' ? `<div class="small" style="font-weight:600">${esc(t(['nature.shubha', 'nature.madhyama', 'nature.ashubha'][n]))}</div>` : ''}<p>${esc(t('use.' + x.key))}</p></div>`; };
+    q('[data-seg]', el => el.onclick = () => detail(segs[+el.dataset.seg]));
+    q('[data-win]', el => el.onclick = () => detail(wins[+el.dataset.win]));
+    // Drag around the dial to look at another hour.
+    const svgEl = o.querySelector('.dialsvg'); let dragging = false;
+    const timeAt = e => { const r = svgEl.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * W - C, y = (e.clientY - r.top) / r.height * W - C;
+      let an = Math.atan2(y, x) + Math.PI / 2; if (an < 0) an += TAU; return a + (b - a) * an / TAU; };
+    svgEl.onpointerdown = e => { dragging = false; svgEl.setPointerCapture(e.pointerId); svgEl._start = [e.clientX, e.clientY]; };
+    svgEl.onpointermove = e => { if (!svgEl._start) return; if (Math.hypot(e.clientX - svgEl._start[0], e.clientY - svgEl._start[1]) > 8) { dragging = true; DIAL.scrub = timeAt(e); draw(); } };
+    svgEl.onpointerup = () => { svgEl._start = null; };
+  };
+  await draw();
+  const tick = setInterval(() => { if (!o.isConnected) return clearInterval(tick); if (DIAL.scrub == null) draw(); }, 60000);
+}
 const TILE_STYLES = ['classic', 'mosaic', 'colourful', 'minimal'];
 // Reorder Home's tiles, put what's coming soonest first, juggle, and pick a style.
 function arrangeSheet(keys, x) {
@@ -430,7 +536,7 @@ async function viewHome() {
       <div class="small"><b id="clocks">${esc(clocks())}</b></div><div class="small muted" id="nazhika">${esc(sinceSunrise(p.sunrise))}</div></div>
       <button class="placepill" data-go="settings">📍 ${esc(S.home.name)}</button></div>
     <div class="homehero">
-      <button class="hero" data-go="today">
+      <button class="hero" data-dial>
         <span class="heroart" aria-hidden="true">${PETALS}</span>
         <span class="herotop"><span>${esc(t('p.panchang'))}</span><span aria-hidden="true" class="moon">${moonPhase(p.tithis[0]?.index)}</span></span>
         <span class="serif herodate">${esc(cultureDate(p.solar, p.lunar))}</span>
@@ -451,6 +557,7 @@ async function viewHome() {
     <div class="small muted" style="text-align:center;margin-top:8px">Kaal · ${esc(t('o.tagline'))}</div></div>`;
   $('#main').querySelectorAll('[data-go]').forEach(b => b.onclick = () => { tab = b.dataset.go; render(); scrollTo(0, 0); });
   animateSky($('#main').querySelector('svg.sky'));
+  $('#main').querySelector('[data-dial]').onclick = () => openDial(today());
   $('#main').querySelectorAll('[data-ts]').forEach(b => b.onclick = () => { S.textSize = Math.max(0, Math.min(TEXT_SIZES.length - 1, S.textSize + +b.dataset.ts)); save(); applyTextSize(); });
   $('#main').querySelector('[data-arrange]').onclick = () => arrangeSheet(tiles.map(x => x.match(/data-k="([^"]+)"/)[1]), { fest, greet, vrat, person, d });
   // Drag a tile onto another to put it there.
@@ -511,6 +618,7 @@ async function viewDay() {
     <div class="card"><p class="label">${esc(t('p.panchang'))}</p>
       ${[[t('p.tithi'), (p.lunar ? name('paksha', p.lunar.paksha) + ' ' : '') + tv, td], [t('p.nakshatra'), nv, nd], [t('p.yoga'), yv, yd], [t('p.karana'), kv, kd]]
         .map(([l, v, s]) => `<div class="row"><span class="muted">${esc(l)}</span><span class="v">${esc(v)}<small>${esc(s)}</small></span></div>`).join('')}</div>
+    ${fine && starPerson() ? starCard(starPerson(), p, fine, d) : ''}
     ${fine ? dayDetail(p, fine, d) : ''}
     <div class="card sun">${[['sun.sunrise', p.sunrise], ['sun.sunset', p.sunset], ['sun.moonrise', p.moonrise], ['sun.moonset', p.moonset]]
         .map(([k, u]) => `<div><b>${u ? esc(clock(u)) : esc(t('sun.none'))}</b><span class="small muted">${esc(t(k))}</span></div>`).join('')}</div>
@@ -1190,6 +1298,24 @@ async function festivalSheet(id, date) {
 }
 
 // ---------------------------------------------------------------- month
+// A date in the month, as on iOS (DaySummarySheet): its limbs, the star line, festivals,
+// the best window and Rahu Kalam; one way on to the full day.
+async function daySummary(d, place) {
+  const [p, fine] = await Promise.all([day(d, place), engine({ op: 'timings', handle: await cal(+d.slice(0, 4), place), date: d }).catch(() => null)]);
+  const sp = starPerson(), n0 = p.nakshatras[0], tr = sp && n0 ? taraOf(sp.anchor.nakshatra, n0.key) : 0;
+  const fs = p.occurrences.filter(o => !o.recurring).map(o => pack.festivals.find(f => f.id === o.id)).filter(f => f && !f.hidden);
+  const best = fine?.choghadiya.find(x => !x.night && ['amrita', 'shubha', 'labha'].includes(x.key));
+  const row = (k, v) => `<div class="row"><span class="muted">${esc(k)}</span><span class="v">${esc(v)}</span></div>`;
+  const o = sheet(`<div class="muted">${esc(greg(d))}</div><h2 class="serif" style="margin:4px 0 10px">${esc(cultureDate(p.solar, p.lunar))}</h2>
+    ${row(t('p.tithi'), p.tithis[0] ? name('tithis', p.tithis[0].key) + ' · ' + t('p.until', clock(p.tithis[0].end)) : '–')}
+    ${row(t('p.nakshatra'), n0 ? name('nakshatras', n0.key) + ' · ' + t('p.until', clock(n0.end)) : '–')}
+    ${tr ? `<p><i class="ringdot rb${taraBand(tr)}"></i> ${esc(t('cal.why', t('taraN.' + tr), sp.name))}</p>` : ''}
+    ${fs.map(f => `<p><span class="fdot on" style="display:inline-block"></span> <b>${esc(fname(f))}</b> ${isHoliday(f) ? `<span class="pill">${esc(t('f.holiday'))}</span>` : ''}</p>`).join('')}
+    ${best ? row(t('cal.best'), `${name('choghadiya', best.key)} · ${clock(best.start)} – ${clock(best.end)}`) : p.weekday !== 'wednesday' ? row(t('cal.best'), `${t('time.abhijit')} · ${span(p.abhijit)}`) : ''}
+    <p class="small muted">${esc(t('time.rahu'))} ${esc(span(p.rahuKalam))}</p>
+    <button class="btn block" data-view>${esc(t('cal.viewDay'))}</button>`);
+  o.querySelector('[data-view]').onclick = () => { o.remove(); dayDate = d; dayPlace = monthPlace; tab = 'today'; render(); };
+}
 async function viewMonth() {
   const m = monthDate || today().slice(0, 8) + '01';
   loading();
@@ -1199,12 +1325,13 @@ async function viewMonth() {
   const cells = await engine({ op: 'month', handle: await cal(y, place), from: m, to: last });
   const solar = pack.display.primary === 'solar';
   const head = [...new Set(cells.map(c => solar ? name('solarMonths', c.solar?.month) : (c.lunar?.adhika ? name('adhika', 'adhika') + ' ' : '') + name('lunarMonths', c.lunar?.month)))].join(' – ');
+  // One syllable in Indian scripts, two letters in English; muted, no day coloured apart.
   const wd = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].map(k => {
-    const n = name('weekdays', k); if (lang() === 'en') return n.slice(0, 3);
-    for (const s of ['వారం', 'ವಾರ', 'वार', 'கிழமை', 'ആഴ്ച', 'વાર', 'বার', 'ବାର']) if (n.endsWith(s) && n.length > s.length) return n.slice(0, -s.length);
-    return n;
+    const n = name('weekdays', k); if (lang() === 'en') return n.slice(0, 2);
+    return [...new Intl.Segmenter().segment(n)][0]?.segment || n;
   });
-  const lead = parse(m).getUTCDay(), td = today(place.tz);
+  const lead = parse(m).getUTCDay(), td = today(place.tz), sp = starPerson();
+  const yl = yearLabel((await day(m, place)).year);
   const marked = ['ekadashi', 'purnima', 'pournami', 'amavasya', 'amavasai', 'karuthavavu'];
   const items = [];
   const grid = cells.map(c => {
@@ -1212,17 +1339,24 @@ async function viewMonth() {
     fs.forEach(f => items.push({ f, date: c.date }));
     const major = fs.some(f => f.tier === 'major'), special = c.recurring.some(r => marked.includes(r));
     const sub = solar && c.solar ? String(c.solar.day) : name('tithis', c.tithi);
-    return `<div class="cell ${fs.length ? 'fest' : ''} ${c.date === td ? 'today' : ''}" data-day="${c.date}" title="${esc(greg(c.date))}">
-      <div class="d">${+c.date.slice(8)}</div><div class="t">${esc(sub)}</div><div class="n">${esc(name('nakshatras', c.nakshatra))}</div>
-      <div>${fs.length ? `<span class="dot ${major ? 'major' : ''}"></span>` : ''}${special ? '<span class="dot hollow"></span>' : ''}</div></div>`;
+    // Five things only: the date, the tradition's day, the star ring, a moon on Purnima/Amavasya, a festival dot.
+    const tr = sp ? taraOf(sp.anchor.nakshatra, c.nakshatra) : 0, band = tr ? taraBand(tr) : -1;
+    const moon = c.tithi === 'purnima' ? '●' : c.tithi === 'amavasya' ? '○' : '';
+    const why = tr ? ', ' + t('cal.why', t('taraN.' + tr), sp.name) : '';
+    return `<button class="c2 ${c.date === td ? 'today' : ''}" data-day="${c.date}" aria-label="${esc(greg(c.date) + ', ' + sub + (fs.length ? ', ' + fs.map(fname).join(', ') : '') + why)}">
+      <span class="num ${band >= 0 ? 'rb' + band : ''}">${+c.date.slice(8)}${moon ? `<i class="moon">${moon}</i>` : ''}</span><span class="t">${esc(sub)}</span><i class="fdot ${fs.length ? 'on' : ''}"></i></button>`;
   }).join('');
   $('#main').innerHTML = `<div class="dayhead"><div class="nav"><button class="arrow" data-m="-1">‹</button>
-      <div><h1 class="serif" style="font-size:24px">${esc(head)}</h1><div class="muted">${esc(dtf({ month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(m)))}</div>
+      <div><button class="mtitle" data-jump><h1 class="serif" style="font-size:24px;margin:0">${esc(head)}</h1><div class="muted">${esc(dtf({ month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(m)))}</div>${yl ? `<div class="small muted">${esc(yl)}</div>` : ''}</button>
+      ${m !== today().slice(0, 8) + '01' ? `<button class="btn" data-mtoday style="padding:3px 12px;font-size:13px">${esc(t('day.today'))}</button>` : ''}
       <select class="placechip noprint" aria-label="${esc(t('cal.location'))}"><option value="home" ${!monthPlace ? 'selected' : ''}>📍 ${esc(S.home.name)}</option>
         ${monthPlace ? `<option value="other" selected>📍 ${esc(monthPlace.name)}</option>` : ''}<option value="pick">${esc(t('cal.other'))}</option></select></div>
       <button class="arrow" data-m="1">›</button></div></div>
-    <div class="grid">${wd.map(w => `<div class="wd">${esc(w)}</div>`).join('')}${'<div class="cell empty"></div>'.repeat(lead)}${grid}</div>
-    <p class="small muted" style="margin-top:10px"><span class="dot major"></span> ${esc(t('f.major'))} &nbsp; <span class="dot"></span> ${esc(t('tab.festivals'))} &nbsp; <span class="dot hollow"></span> ${['ekadashi', 'purnima', 'amavasya'].map(k => esc(name('tithis', k))).join(' · ')}</p>
+    <div class="grid g2 fadein">${wd.map(w => `<div class="wd">${esc(w)}</div>`).join('')}${'<div></div>'.repeat(lead)}${grid}</div>
+    <div class="small muted calleg">${sp ? `<div>${[0, 1, 2].map(b => `<span><i class="rb${b}"></i>${esc(t('cal.ring' + b))}</span>`).join('')}</div>
+      <label>👤 <select id="ringfor">${S.people.filter(p => p.kind !== 'remembrance' && p.anchor?.nakshatra).map(p => `<option value="${p.id}" ${p.id === sp.id ? 'selected' : ''}>${esc(t('cal.for', p.name))}</option>`).join('')}</select></label>` : `<div>${esc(t('cal.addStar'))}</div>`}
+      <div><span><i class="fd"></i>${esc(t('tab.festivals'))}</span><span>● ${esc(name('tithis', 'purnima'))}</span><span>○ ${esc(name('tithis', 'amavasya'))}</span></div></div>
+    <p class="small muted" style="margin-top:10px;display:none"><span class="dot major"></span> ${esc(t('f.major'))} &nbsp; <span class="dot"></span> ${esc(t('tab.festivals'))} &nbsp; <span class="dot hollow"></span> ${['ekadashi', 'purnima', 'amavasya'].map(k => esc(name('tithis', k))).join(' · ')}</p>
     ${items.length ? `<p class="label" style="margin-top:16px">${esc(t('tab.festivals'))}</p>` : ''}
     ${items.map(x => festRow(x.f, x.date)).join('')}
     <div class="noprint" style="display:flex;gap:8px"><button class="btn soft" style="flex:1" onclick="window.print()">${SHARE_ICON} ${esc(t('pdf.month'))}</button><button class="btn soft" style="flex:1" data-year>${SHARE_ICON} ${esc(t('pdf.year'))}</button></div>`;
@@ -1230,7 +1364,14 @@ async function viewMonth() {
   $('#main').querySelectorAll('[data-m]').forEach(b => b.onclick = () => {
     const d = parse(m); d.setUTCMonth(d.getUTCMonth() + +b.dataset.m, 1); monthDate = ymd(d); viewMonth();
   });
-  $('#main').querySelectorAll('[data-day]').forEach(c => c.onclick = () => { dayDate = c.dataset.day; dayPlace = monthPlace; tab = 'today'; render(); });
+  $('#main').querySelectorAll('[data-day]').forEach(c => c.onclick = () => daySummary(c.dataset.day, place));
+  $('#main').querySelector('#ringfor')?.addEventListener('change', e => { S.starPerson = e.target.value; save(); viewMonth(); });
+  $('#main').querySelector('[data-mtoday]')?.addEventListener('click', () => { monthDate = null; viewMonth(); });
+  // Tap the title to jump to any month.
+  $('#main').querySelector('[data-jump]').onclick = () => {
+    const o = sheet(`<h2 class="serif">${esc(t('cal.jump'))}</h2><input type="month" id="mj" value="${m.slice(0, 7)}" style="font-size:18px;padding:8px"><button class="btn block" data-go2 style="margin-top:12px">${esc(t('c.done'))}</button>`);
+    o.querySelector('[data-go2]').onclick = () => { const v = o.querySelector('#mj').value; if (v) monthDate = v + '-01'; o.remove(); viewMonth(); };
+  };
   $('#main').querySelector('.placechip').onchange = e => {
     if (e.target.value === 'home') { monthPlace = null; viewMonth(); }
     else if (e.target.value === 'pick') {
@@ -1274,13 +1415,16 @@ function festRow(f, date) {
 }
 
 // ---------------------------------------------------------------- festivals
-let majorOnly = true;
+let majorOnly = true, fKind = null;
 async function viewFestivals() {
   loading();
-  const list = (await upcoming(today(), 370)).filter(x => !majorOnly || x.f.tier !== 'minor');
+  const KINDS = { major: f => f.tier !== 'minor', regional: f => f.tier === 'regional', fasting: f => /ekadas|vrat|nombu|shivaratri|sankashti|sankatahara|karva|karwa|teej|chhath|upavas|nirjala|pradosh|jitiya|ahoi|chauth/.test(f.id),
+    jayanti: f => /jayant|janmotsav|janmashtami|aradhana|rama-navami|ram-navami|ramnavami/.test(f.id), all: () => true };
+  const kind = fKind || (majorOnly ? 'major' : 'all');
+  const list = (await upcoming(today(), 370)).filter(x => KINDS[kind](x.f));
   // Under All, the recurring observances too, date only (as on iOS: weekly vrats only if kept,
   // a plain Ekadashi left out where a named one falls the same day).
-  if (!majorOnly) {
+  if (kind === 'all') {
     const from = today(), to = addDays(from, 370), named = new Set(list.filter(x => x.f.id.includes('ekadashi')).map(x => x.date)), seen = new Set();
     for (let y = +from.slice(0, 4); y <= +to.slice(0, 4); y++) {
       for (const o of await engine({ op: 'observances', handle: await cal(y) })) {
@@ -1293,7 +1437,8 @@ async function viewFestivals() {
     }
     list.sort((a, b) => a.date < b.date ? -1 : a.date > b.date ? 1 : (a.obs ? 1 : 0) - (b.obs ? 1 : 0));
   }
-  let html = `<div class="seg noprint" style="margin-bottom:12px"><button data-maj="1" class="${majorOnly ? 'on' : ''}">${esc(t('f.major'))}</button><button data-maj="0" class="${!majorOnly ? 'on' : ''}">${esc(t('f.all'))}</button></div>`;
+  // Quiet chips: the chosen kind filled, the rest outlined.
+  let html = `<div class="chips noprint fkinds" style="margin-bottom:12px">${[['major', 'f.major'], ['regional', 'ff.regional'], ['fasting', 'ff.fasting'], ['jayanti', 'ff.jayanti'], ['all', 'f.all']].map(([k, l]) => `<button class="chip ${kind === k ? 'on' : ''}" data-fk="${k}">${esc(t(l))}</button>`).join('')}</div>`;
   let month = '';
   for (const x of list) {
     const mm = x.date.slice(0, 7);
@@ -1301,7 +1446,7 @@ async function viewFestivals() {
     html += x.obs ? `<div class="list-row obs"><span style="color:var(--gold)">☾</span><span class="grow">${esc(recName(x.obs))}</span><span class="small muted">${esc(dtf({ day: 'numeric', month: 'short', timeZone: 'UTC' }).format(parse(x.date)))}</span></div>` : festRow(x.f, x.date);
   }
   $('#main').innerHTML = html + `<button class="btn soft block noprint" onclick="window.print()">${SHARE_ICON} ${esc(t('pdf.share'))}</button>`;
-  $('#main').querySelectorAll('[data-maj]').forEach(b => b.onclick = () => { majorOnly = b.dataset.maj === '1'; viewFestivals(); });
+  $('#main').querySelectorAll('[data-fk]').forEach(b => b.onclick = () => { fKind = b.dataset.fk; viewFestivals(); });
   wireFestivals();
 }
 

@@ -297,3 +297,47 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .gcard-in .gmotion { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .morehub { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .morehub .tile { min-height: 64px; justify-content: center; }
+
+/* The dial (as on iOS DialView). */
+.overlay.full .sheet { max-width: 520px; min-height: 92vh; }
+.dialwrap { display: flex; flex-direction: column; gap: 12px; }
+.dialdate { display: flex; align-items: center; justify-content: space-between; text-align: center; }
+.dialbox { position: relative; width: 100%; max-width: 400px; margin: 0 auto; }
+.dialsvg { width: 100%; height: auto; display: block; touch-action: none; overflow: visible; }
+.dialsvg .dl { font-size: 10px; text-anchor: middle; dominant-baseline: central; fill: var(--ink); pointer-events: none; }
+.dialsvg .dl.on { fill: #fff; }
+.dialsvg .dt { font-size: 9px; text-anchor: middle; dominant-baseline: central; fill: var(--muted); }
+.dialsvg [data-seg], .dialsvg [data-win] { cursor: pointer; }
+.dialc { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 40%; font-size: 12px; text-align: center; display: flex; flex-direction: column; gap: 4px; align-items: center; pointer-events: none; }
+.dialc button { pointer-events: auto; }
+.dialc .dbig { font-size: 20px; font-weight: 700; line-height: 1.1; }
+.pchip { font-size: 10px; font-weight: 600; color: var(--accent); background: var(--soft); border-radius: 99px; padding: 4px 8px; }
+.diallegend { text-align: center; font-size: 12px; color: var(--muted); line-height: 2; }
+.diallegend span { margin: 0 6px; white-space: nowrap; }
+.diallegend i { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 4px; vertical-align: -1px; }
+
+/* The month (as on iOS MonthView): date, the tradition's day, a thin star ring, a moon mark, a festival dot. */
+.g2 { gap: 2px; }
+.c2 { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 4px 0; border: 0; background: none; font: inherit; color: var(--ink); cursor: pointer; min-height: 62px; }
+.c2 .num { position: relative; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600; }
+.c2.today .num { background: var(--accent); color: #fff; }
+.c2:focus-visible .num { outline: 1.5px solid var(--accent); outline-offset: 4px; }
+.c2 .t { font-size: 10px; color: var(--muted); max-width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.c2 .moon { position: absolute; top: -4px; right: -6px; font-size: 7px; font-style: normal; color: var(--muted); }
+.fdot { width: 4px; height: 4px; border-radius: 50%; }
+.fdot.on { background: var(--accent); }
+.rb0, .rb1, .rb2 { box-shadow: none; }
+.num.rb0 { outline: 1.5px solid color-mix(in srgb, var(--gold) 95%, transparent); outline-offset: 2px; }
+.num.rb1 { outline: 1.5px dashed color-mix(in srgb, var(--gold) 70%, transparent); outline-offset: 2px; }
+.num.rb2 { outline: 1px solid color-mix(in srgb, var(--gold) 20%, transparent); outline-offset: 2px; }
+.calleg { margin-top: 12px; line-height: 2; }
+.calleg span { margin-right: 14px; white-space: nowrap; }
+.calleg i, .ringdot { display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
+.calleg i.rb0, .ringdot.rb0 { border: 1.5px solid var(--gold); }
+.calleg i.rb1, .ringdot.rb1 { border: 1.5px dashed color-mix(in srgb, var(--gold) 70%, transparent); }
+.calleg i.rb2, .ringdot.rb2 { border: 1px solid color-mix(in srgb, var(--gold) 25%, transparent); }
+.calleg i.fd { width: 5px; height: 5px; background: var(--accent); }
+.calleg select { width: auto; display: inline; font-size: 13px; padding: 2px 6px; }
+.mtitle { border: 0; background: none; font: inherit; color: inherit; cursor: pointer; padding: 0; }
+.fadein { animation: fadein .2s ease; }
+@keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
