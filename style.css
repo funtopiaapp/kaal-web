@@ -341,3 +341,21 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .mtitle { border: 0; background: none; font: inherit; color: inherit; cursor: pointer; padding: 0; }
 .fadein { animation: fadein .2s ease; }
 @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+.c2 { position: relative; border-radius: 10px; }
+.c2.emb { background: color-mix(in srgb, var(--gold) 9%, transparent); }
+.c2.emb.embmaj { background: var(--soft); }
+.c2.emb::before { content: ""; position: absolute; inset: 6px; background: var(--gold); opacity: .3; -webkit-mask: var(--emb) center/contain no-repeat; mask: var(--emb) center/contain no-repeat; pointer-events: none; }
+.c2.emb.embmaj::before { background: var(--accent); }
+.c2.cs-classic { background: var(--card); border: 1px solid var(--line); min-height: 76px; }
+.c2.cs-classic.emb::before { opacity: .2; }
+.c2 > * { position: relative; }
+.hero .dialbtn { font-size: 12px; font-weight: 700; padding: 4px 10px; border-radius: 99px; background: rgba(255,255,255,.2); cursor: pointer; }
+
+/* Printing a month: a fine double border and the month's festival emblem in pale ink (as on iOS PDFs). */
+.printmark { display: none; }
+@media print {
+  .printmark { display: block; position: fixed; inset: 6mm; border: .8pt solid #D9C9A8; outline: .4pt solid #E6DAC2; outline-offset: -3mm; z-index: -1; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .printmark img { position: absolute; left: 50%; top: 50%; width: 130mm; height: 130mm; transform: translate(-50%, -50%); object-fit: contain; }
+  .c2, .c2.emb { background: transparent !important; }
+  html, body, main, #main { background: transparent !important; }
+}

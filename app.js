@@ -537,9 +537,9 @@ async function viewHome() {
       <div class="small"><b id="clocks">${esc(clocks())}</b></div><div class="small muted" id="nazhika">${esc(sinceSunrise(p.sunrise))}</div></div>
       <button class="placepill" data-go="settings">📍 ${esc(S.home.name)}</button></div>
     <div class="homehero">
-      <button class="hero" data-dial>
+      <button class="hero" data-go="today">
         <span class="heroart" aria-hidden="true">${PETALS}</span>
-        <span class="herotop"><span>${esc(t('p.panchang'))}</span><span aria-hidden="true" class="moon">${moonPhase(p.tithis[0]?.index)}</span></span>
+        <span class="herotop"><span>${esc(t('p.panchang'))}</span><span><span aria-hidden="true" class="moon">${moonPhase(p.tithis[0]?.index)}</span> <span class="dialbtn" role="button" tabindex="0" data-dial>◷ ${esc(t('dial.open'))}</span></span></span>
         <span class="serif herodate">${esc(cultureDate(p.solar, p.lunar))}</span>
         <span class="herosub">${esc(tithi)}</span>
         <span class="herosub small">${esc(yearLabel(p.year))}</span>
@@ -558,7 +558,7 @@ async function viewHome() {
     <div class="small muted" style="text-align:center;margin-top:8px">Kaal · ${esc(t('o.tagline'))}</div></div>`;
   $('#main').querySelectorAll('[data-go]').forEach(b => b.onclick = () => { tab = b.dataset.go; render(); scrollTo(0, 0); });
   animateSky($('#main').querySelector('svg.sky'));
-  $('#main').querySelector('[data-dial]').onclick = () => openDial(today());
+  $('#main').querySelector('[data-dial]').onclick = e => { e.stopPropagation(); openDial(today()); };
   $('#main').querySelectorAll('[data-ts]').forEach(b => b.onclick = () => { S.textSize = Math.max(0, Math.min(TEXT_SIZES.length - 1, S.textSize + +b.dataset.ts)); save(); applyTextSize(); });
   $('#main').querySelector('[data-arrange]').onclick = () => arrangeSheet(tiles.map(x => x.match(/data-k="([^"]+)"/)[1]), { fest, greet, vrat, person, d });
   // Drag a tile onto another to put it there.
@@ -609,7 +609,7 @@ async function viewDay() {
       <div><h1 class="serif">${esc(cultureDate(p.solar, p.lunar))}</h1><div class="muted">${esc(greg(d))}</div><div class="small muted">${esc(yearLabel(p.year))}</div>
       <div class="small muted">📍 ${esc(t('f.forPlace', here().name))}</div></div>
       <button class="arrow" data-shift="1" aria-label="Next day">›</button></div>
-      ${d !== today() ? `<button class="btn soft noprint" data-today>${esc(t('day.jumpToday'))}</button>` : ''}</div>
+      ${d !== today() ? `<button class="btn soft noprint" data-today>${esc(t('day.jumpToday'))}</button>` : ''}<button class="btn soft noprint" data-dialday>◷ ${esc(t('dial.open'))}</button></div>
     ${fests.length || recs.length || people.length || skyToday.length ? `<p class="label">${esc(t('day.observances'))}</p>` : ''}
     ${skyToday.map(e => `<div class="rec" data-goto-sky style="cursor:pointer">✦ ${esc(skyTitle(e))} · ${esc(clock(e.at))}</div>`).join('')}
     ${fests.map(({ f, o }) => `<div class="fest ${f.tier === 'major' ? 'major' : ''}" data-f="${esc(f.id)}" data-d="${o.date}"><div class="bar2"></div><div><b>${esc(fname(f))}</b><div class="small muted">${esc(fother(f))}</div><div class="small muted">${esc(text(f.content?.summary))}</div></div><div class="when">›</div></div>`).join('')}
@@ -632,6 +632,7 @@ async function viewDay() {
       ${[['time.brahma', p.brahmaMuhurta]].map(([k, w]) => `<div class="row"><span>${esc(t(k))}</span><span class="v">${esc(span(w))}</span></div>`).join('')}</div>
     ${fine ? `<div class="card" id="mcard">${muhurtasCard(fine, d)}</div>` : ''}
     <button class="btn soft block noprint" onclick="window.print()">${SHARE_ICON} ${esc(t('pdf.share'))}</button>`;
+  $('#main').querySelector('[data-dialday]')?.addEventListener('click', () => openDial(d));
   $('#main').querySelectorAll('[data-shift]').forEach(b => b.onclick = () => { dayDate = addDays(d, +b.dataset.shift); tab = 'today'; viewDay(); });
   $('#main').querySelector('[data-today]')?.addEventListener('click', () => { dayDate = null; viewDay(); });
   wireCheckIns();
@@ -1348,15 +1349,20 @@ async function viewMonth() {
     const tr = sp ? taraOf(sp.anchor.nakshatra, c.nakshatra) : 0, band = tr ? taraBand(tr) : -1;
     const moon = c.tithi === 'purnima' ? '●' : c.tithi === 'amavasya' ? '○' : '';
     const why = tr ? ', ' + t('cal.why', t('taraN.' + tr), sp.name) : '';
-    return `<button class="c2 ${c.date === td ? 'today' : ''}" data-day="${c.date}" aria-label="${esc(greg(c.date) + ', ' + sub + (fs.length ? ', ' + fs.map(fname).join(', ') : '') + why)}">
-      <span class="num ${band >= 0 ? 'rb' + band : ''}">${+c.date.slice(8)}${moon ? `<i class="moon">${moon}</i>` : ''}</span><span class="t">${esc(sub)}</span><i class="fdot ${fs.length ? 'on' : ''}"></i></button>`;
+    // Festive and classic: the celebration's emblem, faint behind the date.
+    const cs = S.calStyle || 'festive', top = fs.slice().sort((a, b) => (a.tier === 'major' ? 0 : 1) - (b.tier === 'major' ? 0 : 1))[0];
+    const emb = cs !== 'minimal' && top ? ` emb ${top.tier === 'major' ? 'embmaj' : ''}" style="--emb:url(emblems/${top.card || 'lotus'}.svg)` : '';
+    return `<button class="c2 cs-${cs} ${c.date === td ? 'today' : ''}${emb}" data-day="${c.date}" aria-label="${esc(greg(c.date) + ', ' + sub + (fs.length ? ', ' + fs.map(fname).join(', ') : '') + why)}">
+      <span class="num ${band >= 0 ? 'rb' + band : ''}">${+c.date.slice(8)}${moon ? `<i class="moon">${moon}</i>` : ''}</span><span class="t">${esc(sub)}</span>${cs === 'classic' ? `<span class="t">${esc(name('nakshatras', c.nakshatra))}</span>` : ''}<i class="fdot ${fs.length ? 'on' : ''}"></i></button>`;
   }).join('');
   $('#main').innerHTML = `<div class="dayhead"><div class="nav"><button class="arrow" data-m="-1">‹</button>
       <div><button class="mtitle" data-jump><h1 class="serif" style="font-size:24px;margin:0">${esc(head)}</h1><div class="muted">${esc(dtf({ month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(m)))}</div>${yl ? `<div class="small muted">${esc(yl)}</div>` : ''}</button>
+      <select id="calstyle" class="placechip noprint" aria-label="${esc(t('cs.title'))}">${[['festive', 'cs.festive'], ['minimal', 'cs.minimal'], ['classic', 'cs.classic']].map(([v, k]) => `<option value="${v}" ${(S.calStyle || 'festive') === v ? 'selected' : ''}>🎨 ${esc(t(k))}</option>`).join('')}</select>
       ${m !== today().slice(0, 8) + '01' ? `<button class="btn" data-mtoday style="padding:3px 12px;font-size:13px">${esc(t('day.today'))}</button>` : ''}
       <select class="placechip noprint" aria-label="${esc(t('cal.location'))}"><option value="home" ${!monthPlace ? 'selected' : ''}>📍 ${esc(S.home.name)}</option>
         ${monthPlace ? `<option value="other" selected>📍 ${esc(monthPlace.name)}</option>` : ''}<option value="pick">${esc(t('cal.other'))}</option></select></div>
       <button class="arrow" data-m="1">›</button></div></div>
+    ${S.pdfWatermark !== false ? `<div class="printmark"><img alt="" src="emblems-print/${(items.find(x => x.f.tier === 'major') || items[0])?.f.card || 'lotus'}.svg"></div>` : ''}
     <div class="grid g2 fadein">${wd.map(w => `<div class="wd">${esc(w)}</div>`).join('')}${'<div></div>'.repeat(lead)}${grid}</div>
     <div class="small muted calleg">${sp ? `<div>${[0, 1, 2].map(b => `<span><i class="rb${b}"></i>${esc(t('cal.ring' + b))}</span>`).join('')}</div>
       <label>👤 <select id="ringfor">${S.people.filter(p => p.kind !== 'remembrance' && p.anchor?.nakshatra).map(p => `<option value="${p.id}" ${p.id === sp.id ? 'selected' : ''}>${esc(t('cal.for', p.name))}</option>`).join('')}</select></label>` : `<div>${esc(t('cal.addStar'))}</div>`}
@@ -1370,6 +1376,7 @@ async function viewMonth() {
     const d = parse(m); d.setUTCMonth(d.getUTCMonth() + +b.dataset.m, 1); monthDate = ymd(d); viewMonth();
   });
   $('#main').querySelectorAll('[data-day]').forEach(c => c.onclick = () => daySummary(c.dataset.day, place));
+  $('#main').querySelector('#calstyle').onchange = e => { S.calStyle = e.target.value; save(); viewMonth(); };
   $('#main').querySelector('#ringfor')?.addEventListener('change', e => { S.starPerson = e.target.value; save(); viewMonth(); });
   $('#main').querySelector('[data-mtoday]')?.addEventListener('click', () => { monthDate = null; viewMonth(); });
   // Tap the title to jump to any month.
@@ -1722,11 +1729,89 @@ function drawMotion(g, kind, t, w, h, light, accent) {
   }
   g.restore();
 }
+// Greeting-card designs, as on iOS (GreetingDesigns.swift): stationery-style cards with gold
+// borders and filigree, the festival's name in a script face, its emblem, and a tagline.
+const DESIGNS = ['classic', 'heritage', 'arch', 'mandala', 'botanical', 'lanterns'];
+const suggestedDesign = m => ({ diya: 'lanterns', lakshmi: 'lanterns', newyear: 'lanterns', moon: 'lanterns', lotus: 'botanical', tulsi: 'botanical', pookalam: 'botanical', tree: 'botanical', water: 'botanical', boat: 'botanical',
+  navratri: 'mandala', holi: 'mandala', krishna: 'mandala', swing: 'mandala', rakhi: 'mandala', ganesha: 'arch', shiva: 'arch', vishnu: 'arch', rama: 'arch', hanuman: 'arch', murugan: 'arch', ayyappa: 'arch', naga: 'arch', chariot: 'arch', pooram: 'arch' })[m] || 'heritage';
+const cardTheme = m => ({ diya: 'light', lakshmi: 'light', shiva: 'light', bonfire: 'light', moon: 'light', vishnu: 'light', pongal: 'harvest', sun: 'harvest', kite: 'harvest', pookalam: 'harvest', tree: 'harvest', boat: 'harvest', water: 'harvest', holi: 'colour', newyear: 'newyear', rakhi: 'bond' })[m] || 'devotion';
+const DCOL = { light: { paper: ['#F8F1E3', '#F1E5CF'], ink: '#6E1631', gold: '#B68A33', accent: '#8E1E45', dark: false },
+  arch: { paper: ['#9C1450', '#5E0C33'], ink: '#F3D58C', gold: '#E2B85C', accent: '#1F6E73', dark: true },
+  mandala: { paper: ['#4A1B3D', '#2E0F27'], ink: '#F0CF83', gold: '#DDB15A', accent: '#E0607E', dark: true } };
+const tintCache = {};
+async function tintedEmblem(m, a, b) {
+  const k = m + a + b; if (tintCache[k]) return tintCache[k];
+  const img = new Image(); img.src = `emblems/${m}.svg`; await img.decode().catch(() => {});
+  const c = document.createElement('canvas'); c.width = c.height = 360; const g = c.getContext('2d');
+  g.drawImage(img, 0, 0, 360, 360); g.globalCompositeOperation = 'source-in';
+  const gr = g.createLinearGradient(0, 0, 0, 360); gr.addColorStop(0, a); gr.addColorStop(1, b); g.fillStyle = gr; g.fillRect(0, 0, 360, 360);
+  return tintCache[k] = c;
+}
+async function drawDesign(g, W, H, d, f, date, native, line, st) {
+  await document.fonts.load(`48px "Great Vibes"`).catch(() => {});
+  const C = DCOL[d === 'arch' ? 'arch' : d === 'mandala' ? 'mandala' : 'light'], u = W / 320, TAU = Math.PI * 2;
+  const bg = g.createLinearGradient(0, 0, 0, H); bg.addColorStop(0, C.paper[0]); bg.addColorStop(1, C.paper[1]); g.fillStyle = bg; g.fillRect(0, 0, W, H);
+  const rg = g.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, W * .8); rg.addColorStop(0, C.dark ? 'rgba(255,255,255,.06)' : 'rgba(255,255,255,.35)'); rg.addColorStop(1, 'rgba(255,255,255,0)'); g.fillStyle = rg; g.fillRect(0, 0, W, H);
+  g.lineCap = 'round'; g.lineJoin = 'round';
+  const corner = (x, y, rot) => { g.save(); g.translate(x, y); g.rotate(rot); const s = 34 * u; g.beginPath(); g.moveTo(0, s); g.lineTo(0, s * .3); g.quadraticCurveTo(0, 0, s * .3, 0); g.lineTo(s, 0);
+    g.moveTo(s * .3, s * .3); g.quadraticCurveTo(s * .5, s * .32, s * .62, s * .12); g.moveTo(s * .3, s * .3); g.quadraticCurveTo(s * .32, s * .5, s * .12, s * .62); g.stroke(); g.beginPath(); g.arc(s * .23, s * .23, s * .07, 0, TAU); g.stroke(); g.restore(); };
+  const border = () => { g.strokeStyle = C.gold; g.lineWidth = 1.4 * u; g.strokeRect(12 * u, 12 * u, W - 24 * u, H - 24 * u); g.globalAlpha = .55; g.lineWidth = .6 * u; g.strokeRect(17 * u, 17 * u, W - 34 * u, H - 34 * u); g.globalAlpha = 1;
+    g.lineWidth = 1.2 * u; corner(8 * u, 8 * u, 0); corner(W - 8 * u, 8 * u, Math.PI / 2); corner(W - 8 * u, H - 8 * u, Math.PI); corner(8 * u, H - 8 * u, -Math.PI / 2); };
+  const petals = (cx, cy, r, rings, fill, stroke) => { for (let ring = 0; ring < rings; ring++) { const len = r * (1 - ring * .22), n = 12 + ring * 4;
+      for (let i = 0; i < n; i++) { const a = i / n * TAU + (ring % 2 ? Math.PI / n : 0), b = len * .62, w = len * .16, sd = a + Math.PI / 2, bx = cx + Math.cos(a) * b, by = cy + Math.sin(a) * b;
+        g.beginPath(); g.moveTo(bx + Math.cos(sd) * w, by + Math.sin(sd) * w); g.quadraticCurveTo(bx + Math.cos(sd) * w * 1.4 + Math.cos(a) * len * .2, by + Math.sin(sd) * w * 1.4 + Math.sin(a) * len * .2, cx + Math.cos(a) * len, cy + Math.sin(a) * len);
+        g.quadraticCurveTo(bx - Math.cos(sd) * w * 1.4 + Math.cos(a) * len * .2, by - Math.sin(sd) * w * 1.4 + Math.sin(a) * len * .2, bx - Math.cos(sd) * w, by - Math.sin(sd) * w); g.closePath();
+        if (fill) { g.fillStyle = fill; g.fill(); } if (stroke) { g.strokeStyle = stroke; g.stroke(); } } } };
+  const arch = (p) => { const x0 = p, y0 = p, x1 = W - p, y1 = H - p, h = y1 - y0, w = x1 - x0, sp = y0 + h * .24, mx = (x0 + x1) / 2;
+    g.beginPath(); g.moveTo(x0, y1); g.lineTo(x0, sp); g.bezierCurveTo(x0, y0 + h * .08, mx - w * .12, y0 + h * .1, mx, y0); g.bezierCurveTo(mx + w * .12, y0 + h * .1, x1, y0 + h * .08, x1, sp); g.lineTo(x1, y1); g.closePath(); };
+  const lantern = (x, y, w, h, a) => { g.globalAlpha = a; g.fillStyle = C.gold; g.fillRect(x - .6 * u, y - h / 2, 1.2 * u, h * .42); const top = y - h / 2 + h * .42;
+    g.fillRect(x - w * .22, top, w * .44, h * .05); g.beginPath(); g.moveTo(x - w * .22, top + h * .05); g.bezierCurveTo(x - w * .55, top + h * .12, x - w * .55, top + h * .32, x - w * .2, top + h * .38); g.lineTo(x + w * .2, top + h * .38);
+    g.bezierCurveTo(x + w * .55, top + h * .32, x + w * .55, top + h * .12, x + w * .22, top + h * .05); g.closePath(); g.fill(); g.beginPath(); g.moveTo(x - w * .12, top + h * .38); g.lineTo(x, y + h / 2); g.lineTo(x + w * .12, top + h * .38); g.fill(); g.globalAlpha = 1; };
+  if (d === 'heritage' || d === 'lanterns') border();
+  if (d === 'lanterns') { for (const x of [.12, .88]) lantern(W * x, 64 * u, 26 * u, 92 * u, .9); for (const x of [.27, .73]) lantern(W * x, 40 * u, 16 * u, 58 * u, .7); }
+  if (d === 'arch') { g.fillStyle = 'rgba(31,110,115,.55)'; arch(6 * u); g.fill(); g.strokeStyle = C.gold; g.lineWidth = 2.2 * u; arch(16 * u); g.stroke(); g.globalAlpha = .6; g.lineWidth = .8 * u; arch(22 * u); g.stroke(); g.globalAlpha = 1; g.fillStyle = bg; arch(23 * u); g.fill(); }
+  if (d === 'mandala') { g.lineWidth = 1.1 * u; petals(W / 2, -W * .16, W * .45, 4, 'rgba(224,96,126,.45)', C.gold); petals(W / 2, -W * .16, W * .26, 3, 'rgba(31,110,115,.5)', null);
+    for (const i of [0, 1, 5, 6]) { const x = W * (.1 + .8 * i / 6), dr = (.3 + .05 * (i % 2)) * W; g.setLineDash([2 * u, 2 * u]); g.strokeStyle = C.gold; g.globalAlpha = .7; g.lineWidth = .7 * u; g.beginPath(); g.moveTo(x, W * .12); g.lineTo(x, dr); g.stroke(); g.setLineDash([]); g.globalAlpha = 1; g.fillStyle = C.gold; g.beginPath(); g.ellipse(x, dr + 5 * u, 3.5 * u, 5.5 * u, 0, 0, TAU); g.fill(); }
+    g.globalAlpha = .45; g.lineWidth = .8 * u; petals(W / 2, H + W * .2, W * .3, 3, null, C.gold); g.globalAlpha = 1; }
+  if (d === 'botanical') { g.strokeStyle = C.gold; g.globalAlpha = .5; g.lineWidth = .8 * u; g.strokeRect(12 * u, 12 * u, W - 24 * u, H - 24 * u); g.globalAlpha = 1;
+    const ox = W * .74 - W * .31, oy = H * .55 - H * .46, bw = W * .62, bh = H * .92;
+    for (const [x, y, sc] of [[.62, .28, 1], [.3, .55, .62], [.85, .72, .45]]) { const px = ox + bw * x, py = oy + bh * y;
+      g.strokeStyle = C.gold; g.lineWidth = 1.3 * u; g.beginPath(); g.moveTo(ox + bw * x * .9, oy + bh); g.quadraticCurveTo(ox + bw * (x + .15), oy + bh * (y + 1) / 2, px, py + 40 * sc * u); g.stroke();
+      const bwid = 120 * sc * u, bhgt = 90 * sc * u, base = [px, py + bhgt / 2];
+      for (const [a, l] of [[-70, .85], [-35, .95], [0, 1], [35, .95], [70, .85]]) { const ang = (a - 90) * Math.PI / 180, len = bhgt * l, tx = base[0] + Math.cos(ang) * len * (bwid / bhgt) * .62, ty = base[1] + Math.sin(ang) * len, sd = ang + Math.PI / 2, w = bwid * .2, mx = (base[0] + tx) / 2, my = (base[1] + ty) / 2;
+        g.beginPath(); g.moveTo(...base); g.quadraticCurveTo(mx + Math.cos(sd) * w, my + Math.sin(sd) * w, tx, ty); g.quadraticCurveTo(mx - Math.cos(sd) * w, my - Math.sin(sd) * w, ...base); g.fillStyle = 'rgba(142,30,69,.85)'; g.fill(); g.strokeStyle = C.gold; g.lineWidth = 1 * u; g.stroke(); } }
+    g.fillStyle = C.gold; for (let i = 0; i < 9; i++) { g.beginPath(); g.arc(ox + bw * (.1 + .09 * i), oy + bh * (.15 + .08 * ((i * 5) % 9)), (1.5 + (i % 3)) * u, 0, TAU); g.fill(); } }
+  // The words.
+  const left = d === 'botanical', cx = left ? 32 * u : W / 2; g.textAlign = left ? 'left' : 'center'; g.textBaseline = 'alphabetic';
+  let y = ({ lanterns: 92, heritage: 62, arch: 80, mandala: 116, botanical: 76 })[d] * u;
+  const caps = (s, size, color, track) => { g.font = `500 ${size * u}px Georgia, serif`; g.fillStyle = color; if ('letterSpacing' in g) g.letterSpacing = `${track * u}px`; g.fillText(s, cx, y); if ('letterSpacing' in g) g.letterSpacing = '0px'; };
+  const wrap = (s, font, color, gap, maxW, max = 4) => { g.font = font; g.fillStyle = color; const ws = s.split(' '); let cur = '', n = 0; for (const w of ws) { const nx = cur ? cur + ' ' + w : w; if (g.measureText(nx).width > maxW && cur) { g.fillText(cur, cx, y); y += gap; cur = w; if (++n >= max) return; } else cur = nx; } if (cur) { g.fillText(cur, cx, y); y += gap; } };
+  if (st.to) { g.font = `italic ${13 * u}px Georgia, serif`; g.fillStyle = C.ink; g.fillText(t('card.dear', st.to), cx, y); y += 20 * u; }
+  caps(t('card.happy').toUpperCase(), 11, C.ink, 4); y += 48 * u;
+  let size = (left ? 44 : 52) * u; g.font = `${size}px "Great Vibes", cursive`; const maxW = (left ? .58 : .86) * W; while (g.measureText(fname(f)).width > maxW && size > 20) { size -= 2; g.font = `${size}px "Great Vibes", cursive`; }
+  g.fillStyle = C.ink; g.fillText(fname(f), cx, y); y += 26 * u;
+  if (native) { g.font = `600 ${17 * u}px Georgia, serif`; g.fillStyle = C.gold; g.fillText(native, cx, y); y += 18 * u; }
+  // Divider: line, four petals, line.
+  const dx = left ? cx + 60 * u : cx; g.strokeStyle = C.gold; g.lineWidth = 1 * u; g.beginPath(); g.moveTo(dx - 60 * u, y); g.lineTo(dx - 10 * u, y); g.moveTo(dx + 10 * u, y); g.lineTo(dx + 60 * u, y); g.stroke();
+  for (let a = 0; a < TAU; a += Math.PI / 2) { g.beginPath(); g.moveTo(dx, y); g.lineTo(dx + Math.cos(a) * 8 * u, y + Math.sin(a) * 8 * u); g.stroke(); } y += 24 * u;
+  if (line) wrap(line, `italic ${12 * u}px Georgia, serif`, C.ink, 16 * u, (left ? .5 : .78) * W);
+  if (st.from) { g.font = `600 ${13 * u}px Georgia, serif`; g.fillStyle = C.gold; g.fillText(t('card.with', st.from), cx, y); y += 18 * u; }
+  // The emblem, as large as the space above the tagline allows.
+  const room = H - (d === 'arch' || d === 'mandala' ? 92 : 84) * u - y, es = Math.min(88 * u, room - 16 * u);
+  if (!left && es > 40 * u) { const em = await tintedEmblem(f.card || 'lotus', C.accent, C.gold); g.fillStyle = C.dark ? 'rgba(226,184,92,.12)' : 'rgba(182,138,51,.1)'; g.beginPath(); g.arc(W / 2, y + 8 * u + es / 2, es * .57, 0, TAU); g.fill(); g.drawImage(em, W / 2 - es / 2, y + 8 * u, es, es); }
+  y = H - (d === 'arch' || d === 'mandala' ? 66 : 58) * u;
+  wrap(t('card.tag.' + cardTheme(f.card)).toUpperCase(), `500 ${9.5 * u}px Georgia, serif`, C.ink, 14 * u, (left ? .5 : .8) * W, 2);
+  g.font = `${9 * u}px Georgia, serif`; g.fillStyle = C.ink; g.globalAlpha = .6; g.fillText(greg(date, { day: 'numeric', month: 'long', year: 'numeric' }), cx, y); g.globalAlpha = 1;
+}
+// The motion's light and accent: the palette's, or the design's gold and accent.
+const motionColors = st => { if (st.design && st.design !== 'classic') { const C = DCOL[st.design === 'arch' ? 'arch' : st.design === 'mandala' ? 'mandala' : 'light']; return [C.gold, C.accent]; } return [PALETTES[st.p][4], PALETTES[st.p][3]]; };
 function cardMaker(f, date) {
-  const st = { p: cardPalette(f.card), to: '', from: '', msg: '', motion: suggestedMotion(f.card) };
+  const st = { p: cardPalette(f.card), to: '', from: '', msg: '', design: suggestedDesign(f.card), motion: 'still' };
+  st.motion = st.design === 'classic' ? suggestedMotion(f.card) : 'still';
   const o = sheet(`<h2 class="serif">${esc(t('gr.card'))}</h2><div id="gcard" class="gcard"></div>
+    <p class="label">${esc(t('card.design'))}</p><div class="chips" id="gde">${DESIGNS.map(m => `<button class="chip" data-de="${m}">${esc(t('card.d.' + m))}</button>`).join('')}</div>
     <p class="label">${esc(t('card.motion'))}</p><div class="chips" id="gmo">${MOTIONS.map(m => `<button class="chip" data-mo="${m}">${esc(t('card.m.' + m))}</button>`).join('')}</div>
-    <p class="label">${esc(t('card.colour'))}</p><div style="display:flex;gap:8px;flex-wrap:wrap">${PALETTES.map((_, i) => `<button class="cardthumb" data-p="${i}" style="${cardBg(f.card, i)}"><i style="${cardArt(f.card, i)}"></i></button>`).join('')}</div>
+    <div id="gpal"><p class="label">${esc(t('card.colour'))}</p><div style="display:flex;gap:8px;flex-wrap:wrap">${PALETTES.map((_, i) => `<button class="cardthumb" data-p="${i}" style="${cardBg(f.card, i)}"><i style="${cardArt(f.card, i)}"></i></button>`).join('')}</div></div>
     <label class="field"><span>${esc(t('card.to'))}</span><input id="gto" maxlength="40"></label>
     <label class="field"><span>${esc(t('card.from'))}</span><input id="gfrom" maxlength="40"></label>
     <label class="field"><span>${esc(t('card.message'))}</span><textarea id="gmsg" maxlength="160" rows="3"></textarea></label>
@@ -1736,6 +1821,15 @@ function cardMaker(f, date) {
   const line = () => st.msg || text(f.content?.greeting) || text(f.content?.summary) || '';
   const draw = () => {
     const P = PALETTES[st.p];
+    o.querySelectorAll('[data-de]').forEach(b => b.classList.toggle('on', b.dataset.de === st.design));
+    o.querySelector('#gpal').style.display = st.design === 'classic' ? '' : 'none';
+    if (st.design !== 'classic') {
+      // A designed card: drawn on a canvas, the same drawing as the shared image.
+      o.querySelector('#gcard').innerHTML = `<div class="gcard-in"><canvas class="gdesign" width="640" height="800" style="position:absolute;inset:0;width:100%;height:100%"></canvas><canvas class="gmotion" width="640" height="800"></canvas><div class="gbrand"><img src="icon-192.png" alt="">Kaal</div></div>`;
+      drawDesign(o.querySelector('.gdesign').getContext('2d'), 640, 800, st.design, f, date, native, line(), st);
+      o.querySelectorAll('[data-mo]').forEach(b => b.classList.toggle('on', b.dataset.mo === st.motion));
+      return;
+    }
     o.querySelector('#gcard').innerHTML = `<div class="gcard-in" style="${cardBg(f.card, st.p)};color:${P[2]}"><i style="${cardArt(f.card, st.p)}"></i>
       <div class="gtext">${st.to ? `<div class="gdear">${esc(t('card.dear', st.to))}</div>` : ''}${native ? `<div class="gnat" style="color:${P[3]}">${esc(native)}</div>` : ''}
       <div class="serif gname">${esc(fname(f))}</div><div class="gdate">${esc(greg(date, { day: 'numeric', month: 'long', year: 'numeric' }))}</div>
@@ -1748,12 +1842,13 @@ function cardMaker(f, date) {
   const tick = ts => {
     if (!o.isConnected) return;
     const cv = o.querySelector('.gmotion');
-    if (cv) { const g = cv.getContext('2d'); g.clearRect(0, 0, 640, 800); if (st.motion !== 'still') drawMotion(g, st.motion, still ? 0 : (ts - t0) / 1000, 640, 800, PALETTES[st.p][4], PALETTES[st.p][3]); }
+    if (cv) { const g = cv.getContext('2d'); g.clearRect(0, 0, 640, 800); if (st.motion !== 'still') drawMotion(g, st.motion, still ? 0 : (ts - t0) / 1000, 640, 800, ...motionColors(st)); }
     requestAnimationFrame(tick);
   };
   requestAnimationFrame(tick);
   o.querySelectorAll('[data-p]').forEach(b => b.onclick = () => { st.p = +b.dataset.p; draw(); });
   o.querySelectorAll('[data-mo]').forEach(b => b.onclick = () => { st.motion = b.dataset.mo; draw(); });
+  o.querySelectorAll('[data-de]').forEach(b => b.onclick = () => { st.design = b.dataset.de; draw(); });
   o.querySelector('#gto').oninput = e => { st.to = e.target.value; draw(); };
   o.querySelector('#gfrom').oninput = e => { st.from = e.target.value; draw(); };
   o.querySelector('#gmsg').oninput = e => { st.msg = e.target.value; draw(); };
@@ -1761,12 +1856,12 @@ function cardMaker(f, date) {
   o.querySelector('#gshare').onclick = async () => {
     const btn = o.querySelector('#gshare'), label = btn.textContent;
     let blob = await cardImage(f, date, st, native, line()), type = 'image/png', ext = 'png';
-    // A moving card goes out as an eight-second looping video, recorded from a canvas.
-    if (st.motion !== 'still' && window.MediaRecorder) {
+    // A moving card goes out as a looping GIF.
+    if (st.motion !== 'still') {
       btn.disabled = true; btn.textContent = t('card.making');
-      const vid = await cardVideo(blob, st).catch(() => null);
+      const gif = await cardGif(blob, st).catch(() => null);
       btn.disabled = false; btn.textContent = label;
-      if (vid) { blob = vid; type = vid.type.split(';')[0]; ext = type.includes('mp4') ? 'mp4' : 'webm'; }
+      if (gif) { blob = gif; type = 'image/gif'; ext = 'gif'; }
     }
     const file = new File([blob], `${f.id}.${ext}`, { type });
     if (navigator.canShare?.({ files: [file] })) { try { await navigator.share({ files: [file] }); return; } catch {} }
@@ -1774,20 +1869,31 @@ function cardMaker(f, date) {
   };
   draw();
 }
-async function cardVideo(png, st) {
-  const base = await createImageBitmap(png), c = document.createElement('canvas'); c.width = 720; c.height = 900;
-  const g = c.getContext('2d'), P = PALETTES[st.p];
-  const mime = ['video/mp4;codecs=avc1', 'video/mp4', 'video/webm;codecs=vp9', 'video/webm'].find(m => MediaRecorder.isTypeSupported(m));
-  const rec = new MediaRecorder(c.captureStream(30), { mimeType: mime, videoBitsPerSecond: 2500000 }), chunks = [];
-  rec.ondataavailable = e => e.data.size && chunks.push(e.data);
-  const done = new Promise(r => rec.onstop = r);
-  const t0 = performance.now(); rec.start();
-  await new Promise(res => { const step = ts => { const t = (ts - t0) / 1000; g.drawImage(base, 0, 0, 720, 900); drawMotion(g, st.motion, t, 720, 900, P[4], P[3]); if (t < 8) requestAnimationFrame(step); else res(); }; requestAnimationFrame(step); });
-  rec.stop(); await done;
-  return new Blob(chunks, { type: mime });
+// A moving card as a looping GIF, as on iOS (CardGIF): one four-second loop at 15 frames a second.
+async function cardGif(png, st) {
+  const { GIFEncoder, quantize, applyPalette } = await import('https://cdn.jsdelivr.net/npm/gifenc@1.0.3/dist/gifenc.esm.js');
+  const W = 480, H = 600, base = await createImageBitmap(png), c = document.createElement('canvas'); c.width = W; c.height = H;
+  const g = c.getContext('2d', { willReadFrequently: true }), P = PALETTES[st.p], gif = GIFEncoder();
+  for (let i = 0; i < 60; i++) {
+    g.drawImage(base, 0, 0, W, H); drawMotion(g, st.motion, i / 15, W, H, ...motionColors(st));
+    const { data } = g.getImageData(0, 0, W, H), palette = quantize(data, 256), index = applyPalette(data, palette);
+    gif.writeFrame(index, W, H, { palette, delay: 67, repeat: 0 });
+    if (i % 6 === 0) await new Promise(r => setTimeout(r));
+  }
+  gif.finish();
+  return new Blob([gif.bytes()], { type: 'image/gif' });
 }
 // The card as a 1080 x 1350 image: gradient, tinted art, then the words.
 async function cardImage(f, date, st, native, line) {
+  if (st.design && st.design !== 'classic') {
+    const c = document.createElement('canvas'); c.width = 1080; c.height = 1350; const g = c.getContext('2d');
+    await drawDesign(g, 1080, 1350, st.design, f, date, native, line, st);
+    const logo = new Image(); logo.src = 'icon-192.png'; await logo.decode().catch(() => {});
+    g.fillStyle = 'rgba(0,0,0,.2)'; g.beginPath(); g.roundRect(1080 / 2 - 92, 1350 - 92, 184, 60, 30); g.fill();
+    if (logo.complete) g.drawImage(logo, 1080 / 2 - 80, 1350 - 84, 44, 44);
+    g.font = '700 36px sans-serif'; g.fillStyle = '#fff'; g.textAlign = 'left'; g.fillText('Kaal', 1080 / 2 - 24, 1350 - 49);
+    return new Promise(r => c.toBlob(r, 'image/png'));
+  }
   const P = PALETTES[st.p], W = 1080, H = 1350, c = document.createElement('canvas'); c.width = W; c.height = H;
   const g = c.getContext('2d'), grad = g.createLinearGradient(0, 0, 0, H); grad.addColorStop(0, P[0]); grad.addColorStop(1, P[1]);
   g.fillStyle = grad; g.fillRect(0, 0, W, H);
@@ -1962,6 +2068,7 @@ function viewSettings() {
       <p class="small muted" style="margin-top:10px">${esc(t('th.light'))}</p><div class="chips">${LIGHT.map(id => `<button class="chip ${S.light === id ? 'on' : ''}" data-lt="${id}">${esc(t('th.' + id))}</button>`).join('')}</div>
       <p class="small muted" style="margin-top:10px">${esc(t('th.dark'))}</p><div class="chips">${DARK.map(id => `<button class="chip ${S.dark === id ? 'on' : ''}" data-dk="${id}">${esc(t('th.' + id))}</button>`).join('')}</div></div>
     <div class="card"><label class="list-row"><input type="checkbox" id="vaish" ${S.vaishnava ? 'checked' : ''}><span class="grow"><b>${esc(t('s.vaishnava'))}</b><div class="small muted">${esc(t('s.vaishnavaNote'))}</div></span></label></div>
+    <div class="card"><label class="list-row"><input type="checkbox" id="pdfmark" ${S.pdfWatermark !== false ? 'checked' : ''}><span class="grow"><b>${esc(t('pdf.section'))}</b><div class="small muted">${esc(t('pdf.watermarkOn'))}</div></span></label></div>
     <div class="card"><p class="label">${esc(t('s.clock'))}</p><div class="seg">${[[0, 's.clockSystem'], [12, 's.clock12'], [24, 's.clock24']].map(([v, k]) => `<button data-ck="${v}" class="${(S.clock || 0) === v ? 'on' : ''}">${esc(t(k))}</button>`).join('')}</div></div>
     <div class="card"><p class="label">${esc(t('ts.title'))}</p><div class="seg">${TEXT_SIZES.map((z, i) => `<button data-tz="${i}" class="${S.textSize === i ? 'on' : ''}" style="font-size:${Math.round(12 * z + (i - 1) * 2)}px">A</button>`).join('')}</div>
       <p class="small muted" style="margin-top:8px">${esc(t('ts.sample'))}</p></div>
@@ -1971,6 +2078,7 @@ function viewSettings() {
   $('#main').querySelectorAll('[data-c]').forEach(b => b.onclick = async () => { S.culture = b.dataset.c; save(); await loadPack(); await resetCalendars(); render(); });
   $('#main').querySelectorAll('[data-l]').forEach(b => b.onclick = () => { S.native = b.dataset.l === '1'; save(); render(); });
   $('#main').querySelectorAll('[data-th]').forEach(b => b.onclick = () => { S.theme = b.dataset.th; save(); render(); });
+  $('#main').querySelector('#pdfmark').onchange = e => { S.pdfWatermark = e.target.checked; save(); };
   $('#main').querySelector('#vaish').onchange = async e => { S.vaishnava = e.target.checked; save(); await loadPack(); await resetCalendars(); render(); };
   $('#main').querySelectorAll('[data-ck]').forEach(b => b.onclick = () => { S.clock = +b.dataset.ck; save(); render(); });
   $('#main').querySelectorAll('[data-tz]').forEach(b => b.onclick = () => { S.textSize = +b.dataset.tz; save(); render(); });
