@@ -392,3 +392,4 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 @keyframes fade { to { opacity: 1; } }
 @keyframes turn { 0% { transform: scaleX(1); } 50% { transform: scaleX(.05); } 100% { transform: scaleX(1); } }
 @media (prefers-reduced-motion: reduce) { .bloom * { animation: none !important; opacity: 1 !important; transform: none; stroke-dashoffset: 0 !important; } .bloom .pt > path { transform: scale(1); } }
+.about .aboutlogo { width: 56px; height: 56px; border-radius: 14px; display: block; }
