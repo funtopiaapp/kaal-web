@@ -1,7 +1,7 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610240949';
+import { engine, onRestart } from './engine.js?v=202610241010';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -424,6 +424,8 @@ async function openDial(date) {
     if (showNow || DIAL.scrub != null) { const e = ang(tt), [x0, y0] = pt(inner - 10, e), [x1, y1] = pt(R + 6, e), col = DIAL.scrub == null ? 'var(--accent)' : 'var(--gold)';
       svg += `<line x1="${x0}" y1="${y0}" x2="${x1}" y2="${y1}" stroke="${col}" stroke-width="3" stroke-linecap="round"/><circle cx="${x1}" cy="${y1}" r="5" fill="${col}"/>`; }
     svg += labels;
+    // Whose star the chip reads: the same choice as the calendar's marks, changeable here.
+    const births = S.people.filter(x => x.kind !== 'remembrance' && x.anchor?.nakshatra);
     const sp = starPerson(), nk = p.nakshatras.find(n => n.start <= tt && tt < n.end), pl = sp && nk ? starLine(sp, nk.key, nk.end) : '';
     const mins = run ? Math.floor((run.end - now) / 60) : 0;
     const centre = DIAL.scrub != null ? `<div class="small" style="font-weight:600">${esc(t('dial.at', clock(DIAL.scrub), run ? nm(run) : '–', run ? clock(run.end) : ''))}</div><button class="linkbtn" data-now>${esc(t('dial.backNow'))}</button>`
@@ -436,7 +438,7 @@ async function openDial(date) {
         <div class="seg"><button data-dh="1" class="${isDay ? 'on' : ''}" aria-label="${esc(t('dm.day'))}">☀</button><button data-dh="0" class="${!isDay ? 'on' : ''}" aria-label="${esc(t('dm.night'))}">☾</button></div></div>
       <div class="dialbox"><svg viewBox="0 0 ${W} ${W}" class="dialsvg"><defs><pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="var(--paper)"/><line x1="0" y1="0" x2="0" y2="5" stroke="var(--ink)" stroke-opacity=".5" stroke-width="1.2"/></pattern></defs>${svg}</svg>
         <div class="dialc">${centre}${after}</div></div>
-      ${pl ? `<div style="text-align:center"><span class="pchip">${esc(pl)}</span></div>` : ''}
+      ${pl ? `<div style="text-align:center"><span class="pchip">${esc(pl)}</span>${births.length > 1 ? `<div><label class="small">👤 <select id="dialfor">${births.map(x => `<option value="${x.id}" ${x.id === sp.id ? 'selected' : ''}>${esc(t('cal.for', x.name))}</option>`).join('')}</select></label></div>` : ''}</div>` : ''}
       <div class="diallegend">${DIAL.mode !== 2 ? `<span><i style="background:var(--accent)"></i>${esc(t(DIAL.mode === 1 ? 'dial.benefic' : 'nature.s'))}</span>${DIAL.mode === 0 ? `<span><i style="background:color-mix(in srgb, var(--accent) 45%, transparent)"></i>${esc(t('nature.m'))}</span>` : ''}${DIAL.mode === 0 ? `<span><i style="border:1px solid var(--muted)"></i>${esc(t('nature.a'))}</span>` : `<span><i style="background:color-mix(in srgb, var(--accent) 45%, transparent)"></i>${esc(t('dial.other'))}</span>`}<br>` : ''}
         <span>⟋ ${esc(t('dial.kalams'))}</span><span style="color:var(--gold)">◆</span> ${esc(t('dial.muhurtas'))}</div>
       <div id="dialdetail"></div>`;
@@ -446,6 +448,7 @@ async function openDial(date) {
     q('[data-dm]', b2 => b2.onclick = () => { DIAL.mode = +b2.dataset.dm; draw(); });
     q('[data-dh]', b2 => b2.onclick = () => { DIAL.half = b2.dataset.dh === '1'; DIAL.scrub = null; draw(); });
     q('[data-now]', b2 => b2.onclick = () => { DIAL.scrub = null; draw(); });
+    o.querySelector('#dialfor')?.addEventListener('change', e => { S.starPerson = e.target.value; save(); draw(); });
     const detail = x => { const n = nature(x), m = Math.round((x.end - x.start) / 60);
       o.querySelector('#dialdetail').innerHTML = `<div class="card"><h3 class="serif" style="margin:0">${esc(nm(x))}</h3><div style="color:var(--accent);font-weight:700">${esc(clock(x.start))} – ${esc(clock(x.end))} · ${esc(t('dial.min', m))}</div>
         ${x.kind === 'choghadiya' ? `<div class="small" style="font-weight:600">${esc(t(['nature.shubha', 'nature.madhyama', 'nature.ashubha'][n]))}</div>` : ''}<p>${esc(t('use.' + x.key))}</p></div>`; };
