@@ -1,7 +1,7 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610241121';
+import { engine, onRestart } from './engine.js?v=202610241216';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -1226,11 +1226,17 @@ function todayPrayer() {
   const list = PRAYERS.prayers.filter(p => p.deity === deity), week = Math.floor(d.getTime() / 864e5 / 7);
   return list.length ? list[week % list.length] : null;
 }
-const prayerScript = () => S.prayerScript || PR_SCRIPT[lang()] || 'latn';
-const prayerTitle = p => lang() === 'en' ? p.title : (p.titleScript[prayerScript()] || p.title);
+const PR_SCRIPTS = ['deva', 'telu', 'knda', 'mlym', 'taml', 'gujr', 'beng', 'orya'];
+// The tradition's own script; the reader's choice, else that.
+const traditionScript = () => PR_SCRIPT[pack?.language] || 'deva';
+const prayerScript = () => PR_SCRIPTS.includes(S.prayerScript) ? S.prayerScript : traditionScript();
+const prayerScriptTitle = p => p.titleScript[prayerScript()] || p.titleDeva;
+// The name in the app's language, and the other form beneath.
+const prayerTitle = p => S.native ? prayerScriptTitle(p) : p.title;
+const prayerSubtitle = p => S.native ? p.title : prayerScriptTitle(p);
 const prayerLine = p => [t('deity.' + p.deity), t('pr.k.' + p.kind), t('pr.a.' + p.by), p.verses === 1 ? t('pr.verse1') : t('pr.verses', p.verses)].join(' · ');
 const prayerRow = p => `<button class="list-row" data-pr="${p.id}" style="width:100%;text-align:left;border:0;background:var(--card);border-radius:14px;margin-bottom:8px;padding:12px;cursor:pointer;color:inherit;font:inherit">
-  <div class="grow"><b>${esc(prayerTitle(p))}</b>${lang() !== 'en' ? `<div class="small muted">${esc(p.title)}</div>` : ''}<div class="small muted">${esc(prayerLine(p))}</div></div><span class="muted">›</span></button>`;
+  <div class="grow"><b>${esc(prayerTitle(p))}</b><div class="small muted">${esc(prayerSubtitle(p))}</div><div class="small muted">${esc(prayerLine(p))}</div></div><span class="muted">›</span></button>`;
 async function viewPrayers() {
   loading();
   const book = await loadPrayers();
@@ -1249,14 +1255,14 @@ async function viewPrayers() {
   const list = () => {
     const q = PRV.q.trim().toLowerCase();
     // Search by deity or title only.
-    if (q) { const hits = book.prayers.filter(p => p.title.toLowerCase().includes(q) || prayerTitle(p).toLowerCase().includes(q) || t('deity.' + p.deity).toLowerCase().includes(q) || p.deity.includes(q));
+    if (q) { const hits = book.prayers.filter(p => p.title.toLowerCase().includes(q) || prayerScriptTitle(p).includes(PRV.q.trim()) || t('deity.' + p.deity).toLowerCase().includes(q) || p.deity.includes(q));
       return hits.length ? hits.map(prayerRow).join('') : `<p class="muted">${esc(t('pr.none'))}</p>`; }
     return `${tp ? `<button class="card" data-pr="${tp.id}" style="width:100%;text-align:left;border:0;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 80%,transparent))">
-        <div class="small" style="font-weight:700;letter-spacing:1px;opacity:.85">${esc(t('pr.today').toUpperCase())}</div><div class="serif" style="font-size:24px;font-weight:700">${esc(prayerTitle(tp))}</div>
+        <div style="display:flex;align-items:center"><span class="small grow" style="font-weight:700;letter-spacing:1px;opacity:.85">${esc(t('pr.today').toUpperCase())}</span><span style="color:#fff;opacity:.9">${deityIcon(tp.deity, 32)}</span></div><div class="serif" style="font-size:24px;font-weight:700">${esc(prayerTitle(tp))}</div><div style="opacity:.9">${esc(prayerSubtitle(tp))}</div>
         <div class="small" style="opacity:.9">${esc(prayerLine(tp))}</div><div class="small" style="opacity:.8">${esc(t('pr.weekday', name('weekdays', day), t('deity.' + tp.deity)))}</div></button>` : ''}
       ${favs.length ? `<p class="label">${esc(t('pr.favorites'))}</p>${favs.map(prayerRow).join('')}` : ''}
       <p class="label">${esc(t('pr.deities'))}</p><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px">${book.deities.map(d => { const n = book.prayers.filter(p => p.deity === d).length;
-        return `<button class="card" data-pd="${d}" style="margin:0;text-align:left;cursor:pointer;color:inherit;font:inherit"><b>${esc(t('deity.' + d))}</b><div class="small muted">${esc(n === 1 ? t('pr.k.hymn') : t('pr.hymns', n))}</div></button>`; }).join('')}</div>`;
+        return `<button class="card" data-pd="${d}" style="margin:0;text-align:left;cursor:pointer;color:inherit;font:inherit"><span style="color:var(--accent);display:block;margin-bottom:6px">${deityIcon(d, 30)}</span><b>${esc(t('deity.' + d))}</b><div class="small muted">${esc(n === 1 ? t('pr.k.hymn') : t('pr.hymns', n))}</div></button>`; }).join('')}</div>`;
   };
   $('#main').innerHTML = `<h2 class="serif" style="margin-bottom:4px">${esc(t('pr.title'))}</h2><p class="muted" style="margin-top:0">${esc(t('pr.intro'))}</p>
     <input type="search" id="prq" class="field" placeholder="${esc(t('pr.search'))}" value="${esc(PRV.q)}" style="width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;margin-bottom:12px"><div id="prlist">${list()}</div>`;
@@ -1265,20 +1271,20 @@ async function viewPrayers() {
 }
 function prayerReader(p) {
   if (!p) { PRV.id = null; return viewPrayers(); }
-  // The tradition's own script, Devanagari (the edition's), and Latin letters.
-  const mine = PR_SCRIPT[pack.language] || 'deva', scripts = [...new Set([mine, 'deva', 'latn'])];
-  const sc = scripts.includes(prayerScript()) ? prayerScript() : scripts[0], verses = p.text[sc] || p.text.deva;
+  // Every script the app's languages read, the tradition's first.
+  const scripts = [traditionScript(), ...PR_SCRIPTS.filter(x => x !== traditionScript())];
+  const sc = prayerScript(), verses = p.text[sc] || p.text.deva;
   const fav = (S.favPrayers || []).includes(p.id), ed = PRAYERS.editions[p.edition];
   $('#main').innerHTML = `<div style="display:flex;align-items:center;gap:8px"><button class="linkbtn" data-back>‹ ${esc(PRV.deity ? t('deity.' + PRV.deity) : t('pr.title'))}</button><span class="grow"></span>
       <button class="btn soft" data-fav aria-label="${esc(t(fav ? 'pr.unfavorite' : 'pr.favorite'))}" title="${esc(t(fav ? 'pr.unfavorite' : 'pr.favorite'))}">${fav ? '★' : '☆'}</button>
       <button class="btn soft" data-share aria-label="${esc(t('pr.share'))}">${SHARE_ICON}</button></div>
-    <h2 class="serif" style="margin:8px 0 2px">${esc(prayerTitle(p))}</h2>${lang() !== 'en' ? `<div class="muted">${esc(p.title)}</div>` : ''}<div class="small muted">${esc(prayerLine(p))}</div>
-    <div class="seg" style="margin:12px 0">${scripts.map(x => `<button data-sc="${x}" class="${x === sc ? 'on' : ''}">${esc(x === 'latn' ? t('pr.latin') : PR_SCRIPT_NAME[x])}</button>`).join('')}</div>
+    <h2 class="serif" style="margin:8px 0 2px">${esc(prayerTitle(p))}</h2><div style="color:var(--accent);font-size:18px">${esc(prayerSubtitle(p))}</div><div class="small muted">${esc(prayerLine(p))}</div>
+    <label class="placechip" style="display:inline-flex;margin:12px 0">📖 <select id="prsc" aria-label="${esc(t('s.language'))}">${scripts.map(x => `<option value="${x}" ${x === sc ? 'selected' : ''}>${esc(PR_SCRIPT_NAME[x])}</option>`).join('')}</select></label>
     <div class="prtext">${verses.map(v => `<p>${esc(v).replace(/\n/g, '<br>')}</p>`).join('')}</div>
     <p class="small muted">${p.phala ? esc(t('pr.phala')) + '<br>' : ''}${ed ? esc(t('pr.source', ed.name)) : ''}</p>`;
   const m = $('#main');
   m.querySelector('[data-back]').onclick = () => { PRV.id = null; viewPrayers(); };
-  m.querySelectorAll('[data-sc]').forEach(b => b.onclick = () => { S.prayerScript = b.dataset.sc; save(); prayerReader(p); });
+  m.querySelector('#prsc').onchange = e => { S.prayerScript = e.target.value; save(); prayerReader(p); };
   m.querySelector('[data-fav]').onclick = () => { S.favPrayers = fav ? (S.favPrayers || []).filter(x => x !== p.id) : [...(S.favPrayers || []), p.id]; save(); prayerReader(p); };
   // The title and the text, nothing more.
   m.querySelector('[data-share]').onclick = async () => { const text = prayerTitle(p) + '\n\n' + verses.join('\n\n');
