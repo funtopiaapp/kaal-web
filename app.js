@@ -1,7 +1,7 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610241216';
+import { engine, onRestart } from './engine.js?v=202610241757';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -25,7 +25,7 @@ const CULTURES = [
 ];
 const LIGHT = ['kaal', 'ivory', 'rose', 'sage'], DARK = ['kaal-dark', 'night', 'charcoal', 'peacock'];
 const TABS = [['home', 'hm.home'], ['today', 'tab.today'], ['calendar', 'tab.calendar'], ['festivals', 'tab.festivals'], ['muhurtham', 'tab.muhurtham'],
-  ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['match', 'mt.label'], ['greetings', 'gr.title'], ['guide', 'gd.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['prayers', 'pr.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
+  ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['match', 'mt.label'], ['greetings', 'gr.title'], ['guide', 'gd.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['prayers', 'py.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
 
 // ---------------------------------------------------------------- state
 const saved = (() => { try { return JSON.parse(localStorage.getItem('kaal-web') || '{}'); } catch { return {}; } })();
@@ -419,6 +419,12 @@ async function openDial(date) {
 `;
       // On the window's own ring, haloed in the page colour, clear of the centre's words.
       labels += `<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" class="dl halo" style="font-weight:600">${esc(t('dial.w.' + w.key))}</text>`; });
+    // The chosen person's tarabalam around the half: each nakshatra's stretch, counted from their birth star.
+    { const spx = starPerson(); if (spx) [...p.nakshatras, ...(nx.nakshatras || [])].forEach(n => {
+      const s0 = Math.max(n.start, a), s1 = Math.min(n.end, b), tr = taraOf(spx.anchor.nakshatra, n.key); if (s1 <= s0 || !tr) return;
+      const band = taraBand(tr);
+      svg += `<path d="${arc(R + 5, s0, s1)}" fill="none" stroke="${band === 2 ? 'var(--muted)' : 'var(--gold)'}" stroke-opacity="${band === 2 ? 0.3 : 1}" stroke-width="5"${band === 1 ? ' stroke-dasharray="4 3"' : ''}/>`;
+    }); }
     marks.forEach(m => { const [x, y] = pt(inner, ang((m.start + m.end) / 2)); svg += `<path d="M${x} ${y - 8}L${x + 6} ${y}L${x} ${y + 8}L${x - 6} ${y}Z" fill="var(--gold)"><title>${esc(nm(m))}</title></path>`; });
     const edges = segs.length ? segs.map(x => x.start) : [...wins, ...marks].flatMap(x => [x.start, x.end]);
     [...new Set(edges)].filter(u => u >= a && u < b).forEach(u => { const [x, y] = pt(R + 22, ang(u)); svg += `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" class="dt">${esc(clock(u))}</text>`; });
@@ -441,7 +447,8 @@ async function openDial(date) {
         <div class="dialc">${centre}${after}</div></div>
       ${pl ? `<div style="text-align:center"><span class="pchip">${esc(pl)}</span>${births.length > 1 ? `<div><label class="small">👤 <select id="dialfor">${births.map(x => `<option value="${x.id}" ${x.id === sp.id ? 'selected' : ''}>${esc(t('cal.for', x.name))}</option>`).join('')}</select></label></div>` : ''}</div>` : ''}
       <div class="diallegend">${DIAL.mode !== 2 ? `<span><i style="background:var(--accent)"></i>${esc(t(DIAL.mode === 1 ? 'dial.benefic' : 'nature.s'))}</span>${DIAL.mode === 0 ? `<span><i style="background:color-mix(in srgb, var(--accent) 45%, transparent)"></i>${esc(t('nature.m'))}</span>` : ''}${DIAL.mode === 0 ? `<span><i style="border:1px solid var(--muted)"></i>${esc(t('nature.a'))}</span>` : `<span><i style="background:color-mix(in srgb, var(--accent) 45%, transparent)"></i>${esc(t('dial.other'))}</span>`}<br>` : ''}
-        <span>⟋ ${esc(t('dial.kalams'))}</span><span style="color:var(--gold)">◆</span> ${esc(t('dial.muhurtas'))}</div>
+        <span>⟋ ${esc(t('dial.kalams'))}</span><span style="color:var(--gold)">◆</span> ${esc(t('dial.muhurtas'))}
+        ${starPerson() ? `<br><span><i style="background:var(--gold);border-radius:2px;height:4px"></i>${esc(t('cal.ring0'))}</span><span><i style="border:2px dashed var(--gold);border-radius:2px;height:0"></i>${esc(t('cal.ring1'))}</span>` : ''}</div>
       <div id="dialdetail"></div>`;
     const q = (x, f) => o.querySelectorAll(x).forEach(f);
     q('[data-dd]', b2 => b2.onclick = () => { d = addDays(d, +b2.dataset.dd); DIAL.scrub = null; draw(); });
@@ -556,7 +563,7 @@ async function viewHome() {
     tile('calendar', 'calendar', 'accent', t('tab.calendar'), greg(d, { month: 'long', year: 'numeric' }), yearLabel(p.year)),
     tile('jathakam', 'jathakam', 'accent', t('jk.chart'), t('jk.title'), [t('jk.vimshottari'), t('jk.yogini'), t('jk.chara')].join(' · ')),
     tile('sky', 'sky', 'gold', t('sk.title'), t('sk.now'), ''),
-    PRAYERS ? (() => { const tp = todayPrayer(); return tile('prayers', 'prayers', 'gold', t('pr.title'), tp ? prayerTitle(tp) : t('pr.today'), tp ? t('deity.' + tp.deity) : ''); })() : tile('prayers', 'prayers', 'gold', t('pr.title'), t('pr.today'), ''),
+    PRAYERS ? (() => { const tp = todayPrayer(); return tile('prayers', 'prayers', 'gold', t('py.title'), tp ? prayerTitle(tp) : t('pr.today'), tp ? t('deity.' + tp.deity) : ''); })() : tile('prayers', 'prayers', 'gold', t('py.title'), t('pr.today'), ''),
     tile('temples', 'temples', 'warm', t('tm.title'), t('tm.deity'), ['vishnu', 'shiva', 'devi'].map(x => t('deity.' + x)).join(' · ')),
     tile('people', 'people', 'accent', t('fam.family'), person ? t(person.p.kind === 'remembrance' ? 'pp.remembranceOf' : 'pp.birthdayOf', person.p.name) : t('pp.title'), person ? when(person.date) : t('pp.add')),
     ...(matchingAvailable() ? [tile('match', 'match', 'accent', t('mt.label'), matchTitle(), t(matchesByPorutham() ? 'mt.ten' : 'mt.eight'))] : []),
@@ -1247,7 +1254,7 @@ async function viewPrayers() {
     $('#main').querySelectorAll('[data-pd]').forEach(b => b.onclick = () => { PRV.deity = b.dataset.pd || null; viewPrayers(); scrollTo(0, 0); });
   };
   if (PRV.deity) {
-    $('#main').innerHTML = `<button class="linkbtn" data-pd="">‹ ${esc(t('pr.title'))}</button><h2 class="serif">${esc(t('deity.' + PRV.deity))}</h2>${book.prayers.filter(p => p.deity === PRV.deity).map(prayerRow).join('')}`;
+    $('#main').innerHTML = `<button class="linkbtn" data-pd="">‹ ${esc(t('py.title'))}</button><h2 class="serif">${esc(t('deity.' + PRV.deity))}</h2>${book.prayers.filter(p => p.deity === PRV.deity).map(prayerRow).join('')}`;
     return wire();
   }
   const tp = todayPrayer(), favs = (S.favPrayers || []).map(id => book.prayers.find(p => p.id === id)).filter(Boolean);
@@ -1264,7 +1271,7 @@ async function viewPrayers() {
       <p class="label">${esc(t('pr.deities'))}</p><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px">${book.deities.map(d => { const n = book.prayers.filter(p => p.deity === d).length;
         return `<button class="card" data-pd="${d}" style="margin:0;text-align:left;cursor:pointer;color:inherit;font:inherit"><span style="color:var(--accent);display:block;margin-bottom:6px">${deityIcon(d, 30)}</span><b>${esc(t('deity.' + d))}</b><div class="small muted">${esc(n === 1 ? t('pr.k.hymn') : t('pr.hymns', n))}</div></button>`; }).join('')}</div>`;
   };
-  $('#main').innerHTML = `<h2 class="serif" style="margin-bottom:4px">${esc(t('pr.title'))}</h2><p class="muted" style="margin-top:0">${esc(t('pr.intro'))}</p>
+  $('#main').innerHTML = `<h2 class="serif" style="margin-bottom:4px">${esc(t('py.title'))}</h2><p class="muted" style="margin-top:0">${esc(t('pr.intro'))}</p>
     <input type="search" id="prq" class="field" placeholder="${esc(t('pr.search'))}" value="${esc(PRV.q)}" style="width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;margin-bottom:12px"><div id="prlist">${list()}</div>`;
   $('#prq').oninput = e => { PRV.q = e.target.value; $('#prlist').innerHTML = list(); wire(); };
   wire();
@@ -1275,7 +1282,7 @@ function prayerReader(p) {
   const scripts = [traditionScript(), ...PR_SCRIPTS.filter(x => x !== traditionScript())];
   const sc = prayerScript(), verses = p.text[sc] || p.text.deva;
   const fav = (S.favPrayers || []).includes(p.id), ed = PRAYERS.editions[p.edition];
-  $('#main').innerHTML = `<div style="display:flex;align-items:center;gap:8px"><button class="linkbtn" data-back>‹ ${esc(PRV.deity ? t('deity.' + PRV.deity) : t('pr.title'))}</button><span class="grow"></span>
+  $('#main').innerHTML = `<div style="display:flex;align-items:center;gap:8px"><button class="linkbtn" data-back>‹ ${esc(PRV.deity ? t('deity.' + PRV.deity) : t('py.title'))}</button><span class="grow"></span>
       <button class="btn soft" data-fav aria-label="${esc(t(fav ? 'pr.unfavorite' : 'pr.favorite'))}" title="${esc(t(fav ? 'pr.unfavorite' : 'pr.favorite'))}">${fav ? '★' : '☆'}</button>
       <button class="btn soft" data-share aria-label="${esc(t('pr.share'))}">${SHARE_ICON}</button></div>
     <h2 class="serif" style="margin:8px 0 2px">${esc(prayerTitle(p))}</h2><div style="color:var(--accent);font-size:18px">${esc(prayerSubtitle(p))}</div><div class="small muted">${esc(prayerLine(p))}</div>
@@ -2066,7 +2073,7 @@ async function cardImage(f, date, st, native, line) {
 function viewGuide() {
   const rows = [['hm.home', 'gd.home'], ['p.panchang', 'gd.panchang'], ['tab.calendar', 'gd.calendar'], ['tab.festivals', 'gd.festivals'],
     ['tab.muhurtham', 'gd.muhurtham'], ['mt.label', 'gd.match'], ['jk.title', 'gd.chart'], ['bs.title', 'gd.birthstar'], ['pp.title', 'gd.people'],
-    ['v.title', 'gd.vrats'], ['sk.title', 'gd.sky'], ['tm.title', 'gd.temples'], ['pr.title', 'gd.prayers'], ['s.notifications', 'gd.alertsWeb'], ['tab.settings', 'gd.settingsWeb']];
+    ['v.title', 'gd.vrats'], ['sk.title', 'gd.sky'], ['tm.title', 'gd.temples'], ['py.title', 'gd.prayers'], ['s.notifications', 'gd.alertsWeb'], ['tab.settings', 'gd.settingsWeb']];
   // The web has no reminders, widgets or purchases: its guide says so rather than pointing at Settings.
   $('#main').innerHTML = `<h2 class="serif" style="margin:0">${esc(t('gd.title'))}</h2><p class="muted">${esc(t('gd.intro'))}</p>
     ${rows.map(([n, d]) => `<div class="card"><b style="color:var(--accent)">${esc(t(n))}</b><p style="margin:6px 0 0">${esc(t(d))}</p></div>`).join('')}`;
@@ -2184,7 +2191,7 @@ function matchReportHtml(r) {
 // ---------------------------------------------------------------- porutham
 async function poruthamSheet(bride, groom) {
   const ten = await engine({ op: 'porutham', bride: { nakshatra: bride.anchor.nakshatra, moonSign: bride.anchor.moonSign }, groom: { nakshatra: groom.anchor.nakshatra, moonSign: groom.anchor.moonSign } });
-  sheet(`<div style="clear:both"></div><h2 class="serif">${esc(t('pr.title'))}</h2>
+  sheet(`<div style="clear:both"></div><h2 class="serif">${esc(t('py.title'))}</h2>
     <div><b>${esc(t('pdf.couple', bride.name, groom.name))}</b></div>
     <div class="small muted">${esc(t('m.bride'))}: ${esc(natalLine(bride.anchor))}</div><div class="small muted">${esc(t('m.groom'))}: ${esc(natalLine(groom.anchor))}</div>
     <h3 style="color:var(--accent)">${esc(t('pr.summary', ten.filter(p => p.matching === true).length))}</h3>
