@@ -408,3 +408,6 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .dialsvg .dl.halo { paint-order: stroke; stroke: var(--paper); stroke-width: 4px; stroke-linejoin: round; }
 .dialsvg .dt { font-size: 8.5px; }
 .pchip { display: inline-block; margin: 6px 0 4px; font-size: 11px; padding: 5px 10px; }
+
+/* A hymn: large serif verses, generous lines, sized with the app's text setting. */
+.prtext p { font-family: Georgia, 'Noto Serif', serif; font-size: 1.2em; line-height: 1.75; margin: 0 0 18px; overflow-wrap: anywhere; }

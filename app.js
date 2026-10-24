@@ -1,7 +1,7 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610241010';
+import { engine, onRestart } from './engine.js?v=202610241121';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -25,7 +25,7 @@ const CULTURES = [
 ];
 const LIGHT = ['kaal', 'ivory', 'rose', 'sage'], DARK = ['kaal-dark', 'night', 'charcoal', 'peacock'];
 const TABS = [['home', 'hm.home'], ['today', 'tab.today'], ['calendar', 'tab.calendar'], ['festivals', 'tab.festivals'], ['muhurtham', 'tab.muhurtham'],
-  ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['match', 'mt.label'], ['greetings', 'gr.title'], ['guide', 'gd.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
+  ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['match', 'mt.label'], ['greetings', 'gr.title'], ['guide', 'gd.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['prayers', 'pr.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
 
 // ---------------------------------------------------------------- state
 const saved = (() => { try { return JSON.parse(localStorage.getItem('kaal-web') || '{}'); } catch { return {}; } })();
@@ -256,6 +256,7 @@ async function render() {
     if (tab === 'vrats') return await viewVrats();
     if (tab === 'jathakam') return await viewJathakam();
     if (tab === 'temples') return await viewTemples();
+    if (tab === 'prayers') return await viewPrayers();
     if (tab === 'sky') return await viewSky();
     if (tab === 'people') return await viewPeople();
     if (tab === 'settings') return viewSettings();
@@ -494,6 +495,7 @@ function arrangeSheet(keys, x) {
   draw();
 }
 async function viewHome() {
+  await loadPrayers().catch(() => {});
   const d = today();
   dayDate = null; dayPlace = null;
   loading();
@@ -533,6 +535,7 @@ async function viewHome() {
     calendar: '<rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
     jathakam: '<rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/><path d="M3.5 3.5l17 17M20.5 3.5l-17 17M12 3.5L20.5 12 12 20.5 3.5 12z"/>',
     sky: '<circle cx="12" cy="12" r="3.5"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(-20 12 12)"/>',
+    prayers: '<path d="M12 21V11M12 11c0-3 1.5-6 1.5-8M12 11c0-3-1.5-6-1.5-8"/><path d="M13.5 3l3.5 9-2 4-3 5M10.5 3L7 12l2 4 3 5"/>',
     temples: '<path d="M12 2.5v2M9.5 8h5l-1-3.5h-3zM8 12h8l-1.5-4h-5zM6 20.5h12V12H6z"/><path d="M10.5 20.5v-4a1.5 1.5 0 0 1 3 0v4M4 20.5h16"/>',
     people: '<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9.5" r="2.3"/><path d="M3.5 19c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5M15 14c3 0 5.5 1.8 5.5 5"/>',
     birthstar: '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/><path d="M17 3v4M15 5h4"/>',
@@ -553,6 +556,7 @@ async function viewHome() {
     tile('calendar', 'calendar', 'accent', t('tab.calendar'), greg(d, { month: 'long', year: 'numeric' }), yearLabel(p.year)),
     tile('jathakam', 'jathakam', 'accent', t('jk.chart'), t('jk.title'), [t('jk.vimshottari'), t('jk.yogini'), t('jk.chara')].join(' · ')),
     tile('sky', 'sky', 'gold', t('sk.title'), t('sk.now'), ''),
+    PRAYERS ? (() => { const tp = todayPrayer(); return tile('prayers', 'prayers', 'gold', t('pr.title'), tp ? prayerTitle(tp) : t('pr.today'), tp ? t('deity.' + tp.deity) : ''); })() : tile('prayers', 'prayers', 'gold', t('pr.title'), t('pr.today'), ''),
     tile('temples', 'temples', 'warm', t('tm.title'), t('tm.deity'), ['vishnu', 'shiva', 'devi'].map(x => t('deity.' + x)).join(' · ')),
     tile('people', 'people', 'accent', t('fam.family'), person ? t(person.p.kind === 'remembrance' ? 'pp.remembranceOf' : 'pp.birthdayOf', person.p.name) : t('pp.title'), person ? when(person.date) : t('pp.add')),
     ...(matchingAvailable() ? [tile('match', 'match', 'accent', t('mt.label'), matchTitle(), t(matchesByPorutham() ? 'mt.ten' : 'mt.eight'))] : []),
@@ -1206,6 +1210,81 @@ function distText(km) {
   const v = miles ? km / 1.609344 : km;
   return new Intl.NumberFormat(locale(), { style: 'unit', unit: miles ? 'mile' : 'kilometer', maximumFractionDigits: 0 }).format(v);
 }
+// ---------------------------------------------------------------- prayers
+// As on iOS (PrayersView): traditional hymns by deity, for daily worship. Devotion only: nothing
+// here reads a profile, star or chart, and the app's own words say what a hymn is, never what it
+// does (content/scripts/audit_prayers.py checks them).
+let PRAYERS = null;
+const PRV = { deity: null, id: null, q: '' };
+const PR_SCRIPT = { hi: 'deva', mr: 'deva', ne: 'deva', bn: 'beng', gu: 'gujr', or: 'orya', te: 'telu', kn: 'knda', ml: 'mlym', ta: 'taml' };
+const PR_SCRIPT_NAME = { deva: 'देवनागरी', telu: 'తెలుగు', knda: 'ಕನ್ನಡ', mlym: 'മലയാളം', gujr: 'ગુજરાતી', beng: 'বাংলা', orya: 'ଓଡ଼ିଆ', taml: 'தமிழ்' };
+async function loadPrayers() { PRAYERS ??= await (await fetch('packs/prayers.json?v=' + V)).json(); return PRAYERS; }
+// Today's prayer: the weekday's deity by custom, one of its hymns per week in turn. Only the date decides.
+function todayPrayer() {
+  if (!PRAYERS) return null;
+  const d = parse(today()), deity = PRAYERS.weekdays[['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'][d.getUTCDay()]];
+  const list = PRAYERS.prayers.filter(p => p.deity === deity), week = Math.floor(d.getTime() / 864e5 / 7);
+  return list.length ? list[week % list.length] : null;
+}
+const prayerScript = () => S.prayerScript || PR_SCRIPT[lang()] || 'latn';
+const prayerTitle = p => lang() === 'en' ? p.title : (p.titleScript[prayerScript()] || p.title);
+const prayerLine = p => [t('deity.' + p.deity), t('pr.k.' + p.kind), t('pr.a.' + p.by), p.verses === 1 ? t('pr.verse1') : t('pr.verses', p.verses)].join(' · ');
+const prayerRow = p => `<button class="list-row" data-pr="${p.id}" style="width:100%;text-align:left;border:0;background:var(--card);border-radius:14px;margin-bottom:8px;padding:12px;cursor:pointer;color:inherit;font:inherit">
+  <div class="grow"><b>${esc(prayerTitle(p))}</b>${lang() !== 'en' ? `<div class="small muted">${esc(p.title)}</div>` : ''}<div class="small muted">${esc(prayerLine(p))}</div></div><span class="muted">›</span></button>`;
+async function viewPrayers() {
+  loading();
+  const book = await loadPrayers();
+  if (tab !== 'prayers') return;
+  if (PRV.id) return prayerReader(book.prayers.find(p => p.id === PRV.id));
+  const wire = () => {
+    $('#main').querySelectorAll('[data-pr]').forEach(b => b.onclick = () => { PRV.id = b.dataset.pr; viewPrayers(); scrollTo(0, 0); });
+    $('#main').querySelectorAll('[data-pd]').forEach(b => b.onclick = () => { PRV.deity = b.dataset.pd || null; viewPrayers(); scrollTo(0, 0); });
+  };
+  if (PRV.deity) {
+    $('#main').innerHTML = `<button class="linkbtn" data-pd="">‹ ${esc(t('pr.title'))}</button><h2 class="serif">${esc(t('deity.' + PRV.deity))}</h2>${book.prayers.filter(p => p.deity === PRV.deity).map(prayerRow).join('')}`;
+    return wire();
+  }
+  const tp = todayPrayer(), favs = (S.favPrayers || []).map(id => book.prayers.find(p => p.id === id)).filter(Boolean);
+  const day = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'][parse(today()).getUTCDay()];
+  const list = () => {
+    const q = PRV.q.trim().toLowerCase();
+    // Search by deity or title only.
+    if (q) { const hits = book.prayers.filter(p => p.title.toLowerCase().includes(q) || prayerTitle(p).toLowerCase().includes(q) || t('deity.' + p.deity).toLowerCase().includes(q) || p.deity.includes(q));
+      return hits.length ? hits.map(prayerRow).join('') : `<p class="muted">${esc(t('pr.none'))}</p>`; }
+    return `${tp ? `<button class="card" data-pr="${tp.id}" style="width:100%;text-align:left;border:0;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 80%,transparent))">
+        <div class="small" style="font-weight:700;letter-spacing:1px;opacity:.85">${esc(t('pr.today').toUpperCase())}</div><div class="serif" style="font-size:24px;font-weight:700">${esc(prayerTitle(tp))}</div>
+        <div class="small" style="opacity:.9">${esc(prayerLine(tp))}</div><div class="small" style="opacity:.8">${esc(t('pr.weekday', name('weekdays', day), t('deity.' + tp.deity)))}</div></button>` : ''}
+      ${favs.length ? `<p class="label">${esc(t('pr.favorites'))}</p>${favs.map(prayerRow).join('')}` : ''}
+      <p class="label">${esc(t('pr.deities'))}</p><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px">${book.deities.map(d => { const n = book.prayers.filter(p => p.deity === d).length;
+        return `<button class="card" data-pd="${d}" style="margin:0;text-align:left;cursor:pointer;color:inherit;font:inherit"><b>${esc(t('deity.' + d))}</b><div class="small muted">${esc(n === 1 ? t('pr.k.hymn') : t('pr.hymns', n))}</div></button>`; }).join('')}</div>`;
+  };
+  $('#main').innerHTML = `<h2 class="serif" style="margin-bottom:4px">${esc(t('pr.title'))}</h2><p class="muted" style="margin-top:0">${esc(t('pr.intro'))}</p>
+    <input type="search" id="prq" class="field" placeholder="${esc(t('pr.search'))}" value="${esc(PRV.q)}" style="width:100%;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit;margin-bottom:12px"><div id="prlist">${list()}</div>`;
+  $('#prq').oninput = e => { PRV.q = e.target.value; $('#prlist').innerHTML = list(); wire(); };
+  wire();
+}
+function prayerReader(p) {
+  if (!p) { PRV.id = null; return viewPrayers(); }
+  // The tradition's own script, Devanagari (the edition's), and Latin letters.
+  const mine = PR_SCRIPT[pack.language] || 'deva', scripts = [...new Set([mine, 'deva', 'latn'])];
+  const sc = scripts.includes(prayerScript()) ? prayerScript() : scripts[0], verses = p.text[sc] || p.text.deva;
+  const fav = (S.favPrayers || []).includes(p.id), ed = PRAYERS.editions[p.edition];
+  $('#main').innerHTML = `<div style="display:flex;align-items:center;gap:8px"><button class="linkbtn" data-back>‹ ${esc(PRV.deity ? t('deity.' + PRV.deity) : t('pr.title'))}</button><span class="grow"></span>
+      <button class="btn soft" data-fav aria-label="${esc(t(fav ? 'pr.unfavorite' : 'pr.favorite'))}" title="${esc(t(fav ? 'pr.unfavorite' : 'pr.favorite'))}">${fav ? '★' : '☆'}</button>
+      <button class="btn soft" data-share aria-label="${esc(t('pr.share'))}">${SHARE_ICON}</button></div>
+    <h2 class="serif" style="margin:8px 0 2px">${esc(prayerTitle(p))}</h2>${lang() !== 'en' ? `<div class="muted">${esc(p.title)}</div>` : ''}<div class="small muted">${esc(prayerLine(p))}</div>
+    <div class="seg" style="margin:12px 0">${scripts.map(x => `<button data-sc="${x}" class="${x === sc ? 'on' : ''}">${esc(x === 'latn' ? t('pr.latin') : PR_SCRIPT_NAME[x])}</button>`).join('')}</div>
+    <div class="prtext">${verses.map(v => `<p>${esc(v).replace(/\n/g, '<br>')}</p>`).join('')}</div>
+    <p class="small muted">${p.phala ? esc(t('pr.phala')) + '<br>' : ''}${ed ? esc(t('pr.source', ed.name)) : ''}</p>`;
+  const m = $('#main');
+  m.querySelector('[data-back]').onclick = () => { PRV.id = null; viewPrayers(); };
+  m.querySelectorAll('[data-sc]').forEach(b => b.onclick = () => { S.prayerScript = b.dataset.sc; save(); prayerReader(p); });
+  m.querySelector('[data-fav]').onclick = () => { S.favPrayers = fav ? (S.favPrayers || []).filter(x => x !== p.id) : [...(S.favPrayers || []), p.id]; save(); prayerReader(p); };
+  // The title and the text, nothing more.
+  m.querySelector('[data-share]').onclick = async () => { const text = prayerTitle(p) + '\n\n' + verses.join('\n\n');
+    try { if (navigator.share) await navigator.share({ title: prayerTitle(p), text }); else { await navigator.clipboard.writeText(text); } } catch {} };
+}
+
 async function viewTemples() {
   TEMPLES ??= await (await fetch('temples.json?v=' + V)).json();
   const yours = [...new Set(S.vrats.map(deityForVrat).filter(Boolean))];
@@ -1981,7 +2060,7 @@ async function cardImage(f, date, st, native, line) {
 function viewGuide() {
   const rows = [['hm.home', 'gd.home'], ['p.panchang', 'gd.panchang'], ['tab.calendar', 'gd.calendar'], ['tab.festivals', 'gd.festivals'],
     ['tab.muhurtham', 'gd.muhurtham'], ['mt.label', 'gd.match'], ['jk.title', 'gd.chart'], ['bs.title', 'gd.birthstar'], ['pp.title', 'gd.people'],
-    ['v.title', 'gd.vrats'], ['sk.title', 'gd.sky'], ['tm.title', 'gd.temples'], ['s.notifications', 'gd.alertsWeb'], ['tab.settings', 'gd.settingsWeb']];
+    ['v.title', 'gd.vrats'], ['sk.title', 'gd.sky'], ['tm.title', 'gd.temples'], ['pr.title', 'gd.prayers'], ['s.notifications', 'gd.alertsWeb'], ['tab.settings', 'gd.settingsWeb']];
   // The web has no reminders, widgets or purchases: its guide says so rather than pointing at Settings.
   $('#main').innerHTML = `<h2 class="serif" style="margin:0">${esc(t('gd.title'))}</h2><p class="muted">${esc(t('gd.intro'))}</p>
     ${rows.map(([n, d]) => `<div class="card"><b style="color:var(--accent)">${esc(t(n))}</b><p style="margin:6px 0 0">${esc(t(d))}</p></div>`).join('')}`;
