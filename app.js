@@ -1,7 +1,9 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine } from './engine.js';
+import { engine, onRestart } from './engine.js?v=202610240949';
+// The build stamp, also put on data files so a new page never reads old data.
+const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
 const CULTURES = [
   { id: 'malayalam', en: 'Malayalam', native: 'മലയാളം' },
@@ -36,6 +38,7 @@ const applyTextSize = () => { document.documentElement.style.setProperty('--ts',
 
 let STR = {}, pack = null, packJson = '', tab = 'home', dayDate = null, monthDate = null;
 const handles = new Map();
+onRestart(() => handles.clear());
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
@@ -124,7 +127,12 @@ const tithiName = n => (n === 15 || n === 30 ? '' : name('paksha', n < 15 ? 'shu
 // ---------------------------------------------------------------- engine
 async function cal(year, place = S.home) {
   const key = `${S.culture}|${place.id}|${place.latitude}|${year}`;
-  if (!handles.has(key)) handles.set(key, engine({ op: 'open', year, location: place, pack: packJson }).then(r => r.handle));
+  if (!handles.has(key)) {
+    const h = engine({ op: 'open', year, location: place, pack: packJson }).then(r => r.handle);
+    // A failed open is not kept: the next screen tries again.
+    h.catch(() => { if (handles.get(key) === h) handles.delete(key); });
+    handles.set(key, h);
+  }
   return handles.get(key);
 }
 async function resetCalendars() {
@@ -149,7 +157,7 @@ async function upcoming(from, days) {
 let PLACES = null;
 async function places() {
   if (PLACES) return PLACES;
-  const tsv = await (await fetch('places.tsv')).text();
+  const tsv = await (await fetch('places.tsv?v=' + V)).text();
   PLACES = tsv.trim().split('\n').map(l => { const c = l.split('\t');
     return { id: +c[0], name: c[1], ascii: c[2].toLowerCase(), alts: c[3].toLowerCase(), country: c[4], region: c[5], latitude: +c[6], longitude: +c[7], tz: c[8], pop: +c[9] }; });
   PLACES.sort((a, b) => b.pop - a.pop);
@@ -192,16 +200,20 @@ function applyTheme() {
   r.dataset.light = S.light; r.dataset.dark = S.dark;
   r.lang = lang();
 }
+// A language by its own name: Hindi is हिन्दी whichever northern tradition uses it.
+const LANG_NAMES = { hi: 'हिन्दी', ml: 'മലയാളം', ta: 'தமிழ்', te: 'తెలుగు', kn: 'ಕನ್ನಡ', gu: 'ગુજરાતી', mr: 'मराठी', bn: 'বাংলা', or: 'ଓଡ଼ିଆ', ne: 'नेपाली', en: 'English' };
+const langName = code => LANG_NAMES[code] || code;
 function shell() {
   const c = CULTURES.find(c => c.id === S.culture);
-  $('#badge').textContent = c ? `☀ ${c.native} · ${c.en} ▾` : '';
+  // The tradition in the language the app is in.
+  $('#badge').textContent = c ? `☀ ${S.native ? c.native : c.en} ▾` : '';
   // The tradition, switched where you are: a sheet of all fifteen, not a trip to Settings.
   $('#badge').onclick = () => {
     const o = sheet(`<h2 class="serif">${esc(t('s.tradition'))}</h2><div class="chips">${CULTURES.map(x => `<button class="chip ${S.culture === x.id ? 'on' : ''}" data-tc="${x.id}">${x.native}<br><small>${x.en}</small></button>`).join('')}</div>`);
     o.querySelectorAll('[data-tc]').forEach(b => b.onclick = async () => { o.remove(); if (b.dataset.tc === S.culture) return; S.culture = b.dataset.tc; save(); await loadPack(); await resetCalendars(); render(); });
   };
   // English or the tradition's language, beside the tradition picker.
-  if (pack) { $('#langbadge').textContent = `🗣 ${S.native ? pack.display.nameNative : 'English'} ▾`; $('#langbadge').onclick = () => { S.native = !S.native; save(); render(); }; }
+  if (pack) { $('#langbadge').textContent = `🗣 ${S.native ? langName(pack.language) : 'English'} ▾`; $('#langbadge').onclick = () => { S.native = !S.native; save(); render(); }; }
   const house = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>';
   // The daily five one tap away; everything else under More.
   const DAILY = ['home', 'today', 'calendar', 'festivals', 'muhurtham'], rest = TABS.filter(([id]) => !DAILY.includes(id) && (id !== 'match' || matchingAvailable()));
@@ -213,7 +225,7 @@ function shell() {
     o.querySelectorAll('[data-mt]').forEach(b => b.onclick = () => { o.remove(); tab = b.dataset.mt; render(); scrollTo(0, 0); });
   };
   // The copyright with the web build's version (the stamp build-web.sh puts on app.js).
-  const build = (document.querySelector('script[src^="app.js"]')?.getAttribute('src').match(/v=(\d+)/) || [])[1] || 'dev';
+  const build = V;
   $('#foot').innerHTML = `<div>© ${new Date().getFullYear()} Funtopia App Company · web ${build}</div><div>${esc(t('s.attribution'))}</div>`;
 }
 // The Eka Panchang mark blooming while something loads, as on iOS (LogoBloom).
@@ -222,8 +234,9 @@ function loading() { $('#main').innerHTML = `<div class="loading">${BLOOM}<div c
 function sheet(html, onOpen) {
   const o = document.createElement('div'); o.className = 'overlay';
   o.innerHTML = `<div class="sheet"><button class="btn soft close noprint">${esc(t('c.close'))}</button>${html}</div>`;
-  o.onclick = e => { if (e.target === o) o.remove(); };
-  o.querySelector('.close').onclick = () => o.remove();
+  // A sheet still saving stays open until it is done.
+  o.onclick = e => { if (e.target === o && !o.dataset.busy) o.remove(); };
+  o.querySelector('.close').onclick = () => { if (!o.dataset.busy) o.remove(); };
   document.body.appendChild(o); onOpen?.(o); return o;
 }
 
@@ -389,22 +402,29 @@ async function openDial(date) {
     const list = DIAL.mode === 2 ? [...wins, ...marks].sort((x, y) => x.start - y.start) : segs;
     const run = list.find(x => tt >= x.start && tt < x.end), nxt = list.find(x => x.start > tt);
     const wr = DIAL.mode === 2 ? R - band / 2 : inner, ww = DIAL.mode === 2 ? band - 6 : 12;
+    let labels = '';
     let svg = DIAL.mode === 2 ? `<circle cx="${C}" cy="${C}" r="${R - band / 2}" fill="none" stroke="var(--sunken)" stroke-width="${band}"/>` : '';
     segs.forEach((x, i) => { const n = nature(x);
       svg += `<path data-seg="${i}" d="${arc(R - band / 2, x.start, x.end)}" fill="none" stroke="${n === 0 ? 'var(--accent)' : n === 1 ? 'color-mix(in srgb, var(--accent) 45%, transparent)' : 'var(--sunken)'}" stroke-width="${band - 2}"/>`;
       if (n === 2) svg += `<path d="${arc(R - band + 1, x.start, x.end)}" fill="none" stroke="var(--muted)" stroke-opacity=".45"/><path d="${arc(R - 1, x.start, x.end)}" fill="none" stroke="var(--muted)" stroke-opacity=".45"/>`;
-      const [lx, ly] = pt(R - band / 2, ang((x.start + x.end) / 2));
-      svg += `<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" class="dl ${n === 0 ? 'on' : ''}" style="font-weight:${n === 2 ? 400 : 700}">${esc(short(x))}</text>`; });
+      // Labels are drawn after the hand, so it never cuts one; a period too narrow for its name stays unlabelled,
+      // and at the sides, where a name runs across the band, it is set small enough to stay inside it.
+      const mid = ang((x.start + x.end) / 2), [lx, ly] = pt(R - band / 2, mid), nmx = short(x);
+      const arcLen = (R - band / 2) * (x.end - x.start) / (b - a) * TAU, across = Math.abs(Math.cos(mid)) * nmx.length * 6;
+      if (arcLen >= nmx.length * 6 + 6) labels += `<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" class="dl ${n === 0 ? 'on' : ''}" style="font-weight:${n === 2 ? 400 : 700};font-size:${across > band - 6 ? Math.max(7, 10 * (band - 6) / across).toFixed(1) : 10}px">${esc(nmx)}</text>`; });
     if (DIAL.mode !== 2) svg += `<circle cx="${C}" cy="${C}" r="${inner}" fill="none" stroke="var(--line)"/>`;
-    wins.forEach((w, i) => { const s0 = Math.max(w.start, a), s1 = Math.min(w.end, b), [lx, ly] = pt(DIAL.mode === 2 ? R - band - 14 : inner - 18, ang((s0 + s1) / 2));
+    wins.forEach((w, i) => { const s0 = Math.max(w.start, a), s1 = Math.min(w.end, b), [lx, ly] = pt(DIAL.mode === 2 ? R - band - 14 : inner, ang((s0 + s1) / 2));
       svg += `<path data-win="${i}" d="${arc(wr, s0, s1)}" fill="none" stroke="var(--ink)" stroke-opacity=".7" stroke-width="${ww}" stroke-linecap="round"/><path d="${arc(wr, s0, s1)}" fill="none" stroke="url(#hatch)" stroke-width="${ww - 4}" stroke-linecap="round" pointer-events="none"/>
-        <text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" class="dl" style="font-weight:600">${esc(t('dial.w.' + w.key))}</text>`; });
+`;
+      // On the window's own ring, haloed in the page colour, clear of the centre's words.
+      labels += `<text x="${lx.toFixed(1)}" y="${ly.toFixed(1)}" class="dl halo" style="font-weight:600">${esc(t('dial.w.' + w.key))}</text>`; });
     marks.forEach(m => { const [x, y] = pt(inner, ang((m.start + m.end) / 2)); svg += `<path d="M${x} ${y - 8}L${x + 6} ${y}L${x} ${y + 8}L${x - 6} ${y}Z" fill="var(--gold)"><title>${esc(nm(m))}</title></path>`; });
     const edges = segs.length ? segs.map(x => x.start) : [...wins, ...marks].flatMap(x => [x.start, x.end]);
-    [...new Set(edges)].filter(u => u >= a && u < b).forEach(u => { const [x, y] = pt(R + 16, ang(u)); svg += `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" class="dt">${esc(clock(u))}</text>`; });
+    [...new Set(edges)].filter(u => u >= a && u < b).forEach(u => { const [x, y] = pt(R + 22, ang(u)); svg += `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" class="dt">${esc(clock(u))}</text>`; });
     if (showNow || DIAL.scrub != null) { const e = ang(tt), [x0, y0] = pt(inner - 10, e), [x1, y1] = pt(R + 6, e), col = DIAL.scrub == null ? 'var(--accent)' : 'var(--gold)';
       svg += `<line x1="${x0}" y1="${y0}" x2="${x1}" y2="${y1}" stroke="${col}" stroke-width="3" stroke-linecap="round"/><circle cx="${x1}" cy="${y1}" r="5" fill="${col}"/>`; }
-    const sp = starPerson(), nk = p.nakshatras.find(n => tt < n.end) || p.nakshatras.at(-1), pl = sp && nk ? starLine(sp, nk.key, nk.end) : '';
+    svg += labels;
+    const sp = starPerson(), nk = p.nakshatras.find(n => n.start <= tt && tt < n.end), pl = sp && nk ? starLine(sp, nk.key, nk.end) : '';
     const mins = run ? Math.floor((run.end - now) / 60) : 0;
     const centre = DIAL.scrub != null ? `<div class="small" style="font-weight:600">${esc(t('dial.at', clock(DIAL.scrub), run ? nm(run) : '–', run ? clock(run.end) : ''))}</div><button class="linkbtn" data-now>${esc(t('dial.backNow'))}</button>`
       : run && showNow ? `<div class="serif dbig">${esc(nm(run))}</div><div class="small" style="color:var(--accent);font-weight:700">${esc(t('dial.endsIn', nm(run), mins >= 60 ? t('dial.hm', Math.floor(mins / 60), mins % 60) : t('dial.m', mins)))}</div>`
@@ -415,7 +435,8 @@ async function openDial(date) {
       <div style="display:flex;gap:8px"><div class="seg" style="flex:1">${['dm.choghadiya', 'dm.hora', 'dial.windows'].map((k, i) => `<button data-dm="${i}" class="${DIAL.mode === i ? 'on' : ''}">${esc(t(k))}</button>`).join('')}</div>
         <div class="seg"><button data-dh="1" class="${isDay ? 'on' : ''}" aria-label="${esc(t('dm.day'))}">☀</button><button data-dh="0" class="${!isDay ? 'on' : ''}" aria-label="${esc(t('dm.night'))}">☾</button></div></div>
       <div class="dialbox"><svg viewBox="0 0 ${W} ${W}" class="dialsvg"><defs><pattern id="hatch" width="5" height="5" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="5" height="5" fill="var(--paper)"/><line x1="0" y1="0" x2="0" y2="5" stroke="var(--ink)" stroke-opacity=".5" stroke-width="1.2"/></pattern></defs>${svg}</svg>
-        <div class="dialc">${centre}${after}${pl ? `<div class="pchip">${esc(pl)}</div>` : ''}</div></div>
+        <div class="dialc">${centre}${after}</div></div>
+      ${pl ? `<div style="text-align:center"><span class="pchip">${esc(pl)}</span></div>` : ''}
       <div class="diallegend">${DIAL.mode !== 2 ? `<span><i style="background:var(--accent)"></i>${esc(t(DIAL.mode === 1 ? 'dial.benefic' : 'nature.s'))}</span>${DIAL.mode === 0 ? `<span><i style="background:color-mix(in srgb, var(--accent) 45%, transparent)"></i>${esc(t('nature.m'))}</span>` : ''}${DIAL.mode === 0 ? `<span><i style="border:1px solid var(--muted)"></i>${esc(t('nature.a'))}</span>` : `<span><i style="background:color-mix(in srgb, var(--accent) 45%, transparent)"></i>${esc(t('dial.other'))}</span>`}<br>` : ''}
         <span>⟋ ${esc(t('dial.kalams'))}</span><span style="color:var(--gold)">◆</span> ${esc(t('dial.muhurtas'))}</div>
       <div id="dialdetail"></div>`;
@@ -534,7 +555,7 @@ async function viewHome() {
     ...(matchingAvailable() ? [tile('match', 'match', 'accent', t('mt.label'), matchTitle(), t(matchesByPorutham() ? 'mt.ten' : 'mt.eight'))] : []),
     tile('greetings', 'greetings', 'gold', t('gr.title'), greet ? t('gr.send', fname(greet.f)) : t('gr.card'), greet ? when(greet.date) : ''),
     tile('birthstar', 'birthstar', 'gold', t('bs.result'), t('bs.title'), ''),
-    tile('settings', 'settings', 'quiet', t('tab.settings'), c ? (S.native ? c.native : c.en) : '', t('s.notifications')),
+    tile('settings', 'settings', 'quiet', t('tab.settings'), c ? (S.native ? c.native : c.en) : '', S.home?.name || ''),
   ];
   $('#main').innerHTML = `<div class="home">
     <div class="homehead"><div><div class="small muted"><b>${esc(greg(d))} · ${esc(cultureDate(p.solar, p.lunar))}</b></div><div class="serif wordmark">Eka Panchang</div>
@@ -547,7 +568,7 @@ async function viewHome() {
         <span class="serif herodate">${esc(cultureDate(p.solar, p.lunar))}</span>
         <span class="herosub">${esc(tithi)}</span>
         <span class="herosub small">${esc(yearLabel(p.year))}</span>
-        ${p.tithis[0] ? (() => { const x = p.tithis[0], f = Math.min(1, Math.max(0, (now - x.start) / (x.end - x.start))); return `<span class="tprog"><span style="width:${Math.max(2, f * 100)}%"></span></span><span class="herosub small">${esc(t('hm.tithiDone', name('tithis', x.key), Math.round(f * 100)))}</span>`; })() : ''}
+        ${p.tithis[0] ? (() => { const x = p.tithis.find(x => x.start <= now && now < x.end) || p.tithis[0], f = Math.min(1, Math.max(0, (now - x.start) / (x.end - x.start))); return `<span class="tprog"><span style="width:${Math.max(2, f * 100)}%"></span></span><span class="herosub small">${esc(t('hm.tithiDone', name('tithis', x.key), Math.round(f * 100)))}</span>`; })() : ''}
         <span class="skywrap">${skyStrip(p, S.home.tz)}</span>
         <span class="hcells">${[[t('p.nakshatra'), p.nakshatras[0] ? name('nakshatras', p.nakshatras[0].key) : '–'], [t('sun.moonrise'), p.moonrise ? clock(p.moonrise) : t('sun.none')], [t('sun.moonset'), p.moonset ? clock(p.moonset) : t('sun.none')]]
           .map(([l, v]) => `<span class="hcell"><span>${esc(l)}</span><b>${esc(v)}</b></span>`).join('')}</span>
@@ -930,12 +951,12 @@ async function gunaMilanSheet(bride, groom) {
   const sideName = (k, v) => k.key === 'bhakoot' ? name('rashis', v) : k.key === 'graha-maitri' ? name('grahas', v) : v.charAt(0).toUpperCase() + v.slice(1);
   const rule = (key, of) => `<div class="card" style="background:var(--sunken)"><p class="small">${esc(t(key))}</p><p class="small muted"><b>${esc(t('gm.cancel'))}</b></p>
     ${m.cancellations.filter(c => c.of === of).map(c => `<div class="small" style="color:${c.holds ? 'var(--accent)' : 'var(--muted)'}">· ${esc(t('gm.c.' + c.condition))}: ${esc(t(c.holds ? 'gm.holds' : 'gm.notHold'))}</div>`).join('')}</div>`;
-  const kuja = (p, list) => `<div class="small"><b>${esc(p.name)}</b>${list.map(k => `<div style="color:${k.listed ? 'var(--accent)' : 'var(--muted)'}">${esc(t('jk.kujaRow', k.house, k.from === 'lagna' ? t('jk.lagnaWord') : name('grahas', k.from)))} · ${esc(t(k.listed ? 'mt.marsListed' : 'jk.kujaNot'))}</div>`).join('')}</div>`;
+  const kuja = (p, list) => `<div class="small"><b>${esc(p.name)} · ${esc(t('gm.marsCount', list.filter(k => k.listed).length, list.length))}</b>${list.map(k => `<div style="color:${k.listed ? 'var(--accent)' : 'var(--muted)'}">${esc(t('jk.kujaRow', k.house, k.from === 'lagna' ? t('jk.lagnaWord') : name('grahas', k.from)))} · ${esc(t(k.listed ? 'mt.marsListed' : 'jk.kujaNot'))}</div>`).join('')}</div>`;
   sheet(`<h2 class="serif">${esc(t('gm.title'))}</h2><div style="font-size:24px;font-weight:700;color:var(--accent)">${esc(t('gm.total', pts(m.total)))}</div>
     <p style="font-weight:600">${esc(t('gm.band.' + m.band))}</p>
     <div class="card">${m.kootas.map(k => `<div class="row"><span>${esc(t('gm.' + k.key))}<small class="muted" style="display:block">${esc(t('gm.sides', sideName(k, k.bride), sideName(k, k.groom)))}</small></span><span class="v">${pts(k.points)} / ${pts(k.max)}</span></div>`).join('')}</div>
     ${m.nadiZero ? rule('gm.nadiRule', 'nadi') : ''}${m.bhakootZero ? rule('gm.bhakootRule', 'bhakoot') : ''}
-    <div class="card"><p class="label">${esc(t('gm.manglik'))}</p>${kuja(bride, r.brideKuja)}${kuja(groom, r.groomKuja)}</div>
+    <div class="card"><p class="label">${esc(t('mt.mangalTitle'))}</p>${kuja(bride, r.brideKuja)}${kuja(groom, r.groomKuja)}</div>
     <p class="small muted">${esc(t('gm.note'))}</p>`);
 }
 
@@ -1183,7 +1204,7 @@ function distText(km) {
   return new Intl.NumberFormat(locale(), { style: 'unit', unit: miles ? 'mile' : 'kilometer', maximumFractionDigits: 0 }).format(v);
 }
 async function viewTemples() {
-  TEMPLES ??= await (await fetch('temples.json')).json();
+  TEMPLES ??= await (await fetch('temples.json?v=' + V)).json();
   const yours = [...new Set(S.vrats.map(deityForVrat).filter(Boolean))];
   const order = [...yours, ...TEMPLES.deities.filter(d => !yours.includes(d))];
   const origin = tmNear || S.home;
@@ -1273,6 +1294,7 @@ function explainHow(how) {
     [/^-1 (\w+)$/, m => t('r.last', name('weekdays', m[1]))],
     [/^(\d+) (\w+)$/, m => t('r.nth', m[1], name('weekdays', m[2]))],
     [/^fixed Gregorian date$/, () => t('r.fixed')],
+    [/^almanac exception for this year$/, () => t('r.exception')],
     [/^([+-]\d+) days from ([\w-]+)$/, m => t(+m[1] < 0 ? 'r.dayBefore' : 'r.after', Math.abs(+m[1]), eventName(m[2]))],
   ];
   for (const [re, f] of rules) if ((m = how.match(re))) return f(m) + tail;
@@ -1344,6 +1366,9 @@ async function viewMonth() {
   const yl = yearLabel((await day(m, place)).year);
   const marked = ['ekadashi', 'purnima', 'pournami', 'amavasya', 'amavasai', 'karuthavavu'];
   const items = [];
+  // Udayam and astamayam for the cell's foot: "6:26", without the half of the day.
+  const sunF = dtf({ hour: 'numeric', minute: '2-digit', ...hourOpts(), timeZone: place.tz });
+  const hm = u => u ? sunF.formatToParts(new Date(u * 1000)).filter(x => x.type !== 'dayPeriod').map(x => x.value).join('').trim() : '';
   const grid = cells.map(c => {
     const fs = c.festivals.map(id => pack.festivals.find(f => f.id === id)).filter(f => f && !f.hidden);
     fs.forEach(f => items.push({ f, date: c.date }));
@@ -1357,8 +1382,9 @@ async function viewMonth() {
     const cs = S.calStyle || 'festive', top = fs.slice().sort((a, b) => (a.tier === 'major' ? 0 : 1) - (b.tier === 'major' ? 0 : 1))[0];
     const emb = cs !== 'minimal' && top ? ` emb ${top.tier === 'major' ? 'embmaj' : ''}" style="--emb:url(emblems/${top.card || 'lotus'}.svg)` : '';
     return `<button class="c2 cs-${cs} ${c.date === td ? 'today' : ''}${emb}" data-day="${c.date}" aria-label="${esc(greg(c.date) + ', ' + sub + (fs.length ? ', ' + fs.map(fname).join(', ') : '') + why)}">
-      <span class="top"><b class="num">${+c.date.slice(8)}</b>${moon ? `<i class="moon">${moon}</i>` : ''}<span class="grow"></span>${band === 0 ? '<i class="mk" title="✦">✦</i>' : band === 1 ? '<i class="mk">✪</i>' : ''}</span>
-      <span class="t ${top?.tier === 'major' ? 'maj' : ''}">${esc(sub)}</span>${cs !== 'minimal' ? `<span class="n">${esc(name('nakshatras', c.nakshatra))}</span>` : ''}</button>`;
+      <span class="top"><b class="num">${+c.date.slice(8)}</b>${moon ? `<i class="moon">${moon}</i>` : ''}${top ? `<span class="t td ${top.tier === 'major' ? 'maj' : ''}">${esc(sub)}</span>` : ''}<span class="grow"></span>${band === 0 ? '<i class="mk" title="✦">✦</i>' : band === 1 ? '<i class="mk">✪</i>' : ''}</span>
+      ${top ? `<span class="fn ${top.tier === 'major' ? 'maj' : ''}">${esc(fname(top))}</span>` : `<span class="t">${esc(sub)}</span>${cs !== 'minimal' ? `<span class="n">${esc(name('nakshatras', c.nakshatra))}</span>` : ''}`}
+      ${cs !== 'minimal' && c.sunrise ? `<span class="sun" aria-hidden="true">↑${esc(hm(c.sunrise))} ↓${esc(hm(c.sunset))}</span>` : ''}</button>`;
   }).join('');
   $('#main').innerHTML = `<div class="dayhead"><div class="nav"><button class="arrow" data-m="-1">‹</button>
       <div><button class="mtitle" data-jump><h1 class="serif" style="font-size:24px;margin:0">${esc(head)}</h1><div class="muted">${esc(dtf({ month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(m)))}</div>${yl ? `<div class="small muted">${esc(yl)}</div>` : ''}</button>
@@ -1371,7 +1397,7 @@ async function viewMonth() {
     <div class="grid g2 fadein">${wd.map(w => `<div class="wd">${esc(w)}</div>`).join('')}${'<div></div>'.repeat(lead)}${grid}</div>
     <div class="small muted calleg">${sp ? `<div><span><b class="mk">✦</b> ${esc(t('cal.ring0'))}</span><span><b class="mk">✪</b> ${esc(t('cal.ring1'))}</span></div>
       <label>👤 <select id="ringfor">${S.people.filter(p => p.kind !== 'remembrance' && p.anchor?.nakshatra).map(p => `<option value="${p.id}" ${p.id === sp.id ? 'selected' : ''}>${esc(t('cal.for', p.name))}</option>`).join('')}</select></label>` : `<div>${esc(t('cal.addStar'))}</div>`}
-      <div><span><i class="fd"></i>${esc(t('tab.festivals'))}</span><span>● ${esc(name('tithis', 'purnima'))}</span><span>○ ${esc(name('tithis', 'amavasya'))}</span></div></div>
+      <div><span>↑ ↓ ${esc(t('cal.sunLegend'))}</span><span><i class="fd"></i>${esc(t('tab.festivals'))}</span><span>● ${esc(name('tithis', 'purnima'))}</span><span>○ ${esc(name('tithis', 'amavasya'))}</span></div></div>
     <p class="small muted" style="margin-top:10px;display:none"><span class="dot major"></span> ${esc(t('f.major'))} &nbsp; <span class="dot"></span> ${esc(t('tab.festivals'))} &nbsp; <span class="dot hollow"></span> ${['ekadashi', 'purnima', 'amavasya'].map(k => esc(name('tithis', k))).join(' · ')}</p>
     ${items.length ? `<p class="label" style="margin-top:16px">${esc(t('tab.festivals'))}</p>` : ''}
     ${items.map(x => festRow(x.f, x.date)).join('')}
@@ -1557,9 +1583,9 @@ function personEditor(person, presetSex, onSaved) {
         const missing = [[!p.name, 'pp.name'], [!p.sex, 'pp.sex'], [!p.date, 'pp.born'], [!p.place, 'pp.place']].filter(x => x[0]).map(x => t(x[1]));
         q('#perr').textContent = missing.length ? '⚠ ' + missing.join(', ') : '';
         if (missing.length) return;
-        const btn = q('#psave'); btn.disabled = true; btn.textContent = '…';
+        const btn = q('#psave'); btn.disabled = true; btn.textContent = t('pp.reading'); o2.dataset.busy = '1';
         await preview();
-        btn.disabled = false; btn.textContent = t('c.save');
+        btn.disabled = false; btn.textContent = t('c.save'); delete o2.dataset.busy;
         if (!p._anchor) { q('#perr').textContent = '⚠ ' + t('pp.failed'); return; }
         const fam = q('#pfam').value && q('#pfam').value !== '+' ? q('#pfam').value : defaultFamily().id;
         const rec = { id: p.id, name: p.name, sex: p.sex, kind: p.kind, date: p.date, minutes: p._minutes ?? null, place: p.place, anchor: p._anchor, family: fam, relation: q('#prel').value || null };
@@ -1590,9 +1616,9 @@ function viewBirthStar() {
   const run = async () => {
     const d = $('#bd').value; if (!d) return;
     const tm = $('#bt').value; const minutes = tm ? +tm.slice(0, 2) * 60 + +tm.slice(3) : null;
-    const mine = ++seq; $('#bres').textContent = '…';
-    let html; try { html = anchorCard(await anchorFor(d, minutes, place)); } catch { html = esc(t('pp.failed')); }
-    if (mine === seq) $('#bres').innerHTML = html;
+    const mine = ++seq; $('#bres').innerHTML = `<div class="ring mini"><i></i></div><p class="small muted" style="text-align:center">${esc(t('pp.reading'))}</p>`;
+    let html; try { html = anchorCard(await anchorFor(d, minutes, place)); } catch { html = `<p class="small" style="color:var(--accent);font-weight:700">⚠ ${esc(t('pp.failed'))}</p><button class="btn soft" id="bretry">${esc(t('c.retry'))}</button>`; }
+    if (mine === seq) { $('#bres').innerHTML = html; $('#bretry')?.addEventListener('click', run); }
   };
   $('#bd').onchange = run; $('#bt').onchange = run;
   placePicker($('#bpick'), p => { place = p; $('#bplace').textContent = p.name; $('#bpick').querySelector('.results').innerHTML = ''; run(); });
@@ -1752,6 +1778,13 @@ async function tintedEmblem(m, a, b) {
   const gr = g.createLinearGradient(0, 0, 0, 360); gr.addColorStop(0, a); gr.addColorStop(1, b); g.fillStyle = gr; g.fillRect(0, 0, 360, 360);
   return tintCache[k] = c;
 }
+// A text's lines at the canvas's current font, broken between words (a single long word gets a line of its own).
+function cardLines(g, s, maxW) {
+  const out = []; let cur = '';
+  for (const w of String(s).split(' ')) { const nx = cur ? cur + ' ' + w : w; if (g.measureText(nx).width > maxW && cur) { out.push(cur); cur = w; } else cur = nx; }
+  if (cur) out.push(cur);
+  return out;
+}
 async function drawDesign(g, W, H, d, f, date, native, line, st) {
   await document.fonts.load(`48px "Great Vibes"`).catch(() => {});
   const C = DCOL[d === 'arch' ? 'arch' : d === 'mandala' ? 'mandala' : 'light'], u = W / 320, TAU = Math.PI * 2;
@@ -1790,17 +1823,29 @@ async function drawDesign(g, W, H, d, f, date, native, line, st) {
   const left = d === 'botanical', cx = left ? 32 * u : W / 2; g.textAlign = left ? 'left' : 'center'; g.textBaseline = 'alphabetic';
   let y = ({ lanterns: 92, heritage: 62, arch: 80, mandala: 116, botanical: 76 })[d] * u;
   const caps = (s, size, color, track) => { g.font = `500 ${size * u}px Georgia, serif`; g.fillStyle = color; if ('letterSpacing' in g) g.letterSpacing = `${track * u}px`; g.fillText(s, cx, y); if ('letterSpacing' in g) g.letterSpacing = '0px'; };
-  const wrap = (s, font, color, gap, maxW, max = 4) => { g.font = font; g.fillStyle = color; const ws = s.split(' '); let cur = '', n = 0; for (const w of ws) { const nx = cur ? cur + ' ' + w : w; if (g.measureText(nx).width > maxW && cur) { g.fillText(cur, cx, y); y += gap; cur = w; if (++n >= max) return; } else cur = nx; } if (cur) { g.fillText(cur, cx, y); y += gap; } };
+  // Every word is drawn: a text that would run long is set smaller (fitFont), never cut.
+  const wrap = (s, font, color, gap, maxW) => { g.font = font; g.fillStyle = color; for (const l of cardLines(g, s, maxW)) { g.fillText(l, cx, y); y += gap; } };
+  const fitFont = (s, make, from, min, maxW, lines) => { let z = from; g.font = make(z); while (z > min && cardLines(g, s, maxW).length > lines) { z -= 0.5; g.font = make(z); } return z; };
   if (st.to) { g.font = `italic ${13 * u}px Georgia, serif`; g.fillStyle = C.ink; g.fillText(t('card.dear', st.to), cx, y); y += 20 * u; }
   caps(t('card.happy').toUpperCase(), 11, C.ink, 4); y += 48 * u;
-  let size = (left ? 44 : 52) * u; g.font = `${size}px "Great Vibes", cursive`; const maxW = (left ? .58 : .86) * W; while (g.measureText(fname(f)).width > maxW && size > 20) { size -= 2; g.font = `${size}px "Great Vibes", cursive`; }
-  g.fillStyle = C.ink; g.fillText(fname(f), cx, y); y += 26 * u;
-  if (native) { g.font = `600 ${17 * u}px Georgia, serif`; g.fillStyle = C.gold; g.fillText(native, cx, y); y += 18 * u; }
+  const maxW = (left ? .56 : .8) * W, script = z => `${z}px "Great Vibes", cursive`;
+  // The name on one line if it fits at a fair size, else on two.
+  let size = fitFont(fname(f), script, (left ? 44 : 52) * u, 30 * u, maxW, 1);
+  if (cardLines(g, fname(f), maxW).length > 1) size = fitFont(fname(f), script, (left ? 40 : 44) * u, 16 * u, maxW, 2);
+  const nameLines = cardLines(g, fname(f), maxW);
+  g.fillStyle = C.ink; nameLines.forEach((l, i) => { g.fillText(l, cx, y); if (i < nameLines.length - 1) y += size * 1.05; }); y += 26 * u;
+  if (native) { const z = fitFont(native, z => `600 ${z}px Georgia, serif`, 17 * u, 10 * u, (left ? .58 : .86) * W, 2); wrap(native, `600 ${z}px Georgia, serif`, C.gold, z * 1.15, (left ? .58 : .86) * W); y += 2 * u; }
   // Divider: line, four petals, line.
   const dx = left ? cx + 60 * u : cx; g.strokeStyle = C.gold; g.lineWidth = 1 * u; g.beginPath(); g.moveTo(dx - 60 * u, y); g.lineTo(dx - 10 * u, y); g.moveTo(dx + 10 * u, y); g.lineTo(dx + 60 * u, y); g.stroke();
   for (let a = 0; a < TAU; a += Math.PI / 2) { g.beginPath(); g.moveTo(dx, y); g.lineTo(dx + Math.cos(a) * 8 * u, y + Math.sin(a) * 8 * u); g.stroke(); } y += 24 * u;
-  if (line) wrap(line, `italic ${12 * u}px Georgia, serif`, C.ink, 16 * u, (left ? .5 : .78) * W, 8);
-  if (st.from) { g.font = `600 ${13 * u}px Georgia, serif`; g.fillStyle = C.gold; g.fillText(t('card.with', st.from), cx, y); y += 18 * u; }
+  if (line) {
+    // As large as fits between here and the tagline at the foot, with the sender's line below it.
+    const lw = (left ? .5 : .78) * W, foot = H - ((d === 'arch' || d === 'mandala' ? 66 : 58) + 16 + (st.from ? 26 : 0)) * u;
+    let z = fitFont(line, z => `italic ${z}px Georgia, serif`, 12 * u, 7 * u, lw, 8);
+    while (z > 6 * u && y + cardLines(g, line, lw).length * z * 1.33 > foot) { z -= 0.25 * u; g.font = `italic ${z}px Georgia, serif`; }
+    wrap(line, `italic ${z}px Georgia, serif`, C.ink, z * 1.33, lw);
+  }
+  if (st.from) { y += 6 * u; g.font = `600 ${13 * u}px Georgia, serif`; g.fillStyle = C.gold; g.fillText(t('card.with', st.from), cx, y); y += 18 * u; }
   // The emblem, as large as the space above the tagline allows.
   const room = H - (d === 'arch' || d === 'mandala' ? 92 : 84) * u - y, es = Math.min(88 * u, room - 16 * u);
   if (!left && es > 40 * u) { const em = await tintedEmblem(f.card || 'lotus', C.accent, C.gold); g.fillStyle = C.dark ? 'rgba(226,184,92,.12)' : 'rgba(182,138,51,.1)'; g.beginPath(); g.arc(W / 2, y + 8 * u + es / 2, es * .57, 0, TAU); g.fill(); g.drawImage(em, W / 2 - es / 2, y + 8 * u, es, es); }
@@ -1840,6 +1885,8 @@ function cardMaker(f, date) {
       <div class="serif gname">${esc(fname(f))}</div><div class="gdate">${esc(greg(date, { day: 'numeric', month: 'long', year: 'numeric' }))}</div>
       ${line() ? `<div class="gline">${esc(line())}</div>` : ''}${st.from ? `<div class="gfrom" style="color:${P[3]}">${esc(t('card.with', st.from))}</div>` : ''}</div>
       <canvas class="gmotion" width="640" height="800"></canvas><div class="gbrand"><img src="icon-192.png" alt="">Eka</div></div>`;
+    // Long words set smaller until the whole block stands inside the card.
+    const gt = o.querySelector('.gtext'); for (let z = 1; z > 0.45 && gt.scrollHeight > gt.clientHeight + 1; z -= 0.04) gt.style.zoom = z;
     o.querySelectorAll('[data-mo]').forEach(b => b.classList.toggle('on', b.dataset.mo === st.motion));
   };
   // The preview's motion, drawn every frame while the card maker is open.
@@ -1909,18 +1956,14 @@ async function cardImage(f, date, st, native, line) {
   a.drawImage(img, 0, 0, W, H); a.globalCompositeOperation = 'source-in'; a.fillStyle = P[4]; a.fillRect(0, 0, W, H);
   g.globalAlpha = .85; g.drawImage(art, 0, 0); g.globalAlpha = 1; g.textAlign = 'center';
   let y = H * .36;
-  const put = (s, font, color, gap, max = 24) => {
-    g.font = font; g.fillStyle = color;
-    const words = s.split(' '), lines = []; let cur = '';
-    for (const w of words) { const nx = cur ? cur + ' ' + w : w; if (g.measureText(nx).width > W - 220 && cur) { lines.push(cur); cur = w; } else cur = nx; }
-    if (cur) lines.push(cur);
-    for (const l of lines.slice(0, max)) { g.fillText(l, W / 2, y); y += gap; }
-  };
+  const put = (s, font, color, gap) => { g.font = font; g.fillStyle = color; for (const l of cardLines(g, s, W - 220)) { g.fillText(l, W / 2, y); y += gap; } };
+  // A long message is set smaller until it fits in seven lines; every word stays.
+  const fit = (s, make, from, min, lines) => { let z = from; g.font = make(z); while (z > min && cardLines(g, s, W - 220).length > lines) { z -= 1; g.font = make(z); } return z; };
   if (st.to) put(t('card.dear', st.to), 'italic 48px Georgia, serif', P[2], 70);
-  if (native) put(native, 'bold 80px sans-serif', P[3], 100);
-  put(fname(f), 'bold 76px Georgia, serif', P[2], 70);
+  if (native) { const z = fit(native, z => `bold ${z}px sans-serif`, 80, 40, 2); put(native, `bold ${z}px sans-serif`, P[3], z * 1.25); }
+  { const z = fit(fname(f), z => `bold ${z}px Georgia, serif`, 76, 40, 2); put(fname(f), `bold ${z}px Georgia, serif`, P[2], z * 0.95); }
   put(greg(date, { day: 'numeric', month: 'long', year: 'numeric' }), '500 38px sans-serif', P[2], 80);
-  if (line) put(line, 'italic 40px Georgia, serif', P[2], 54, 5);
+  if (line) { const z = fit(line, z => `italic ${z}px Georgia, serif`, 40, 22, 7); put(line, `italic ${z}px Georgia, serif`, P[2], z * 1.35); }
   if (st.from) { y += 16; put(t('card.with', st.from), '600 44px Georgia, serif', P[3], 60); }
   // A small Kaal mark at the foot, for the brand.
   const logo = new Image(); logo.src = 'icon-192.png'; await logo.decode().catch(() => {});
@@ -1935,7 +1978,8 @@ async function cardImage(f, date, st, native, line) {
 function viewGuide() {
   const rows = [['hm.home', 'gd.home'], ['p.panchang', 'gd.panchang'], ['tab.calendar', 'gd.calendar'], ['tab.festivals', 'gd.festivals'],
     ['tab.muhurtham', 'gd.muhurtham'], ['mt.label', 'gd.match'], ['jk.title', 'gd.chart'], ['bs.title', 'gd.birthstar'], ['pp.title', 'gd.people'],
-    ['v.title', 'gd.vrats'], ['sk.title', 'gd.sky'], ['tm.title', 'gd.temples'], ['s.notifications', 'gd.alerts'], ['tab.settings', 'gd.settings']];
+    ['v.title', 'gd.vrats'], ['sk.title', 'gd.sky'], ['tm.title', 'gd.temples'], ['s.notifications', 'gd.alertsWeb'], ['tab.settings', 'gd.settingsWeb']];
+  // The web has no reminders, widgets or purchases: its guide says so rather than pointing at Settings.
   $('#main').innerHTML = `<h2 class="serif" style="margin:0">${esc(t('gd.title'))}</h2><p class="muted">${esc(t('gd.intro'))}</p>
     ${rows.map(([n, d]) => `<div class="card"><b style="color:var(--accent)">${esc(t(n))}</b><p style="margin:6px 0 0">${esc(t(d))}</p></div>`).join('')}`;
 }
@@ -2019,7 +2063,7 @@ async function gunaMilanReport(bride, groom, L, dasa) {
   });
   const mars = [[bride, c.brideKuja], [groom, c.groomKuja]].map(([p, kuja]) => ({ name: p.name, about: natalLine(p.anchor), matching: null,
     verdict: `${kuja.filter(k => k.listed).length} / ${kuja.length}`, tags: [],
-    sections: [[t('gm.manglik'), kuja.map(k => `${t('jk.kujaRow', k.house, k.from === 'lagna' ? t('jk.lagnaWord') : name('grahas', k.from))} · ${t(k.listed ? 'mt.marsListed' : 'jk.kujaNot')}`).join('\n')]] }));
+    sections: [[t('mt.mangalTitle'), kuja.map(k => `${t('jk.kujaRow', k.house, k.from === 'lagna' ? t('jk.lagnaWord') : name('grahas', k.from))} · ${t(k.listed ? 'mt.marsListed' : 'jk.kujaNot')}`).join('\n')]] }));
   const yes = rows.filter(x => x.matching), no = rows.filter(x => !x.matching);
   const r = { score: m.total, outOf: t('mt.outOf36'), band: t('gm.band.' + m.band), reading: null,
     bride: { label: t('m.bride'), star: natalLine(bride.anchor), sign: '' }, groom: { label: t('m.groom'), star: natalLine(groom.anchor), sign: '' },
@@ -2068,7 +2112,7 @@ async function poruthamSheet(bride, groom) {
 function viewSettings() {
   $('#main').innerHTML = `<div class="card"><p class="label">${esc(t('s.tradition'))}</p>
       <div class="chips">${CULTURES.map(c => `<button class="chip ${S.culture === c.id ? 'on' : ''}" data-c="${c.id}">${c.native}<br><small>${c.en}</small></button>`).join('')}</div>
-      <label class="field"><span>${esc(t('s.language'))}</span><div class="seg"><button data-l="0" class="${!S.native ? 'on' : ''}">English</button><button data-l="1" class="${S.native ? 'on' : ''}">${esc(pack.display.nameNative)}</button></div></label></div>
+      <label class="field"><span>${esc(t('s.language'))}</span><div class="seg"><button data-l="0" class="${!S.native ? 'on' : ''}">English</button><button data-l="1" class="${S.native ? 'on' : ''}">${esc(langName(pack.language))}</button></div></label></div>
     <div class="card"><p class="label">${esc(t('s.home'))}</p><div><b>${esc(S.home.name)}</b> <span class="small muted">${esc([S.home.region, S.home.country].filter(Boolean).join(', '))}</span></div><div id="hp" style="margin-top:8px"></div></div>
     <div class="card"><p class="label">${esc(t('s.appearance'))}</p>
       <div class="seg">${['system', 'light', 'dark'].map(m => `<button data-th="${m}" class="${S.theme === m ? 'on' : ''}">${esc(t('s.' + m))}</button>`).join('')}</div>
@@ -2081,6 +2125,7 @@ function viewSettings() {
       <p class="small muted" style="margin-top:8px">${esc(t('ts.sample'))}</p></div>
     <div class="card about"><p class="label">${esc(t('s.about'))}</p><img src="icon-192.png" alt="" class="aboutlogo"><h3 class="serif" style="margin:6px 0 2px">Eka Panchang</h3>
       <p class="serif" style="color:var(--accent);font-size:18px;margin:0 0 10px">${esc(t('ab.motto'))}</p>
+      <p class="small muted" style="margin:-6px 0 10px">Eka Panchang · web ${esc(V)}</p>
       ${[['ab.nameT', 'ab.name'], ['ab.diasporaT', 'ab.diaspora'], ['ab.privacyT', 'ab.privacy'], ['ab.respectT', 'ab.respect']].map(([h, b]) => `<p style="margin:10px 0 2px"><b>${esc(t(h))}</b></p><p class="small" style="margin:0">${esc(t(b))}</p>`).join('')}
       <p class="small muted" style="margin-top:12px">${esc(t('web.what'))}</p>
       <p class="small muted">${esc(t('s.attribution'))}</p><p class="small"><a href="https://funtopiaapp.github.io/kaal-privacy/">${esc(t('mn.support'))}</a> · <a href="https://funtopiaapp.github.io/kaal-privacy/privacy.html">${esc(t('mn.privacy'))}</a></p>
@@ -2100,13 +2145,13 @@ function viewSettings() {
 // ---------------------------------------------------------------- boot
 async function loadPack() {
   if (!S.culture) return;
-  packJson = await (await fetch(`packs/${S.culture}.json`)).text();
+  packJson = await (await fetch(`packs/${S.culture}.json?v=${V}`)).text();
   // Every Ekadashi by the Vaishnava rule when chosen, as on iOS (Pack.vaishnava).
   if (S.vaishnava) packJson = packJson.replace(/"kala":\s*"ekadashi"/g, '"kala": "ekadashi-vaishnava"');
   pack = JSON.parse(packJson);
 }
 (async () => {
-  STR = await (await fetch('strings.json')).json();
+  STR = await (await fetch('strings.json?v=' + V)).json();
   await loadPack();
   render();
 })();

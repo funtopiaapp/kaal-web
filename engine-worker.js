@@ -1,7 +1,9 @@
 // Runs the Kaal engine (kaal_wasm.wasm) off the main thread: a year takes a
 // second or two to compute, and the page stays responsive meanwhile.
 let x = null;
-const ready = WebAssembly.instantiateStreaming(fetch('kaal_wasm.wasm'), {}).then(r => { x = r.instance.exports; });
+const ready = WebAssembly.instantiateStreaming(fetch('kaal_wasm.wasm?v=202610240949'), {})
+  .catch(() => fetch('kaal_wasm.wasm?v=202610240949').then(r => r.arrayBuffer()).then(b => WebAssembly.instantiate(b, {})))
+  .then(r => { x = r.instance.exports; });
 
 function call(req) {
   const enc = new TextEncoder().encode(JSON.stringify(req));
@@ -16,8 +18,9 @@ function call(req) {
 }
 
 self.onmessage = async e => {
-  await ready;
   const { id, req } = e.data;
+  try { await ready; } catch (err) { self.postMessage({ id, res: { error: 'engine failed to load', fatal: true } }); return; }
   try { self.postMessage({ id, res: call(req) }); }
-  catch (err) { self.postMessage({ id, res: { error: String(err) } }); }
+  // A wasm trap (a panic) can leave the instance half-way through a call; the page starts a fresh worker.
+  catch (err) { self.postMessage({ id, res: { error: String(err), fatal: err instanceof WebAssembly.RuntimeError } }); }
 };
