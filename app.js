@@ -1,7 +1,7 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610241757';
+import { engine, onRestart } from './engine.js?v=202610242022';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -25,7 +25,7 @@ const CULTURES = [
 ];
 const LIGHT = ['kaal', 'ivory', 'rose', 'sage'], DARK = ['kaal-dark', 'night', 'charcoal', 'peacock'];
 const TABS = [['home', 'hm.home'], ['today', 'tab.today'], ['calendar', 'tab.calendar'], ['festivals', 'tab.festivals'], ['muhurtham', 'tab.muhurtham'],
-  ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['match', 'mt.label'], ['greetings', 'gr.title'], ['guide', 'gd.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['prayers', 'py.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
+  ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['match', 'mt.label'], ['greetings', 'gr.title'], ['guide', 'gd.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['prayers', 'py.title'], ['oldtime', 'ot.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
 
 // ---------------------------------------------------------------- state
 const saved = (() => { try { return JSON.parse(localStorage.getItem('kaal-web') || '{}'); } catch { return {}; } })();
@@ -257,6 +257,7 @@ async function render() {
     if (tab === 'jathakam') return await viewJathakam();
     if (tab === 'temples') return await viewTemples();
     if (tab === 'prayers') return await viewPrayers();
+    if (tab === 'oldtime') return await viewOldTime();
     if (tab === 'sky') return await viewSky();
     if (tab === 'people') return await viewPeople();
     if (tab === 'settings') return viewSettings();
@@ -542,6 +543,7 @@ async function viewHome() {
     calendar: '<rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
     jathakam: '<rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/><path d="M3.5 3.5l17 17M20.5 3.5l-17 17M12 3.5L20.5 12 12 20.5 3.5 12z"/>',
     sky: '<circle cx="12" cy="12" r="3.5"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(-20 12 12)"/>',
+    oldtime: '<path d="M7 3h10M7 21h10M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9"/>',
     prayers: '<path d="M12 21V11M12 11c0-3 1.5-6 1.5-8M12 11c0-3-1.5-6-1.5-8"/><path d="M13.5 3l3.5 9-2 4-3 5M10.5 3L7 12l2 4 3 5"/>',
     temples: '<path d="M12 2.5v2M9.5 8h5l-1-3.5h-3zM8 12h8l-1.5-4h-5zM6 20.5h12V12H6z"/><path d="M10.5 20.5v-4a1.5 1.5 0 0 1 3 0v4M4 20.5h16"/>',
     people: '<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9.5" r="2.3"/><path d="M3.5 19c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5M15 14c3 0 5.5 1.8 5.5 5"/>',
@@ -564,6 +566,7 @@ async function viewHome() {
     tile('jathakam', 'jathakam', 'accent', t('jk.chart'), t('jk.title'), [t('jk.vimshottari'), t('jk.yogini'), t('jk.chara')].join(' · ')),
     tile('sky', 'sky', 'gold', t('sk.title'), t('sk.now'), ''),
     PRAYERS ? (() => { const tp = todayPrayer(); return tile('prayers', 'prayers', 'gold', t('py.title'), tp ? prayerTitle(tp) : t('pr.today'), tp ? t('deity.' + tp.deity) : ''); })() : tile('prayers', 'prayers', 'gold', t('py.title'), t('pr.today'), ''),
+    tile('oldtime', 'oldtime', 'quiet', t('ot.title'), timeUnitNames().map(x => x[0].toUpperCase() + x.slice(1)).join(' · '), t('ot.toTrad', timeUnitNames()[0])),
     tile('temples', 'temples', 'warm', t('tm.title'), t('tm.deity'), ['vishnu', 'shiva', 'devi'].map(x => t('deity.' + x)).join(' · ')),
     tile('people', 'people', 'accent', t('fam.family'), person ? t(person.p.kind === 'remembrance' ? 'pp.remembranceOf' : 'pp.birthdayOf', person.p.name) : t('pp.title'), person ? when(person.date) : t('pp.add')),
     ...(matchingAvailable() ? [tile('match', 'match', 'accent', t('mt.label'), matchTitle(), t(matchesByPorutham() ? 'mt.ten' : 'mt.eight'))] : []),
@@ -1296,6 +1299,72 @@ function prayerReader(p) {
   // The title and the text, nothing more.
   m.querySelector('[data-share]').onclick = async () => { const text = prayerTitle(p) + '\n\n' + verses.join('\n\n');
     try { if (navigator.share) await navigator.share({ title: prayerTitle(p), text }); else { await navigator.clipboard.writeText(text); } } catch {} };
+}
+
+// ---------------------------------------------------------------- traditional time
+// As on iOS (OldTimeView): clock time and nazhika/vinazhika (ghati/pal...) from that day's sunrise, both
+// ways. A nazhika is 24 minutes, or the day (sunrise to the next sunrise) in sixty; muhurtas (15 by day,
+// 15 by night) and yamas (4 and 4) follow the day's and night's own lengths. Free.
+const OT = { toClock: false, proportional: false, date: null, time: null, n: 15, v: 0, place: null };
+const timeUnitNames = () => { const u = pack?.display?.timeUnits; return (S.native ? u?.native : u?.en) || u?.en || ['ghati', 'pal']; };
+function tradTime(p, t, prop, before, dayDate) {
+  const unit = prop ? (p.nextSunrise - p.sunrise) / 60 : 1440, el = t - p.sunrise;
+  const n = Math.min(59, Math.floor(el / unit)), v = Math.min(59, Math.floor((el - n * unit) / (unit / 60)));
+  const night = t >= p.sunset, from = night ? p.sunset : p.sunrise, span = night ? p.nextSunrise - p.sunset : p.sunset - p.sunrise;
+  const part = (t - from) / Math.max(span, 1);
+  return { n, v, night, muhurta: Math.min(15, Math.floor(part * 15) + 1), yama: Math.min(4, Math.floor(part * 4) + 1), before, dayDate, p };
+}
+async function viewOldTime() {
+  const u = timeUnitNames(), place = OT.place || S.home;
+  OT.date ||= today(place.tz);
+  if (OT.time == null) { const now = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: place.tz }).format(new Date()); OT.time = now; }
+  const opts = n => Array.from({ length: 60 }, (_, i) => `<option ${i === n ? 'selected' : ''}>${i}</option>`).join('');
+  $('#main').innerHTML = `<h2 class="serif" style="margin-bottom:4px">${esc(t('ot.title'))}</h2><p class="muted" style="margin-top:0">${esc(t('ot.intro', u[0], u[1]))}</p>
+    <div class="seg" style="margin:8px 0"><button data-ot="0" class="${!OT.toClock ? 'on' : ''}">${esc(t('ot.toTrad', u[0]))}</button><button data-ot="1" class="${OT.toClock ? 'on' : ''}">${esc(t('ot.toClock', u[0]))}</button></div>
+    <div class="card">
+      <label class="field"><span>${esc(t('ot.date'))}</span><input type="date" id="otd" value="${OT.date}" min="1900-01-01" max="2100-12-31"></label>
+      ${OT.toClock ? `<label class="field"><span>${esc(u[0])}</span><select id="otn">${opts(OT.n)}</select></label><label class="field"><span>${esc(u[1])}</span><select id="otv">${opts(OT.v)}</select></label>`
+        : `<label class="field"><span>${esc(t('pp.time'))}</span><input type="time" id="ott" value="${OT.time}"></label>`}
+      <div class="field"><span>${esc(t('pp.place'))}: <b>${esc(place.name)}</b></span><div id="otpick"></div></div>
+    </div>
+    <div class="seg" style="margin:8px 0"><button data-op="0" class="${!OT.proportional ? 'on' : ''}">${esc(t('ot.fixed'))}</button><button data-op="1" class="${OT.proportional ? 'on' : ''}">${esc(t('ot.proportional'))}</button></div>
+    <div id="otres"><div class="loading"><div class="ring"><i></i></div></div></div>
+    <p class="small muted">${esc(t('ot.units', u[0], u[1]))}</p>`;
+  const m = $('#main');
+  m.querySelectorAll('[data-ot]').forEach(b => b.onclick = () => { OT.toClock = b.dataset.ot === '1'; viewOldTime(); });
+  m.querySelectorAll('[data-op]').forEach(b => b.onclick = () => { OT.proportional = b.dataset.op === '1'; viewOldTime(); });
+  m.querySelector('#otd').onchange = e => { if (e.target.value) { OT.date = e.target.value; viewOldTime(); } };
+  m.querySelector('#ott')?.addEventListener('change', e => { OT.time = e.target.value; viewOldTime(); });
+  m.querySelector('#otn')?.addEventListener('change', e => { OT.n = +e.target.value; viewOldTime(); });
+  m.querySelector('#otv')?.addEventListener('change', e => { OT.v = +e.target.value; viewOldTime(); });
+  placePicker(m.querySelector('#otpick'), pl => { OT.place = pl; viewOldTime(); });
+  // The calculation, for the chosen place (its own year tables).
+  const pd = await day(OT.date, place).catch(() => null); if (!pd || tab !== 'oldtime') return;
+  const clockAt = u2 => dtf({ hour: 'numeric', minute: '2-digit', ...hourOpts(), timeZone: place.tz }).format(new Date(u2 * 1000));
+  let r, head;
+  if (OT.toClock) {
+    const unit = OT.proportional ? (pd.nextSunrise - pd.sunrise) / 60 : 1440, tt = pd.sunrise + Math.floor(OT.n * unit + OT.v * unit / 60);
+    const on = new Intl.DateTimeFormat('en-CA', { timeZone: place.tz }).format(new Date(tt * 1000));
+    r = tradTime(pd, tt, OT.proportional, false, OT.date);
+    head = t('ot.clockIs', clockAt(tt), greg(on, { day: 'numeric', month: 'long', year: 'numeric' }));
+  } else {
+    // The clock time on that date where the place is: its offset there, then the instant.
+    const [hh, mm] = OT.time.split(':').map(Number), [y, mo, dd] = OT.date.split('-').map(Number);
+    const guess = Date.UTC(y, mo - 1, dd, hh, mm) / 1000;
+    const off = (() => { const f = new Intl.DateTimeFormat('en-US', { timeZone: place.tz, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' });
+      const q = Object.fromEntries(f.formatToParts(new Date(guess * 1000)).map(x => [x.type, x.value])); return (Date.UTC(+q.year, +q.month - 1, +q.day, +q.hour, +q.minute) / 1000) - guess; })();
+    const tt = guess - off;
+    if (tt < pd.sunrise) { const prev = addDays(OT.date, -1), py = await day(prev, place); r = tradTime(py, tt, OT.proportional, true, prev); }
+    else r = tradTime(pd, tt, OT.proportional, false, OT.date);
+    head = t('ot.result', r.n, u[0], r.v, u[1]);
+  }
+  const secs = Math.floor((r.p.nextSunrise - r.p.sunrise) / 60);
+  $('#otres').innerHTML = `<div class="card"><div class="serif" style="font-size:24px;font-weight:700;color:var(--accent)">${esc(head)}</div>
+    <p style="font-weight:600;margin:8px 0 4px">${esc(t('ot.dayOf', greg(r.dayDate)))}</p>${r.before ? `<p class="small" style="color:var(--accent);margin:0 0 6px">${esc(t('ot.prevDay'))}</p>` : ''}
+    <div class="row"><span class="muted">${esc(t('sun.sunrise'))}</span><span class="v">${esc(clockAt(r.p.sunrise))}</span></div>
+    <div class="row"><span class="muted">${esc(t('sun.sunset'))}</span><span class="v">${esc(clockAt(r.p.sunset))}</span></div>
+    <p style="margin:8px 0 2px">${esc(t(r.night ? 'ot.muhurtaNight' : 'ot.muhurtaDay', r.muhurta))}</p><p style="margin:0 0 8px">${esc(t(r.night ? 'ot.yamaNight' : 'ot.yamaDay', r.yama))}</p>
+    <p class="small muted">${esc(t('ot.lengthNote', u[0], t('ot.minSec', Math.floor(secs / 60), secs % 60)))}</p></div>`;
 }
 
 async function viewTemples() {
@@ -2073,7 +2142,7 @@ async function cardImage(f, date, st, native, line) {
 function viewGuide() {
   const rows = [['hm.home', 'gd.home'], ['p.panchang', 'gd.panchang'], ['tab.calendar', 'gd.calendar'], ['tab.festivals', 'gd.festivals'],
     ['tab.muhurtham', 'gd.muhurtham'], ['mt.label', 'gd.match'], ['jk.title', 'gd.chart'], ['bs.title', 'gd.birthstar'], ['pp.title', 'gd.people'],
-    ['v.title', 'gd.vrats'], ['sk.title', 'gd.sky'], ['tm.title', 'gd.temples'], ['py.title', 'gd.prayers'], ['s.notifications', 'gd.alertsWeb'], ['tab.settings', 'gd.settingsWeb']];
+    ['v.title', 'gd.vrats'], ['sk.title', 'gd.sky'], ['tm.title', 'gd.temples'], ['py.title', 'gd.prayers'], ['ot.title', 'gd.oldtime'], ['s.notifications', 'gd.alertsWeb'], ['tab.settings', 'gd.settingsWeb']];
   // The web has no reminders, widgets or purchases: its guide says so rather than pointing at Settings.
   $('#main').innerHTML = `<h2 class="serif" style="margin:0">${esc(t('gd.title'))}</h2><p class="muted">${esc(t('gd.intro'))}</p>
     ${rows.map(([n, d]) => `<div class="card"><b style="color:var(--accent)">${esc(t(n))}</b><p style="margin:6px 0 0">${esc(t(d))}</p></div>`).join('')}`;
