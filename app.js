@@ -1,7 +1,7 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610242022';
+import { engine, onRestart } from './engine.js?v=202610271849';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
