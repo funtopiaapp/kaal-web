@@ -187,13 +187,6 @@ footer.foot { max-width: 760px; margin: 0 auto; padding: 0 16px 40px; font-size:
 .wide .chev { color: var(--accent); font-size: 26px; }
 .tiles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
 @media (min-width: 720px) { .tiles { grid-template-columns: repeat(5, minmax(0, 1fr)); } }
-.tile { display: flex; flex-direction: column; justify-content: space-between; gap: 12px; min-height: 148px; padding: 16px; border-radius: 20px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
-.tile .ic { width: 40px; height: 40px; border-radius: 12px; background: var(--soft); color: var(--accent); display: flex; align-items: center; justify-content: center; }
-.tile.gold .ic { background: var(--goldsoft); color: var(--gold); }
-.tile.warm { background: var(--goldsoft); border-color: transparent; }
-.tile.warm .ic { background: var(--card); color: var(--gold); }
-.tile.quiet { background: var(--sunken); border-color: transparent; }
-.tile.quiet .ic { background: var(--card); color: var(--muted); }
 .tx { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
 .tx .lb { font-size: 13px; font-weight: 700; color: var(--muted); }
 .tx b { font-size: 17px; line-height: 1.25; }
@@ -251,18 +244,6 @@ details.factor .grow { flex: 1; }
 .dicon { display: inline-block; vertical-align: -3px; background: currentColor; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; color: var(--accent); }
 .pill.on .dicon { color: #fff; }
 input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font: inherit; margin-bottom: 8px; }
-/* Tiles: symbol and label on one line, content beneath, the symbol large and faint in the corner. */
-.tile { position: relative; overflow: hidden; justify-content: flex-start; gap: 8px; min-height: 124px; padding: 14px; }
-.tile .trow { display: flex; align-items: center; gap: 8px; }
-.tile .trow .ic { width: 34px; height: 34px; border-radius: 50%; flex: none; }
-.tile .trow .ic svg { width: 18px; height: 18px; }
-.tile .trow .lb { font-size: 17px; font-weight: 700; color: var(--ink); line-height: 1.2; }
-.tile .tx b { font-size: 14.5px; font-weight: 500; opacity: .85; }
-.tile .tx .dt { font-size: 13px; }
-.tile .tbg { position: absolute; right: -10px; bottom: -12px; width: 76px; height: 76px; color: var(--accent); opacity: .1; transform: rotate(-12deg); pointer-events: none; }
-.tile.gold .tbg, .tile.warm .tbg { color: var(--gold); }
-.tile .tbg svg { width: 100%; height: 100%; }
-.tile .tx { position: relative; }
 
 /* Home: text size, arrange, tile styles, the panchangam card's mandala and tithi progress. */
 .arrangebar { display: flex; justify-content: flex-end; align-items: center; gap: 12px; margin: 0 0 10px; }
@@ -271,10 +252,6 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .arrangebar .linkbtn { padding: 0; }
 .linkbtn.block { display: block; padding: 8px 0; text-align: left; }
 .tile[draggable="true"] { cursor: grab; }
-.tiles.style-mosaic .tile:nth-child(3n) { grid-column: span 2; }
-.tiles.style-mosaic .tile:nth-child(3n) b { font-size: 16px; }
-.tiles.style-colourful .tile { border-color: transparent; background: var(--goldsoft); }
-.tiles.style-colourful .tile:nth-child(even) { background: var(--soft); }
 .tiles.style-colourful .tile .ic { background: var(--card); }
 .tiles.style-minimal .tile { background: var(--card); border-color: var(--line); }
 .tiles.style-minimal .tile .tbg { display: none; }
@@ -413,3 +390,98 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 
 /* A hymn: large serif verses, generous lines, sized with the app's text setting. */
 .prtext p { font-family: Georgia, 'Noto Serif', serif; font-size: 1.2em; line-height: 1.75; margin: 0 0 18px; overflow-wrap: anywhere; }
+
+/* Home tiles: a colour family each; the chip, the feature's name in the serif, a glimpse of what is inside, a line
+   beneath. The featured tile and the slim rows span the width. A tile turns over now and then to its lacquered back. */
+.tile { --tint: var(--accent); --deep: #A64A35; position: relative; display: block; min-height: 178px; padding: 0; border: 0; background: none; color: var(--ink); font: inherit; text-align: left; cursor: pointer; perspective: 900px; }
+.tile.gold { --tint: var(--gold); --deep: #7A5612; }
+.tile.maroon { --tint: #7A2335; --deep: #772437; }
+.tile.green { --tint: #0F5A4A; --deep: #145447; }
+.tile.indigo { --tint: #2E4A6B; --deep: #2B4766; }
+.tile.quiet { --tint: var(--muted); --deep: #5E534B; }
+:root:not([data-theme="light"]) .tile.maroon { --tint: #D98A9C; }
+:root:not([data-theme="light"]) .tile.green { --tint: #6FBFA6; }
+:root:not([data-theme="light"]) .tile.indigo { --tint: #9DB4D2; }
+@media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) .tile.maroon { --tint: #7A2335; } :root:not([data-theme="dark"]) .tile.green { --tint: #0F5A4A; } :root:not([data-theme="dark"]) .tile.indigo { --tint: #2E4A6B; } }
+.tile .tfront, .tile .tback { box-sizing: border-box; border-radius: 22px; backface-visibility: hidden; -webkit-backface-visibility: hidden; transition: transform .9s cubic-bezier(.2,.75,.25,1); }
+.tile .tfront { position: relative; display: flex; flex-direction: column; min-height: 178px; height: 100%; padding: 14px; background: var(--card); border: 1px solid var(--line); box-shadow: 0 1px 2px rgba(0,0,0,.04), 0 10px 24px -14px rgba(0,0,0,.22); }
+.tile.featured .tfront { min-height: 0; border-color: color-mix(in srgb, var(--tint) 35%, transparent); }
+.tile .thead { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.tile .ic { width: 36px; height: 36px; border-radius: 11px; flex: none; background: color-mix(in srgb, var(--tint) 12%, var(--card)); color: var(--tint); display: flex; align-items: center; justify-content: center; }
+.tile .ic svg { width: 20px; height: 20px; }
+.tile .lb { font-family: ui-serif, Georgia, "Times New Roman", serif; font-size: 19px; font-weight: 600; line-height: 1.15; color: var(--ink); margin-top: 12px; }
+.tile .gl { margin-top: auto; padding-top: 10px; display: block; }
+.tile .gl:empty { padding-top: 0; }
+.tile .dt { font-size: 12.5px; color: var(--muted); line-height: 1.3; margin-top: 6px; }
+.tile .gl:empty + .dt { margin-top: auto; padding-top: 10px; }
+.tile .tart { color: var(--tint); width: 52px; height: 52px; opacity: .55; }
+.tile .tart.cards { position: relative; width: 46px; height: 50px; opacity: 1; }
+.tile .tart.cards i, .tile .tart.cards b { position: absolute; top: 0; right: 0; width: 30px; height: 40px; border-radius: 6px; }
+.tile .tart.cards i { right: 10px; top: 4px; background: color-mix(in srgb, var(--tint) 30%, transparent); transform: rotate(-10deg); }
+.tile .tart.cards b { background: var(--tint); transform: rotate(6deg); }
+.tile .chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.tile .chips span { font-size: 11.5px; color: var(--muted); background: var(--sunken); border-radius: 99px; padding: 4px 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.tile .gbar { position: relative; display: block; height: 6px; border-radius: 99px; background: var(--sunken); }
+.tile .gbar i { position: absolute; top: 0; bottom: 0; border-radius: 99px; background: color-mix(in srgb, var(--tint) 55%, transparent); }
+.tile .gtimes { display: flex; justify-content: space-between; font-size: 10.5px; color: var(--muted); margin-top: 5px; }
+.tile .gweek { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); text-align: center; row-gap: 3px; font-size: 11.5px; color: var(--muted); }
+.tile .gweek em { font-style: normal; font-size: 9.5px; opacity: .8; }
+.tile .gweek span { line-height: 18px; }
+.tile .gweek span.on { font-weight: 700; color: #fff; background: var(--tint); border-radius: 99px; width: 22px; margin: 0 auto; }
+.tile .gdots { display: flex; gap: 6px; }
+.tile .gdots i { width: 12px; height: 12px; border-radius: 50%; box-sizing: border-box; border: 1.5px solid color-mix(in srgb, var(--tint) 45%, transparent); }
+.tile .gdots i.k { background: color-mix(in srgb, var(--tint) 75%, transparent); border-color: transparent; }
+.tile .gdots i.n { border-style: dashed; border-color: color-mix(in srgb, var(--tint) 70%, transparent); }
+.tile .gscript { font-family: Georgia, 'Noto Serif', serif; font-size: 14px; line-height: 1.5; color: var(--tint); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.tile .gnums { display: flex; align-items: baseline; gap: 4px; color: var(--tint); }
+.tile .gnums b { font-family: ui-serif, Georgia, serif; font-size: 22px; font-weight: 500; }
+.tile .gnums small { font-size: 11px; color: var(--muted); margin-right: 4px; }
+.tile .ginit { display: flex; }
+.tile .ginit i { font-style: normal; width: 28px; height: 28px; border-radius: 50%; background: color-mix(in srgb, var(--tint) 12%, var(--card)); color: var(--tint); font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 2px var(--card); }
+.tile .ginit i + i { margin-left: -6px; }
+.tile .gmoons { display: flex; gap: 7px; }
+.tile .gmoons i { width: 16px; height: 16px; border-radius: 50%; background: color-mix(in srgb, var(--tint) 18%, transparent); }
+.tile .gmoons i:nth-child(1) { box-shadow: inset -6px 0 0 color-mix(in srgb, var(--tint) 75%, transparent); }
+.tile .gmoons i:nth-child(2) { box-shadow: inset -10px 0 0 color-mix(in srgb, var(--tint) 75%, transparent); }
+.tile .gmoons i:nth-child(3) { background: color-mix(in srgb, var(--tint) 75%, transparent); }
+.tile .gmoons i:nth-child(4) { box-shadow: inset 10px 0 0 color-mix(in srgb, var(--tint) 75%, transparent); }
+/* The featured festival: the leaf, the name and when, then the ones after it. */
+.tile.featured { grid-column: 1 / -1; min-height: 0; }
+.tile.featured .lb { margin: 0; flex: 1; font-size: 21px; }
+.tile.featured .thead { align-items: center; }
+.tile.featured .all { font-size: 12.5px; font-weight: 600; color: var(--tint); }
+.tile .leafrow { display: flex; gap: 12px; align-items: center; margin-top: 14px; }
+.tile .leaf { width: 52px; flex: none; border-radius: 12px; overflow: hidden; border: 1px solid color-mix(in srgb, var(--tint) 35%, transparent); text-align: center; background: var(--card); display: flex; flex-direction: column; }
+.tile .leaf b { background: var(--accent); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: 1px; padding: 3px 0; }
+.tile .leaf i { font-style: normal; font-family: ui-serif, Georgia, serif; font-size: 22px; font-weight: 600; color: var(--ink); padding: 3px 0 4px; }
+.tile .leaftx { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.tile .leaftx b { font-size: 15px; font-weight: 600; }
+.tile .leaftx span { font-size: 12.5px; color: var(--muted); }
+.tile.featured .chips { margin-top: 12px; }
+/* Slim rows: the chip, the name, its value and a chevron. */
+.tile.trow { grid-column: 1 / -1; min-height: 0; perspective: none; display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 18px; background: var(--card); border: 1px solid var(--line); }
+.tile.trow.quiet { background: var(--sunken); border-color: transparent; }
+.tile.trow .ic { width: 34px; height: 34px; border-radius: 10px; }
+.tile.trow .lb { margin: 0; font-size: 17px; flex: 1; }
+.tile.trow .val { font-size: 12.5px; color: var(--muted); }
+.tile.trow .chev { color: var(--muted); font-size: 18px; line-height: 1; }
+/* The back: lacquer in the family's deep colour, a gold frame and rings, the symbol faint, the fact. */
+.tile .tback { position: absolute; inset: 0; display: flex; flex-direction: column; padding: 14px; color: #fff; overflow: hidden; transform: rotateY(180deg);
+  background-color: var(--deep);
+  background-image: radial-gradient(circle at 88% 12%, rgba(255,245,215,.28), rgba(255,245,215,0) 42%), linear-gradient(155deg, rgba(255,255,255,.14), rgba(255,255,255,0) 40%, rgba(0,0,0,.22));
+  box-shadow: inset 0 0 0 1px rgba(243,223,168,.22), 0 14px 28px -14px rgba(0,0,0,.45); }
+.tile .tbrings { position: absolute; right: -40px; top: -40px; width: 164px; height: 164px; border-radius: 50%; border: 1px solid rgba(243,223,168,.16);
+  background: repeating-radial-gradient(circle at center, rgba(243,223,168,0) 0 19px, rgba(243,223,168,.18) 19px 20px); }
+.tile .tbframe { position: absolute; inset: 7px; border-radius: 16px; border: 1px solid rgba(243,223,168,.38); }
+.tile .tbsym { position: absolute; right: -6px; bottom: -8px; width: 70px; height: 70px; color: rgba(243,223,168,.22); }
+.tile .tbsym svg { width: 100%; height: 100%; stroke-width: 1.2; }
+.tile .tbname { font-size: 12.5px; font-weight: 600; opacity: .85; }
+.tile .tbcap { margin-top: auto; font-size: 10.5px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #F3DFA8; position: relative; }
+.tile .tbfact { font-family: ui-serif, Georgia, serif; font-size: 19px; font-weight: 600; line-height: 1.2; margin-top: 4px; white-space: pre-line; position: relative; }
+.tile .tbline { font-size: 12px; opacity: .82; margin-top: 4px; position: relative; }
+.tile.turned .tfront { transform: rotateY(180deg); }
+.tile.turned .tback { transform: rotateY(360deg); }
+@media (prefers-reduced-motion: reduce) { .tile .tfront, .tile .tback { transition: none; } }
+.tiles.style-colourful .tile .tfront { border-color: transparent; background: color-mix(in srgb, var(--tint) 9%, var(--card)); }
+.tiles.style-minimal .tile .gl, .tiles.style-minimal .tile .tart { display: none; }
+.tiles.style-mosaic .tile:nth-child(3n):not(.trow) { grid-column: 1 / -1; }

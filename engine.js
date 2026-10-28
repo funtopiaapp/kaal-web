@@ -19,7 +19,7 @@ function lane(name) {
     if (name === 'main') restarted.forEach(fn => fn());
   };
   const start = () => {
-    worker = new Worker('engine-worker.js?v=202610272012');
+    worker = new Worker('engine-worker.js?v=202610281853');
     worker.onmessage = e => {
       const { id, res } = e.data;
       const w = waiting.get(id); if (!w) return;

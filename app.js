@@ -1,7 +1,7 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610272012';
+import { engine, onRestart } from './engine.js?v=202610281853';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -288,7 +288,22 @@ function sinceSunrise(sunrise) {
   let s = Date.now() / 1000 - sunrise; if (s < 0) s += 86400;
   return t('hm.sinceSunrise', `${Math.floor(s / 1440)} ${names[0]} ${Math.floor((s % 1440) / 24)} ${names[1]}`);
 }
-let homeTick = null;
+let homeTick = null, flipTimer = null;
+// Now and then one tile turns over, chosen at random, never the same twice running; it comes back by itself.
+// The setting, or the browser asking for less motion, keeps the tiles still.
+function startFlips(root) {
+  clearTimeout(flipTimer);
+  if (S.tileFlip === false || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  let last = null;
+  const tick = () => {
+    if (tab !== 'home' || !root.isConnected) return;
+    const els = [...root.querySelectorAll('.tile:not(.trow)')].filter(e => e.querySelector('.tback') && e.dataset.k !== last);
+    const el = els[Math.floor(Math.random() * els.length)];
+    if (el) { last = el.dataset.k; el.classList.add('turned'); setTimeout(() => el.classList.remove('turned'), 4200); }
+    flipTimer = setTimeout(tick, 2400 + Math.random() * 2600);
+  };
+  flipTimer = setTimeout(tick, 1200);
+}
 // Home's tiles in the user's order (S.tileOrder); new tiles join at the end.
 function orderTiles(tiles) {
   const key = h => h.match(/data-k="([^"]+)"/)[1], o = S.tileOrder;
@@ -478,17 +493,19 @@ const TILE_STYLES = ['classic', 'mosaic', 'colourful', 'minimal'];
 // Reorder Home's tiles, put what's coming soonest first, juggle, and pick a style.
 function arrangeSheet(keys, x) {
   let order = orderTiles(keys.map(k => `data-k="${k}"`)).map(h => h.match(/data-k="([^"]+)"/)[1]);
-  const label = k => ({ festivals: t('tab.festivals'), day: t('dm.title'), vrats: t('vj.title'), calendar: t('tab.calendar'), jathakam: t('jk.chart'), sky: t('sk.title'), temples: t('tm.title'), people: t('fam.family'), match: t('mt.label'), greetings: t('gr.title'), birthstar: t('bs.result'), settings: t('tab.settings') })[k] || k;
+  const label = k => ({ festivals: t('tab.festivals'), day: t('dm.title'), vrats: t('vj.title'), calendar: t('tab.calendar'), jathakam: t('jk.chart'), sky: t('sk.title'), temples: t('tm.title'), people: t('fam.family'), match: t('mt.label'), greetings: t('gr.title'), birthstar: t('bs.result'), settings: t('tab.settings'), prayers: t('py.title'), oldtime: t('ot.title') })[k] || k;
   const o = sheet('<div id="arr"></div>');
   const draw = () => {
     o.querySelector('#arr').innerHTML = `<h2 class="serif">${esc(t('hm.arrange'))}</h2>
       <p class="label">${esc(t('ar.style'))}</p><div class="chips">${TILE_STYLES.map(st => `<button class="chip ${S.tileStyle === st ? 'on' : ''}" data-st="${st}">${esc(t('ar.s.' + st))}</button>`).join('')}</div>
+      <label class="list-row"><input type="checkbox" data-flip ${S.tileFlip !== false ? 'checked' : ''}><span class="grow">${esc(t('hm.flip'))}</span></label>
       <div class="card"><button class="linkbtn block" data-auto>✨ ${esc(t('ar.auto'))}</button><button class="linkbtn block" data-shuf>🔀 ${esc(t('ar.shuffle'))}</button><button class="linkbtn block" data-reset>↺ ${esc(t('ar.reset'))}</button>
       <p class="small muted">${esc(t('ar.autoNote'))}</p></div>
       <p class="label">${esc(t('ar.order'))}</p><div class="card">${order.map((k, i) => `<div class="list-row"><span class="grow">${esc(label(k))}</span><button class="arrow" data-up="${i}" aria-label="Up">↑</button><button class="arrow" data-dn="${i}" aria-label="Down">↓</button></div>`).join('')}</div>
       <button class="btn block" data-done>${esc(t('c.done'))}</button>`;
     const q = (sel, f) => o.querySelectorAll(sel).forEach(b => b.onclick = () => { f(b); draw(); });
     q('[data-st]', b => { S.tileStyle = b.dataset.st; });
+    o.querySelector('[data-flip]').onchange = e => { S.tileFlip = e.target.checked; save(); };
     q('[data-up]', b => { const i = +b.dataset.up; if (i > 0) [order[i - 1], order[i]] = [order[i], order[i - 1]]; });
     q('[data-dn]', b => { const i = +b.dataset.dn; if (i < order.length - 1) [order[i + 1], order[i]] = [order[i], order[i + 1]]; });
     q('[data-reset]', () => { order = [...keys]; });
@@ -514,15 +531,17 @@ async function viewHome() {
   const greet = coming.find(x => x.f.tier !== 'minor');
   const vrat = (await vratDays(d, addDays(d, 14)))[0];
   const now = Date.now() / 1000;
-  let person = null;
+  const persons = [];
   for (const x of S.people) {
     if (!x.anchor) continue;
     for (const y of [+d.slice(0, 4), +d.slice(0, 4) + 1]) {
       const ds = await engine({ op: 'personalDates', handle: await cal(y), anchor: x.anchor, kind: x.kind || 'birthday', basis: x.basis }).catch(() => []);
       const next = ds.find(s => s >= d && s <= addDays(d, 60));
-      if (next && (!person || next < person.date)) person = { p: x, date: next };
+      if (next) persons.push({ p: x, date: next });
     }
   }
+  persons.sort((a, b) => a.date < b.date ? -1 : 1);
+  const person = persons[0] || null;
   const when = s => { const n = daysBetween(d, s); return n === 0 ? t('day.today') : n === 1 ? t('day.tomorrow') : t('day.inDays', n); };
   // The running period in the tradition's own way of dividing the day.
   const kind = mKinds()[0], ch = (fine && { choghadiya: fine.choghadiya, gowri: fine.gowri, hora: fine.hora }[kind]) || [];
@@ -554,25 +573,76 @@ async function viewHome() {
     muhurtham: '<circle cx="9" cy="14" r="5"/><circle cx="15" cy="14" r="5"/><path d="M10 4l2 3 2-3"/>',
   }[k]);
   const svg = k => `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icon(k)}</svg>`;
-  // The symbol and the feature's name on one line, then what it holds now; the same symbol large and faint in the corner.
-  const tile = (k, go, tone, label, value, detail) => `<button class="tile ${tone}" data-go="${go}" data-k="${k}" draggable="true"><span class="tbg" aria-hidden="true">${svg(k)}</span>
-    <span class="trow"><span class="ic">${svg(k)}</span><span class="lb">${esc(label)}</span></span>
-    <span class="tx"><b>${esc(value)}</b>${detail ? `<span class="dt">${esc(detail)}</span>` : ''}</span></button>`;
+  // The tiles: a colour family each; the front holds the chip, the feature's name in the serif, a glimpse of what is
+  // inside and a line beneath; the back (turned to now and then) a caption, one fact and a line.
+  const FAM = { festivals: 'gold', day: 'clay', calendar: 'clay', vrats: 'maroon', prayers: 'green', oldtime: 'gold', people: 'clay', match: 'maroon', greetings: 'gold', sky: 'indigo', temples: 'gold', jathakam: 'indigo', birthstar: 'gold', settings: 'quiet' };
+  const chips = xs => xs.length ? `<span class="chips">${xs.slice(0, 3).map(x => `<span>${esc(x)}</span>`).join('')}</span>` : '';
+  const backOf = (label, k, b) => b && b.fact ? `<span class="tback" aria-hidden="true"><span class="tbrings"></span><span class="tbframe"></span><span class="tbsym">${svg(k)}</span>
+      <span class="tbname">${esc(label)}</span><span class="tbcap">${esc(b.caption)}</span><span class="tbfact">${esc(b.fact)}</span>${b.line ? `<span class="tbline">${esc(b.line)}</span>` : ''}</span>` : '';
+  const tile = (k, go, label, o = {}) => {
+    const fam = FAM[k] || 'clay';
+    if (o.row) return `<button class="tile trow ${fam}" data-go="${go}" data-k="${k}" draggable="true"><span class="ic">${svg(k)}</span><span class="lb">${esc(label)}</span><span class="val">${esc(o.value || '')}</span><span class="chev" aria-hidden="true">›</span></button>`;
+    const front = o.featured ? o.glimpse
+      : `<span class="thead"><span class="ic">${svg(k)}</span>${o.art || ''}</span><span class="lb">${esc(label)}</span><span class="gl">${o.glimpse || ''}</span>${o.detail ? `<span class="dt">${esc(o.detail)}</span>` : ''}`;
+    return `<button class="tile ${fam}${o.featured ? ' featured' : ''}" data-go="${go}" data-k="${k}" draggable="true"><span class="tfront">${front}</span>${backOf(label, k, o.back)}</button>`;
+  };
+  // What the glimpses and backs draw on.
+  const more = coming.filter(x => x.f.tier !== 'minor' && x.date !== fest?.date);
+  const tomorrow = await day(addDays(d, 1)).catch(() => null);
+  const shortDate = s => dtf({ day: 'numeric', month: 'short', timeZone: 'UTC' }).format(parse(s));
+  const wd = parse(d).getUTCDay(), weekStart = addDays(d, -wd);
+  const letters = [...Array(7)].map((_, i) => dtf({ weekday: 'narrow', timeZone: 'UTC' }).format(parse(addDays(weekStart, i))));
+  const week = [...Array(7)].map((_, i) => { const s = addDays(weekStart, i); return `<span class="${s === d ? 'on' : ''}">${+s.slice(8)}</span>`; });
+  const log = Object.entries(S.vratLog).sort((a, b) => a[0].split('|')[1] < b[0].split('|')[1] ? -1 : 1).slice(vrat ? -6 : -7).map(x => x[1]);
+  const dots = [...log, ...(vrat ? [null] : [])];
+  const tp = PRAYERS ? todayPrayer() : null;
+  const verse = tp?.text?.[prayerScript()]?.[0]?.split('\n') || [];
+  const since = (() => { let s = now - p.sunrise; if (s < 0) s += 86400; return [Math.floor(s / 1440), Math.floor((s % 1440) / 24)]; })();
+  const units = timeUnitNames();
+  const initials = [...S.people.slice(0, 3).map(x => (x.name || '?')[0].toUpperCase()), ...(S.people.length > 3 ? ['+' + (S.people.length - 3)] : [])];
+  const personText = x => t(x.p.kind === 'remembrance' ? 'pp.remembranceOf' : 'pp.birthdayOf', x.p.name);
+  const star = p.nakshatras[0] ? name('nakshatras', p.nakshatras[0].key) : '';
+  const nextPeriod = i >= 0 && ch[i + 1] ? { caption: t('tb.period'), fact: plabel(ch[i + 1].key), line: t('tb.from', clock(ch[i + 1].start)) } : null;
+  const deities = ['vishnu', 'shiva', 'devi'].map(x => t('deity.' + x));
+  const dashas = [t('jk.vimshottari'), t('jk.yogini'), t('jk.chara')].join(' · ');
+  const bar = (() => { const span = p.sunset - p.sunrise, a = Math.max(0, Math.min(1, (p.rahuKalam.start - p.sunrise) / span)), b = Math.max(a, Math.min(1, (p.rahuKalam.end - p.sunrise) / span));
+    return `<span class="gbar"><i style="left:${(a * 100).toFixed(1)}%;width:${Math.max(1.5, (b - a) * 100).toFixed(1)}%"></i></span><span class="gtimes"><span>${esc(clock(p.sunrise))}</span><span>${esc(clock(p.sunset))}</span></span>`; })();
+  const ART = {
+    cards: '<span class="tart cards" aria-hidden="true"><i></i><b></b></span>',
+    chart: '<svg class="tart" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M1 1h50v50H1z M1 13.5h50 M1 38.5h50 M13.5 1v50 M38.5 1v50"/><circle cx="7" cy="45" r="2" fill="currentColor" stroke="none"/><circle cx="32" cy="7" r="2" fill="currentColor" stroke="none"/></svg>',
+    stars: '<svg class="tart" viewBox="0 0 56 44" aria-hidden="true"><path d="M8 30L20 22 30 26 42 12 50 18" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/><circle cx="8" cy="30" r="2.2" fill="currentColor"/><circle cx="20" cy="22" r="3" fill="currentColor"/><circle cx="30" cy="26" r="2" fill="currentColor"/><circle cx="42" cy="12" r="3.2" fill="currentColor"/><circle cx="50" cy="18" r="2" fill="currentColor"/></svg>',
+  };
   const tiles = [
-    tile('festivals', 'festivals', 'warm', t('tab.festivals'), fest ? fname(fest.f) : t('f.upcoming'), fest ? when(fest.date) : ''),
-    tile('day', 'today', 'accent', t('dm.title'), chog ? chog[0] : t('time.section'), chog ? chog[1] : ''),
-    tile('vrats', 'vrats', 'gold', t('vj.title'), vrat ? recName(vrat.key) : t('v.title'), vrat ? when(vrat.date) : kept ? t('vj.keptOf', String(kept)) : ''),
-    tile('calendar', 'calendar', 'accent', t('tab.calendar'), greg(d, { month: 'long', year: 'numeric' }), yearLabel(p.year)),
-    tile('jathakam', 'jathakam', 'accent', t('jk.chart'), t('jk.title'), [t('jk.vimshottari'), t('jk.yogini'), t('jk.chara')].join(' · ')),
-    tile('sky', 'sky', 'gold', t('sk.title'), t('sk.now'), ''),
-    PRAYERS ? (() => { const tp = todayPrayer(); return tile('prayers', 'prayers', 'gold', t('py.title'), tp ? prayerTitle(tp) : t('pr.today'), tp ? t('deity.' + tp.deity) : ''); })() : tile('prayers', 'prayers', 'gold', t('py.title'), t('pr.today'), ''),
-    tile('oldtime', 'oldtime', 'quiet', t('ot.title'), timeUnitNames().map(x => x[0].toUpperCase() + x.slice(1)).join(' · '), t('ot.toTrad', timeUnitNames()[0])),
-    tile('temples', 'temples', 'warm', t('tm.title'), t('tm.deity'), ['vishnu', 'shiva', 'devi'].map(x => t('deity.' + x)).join(' · ')),
-    tile('people', 'people', 'accent', t('fam.family'), person ? t(person.p.kind === 'remembrance' ? 'pp.remembranceOf' : 'pp.birthdayOf', person.p.name) : t('pp.title'), person ? when(person.date) : t('pp.add')),
-    ...(matchingAvailable() ? [tile('match', 'match', 'accent', t('mt.label'), matchTitle(), t(matchesByPorutham() ? 'mt.ten' : 'mt.eight'))] : []),
-    tile('greetings', 'greetings', 'gold', t('gr.title'), greet ? t('gr.send', fname(greet.f)) : t('gr.card'), greet ? when(greet.date) : ''),
-    tile('birthstar', 'birthstar', 'gold', t('bs.result'), t('bs.title'), ''),
-    tile('settings', 'settings', 'quiet', t('tab.settings'), c ? (S.native ? c.native : c.en) : '', S.home?.name || ''),
+    tile('festivals', 'festivals', t('tab.festivals'), fest ? {
+      featured: true,
+      glimpse: `<span class="thead"><span class="ic">${svg('festivals')}</span><span class="lb">${esc(t('tab.festivals'))}</span><span class="all">${esc(t('f.all'))} ›</span></span>
+        <span class="leafrow"><span class="leaf"><b>${esc(dtf({ weekday: 'short', timeZone: 'UTC' }).format(parse(fest.date)).toUpperCase())}</b><i>${+fest.date.slice(8)}</i></span><span class="leaftx"><b>${esc(fname(fest.f))}</b><span>${esc(when(fest.date))}</span></span></span>
+        ${chips(more.slice(0, 2).map(x => `${fname(x.f)} · ${when(x.date)}`))}`,
+      back: more[0] && { caption: t('tb.next'), fact: fname(more[0].f), line: `${when(more[0].date)} · ${shortDate(more[0].date)}` },
+    } : { detail: t('f.upcoming') }),
+    tile('day', 'today', t('dm.title'), { glimpse: bar, detail: chog ? `${chog[0]} · ${chog[1]}` : t('time.section'), back: nextPeriod }),
+    tile('calendar', 'calendar', t('tab.calendar'), { glimpse: `<span class="gweek">${letters.map(l => `<em>${esc(l)}</em>`).join('')}${week.join('')}</span>`, detail: greg(d, { month: 'long', year: 'numeric' }),
+      back: tomorrow && { caption: t('day.tomorrow'), fact: [tomorrow.tithis[0] && name('tithis', tomorrow.tithis[0].key), tomorrow.nakshatras[0] && name('nakshatras', tomorrow.nakshatras[0].key)].filter(Boolean).join(', '), line: `${clock(tomorrow.sunrise)} · ${clock(tomorrow.sunset)}` } }),
+    tile('vrats', 'vrats', t('vj.title'), { glimpse: dots.length ? `<span class="gdots">${dots.map(k => `<i class="${k === true ? 'k' : k === null ? 'n' : ''}"></i>`).join('')}</span>` : '',
+      detail: vrat ? `${recName(vrat.key)} · ${when(vrat.date)}` : kept ? t('vj.keptOf', String(kept)) : t('v.title'),
+      back: { caption: t('tb.yours'), fact: t('vj.keptOf', String(kept)), line: vrat ? `${recName(vrat.key)} · ${when(vrat.date)}` : '' } }),
+    tile('prayers', 'prayers', t('py.title'), { glimpse: verse[0] ? `<span class="gscript">${esc(verse[0])}</span>` : '', detail: tp ? prayerTitle(tp) : t('pr.today'),
+      back: tp && { caption: t('tb.verse'), fact: verse.slice(0, 2).join('\n'), line: prayerTitle(tp) } }),
+    tile('oldtime', 'oldtime', t('ot.title'), { glimpse: `<span class="gnums"><b>${since[0]}</b><small>${esc(units[0])}</small><b>${since[1]}</b><small>${esc(units[1])}</small></span>`, detail: t('ot.toTrad', units[0]),
+      back: { caption: t('tb.old'), fact: t('tb.unit', units[0]), line: t('tb.sixty', units[0]) } }),
+    tile('people', 'people', t('fam.family'), { glimpse: initials.length ? `<span class="ginit">${initials.map(x => `<i>${esc(x)}</i>`).join('')}</span>` : '', detail: person ? `${personText(person)} · ${when(person.date)}` : t('pp.add'),
+      back: persons[1] && { caption: t('tb.next'), fact: personText(persons[1]), line: `${when(persons[1].date)} · ${shortDate(persons[1].date)}` } }),
+    ...(matchingAvailable() ? [tile('match', 'match', t('mt.label'), { glimpse: S.people.length >= 2 ? chips(S.people.slice(0, 2).map(x => x.name)) : '', detail: t(matchesByPorutham() ? 'mt.ten' : 'mt.eight'),
+      back: { caption: t('tb.ways'), fact: matchTitle(), line: t('tb.asTradition') } })] : []),
+    tile('greetings', 'greetings', t('gr.title'), { art: ART.cards, detail: greet ? t('gr.send', fname(greet.f)) : t('gr.card'),
+      back: (() => { const g = more.find(x => x.date !== greet?.date); return g && { caption: t('tb.next'), fact: t('gr.send', fname(g.f)), line: when(g.date) }; })() }),
+    tile('sky', 'sky', t('sk.title'), { glimpse: '<span class="gmoons"><i></i><i></i><i></i><i></i></span>', detail: t('sk.now'),
+      back: p.moonrise && { caption: t('tb.tonight'), fact: `${t('sun.moonrise')} ${clock(p.moonrise)}`, line: star ? t('tb.moonIn', star) : '' } }),
+    tile('temples', 'temples', t('tm.title'), { glimpse: chips(deities), detail: t('tm.deity'), back: { caption: t('tm.deity'), fact: t('tm.near', S.home.name), line: deities.join(' · ') } }),
+    tile('jathakam', 'jathakam', t('jk.chart'), { art: ART.chart, detail: dashas, back: { caption: t('jk.title'), fact: starPerson()?.name || t('jk.chart'), line: dashas } }),
+    tile('birthstar', 'birthstar', t('bs.result'), { art: ART.stars, detail: t('bs.title'),
+      back: p.nakshatras[0] && { caption: t('tb.todayStar'), fact: star, line: t('tb.ofStars', (p.nakshatras[0].index ?? 0) + 1) } }),
+    tile('settings', 'settings', t('tab.settings'), { row: true, value: c ? (S.native ? c.native : c.en) : '' }),
   ];
   $('#main').innerHTML = `<div class="home">
     <div class="homehead"><div><div class="small muted"><b>${esc(greg(d))} · ${esc(cultureDate(p.solar, p.lunar))}</b></div><div class="serif wordmark">Eka Panchang</div>
@@ -616,14 +686,15 @@ async function viewHome() {
       S.tileOrder = order; save(); viewHome();
     };
   });
+  startFlips($('#main'));
   clearInterval(homeTick);
   homeTick = setInterval(() => { if (tab !== 'home' || !$('#clocks')) return clearInterval(homeTick); $('#clocks').textContent = clocks(); $('#nazhika').textContent = sinceSunrise(p.sunrise); }, 30000);
   // The year's sky takes a few seconds; its tile fills in when ready, next year only if this one is over.
   const y = +d.slice(0, 4);
   let sky = (await skyEvents(y).catch(() => [])).find(e => e.at > now);
   if (!sky) sky = (await skyEvents(y + 1).catch(() => [])).find(e => e.at > now);
-  const el = tab === 'home' && $('#main .tile[data-go="sky"] .tx');
-  if (el && sky) el.innerHTML = `<b>${esc(skyTitle(sky))}</b><span class="dt">${esc(dtf({ day: 'numeric', month: 'short', year: 'numeric', timeZone: S.home.tz }).format(new Date(sky.at * 1000)))}</span>`;
+  const el = tab === 'home' && $('#main .tile[data-go="sky"] .tfront .dt');
+  if (el && sky) el.textContent = `${skyTitle(sky)} · ${dtf({ day: 'numeric', month: 'short', timeZone: S.home.tz }).format(new Date(sky.at * 1000))}`;
 }
 
 // ---------------------------------------------------------------- today / day
@@ -2284,6 +2355,7 @@ function viewSettings() {
       <p class="small muted" style="margin-top:10px">${esc(t('th.dark'))}</p><div class="chips">${DARK.map(id => `<button class="chip ${S.dark === id ? 'on' : ''}" data-dk="${id}">${esc(t('th.' + id))}</button>`).join('')}</div></div>
     <div class="card"><label class="list-row"><input type="checkbox" id="vaish" ${S.vaishnava ? 'checked' : ''}><span class="grow"><b>${esc(t('s.vaishnava'))}</b><div class="small muted">${esc(t('s.vaishnavaNote'))}</div></span></label></div>
     <div class="card"><label class="list-row"><input type="checkbox" id="pdfmark" ${S.pdfWatermark !== false ? 'checked' : ''}><span class="grow"><b>${esc(t('pdf.section'))}</b><div class="small muted">${esc(t('pdf.watermarkOn'))}</div></span></label></div>
+    <div class="card"><label class="list-row"><input type="checkbox" id="tflip" ${S.tileFlip !== false ? 'checked' : ''}><span class="grow"><b>${esc(t('hm.flip'))}</b><div class="small muted">${esc(t('hm.flipNote'))}</div></span></label></div>
     <div class="card"><p class="label">${esc(t('s.clock'))}</p><div class="seg">${[[0, 's.clockSystem'], [12, 's.clock12'], [24, 's.clock24']].map(([v, k]) => `<button data-ck="${v}" class="${(S.clock || 0) === v ? 'on' : ''}">${esc(t(k))}</button>`).join('')}</div></div>
     <div class="card"><p class="label">${esc(t('ts.title'))}</p><div class="seg">${TEXT_SIZES.map((z, i) => `<button data-tz="${i}" class="${S.textSize === i ? 'on' : ''}" style="font-size:${Math.round(12 * z + (i - 1) * 2)}px">A</button>`).join('')}</div>
       <p class="small muted" style="margin-top:8px">${esc(t('ts.sample'))}</p></div>
@@ -2298,6 +2370,7 @@ function viewSettings() {
   $('#main').querySelectorAll('[data-l]').forEach(b => b.onclick = () => { S.native = b.dataset.l === '1'; save(); render(); });
   $('#main').querySelectorAll('[data-th]').forEach(b => b.onclick = () => { S.theme = b.dataset.th; save(); render(); });
   $('#main').querySelector('#pdfmark').onchange = e => { S.pdfWatermark = e.target.checked; save(); };
+  $('#main').querySelector('#tflip').onchange = e => { S.tileFlip = e.target.checked; save(); };
   $('#main').querySelector('#vaish').onchange = async e => { S.vaishnava = e.target.checked; save(); await loadPack(); await resetCalendars(); render(); };
   $('#main').querySelectorAll('[data-ck]').forEach(b => b.onclick = () => { S.clock = +b.dataset.ck; save(); render(); });
   $('#main').querySelectorAll('[data-tz]').forEach(b => b.onclick = () => { S.textSize = +b.dataset.tz; save(); render(); });
