@@ -254,9 +254,11 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 /* Tiles: symbol and label on one line, content beneath, the symbol large and faint in the corner. */
 .tile { position: relative; overflow: hidden; justify-content: flex-start; gap: 8px; min-height: 124px; padding: 14px; }
 .tile .trow { display: flex; align-items: center; gap: 8px; }
-.tile .trow .ic { width: 28px; height: 28px; border-radius: 50%; flex: none; }
-.tile .trow .ic svg { width: 15px; height: 15px; }
-.tile .trow .lb { font-size: 13.5px; font-weight: 700; color: var(--muted); }
+.tile .trow .ic { width: 34px; height: 34px; border-radius: 50%; flex: none; }
+.tile .trow .ic svg { width: 18px; height: 18px; }
+.tile .trow .lb { font-size: 17px; font-weight: 700; color: var(--ink); line-height: 1.2; }
+.tile .tx b { font-size: 14.5px; font-weight: 500; opacity: .85; }
+.tile .tx .dt { font-size: 13px; }
 .tile .tbg { position: absolute; right: -10px; bottom: -12px; width: 76px; height: 76px; color: var(--accent); opacity: .1; transform: rotate(-12deg); pointer-events: none; }
 .tile.gold .tbg, .tile.warm .tbg { color: var(--gold); }
 .tile .tbg svg { width: 100%; height: 100%; }
@@ -270,7 +272,7 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .linkbtn.block { display: block; padding: 8px 0; text-align: left; }
 .tile[draggable="true"] { cursor: grab; }
 .tiles.style-mosaic .tile:nth-child(3n) { grid-column: span 2; }
-.tiles.style-mosaic .tile:nth-child(3n) b { font-size: 20px; }
+.tiles.style-mosaic .tile:nth-child(3n) b { font-size: 16px; }
 .tiles.style-colourful .tile { border-color: transparent; background: var(--goldsoft); }
 .tiles.style-colourful .tile:nth-child(even) { background: var(--soft); }
 .tiles.style-colourful .tile .ic { background: var(--card); }
