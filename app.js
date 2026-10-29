@@ -1,7 +1,7 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610282322';
+import { engine, onRestart } from './engine.js?v=202610290007';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -241,9 +241,10 @@ function sheet(html, onOpen) {
 }
 
 async function render() {
-  clearTimeout(turnTimer); clearInterval(otTick);
+  clearTimeout(turnTimer); stopOldTime();
   applyTheme(); applyTextSize(); shell();
   if (!S.culture || !S.home) return onboarding();
+  if (S.onboardProfile === 'pending') return onboardProfile();
   try {
     if (tab === 'home') return await viewHome();
     if (tab === 'today') return await viewDay();
@@ -266,13 +267,38 @@ async function render() {
 }
 
 // ---------------------------------------------------------------- onboarding
+// A first run: the tradition, the home place, then an offer to add a person. Only someone starting here sees that
+// last step; a user who chose a tradition before it existed never does.
+let onbFresh = false;
 function onboarding() {
+  if (!S.culture) onbFresh = true;
   $('#tabs').innerHTML = '';
   $('#main').innerHTML = `<div class="card"><h1 class="serif" style="margin:0">Eka Panchang</h1><p class="muted">${esc(t('o.welcome'))}</p>
     <p class="label">${esc(t('o.question'))}</p><div class="chips">${CULTURES.map(c => `<button class="chip ${S.culture === c.id ? 'on' : ''}" data-c="${c.id}">${c.native}<br><small>${c.en}</small></button>`).join('')}</div></div>
     <div class="card"><p class="label">${esc(t('o.where'))}</p><p class="small muted">${esc(t('o.whereNote'))}</p><div id="pp"></div></div>`;
   $('#main').querySelectorAll('[data-c]').forEach(b => b.onclick = async () => { S.culture = b.dataset.c; save(); await loadPack(); onboarding(); });
-  placePicker($('#pp'), async p => { S.home = p; save(); await resetCalendars(); render(); });
+  placePicker($('#pp'), async p => { S.home = p; if (onbFresh && !S.onboardProfile) S.onboardProfile = 'pending'; save(); await resetCalendars(); render(); });
+}
+// The last step: what a person in the app brings, that it all stays in this browser, and add one or not now.
+// Either answer is kept (S.onboardProfile 'done' or 'skipped') and the step is not shown again.
+function onboardProfile() {
+  $('#tabs').innerHTML = '';
+  const ic = d => `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${d}</svg>`;
+  const lines = [
+    ['<path d="M12 3l2.6 5.6 6 .7-4.5 4.1 1.2 6L12 16.5 6.7 19.4l1.2-6L3.4 9.3l6-.7z"/>', 'r2.onbStar'],
+    ['<rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4M9 15l2 2 4-4"/>', 'r2.onbDays'],
+    ['<path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.6-7 10-7 10z"/>', 'r2.onbBirthdays'],
+    ['<circle cx="9" cy="12" r="5"/><circle cx="15" cy="12" r="5"/>', 'r2.onbMatch']];
+  $('#main').innerHTML = `<div class="card onbp"><h1 class="serif rise" style="--i:0">${esc(t('r2.onbTitle'))}</h1>
+    ${lines.map(([d, k], i) => `<div class="onbline rise" style="--i:${i + 1}"><span class="onbic">${ic(d)}</span><span>${esc(t(k))}</span></div>`).join('')}
+    <div class="onblock rise" style="--i:5"><span class="onbic">${ic('<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>')}</span><span>${esc(t('r2.onbPrivateWeb'))}</span></div>
+    <div class="rise" style="--i:6"><button class="btn block" data-onb="add">＋ ${esc(t('r2.onbAdd'))}</button><button class="btn soft block" data-onb="skip" style="margin-top:8px">${esc(t('r2.onbSkip'))}</button></div></div>`;
+  $('#main').querySelectorAll('[data-onb]').forEach(b => b.onclick = async () => {
+    const add = b.dataset.onb === 'add';
+    S.onboardProfile = add ? 'done' : 'skipped'; save(); onbFresh = false;
+    tab = add ? 'people' : 'home'; await render();
+    if (add) personEditor(null);
+  });
 }
 
 // ---------------------------------------------------------------- home
@@ -998,12 +1024,17 @@ async function vratYear() {
   const days = await vratDays(`${y}-01-01`, `${y}-12-31`);
   for (const id of Object.keys(S.vratLog)) { const [key, date] = id.split('|'); if (date.startsWith(y + '-') && !days.some(e => e.id === id)) days.push({ key, date, id }); }
   days.sort((a, b) => a.date < b.date ? -1 : 1);
-  const mark = e => { const a = S.vratLog[e.id]; return a === true ? '<i class="k">★</i>' : a === false ? '<i>☾</i>' : `<i class="${e.date > today() ? 'f' : ''}">◌</i>`; };
+  // Each month rises in its turn and its marks pop in left to right; a month still to come is dim, and under
+  // each month that has begun, how many were kept of the days come so far.
+  const td = today(), mon = dtf({ month: 'short', timeZone: 'UTC' });
+  const mark = (e, j, i) => { const a = S.vratLog[e.id], d = `style="--d:${i * 80 + 120 + j * 30}ms"`;
+    return a === true ? `<i class="k" ${d}>★</i>` : a === false ? `<i ${d}>☾</i>` : `<i class="${e.date > td ? 'f' : 'open'}" ${d}>◌</i>`; };
   const months = [...Array(12)].map((_, i) => { const mm = `${y}-${pad(i + 1)}`, here = days.filter(e => e.date.startsWith(mm));
-    return `<div class="vy-row rise" style="--i:${i}"><span class="vy-m">${esc(dtf({ month: 'short', timeZone: 'UTC' }).format(parse(mm + '-15')))}</span><span class="vy-marks">${here.length ? here.map(mark).join('') : '<span class="muted">–</span>'}</span></div>`; }).join('');
+    const past = here.filter(e => e.date <= td), kept = past.filter(e => S.vratLog[e.id] === true).length;
+    return `<div class="vy-row rise${mm > td.slice(0, 7) ? ' fut' : ''}" style="--i:${i}"><span class="vy-m">${esc(mon.format(parse(mm + '-15')))}${past.length ? `<small>${esc(t('r2.kept', String(kept), String(past.length)))}</small>` : ''}</span><span class="vy-marks">${here.length ? here.map((e, j) => mark(e, j, i)).join('') : '<span class="muted">–</span>'}</span></div>`; }).join('');
   return `<div class="card"><p class="label">${esc(t('vj.glance'))}</p>
     <div class="dayhead" style="margin:0"><div class="nav"><button class="arrow" data-vy="-1">‹</button><b class="serif" style="font-size:20px">${y}</b><button class="arrow" data-vy="1" ${y >= thisYear ? 'disabled' : ''}>›</button></div></div>
-    <p class="gold" style="font-weight:700;margin:6px 0">★ ${vratsKept(null, String(y))}${vratRate(String(y)) ? ` <span class="small muted" style="font-weight:400">· ${esc(vratRate(String(y)))}</span>` : ''}</p>
+    <p class="gold" style="font-weight:700;margin:6px 0">★ <span data-cu="${vratsKept(null, String(y))}">${vratsKept(null, String(y))}</span>${vratRate(String(y)) ? ` <span class="small muted" style="font-weight:400">· ${esc(vratRate(String(y)))}</span>` : ''}</p>
     <div class="vy">${months}</div><p class="small muted">${esc(t('vj.glanceNote'))}</p></div>`;
 }
 
@@ -1014,7 +1045,7 @@ async function viewVrats() {
   for (const v of await vratDays(addDays(today(), -30), today())) { const c = await vratCloses(v); if (c && c <= Date.now() / 1000) recent.push(v); }
   const icon = a => a === true ? '<span class="gold">★</span>' : a === false ? '☾' : '◌';
   $('#main').innerHTML = `<div class="card"><p class="label">${esc(t('vj.title'))}</p>
-      ${S.vrats.length ? `<div class="journal-head"><span class="gold big">★</span><div><div class="big">${vratsKept()}</div><div class="small muted">${esc(t('vj.total'))}</div></div>
+      ${S.vrats.length ? `<div class="journal-head"><span class="gold big">★</span><div><div class="big" data-cu="${vratsKept()}">${vratsKept()}</div><div class="small muted">${esc(t('vj.total'))}</div></div>
         <div class="small muted" style="margin-left:auto">${esc(t('vj.year', vratsKept(null, today().slice(0, 4))))}</div></div>
         ${vratBest() > 1 ? `<div class="row"><span>🔥 ${esc(t('vj.best', String(vratBest())))}</span></div>` : ''}
         ${vratRate(today().slice(0, 4)) ? `<div class="row"><span class="muted">${esc(t('vj.thisYear'))}</span><span class="v">${esc(vratRate(today().slice(0, 4)))}</span></div>` : ''}
@@ -1032,6 +1063,8 @@ async function viewVrats() {
         <p class="small muted">${esc(t('vg.gentle'))}</p></details>`).join('')}</div>
     <div class="card"><p class="label">${esc(t('v.title'))}</p>${choices.map(r => `<label class="list-row" style="cursor:pointer"><div class="grow"><b>${esc(recName(r.key))}</b><div class="small muted">${esc(text(r.content?.summary))}</div></div>
         <input type="checkbox" data-v="${esc(r.key)}" ${S.vrats.includes(r.key) ? 'checked' : ''}></label>`).join('')}<p class="small muted">${esc(t('v.note'))}</p></div>`;
+  // The journal's numbers count up to what they are.
+  $('#main').querySelectorAll('[data-cu]').forEach(el => countUp(el, +el.dataset.cu));
   $('#main').querySelectorAll('[data-v]').forEach(c => c.onchange = () => {
     S.vrats = S.vrats.filter(k => k !== c.dataset.v); if (c.checked) S.vrats.push(c.dataset.v); save(); viewVrats();
   });
@@ -1470,11 +1503,14 @@ function tradTime(p, t, prop, before, dayDate) {
   const part = (t - from) / Math.max(span, 1);
   return { n, v, night, muhurta: Math.min(15, Math.floor(part * 15) + 1), yama: Math.min(4, Math.floor(part * 4) + 1), before, dayDate, p };
 }
-// Now, on a dial of sixty: the hand at the time since this morning's sunrise where the place is, moving on as time
-// passes, with the count in the tradition's units beneath; a mark where the sun sets.
-let otTick = null;
+// Now, two clocks side by side for the chosen place: the ordinary clock of twelve hours (its second hand sweeping,
+// or stepping when less motion is asked for), and the dial of sixty, its hand at the time since this morning's
+// sunrise there, with the count in the tradition's units beneath and a mark where the sun sets. Both run live
+// until the screen is left.
+let otTick = null, otRaf = 0;
+const stopOldTime = () => { clearInterval(otTick); cancelAnimationFrame(otRaf); otTick = null; otRaf = 0; };
 async function ghatiDial(el, place) {
-  clearInterval(otTick);
+  stopOldTime();
   const now = Date.now() / 1000, td = today(place.tz);
   let p = await day(td, place).catch(() => null);
   if (p && now < p.sunrise) p = await day(addDays(td, -1), place).catch(() => null);
@@ -1484,23 +1520,60 @@ async function ghatiDial(el, place) {
   const ticks = Array.from({ length: 60 }, (_, i) => { const [x0, y0] = at(i * 6, R + (i % 5 ? 4 : 0)), [x1, y1] = at(i * 6, R + 10);
     return `<line x1="${x0.toFixed(1)}" y1="${y0.toFixed(1)}" x2="${x1.toFixed(1)}" y2="${y1.toFixed(1)}" class="${i % 5 ? '' : 'five'}"/>`; }).join('');
   const nums = [0, 15, 30, 45].map(n => { const [x, y] = at(n * 6, R - 14); return `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}">${n}</text>`; }).join('');
+  const hours = Array.from({ length: 12 }, (_, i) => { const [x, y] = at(i * 30, R - 14); return `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}">${i || 12}</text>`; }).join('');
   const [sx, sy] = at(deg(p.sunset), R);
   const clockAt = x => dtf({ hour: 'numeric', minute: '2-digit', ...hourOpts(), timeZone: place.tz }).format(new Date(x * 1000));
-  el.innerHTML = `<svg viewBox="0 0 220 220" aria-hidden="true"><circle cx="${C}" cy="${C}" r="${R}" class="face"/><circle cx="${C}" cy="${C}" r="${R}" class="done" pathLength="360" transform="rotate(-90 ${C} ${C})"/>
-      <g class="ticks">${ticks}</g><g class="nums">${nums}</g><circle cx="${sx.toFixed(1)}" cy="${sy.toFixed(1)}" r="4" class="sunset"><title>${esc(t('sun.sunset'))}</title></circle>
-      <g class="hand"><line x1="${C}" y1="${C + 12}" x2="${C}" y2="${C - R + 6}"/><circle cx="${C}" cy="${C}" r="5"/></g></svg>
-    <div class="gread" aria-live="polite"><div class="serif gbig"></div><div class="small muted gline"></div>
+  const secF = dtf({ hour: 'numeric', minute: '2-digit', second: '2-digit', ...hourOpts(), timeZone: place.tz });
+  el.innerHTML = `<div class="dial"><p class="label">${esc(t('r2.clock'))}</p><svg viewBox="0 0 220 220" aria-hidden="true" class="aclock"><circle cx="${C}" cy="${C}" r="${R}" class="face"/>
+        <g class="ticks">${ticks}</g><g class="nums">${hours}</g>
+        <line class="hh" x1="${C}" y1="${C + 10}" x2="${C}" y2="${C - 46}"/><line class="mh" x1="${C}" y1="${C + 12}" x2="${C}" y2="${C - 70}"/>
+        <line class="sh" x1="${C}" y1="${C + 16}" x2="${C}" y2="${C - R + 4}"/><circle cx="${C}" cy="${C}" r="4.5" class="pin"/></svg>
+      <div class="serif dread aread" aria-live="off"></div></div>
+    <div class="dial"><p class="label">${esc(u[0])} · ${esc(u[1])}</p><svg viewBox="0 0 220 220" aria-hidden="true"><circle cx="${C}" cy="${C}" r="${R}" class="face"/><circle cx="${C}" cy="${C}" r="${R}" class="done" pathLength="360" transform="rotate(-90 ${C} ${C})"/>
+        <g class="ticks">${ticks}</g><g class="nums">${nums}</g><circle cx="${sx.toFixed(1)}" cy="${sy.toFixed(1)}" r="4" class="sunset"><title>${esc(t('sun.sunset'))}</title></circle>
+        <g class="hand"><line x1="${C}" y1="${C + 12}" x2="${C}" y2="${C - R + 6}"/><circle cx="${C}" cy="${C}" r="5"/></g></svg>
+      <div class="serif dread gbig" aria-live="polite"></div></div>
+    <div class="gread"><div class="small muted gline"></div>
       <div class="small muted">↑ ${esc(t('sun.sunrise'))} ${esc(clockAt(p.sunrise))} · <span class="gold">●</span> ${esc(t('sun.sunset'))} ${esc(clockAt(p.sunset))}</div></div>`;
   const hand = el.querySelector('.hand'), done = el.querySelector('.done');
-  const tick = () => {
-    if (!el.isConnected || tab !== 'oldtime') return clearInterval(otTick);
-    const x = Date.now() / 1000; if (x >= p.nextSunrise) return ghatiDial(el, place);
+  const hh = el.querySelector('.hh'), mh = el.querySelector('.mh'), sh = el.querySelector('.sh'), aread = el.querySelector('.aread');
+  // The place's clock: its offset from UTC, read again each minute (a change of summer time).
+  let off = 0, offAt = -1;
+  const wall = ms => {
+    if (offAt < 0 || ms - offAt > 60000) {
+      const q = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: place.tz, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
+        .formatToParts(new Date(ms)).map(x => [x.type, x.value]));
+      off = Date.UTC(+q.year, +q.month - 1, +q.day, +q.hour % 24, +q.minute, +q.second) - Math.floor(ms / 1000) * 1000; offAt = ms;
+    }
+    const d = new Date(ms + off); return { h: d.getUTCHours(), m: d.getUTCMinutes(), s: d.getUTCSeconds() + d.getUTCMilliseconds() / 1000 };
+  };
+  const rot = (l, a) => l.setAttribute('transform', `rotate(${a.toFixed(2)} ${C} ${C})`);
+  const live = () => el.isConnected && tab === 'oldtime';
+  const hands = (ms, smooth) => {
+    const w = wall(ms), sec = smooth ? w.s : Math.floor(w.s), min = w.m + sec / 60;
+    rot(sh, sec * 6); rot(mh, min * 6); rot(hh, ((w.h % 12) + min / 60) * 30);
+  };
+  let lastSec = -1;
+  const second = () => {
+    if (!live()) return stopOldTime();
+    const ms = Date.now(), x = ms / 1000;
+    if (x >= p.nextSunrise) return ghatiDial(el, place);
+    aread.textContent = secF.format(new Date(ms));
     const r = tradTime(p, x, OT.proportional), a = deg(x);
     hand.style.transform = `rotate(${a.toFixed(2)}deg)`; done.style.strokeDasharray = `${a.toFixed(2)} 360`;
     el.querySelector('.gbig').innerHTML = `${r.n} <small>${esc(u[0])}</small> ${r.v} <small>${esc(u[1])}</small>`;
     el.querySelector('.gline').textContent = t('ot.result', r.n, u[0], r.v, u[1]);
   };
-  tick(); otTick = setInterval(tick, 4000);
+  second(); hands(Date.now(), !still());
+  if (still()) { otTick = setInterval(() => { second(); if (live()) hands(Date.now(), false); }, 1000); return; }
+  const frame = () => {
+    if (!live()) return stopOldTime();
+    const ms = Date.now(), s = Math.floor(ms / 1000);
+    hands(ms, true);
+    if (s !== lastSec) { lastSec = s; second(); }
+    if (otRaf) otRaf = requestAnimationFrame(frame);
+  };
+  otRaf = requestAnimationFrame(frame);
 }
 async function viewOldTime() {
   const u = timeUnitNames(), place = OT.place || S.home;
@@ -1508,7 +1581,7 @@ async function viewOldTime() {
   if (OT.time == null) { const now = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: place.tz }).format(new Date()); OT.time = now; }
   const opts = n => Array.from({ length: 60 }, (_, i) => `<option ${i === n ? 'selected' : ''}>${i}</option>`).join('');
   $('#main').innerHTML = `<h2 class="serif" style="margin-bottom:4px">${esc(t('ot.title'))}</h2><p class="muted" style="margin-top:0">${esc(t('ot.intro', u[0], u[1]))}</p>
-    <div class="card ghati" id="otdial"></div>
+    <div class="card ghati clocks" id="otdial"></div>
     <div class="seg" style="margin:8px 0"><button data-ot="0" class="${!OT.toClock ? 'on' : ''}">${esc(t('ot.toTrad', u[0]))}</button><button data-ot="1" class="${OT.toClock ? 'on' : ''}">${esc(t('ot.toClock', u[0]))}</button></div>
     <div class="card">
       <label class="field"><span>${esc(t('ot.date'))}</span><input type="date" id="otd" value="${OT.date}" min="1900-01-01" max="2100-12-31"></label>
@@ -1574,8 +1647,13 @@ async function viewTemples() {
     if (k > 2) rows.push(['🚗', t('tm.road'), t('tm.roadFrom', distText(k), t('dir.' + compass(origin, x)), origin.name)]);
     return `<p class="label">${esc(t('tm.getting'))}</p>${rows.map(([i, h, v]) => `<div class="small" style="margin:4px 0">${i} <b>${esc(h)}</b> · ${esc(v)}</div>`).join('')}`;
   };
-  const card = x => `<div class="card temple"><h2 class="serif">${deityIcon(x.deity, 20)} ${esc(x.name)}</h2><div class="small muted tmplace"><span>📍 ${esc(x.place)}</span><span>${esc(distText(kmFrom(origin, x)))}</span></div>
-    ${x.built ? `<div class="small" style="color:var(--accent);font-weight:700">🕰 ${esc(t('tm.built', x.built))}</div>` : ''}
+  // Each temple rises in its turn; now and then one's head turns to what the list holds of it: its deity, its
+  // place, and when it was built or the airport nearest.
+  let ri = 0;
+  const backOf = x => ({ caption: t('deity.' + x.deity), fact: x.place,
+    line: x.built ? t('tm.built', x.built) : x.air?.[0] ? `✈︎ ${x.air[0][0]} (${x.air[0][1]})` : x.rail?.[0] ? `🚆 ${x.rail[0][0]}` : '' });
+  const card = x => `<div class="card temple${viewTemples.quiet ? '' : ' rise'}" style="--i:${ri++}"><div class="tmhead turn v" data-k="${esc(x.id)}"><div class="tfront"><h2 class="serif">${deityIcon(x.deity, 20)} ${esc(x.name)}</h2><div class="small muted tmplace"><span>📍 ${esc(x.place)}</span><span>${esc(distText(kmFrom(origin, x)))}</span></div>
+    ${x.built ? `<div class="small" style="color:var(--accent);font-weight:700">🕰 ${esc(t('tm.built', x.built))}</div>` : ''}</div>${lacquer(backOf(x), 'green')}</div>
     <p class="label">${esc(t('tm.significance'))}</p><p>${esc(x.about)}</p>
     ${x.tips?.length ? `<p class="label">${esc(t('tm.tips'))}</p>${x.tips.map(tp => `<div class="small">💡 ${esc(tp)}</div>`).join('')}` : ''}
     ${travel(x)}
@@ -1597,9 +1675,10 @@ async function viewTemples() {
     ${groups}<p class="small muted">${esc(t('tm.note'))}</p>`;
   $('#main').querySelectorAll('[data-deity]').forEach(b => b.onclick = () => { tmDeity = b.dataset.deity || null; viewTemples(); });
   $('#tmregion').onchange = e => { tmRegion = e.target.value || null; viewTemples(); };
-  $('#tmq').oninput = e => { tmQuery = e.target.value; clearTimeout(viewTemples.t); viewTemples.t = setTimeout(() => { viewTemples().then(() => { const i = $('#tmq'); i.focus(); i.setSelectionRange(i.value.length, i.value.length); }); }, 250); };
+  $('#tmq').oninput = e => { tmQuery = e.target.value; clearTimeout(viewTemples.t); viewTemples.t = setTimeout(() => { viewTemples.quiet = true; viewTemples().then(() => { viewTemples.quiet = false; const i = $('#tmq'); i.focus(); i.setSelectionRange(i.value.length, i.value.length); }); }, 250); };
   $('#main').querySelector('[data-tmhome]')?.addEventListener('click', () => { tmNear = null; viewTemples(); });
   $('#main').querySelector('[data-tmpick]').onclick = () => placePicker($('#tmpp'), p => { tmNear = p; viewTemples(); });
+  startTurns($('#main'), '.tmhead');
 }
 
 // ---------------------------------------------------------------- the engine's reason, in words
@@ -1757,7 +1836,7 @@ async function viewMonth(turn = 0) {
       <div><span>↑ ↓ ${esc(t('cal.sunLegend'))}</span><span><i class="fd"></i>${esc(t('tab.festivals'))}</span><span>● ${esc(name('tithis', 'purnima'))}</span><span>○ ${esc(name('tithis', 'amavasya'))}</span></div></div>
     <p class="small muted" style="margin-top:10px;display:none"><span class="dot major"></span> ${esc(t('f.major'))} &nbsp; <span class="dot"></span> ${esc(t('tab.festivals'))} &nbsp; <span class="dot hollow"></span> ${['ekadashi', 'purnima', 'amavasya'].map(k => esc(name('tithis', k))).join(' · ')}</p>
     ${items.length ? `<p class="label" style="margin-top:16px">${esc(t('tab.festivals'))}</p>` : ''}
-    ${items.map(x => festRow(x.f, x.date)).join('')}
+    ${items.map((x, i) => festRow(x.f, x.date, { i, back: festBack(x.f, x.date), fam: 'gold' })).join('')}
     <div class="noprint" style="display:flex;gap:8px"><button class="btn soft" style="flex:1" onclick="window.print()">${SHARE_ICON} ${esc(t('pdf.month'))}</button><button class="btn soft" style="flex:1" data-year>${SHARE_ICON} ${esc(t('pdf.year'))}</button></div>`;
   $('#main').querySelector('[data-year]').onclick = () => printYear(y, place);
   // A new month turns the grid like a wall calendar's page: up and away, the next one down into place.
@@ -1782,7 +1861,8 @@ async function viewMonth(turn = 0) {
     }
   };
   wireFestivals();
-  startTurns($('#main'), '.c2.turn');
+  // One loop for the screen: a day of the grid or a festival below it, one at a time.
+  startTurns($('#main'), '.c2.turn, .frow');
 }
 // As on iOS (PDFExport.year): the year's festivals, then each month as a grid,
 // in the tradition's names - printed (or saved as PDF) from the browser.
@@ -1810,6 +1890,9 @@ async function printYear(y, place) {
   setTimeout(() => window.print(), 300);
 }
 
+// A festival row's lacquered back: its name, and its one-line summary, or else its date and weekday.
+const festBack = (f, date) => { const sum = text(f.content?.summary);
+  return { caption: fname(f), fact: sum || greg(date, { weekday: 'long', day: 'numeric', month: 'long' }) }; };
 // With o (the festivals list), the row rises in at its place and turns now and then to its one line or its date.
 function festRow(f, date, o) {
   const n = daysBetween(today(), date);
@@ -1846,13 +1929,11 @@ async function viewFestivals() {
   // Quiet chips: the chosen kind filled, the rest outlined.
   let html = `<div class="chips noprint fkinds" style="margin-bottom:12px">${[['major', 'f.major'], ['regional', 'ff.regional'], ['fasting', 'ff.fasting'], ['jayanti', 'ff.jayanti'], ['all', 'f.all']].map(([k, l]) => `<button class="chip ${kind === k ? 'on' : ''}" data-fk="${k}">${esc(t(l))}</button>`).join('')}</div>`;
   let month = '', i = 0;
-  const backOf = (f, date) => { const sum = text(f.content?.summary);
-    return sum ? { caption: fname(f), fact: sum } : { caption: fname(f), fact: greg(date, { weekday: 'long', day: 'numeric', month: 'long' }) }; };
   for (const x of list) {
     const mm = x.date.slice(0, 7);
     if (mm !== month) { month = mm; html += `<p class="label" style="margin-top:14px">${esc(dtf({ month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(x.date)))}</p>`; }
     html += x.obs ? `<div class="list-row obs rise" style="--i:${i++}"><span style="color:var(--gold)">☾</span><span class="grow">${esc(recName(x.obs))}</span><span class="small muted">${esc(dtf({ day: 'numeric', month: 'short', timeZone: 'UTC' }).format(parse(x.date)))}</span></div>`
-      : festRow(x.f, x.date, { i: i++, back: backOf(x.f, x.date), fam: KINDS.fasting(x.f) ? 'maroon' : 'gold' });
+      : festRow(x.f, x.date, { i: i++, back: festBack(x.f, x.date), fam: KINDS.fasting(x.f) ? 'maroon' : 'gold' });
   }
   $('#main').innerHTML = html + `<button class="btn soft block noprint" onclick="window.print()">${SHARE_ICON} ${esc(t('pdf.share'))}</button>`;
   $('#main').querySelectorAll('[data-fk]').forEach(b => b.onclick = () => { fKind = b.dataset.fk; viewFestivals(); });
