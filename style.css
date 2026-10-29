@@ -672,3 +672,59 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .onblock { display: flex; gap: 12px; align-items: center; margin: 14px 0 16px; padding: 12px 14px; border-radius: 14px; font-weight: 600;
   background: color-mix(in srgb, var(--gold) 14%, var(--card)); border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent); }
 .onblock .onbic { background: var(--gold); color: #fff; }
+
+/* r3: a tile's or a day's menu (long press or right-click), as a small card by the finger. */
+.pmenu { position: fixed; z-index: 40; min-width: 210px; max-width: min(320px, calc(100vw - 16px)); padding: 6px; border-radius: 14px; background: var(--card); border: 1px solid var(--line);
+  box-shadow: 0 12px 36px -10px rgba(0,0,0,.35), 0 2px 6px rgba(0,0,0,.08); animation: pmenu .16s cubic-bezier(.2,.75,.25,1); transform-origin: top left; }
+.pmenu button { display: flex; align-items: center; gap: 10px; width: 100%; padding: 10px; border: 0; border-radius: 9px; background: none; color: var(--ink); font: inherit; font-size: 15px; text-align: left; cursor: pointer; }
+.pmenu button:hover, .pmenu button:focus-visible { background: var(--soft); outline: none; }
+.pmenu .pmic { flex: none; width: 20px; display: flex; justify-content: center; color: var(--accent); }
+@keyframes pmenu { from { opacity: 0; transform: scale(.94); } }
+.toast { position: fixed; left: 50%; bottom: calc(18px + env(safe-area-inset-bottom)); transform: translateX(-50%); z-index: 50; max-width: calc(100vw - 32px); padding: 10px 16px; border-radius: 12px;
+  background: var(--ink); color: var(--paper); font-size: 14px; font-weight: 600; box-shadow: 0 8px 24px -8px rgba(0,0,0,.4); animation: fadein .2s ease; }
+.tile, .c2 { -webkit-touch-callout: none; -webkit-user-select: none; user-select: none; }
+
+/* Dragging a tile: it lifts, the tile beneath gives way with the accent round it. */
+.tile { transition: transform .2s cubic-bezier(.2,.75,.25,1), filter .2s; }
+.tile.lifting { transform: scale(1.04); z-index: 2; cursor: grabbing; }
+.tile.lifting .tfront { box-shadow: 0 18px 40px -12px rgba(0,0,0,.4), 0 2px 6px rgba(0,0,0,.1); }
+.tile.droptarget { transform: scale(.97); }
+.tile.droptarget .tfront { outline: 2px solid var(--accent); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { .tile { transition: none; } .tile.lifting, .tile.droptarget { transform: none; } .pmenu { animation: none; } }
+
+/* The Dial tile's ring. */
+.tile .gring { display: block; width: 64px; height: 64px; }
+
+/* "What is this?": the i in the header and on the dial, and the guide sheet. */
+.badge.infob, .btn.infob { width: 30px; height: 30px; padding: 0; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font: italic 700 16px ui-serif, Georgia, serif; color: var(--accent); }
+.badge.infob[hidden] { display: none; }
+.sheet .btn.infob { float: right; margin-right: 8px; height: 40px; width: 40px; }
+.guidehead { display: flex; align-items: center; gap: 10px; margin: 6px 0 10px; }
+.guide .onbline { padding: 6px 0; }
+.guide .rise { --step: 60ms; }
+
+/* Today's periods to one's own calendar. */
+.calbtn { border: 0; background: var(--soft); border-radius: 8px; padding: 2px 6px; margin-left: 6px; cursor: pointer; font-size: 13px; vertical-align: 1px; }
+
+/* Notes: a pin on the day square, in the legend and in the day. */
+.notepin { color: var(--accent); display: inline-flex; vertical-align: -1px; font-style: normal; }
+.c2 .notepin { margin: 3px 0 0 2px; }
+.list-row .notepin { flex: none; }
+.calleg .linkbtn { display: block; margin-top: 4px; }
+
+/* What the marks mean. */
+.lgguide { line-height: 1.45; }
+.lgrow { display: flex; gap: 12px; align-items: flex-start; padding: 8px 0; border-top: 1px solid var(--line); }
+.lgrow:first-child { border-top: 0; }
+.lgrow p { margin: 0 0 4px; }
+.lgmark { flex: none; width: 34px; text-align: center; padding-top: 2px; }
+.lgguide .lgrow { white-space: normal; }
+.lgguide span { white-space: normal; margin: 0; }
+
+/* The saved people under the month. */
+.cpeople { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr)); gap: 10px; }
+.cperson { display: flex; flex-direction: column; gap: 3px; padding: 12px; border-radius: 14px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font: inherit; text-align: left; cursor: pointer; }
+.cperson.on { border-color: var(--gold); background: color-mix(in srgb, var(--gold) 10%, var(--card)); }
+.cperson .cpname { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.cperson .pill { margin: 0; color: var(--gold); background: color-mix(in srgb, var(--gold) 16%, transparent); }
+.cperson:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }

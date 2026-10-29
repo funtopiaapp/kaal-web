@@ -1,7 +1,7 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610290102';
+import { engine, onRestart } from './engine.js?v=202610291709';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -212,6 +212,7 @@ function shell() {
     const o = sheet(`<h2 class="serif">${esc(t('s.tradition'))}</h2><div class="chips">${CULTURES.map(x => `<button class="chip ${S.culture === x.id ? 'on' : ''}" data-tc="${x.id}">${x.native}<br><small>${x.en}</small></button>`).join('')}</div>`);
     o.querySelectorAll('[data-tc]').forEach(b => b.onclick = async () => { o.remove(); if (b.dataset.tc === S.culture) return; S.culture = b.dataset.tc; save(); await loadPack(); await resetCalendars(); render(); });
   };
+  infoButton();
   // English or the tradition's language, beside the tradition picker.
   if (pack) { $('#langbadge').textContent = `🗣 ${S.native ? langName(pack.language) : 'English'} ▾`; $('#langbadge').onclick = () => { S.native = !S.native; save(); render(); }; }
   const house = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>';
@@ -230,7 +231,7 @@ function shell() {
 }
 // The Eka Panchang mark blooming while something loads, as on iOS (LogoBloom).
 const BLOOM = `<svg class="bloom" viewBox="-170 -170 340 340" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#B8862E"/><stop offset=".5" stop-color="#E9C266"/><stop offset="1" stop-color="#F6D47C"/></linearGradient></defs><circle class="rg" r="156" fill="none" stroke="#E9C266" stroke-width="2" pathLength="1"/><circle r="148" fill="none" stroke="#E9C266" stroke-opacity=".7" stroke-width="1" stroke-dasharray="1.5 4"/><path class="dm" transform="rotate(22.5) translate(0,-150)" d="M0 -6 L4 0 L0 6 L-4 0Z" fill="#E9C266"/><path class="dm" transform="rotate(67.5) translate(0,-150)" d="M0 -6 L4 0 L0 6 L-4 0Z" fill="#E9C266"/><path class="dm" transform="rotate(112.5) translate(0,-150)" d="M0 -6 L4 0 L0 6 L-4 0Z" fill="#E9C266"/><path class="dm" transform="rotate(157.5) translate(0,-150)" d="M0 -6 L4 0 L0 6 L-4 0Z" fill="#E9C266"/><path class="dm" transform="rotate(202.5) translate(0,-150)" d="M0 -6 L4 0 L0 6 L-4 0Z" fill="#E9C266"/><path class="dm" transform="rotate(247.5) translate(0,-150)" d="M0 -6 L4 0 L0 6 L-4 0Z" fill="#E9C266"/><path class="dm" transform="rotate(292.5) translate(0,-150)" d="M0 -6 L4 0 L0 6 L-4 0Z" fill="#E9C266"/><path class="dm" transform="rotate(337.5) translate(0,-150)" d="M0 -6 L4 0 L0 6 L-4 0Z" fill="#E9C266"/><g class="pt" style="--i:0" transform="rotate(0) translate(0,-50)"><path d="M0 0 C-44 -28 -30 -82 0 -104 C30 -82 44 -28 0 0Z" fill="url(#lg)"/><path d="M0 0 L0 -100 M0 -26 Q-6 -32 -14 -36 M0 -26 Q6 -32 14 -36 M0 -50 Q-7 -56 -15 -62 M0 -50 Q7 -56 15 -62 M0 -72 Q-5 -77 -10 -82 M0 -72 Q5 -77 10 -82" fill="none" stroke="#B8862E" stroke-width="1"/></g><g class="pt" style="--i:1" transform="rotate(60) translate(0,-50)"><path d="M0 0 C-44 -28 -30 -82 0 -104 C30 -82 44 -28 0 0Z" fill="url(#lg)"/><path d="M0 0 L0 -100 M0 -26 Q-6 -32 -14 -36 M0 -26 Q6 -32 14 -36 M0 -50 Q-7 -56 -15 -62 M0 -50 Q7 -56 15 -62 M0 -72 Q-5 -77 -10 -82 M0 -72 Q5 -77 10 -82" fill="none" stroke="#B8862E" stroke-width="1"/></g><g class="pt" style="--i:2" transform="rotate(120) translate(0,-50)"><path d="M0 0 C-44 -28 -30 -82 0 -104 C30 -82 44 -28 0 0Z" fill="url(#lg)"/><path d="M0 0 L0 -100 M0 -26 Q-6 -32 -14 -36 M0 -26 Q6 -32 14 -36 M0 -50 Q-7 -56 -15 -62 M0 -50 Q7 -56 15 -62 M0 -72 Q-5 -77 -10 -82 M0 -72 Q5 -77 10 -82" fill="none" stroke="#B8862E" stroke-width="1"/></g><g class="pt" style="--i:3" transform="rotate(180) translate(0,-50)"><path d="M0 0 C-44 -28 -30 -82 0 -104 C30 -82 44 -28 0 0Z" fill="url(#lg)"/><path d="M0 0 L0 -100 M0 -26 Q-6 -32 -14 -36 M0 -26 Q6 -32 14 -36 M0 -50 Q-7 -56 -15 -62 M0 -50 Q7 -56 15 -62 M0 -72 Q-5 -77 -10 -82 M0 -72 Q5 -77 10 -82" fill="none" stroke="#B8862E" stroke-width="1"/></g><g class="pt" style="--i:4" transform="rotate(240) translate(0,-50)"><path d="M0 0 C-44 -28 -30 -82 0 -104 C30 -82 44 -28 0 0Z" fill="url(#lg)"/><path d="M0 0 L0 -100 M0 -26 Q-6 -32 -14 -36 M0 -26 Q6 -32 14 -36 M0 -50 Q-7 -56 -15 -62 M0 -50 Q7 -56 15 -62 M0 -72 Q-5 -77 -10 -82 M0 -72 Q5 -77 10 -82" fill="none" stroke="#B8862E" stroke-width="1"/></g><g class="pt" style="--i:5" transform="rotate(300) translate(0,-50)"><path d="M0 0 C-44 -28 -30 -82 0 -104 C30 -82 44 -28 0 0Z" fill="url(#lg)"/><path d="M0 0 L0 -100 M0 -26 Q-6 -32 -14 -36 M0 -26 Q6 -32 14 -36 M0 -50 Q-7 -56 -15 -62 M0 -50 Q7 -56 15 -62 M0 -72 Q-5 -77 -10 -82 M0 -72 Q5 -77 10 -82" fill="none" stroke="#B8862E" stroke-width="1"/></g><circle r="56" fill="#004B45"/><g class="gl" fill="none" stroke="#E9C266" stroke-width="1.4"><circle r="25"/><path d="M-22 -12 H22 M-25 0 H25 M-22 12 H22"/><ellipse class="mer" rx="12" ry="25"/><ellipse class="mer m2" rx="6" ry="25"/></g></svg>`;
-function loading() { $('#main').innerHTML = `<div class="loading">${BLOOM}<div class="muted">${esc(t('o.tagline'))}</div></div>`; }
+function loading() { $('#main').innerHTML = `<div class="loading">${BLOOM}<div class="muted">${esc(t('r3.load1'))}</div><div class="small muted">${esc(t('r3.load2'))}</div></div>`; }
 function sheet(html, onOpen) {
   const o = document.createElement('div'); o.className = 'overlay';
   o.innerHTML = `<div class="sheet"><button class="btn soft close noprint">${esc(t('c.close'))}</button>${html}</div>`;
@@ -315,7 +316,7 @@ function sinceSunrise(sunrise) {
   let s = Date.now() / 1000 - sunrise; if (s < 0) s += 86400;
   return t('hm.sinceSunrise', `${Math.floor(s / 1440)} ${names[0]} ${Math.floor((s % 1440) / 24)} ${names[1]}`);
 }
-let homeTick = null, turnTimer = null;
+let homeTick = null, turnTimer = null, holdTurns = false;
 const still = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 // Now and then one card turns over, chosen at random among those on screen, never the same twice running; it comes
 // back by itself. One loop per screen: a new one, or a new screen, ends the last. The setting keeps them all still;
@@ -327,7 +328,8 @@ function startTurns(root, sel) {
   let last = null;
   const tick = () => {
     if (tab !== view || !root.isConnected) return;
-    const els = document.hidden ? [] : [...root.querySelectorAll(sel)].filter(e => {
+    // Nothing turns while a tile is dragged or a menu or sheet is open: one moving thing at a time.
+    const els = document.hidden || holdTurns || document.querySelector('.pmenu, .overlay') ? [] : [...root.querySelectorAll(sel)].filter(e => {
       if (!e.querySelector(':scope > .tback') || id(e) === last || e.classList.contains('turned')) return false;
       const r = e.getBoundingClientRect(); return r.height && r.bottom > 0 && r.top < innerHeight;
     });
@@ -449,8 +451,9 @@ function starCard(sp, p, fine, d) {
 // with Abhijit and Brahma Muhurta as diamonds. Drag to look at another hour; tap a period for its details.
 const DIAL = { mode: 0, half: null, scrub: null };
 async function openDial(date) {
-  const o = sheet('<div id="dial" class="dialwrap"></div>');
+  const o = sheet(`<button class="btn soft infob noprint" data-dinfo aria-label="${esc(t('r3.what'))}" title="${esc(t('r3.what'))}">i</button><div id="dial" class="dialwrap"></div>`);
   o.classList.add('full');
+  o.querySelector('[data-dinfo]').onclick = () => explainer('dial');
   let d = date, cur = null;
   const cache = {};
   const draw = async () => {
@@ -548,7 +551,7 @@ const TILE_STYLES = ['classic', 'mosaic', 'colourful', 'minimal'];
 // Reorder Home's tiles, put what's coming soonest first, juggle, and pick a style.
 function arrangeSheet(keys, x) {
   let order = orderTiles(keys.map(k => `data-k="${k}"`)).map(h => h.match(/data-k="([^"]+)"/)[1]);
-  const label = k => ({ festivals: t('tab.festivals'), day: t('dm.title'), vrats: t('vj.title'), calendar: t('tab.calendar'), jathakam: t('jk.chart'), sky: t('sk.title'), temples: t('tm.title'), people: t('fam.family'), match: t('mt.label'), greetings: t('gr.title'), birthstar: t('bs.result'), settings: t('tab.settings'), prayers: t('py.title'), oldtime: t('ot.title') })[k] || k;
+  const label = k => ({ festivals: t('tab.festivals'), day: t('dm.title'), dial: t('r3.dial'), vrats: t('vj.title'), calendar: t('tab.calendar'), jathakam: t('jk.chart'), sky: t('sk.title'), temples: t('tm.title'), people: t('fam.family'), match: t('mt.label'), greetings: t('gr.title'), birthstar: t('bs.result'), settings: t('tab.settings'), prayers: t('py.title'), oldtime: t('ot.title') })[k] || k;
   const o = sheet('<div id="arr"></div>');
   const draw = () => {
     o.querySelector('#arr').innerHTML = `<h2 class="serif">${esc(t('hm.arrange'))}</h2>
@@ -575,6 +578,25 @@ function arrangeSheet(keys, x) {
   };
   draw();
 }
+// The tiles' line icons (24-unit strokes), shared by Home, its menus and the explainers.
+const HOME_ICONS = {
+  festivals: '<path d="M12 3c1.8 2.2 2.6 3.9 2.6 5.3A2.6 2.6 0 0 1 12 11a2.6 2.6 0 0 1-2.6-2.7C9.4 6.9 10.2 5.2 12 3z"/><path d="M4 14h16c0 3.3-3.6 6-8 6s-8-2.7-8-6z"/><path d="M12 11v3"/>',
+  day: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
+  vrats: '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',
+  calendar: '<rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
+  jathakam: '<rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/><path d="M3.5 3.5l17 17M20.5 3.5l-17 17M12 3.5L20.5 12 12 20.5 3.5 12z"/>',
+  sky: '<circle cx="12" cy="12" r="3.5"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(-20 12 12)"/>',
+  oldtime: '<path d="M7 3h10M7 21h10M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9"/>',
+  prayers: '<path d="M12 21V11M12 11c0-3 1.5-6 1.5-8M12 11c0-3-1.5-6-1.5-8"/><path d="M13.5 3l3.5 9-2 4-3 5M10.5 3L7 12l2 4 3 5"/>',
+  temples: '<path d="M12 2.5v2M9.5 8h5l-1-3.5h-3zM8 12h8l-1.5-4h-5zM6 20.5h12V12H6z"/><path d="M10.5 20.5v-4a1.5 1.5 0 0 1 3 0v4M4 20.5h16"/>',
+  people: '<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9.5" r="2.3"/><path d="M3.5 19c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5M15 14c3 0 5.5 1.8 5.5 5"/>',
+  birthstar: '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/><path d="M17 3v4M15 5h4"/>',
+  match: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
+  greetings: '<path d="M3.5 9.5 12 4l8.5 5.5V19a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1z"/><path d="M3.5 9.5 12 15l8.5-5.5"/>',
+  settings: '<path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/>',
+  dial: '<circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v3M12 17.5v3M3.5 12h3M17.5 12h3"/><path d="M12 12l3.5-3.5"/>',
+  muhurtham: '<circle cx="9" cy="14" r="5"/><circle cx="15" cy="14" r="5"/><path d="M10 4l2 3 2-3"/>',
+};
 async function viewHome() {
   await loadPrayers().catch(() => {});
   const d = today();
@@ -611,27 +633,11 @@ async function viewHome() {
   const events = (pack.muhurtham?.events || []).slice(0, 3).map(e => e.names[lang()] ?? e.names.en);
   // The user may have moved to another tab while this loaded.
   if (tab !== 'home') return;
-  const icon = k => ({
-    festivals: '<path d="M12 3c1.8 2.2 2.6 3.9 2.6 5.3A2.6 2.6 0 0 1 12 11a2.6 2.6 0 0 1-2.6-2.7C9.4 6.9 10.2 5.2 12 3z"/><path d="M4 14h16c0 3.3-3.6 6-8 6s-8-2.7-8-6z"/><path d="M12 11v3"/>',
-    day: '<circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/>',
-    vrats: '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',
-    calendar: '<rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
-    jathakam: '<rect x="3.5" y="3.5" width="17" height="17" rx="1.5"/><path d="M3.5 3.5l17 17M20.5 3.5l-17 17M12 3.5L20.5 12 12 20.5 3.5 12z"/>',
-    sky: '<circle cx="12" cy="12" r="3.5"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(-20 12 12)"/>',
-    oldtime: '<path d="M7 3h10M7 21h10M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9"/>',
-    prayers: '<path d="M12 21V11M12 11c0-3 1.5-6 1.5-8M12 11c0-3-1.5-6-1.5-8"/><path d="M13.5 3l3.5 9-2 4-3 5M10.5 3L7 12l2 4 3 5"/>',
-    temples: '<path d="M12 2.5v2M9.5 8h5l-1-3.5h-3zM8 12h8l-1.5-4h-5zM6 20.5h12V12H6z"/><path d="M10.5 20.5v-4a1.5 1.5 0 0 1 3 0v4M4 20.5h16"/>',
-    people: '<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9.5" r="2.3"/><path d="M3.5 19c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5M15 14c3 0 5.5 1.8 5.5 5"/>',
-    birthstar: '<path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/><path d="M17 3v4M15 5h4"/>',
-    match: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
-    greetings: '<path d="M3.5 9.5 12 4l8.5 5.5V19a1 1 0 0 1-1 1h-15a1 1 0 0 1-1-1z"/><path d="M3.5 9.5 12 15l8.5-5.5"/>',
-    settings: '<path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/>',
-    muhurtham: '<circle cx="9" cy="14" r="5"/><circle cx="15" cy="14" r="5"/><path d="M10 4l2 3 2-3"/>',
-  }[k]);
+  const icon = k => HOME_ICONS[k];
   const svg = k => `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icon(k)}</svg>`;
   // The tiles: a colour family each; the front holds the chip, the feature's name in the serif, a glimpse of what is
   // inside and a line beneath; the back (turned to now and then) a caption, one fact and a line.
-  const FAM = { festivals: 'gold', day: 'clay', calendar: 'clay', vrats: 'maroon', prayers: 'green', oldtime: 'gold', people: 'clay', match: 'maroon', greetings: 'gold', sky: 'indigo', temples: 'gold', jathakam: 'indigo', birthstar: 'gold', settings: 'quiet' };
+  const FAM = { festivals: 'gold', day: 'clay', dial: 'gold', calendar: 'clay', vrats: 'maroon', prayers: 'green', oldtime: 'gold', people: 'clay', match: 'maroon', greetings: 'gold', sky: 'indigo', temples: 'gold', jathakam: 'indigo', birthstar: 'gold', settings: 'quiet' };
   const chips = xs => xs.length ? `<span class="chips">${xs.slice(0, 3).map(x => `<span>${esc(x)}</span>`).join('')}</span>` : '';
   const backOf = (label, k, b) => b && b.fact ? `<span class="tback" aria-hidden="true"><span class="tbrings"></span><span class="tbframe"></span><span class="tbsym">${svg(k)}</span>
       <span class="tbname">${esc(label)}</span><span class="tbcap">${esc(b.caption)}</span><span class="tbfact">${esc(b.fact)}</span>${b.line ? `<span class="tbline">${esc(b.line)}</span>` : ''}</span>` : '';
@@ -663,6 +669,19 @@ async function viewHome() {
   const dashas = [t('jk.vimshottari'), t('jk.yogini'), t('jk.chara')].join(' · ');
   const bar = (() => { const span = p.sunset - p.sunrise, a = Math.max(0, Math.min(1, (p.rahuKalam.start - p.sunrise) / span)), b = Math.max(a, Math.min(1, (p.rahuKalam.end - p.sunrise) / span));
     return `<span class="gbar"><i style="left:${(a * 100).toFixed(1)}%;width:${Math.max(1.5, (b - a) * 100).toFixed(1)}%"></i></span><span class="gtimes"><span>${esc(clock(p.sunrise))}</span><span>${esc(clock(p.sunset))}</span></span>`; })();
+  // The dial in small: the running half's periods round a ring, by their nature, the hand at now.
+  const dialRing = (() => {
+    if (!ch.length) return '';
+    const isDay = now >= p.sunrise && now < p.sunset, early = now < p.sunrise;
+    const a = isDay || early ? p.sunrise : p.sunset, b = isDay || early ? p.sunset : (tomorrow?.sunrise || p.sunset + 43200);
+    const segs = ch.filter(x => x.start >= a - 60 && x.end <= b + 60); if (!segs.length) return '';
+    const nat = x => kind === 'hora' ? (['moon', 'mercury', 'jupiter', 'venus'].includes(x.key) ? 0 : 1) : x.key === 'chara' ? 1 : FAVOURED.has(x.key) ? 0 : 2;
+    const C = 32, R = 24, ang = u => (u - a) / (b - a) * Math.PI * 2 - Math.PI / 2, pt = (r, an) => `${(C + Math.cos(an) * r).toFixed(1)} ${(C + Math.sin(an) * r).toFixed(1)}`;
+    const arc = (u0, u1) => { const g = (b - a) * .006, a0 = ang(u0 + g), a1 = ang(u1 - g); return `M${pt(R, a0)}A${R} ${R} 0 ${a1 - a0 > Math.PI ? 1 : 0} 1 ${pt(R, a1)}`; };
+    const col = n => n === 0 ? 'var(--tint)' : n === 1 ? 'color-mix(in srgb, var(--tint) 45%, transparent)' : 'var(--sunken)';
+    const hand = now >= a && now < b ? `<line x1="${C}" y1="${C}" x2="${pt(R + 5, ang(now)).replace(' ', '" y2="')}" stroke="var(--ink)" stroke-width="2" stroke-linecap="round"/><circle cx="${C}" cy="${C}" r="2.5" fill="var(--ink)"/>` : '';
+    return `<svg class="gring" viewBox="0 0 64 64" width="64" height="64" aria-hidden="true">${segs.map(x => `<path d="${arc(x.start, x.end)}" fill="none" stroke="${col(nat(x))}" stroke-width="7"/>`).join('')}${hand}</svg>`;
+  })();
   const ART = {
     cards: '<span class="tart cards" aria-hidden="true"><i></i><b></b></span>',
     chart: '<svg class="tart" viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true"><path d="M1 1h50v50H1z M1 13.5h50 M1 38.5h50 M13.5 1v50 M38.5 1v50"/><circle cx="7" cy="45" r="2" fill="currentColor" stroke="none"/><circle cx="32" cy="7" r="2" fill="currentColor" stroke="none"/></svg>',
@@ -677,6 +696,7 @@ async function viewHome() {
       back: more[0] && { caption: t('tb.next'), fact: fname(more[0].f), line: `${when(more[0].date)} · ${shortDate(more[0].date)}` },
     } : { detail: t('f.upcoming') }),
     tile('day', 'today', t('dm.title'), { glimpse: bar, detail: chog ? `${chog[0]} · ${chog[1]}` : t('time.section'), back: nextPeriod }),
+    tile('dial', 'dial', t('r3.dial'), { glimpse: dialRing, detail: chog ? `${plabel(ch[i].key)} · ${t('p.until', clock(ch[i].end))}` : t('time.section'), back: nextPeriod }),
     tile('calendar', 'calendar', t('tab.calendar'), { glimpse: `<span class="gweek">${letters.map(l => `<em>${esc(l)}</em>`).join('')}${week.join('')}</span>`, detail: greg(d, { month: 'long', year: 'numeric' }),
       back: tomorrow && { caption: t('day.tomorrow'), fact: [tomorrow.tithis[0] && name('tithis', tomorrow.tithis[0].key), tomorrow.nakshatras[0] && name('nakshatras', tomorrow.nakshatras[0].key)].filter(Boolean).join(', '), line: `${clock(tomorrow.sunrise)} · ${clock(tomorrow.sunset)}` } }),
     tile('vrats', 'vrats', t('vj.title'), { glimpse: dots.length ? `<span class="gdots">${dots.map(k => `<i class="${k === true ? 'k' : k === null ? 'n' : ''}"></i>`).join('')}</span>` : '',
@@ -724,24 +744,16 @@ async function viewHome() {
       <button class="linkbtn" data-arrange>▦ ${esc(t('hm.arrange'))}</button></div>
     <div class="tiles style-${esc(S.tileStyle)}">${orderTiles(tiles).join('')}</div>
     <div class="small muted" style="text-align:center;margin-top:8px">Eka Panchang · ${esc(t('o.tagline'))}</div></div>`;
-  $('#main').querySelectorAll('[data-go]').forEach(b => b.onclick = () => { tab = b.dataset.go; render(); scrollTo(0, 0); });
+  $('#main').querySelectorAll('[data-go]').forEach(b => b.onclick = () => { if (b.dataset.go === 'dial') return openDial(today()); tab = b.dataset.go; render(); scrollTo(0, 0); });
+  // Long press or right-click a tile: its shortcuts and what it is.
+  onHold($('#main .wide[data-go="muhurtham"]'), (x, y) => popMenu(x, y, [{ label: t('r3.what'), icon: 'info', fn: () => explainer('muh') }]));
+  $('#main').querySelectorAll('.tile[data-k]').forEach(el => { if (el.dataset.k !== 'settings' && el.dataset.k !== 'greetings' && el.dataset.k !== 'jathakam') onHold(el, (x, y) => tileMenu(el.dataset.k, x, y, { fest, tp })); });
   animateSky($('#main').querySelector('svg.sky'));
   $('#main').querySelector('[data-dial]').onclick = e => { e.stopPropagation(); openDial(today()); };
   $('#main').querySelectorAll('[data-ts]').forEach(b => b.onclick = () => { S.textSize = Math.max(0, Math.min(TEXT_SIZES.length - 1, S.textSize + +b.dataset.ts)); save(); applyTextSize(); });
   $('#main').querySelector('[data-arrange]').onclick = () => arrangeSheet(tiles.map(x => x.match(/data-k="([^"]+)"/)[1]), { fest, greet, vrat, person, d });
   // Drag a tile onto another to put it there.
-  let dragged = null;
-  $('#main').querySelectorAll('.tile[data-k]').forEach(el => {
-    el.ondragstart = e => { dragged = el.dataset.k; e.dataTransfer.effectAllowed = 'move'; };
-    el.ondragover = e => e.preventDefault();
-    el.ondrop = e => {
-      e.preventDefault();
-      if (!dragged || dragged === el.dataset.k) return;
-      const order = [...$('#main').querySelectorAll('.tile[data-k]')].map(x => x.dataset.k).filter(k => k !== dragged);
-      order.splice(order.indexOf(el.dataset.k), 0, dragged);
-      S.tileOrder = order; save(); viewHome();
-    };
-  });
+  wireTileDrag($('#main .tiles'));
   startFlips($('#main'));
   clearInterval(homeTick);
   homeTick = setInterval(() => { if (tab !== 'home' || !$('#clocks')) return clearInterval(homeTick); $('#clocks').textContent = clocks(); $('#nazhika').textContent = sinceSunrise(p.sunrise); }, 30000);
@@ -775,6 +787,11 @@ async function viewDay() {
   const recs = [...new Set(p.occurrences.filter(o => o.recurring && (!pack.dailySignificance.find(r => r.key === o.id)?.optIn || S.vrats.includes(o.id))).map(o => o.id))];
   const people = await peopleOn(d);
   const checkIns = d === today() && !dayPlace ? await vratCheckIns() : [];
+  // A period still to come, for this day only: on the web, a calendar file with an alert 10 minutes before
+  // (a page cannot alert once it is closed).
+  const calWins = [];
+  const calBtn = (k, w) => { if (!w || w.end <= Date.now() / 1000) return ''; calWins.push([k, w]);
+    return ` <button class="calbtn noprint" data-calw="${calWins.length - 1}" title="${esc(t('r3w.addToCal'))}" aria-label="${esc(t('r3w.addToCal') + ': ' + t(k))}">🗓</button>`; };
   const skyToday = dayPlace ? [] : (await skyEvents(+d.slice(0, 4)).catch(() => [])).filter(e => new Intl.DateTimeFormat('en-CA', { timeZone: S.home.tz }).format(new Date(e.at * 1000)) === d);
   $('#main').innerHTML = `
     ${checkIns.slice(0, 3).map(checkInCard).join('')}
@@ -782,13 +799,14 @@ async function viewDay() {
       <div><h1 class="serif">${esc(cultureDate(p.solar, p.lunar))}</h1><div class="muted">${esc(greg(d))}</div><div class="small muted">${esc(yearLabel(p.year))}</div>
       <div class="small muted">📍 ${esc(t('f.forPlace', here().name))}</div></div>
       <button class="arrow" data-shift="1" aria-label="Next day">›</button></div>
-      ${d !== today() ? `<button class="btn soft noprint" data-today>${esc(t('day.jumpToday'))}</button>` : ''}<button class="btn soft noprint" data-dialday>◷ ${esc(t('dial.open'))}</button></div>
+      ${d !== today() ? `<button class="btn soft noprint" data-today>${esc(t('day.jumpToday'))}</button>` : ''}<button class="btn soft noprint" data-dialday>◷ ${esc(t('dial.open'))}</button> <button class="btn soft noprint" data-addnote>＋ ${esc(t('r3.addNote'))}</button></div>
     ${fests.length || recs.length || people.length || skyToday.length ? `<p class="label">${esc(t('day.observances'))}</p>` : ''}
     ${skyToday.map(e => `<div class="rec" data-goto-sky style="cursor:pointer">✦ ${esc(skyTitle(e))} · ${esc(clock(e.at))}</div>`).join('')}
     ${fests.map(({ f, o }) => `<div class="fest ${f.tier === 'major' ? 'major' : ''}" data-f="${esc(f.id)}" data-d="${o.date}"><div class="bar2"></div><div><b>${esc(fname(f))}</b><div class="small muted">${esc(fother(f))}</div><div class="small muted">${esc(text(f.content?.summary))}</div></div><div class="when">›</div></div>`).join('')}
     ${people.map(x => `<div class="rec">🎁 <b>${esc(x.title)}</b> <span class="small muted">${esc(x.line)}</span></div>`).join('')}
     ${recs.map(k => { const r = pack.dailySignificance.find(r => r.key === k); return `<div class="rec">🌙 <b>${esc(recName(k))}</b>${/sank/.test(k) && p.moonrise ? ` <span class="small" style="color:var(--accent);font-weight:700">· ${esc(t('sun.moonrise'))} ${esc(clock(p.moonrise))}</span>` : ''}<div class="small muted">${esc(text(r?.content?.summary))}</div></div>`; }).join('')}
     ${parana ? `<div class="card"><p class="label">${esc(t('v.parana'))}</p><div style="font-size:20px;font-weight:700">${esc(span(parana))}</div>${parana.dvadashiEnd ? `<div class="small muted">${esc(t('v.dvadashiEnds', clock(parana.dvadashiEnd)))}</div>` : ''}<div class="small muted">${esc(t('v.paranaWhy'))}</div></div>` : ''}
+    <div id="daynotes"></div>
     <div class="card"><p class="label">${esc(t('p.panchang'))}</p>
       ${[[t('p.tithi'), (p.lunar ? name('paksha', p.lunar.paksha) + ' ' : '') + tv, td, next(p.tithis, 'tithis')], [t('mw.vara'), name('weekdays', p.weekday), p.nextSunrise ? t('p.until', clock(p.nextSunrise)) : '', vara],
         [t('p.nakshatra'), nv, nd, next(p.nakshatras, 'nakshatras')], [t('p.yoga'), yv, yd, next(p.yogas, 'yogas')], [t('p.karana'), kv, kd, next(p.karanas, 'karanas')]]
@@ -798,15 +816,23 @@ async function viewDay() {
     <div class="card sun">${[['sun.sunrise', p.sunrise], ['sun.sunset', p.sunset], ['sun.moonrise', p.moonrise], ['sun.moonset', p.moonset]]
         .map(([k, u]) => `<div><b>${u ? esc(clock(u)) : esc(t('sun.none'))}</b><span class="small muted">${esc(t(k))}</span></div>`).join('')}</div>
     <div class="card"><p class="label">${esc(t('time.section'))}</p><div class="small muted">${esc(t('time.avoid'))}</div>
-      ${[['time.rahu', p.rahuKalam], ['time.yama', p.yamagandam], ['time.gulika', p.gulikaKalam]].map(([k, w]) => `<div class="row"><span>${esc(t(k))}</span><span class="v">${esc(span(w))}</span></div>`).join('')}
+      ${[['time.rahu', p.rahuKalam], ['time.yama', p.yamagandam], ['time.gulika', p.gulikaKalam]].map(([k, w]) => `<div class="row"><span>${esc(t(k))}</span><span class="v">${esc(span(w))}${calBtn(k, w)}</span></div>`).join('')}
       ${fine ? [['time.durmuhurtam', fine.durmuhurtam], ['time.varjyam', fine.varjyam], ['time.bhadra', fine.bhadra], ['time.panchaka', fine.panchaka]].map(([k, ps]) => windowsRow(k, ps, d)).join('') : ''}
       <div class="small muted" style="margin-top:8px">${esc(t('time.favoured'))}</div>
-      <div class="row"><span>${esc(t('time.abhijit'))}</span><span class="v">${esc(p.weekday === 'wednesday' ? t('time.abhijitNone') : span(p.abhijit))}</span></div>
+      <div class="row"><span>${esc(t('time.abhijit'))}</span><span class="v">${esc(p.weekday === 'wednesday' ? t('time.abhijitNone') : span(p.abhijit))}${p.weekday === 'wednesday' ? '' : calBtn('time.abhijit', p.abhijit)}</span></div>
       ${fine ? windowsRow('time.amrit', fine.amritKalam, d) : ''}
-      ${[['time.brahma', p.brahmaMuhurta]].map(([k, w]) => `<div class="row"><span>${esc(t(k))}</span><span class="v">${esc(span(w))}</span></div>`).join('')}</div>
+      ${[['time.brahma', p.brahmaMuhurta]].map(([k, w]) => `<div class="row"><span>${esc(t(k))}</span><span class="v">${esc(span(w))}${calBtn(k, w)}</span></div>`).join('')}
+      ${calWins.length ? `<p class="small muted noprint" style="margin-top:8px">🗓 ${esc(t('r3w.alertWeb'))}</p>` : ''}</div>
     ${fine ? `<div class="card" id="mcard">${muhurtasCard(fine, d)}</div>` : ''}
     <button class="btn soft block noprint" onclick="window.print()">${SHARE_ICON} ${esc(t('pdf.share'))}</button>`;
   $('#main').querySelector('[data-dialday]')?.addEventListener('click', () => openDial(d));
+  $('#main').querySelectorAll('[data-calw]').forEach(b => b.onclick = () => { const [k, w] = calWins[+b.dataset.calw];
+    icsFile(`${t(k)} ${d}`, [{ uid: `${k}-${d}-${here().name}`, start: w.start, end: w.end, title: t('r3.alertTitle', t(k), clock(w.start)), text: `${greg(d)} · ${here().name}`, alarms: ['-PT10M'] }]); });
+  // The day's own notes and events, and one more.
+  const notesBox = $('#main').querySelector('#daynotes');
+  const drawNotes = () => { notesBox.innerHTML = noteRows(d); wireNoteRows(notesBox, d, drawNotes); };
+  drawNotes();
+  $('#main').querySelector('[data-addnote]').onclick = () => noteEditor(d, null, drawNotes);
   $('#main').querySelectorAll('[data-shift]').forEach(b => b.onclick = () => { dayDate = addDays(d, +b.dataset.shift); tab = 'today'; viewDay(); });
   $('#main').querySelector('[data-today]')?.addEventListener('click', () => { dayDate = null; viewDay(); });
   wireCheckIns();
@@ -1744,7 +1770,8 @@ async function festivalSheet(id, date) {
   const parana = /ekadas/.test(id) ? await engine({ op: 'parana', handle, date }).catch(() => null) : null;
   const byMoon = /karva|karwa|sankashti|sankatahara|chauth|chandra-darshan|ganesh-chaturthi/.test(id) && p.moonrise && w?.kala !== 'moonrise';
   const steps = f.content?.howTo ? (f.content.howTo[lang()] ?? f.content.howTo.en ?? []) : [];
-  sheet(`<div style="clear:both"></div>
+  const fo = sheet(`<div style="clear:both"></div>
+    <button class="btn soft noprint" data-bm style="float:right;margin-left:8px" aria-pressed="${bookmarked(f.id)}" title="${esc(t(bookmarked(f.id) ? 'r3.unbookmarkFest' : 'r3.bookmarkFest', fname(f)))}">${bookmarked(f.id) ? '★' : '☆'}</button>
     ${f.tier === 'major' ? `<span class="pill">${esc(t('f.major'))}</span>` : ''}${isHoliday(f) ? `<span class="pill">${esc(t('f.holiday'))}</span>` : ''}
     <h1 class="serif" style="margin:6px 0 0">${esc(fname(f))}</h1><div class="muted">${esc(fother(f))}</div>
     <div style="color:var(--accent);font-weight:700;margin-top:6px">${esc(greg(date))}</div>
@@ -1759,7 +1786,12 @@ async function festivalSheet(id, date) {
     ${steps.length ? `<div class="card"><p class="label">${esc(t('f.howTo'))}</p><ol>${steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol></div>` : ''}
     ${f.variations?.length ? `<div class="card"><p class="label">${esc(t('f.notes'))}</p>${(lang() !== 'en' && f.variationsNative?.length ? f.variationsNative : f.variations).map(v => `<p class="small">${esc(v)}</p>`).join('')}</div>` : ''}
     ${how ? `<div class="card"><p class="label">${esc(t('f.dateHow'))}</p><p class="small muted">${esc(explainHow(how))}</p></div>` : ''}
+    <button class="btn soft block noprint" data-fics style="margin-bottom:8px">🗓 ${esc(t('r3w.festToCal', fname(f)))}</button>
+    <p class="small muted noprint">${esc(t('r3w.calWhy'))}</p>
     <button class="btn soft block noprint" onclick="window.print()">${SHARE_ICON} ${esc(t('pdf.share'))}</button>`);
+  fo.querySelector('[data-fics]').onclick = () => festivalIcs(f, date);
+  fo.querySelector('[data-bm]').onclick = e => { toggleBookmark(f.id); const on = bookmarked(f.id), b = e.currentTarget;
+    b.textContent = on ? '★' : '☆'; b.setAttribute('aria-pressed', on); b.title = t(on ? 'r3.unbookmarkFest' : 'r3.bookmarkFest', fname(f)); toast(t(on ? 'r3w.bookmarked' : 'r3w.unbookmarked', fname(f))); };
 }
 
 // ---------------------------------------------------------------- month
@@ -1778,6 +1810,7 @@ async function daySummary(d, place) {
     ${fs.map(f => `<p><span class="fdot on" style="display:inline-block"></span> <b>${esc(fname(f))}</b> ${isHoliday(f) ? `<span class="pill">${esc(t('f.holiday'))}</span>` : ''}</p>`).join('')}
     ${best ? row(t('cal.best'), `${name('choghadiya', best.key)} · ${clock(best.start)} – ${clock(best.end)}`) : p.weekday !== 'wednesday' ? row(t('cal.best'), `${t('time.abhijit')} · ${span(p.abhijit)}`) : ''}
     <p class="small muted">${esc(t('time.rahu'))} ${esc(span(p.rahuKalam))}</p>
+    ${notesOn(d).map(n => `<p><span class="notepin">${PIN}</span> <b>${esc(n.title)}</b> <span class="small muted">${esc(noteWhen(n))}</span></p>`).join('')}
     <button class="btn block" data-view>${esc(t('cal.viewDay'))}</button>`);
   o.querySelector('[data-view]').onclick = () => { o.remove(); dayDate = d; dayPlace = monthPlace; tab = 'today'; render(); };
 }
@@ -1817,8 +1850,10 @@ async function viewMonth(turn = 0) {
     const emb = cs !== 'minimal' && top ? ` emb ${top.tier === 'major' ? 'embmaj' : ''}" style="--emb:url(emblems/${top.card || 'lotus'}.svg)` : '';
     // A festival's day turns now and then to its name on gold; a vrat the user keeps, on maroon.
     const vk = c.recurring.find(r => S.vrats.includes(r)), back = top ? lacquer({ fact: fname(top) }, 'gold') : vk ? lacquer({ fact: recName(vk) }, 'maroon') : '';
-    return `<button class="c2 cs-${cs} ${c.date === td ? 'today' : ''}${back ? ' turn' : ''}${emb}" data-day="${c.date}" aria-label="${esc(greg(c.date) + ', ' + sub + (fs.length ? ', ' + fs.map(fname).join(', ') : '') + why)}"><span class="tfront">
-      <span class="top"><b class="num">${+c.date.slice(8)}</b>${moon ? `<i class="moon">${moon}</i>` : ''}${top ? `<span class="t td ${top.tier === 'major' ? 'maj' : ''}">${esc(sub)}</span>` : ''}<span class="grow"></span>${band === 0 ? '<i class="mk" title="✦">✦</i>' : band === 1 ? '<i class="mk">✪</i>' : ''}</span>
+    // A pin where the user has a note or event of their own.
+    const ns = notesOn(c.date), noteAria = ns.length ? ', ' + t('r3.notes') + ': ' + ns.map(n => n.title).join(', ') : '';
+    return `<button class="c2 cs-${cs} ${c.date === td ? 'today' : ''}${back ? ' turn' : ''}${emb}" data-day="${c.date}" data-fs="${esc(fs.map(f => f.id).join(','))}" aria-label="${esc(greg(c.date) + ', ' + sub + (fs.length ? ', ' + fs.map(fname).join(', ') : '') + why + noteAria)}"><span class="tfront">
+      <span class="top"><b class="num">${+c.date.slice(8)}</b>${moon ? `<i class="moon">${moon}</i>` : ''}${ns.length ? `<i class="notepin">${PIN}</i>` : ''}${top ? `<span class="t td ${top.tier === 'major' ? 'maj' : ''}">${esc(sub)}</span>` : ''}<span class="grow"></span>${band === 0 ? '<i class="mk" title="✦">✦</i>' : band === 1 ? '<i class="mk">✪</i>' : ''}</span>
       ${top ? `<span class="fn ${top.tier === 'major' ? 'maj' : ''}">${esc(fname(top))}</span>` : `<span class="t">${esc(sub)}</span>${cs !== 'minimal' ? `<span class="n">${esc(name('nakshatras', c.nakshatra))}</span>` : ''}`}
       ${cs !== 'minimal' && c.sunrise ? `<span class="sun" aria-hidden="true">↑${esc(hm(c.sunrise))} ↓${esc(hm(c.sunset))}</span>` : ''}</span>${back}</button>`;
   }).join('');
@@ -1833,7 +1868,9 @@ async function viewMonth(turn = 0) {
     <div class="grid g2 ${turn ? 'pagein' + (turn < 0 ? ' back' : '') : 'fadein'}">${wd.map(w => `<div class="wd">${esc(w)}</div>`).join('')}${'<div></div>'.repeat(lead)}${grid}</div>
     <div class="small muted calleg">${sp ? `<div><span><b class="mk">✦</b> ${esc(t('cal.ring0'))}</span><span><b class="mk">✪</b> ${esc(t('cal.ring1'))}</span></div>
       <label>👤 <select id="ringfor">${S.people.filter(p => p.kind !== 'remembrance' && p.anchor?.nakshatra).map(p => `<option value="${p.id}" ${p.id === sp.id ? 'selected' : ''}>${esc(t('cal.for', p.name))}</option>`).join('')}</select></label>` : `<div>${esc(t('cal.addStar'))}</div>`}
-      <div><span>↑ ↓ ${esc(t('cal.sunLegend'))}</span><span><i class="fd"></i>${esc(t('tab.festivals'))}</span><span>● ${esc(name('tithis', 'purnima'))}</span><span>○ ${esc(name('tithis', 'amavasya'))}</span></div></div>
+      <div><span>↑ ↓ ${esc(t('cal.sunLegend'))}</span><span><i class="fd"></i>${esc(t('tab.festivals'))}</span><span>● ${esc(name('tithis', 'purnima'))}</span><span>○ ${esc(name('tithis', 'amavasya'))}</span>${(S.notes || []).length ? `<span><i class="notepin">${PIN}</i> ${esc(t('r3.notes'))}</span>` : ''}</div>
+      <button class="linkbtn noprint" data-legend>${esc(t('r3.legendWhat'))}</button></div>
+    <div id="calpeople" class="noprint"></div>
     <p class="small muted" style="margin-top:10px;display:none"><span class="dot major"></span> ${esc(t('f.major'))} &nbsp; <span class="dot"></span> ${esc(t('tab.festivals'))} &nbsp; <span class="dot hollow"></span> ${['ekadashi', 'purnima', 'amavasya'].map(k => esc(name('tithis', k))).join(' · ')}</p>
     ${items.length ? `<p class="label" style="margin-top:16px">${esc(t('tab.festivals'))}</p>` : ''}
     ${items.map((x, i) => festRow(x.f, x.date, { i, back: festBack(x.f, x.date), fam: 'gold' })).join('')}
@@ -1845,7 +1882,11 @@ async function viewMonth(turn = 0) {
     if (still() || S.tileFlip === false) return viewMonth();
     $('#main .g2').classList.add(k > 0 ? 'pageout' : 'pageout-back'); setTimeout(() => tab === 'calendar' && viewMonth(k), 300);
   });
-  $('#main').querySelectorAll('[data-day]').forEach(c => c.onclick = () => daySummary(c.dataset.day, place));
+  $('#main').querySelectorAll('[data-day]').forEach(c => { c.onclick = () => daySummary(c.dataset.day, place);
+    // Long press or right-click a day: open it, bookmark its festival, add a note or event.
+    onHold(c, (x, y) => dayMenu(c.dataset.day, x, y, c.dataset.fs ? c.dataset.fs.split(',').map(id => pack.festivals.find(f => f.id === id)).filter(Boolean) : [], place)); });
+  $('#main').querySelector('[data-legend]').onclick = legendGuide;
+  calPeople($('#calpeople'), sp);
   $('#main').querySelector('#calstyle').onchange = e => { S.calStyle = e.target.value; save(); viewMonth(); };
   $('#main').querySelector('#ringfor')?.addEventListener('change', e => { S.starPerson = e.target.value; save(); viewMonth(); });
   $('#main').querySelector('[data-mtoday]')?.addEventListener('click', () => { monthDate = null; viewMonth(); });
@@ -1854,7 +1895,7 @@ async function viewMonth(turn = 0) {
     const o = sheet(`<h2 class="serif">${esc(t('cal.jump'))}</h2><input type="month" id="mj" value="${m.slice(0, 7)}" style="font-size:18px;padding:8px"><button class="btn block" data-go2 style="margin-top:12px">${esc(t('c.done'))}</button>`);
     o.querySelector('[data-go2]').onclick = () => { const v = o.querySelector('#mj').value; if (v) monthDate = v + '-01'; o.remove(); viewMonth(); };
   };
-  $('#main').querySelector('.placechip').onchange = e => {
+  $('#main').querySelector('select.placechip:not(#calstyle)').onchange = e => {
     if (e.target.value === 'home') { monthPlace = null; viewMonth(); }
     else if (e.target.value === 'pick') {
       const o = sheet(`<h2 class="serif">${esc(t('cal.other'))}</h2><div id="mp"></div>`, o => placePicker(o.querySelector('#mp'), p => { monthPlace = p; o.remove(); viewMonth(); }));
@@ -1899,7 +1940,7 @@ function festRow(f, date, o) {
   if (o) return `<div class="frow turn v rise" style="--i:${o.i}" data-f="${esc(f.id)}" data-d="${date}">${festRow(f, date).replace(/^<div class="fest ([^"]*)" data-f="[^"]*" data-d="[^"]*">/, '<div class="fest tfront $1">')}${lacquer(o.back, o.fam, true)}</div>`;
   return `<div class="fest ${f.tier === 'major' ? 'major' : ''}" data-f="${esc(f.id)}" data-d="${date}"><div class="bar2"></div>
     <div style="min-width:44px;text-align:center"><b>${+date.slice(8)}</b><div class="small muted">${esc(dtf({ month: 'short', timeZone: 'UTC' }).format(parse(date)))}</div></div>
-    <div><b>${esc(fname(f))}</b><div class="small muted">${esc(fother(f))}</div></div>
+    <div><b>${esc(fname(f))}</b>${bookmarked(f.id) ? ` <span class="gold" title="${esc(t('r3w.bookmarked', fname(f)))}">★</span>` : ''}<div class="small muted">${esc(fother(f))}</div></div>
     <div class="when">${n === 0 ? esc(t('day.today')) : n === 1 ? esc(t('day.tomorrow')) : n > 1 ? esc(t('day.inDays', n)) : ''}</div></div>`;
 }
 
@@ -2624,6 +2665,7 @@ function viewSettings() {
     <div class="card"><p class="label">${esc(t('s.clock'))}</p><div class="seg">${[[0, 's.clockSystem'], [12, 's.clock12'], [24, 's.clock24']].map(([v, k]) => `<button data-ck="${v}" class="${(S.clock || 0) === v ? 'on' : ''}">${esc(t(k))}</button>`).join('')}</div></div>
     <div class="card"><p class="label">${esc(t('ts.title'))}</p><div class="seg">${TEXT_SIZES.map((z, i) => `<button data-tz="${i}" class="${S.textSize === i ? 'on' : ''}" style="font-size:${Math.round(12 * z + (i - 1) * 2)}px">A</button>`).join('')}</div>
       <p class="small muted" style="margin-top:8px">${esc(t('ts.sample'))}</p></div>
+    ${backupCard()}
     <div class="card about"><p class="label">${esc(t('s.about'))}</p><img src="icon-192.png" alt="" class="aboutlogo"><h3 class="serif" style="margin:6px 0 2px">Eka Panchang</h3>
       <p class="serif" style="color:var(--accent);font-size:18px;margin:0 0 10px">${esc(t('ab.motto'))}</p>
       <p class="small muted" style="margin:-6px 0 10px">Eka Panchang · web ${esc(V)}</p>
@@ -2643,6 +2685,334 @@ function viewSettings() {
   $('#main').querySelectorAll('[data-lt]').forEach(b => b.onclick = () => { S.light = b.dataset.lt; save(); render(); });
   $('#main').querySelectorAll('[data-dk]').forEach(b => b.onclick = () => { S.dark = b.dataset.dk; save(); render(); });
   placePicker($('#hp'), async p => { S.home = p; save(); await resetCalendars(); tab = 'today'; render(); });
+  wireBackup($('#main'));
+}
+
+// ---------------------------------------------------------------- r3: menus, explainers, notes, calendar files, backup
+// A file handed to the browser to save.
+function download(file, body, type) {
+  const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([body], { type })); a.download = file;
+  document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+}
+// A short line at the foot of the screen that goes by itself.
+function toast(msg) {
+  document.querySelector('.toast')?.remove();
+  const el = document.createElement('div'); el.className = 'toast'; el.setAttribute('role', 'status'); el.textContent = msg;
+  document.body.appendChild(el); setTimeout(() => el.remove(), 4200);
+}
+// A clock time on a date in a time zone, as a moment.
+function zonedUnix(date, hhmm, tz) {
+  const [y, m, d] = date.split('-').map(Number), [h, mi] = (hhmm || '00:00').split(':').map(Number);
+  const guess = Date.UTC(y, m - 1, d, h, mi) / 1000;
+  const off = u => { const p = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: tz, hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).formatToParts(new Date(u * 1000)).map(x => [x.type, x.value]));
+    return Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour % 24, +p.minute, +p.second) / 1000 - u; };
+  const u = guess - off(guess); return guess - off(u);
+}
+// A calendar file (.ics) the user's own calendar opens: the web cannot alert once the page is closed, a calendar can.
+// Each event: { title, text, date (all day) or start/end (moments), yearly, alarms: ['-PT10M', 'PT8H', ...] }.
+function icsFile(label, events) {
+  const st = u => new Date(u * 1000).toISOString().replace(/[-:]/g, '').replace(/\.\d+/, '');
+  const tx = s => String(s || '').replace(/[\\;,]/g, m => '\\' + m).replace(/\n/g, '\\n');
+  const L = ['BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Funtopia//Eka Panchang web//EN', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH'];
+  for (const e of events) {
+    L.push('BEGIN:VEVENT', `UID:${e.uid || crypto.randomUUID()}@eka-panchang`, 'DTSTAMP:' + st(Date.now() / 1000));
+    if (e.date) L.push('DTSTART;VALUE=DATE:' + e.date.replace(/-/g, ''), 'DTEND;VALUE=DATE:' + addDays(e.date, 1).replace(/-/g, ''));
+    else L.push('DTSTART:' + st(e.start), 'DTEND:' + st(Math.max(e.end ?? 0, e.start + 60)));
+    L.push('SUMMARY:' + tx(e.title));
+    if (e.text) L.push('DESCRIPTION:' + tx(e.text));
+    if (e.yearly) L.push('RRULE:FREQ=YEARLY');
+    for (const a of e.alarms || []) L.push('BEGIN:VALARM', 'ACTION:DISPLAY', 'DESCRIPTION:' + tx(e.title), 'TRIGGER:' + a, 'END:VALARM');
+    L.push('END:VEVENT');
+  }
+  L.push('END:VCALENDAR');
+  const file = (String(label).normalize('NFC').replace(/[\\/:*?"<>|]+/g, '').trim().replace(/\s+/g, '-') || 'eka-panchang') + '.ics';
+  download(file, L.join('\r\n') + '\r\n', 'text/calendar');
+  toast(t('r3w.downloaded', label));
+}
+// A festival as an all-day event, with a reminder a week ahead and on the morning (as the iOS reminder).
+function festivalIcs(f, date) {
+  icsFile(fname(f), [{ uid: `${f.id}-${date}`, date, title: fname(f), text: [text(f.content?.summary), t('f.forPlace', S.home.name)].filter(Boolean).join('\n'), alarms: ['-P6DT16H', 'PT8H'] }]);
+}
+
+// A long press (touch) or right-click opens a small menu; the click that ends a long press does nothing more.
+function onHold(el, fn) {
+  let timer = 0, sx = 0, sy = 0, fired = 0;
+  const fire = (x, y) => { if (Date.now() - fired < 800) return; fired = Date.now(); fn(x, y); };
+  el.addEventListener('contextmenu', e => { e.preventDefault(); fire(e.clientX, e.clientY); });
+  const cancel = () => { clearTimeout(timer); timer = 0; };
+  el.addEventListener('pointerdown', e => { if (e.pointerType === 'mouse') return; sx = e.clientX; sy = e.clientY; cancel();
+    timer = setTimeout(() => { timer = 0; navigator.vibrate?.(10); fire(sx, sy); }, 520); });
+  el.addEventListener('pointermove', e => { if (timer && Math.hypot(e.clientX - sx, e.clientY - sy) > 10) cancel(); });
+  el.addEventListener('pointerup', cancel); el.addEventListener('pointercancel', cancel); el.addEventListener('dragstart', cancel);
+  el.addEventListener('click', e => { if (Date.now() - fired < 800) { e.preventDefault(); e.stopImmediatePropagation(); } }, true);
+}
+const mIcon = k => HOME_ICONS[k] ? `<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${HOME_ICONS[k]}</svg>` : (GUIDE_ICONS[k] ? gIcon(k, 17) : '');
+// items: [{ label, icon (a HOME_ICONS or GUIDE_ICONS key), fn }], falsy ones left out.
+function popMenu(x, y, items) {
+  document.querySelector('.pmenu')?.remove();
+  items = items.filter(Boolean); if (!items.length) return;
+  const m = document.createElement('div'); m.className = 'pmenu'; m.setAttribute('role', 'menu');
+  m.innerHTML = items.map((it, i) => `<button role="menuitem" data-mi="${i}"><span class="pmic">${mIcon(it.icon)}</span><span>${esc(it.label)}</span></button>`).join('');
+  document.body.appendChild(m);
+  const r = m.getBoundingClientRect();
+  m.style.left = Math.max(8, Math.min(x, innerWidth - r.width - 8)) + 'px';
+  m.style.top = Math.max(8, Math.min(y, innerHeight - r.height - 8)) + 'px';
+  const close = () => { m.remove(); removeEventListener('pointerdown', out, true); removeEventListener('keydown', key, true); removeEventListener('scroll', close, true); removeEventListener('resize', close); };
+  const out = e => { if (!m.contains(e.target)) close(); };
+  const key = e => {
+    const bs = [...m.querySelectorAll('button')], i = bs.indexOf(document.activeElement);
+    if (e.key === 'Escape') { e.preventDefault(); close(); }
+    else if (e.key === 'ArrowDown' || e.key === 'ArrowUp') { e.preventDefault(); bs[(i + (e.key === 'ArrowDown' ? 1 : bs.length - 1)) % bs.length].focus(); }
+  };
+  setTimeout(() => { addEventListener('pointerdown', out, true); addEventListener('keydown', key, true); addEventListener('scroll', close, true); addEventListener('resize', close); }, 0);
+  m.querySelectorAll('[data-mi]').forEach(b => b.onclick = () => { close(); items[+b.dataset.mi].fn(); });
+  m.querySelector('button').focus({ preventScroll: true });
+}
+
+// ---------------------------------------------------------------- "What is this?"
+// As on iOS (the guide sheet): the feature's name, its lines each with a small icon, and the footnote.
+const GUIDE_ICONS = {
+  clock: '<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
+  ring: '<circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/>',
+  list: '<path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r=".8" fill="currentColor"/><circle cx="4" cy="12" r=".8" fill="currentColor"/><circle cx="4" cy="18" r=".8" fill="currentColor"/>',
+  dots: '<circle cx="6" cy="12" r="3" fill="currentColor"/><circle cx="12" cy="12" r="3" fill="currentColor" fill-opacity=".45"/><circle cx="18" cy="12" r="3"/>',
+  planet: '<circle cx="12" cy="12" r="4"/><ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(-20 12 12)"/>',
+  shield: '<path d="M12 3l7.5 3v5.5c0 4.5-3.2 8-7.5 9.5-4.3-1.5-7.5-5-7.5-9.5V6z"/>',
+  diamond: '<path d="M12 3l6 9-6 9-6-9z"/>',
+  turn: '<path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v4h-4"/>',
+  sun: '<circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8"/>',
+  moon: '<path d="M19.5 14.5A8 8 0 1 1 9.5 4.5a6.5 6.5 0 0 0 10 10z"/>',
+  star: '<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/>',
+  hourglass: '<path d="M7 3h10M7 21h10M8 3c0 5 8 5 8 9s-8 4-8 9M16 3c0 5-8 5-8 9s8 4 8 9"/>',
+  calendar: '<rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
+  people: '<circle cx="9" cy="8" r="3"/><circle cx="17" cy="9.5" r="2.3"/><path d="M3.5 19c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5M15 14c3 0 5.5 1.8 5.5 5"/>',
+  lock: '<rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>',
+  pin: '<path d="M12 21s-6.5-6-6.5-11a6.5 6.5 0 0 1 13 0c0 5-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/>',
+  search: '<circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/>',
+  heart: '<path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/>',
+  book: '<path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20v3H6.5"/>',
+  check: '<circle cx="12" cy="12" r="8.5"/><path d="M8 12.5l2.7 2.7L16.5 9.5"/>',
+  info: '<circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7.6v.2"/>',
+  temple: '<path d="M12 2.5v2M9.5 8h5l-1-3.5h-3zM8 12h8l-1.5-4h-5zM6 20.5h12V12H6z"/><path d="M10.5 20.5v-4a1.5 1.5 0 0 1 3 0v4M4 20.5h16"/>',
+};
+const gIcon = (k, s = 18) => `<svg viewBox="0 0 24 24" width="${s}" height="${s}" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${GUIDE_ICONS[k] || GUIDE_ICONS.info}</svg>`;
+// Topic: its heading, the tile it belongs to (for the icon) and an icon for each line in turn.
+const GUIDES = {
+  dial: ['r3.dial', 'dial', 'clock ring list dots planet shield diamond turn'],
+  ghati: ['ot.title', 'oldtime', 'sun hourglass hourglass clock list sun book'],
+  day: ['dm.title', 'day', 'clock list list planet shield diamond list pin'],
+  cal: ['tab.calendar', 'calendar', 'calendar moon star sun check turn'],
+  sky: ['sk.title', 'sky', 'planet turn turn moon moon info'],
+  match: ['mt.label', 'match', 'heart list list check check info lock'],
+  star: ['bs.title', 'birthstar', 'star clock dots calendar star lock'],
+  muh: ['tab.muhurtham', 'muhurtham', 'calendar list shield people clock info'],
+  vrat: ['vj.title', 'vrats', 'book check star calendar moon lock'],
+  pray: ['py.title', 'prayers', 'book sun book list star people'],
+  temple: ['tm.title', 'temples', 'temple pin search pin info'],
+};
+// Lines that speak of the phone or of reminders the web edition does not have, in the web's own words (null: left out).
+const GUIDE_WEB = { 'r3.g.match.7': 'r3w.g.private', 'r3.g.star.6': 'r3w.g.private', 'r3.g.vrat.6': 'r3w.g.private', 'r3.g.dial.8': 'r3w.g.dial8', 'r3.g.vrat.4': 'r3w.g.vrat4', 'r3.g.vrat.5': null };
+const TAB_GUIDE = { today: 'day', calendar: 'cal', sky: 'sky', match: 'match', birthstar: 'star', muhurtham: 'muh', vrats: 'vrat', prayers: 'pray', temples: 'temple', oldtime: 'ghati' };
+const TILE_GUIDE = { dial: 'dial', day: 'day', calendar: 'cal', sky: 'sky', match: 'match', birthstar: 'star', vrats: 'vrat', prayers: 'pray', temples: 'temple', oldtime: 'ghati' };
+function explainer(topic) {
+  const g = GUIDES[topic]; if (!g) return;
+  const icons = g[2].split(' '), u = timeUnitNames(), lines = [];
+  for (let i = 1; STR[`r3.g.${topic}.${i}`]; i++) {
+    const k = `r3.g.${topic}.${i}`;
+    const w = k in GUIDE_WEB ? GUIDE_WEB[k] : k; if (!w) continue;
+    lines.push([icons[i - 1] || 'info', t(w, u[0], u[1])]);
+  }
+  const head = HOME_ICONS[g[1]] ? `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${HOME_ICONS[g[1]]}</svg>` : gIcon('info', 22);
+  sheet(`<div class="guide"><p class="label" style="margin:0">${esc(t('r3.what'))}</p><h2 class="serif guidehead"><span class="onbic">${head}</span>${esc(t(g[0]))}</h2>
+    ${lines.map(([ic, s], i) => `<div class="onbline rise" style="--i:${i}"><span class="onbic">${gIcon(ic)}</span><span>${esc(s)}</span></div>`).join('')}
+    <p class="small muted" style="margin-top:14px">${esc(t('r3.g.note'))}</p></div>`);
+}
+// The "i" in the header, on the screens that have a guide.
+function infoButton() {
+  let ib = $('#infobtn');
+  if (!ib) { ib = document.createElement('button'); ib.id = 'infobtn'; ib.className = 'badge infob'; ib.textContent = 'i'; document.querySelector('.badges')?.appendChild(ib); }
+  const topic = S.culture && S.home ? TAB_GUIDE[tab] : null;
+  ib.hidden = !topic; ib.setAttribute('aria-label', t('r3.what')); ib.title = t('r3.what');
+  ib.onclick = () => explainer(topic);
+}
+
+// ---------------------------------------------------------------- Home's tile menus and dragging
+function tileMenu(k, x, y, ctx) {
+  const go = (tb, after) => async () => { tab = tb; if (tb === 'today') { dayDate = null; dayPlace = null; } if (tb === 'calendar') monthDate = null; await render(); scrollTo(0, 0); after?.(); };
+  const guide = TILE_GUIDE[k] && { label: t('r3.what'), icon: 'info', fn: () => explainer(TILE_GUIDE[k]) };
+  const f = ctx.fest;
+  const items = {
+    festivals: [f && { label: t('r3.openFest', fname(f.f)), icon: 'festivals', fn: () => festivalSheet(f.f.id, f.date) },
+      f && { label: t('r3.makeCard'), icon: 'greetings', fn: () => cardMaker(f.f, f.date) },
+      f && { label: t('r3w.festToCal', fname(f.f)), icon: 'calendar', fn: () => festivalIcs(f.f, f.date) },
+      { label: t('r3.allFest'), icon: 'list', fn: go('festivals') }],
+    day: [{ label: t('r3.dial'), icon: 'dial', fn: () => openDial(today()) }, { label: t('r3.timings'), icon: 'clock', fn: go('today') }],
+    dial: [{ label: t('r3.dial'), icon: 'dial', fn: () => openDial(today()) }, { label: t('r3.timings'), icon: 'clock', fn: go('today') }],
+    calendar: [{ label: t('day.today'), icon: 'calendar', fn: go('calendar') }, { label: t('r3w.goDate'), icon: 'search', fn: () => goToDate() }],
+    vrats: [{ label: t('r3.yearGlance'), icon: 'vrats', fn: go('vrats', () => $('#main .vy')?.closest('.card')?.scrollIntoView({ behavior: still() ? 'auto' : 'smooth', block: 'start' })) }],
+    prayers: [ctx.tp && { label: t('pr.today'), icon: 'prayers', fn: () => { PRV.id = ctx.tp.id; go('prayers')(); } }],
+    people: [{ label: t('r3.addPerson'), icon: 'people', fn: go('people', () => personEditor(null)) }],
+  }[k] || [];
+  popMenu(x, y, [...items, guide]);
+}
+// A date chosen, its month shown and the day's summary open over it.
+function goToDate() {
+  const o = sheet(`<h2 class="serif">${esc(t('r3w.goDate'))}</h2><input type="date" id="gd" value="${today()}" style="font-size:18px;padding:8px"><button class="btn block" data-go2 style="margin-top:12px">${esc(t('c.done'))}</button>`);
+  o.querySelector('[data-go2]').onclick = async () => { const v = o.querySelector('#gd').value; o.remove(); if (!v) return;
+    monthDate = v.slice(0, 8) + '01'; monthPlace = null; tab = 'calendar'; await render(); daySummary(v, S.home); };
+}
+// Drag a tile onto another: it lifts, the one beneath gives way, and the rest slide to their new places.
+function wireTileDrag(grid) {
+  let dragged = null;
+  const clear = () => grid.querySelectorAll('.droptarget').forEach(x => x.classList.remove('droptarget'));
+  grid.querySelectorAll('.tile[data-k]').forEach(el => {
+    el.ondragstart = e => { dragged = el.dataset.k; holdTurns = true; e.dataTransfer.effectAllowed = 'move'; try { e.dataTransfer.setData('text/plain', dragged); } catch {} el.classList.add('lifting'); };
+    el.ondragend = () => { el.classList.remove('lifting'); clear(); dragged = null; holdTurns = false; };
+    el.ondragenter = e => { if (!dragged || dragged === el.dataset.k) return; e.preventDefault(); clear(); el.classList.add('droptarget'); };
+    el.ondragover = e => { if (!dragged) return; e.preventDefault(); e.dataTransfer.dropEffect = 'move'; };
+    el.ondragleave = e => { if (!el.contains(e.relatedTarget)) el.classList.remove('droptarget'); };
+    el.ondrop = e => {
+      e.preventDefault(); clear();
+      if (!dragged || dragged === el.dataset.k) return;
+      const order = [...grid.querySelectorAll('.tile[data-k]')].map(x => x.dataset.k).filter(k => k !== dragged);
+      order.splice(order.indexOf(el.dataset.k), 0, dragged);
+      S.tileOrder = order; save(); flipReorder(grid, order);
+    };
+  });
+}
+// FLIP: where each tile was, where it now is, and a slide from the one to the other.
+function flipReorder(grid, order) {
+  const els = [...grid.querySelectorAll('.tile[data-k]')], first = new Map(els.map(x => [x, x.getBoundingClientRect()]));
+  order.forEach(k => { const x = els.find(e => e.dataset.k === k); if (x) grid.appendChild(x); });
+  if (still()) return;
+  els.forEach(x => { const a = first.get(x), b = x.getBoundingClientRect(), dx = a.left - b.left, dy = a.top - b.top;
+    if (dx || dy) x.animate([{ transform: `translate(${dx}px,${dy}px)` }, { transform: 'none' }], { duration: 340, easing: 'cubic-bezier(.2,.75,.25,1)' }); });
+}
+
+// ---------------------------------------------------------------- bookmarks and notes
+const bookmarked = id => (S.bookmarks || []).includes(id);
+const toggleBookmark = id => { S.bookmarks = bookmarked(id) ? S.bookmarks.filter(x => x !== id) : [...(S.bookmarks || []), id]; save(); };
+// The notes on a date: its own, and yearly ones from earlier years on the same day of the month.
+const notesOn = date => (S.notes || []).filter(n => n.date === date || (n.yearly && n.date < date && n.date.slice(5) === date.slice(5)));
+const PIN = '<svg viewBox="0 0 24 24" width="10" height="10" fill="currentColor" aria-hidden="true"><path d="M14.5 2.5l7 7-2 .8-3.6 3.6.6 4.6-1.6 1.6-4-4-5.4 5.4-1.4-1.4 5.4-5.4-4-4 1.6-1.6 4.6.6 3.6-3.6z"/></svg>';
+const noteWhen = n => n.allDay !== false || !n.time ? t('r3.allDay') : clock(zonedUnix(n.date, n.time, S.home.tz));
+function noteRows(date, onChange) {
+  const ns = notesOn(date);
+  return ns.length ? `<div class="card"><p class="label">${esc(t('r3.notes'))}</p>${ns.map(n => `<div class="list-row"><span class="notepin">${PIN}</span><div class="grow"><b>${esc(n.title)}</b>${n.yearly ? ' <span class="small muted">↻</span>' : ''}<div class="small muted">${esc(noteWhen(n))}${n.text ? ' · ' + esc(n.text) : ''}</div></div><button class="btn soft" data-note="${n.id}">${esc(t('c.edit'))}</button></div>`).join('')}</div>` : '';
+}
+function wireNoteRows(root, date, onChange) {
+  root.querySelectorAll('[data-note]').forEach(b => b.onclick = () => noteEditor(date, (S.notes || []).find(n => n.id === b.dataset.note), onChange));
+}
+// As on iOS (the note sheet): a title, a note, all day or a time, every year or once, and a reminder. On the web a
+// reminder is a calendar file to open, since a page cannot alert once it is closed.
+function noteEditor(date, note, onDone) {
+  const n = Object.assign({ id: crypto.randomUUID(), date, title: '', text: '', allDay: true, time: '09:00', yearly: false, remind: 'none' }, note || {});
+  const o = sheet(`<h2 class="serif">${esc(t(note ? 'r3.editNote' : 'r3.addNote'))}</h2><div class="muted" style="margin-top:-8px">${esc(greg(n.date))}</div>
+    <label class="field"><input type="text" id="nt" placeholder="${esc(t('r3.noteTitle'))}" aria-label="${esc(t('r3.noteTitle'))}" value="${esc(n.title)}"></label>
+    <label class="field"><textarea id="nx" rows="3" placeholder="${esc(t('r3.noteText'))}" aria-label="${esc(t('r3.noteText'))}">${esc(n.text)}</textarea></label>
+    <label class="list-row"><input type="checkbox" id="nad" ${n.allDay ? 'checked' : ''}><span class="grow">${esc(t('r3.allDay'))}</span></label>
+    <label class="list-row" id="ntimerow" ${n.allDay ? 'hidden' : ''}><span class="grow">${esc(t('r3.noteTime'))}</span><input type="time" id="ntm" value="${esc(n.time)}"></label>
+    <label class="list-row"><input type="checkbox" id="nyr" ${n.yearly ? 'checked' : ''}><span class="grow">${esc(t('r3.repeatYearly'))}</span></label>
+    <label class="list-row"><span class="grow">${esc(t('r3.remind'))}</span><select id="nrm">${[['none', 'r3.remindNone'], ['at', 'r3.remindAt'], ['morning', 'r3.remindMorning'], ['before', 'r3.remindDayBefore']].map(([v, k]) => `<option value="${v}" ${n.remind === v ? 'selected' : ''}>${esc(t(k))}</option>`).join('')}</select></label>
+    <p class="small muted" id="nrmnote" ${n.remind === 'none' ? 'hidden' : ''}>${esc(t('r3w.remindWeb'))}</p>
+    <p class="small" id="nerr" style="color:var(--accent)"></p>
+    <div style="display:flex;gap:8px"><button class="btn soft" style="flex:1" data-ncancel>${esc(t('r3.cancel'))}</button><button class="btn" style="flex:1" data-nsave>${esc(t('r3.save'))}</button></div>
+    ${note ? `<button class="linkbtn block" data-ndel style="color:var(--accent);margin-top:8px">${esc(t('r3.deleteNote'))}</button>` : ''}`);
+  const q = s => o.querySelector(s);
+  q('#nad').onchange = e => { q('#ntimerow').hidden = e.target.checked; };
+  q('#nrm').onchange = e => { q('#nrmnote').hidden = e.target.value === 'none'; };
+  q('[data-ncancel]').onclick = () => o.remove();
+  q('[data-nsave]').onclick = () => {
+    const title = q('#nt').value.trim();
+    if (!title) { q('#nerr').textContent = '⚠ ' + t('r3.noteTitle'); q('#nt').focus(); return; }
+    const rec = { id: n.id, date: n.date, title, text: q('#nx').value.trim(), allDay: q('#nad').checked, time: q('#ntm').value || '09:00', yearly: q('#nyr').checked, remind: q('#nrm').value };
+    S.notes = [...(S.notes || []).filter(x => x.id !== rec.id), rec]; save(); o.remove();
+    if (rec.remind !== 'none') {
+      // Timed: at the time, 8 in the morning of the day, or the day before. All day: the morning, or the morning before.
+      const mins = rec.allDay ? 0 : +rec.time.slice(0, 2) * 60 + +rec.time.slice(3, 5);
+      const alarm = rec.allDay ? { at: 'PT8H', morning: 'PT8H', before: '-PT16H' }[rec.remind] : { at: 'PT0S', morning: mins > 480 ? `-PT${mins - 480}M` : 'PT0S', before: '-P1D' }[rec.remind];
+      const start = rec.allDay ? 0 : zonedUnix(rec.date, rec.time, S.home.tz);
+      icsFile(rec.title, [{ uid: rec.id, title: rec.title, text: rec.text, yearly: rec.yearly, alarms: [alarm], ...(rec.allDay ? { date: rec.date } : { start, end: start + 3600 }) }]);
+    }
+    onDone?.();
+  };
+  q('[data-ndel]')?.addEventListener('click', () => { S.notes = (S.notes || []).filter(x => x.id !== n.id); save(); o.remove(); onDone?.(); });
+  setTimeout(() => q('#nt').focus(), 50);
+}
+
+// ---------------------------------------------------------------- the calendar: a day's menu, the marks, the people
+function dayMenu(date, x, y, fests, place) {
+  const items = [{ label: t('r3.openDay'), icon: 'calendar', fn: () => { dayDate = date; dayPlace = monthPlace; tab = 'today'; render(); } }];
+  for (const f of fests.slice(0, 2)) {
+    items.push({ label: t(bookmarked(f.id) ? 'r3.unbookmarkFest' : 'r3.bookmarkFest', fname(f)), icon: 'star', fn: () => { toggleBookmark(f.id); toast(bookmarked(f.id) ? t('r3w.bookmarked', fname(f)) : t('r3w.unbookmarked', fname(f))); viewMonth(); } });
+    items.push({ label: t('r3w.festToCal', fname(f)), icon: 'calendar', fn: () => festivalIcs(f, date) });
+  }
+  items.push({ label: t('r3.addNote'), icon: 'book', fn: () => noteEditor(date, null, () => viewMonth()) });
+  for (const n of notesOn(date)) items.push({ label: `${t('r3.editNote')}: ${n.title}`, icon: 'book', fn: () => noteEditor(date, n, () => viewMonth()) });
+  popMenu(x, y, items);
+}
+// What the calendar's marks mean, as on iOS (the marks guide).
+function legendGuide() {
+  const groups = [['star', '<b class="mk">✦</b>'], ['janma', '<b class="mk">✪</b>'], ['moon', '<b>● ○</b>'], ['sun', '<b>↑ ↓</b>'], ['fest', '<i class="fd"></i>'], ['note', `<span class="notepin">${PIN}</span>`]];
+  const lines = g => { const out = []; for (let i = 1; STR[`r3.lg.${g}.${i}`]; i++) out.push(t(`r3.lg.${g}.${i}`)); return out; };
+  sheet(`<h2 class="serif">${esc(t('r3.legendTitle'))}</h2><div class="calleg lgguide">${groups.map(([g, mark], i) => { const ls = lines(g); return ls.length ? `<div class="lgrow rise" style="--i:${i}"><span class="lgmark">${mark}</span><div>${ls.map(s => `<p>${esc(s)}</p>`).join('')}</div></div>` : ''; }).join('')}</div>
+    <p class="small muted">${esc(t('r3.g.note'))}</p>`);
+}
+// The saved people beneath the month, each a card: star and pada, rashi, the next star birthday and birthday.
+// Tapping one shows that person's marks on the month.
+async function calPeople(el, sp) {
+  const ps = S.people.filter(p => p.kind !== 'remembrance' && p.anchor?.nakshatra), td = today();
+  const nextCal = s => { if (!s) return ''; const y = +td.slice(0, 4); let d = `${y}${s.slice(4)}`; if (d < td) d = `${y + 1}${s.slice(4)}`; return d.endsWith('-02-29') && !ymd(parse(d)).endsWith('02-29') ? d.slice(0, 8) + '28' : d; };
+  const when = s => { const n = daysBetween(td, s); return n === 0 ? t('day.today') : n === 1 ? t('day.tomorrow') : t('day.inDays', n); };
+  const short = s => dtf({ day: 'numeric', month: 'short', timeZone: 'UTC' }).format(parse(s));
+  const cards = [];
+  for (const p of ps) {
+    let star = '';
+    for (const y of [+td.slice(0, 4), +td.slice(0, 4) + 1]) {
+      const ds = await engine({ op: 'personalDates', handle: await cal(y), anchor: p.anchor, kind: 'birthday', basis: p.basis }).catch(() => []);
+      star = ds.find(d => d >= td) || ''; if (star) break;
+    }
+    const b = nextCal(p.date), a = p.anchor, on = sp && sp.id === p.id;
+    cards.push(`<button class="cperson${on ? ' on' : ''}" data-cp="${p.id}" aria-pressed="${on}"><span class="cpname"><b>${esc(p.name)}</b>${on ? `<span class="pill">${esc(t('r3.showingMarks'))}</span>` : ''}</span>
+      <span class="small">${esc(name('nakshatras', a.nakshatra))}${a.pada ? ' · ' + esc(t('bs.pada', a.pada)) : ''} · ${esc(name('rashis', a.moonSign))}</span>
+      ${star ? `<span class="small"><span class="muted">${esc(t('r3.nextStarBday'))}</span> ${esc(short(star))} · ${esc(when(star))}</span>` : ''}
+      ${b ? `<span class="small"><span class="muted">${esc(t('r3.nextBday'))}</span> ${esc(short(b))} · ${esc(when(b))}</span>` : ''}</button>`);
+  }
+  if (!el.isConnected || tab !== 'calendar') return;
+  el.innerHTML = `<p class="label" style="margin-top:16px">${esc(t('r3.people'))}</p>${cards.length ? `<div class="cpeople">${cards.join('')}</div>` : ''}
+    <button class="linkbtn" data-cpadd>＋ ${esc(t('r3.addPerson'))}</button>`;
+  el.querySelectorAll('[data-cp]').forEach(b => b.onclick = () => { S.starPerson = b.dataset.cp; save(); viewMonth(); });
+  el.querySelector('[data-cpadd]').onclick = () => personEditor(null, undefined, () => viewMonth());
+}
+
+// ---------------------------------------------------------------- back up and restore
+// The web edition has no account: what the user adds lives in this browser. A file carries it to another.
+function backupCard() {
+  return `<div class="card"><p class="label">${esc(t('r3w.backup'))}</p><p class="small muted" style="margin-top:0">${esc(t('r3w.backupNote'))}</p>
+    <p class="small">${esc(t('r3w.backupHolds'))}</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn soft" style="flex:1" data-bk>${esc(t('r3w.export'))}</button><button class="btn soft" style="flex:1" data-rs>${esc(t('r3w.import'))}</button></div>
+    <input type="file" id="rsfile" accept=".json,application/json" hidden></div>`;
+}
+function wireBackup(root) {
+  root.querySelector('[data-bk]').onclick = () => {
+    const file = `eka-panchang-backup-${today()}.json`;
+    download(file, JSON.stringify({ app: 'eka-panchang-web', version: 1, exported: new Date().toISOString(), data: S }, null, 1), 'application/json');
+    toast(t('r3w.saved', file));
+  };
+  const input = root.querySelector('#rsfile');
+  root.querySelector('[data-rs]').onclick = () => { input.value = ''; input.click(); };
+  input.onchange = async () => {
+    const f = input.files?.[0]; if (!f) return;
+    let j = null; try { j = JSON.parse(await f.text()); } catch {}
+    const data = j?.app === 'eka-panchang-web' ? j.data : null;
+    if (!data || typeof data !== 'object' || !Array.isArray(data.people ?? [])) return toast(t('r3w.badFile'));
+    const when = j.exported ? new Date(j.exported).toLocaleString(locale(), { dateStyle: 'medium', timeStyle: 'short' }) : '';
+    const o = sheet(`<h2 class="serif">${esc(t('r3w.restoreTitle'))}</h2><p>${esc(t('r3w.restoreBody', when))}</p>
+      <p class="small muted">${esc(t('r3w.restoreCounts', (data.people || []).length, Object.keys(data.vratLog || {}).length, (data.notes || []).length))}</p>
+      <div style="display:flex;gap:8px"><button class="btn soft" style="flex:1" data-rno>${esc(t('c.cancel'))}</button><button class="btn" style="flex:1" data-ryes>${esc(t('r3w.restore'))}</button></div>`);
+    o.querySelector('[data-rno]').onclick = () => o.remove();
+    o.querySelector('[data-ryes]').onclick = () => { try { localStorage.setItem('kaal-web', JSON.stringify(data)); } catch { return toast(t('r3w.badFile')); } location.reload(); };
+  };
 }
 
 // ---------------------------------------------------------------- boot
