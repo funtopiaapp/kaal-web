@@ -1,7 +1,7 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610291709';
+import { engine, onRestart } from './engine.js?v=202610291755';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -2979,10 +2979,13 @@ async function calPeople(el, sp) {
       ${b ? `<span class="small"><span class="muted">${esc(t('r3.nextBday'))}</span> ${esc(short(b))} · ${esc(when(b))}</span>` : ''}</button>`);
   }
   if (!el.isConnected || tab !== 'calendar') return;
-  el.innerHTML = `<p class="label" style="margin-top:16px">${esc(t('r3.people'))}</p>${cards.length ? `<div class="cpeople">${cards.join('')}</div>` : ''}
-    <button class="linkbtn" data-cpadd>＋ ${esc(t('r3.addPerson'))}</button>`;
+  // The header folds the cards away; folded, it still says whose marks are showing.
+  const open = S.calPeopleOpen !== false;
+  el.innerHTML = `<button class="cphead" data-cptoggle aria-expanded="${open}"><span class="label">${esc(t('r3.people'))}</span>${!open && sp ? `<span class="cpwho">· ${esc(sp.name)}</span>` : ''}<span class="cpchev${open ? '' : ' shut'}" aria-hidden="true">⌄</span></button>
+    ${open ? `${cards.length ? `<div class="cpeople">${cards.join('')}</div>` : ''}<button class="linkbtn" data-cpadd>＋ ${esc(t('r3.addPerson'))}</button>` : ''}`;
+  el.querySelector('[data-cptoggle]').onclick = () => { S.calPeopleOpen = !open; save(); viewMonth(); };
   el.querySelectorAll('[data-cp]').forEach(b => b.onclick = () => { S.starPerson = b.dataset.cp; save(); viewMonth(); });
-  el.querySelector('[data-cpadd]').onclick = () => personEditor(null, undefined, () => viewMonth());
+  el.querySelector('[data-cpadd]')?.addEventListener('click', () => personEditor(null, undefined, () => viewMonth()));
 }
 
 // ---------------------------------------------------------------- back up and restore

@@ -728,3 +728,10 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .cperson .cpname { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
 .cperson .pill { margin: 0; color: var(--gold); background: color-mix(in srgb, var(--gold) 16%, transparent); }
 .cperson:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* The calendar's saved people fold away under their header. */
+.cphead { display: flex; align-items: center; gap: 6px; width: 100%; margin-top: 16px; padding: 4px 0; border: 0; background: none; font: inherit; color: inherit; cursor: pointer; text-align: left; }
+.cphead .label { margin: 0; }
+.cpwho { font-size: 12px; font-weight: 600; color: var(--accent); }
+.cpchev { margin-left: auto; color: var(--muted); font-size: 18px; line-height: 1; transition: transform .2s; }
+.cpchev.shut { transform: rotate(-90deg); }
