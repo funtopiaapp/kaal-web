@@ -1161,7 +1161,7 @@
     "NP"
    ],
    "localNames": {},
-   "card": "pongal",
+   "card": "sugarcane",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -1227,7 +1227,7 @@
     "NP"
    ],
    "localNames": {},
-   "card": "veena",
+   "card": "swan",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -1300,7 +1300,7 @@
    "localNames": {
     "MU": "Maha Shivaratree"
    },
-   "card": "shiva",
+   "card": "mountain",
    "local": {
     "MU": "In Mauritius, Maha Shivaratree is a public holiday; in the days before, pilgrims walk to Ganga Talao (Grand Bassin) carrying kanwars.",
     "LK": "In Sri Lanka, Maha Shivaratri is a public holiday."
@@ -1376,7 +1376,7 @@
     "NP"
    ],
    "localNames": {},
-   "card": "moon",
+   "card": "holi",
    "local": {},
    "durationDays": 1,
    "variations": [
@@ -1583,7 +1583,7 @@
     "NP"
    ],
    "localNames": {},
-   "card": "newyear",
+   "card": "nepalinewyear",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -1602,6 +1602,10 @@
     "traditions": {
      "en": "Families visit temples in the morning and greet each other with 'Naya Barsha ko Shubhakamana'. In Bhaktapur the new year coincides with Bisket Jatra, when a tall pole (lingo) is raised and then pulled down, and the chariots of Bhairav and Bhadrakali are drawn through the city. Many people picnic and share a festive meal.",
      "ne": "बिहान परिवारहरू मन्दिर जान्छन् र 'नयाँ वर्षको शुभकामना' भन्दै एकअर्कालाई शुभकामना दिन्छन्। भक्तपुरमा नयाँ वर्षसँगै बिस्का जात्रा पर्छ, जहाँ अग्लो लिङ्गो ठड्याइन्छ र ढालिन्छ, र भैरव तथा भद्रकालीका रथ सहरमा तानिन्छन्। धेरैजना वनभोज र विशेष भोजन गर्छन्।"
+    },
+    "greeting": {
+     "en": "Happy Nepali New Year! Warm wishes for the year ahead.",
+     "ne": "नयाँ वर्षको हार्दिक शुभकामना! आउँदो वर्षका लागि मायालु शुभकामना।"
     }
    }
   },
@@ -1622,7 +1626,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "lotus",
+   "card": "axe",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -1805,7 +1809,7 @@
     "NP"
    ],
    "localNames": {},
-   "card": "moon",
+   "card": "bodhi",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -1884,6 +1888,10 @@
     "traditions": {
      "en": "Those who wear the janai change it after a bath and mantras, and priests tie a yellow or saffron raksha bandhan thread on everyone's wrist, kept until Laxmi Puja. Pilgrims gather at Gosaikunda and at Kumbheshwar in Patan. Kwati, a soup of nine sprouted beans, is eaten that day. In the Terai sisters tie rakhi on their brothers.",
      "ne": "जनै लगाउनेहरूले स्नान र मन्त्रपछि जनै फेर्छन्, र पुरोहितहरूले सबैको नाडीमा पहेँलो वा केसरी रक्षाबन्धन बाँध्छन्, जुन लक्ष्मीपूजासम्म राखिन्छ। तीर्थयात्रीहरू गोसाइँकुण्ड र पाटनको कुम्भेश्वरमा भेला हुन्छन्। त्यस दिन नौ थरी गेडागुडीको क्वाँटी खाइन्छ। तराईमा दिदीबहिनीले दाजुभाइलाई राखी बाँध्छन्।"
+    },
+    "greeting": {
+     "en": "Warm wishes on Janai Purnima and Rakshya Bandhan!",
+     "ne": "जनै पूर्णिमा तथा रक्षाबन्धनको शुभकामना!"
     }
    }
   },
@@ -1901,7 +1909,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "lotus",
+   "card": "cow",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -1920,6 +1928,10 @@
     "traditions": {
      "en": "Families who lost someone in the year walk in procession with a cow, or a child dressed as a cow, believed to guide the departed. Begun, it is said, by King Pratap Malla to console his grieving queen, the day also turned into one of satire and humour, with street plays and comic performances.",
      "ne": "वर्षभित्र कसैलाई गुमाएका परिवारहरू गाई, वा गाई बनेको बालकसँग जात्रामा हिँड्छन्, जसले दिवंगतलाई बाटो देखाउँछ भन्ने विश्वास छ। राजा प्रताप मल्लले शोकाकुल रानीलाई सान्त्वना दिन सुरु गरेको भनिने यो दिन व्यंग्य र हास्यको पनि बन्यो, सडक नाटक र हास्य प्रस्तुति हुन्छन्।"
+    },
+    "greeting": {
+     "en": "Remembering loved ones together, on Gai Jatra.",
+     "ne": "गाईजात्रामा, आफन्तहरूलाई सँगै सम्झँदै।"
     }
    }
   },
@@ -2005,7 +2017,7 @@
     "NP"
    ],
    "localNames": {},
-   "card": "swing",
+   "card": "mehndi",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2145,7 +2157,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "lotus",
+   "card": "stars",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2226,6 +2238,10 @@
     "traditions": {
      "en": "A tall pole (yosin) is raised at Hanuman Dhoka, masked dances such as the Lakhe and Sawa Bhakku fill the streets, and the face of Akash Bhairav is displayed. On the main day the Kumari's chariot, with those of Ganesh and Bhairav, is drawn through the old city, and she blesses the head of state.",
      "ne": "हनुमानढोकामा अग्लो लिङ्गो (योसिं) ठड्याइन्छ, लाखे र सवाँ भक्कु जस्ता मुकुण्डो नाच सडकभरि हुन्छन्, र आकाश भैरवको मुख देखाइन्छ। मुख्य दिन गणेश र भैरवसँगै कुमारीको रथ पुरानो सहरमा तानिन्छ, र कुमारीले राष्ट्रप्रमुखलाई आशीर्वाद दिन्छिन्।"
+    },
+    "greeting": {
+     "en": "Warm Indra Jatra wishes to you and your family!",
+     "ne": "तपाईं र तपाईंको परिवारलाई इन्द्रजात्राको शुभकामना!"
     }
    }
   },
@@ -2243,7 +2259,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "lotus",
+   "card": "tools",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2301,7 +2317,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "water",
+   "card": "remembrance",
    "local": {},
    "durationDays": 16,
    "variations": [],
@@ -2363,7 +2379,7 @@
     "NP"
    ],
    "localNames": {},
-   "card": "navratri",
+   "card": "kalash",
    "local": {},
    "durationDays": 15,
    "variations": [],
@@ -2382,6 +2398,10 @@
     "traditions": {
      "en": "At the auspicious hour a kalash of water is set up and barley and maize are sown in sand in a dark room; the yellow shoots, jamara, grow over the next nine days and are worn at Tika. Families clean and decorate their homes, and relatives start travelling home for the fifteen days of Dashain.",
      "ne": "साइतमा जलले भरिएको कलश स्थापना गरिन्छ र अँध्यारो कोठामा बालुवामा जौ र मकै छरिन्छ; पहेँलो जमरा नौ दिनमा उम्रन्छ र टीकामा लगाइन्छ। परिवारहरू घर सफा गरी सजाउँछन्, र आफन्तहरू दशैंका पन्ध्र दिनका लागि घर फर्कन थाल्छन्।"
+    },
+    "greeting": {
+     "en": "Warm wishes as Dashain begins with Ghatasthapana!",
+     "ne": "घटस्थापनासँगै सुरु भएको बडादशैंको शुभकामना!"
     }
    }
   },
@@ -2404,7 +2424,7 @@
     "NP"
    ],
    "localNames": {},
-   "card": "navratri",
+   "card": "garland",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2423,6 +2443,10 @@
     "traditions": {
      "en": "A procession brings the phulpati - a bundle of banana stalk, jamara, sugar cane and other plants tied with red cloth - from the old royal house of Gorkha to Kathmandu, welcomed with a ceremonial parade and gun salute at Tundikhel. In homes the phulpati is brought into the puja room beside the jamara.",
      "ne": "केराको थाम, जमरा, उखु र अन्य बोटबिरुवालाई रातो कपडाले बाँधिएको फूलपाती गोरखा दरबारबाट जात्राका साथ काठमाडौं ल्याइन्छ, र टुँडिखेलमा परेड र तोपको सलामीसहित स्वागत गरिन्छ। घरमा पनि फूलपाती जमराको छेउमा पूजा कोठामा भित्र्याइन्छ।"
+    },
+    "greeting": {
+     "en": "Warm Phulpati wishes as the sacred flowers come home for Dashain!",
+     "ne": "दशैंका लागि पवित्र फूलपाती भित्रिँदै गर्दा हार्दिक शुभकामना!"
     }
    }
   },
@@ -2445,7 +2469,7 @@
     "NP"
    ],
    "localNames": {},
-   "card": "navratri",
+   "card": "durga",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2565,7 +2589,7 @@
     "NP"
    ],
    "localNames": {},
-   "card": "navratri",
+   "card": "tilak",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2584,6 +2608,10 @@
     "traditions": {
      "en": "At the hour fixed by the Nepal Panchanga committee, families gather and the eldest place tika of rice, yoghurt and vermilion on the foreheads of the younger, tuck jamara behind their ears and give dakshina and blessings. Over the following days, until Kojagrat Purnima, people travel to receive tika from elders across the family.",
      "ne": "नेपाल पञ्चाङ्ग निर्णायक समितिले तोकेको साइतमा परिवार भेला हुन्छ र ठूलाले साना सदस्यको निधारमा अक्षता, दही र सिन्दूरको टीका लगाइदिन्छन्, कानमा जमरा सिउरिदिन्छन् र दक्षिणासहित आशीर्वाद दिन्छन्। त्यसपछि कोजाग्रत पूर्णिमासम्म मान्छेहरू परिवारका ठूलाबडासँग टीका थाप्न जान्छन्।"
+    },
+    "greeting": {
+     "en": "Happy Dashain! Warm wishes as you receive tika and jamara from your elders.",
+     "ne": "बडादशैं तथा विजया दशमीको हार्दिक शुभकामना! ठूलाबडाको टीका र जमरासँगै मायालु शुभकामना।"
     }
    }
   },
@@ -2665,7 +2693,7 @@
    "tier": "major",
    "holidayIn": [],
    "localNames": {},
-   "card": "diya",
+   "card": "crow",
    "local": {},
    "durationDays": 5,
    "variations": [],
@@ -2684,6 +2712,10 @@
     "traditions": {
      "en": "In the morning food is set out for crows, regarded as messengers of Yama. Homes are cleaned and lamps lit for the five nights of Tihar, and the evening is Dhanteras for many, with new utensils and metal bought.",
      "ne": "बिहान यमदूत मानिने कागलाई खाना राखिन्छ। तिहारका पाँच रातका लागि घर सफा गरिन्छ र दियो बालिन्छ, र धेरैका लागि साँझ धनतेरस हुन्छ, नयाँ भाँडा र धातु किनिन्छ।"
+    },
+    "greeting": {
+     "en": "Happy Tihar! Warm wishes as the festival of lights begins.",
+     "ne": "शुभ तिहार! उज्यालोको पर्वको सुरुवातमा हार्दिक शुभकामना।"
     }
    }
   },
@@ -2701,7 +2733,7 @@
    "tier": "major",
    "holidayIn": [],
    "localNames": {},
-   "card": "diya",
+   "card": "dog",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2720,6 +2752,10 @@
     "traditions": {
      "en": "Dogs, the companions of Yama and loyal friends of the household, are given a marigold garland, a red tika and special food. Pet dogs, street dogs and police dogs alike are honoured across Nepal.",
      "ne": "यमराजका साथी र घरका वफादार मित्र कुकुरलाई सयपत्रीको माला, रातो टीका र विशेष खाना दिइन्छ। घरपालुवा, सडकका र प्रहरीका कुकुर सबैलाई नेपालभरि सम्मान गरिन्छ।"
+    },
+    "greeting": {
+     "en": "Happy Kukur Tihar, a garland and a treat for every faithful friend!",
+     "ne": "हरेक इमानदार साथीलाई एउटा माला र मीठो खाना, कुकुर तिहारको शुभकामना!"
     }
    }
   },
@@ -2770,7 +2806,7 @@
     "SR": "Divali",
     "MU": "Divali"
    },
-   "card": "diya",
+   "card": "footprints",
    "local": {
     "TT": "In Trinidad and Tobago, Divali is a public holiday. The Divali Nagar at Chaguanas runs for days before, and homes and yards are lit with deyas.",
     "GY": "In Guyana, Diwali is a public holiday, and the night before is lit by motorcades of illuminated floats.",
@@ -2867,7 +2903,7 @@
     "NP"
    ],
    "localNames": {},
-   "card": "diya",
+   "card": "rangoli",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2886,6 +2922,10 @@
     "traditions": {
      "en": "Oxen are honoured with garlands and food, and cow-dung hills are shaped for Govardhan Puja. Newar families perform Mha Puja, the worship of one's own body: each member sits before a mandala of colours, lamps and fruit for a blessing of long life. Nepal Sambat, the Newar era, begins its new year the same day.",
      "ne": "गोरुलाई माला र खाना दिएर सम्मान गरिन्छ, र गोवर्धन पूजाका लागि गोबरको पर्वत बनाइन्छ। नेवार परिवारहरू म्ह पूजा गर्छन्, आफ्नै शरीरको पूजा: प्रत्येक सदस्य रङ, दियो र फलफूलको मण्डलअगाडि बसेर दीर्घायुको आशीर्वाद लिन्छ। नेवारहरूको संवत्, नेपाल संवत्को नयाँ वर्ष पनि यही दिन सुरु हुन्छ।"
+    },
+    "greeting": {
+     "en": "Warm Mha Puja wishes and a happy Nepal Sambat New Year!",
+     "ne": "म्ह पूजा तथा नेपाल संवत् नयाँ वर्षको शुभकामना!"
     }
    }
   },
@@ -2905,7 +2945,7 @@
     "NP"
    ],
    "localNames": {},
-   "card": "rakhi",
+   "card": "tilak",
    "local": {},
    "durationDays": 1,
    "variations": [
@@ -2928,6 +2968,10 @@
     "traditions": {
      "en": "Sisters draw a protective line of oil and water around their brothers, place a seven-coloured tika on their foreheads, garland them with makhamali (globe amaranth) flowers that do not wilt, and feed them sweets and dried fruit. Brothers give gifts and the tika in return. Those without a brother or sister often receive tika from a cousin or friend.",
      "ne": "दिदीबहिनीले दाजुभाइको वरिपरि तेल र पानीको रेखा कोर्छन्, निधारमा सप्तरङ्गी टीका लगाइदिन्छन्, नओइलाउने मखमली फूलको माला लगाइदिन्छन्, र मिठाई तथा मसला खुवाउँछन्। दाजुभाइले उपहार र टीका फर्काउँछन्। दाजुभाइ वा दिदीबहिनी नहुनेले प्रायः आफन्त वा साथीबाट टीका थाप्छन्।"
+    },
+    "greeting": {
+     "en": "Happy Bhai Tika! Warm wishes to every brother and sister today.",
+     "ne": "भाइटीकाको शुभकामना! आज सबै दाजुभाइ र दिदीबहिनीलाई हार्दिक शुभकामना।"
     }
    }
   },
@@ -3015,7 +3059,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lotus",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3074,7 +3118,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "conch",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3133,7 +3177,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "kalash",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3192,7 +3236,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lotus",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3251,7 +3295,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "kalash",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3312,7 +3356,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lotus",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3371,7 +3415,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "shesha",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3410,6 +3454,10 @@
       "नजिकै दिण्डी वा मन्दिरको शोभायात्रा छ भने त्यसमा सामेल हुनुहोस्।",
       "भोलिपल्ट बिहान द्वादशीमा पारण गर्नुहोस्।"
      ]
+    },
+    "greeting": {
+     "en": "Warm wishes on Devshayani Ekadashi for a peaceful day of prayer.",
+     "ne": "हरिशयनी एकादशीमा शान्त र भक्तिमय दिनको शुभकामना।"
     }
    }
   },
@@ -3430,7 +3478,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "tulsi",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3489,7 +3537,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "footprints",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3548,7 +3596,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "conch",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3607,7 +3655,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "shesha",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3666,7 +3714,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "remembrance",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3784,7 +3832,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lakshmi",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3843,7 +3891,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "tulsi",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3961,7 +4009,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "books",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4020,7 +4068,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "conch",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4079,7 +4127,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "footprints",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4138,7 +4186,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "diya",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4197,7 +4245,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "conch",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4256,7 +4304,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "rama",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4315,7 +4363,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "tree",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4374,7 +4422,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lotus",
    "local": {},
    "durationDays": 1,
    "variations": [],

@@ -1402,7 +1402,7 @@
    "tier": "major",
    "holidayIn": [],
    "localNames": {},
-   "card": "pongal",
+   "card": "alpana",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -1468,7 +1468,7 @@
     "IN-WB"
    ],
    "localNames": {},
-   "card": "veena",
+   "card": "swan",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -1632,6 +1632,10 @@
     "traditions": {
      "en": "In the morning images of Radha and Krishna are placed on a swing (dol), smeared with abir and taken round in procession with kirtan. Then friends and neighbours play with coloured powder, and sweets like malpua and mathha are shared. The day is also the birth anniversary of Sri Chaitanya Mahaprabhu, celebrated at Mayapur and Nabadwip. At Santiniketan it is Basanta Utsav, with songs and dances to welcome spring.",
      "bn": "সকালে রাধাকৃষ্ণকে দোলায় বসিয়ে আবির মাখিয়ে কীর্তন সহকারে শোভাযাত্রা হয়। তারপর বন্ধু-প্রতিবেশীরা আবির খেলে, আর মালপোয়া, মঠের মতো মিষ্টি ভাগ করে খাওয়া হয়। এই দিনটি শ্রীচৈতন্য মহাপ্রভুর আবির্ভাব তিথিও, মায়াপুর ও নবদ্বীপে মহা সমারোহে পালিত হয়। শান্তিনিকেতনে এ দিন বসন্ত উৎসব, গানে-নাচে বসন্তকে বরণ।"
+    },
+    "greeting": {
+     "en": "Wishing you a Dol Jatra bright with colour and song!",
+     "bn": "রঙে আর গানে ভরা দোলযাত্রার শুভেচ্ছা!"
     }
    }
   },
@@ -1727,7 +1731,7 @@
     "IN-WB"
    ],
    "localNames": {},
-   "card": "newyear",
+   "card": "pohela",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -1760,6 +1764,10 @@
       "ব্যবসায়ীরা: পুজো দিয়ে হালখাতা খুলুন।",
       "মিষ্টি আর উৎসবের খাওয়াদাওয়া ভাগ করে নিন।"
      ]
+    },
+    "greeting": {
+     "en": "Shubho Noboborsho! Warm wishes for the new year to you and your family.",
+     "bn": "শুভ নববর্ষ! আপনাকে ও আপনার পরিবারকে নতুন বছরের আন্তরিক শুভেচ্ছা।"
     }
    }
   },
@@ -1846,7 +1854,7 @@
     "IN-WB"
    ],
    "localNames": {},
-   "card": "lotus",
+   "card": "books",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -1865,6 +1873,10 @@
     "traditions": {
      "en": "Bengal remembers Tagore with his own songs and poems. Mornings begin with prabhat pheri, processions singing Rabindra sangeet; schools, neighbourhoods and Jorasanko Thakurbari, his birthplace in Kolkata, hold recitals, dance-dramas and readings. At Santiniketan, Visva-Bharati keeps the day with its own traditions.",
      "bn": "বাঙালি রবীন্দ্রনাথকে স্মরণ করে তাঁরই গান আর কবিতায়। সকালে রবীন্দ্রসংগীত গেয়ে প্রভাতফেরি হয়; স্কুলে, পাড়ায় আর কলকাতার জোড়াসাঁকো ঠাকুরবাড়িতে আবৃত্তি, নৃত্যনাট্য আর পাঠের আসর বসে। শান্তিনিকেতনে বিশ্বভারতী নিজস্ব রীতিতে দিনটি পালন করে।"
+    },
+    "greeting": {
+     "en": "On Rabindra Jayanti, may Tagore's songs fill your day.",
+     "bn": "পঁচিশে বৈশাখে রবিঠাকুরের গানে ভরে উঠুক আপনার দিন।"
     }
    }
   },
@@ -1884,7 +1896,7 @@
     "IN-WB"
    ],
    "localNames": {},
-   "card": "moon",
+   "card": "bodhi",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -1943,7 +1955,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "water",
+   "card": "ganga",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2001,7 +2013,7 @@
    "tier": "major",
    "holidayIn": [],
    "localNames": {},
-   "card": "murugan",
+   "card": "mango",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2020,6 +2032,10 @@
     "traditions": {
      "en": "The mother-in-law worships Shashthi, the goddess who watches over children, and keeps a fast. When the son-in-law arrives with his wife she fans him with a palm-leaf fan dipped in water, ties a yellow thread on his wrist and serves an elaborate meal: hilsa and prawns, rice, mangoes and lychees of the season, and a spread of sweets. Gifts are exchanged on both sides.",
      "bn": "শাশুড়ি সন্তানদের রক্ষাকর্ত্রী মা ষষ্ঠীর পুজো করেন ও উপবাস রাখেন। স্ত্রীকে নিয়ে জামাই এলে জলে ভেজানো তালপাতার পাখায় বাতাস করেন, হাতে হলুদ সুতো বাঁধেন আর ঘটা করে খাওয়ান: ইলিশ, চিংড়ি, ভাত, মরশুমের আম-লিচু আর হরেক রকম মিষ্টি। দুই তরফেই উপহার দেওয়া-নেওয়া হয়।"
+    },
+    "greeting": {
+     "en": "Warm Jamai Shashti wishes to the whole family, gathered round one table!",
+     "bn": "একসঙ্গে খেতে বসা গোটা পরিবারকে জামাইষষ্ঠীর আন্তরিক শুভেচ্ছা!"
     }
    }
   },
@@ -2095,7 +2111,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "moon",
+   "card": "books",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2286,7 +2302,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "lotus",
+   "card": "tools",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2349,7 +2365,7 @@
     "IN-WB"
    ],
    "localNames": {},
-   "card": "water",
+   "card": "remembrance",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2412,7 +2428,7 @@
     "IN-WB"
    ],
    "localNames": {},
-   "card": "navratri",
+   "card": "durga",
    "local": {
     "US": "In the United States, Navratri garba and dandiya nights fill community halls and convention centres, mostly on the weekends of the nine nights.",
     "GB": "In the United Kingdom, Navratri garba is held nightly at temples and halls, with the largest gatherings in Leicester and north-west London.",
@@ -2443,6 +2459,10 @@
     "traditions": {
      "en": "On Shashthi evening the Goddess is awakened (bodhon) under a bel tree, and the next dawn the nabapatrika, nine plants bound as one, is bathed and installed. Ashtami brings the pushpanjali, flower offerings by the whole neighbourhood, and the sandhi puja at the junction of Ashtami and Navami with 108 lamps and lotuses. On Dashami married women play sindoor khela before the immersion. Pandals, many of them works of art, are open day and night, with bhog, dhunuchi dances and new clothes for every day. In Odisha the Goddess is worshipped in pandals and at Shakti shrines such as Cuttack's Chandi temple, with silver-filigree (chandi medha) decorations.",
      "bn": "ষষ্ঠীর সন্ধ্যায় বেলগাছের তলায় দেবীর বোধন হয়, পরদিন ভোরে নবপত্রিকা স্নান করিয়ে প্রতিষ্ঠা করা হয়। অষ্টমীতে পাড়াশুদ্ধ মানুষের পুষ্পাঞ্জলি, আর অষ্টমী-নবমীর সন্ধিক্ষণে ১০৮ প্রদীপ ও পদ্মে সন্ধিপুজো। দশমীতে বিসর্জনের আগে বিবাহিতা মেয়েরা সিঁদুর খেলেন। দিনরাত খোলা থাকে মণ্ডপ, অনেকগুলিই শিল্পকর্ম; ভোগ, ধুনুচি নাচ আর রোজ নতুন জামা।"
+    },
+    "greeting": {
+     "en": "Shubho Durga Puja! Warm wishes to you and your family as Ma Durga comes home.",
+     "bn": "শুভ দুর্গাপূজা! মা দুর্গা ঘরে আসছেন, আপনাকে ও আপনার পরিবারকে আন্তরিক শুভেচ্ছা।"
     }
    }
   },
@@ -2460,7 +2480,7 @@
    "tier": "major",
    "holidayIn": [],
    "localNames": {},
-   "card": "navratri",
+   "card": "dhak",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2497,6 +2517,10 @@
       "নতুন জামা পরে পরিবারের সঙ্গে মণ্ডপে মণ্ডপে ঘুরুন।",
       "বাড়িতে ছোট পূজা করলে দেবীকে ফুল ও প্রদীপ নিবেদন করুন।"
      ]
+    },
+    "greeting": {
+     "en": "Shubho Maha Shashthi! Warm wishes as Ma Durga is welcomed home.",
+     "bn": "শুভ মহাষষ্ঠী! মা দুর্গার বোধনের দিনে আন্তরিক শুভেচ্ছা।"
     }
    }
   },
@@ -2516,7 +2540,7 @@
     "IN-WB"
    ],
    "localNames": {},
-   "card": "navratri",
+   "card": "durga",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2535,6 +2559,10 @@
     "traditions": {
      "en": "Before sunrise the nabapatrika, a plantain plant bound with eight others and dressed in a red-bordered saree (popularly 'kola bou'), is carried to the river or pond, bathed and installed beside Ganesha. The prana pratishtha of the Goddess follows, and the pandals fill with visitors from the evening on.",
      "bn": "সূর্যোদয়ের আগে নবপত্রিকা, আরও আটটি গাছের সঙ্গে বাঁধা কলাগাছ, লালপাড় শাড়ি পরানো যাকে লোকে 'কলাবউ' বলে, নদী বা পুকুরে নিয়ে গিয়ে স্নান করিয়ে গণেশের পাশে প্রতিষ্ঠা করা হয়। তারপর দেবীর প্রাণপ্রতিষ্ঠা, আর সন্ধে থেকে মণ্ডপে মণ্ডপে ভিড়।"
+    },
+    "greeting": {
+     "en": "Shubho Maha Saptami to you and all your loved ones!",
+     "bn": "শুভ মহাসপ্তমী! আপনাকে ও আপনার সব প্রিয়জনকে আন্তরিক শুভেচ্ছা।"
     }
    }
   },
@@ -2554,7 +2582,7 @@
     "IN-WB"
    ],
    "localNames": {},
-   "card": "navratri",
+   "card": "aarti",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2614,7 +2642,7 @@
     "IN-WB"
    ],
    "localNames": {},
-   "card": "navratri",
+   "card": "durga",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2674,7 +2702,7 @@
     "IN-WB"
    ],
    "localNames": {},
-   "card": "navratri",
+   "card": "dhak",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2739,7 +2767,7 @@
     "IN-WB"
    ],
    "localNames": {},
-   "card": "diya",
+   "card": "alpana",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2830,7 +2858,7 @@
     "SR": "Divali",
     "MU": "Divali"
    },
-   "card": "diya",
+   "card": "kali",
    "local": {
     "TT": "In Trinidad and Tobago, Divali is a public holiday. The Divali Nagar at Chaguanas runs for days before, and homes and yards are lit with deyas.",
     "GY": "In Guyana, Diwali is a public holiday, and the night before is lit by motorcades of illuminated floats.",
@@ -2879,6 +2907,10 @@
     "traditions": {
      "en": "The puja is performed through the night of the new moon, at home, in neighbourhood pandals and at the great Kali temples: Kalighat, Dakshineswar, Tarapith. Homes are lit with rows of lamps and candles, and the evening before, on Bhoot Chaturdashi, fourteen lamps are lit and fourteen leafy greens (choddo shaak) are eaten in memory of the ancestors.",
      "bn": "অমাবস্যার রাত জুড়ে পুজো হয়, বাড়িতে, পাড়ার মণ্ডপে আর কালীঘাট, দক্ষিণেশ্বর, তারাপীঠের মতো বড় কালীমন্দিরে। বাড়ি সাজে প্রদীপ আর মোমবাতির সারিতে, আর আগের দিন ভূত চতুর্দশীতে পূর্বপুরুষদের স্মরণে চোদ্দ প্রদীপ জ্বালানো হয় ও চোদ্দ শাক খাওয়া হয়।"
+    },
+    "greeting": {
+     "en": "Wishing you a Kali Puja night filled with lamps and peace.",
+     "bn": "প্রদীপের আলো আর শান্তিতে ভরা কালীপূজার রাতের শুভেচ্ছা।"
     }
    }
   },
@@ -2898,7 +2930,7 @@
     "IN-WB"
    ],
    "localNames": {},
-   "card": "rakhi",
+   "card": "tilak",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2956,7 +2988,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "navratri",
+   "card": "durga",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2975,6 +3007,10 @@
     "traditions": {
      "en": "Jagaddhatri, a form of Durga seated on a lion with an elephant beneath, is worshipped with Saptami, Ashtami and Navami rites compressed into one day in most places. Chandannagar's celebration is famous for its towering images and light displays, and Krishnanagar for its procession of images on the final night.",
      "bn": "সিংহবাহিনী, পায়ের তলায় হাতি, দুর্গারই এক রূপ জগদ্ধাত্রীর পুজো বেশিরভাগ জায়গায় সপ্তমী, অষ্টমী, নবমীর আচার একদিনে সেরে হয়। চন্দননগরের পুজো বিশাল প্রতিমা আর আলোকসজ্জার জন্য বিখ্যাত, কৃষ্ণনগর শেষ রাতের প্রতিমা শোভাযাত্রার জন্য।"
+    },
+    "greeting": {
+     "en": "Warm wishes on Jagaddhatri Puja to you and your family!",
+     "bn": "আপনাকে ও আপনার পরিবারকে জগদ্ধাত্রী পূজার আন্তরিক শুভেচ্ছা!"
     }
    }
   },
@@ -3060,7 +3096,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lotus",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3119,7 +3155,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "conch",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3178,7 +3214,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "kalash",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3237,7 +3273,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lotus",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3296,7 +3332,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "kalash",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3357,7 +3393,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lotus",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3416,7 +3452,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "shesha",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3455,6 +3491,10 @@
       "কাছাকাছি দিণ্ডি বা মন্দিরের শোভাযাত্রা থাকলে তাতে যোগ দিন।",
       "পরদিন সকালে দ্বাদশীতে উপবাস ভাঙুন।"
      ]
+    },
+    "greeting": {
+     "en": "Warm wishes on Devshayani Ekadashi for a peaceful day of prayer.",
+     "bn": "দেবশয়নী একাদশীতে শান্ত, ভক্তিময় একটি দিনের শুভেচ্ছা।"
     }
    }
   },
@@ -3475,7 +3515,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "tulsi",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3534,7 +3574,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "footprints",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3593,7 +3633,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "conch",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3652,7 +3692,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "shesha",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3711,7 +3751,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "remembrance",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3829,7 +3869,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lakshmi",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3888,7 +3928,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "tulsi",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4006,7 +4046,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "books",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4065,7 +4105,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "conch",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4124,7 +4164,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "footprints",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4183,7 +4223,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "diya",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4242,7 +4282,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "conch",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4301,7 +4341,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "rama",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4360,7 +4400,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "tree",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4419,7 +4459,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lotus",
    "local": {},
    "durationDays": 1,
    "variations": [],

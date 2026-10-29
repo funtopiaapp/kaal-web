@@ -2073,7 +2073,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "swing",
+   "card": "mehndi",
    "local": {},
    "durationDays": 5,
    "variations": [],
@@ -2092,6 +2092,10 @@
     "traditions": {
      "en": "Girls sow seven grains (jawara) in a small pot a few days before and, through the five days, worship the sprouts as Gauri with kumkum and a cotton necklace (nagla). They eat a single meal without salt, which gives the vrat its name Molakat ('without salt'). On the last night they stay awake singing and playing (jagran), and the next morning the jawara are immersed in water.",
      "gu": "કન્યાઓ થોડા દિવસ પહેલાં નાના કૂંડામાં સાત ધાન્યના જવારા વાવે છે અને પાંચ દિવસ તેમને ગૌરી માનીને કંકુ અને નાગલાથી પૂજે છે. તેઓ દિવસમાં એક વાર મીઠા વગરનું ભોજન કરે છે, તેથી વ્રતનું નામ મોળાકત. છેલ્લી રાતે ગીતો અને રમતો સાથે જાગરણ થાય છે અને બીજી સવારે જવારા પાણીમાં પધરાવાય છે."
+    },
+    "greeting": {
+     "en": "Warm wishes to all the young girls keeping Gauri Vrat!",
+     "gu": "મોળાકત કરતી સૌ દીકરીઓને ગૌરી વ્રતની શુભેચ્છાઓ!"
     }
    }
   },
@@ -2128,6 +2132,10 @@
     "traditions": {
      "en": "Much like the Gauri Vrat kept by girls a few days earlier, women worship jawara sprouts as Parvati and Shiva, eat one salt-free meal a day and avoid certain vegetables. Many keep it for five, seven or more consecutive years. The fifth night is a jagran, kept awake with songs and games among friends, and the vrat ends the next morning.",
      "gu": "થોડા દિવસ પહેલાં કન્યાઓ ઊજવે છે તે ગૌરી વ્રતની જેમ સ્ત્રીઓ જવારાને શિવ-પાર્વતી માનીને પૂજે છે, દિવસમાં એક વાર મીઠા વગરનું ભોજન કરે છે અને કેટલાંક શાક ટાળે છે. ઘણી સ્ત્રીઓ આ વ્રત પાંચ, સાત કે વધુ વર્ષ લગાતાર કરે છે. પાંચમી રાતે બહેનપણીઓ સાથે ગીતો અને રમતો સાથે જાગરણ થાય છે અને બીજી સવારે વ્રત પૂરું થાય છે."
+    },
+    "greeting": {
+     "en": "Warm wishes to all keeping Jaya Parvati Vrat!",
+     "gu": "જયા પાર્વતી વ્રત કરનાર સૌને શુભેચ્છાઓ!"
     }
    }
   },
@@ -2145,7 +2153,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "moon",
+   "card": "books",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2276,7 +2284,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "lotus",
+   "card": "cow",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2376,7 +2384,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "sun",
+   "card": "kalash",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2395,6 +2403,10 @@
     "traditions": {
      "en": "Kitchens are busy all day: thepla, puri, dhebra, sukhdi, farsan and sweets are made in quantity, enough for the next day. In the evening the stove is cleaned and worshipped, and it is not lit again until the day after Shitala Satam.",
      "gu": "આખો દિવસ રસોડાં ધમધમે છે: થેપલાં, પૂરી, ઢેબરાં, સુખડી, ફરસાણ અને મીઠાઈ બીજા દિવસ માટે બને છે. સાંજે ચૂલો સાફ કરી તેની પૂજા થાય છે અને શીતળા સાતમ પછીના દિવસ સુધી તે સળગાવાતો નથી."
+    },
+    "greeting": {
+     "en": "Warm Randhan Chhath wishes, from one busy kitchen to another!",
+     "gu": "એક રસોડેથી બીજા રસોડે, રાંધણ છઠની શુભેચ્છાઓ!"
     }
    }
   },
@@ -2412,7 +2424,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "lotus",
+   "card": "kalash",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2431,6 +2443,10 @@
     "traditions": {
      "en": "Shitala, 'the cool one', is the goddess associated with health in the hot season and with children's wellbeing. Mothers bathe in cool water, visit her shrine with curd, millet and the food made on Randhan Chhath, and pray for their children. No fire is lit at home and the family eats the cold food together. Satam is also the first day of the Janmashtami week's fairs in Saurashtra.",
      "gu": "શીતળા એટલે 'ઠંડક આપનાર' માતા, બાળકોના સ્વાસ્થ્ય સાથે જોડાયેલી દેવી. માતાઓ ઠંડા પાણીથી સ્નાન કરી દહીં, બાજરી અને રાંધણ છઠનું ભોજન લઈ માતાજીના સ્થાનકે જાય છે અને બાળકો માટે પ્રાર્થના કરે છે. ઘરે ચૂલો સળગાવાતો નથી અને પરિવાર ઠંડું ભોજન સાથે ખાય છે. સૌરાષ્ટ્રમાં સાતમ-આઠમના મેળા પણ આ દિવસથી શરૂ થાય છે."
+    },
+    "greeting": {
+     "en": "Warm Shitala Satam wishes to you and your family!",
+     "gu": "તમને અને તમારા પરિવારને શીતળા સાતમની શુભેચ્છાઓ!"
     }
    }
   },
@@ -2514,7 +2530,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "lotus",
+   "card": "trishul",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2630,7 +2646,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "lotus",
+   "card": "stars",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2688,7 +2704,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "shesha",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2749,7 +2765,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "water",
+   "card": "remembrance",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2877,7 +2893,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "navratri",
+   "card": "durga",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3065,7 +3081,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "diya",
+   "card": "cow",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3084,6 +3100,10 @@
     "traditions": {
      "en": "The name is thought to come from 'vak' (speech) Baras, a day for Saraswati, though it is best known as the day cows and their calves are worshipped and fed. Traders settle their old accounts before the new books of Diwali, and homes begin the lamps and rangoli that will last through Bhai Beej.",
      "gu": "નામ 'વાક્' (વાણી) બારસ પરથી હોવાનું મનાય છે, સરસ્વતીનો દિવસ, પણ આ દિવસ ગાય-વાછરડાની પૂજા અને તેમને ખવડાવવા માટે જાણીતો છે. વેપારીઓ દિવાળીના નવા ચોપડા પહેલાં જૂના હિસાબ પૂરા કરે છે અને ઘરોમાં દીવા અને રંગોળીની શરૂઆત થાય છે, જે ભાઈબીજ સુધી ચાલે છે."
+    },
+    "greeting": {
+     "en": "Warm Vagh Baras wishes as the Diwali days begin!",
+     "gu": "દિવાળીના દિવસોની શરૂઆતે વાઘ બારસની શુભેચ્છાઓ!"
     }
    }
   },
@@ -3167,7 +3187,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "diya",
+   "card": "kali",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3186,6 +3206,10 @@
     "traditions": {
      "en": "In the evening many families worship Mahakali or Hanuman, offering oil, sindoor and vadas, and some visit Kali temples at night. A lamp is set at a crossroads or the edge of the house, a way of clearing out the old year before Diwali. Homes are given a last clean, and many bathe with oil in the morning as on Narak Chaturdashi elsewhere.",
      "gu": "સાંજે ઘણા પરિવારો મહાકાળી કે હનુમાનજીની પૂજા કરે છે, તેલ, સિંદૂર અને વડાં ધરાવે છે, અને કેટલાક રાત્રે કાળી મંદિરે જાય છે. ચાર રસ્તે કે ઘરની હદે દીવો મુકાય છે, દિવાળી પહેલાં જૂના વર્ષને વિદાય આપવાની રીત. ઘરની છેલ્લી સફાઈ થાય છે અને ઘણા સવારે તેલથી સ્નાન કરે છે, જેમ બીજે નરક ચતુર્દશીએ થાય છે."
+    },
+    "greeting": {
+     "en": "Warm Kali Chaudas wishes, with every lamp in your home alight.",
+     "gu": "ઘરના દરેક દીવાના અજવાળા સાથે કાળી ચૌદસની શુભેચ્છાઓ."
     }
    }
   },
@@ -3330,7 +3354,7 @@
     "IN-GJ"
    ],
    "localNames": {},
-   "card": "newyear",
+   "card": "rangoli",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3363,6 +3387,10 @@
       "વડીલોને 'સાલ મુબારક' કહી આશીર્વાદ લો.",
       "પરિવાર, મિત્રો અને પાડોશીઓ સાથે મીઠાઈ વહેંચો."
      ]
+    },
+    "greeting": {
+     "en": "Saal Mubarak! Warm wishes for the new year to you and your family.",
+     "gu": "સાલ મુબારક! તમને અને તમારા પરિવારને નૂતન વર્ષાભિનંદન."
     }
    }
   },
@@ -3385,7 +3413,7 @@
     "IN-GJ"
    ],
    "localNames": {},
-   "card": "rakhi",
+   "card": "tilak",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3443,7 +3471,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "diya",
+   "card": "toran",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3462,6 +3490,10 @@
     "traditions": {
      "en": "Labh means gain and Pancham the fifth day. After the Diwali break, businesses reopen with a short puja, a swastik and 'Shubh Labh' drawn in the new books, and the first sale or entry of the year. It is also Gyan Pancham, when Jains honour sacred books and knowledge. Many also visit relatives they did not meet over Diwali.",
      "gu": "લાભ એટલે નફો અને પાંચમ એટલે પાંચમો દિવસ. દિવાળીની રજા પછી વેપાર-ધંધા નાની પૂજા સાથે ફરી શરૂ થાય છે; નવા ચોપડામાં સાથિયો અને 'શુભ લાભ' લખાય છે અને વર્ષનો પહેલો સોદો થાય છે. આ જ દિવસ જ્ઞાન પંચમી પણ છે, જ્યારે જૈનો શાસ્ત્રો અને જ્ઞાનનું પૂજન કરે છે."
+    },
+    "greeting": {
+     "en": "Warm Labh Pancham wishes as the new year's work begins!",
+     "gu": "નવા વર્ષના કામકાજના શ્રીગણેશ ટાણે લાભ પાંચમની શુભેચ્છાઓ!"
     }
    }
   },
@@ -3479,7 +3511,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "lotus",
+   "card": "aarti",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3498,6 +3530,10 @@
     "traditions": {
      "en": "Jalaram Bapa (1799-1881) began a sadavrat at Virpur, a kitchen where anyone who came was fed, and it still runs today. On his jayanti devotees crowd the Virpur temple and Jalaram temples across Gujarat and abroad, sing bhajans, and above all feed people: khichdi, sukhdi and bundi are cooked and served to all comers.",
      "gu": "જલારામ બાપા (૧૭૯૯-૧૮૮૧) એ વીરપુરમાં સદાવ્રત શરૂ કર્યું, જ્યાં આવનાર દરેકને જમાડવામાં આવતા, અને તે આજે પણ ચાલે છે. જયંતીએ ભક્તો વીરપુર અને ગુજરાત તથા વિદેશનાં જલારામ મંદિરોમાં ઊમટે છે, ભજનો ગવાય છે અને સૌથી વધુ તો લોકોને જમાડવામાં આવે છે: ખીચડી, સુખડી અને બુંદી સૌને પીરસાય છે."
+    },
+    "greeting": {
+     "en": "Jai Jalaram! Warm wishes on Jalaram Jayanti, in the spirit of sharing.",
+     "gu": "જય જલારામ! સેવા અને સદાવ્રતની ભાવના સાથે જલારામ જયંતીની શુભેચ્છાઓ."
     }
    }
   },
@@ -3576,7 +3612,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "diya",
+   "card": "floatinglamps",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3634,7 +3670,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "books",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3695,7 +3731,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "cow",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3756,7 +3792,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lotus",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3815,7 +3851,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "conch",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3874,7 +3910,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "kalash",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3933,7 +3969,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lotus",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3992,7 +4028,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "kalash",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4053,7 +4089,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lotus",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4112,7 +4148,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "tulsi",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4171,7 +4207,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "footprints",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4230,7 +4266,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "conch",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4289,7 +4325,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "shesha",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4348,7 +4384,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "remembrance",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4466,7 +4502,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lakshmi",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4525,7 +4561,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "tulsi",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4643,7 +4679,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "books",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4702,7 +4738,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "conch",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4761,7 +4797,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "footprints",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4820,7 +4856,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "diya",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4879,7 +4915,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "conch",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4938,7 +4974,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "rama",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4997,7 +5033,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "tree",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -5056,7 +5092,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lotus",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -5115,7 +5151,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "shesha",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -5154,6 +5190,10 @@
       "નજીકમાં દિંડી કે મંદિરની શોભાયાત્રા હોય તો તેમાં જોડાઓ.",
       "બીજે દિવસે સવારે બારસમાં પારણું કરો."
      ]
+    },
+    "greeting": {
+     "en": "Warm wishes on Devpodhi Ekadashi for a peaceful day of prayer.",
+     "gu": "દેવપોઢી એકાદશીએ શાંત, ભક્તિભર્યા દિવસની શુભેચ્છાઓ."
     }
    }
   }

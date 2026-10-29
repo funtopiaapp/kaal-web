@@ -1,7 +1,7 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610290007';
+import { engine, onRestart } from './engine.js?v=202610290102';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -2218,7 +2218,7 @@ const PALETTES = [
   ['#F4A62A', '#E0701B', '#3B1B07', '#7A1F0E', '#FFF3D6'], ['#0D6E6E', '#123E5C', '#fff', '#F0D27A', '#BDE6E0'],
   ['#4A1942', '#2B0F2A', '#fff', '#F2B6D0', '#F6D6E6'], ['#FAF6EF', '#F1E7D6', '#2B2420', '#B5523B', '#C9814F']];
 const cardPalette = m => ({ diya: 0, shiva: 0, moon: 0, ayyappa: 0, bonfire: 0, vishnu: 0, pongal: 1, ganesha: 1, murugan: 1, rakhi: 1, swing: 1, chariot: 1, hanuman: 1,
-  pookalam: 2, sun: 2, lakshmi: 2, pooram: 2, kite: 2, holi: 3, krishna: 3, newyear: 3, water: 3, boat: 3, tree: 3, tulsi: 3, naga: 3 })[m] ?? 4;
+  pookalam: 2, sun: 2, lakshmi: 2, pooram: 2, kite: 2, holi: 3, krishna: 3, newyear: 3, water: 3, boat: 3, tree: 3, tulsi: 3, naga: 3 , kali: 0, remembrance: 0, stars: 0, floatinglamps: 0, om: 0, trishul: 0, mountain: 0, bell: 0, shesha: 0, gate: 0, cow: 1, bull: 1, dhak: 1, gudi: 1, dahihandi: 1, tilak: 1, bathukamma: 1, aarti: 1, durga: 2, sugarcane: 2, harvest: 2, mango: 2, vishu: 2, ugadi: 2, pohela: 2, puthandu: 2, elephant: 2, footprints: 2, kalash: 2, toran: 2, rangoli: 2, conch: 3, swan: 3, jagannath: 3, ganga: 3, coconut: 3, peacock: 3, kolam: 3, alpana: 3, nepalinewyear: 3, bodhi: 3, garland: 3, mehndi: 3, crow: 3, dog: 3, govardhan: 3, books: 3, tools: 3, axe: 3})[m] ?? 4;
 async function viewGreetings() {
   loading();
   const list = (await upcoming(today(), 180)).filter(x => x.f.tier !== 'minor');
@@ -2233,7 +2233,7 @@ const cardArt = (m, p) => `background:${PALETTES[p][4]};-webkit-mask:url(cards/$
 // Movement over a card, as on iOS (CardMotion.swift): each loops every four seconds.
 const MOTIONS = ['still', 'glow', 'petals', 'sparkle', 'rays', 'fireworks'];
 const suggestedMotion = m => ({ diya: 'glow', lakshmi: 'glow', shiva: 'glow', bonfire: 'glow', tulsi: 'glow', pookalam: 'petals', holi: 'petals', swing: 'petals', krishna: 'petals', lotus: 'petals', pooram: 'petals',
-  sun: 'rays', pongal: 'rays', kite: 'rays', newyear: 'rays', chariot: 'rays' })[m] || 'sparkle';
+  sun: 'rays', pongal: 'rays', kite: 'rays', newyear: 'rays', chariot: 'rays' , remembrance: 'still', aarti: 'glow', floatinglamps: 'glow', ganga: 'glow', stars: 'glow', rangoli: 'petals', kolam: 'petals', alpana: 'petals', mehndi: 'petals', garland: 'petals', bathukamma: 'petals', peacock: 'petals', harvest: 'rays', sugarcane: 'rays', vishu: 'rays', ugadi: 'rays', pohela: 'rays', puthandu: 'rays', nepalinewyear: 'rays', gudi: 'rays', durga: 'sparkle', kali: 'sparkle', tilak: 'sparkle', dhak: 'sparkle', dahihandi: 'sparkle'})[m] || 'sparkle';
 function drawMotion(g, kind, t, w, h, light, accent) {
   const f = (t / 4) % 1, TAU = Math.PI * 2, seed = (i, k) => { const v = Math.sin((i * 127 + k * 311) * 12.9898) * 43758.5453; return v - Math.floor(v); };
   const dot = (x, y, r, c, a) => { g.globalAlpha = Math.max(0, a); g.fillStyle = c; g.beginPath(); g.arc(x, y, r, 0, TAU); g.fill(); };
@@ -2261,8 +2261,8 @@ function drawMotion(g, kind, t, w, h, light, accent) {
 // borders and filigree, the festival's name in a script face, its emblem, and a tagline.
 const DESIGNS = ['classic', 'heritage', 'arch', 'mandala', 'botanical', 'lanterns'];
 const suggestedDesign = m => ({ diya: 'lanterns', lakshmi: 'lanterns', newyear: 'lanterns', moon: 'lanterns', lotus: 'botanical', tulsi: 'botanical', pookalam: 'botanical', tree: 'botanical', water: 'botanical', boat: 'botanical',
-  navratri: 'mandala', holi: 'mandala', krishna: 'mandala', swing: 'mandala', rakhi: 'mandala', ganesha: 'arch', shiva: 'arch', vishnu: 'arch', rama: 'arch', hanuman: 'arch', murugan: 'arch', ayyappa: 'arch', naga: 'arch', chariot: 'arch', pooram: 'arch' })[m] || 'heritage';
-const cardTheme = m => ({ diya: 'light', lakshmi: 'light', shiva: 'light', bonfire: 'light', moon: 'light', vishnu: 'light', pongal: 'harvest', sun: 'harvest', kite: 'harvest', pookalam: 'harvest', tree: 'harvest', boat: 'harvest', water: 'harvest', holi: 'colour', newyear: 'newyear', rakhi: 'bond' })[m] || 'devotion';
+  navratri: 'mandala', holi: 'mandala', krishna: 'mandala', swing: 'mandala', rakhi: 'mandala', ganesha: 'arch', shiva: 'arch', vishnu: 'arch', rama: 'arch', hanuman: 'arch', murugan: 'arch', ayyappa: 'arch', naga: 'arch', chariot: 'arch', pooram: 'arch' , floatinglamps: 'lanterns', aarti: 'lanterns', stars: 'lanterns', remembrance: 'lanterns', mango: 'botanical', sugarcane: 'botanical', harvest: 'botanical', garland: 'botanical', bodhi: 'botanical', coconut: 'botanical', swan: 'botanical', ganga: 'botanical', kolam: 'mandala', rangoli: 'mandala', alpana: 'mandala', mehndi: 'mandala', durga: 'mandala', peacock: 'mandala', bathukamma: 'mandala', dhak: 'mandala', kali: 'arch', trishul: 'arch', om: 'arch', bell: 'arch', shesha: 'arch', gate: 'arch', jagannath: 'arch', conch: 'arch', kalash: 'arch', toran: 'arch', footprints: 'arch', elephant: 'arch', mountain: 'arch', books: 'arch'})[m] || 'heritage';
+const cardTheme = m => ({ diya: 'light', lakshmi: 'light', shiva: 'light', bonfire: 'light', moon: 'light', vishnu: 'light', pongal: 'harvest', sun: 'harvest', kite: 'harvest', pookalam: 'harvest', tree: 'harvest', boat: 'harvest', water: 'harvest', holi: 'colour', newyear: 'newyear', rakhi: 'bond' , floatinglamps: 'light', aarti: 'light', sugarcane: 'harvest', harvest: 'harvest', mango: 'harvest', coconut: 'harvest', cow: 'harvest', bull: 'harvest', vishu: 'newyear', ugadi: 'newyear', pohela: 'newyear', puthandu: 'newyear', nepalinewyear: 'newyear', gudi: 'newyear', tilak: 'bond'})[m] || 'devotion';
 const DCOL = { light: { paper: ['#F8F1E3', '#F1E5CF'], ink: '#6E1631', gold: '#B68A33', accent: '#8E1E45', dark: false },
   arch: { paper: ['#9C1450', '#5E0C33'], ink: '#F3D58C', gold: '#E2B85C', accent: '#1F6E73', dark: true },
   mandala: { paper: ['#4A1B3D', '#2E0F27'], ink: '#F0CF83', gold: '#DDB15A', accent: '#E0607E', dark: true } };

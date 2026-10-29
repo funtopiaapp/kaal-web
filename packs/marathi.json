@@ -1390,7 +1390,7 @@
    "tier": "major",
    "holidayIn": [],
    "localNames": {},
-   "card": "pongal",
+   "card": "sugarcane",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -1476,6 +1476,10 @@
     "traditions": {
      "en": "Ganesha temples, the Ashtavinayaka shrines and Siddhivinayak among them, hold a festival with abhishekam and processions, and many homes and mandals bring an image for one or a few days. Sesame and jaggery modaks and laddoos are offered, so the day is also called Tilkund Chaturthi.",
      "mr": "अष्टविनायक, सिद्धिविनायक यांसह गणपती मंदिरांत अभिषेक आणि पालख्या होतात, आणि अनेक घरे व मंडळे एक किंवा काही दिवसांसाठी गणपती आणतात. तिळगुळाचे मोदक आणि लाडू नैवेद्य म्हणून दाखवले जातात, म्हणून या दिवसाला तिलकुंद चतुर्थी असेही म्हणतात."
+    },
+    "greeting": {
+     "en": "Ganpati Bappa Morya! Warm wishes on Maghi Ganesh Jayanti.",
+     "mr": "गणपती बाप्पा मोरया! माघी गणेश जयंतीच्या हार्दिक शुभेच्छा."
     }
    }
   },
@@ -1784,6 +1788,10 @@
     "traditions": {
      "en": "Where Holi itself is the bonfire night and Dhulivandan the day after, the play with colours in Maharashtra comes on Ranga Panchami: gulal and coloured water, music, and in Indore and other cities long processions (gair) spraying colour over the crowds.",
      "mr": "होळी म्हणजे होलिकादहनाची रात्र आणि धुलिवंदन दुसरा दिवस; महाराष्ट्रात रंग खेळणे रंगपंचमीला होते: गुलाल, रंगीत पाणी, संगीत, आणि इंदूरसारख्या शहरांत गर्दीवर रंग उडवत निघणाऱ्या गेरी मिरवणुका."
+    },
+    "greeting": {
+     "en": "Happy Ranga Panchami, a day bright with colour!",
+     "mr": "रंगांनी उजळलेल्या रंगपंचमीच्या हार्दिक शुभेच्छा!"
     }
    }
   },
@@ -1803,7 +1811,7 @@
     "IN-MH"
    ],
    "localNames": {},
-   "card": "newyear",
+   "card": "gudi",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -1836,6 +1844,10 @@
       "हळद-कुंकू, फुले वाहा आणि गुळासह कडुलिंबाची पाने खा.",
       "सूर्यास्तापूर्वी गुढी उतरवा."
      ]
+    },
+    "greeting": {
+     "en": "Happy Gudi Padwa! Warm wishes for the new year to you and your family.",
+     "mr": "गुढीपाडव्याच्या हार्दिक शुभेच्छा! तुम्हाला आणि तुमच्या कुटुंबाला नववर्षाच्या मंगलमय शुभेच्छा."
     }
    }
   },
@@ -2163,7 +2175,7 @@
     "IN-MH"
    ],
    "localNames": {},
-   "card": "vishnu",
+   "card": "footprints",
    "local": {},
    "durationDays": 1,
    "variations": [
@@ -2206,6 +2218,10 @@
       "जवळपास दिंडी किंवा मंदिराची मिरवणूक असेल तर तिच्यात सहभागी व्हा.",
       "दुसऱ्या दिवशी सकाळी द्वादशीच्या काळात उपवास सोडा."
      ]
+    },
+    "greeting": {
+     "en": "Warm Ashadhi Ekadashi wishes, to the chant of Vitthal's name!",
+     "mr": "विठुनामाच्या गजरात आषाढी एकादशीच्या हार्दिक शुभेच्छा!"
     }
    }
   },
@@ -2223,7 +2239,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "moon",
+   "card": "books",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2343,7 +2359,7 @@
    "tier": "major",
    "holidayIn": [],
    "localNames": {},
-   "card": "moon",
+   "card": "coconut",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2362,6 +2378,10 @@
     "traditions": {
      "en": "The Koli fishing community, and coastal Maharashtra with them, decorate their boats, carry a gilded coconut to the shore in procession with music and dance, and offer it to the sea, thanking it and marking the start of the new fishing season. Narali bhat, sweet coconut rice, is cooked at home. The same day is Raksha Bandhan.",
      "mr": "कोळी समाज आणि त्यांच्यासोबत किनारपट्टीवरील महाराष्ट्र होड्या सजवतो, सोनेरी कागदात मढवलेला नारळ वाजतगाजत मिरवणुकीने किनाऱ्यावर नेतो आणि समुद्राला अर्पण करतो, कृतज्ञता व्यक्त करत नवा मासेमारीचा हंगाम सुरू करतो. घरी नारळीभात केला जातो. याच दिवशी रक्षाबंधनही असते."
+    },
+    "greeting": {
+     "en": "Warm Narali Purnima wishes to you and everyone by the sea!",
+     "mr": "तुम्हाला आणि समुद्रकिनारी राहणाऱ्या सर्वांना नारळी पौर्णिमेच्या हार्दिक शुभेच्छा!"
     }
    }
   },
@@ -2509,7 +2529,7 @@
    "tier": "major",
    "holidayIn": [],
    "localNames": {},
-   "card": "krishna",
+   "card": "dahihandi",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2528,6 +2548,10 @@
     "traditions": {
      "en": "Recalling young Krishna and his friends stealing butter from pots hung out of reach, teams of govindas form human pyramids, sometimes many tiers high, to break a handi of curd, buttermilk and coins strung over the street, while crowds sing and splash water. At home and in temples, gopalkala, a dish of poha, curd, cucumber and pickle, is offered and shared.",
      "mr": "उंच टांगलेल्या मडक्यांतून लोणी चोरणाऱ्या बाळकृष्णाच्या आठवणीत गोविंदा पथके मानवी मनोरे रचून रस्त्यावर टांगलेली दही, ताक आणि नाणी असलेली हंडी फोडतात, तर गर्दी गाणी गाते आणि पाणी उडवते. घरी व मंदिरांत पोहे, दही, काकडी आणि लोणचे घालून केलेला गोपाळकाला नैवेद्य म्हणून दाखवून वाटला जातो."
+    },
+    "greeting": {
+     "en": "Govinda ala re! Warm Dahi Handi wishes to you and your family.",
+     "mr": "गोविंदा आला रे! तुम्हाला आणि तुमच्या कुटुंबाला दहीहंडीच्या हार्दिक शुभेच्छा."
     }
    }
   },
@@ -2545,7 +2569,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "pongal",
+   "card": "bull",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2564,6 +2588,10 @@
     "traditions": {
      "en": "The bullocks rest from work. They are bathed, their horns painted, their bodies decorated with colours, bells, garlands and embroidered cloths (jhul), and they are fed puran poli. In the afternoon they are led in procession through the village to the temple, and the farmer's family performs their aarti. Children in towns play with clay or wooden bullocks.",
      "mr": "बैलांना कामातून विश्रांती दिली जाते. त्यांना अंघोळ घालून शिंगे रंगवली जातात, अंगावर रंग, घुंगरमाळा, हार आणि झूल घातली जाते आणि पुरणपोळी खाऊ घातली जाते. दुपारी गावातून त्यांची मिरवणूक मंदिरापर्यंत निघते आणि शेतकऱ्याचे कुटुंब त्यांची आरती करते. शहरांत मुले मातीच्या किंवा लाकडी बैलांशी खेळतात."
+    },
+    "greeting": {
+     "en": "Warm Bail Pola wishes, a day to honour the bullocks who work beside us!",
+     "mr": "आपल्यासोबत राबणाऱ्या सर्जा-राजाच्या सन्मानाचा दिवस, बैलपोळ्याच्या हार्दिक शुभेच्छा!"
     }
    }
   },
@@ -2581,7 +2609,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "swing",
+   "card": "mehndi",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2711,7 +2739,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "lotus",
+   "card": "stars",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2770,7 +2798,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "swing",
+   "card": "footprints",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2789,6 +2817,10 @@
     "traditions": {
      "en": "Gauri comes for three days, welcomed on Anuradha, worshipped on Jyeshtha and bid farewell on Mula. Women carry her, often as two figures (Jyeshtha and Kanishtha), from the door to her seat, leaving kumkum footprints and naming each room as they pass. She is dressed in a saree and jewellery and seated beside Ganesha.",
      "mr": "गौरी तीन दिवसांसाठी येतात: अनुराधेवर आवाहन, ज्येष्ठेवर पूजन आणि मुळावर विसर्जन. स्त्रिया गौरींना, बहुधा ज्येष्ठा-कनिष्ठा अशा दोन रूपांत, दारापासून त्यांच्या आसनापर्यंत आणतात; कुंकवाची पावले उमटवतात आणि प्रत्येक खोली दाखवत जातात. त्यांना साडी, दागिने घालून गणपतीशेजारी बसवले जाते."
+    },
+    "greeting": {
+     "en": "Warm wishes as Gauri is welcomed home!",
+     "mr": "गौराई घरी आल्याच्या आनंदात हार्दिक शुभेच्छा!"
     }
    }
   },
@@ -2807,7 +2839,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "swing",
+   "card": "lakshmi",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2880,7 +2912,7 @@
    "tier": "major",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "shesha",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2941,7 +2973,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "water",
+   "card": "remembrance",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -2999,7 +3031,7 @@
    "tier": "major",
    "holidayIn": [],
    "localNames": {},
-   "card": "navratri",
+   "card": "kalash",
    "local": {
     "US": "In the United States, Navratri garba and dandiya nights fill community halls and convention centres, mostly on the weekends of the nine nights.",
     "GB": "In the United Kingdom, Navratri garba is held nightly at temples and halls, with the largest gatherings in Leicester and north-west London.",
@@ -3199,7 +3231,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "diya",
+   "card": "cow",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3218,6 +3250,10 @@
     "traditions": {
      "en": "In the evening women worship a cow and her calf with haldi-kunku, flowers and a lamp, and feed them bajra bhakri and gavar or other greens; many avoid wheat and milk products for the day out of regard for the cow. Lamps are lit for the first time that Diwali, and the season's first rangoli is drawn.",
      "mr": "संध्याकाळी स्त्रिया गाय-वासराची हळद-कुंकू, फुले आणि दिव्याने पूजा करतात आणि त्यांना बाजरीची भाकरी व गवारीची भाजी खाऊ घालतात; गाईच्या सन्मानार्थ अनेक जणी दिवसभर गहू आणि दूधजन्य पदार्थ टाळतात. दिवाळीचे पहिले दिवे लागतात आणि पहिली रांगोळी काढली जाते."
+    },
+    "greeting": {
+     "en": "Warm Vasu Baras wishes, honouring the cow and her calf as Diwali begins!",
+     "mr": "दिवाळीच्या प्रारंभी गाय-वासराच्या पूजनाच्या वसुबारसेच्या हार्दिक शुभेच्छा!"
     }
    }
   },
@@ -3389,7 +3425,7 @@
     "SR": "Divali",
     "MU": "Divali"
    },
-   "card": "diya",
+   "card": "footprints",
    "local": {
     "TT": "In Trinidad and Tobago, Divali is a public holiday. The Divali Nagar at Chaguanas runs for days before, and homes and yards are lit with deyas.",
     "GY": "In Guyana, Diwali is a public holiday, and the night before is lit by motorcades of illuminated floats.",
@@ -3483,7 +3519,7 @@
     "IN-MH"
    ],
    "localNames": {},
-   "card": "diya",
+   "card": "rangoli",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3542,7 +3578,7 @@
    "tier": "major",
    "holidayIn": [],
    "localNames": {},
-   "card": "rakhi",
+   "card": "tilak",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3658,7 +3694,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "moon",
+   "card": "diya",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3716,7 +3752,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "shiva",
+   "card": "trishul",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3775,7 +3811,7 @@
    "tier": "regional",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "cow",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3836,7 +3872,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lotus",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3895,7 +3931,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "conch",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -3954,7 +3990,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "kalash",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4013,7 +4049,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lotus",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4072,7 +4108,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "kalash",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4133,7 +4169,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lotus",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4192,7 +4228,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "tulsi",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4251,7 +4287,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "footprints",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4310,7 +4346,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "conch",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4369,7 +4405,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "shesha",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4428,7 +4464,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "remembrance",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4546,7 +4582,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lakshmi",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4605,7 +4641,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "tulsi",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4723,7 +4759,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "books",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4782,7 +4818,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "conch",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4841,7 +4877,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "footprints",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4900,7 +4936,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "diya",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -4959,7 +4995,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "conch",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -5018,7 +5054,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "rama",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -5077,7 +5113,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "tree",
    "local": {},
    "durationDays": 1,
    "variations": [],
@@ -5136,7 +5172,7 @@
    "tier": "minor",
    "holidayIn": [],
    "localNames": {},
-   "card": "vishnu",
+   "card": "lotus",
    "local": {},
    "durationDays": 1,
    "variations": [],
