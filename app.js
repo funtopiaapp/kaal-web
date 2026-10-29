@@ -1,7 +1,7 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610291755';
+import { engine, onRestart } from './engine.js?v=202610291844';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -25,7 +25,7 @@ const CULTURES = [
 ];
 const LIGHT = ['kaal', 'ivory', 'rose', 'sage'], DARK = ['kaal-dark', 'night', 'charcoal', 'peacock'];
 const TABS = [['home', 'hm.home'], ['today', 'tab.today'], ['calendar', 'tab.calendar'], ['festivals', 'tab.festivals'], ['muhurtham', 'tab.muhurtham'],
-  ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['match', 'mt.label'], ['greetings', 'gr.title'], ['guide', 'gd.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['prayers', 'py.title'], ['oldtime', 'ot.title'], ['people', 'pp.title'], ['settings', 'tab.settings']];
+  ['people', 'mn.profiles'], ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['match', 'mt.label'], ['greetings', 'gr.title'], ['guide', 'gd.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['prayers', 'py.title'], ['oldtime', 'ot.title'], ['settings', 'tab.settings']];
 
 // ---------------------------------------------------------------- state
 const saved = (() => { try { return JSON.parse(localStorage.getItem('kaal-web') || '{}'); } catch { return {}; } })();
@@ -88,8 +88,8 @@ const here = () => dayPlace || S.home;
 // Month and weekday names by language (from ICU). Browsers carry little or no date data for some
 // languages (Odia, Nepali), and fall back to English or "2026 M10 23"; Kaal fills in the names itself.
 const DATE_NAMES = {"ml": {"ml": ["ജനുവരി", "ഫെബ്രുവരി", "മാർച്ച്", "ഏപ്രിൽ", "മേയ്", "ജൂൺ", "ജൂലൈ", "ഓഗസ്റ്റ്", "സെപ്റ്റംബർ", "ഒക്‌ടോബർ", "നവംബർ", "ഡിസംബർ"], "ms": ["ജനു", "ഫെബ്രു", "മാർ", "ഏപ്രി", "മേയ്", "ജൂൺ", "ജൂലൈ", "ഓഗ", "സെപ്റ്റം", "ഒക്ടോ", "നവം", "ഡിസം"], "wl": ["ഞായറാഴ്‌ച", "തിങ്കളാഴ്‌ച", "ചൊവ്വാഴ്‌ച", "ബുധനാഴ്‌ച", "വ്യാഴാഴ്‌ച", "വെള്ളിയാഴ്‌ച", "ശനിയാഴ്‌ച"], "ws": ["ഞായർ", "തിങ്കൾ", "ചൊവ്വ", "ബുധൻ", "വ്യാഴം", "വെള്ളി", "ശനി"]}, "ta": {"ml": ["ஜனவரி", "பிப்ரவரி", "மார்ச்", "ஏப்ரல்", "மே", "ஜூன்", "ஜூலை", "ஆகஸ்ட்", "செப்டம்பர்", "அக்டோபர்", "நவம்பர்", "டிசம்பர்"], "ms": ["ஜன.", "பிப்.", "மார்.", "ஏப்.", "மே", "ஜூன்", "ஜூலை", "ஆக.", "செப்.", "அக்.", "நவ.", "டிச."], "wl": ["ஞாயிறு", "திங்கள்", "செவ்வாய்", "புதன்", "வியாழன்", "வெள்ளி", "சனி"], "ws": ["ஞாயி.", "திங்.", "செவ்.", "புத.", "வியா.", "வெள்.", "சனி"]}, "hi": {"ml": ["जनवरी", "फ़रवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितंबर", "अक्तूबर", "नवंबर", "दिसंबर"], "ms": ["जन॰", "फ़र॰", "मार्च", "अप्रैल", "मई", "जून", "जुल॰", "अग॰", "सित॰", "अक्तू॰", "नव॰", "दिस॰"], "wl": ["रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"], "ws": ["रवि", "सोम", "मंगल", "बुध", "गुरु", "शुक्र", "शनि"]}, "te": {"ml": ["జనవరి", "ఫిబ్రవరి", "మార్చి", "ఏప్రిల్", "మే", "జూన్", "జులై", "ఆగస్టు", "సెప్టెంబర్", "అక్టోబర్", "నవంబర్", "డిసెంబర్"], "ms": ["జన", "ఫిబ్ర", "మార్చి", "ఏప్రి", "మే", "జూన్", "జులై", "ఆగ", "సెప్టెం", "అక్టో", "నవం", "డిసెం"], "wl": ["ఆదివారం", "సోమవారం", "మంగళవారం", "బుధవారం", "గురువారం", "శుక్రవారం", "శనివారం"], "ws": ["ఆది", "సోమ", "మంగళ", "బుధ", "గురు", "శుక్ర", "శని"]}, "kn": {"ml": ["ಜನವರಿ", "ಫೆಬ್ರವರಿ", "ಮಾರ್ಚ್", "ಏಪ್ರಿಲ್", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗಸ್ಟ್", "ಸೆಪ್ಟೆಂಬರ್", "ಅಕ್ಟೋಬರ್", "ನವೆಂಬರ್", "ಡಿಸೆಂಬರ್"], "ms": ["ಜನ", "ಫೆಬ್ರ", "ಮಾರ್ಚ್", "ಏಪ್ರಿ", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗ", "ಸೆಪ್ಟೆಂ", "ಅಕ್ಟೋ", "ನವೆಂ", "ಡಿಸೆಂ"], "wl": ["ಭಾನುವಾರ", "ಸೋಮವಾರ", "ಮಂಗಳವಾರ", "ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"], "ws": ["ಭಾನು", "ಸೋಮ", "ಮಂಗಳ", "ಬುಧ", "ಗುರು", "ಶುಕ್ರ", "ಶನಿ"]}, "gu": {"ml": ["જાન્યુઆરી", "ફેબ્રુઆરી", "માર્ચ", "એપ્રિલ", "મે", "જૂન", "જુલાઈ", "ઑગસ્ટ", "સપ્ટેમ્બર", "ઑક્ટોબર", "નવેમ્બર", "ડિસેમ્બર"], "ms": ["જાન્યુ", "ફેબ્રુ", "માર્ચ", "એપ્રિલ", "મે", "જૂન", "જુલાઈ", "ઑગસ્ટ", "સપ્ટે", "ઑક્ટો", "નવે", "ડિસે"], "wl": ["રવિવાર", "સોમવાર", "મંગળવાર", "બુધવાર", "ગુરુવાર", "શુક્રવાર", "શનિવાર"], "ws": ["રવિ", "સોમ", "મંગળ", "બુધ", "ગુરુ", "શુક્ર", "શનિ"]}, "mr": {"ml": ["जानेवारी", "फेब्रुवारी", "मार्च", "एप्रिल", "मे", "जून", "जुलै", "ऑगस्ट", "सप्टेंबर", "ऑक्टोबर", "नोव्हेंबर", "डिसेंबर"], "ms": ["जाने", "फेब्रु", "मार्च", "एप्रि", "मे", "जून", "जुलै", "ऑग", "सप्टें", "ऑक्टो", "नोव्हें", "डिसें"], "wl": ["रविवार", "सोमवार", "मंगळवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"], "ws": ["रवि", "सोम", "मंगळ", "बुध", "गुरु", "शुक्र", "शनि"]}, "bn": {"ml": ["জানুয়ারী", "ফেব্রুয়ারী", "মার্চ", "এপ্রিল", "মে", "জুন", "জুলাই", "আগস্ট", "সেপ্টেম্বর", "অক্টোবর", "নভেম্বর", "ডিসেম্বর"], "ms": ["জানু", "ফেব", "মার্চ", "এপ্রিল", "মে", "জুন", "জুলাই", "আগস্ট", "সেপ্টেঃ", "অক্টোঃ", "নভেঃ", "ডিসেঃ"], "wl": ["রবিবার", "সোমবার", "মঙ্গলবার", "বুধবার", "বৃহস্পতিবার", "শুক্রবার", "শনিবার"], "ws": ["রবি", "সোম", "মঙ্গল", "বুধ", "বৃহস্পতি", "শুক্র", "শনি"]}, "or": {"ml": ["ଜାନୁଆରୀ", "ଫେବୃଆରୀ", "ମାର୍ଚ୍ଚ", "ଅପ୍ରେଲ", "ମଇ", "ଜୁନ", "ଜୁଲାଇ", "ଅଗଷ୍ଟ", "ସେପ୍ଟେମ୍ବର", "ଅକ୍ଟୋବର", "ନଭେମ୍ବର", "ଡିସେମ୍ବର"], "ms": ["ଜାନୁଆରୀ", "ଫେବୃଆରୀ", "ମାର୍ଚ୍ଚ", "ଅପ୍ରେଲ", "ମଇ", "ଜୁନ", "ଜୁଲାଇ", "ଅଗଷ୍ଟ", "ସେପ୍ଟେମ୍ବର", "ଅକ୍ଟୋବର", "ନଭେମ୍ବର", "ଡିସେମ୍ବର"], "wl": ["ରବିବାର", "ସୋମବାର", "ମଙ୍ଗଳବାର", "ବୁଧବାର", "ଗୁରୁବାର", "ଶୁକ୍ରବାର", "ଶନିବାର"], "ws": ["ରବି", "ସୋମ", "ମଙ୍ଗଳ", "ବୁଧ", "ଗୁରୁ", "ଶୁକ୍ର", "ଶନି"]}, "ne": {"ml": ["जनवरी", "फेब्रुअरी", "मार्च", "अप्रिल", "मे", "जुन", "जुलाई", "अगस्ट", "सेप्टेम्बर", "अक्टोबर", "नोभेम्बर", "डिसेम्बर"], "ms": ["जनवरी", "फेब्रुअरी", "मार्च", "अप्रिल", "मे", "जुन", "जुलाई", "अगस्ट", "सेप्टेम्बर", "अक्टोबर", "नोभेम्बर", "डिसेम्बर"], "wl": ["आइतबार", "सोमबार", "मङ्गलबार", "बुधबार", "बिहिबार", "शुक्रबार", "शनिबार"], "ws": ["आइत", "सोम", "मङ्गल", "बुध", "बिहि", "शुक्र", "शनि"]}};
-function dtf(opts) {
-  const f = new Intl.DateTimeFormat(locale(), opts), L = lang(), N = DATE_NAMES[L];
+function dtf(opts, L = lang()) {
+  const f = new Intl.DateTimeFormat(L === 'en' ? 'en-IN' : `${L}-IN`, opts), N = DATE_NAMES[L];
   if (!N) return f;
   const num = (d, o) => +new Intl.DateTimeFormat('en-US', { ...o, timeZone: opts.timeZone }).format(d);
   const wd = d => ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(new Intl.DateTimeFormat('en-US', { weekday: 'short', timeZone: opts.timeZone }).format(d));
@@ -206,15 +206,16 @@ const langName = code => LANG_NAMES[code] || code;
 function shell() {
   const c = CULTURES.find(c => c.id === S.culture);
   // The tradition in the language the app is in.
-  $('#badge').textContent = c ? `☀ ${S.native ? c.native : c.en} ▾` : '';
+  // What the pill is, small above what is chosen.
+  $('#badge').innerHTML = c ? `<span class="bdgcap">${esc(t('s.tradition'))}</span><span>☀ ${esc(S.native ? c.native : c.en)} ▾</span>` : '';
   // The tradition, switched where you are: a sheet of all fifteen, not a trip to Settings.
   $('#badge').onclick = () => {
-    const o = sheet(`<h2 class="serif">${esc(t('s.tradition'))}</h2><div class="chips">${CULTURES.map(x => `<button class="chip ${S.culture === x.id ? 'on' : ''}" data-tc="${x.id}">${x.native}<br><small>${x.en}</small></button>`).join('')}</div>`);
+    const o = sheet(`<h2 class="serif">${esc(t('s.tradition'))}</h2><p class="small muted">${esc(t('s.traditionWhat'))}</p><div class="chips">${CULTURES.map(x => `<button class="chip ${S.culture === x.id ? 'on' : ''}" data-tc="${x.id}">${x.native}<br><small>${x.en}</small></button>`).join('')}</div>`);
     o.querySelectorAll('[data-tc]').forEach(b => b.onclick = async () => { o.remove(); if (b.dataset.tc === S.culture) return; S.culture = b.dataset.tc; save(); await loadPack(); await resetCalendars(); render(); });
   };
   infoButton();
   // English or the tradition's language, beside the tradition picker.
-  if (pack) { $('#langbadge').textContent = `🗣 ${S.native ? langName(pack.language) : 'English'} ▾`; $('#langbadge').onclick = () => { S.native = !S.native; save(); render(); }; }
+  if (pack) { $('#langbadge').innerHTML = `<span class="bdgcap">${esc(t('s.language'))}</span><span>🗣 ${esc(S.native ? langName(pack.language) : 'English')} ▾</span>`; $('#langbadge').onclick = () => { S.native = !S.native; save(); render(); }; }
   const house = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>';
   // The daily five one tap away; everything else under More.
   const DAILY = ['home', 'today', 'calendar', 'festivals', 'muhurtham'], rest = TABS.filter(([id]) => !DAILY.includes(id) && (id !== 'match' || matchingAvailable()));
@@ -2260,14 +2261,337 @@ const PALETTES = [
   ['#4A1942', '#2B0F2A', '#fff', '#F2B6D0', '#F6D6E6'], ['#FAF6EF', '#F1E7D6', '#2B2420', '#B5523B', '#C9814F']];
 const cardPalette = m => ({ diya: 0, shiva: 0, moon: 0, ayyappa: 0, bonfire: 0, vishnu: 0, pongal: 1, ganesha: 1, murugan: 1, rakhi: 1, swing: 1, chariot: 1, hanuman: 1,
   pookalam: 2, sun: 2, lakshmi: 2, pooram: 2, kite: 2, holi: 3, krishna: 3, newyear: 3, water: 3, boat: 3, tree: 3, tulsi: 3, naga: 3 , kali: 0, remembrance: 0, stars: 0, floatinglamps: 0, om: 0, trishul: 0, mountain: 0, bell: 0, shesha: 0, gate: 0, cow: 1, bull: 1, dhak: 1, gudi: 1, dahihandi: 1, tilak: 1, bathukamma: 1, aarti: 1, durga: 2, sugarcane: 2, harvest: 2, mango: 2, vishu: 2, ugadi: 2, pohela: 2, puthandu: 2, elephant: 2, footprints: 2, kalash: 2, toran: 2, rangoli: 2, conch: 3, swan: 3, jagannath: 3, ganga: 3, coconut: 3, peacock: 3, kolam: 3, alpana: 3, nepalinewyear: 3, bodhi: 3, garland: 3, mehndi: 3, crow: 3, dog: 3, govardhan: 3, books: 3, tools: 3, axe: 3})[m] ?? 4;
+// The Greetings home, as on iOS (GreetingsHome): the next festival's card ready to make, the coming
+// festivals on a shelf, the family's birthdays and star birthdays, life's occasions, and a style from every region.
+// English for the redesign's text until the build carries every language (the keys are shared with iOS and Android).
+const GX_EN = {
+  "gx.title": "Greetings", "gx.tagline": "Every festival · every occasion · every region", "gx.next": "In %@", "gx.make": "Make the card",
+  "gx.coming": "Coming festivals", "gx.family": "For your family", "gx.occasions": "Occasions", "gx.styles": "Styles from every region",
+  "gx.card": "Card", "gx.style": "Style", "gx.moving": "Moving", "gx.still": "Still", "gx.send": "Send", "gx.save": "Save", "gx.bday": "%@'s birthday",
+  "gx.starBday": "%@'s star birthday", "occ.birthday.name": "Birthday", "occ.birthday.title": "Happy Birthday",
+  "occ.birthday.line": "Wishing you a joyful year ahead, with good health and happiness.", "occ.birthday.lineTo": "Happy birthday, %@!",
+  "occ.starBirthday.name": "Star birthday", "occ.starBirthday.title": "Happy Star Birthday",
+  "occ.starBirthday.line": "On your birth star, wishing you blessings, good health and joy.", "occ.starBirthday.lineTo": "Happy star birthday, %@!",
+  "occ.anniversary.name": "Anniversary", "occ.anniversary.title": "Happy Anniversary",
+  "occ.anniversary.line": "Wishing you both many more years of love and togetherness.", "occ.anniversary.lineTo": "Happy anniversary, %@!",
+  "occ.grihaPravesh.name": "Griha pravesh", "occ.grihaPravesh.title": "Griha Pravesh",
+  "occ.grihaPravesh.line": "Wishing you joy, peace and togetherness in your new home.", "occ.newBaby.name": "New baby",
+  "occ.newBaby.title": "Welcome, Little One", "occ.newBaby.line": "Congratulations on the little one! Wishing the baby a lifetime of love.",
+  "occ.naming.name": "Naming day", "occ.naming.title": "Naming Ceremony", "occ.naming.line": "Blessings to the little one on this naming day.",
+  "occ.upanayanam.name": "Upanayanam", "occ.upanayanam.title": "Upanayanam", "occ.upanayanam.line": "Warm wishes on the sacred thread ceremony.",
+  "occ.firstLessons.name": "First lessons", "occ.firstLessons.title": "First Lessons",
+  "occ.firstLessons.line": "Wishing a bright start to a lifetime of learning.", "occ.sixtieth.name": "Sixtieth",
+  "occ.sixtieth.title": "Happy Sixtieth", "occ.sixtieth.line": "Sixty years well lived: wishing you joy and good health in the years ahead.",
+  "occ.sixtieth.lineTo": "Happy sixtieth, %@!", "occ.wedding.name": "Wedding", "occ.wedding.title": "Wedding Wishes",
+  "occ.wedding.line": "Wishing you both a lifetime of love, understanding and joy.", "occ.thanks.name": "Thank you", "occ.thanks.title": "Thank You",
+  "occ.thanks.line": "With heartfelt thanks for your kindness.", "occ.memory.name": "In memory", "occ.memory.title": "In Loving Memory",
+  "occ.memory.line": "Remembering with love.", "st.kasavu.name": "Kasavu", "st.kasavu.region": "Kerala", "st.kolam.name": "Kolam",
+  "st.kolam.region": "Tamil Nadu", "st.alpana.name": "Alpana", "st.alpana.region": "Bengal", "st.pattachitra.name": "Pattachitra",
+  "st.pattachitra.region": "Odisha", "st.warli.name": "Warli", "st.warli.region": "Maharashtra", "st.bandhani.name": "Bandhani",
+  "st.bandhani.region": "Gujarat", "st.dhaka.name": "Dhaka", "st.dhaka.region": "Nepal", "st.madhubani.name": "Madhubani",
+  "st.madhubani.region": "Bihar", "st.kalamkari.name": "Kalamkari", "st.kalamkari.region": "Andhra and Telangana", "st.mysuru.name": "Mysuru gold",
+  "st.mysuru.region": "Karnataka", "st.phulkari.name": "Phulkari", "st.phulkari.region": "Punjab and the north", "st.island.name": "Island",
+  "st.island.region": "The diaspora"
+};
+// The text in a language, the English above when the strings do not have it yet.
+const gxIn = (L, key, ...args) => STR[key] ? tIn(L, key, ...args) : GX_EN[key] ? GX_EN[key].replace('%@', String(args[0] ?? '')) : key;
+const gx = (key, ...args) => gxIn(lang(), key, ...args);
+// Life's occasions: [id, motif, palette, design, icon, tint, soft]. "memory" is a quiet remembrance: still, never "happy".
+const GX_ICON = {
+  diya: 'M3 13c0 3.5 4 6 9 6s9-2.5 9-6H3z M12 3.5c1.6 2 2.2 3.5 2.2 4.8a2.2 2.2 0 0 1-4.4 0c0-1.3.6-2.8 2.2-4.8z',
+  cake: 'M4 21h16 M5 21v-7h14v7 M5 16c2 1.5 4 1.5 7 0s5-1.5 7 0 M12 14V9 M12 6.5c.8-1 .8-2 0-3-.8 1-.8 2 0 3z',
+  star: 'M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z',
+  rings: 'M9 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12z M15 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12z',
+  house: 'M3 11l9-7 9 7 M5 10v10h14V10 M10 20v-6h4v6',
+  baby: 'M12 4a3 3 0 1 0 0 6 3 3 0 0 0 0-6z M6 21c0-4 2.7-7 6-7s6 3 6 7 M9 7h.01 M15 7h.01',
+  thread: 'M4 20c4-4 12-12 16-16 M7 20c3-3 10-10 13-13 M4 17c3-3 10-10 13-13',
+  book: 'M4 5c3-1 5-1 8 1 3-2 5-2 8-1v14c-3-1-5-1-8 1-3-2-5-2-8-1z M12 6v14',
+  sixty: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z M12 7v5l3 3 M3 12h2 M19 12h2',
+  heart: 'M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z',
+  thanks: 'M7 11V20 M7 11l4-7a2 2 0 0 1 3 2l-1 4h5a2 2 0 0 1 2 2.3l-1.2 6A2 2 0 0 1 16.8 20H7 M3 11h4v9H3z',
+  leaf: 'M5 19c0-8 6-14 14-14 0 8-6 14-14 14z M5 19l8-8',
+};
+const OCC_LIST = [['birthday', 'garland', 1, 'classic', 'cake', '#B5523B', '#FBEDE7'], ['starBirthday', 'stars', 0, 'classic', 'star', '#8F6510', '#FBF1DC'],
+  ['anniversary', 'rings', 4, 'heritage', 'rings', '#7A2335', '#F7E6E9'], ['grihaPravesh', 'kalash', 2, 'classic', 'house', '#0F5A4A', '#E6F1EC'],
+  ['newBaby', 'cradle', 1, 'botanical', 'baby', '#B5523B', '#FBEDE7'], ['naming', 'tulsi', 3, 'botanical', 'leaf', '#0F5A4A', '#E6F1EC'],
+  ['upanayanam', 'thread', 2, 'arch', 'thread', '#8F6510', '#FBF1DC'], ['firstLessons', 'books', 3, 'classic', 'book', '#2E4A6B', '#E4EAF2'],
+  ['sixtieth', 'kalash', 2, 'heritage', 'sixty', '#8F6510', '#FBF1DC'], ['wedding', 'mandap', 4, 'mandala', 'heart', '#7A2335', '#F7E6E9'],
+  ['thanks', 'lotus', 3, 'botanical', 'thanks', '#2E4A6B', '#E4EAF2'], ['memory', 'remembrance', 5, 'classic', 'diya', '#5E534B', '#F3EDE3']];
+const OCC = Object.fromEntries(OCC_LIST.map(([id, motif, p, design, icon, tint, soft]) => [id, { id, motif, p, design, icon, tint, soft }]));
+const OCC_LINE_TO = ['birthday', 'starBirthday', 'anniversary', 'sixtieth'];
+// New motifs (rings, cradle, thread, mandap) are being drawn: until a card's art is there, the garland stands in.
+const MOTIF_MISSING = new Set();
+let motifsProbed = null;
+const probeMotifs = () => motifsProbed ||= Promise.all(['rings', 'cradle', 'thread', 'mandap'].map(m =>
+  fetch(`cards/${m}.svg`, { method: 'HEAD' }).then(r => { if (!r.ok) MOTIF_MISSING.add(m); }).catch(() => MOTIF_MISSING.add(m))));
+const motifOf = f => { const m = f.card || 'lotus'; return MOTIF_MISSING.has(m) ? 'garland' : m; };
+// An occasion as a card the maker can draw: its motif, no festival names; the words come from occ.<id>.*.
+const occFest = id => ({ id: 'occ-' + id, occ: id, card: OCC[id].motif, names: {}, content: {} });
+// The regional style from the user's tradition, else the card's own design.
+const REGION_STYLE = { malayalam: 'kasavu', tamil: 'kolam', 'sri-lankan-tamil': 'kolam', 'malaysian-tamil': 'kolam', 'south-african-tamil': 'kolam', bengali: 'alpana', odia: 'pattachitra',
+  marathi: 'warli', gujarati: 'bandhani', nepali: 'dhaka', telugu: 'kalamkari', kannada: 'mysuru', caribbean: 'island', fijian: 'island', mauritian: 'island' };
+function suggestedStyle(f) {
+  const own = f.occ ? OCC[f.occ].design : suggestedDesign(f.card);
+  if (f.occ === 'memory') return own;
+  if (S.culture === 'north-indian') {
+    const en = (f.names?.en || '').toLowerCase();
+    if (/lohri|baisakhi|vaisakhi/.test(f.id) || /lohri|baisakhi|vaisakhi/.test(en)) return 'phulkari';
+    if (/chhath/.test(f.id)) return 'madhubani';
+    return own;
+  }
+  return REGION_STYLE[S.culture] || own;
+}
+
 async function viewGreetings() {
   loading();
-  const list = (await upcoming(today(), 180)).filter(x => x.f.tier !== 'minor');
+  const d = today();
+  await probeMotifs();
+  const list = (await upcoming(d, 180)).filter(x => x.f.tier !== 'minor');
+  // The family's next birthday or star birthday within sixty days, one row each.
+  const fam = [];
+  const nextCal = s => { if (!s || s.length < 10) return ''; const y = +d.slice(0, 4); let x = `${y}${s.slice(4, 10)}`; if (x < d) x = `${y + 1}${s.slice(4, 10)}`; return x; };
+  for (const p of S.people) {
+    if (p.kind === 'remembrance') continue;
+    const evs = [];
+    const b = nextCal(p.date);
+    if (b && daysBetween(d, b) <= 60) evs.push({ kind: 'birthday', date: b });
+    if (p.anchor) for (const y of [+d.slice(0, 4), +d.slice(0, 4) + 1]) {
+      const ds = await engine({ op: 'personalDates', handle: await cal(y), anchor: p.anchor, kind: 'birthday', basis: p.basis }).catch(() => []);
+      const n = ds.find(s => s >= d && s <= addDays(d, 60)); if (n) { evs.push({ kind: 'starBirthday', date: n }); break; }
+    }
+    evs.sort((a, b) => a.date < b.date ? -1 : 1);
+    if (evs[0]) fam.push({ p, ...evs[0] });
+  }
+  fam.sort((a, b) => a.date < b.date ? -1 : 1);
   if (tab !== 'greetings') return;
-  $('#main').innerHTML = `<h2 class="serif" style="margin:0">${esc(t('gr.title'))}</h2><p class="muted">${esc(t('gr.pick'))}</p>
-    <div class="card">${list.map((x, i) => `<div class="list-row" data-g="${i}" style="cursor:pointer"><span class="cardthumb" style="${cardBg(x.f.card, cardPalette(x.f.card))}"><i style="${cardArt(x.f.card, cardPalette(x.f.card))}"></i></span>
-      <div class="grow"><b>${esc(fname(x.f))}</b><div class="small muted">${esc(greg(x.date, { day: 'numeric', month: 'short', year: 'numeric' }))}</div></div><span>✉︎</span></div>`).join('')}</div>`;
-  $('#main').querySelectorAll('[data-g]').forEach(r => r.onclick = () => cardMaker(list[+r.dataset.g].f, list[+r.dataset.g].date));
+  const when = s => { const n = daysBetween(d, s); return n === 0 ? t('day.today') : n === 1 ? t('day.tomorrow') : t('day.inDays', n); };
+  const hero = list[0], rest = list.slice(1, 16);
+  const thumb = (f, cls) => { const m = motifOf(f), p = cardPalette(m); return `<span class="${cls}" style="${cardBg(m, p)};color:${PALETTES[p][2]}"><i style="${cardArt(m, p)}"></i><b>${esc(fname(f))}</b></span>`; };
+  const native = f => { const n = f.names[pack.language]; return n && n !== fname(f) ? n : ''; };
+  const heroHtml = hero ? (() => { const m = motifOf(hero.f), P = PALETTES[cardPalette(m)];
+    return `<button class="gx-hero rise" data-gh style="background:linear-gradient(160deg,${P[1]},${P[0]});color:${P[2]}">
+      ${thumb(hero.f, 'gx-float')}
+      <span class="gx-herotext"><span class="gx-when" style="color:${P[3]}">${esc(when(hero.date))}</span><span class="serif gx-heroname">${esc(fname(hero.f))}</span>
+      ${native(hero.f) ? `<span class="gx-heronat">${esc(native(hero.f))}</span>` : ''}<span class="gx-make" style="background:${P[3]};color:${P[0]}">${esc(gx('gx.make'))}</span></span></button>`; })() : '';
+  const short = s => greg(s, { weekday: 'long', day: 'numeric', month: 'long' });
+  const famRow = (x, i) => { const o = OCC[x.kind], star = x.kind === 'starBirthday' && x.p.anchor?.nakshatra ? name('nakshatras', x.p.anchor.nakshatra) + ' · ' : '';
+    return `<div class="gx-fam rise" style="--i:${i + 2}"><span class="gx-av" style="background:${o.soft};color:${o.tint}">${esc((x.p.name || '?').trim().charAt(0).toUpperCase())}</span>
+      <span class="grow"><b class="serif">${esc(gx(x.kind === 'birthday' ? 'gx.bday' : 'gx.starBday', x.p.name))}</b><span class="small muted">${esc(star + short(x.date))} · ${esc(when(x.date))}</span></span>
+      <button class="gx-cardbtn" data-gf="${i}" style="background:${o.tint}">${esc(gx('gx.card'))}</button></div>`; };
+  const styleTile = (id, i) => { const m = hero ? motifOf(hero.f) : 'lotus';
+    return `<button class="gx-sty rise" data-gs="${id}" style="--i:${i}">${styleThumb(id, m, 'gx-stythumb')}<b>${esc(gx(`st.${id}.name`))}</b><span class="small muted">${esc(gx(`st.${id}.region`))}</span></button>`; };
+  $('#main').innerHTML = `<div class="gx">
+    <div class="gx-head"><span class="small muted">${esc(gx('gx.tagline'))}</span><h2 class="serif">${esc(gx('gx.title'))}</h2></div>
+    ${heroHtml}
+    ${rest.length ? `<section><h3 class="serif gx-h">${esc(gx('gx.coming'))}</h3><div class="gx-shelf">${rest.map((x, i) => `<button class="gx-fest rise" data-gc="${i}" style="--i:${i}">${thumb(x.f, 'gx-thumb')}<span class="small muted">${esc(when(x.date))}</span></button>`).join('')}</div></section>` : ''}
+    ${fam.length ? `<section><h3 class="serif gx-h">${esc(gx('gx.family'))}</h3>${fam.map(famRow).join('')}</section>` : ''}
+    <section><h3 class="serif gx-h">${esc(gx('gx.occasions'))}</h3><div class="gx-occ">${OCC_LIST.map(([id], i) => { const o = OCC[id];
+      return `<button class="gx-o rise" data-go="${id}" style="--i:${i}"><span class="gx-oi" style="background:${o.soft};color:${o.tint}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${GX_ICON[o.icon]}"/></svg></span><span>${esc(gx(`occ.${id}.name`))}</span></button>`; }).join('')}</div></section>
+    <section><h3 class="serif gx-h">${esc(gx('gx.styles'))}</h3><div class="gx-shelf">${REGIONAL.map(styleTile).join('')}</div></section></div>`;
+  const m = $('#main');
+  m.querySelector('[data-gh]')?.addEventListener('click', () => cardMaker(hero.f, hero.date));
+  m.querySelectorAll('[data-gc]').forEach(b => b.onclick = () => cardMaker(rest[+b.dataset.gc].f, rest[+b.dataset.gc].date));
+  m.querySelectorAll('[data-gf]').forEach(b => b.onclick = () => { const x = fam[+b.dataset.gf];
+    // A birthday that is the sixtieth gets the sixtieth's card.
+    const sixty = x.kind === 'birthday' && x.p.date && +x.date.slice(0, 4) - +x.p.date.slice(0, 4) === 60;
+    cardMaker(occFest(sixty ? 'sixtieth' : x.kind), x.date, { to: x.p.name }); });
+  m.querySelectorAll('[data-go]').forEach(b => b.onclick = () => cardMaker(occFest(b.dataset.go), null));
+  m.querySelectorAll('[data-gs]').forEach(b => b.onclick = () => hero ? cardMaker(hero.f, hero.date, { style: b.dataset.gs }) : cardMaker(occFest('thanks'), null, { style: b.dataset.gs }));
+}
+// The twelve regional styles, as on iOS (RegionalCardStyles): each drawn in code on a 200 x 250 card, its folk
+// art's patterns, borders and colours; the card's motif in the middle tinted to the style's ink, then the words.
+// art: [x, y, size] of the motif; box: [left, top, right, bottom] the words stand in; mark: [right, baseline] of
+// the Eka signature; mo: the motion's light and accent.
+const REGIONAL = ['kasavu', 'kolam', 'alpana', 'pattachitra', 'warli', 'bandhani', 'dhaka', 'madhubani', 'kalamkari', 'mysuru', 'phulkari', 'island'];
+const RS = {
+  kasavu: { bg: '#F8F1E0', edge: '#C9A243', ink: '#6B4A12', accent: '#9A7424', tint: ['#8C5A12', '#C9A243'], art: [100, 70, 82], box: [18, 120, 182, 196], mark: [14, 240], mo: ['#C9A243', '#E9A23B'] },
+  kolam: { bg: '#9C3D22', edge: '#FFF6E8', ink: '#FFF6E8', accent: '#F2C94C', tint: ['#FFF6E8', '#F2C94C'], art: [100, 74, 50], box: [16, 132, 184, 224], mark: [14, 246], mo: ['#FFF6E8', '#F2C94C'] },
+  alpana: { bg: '#B3172B', edge: '#FFFFFF', ink: '#FFFFFF', accent: '#FFD9A0', tint: ['#FFFFFF', '#FFD9A0'], art: [100, 76, 50], box: [16, 144, 184, 220], mark: [14, 247], mo: ['#FFFFFF', '#FFD9A0'] },
+  pattachitra: { bg: '#E2AE4C', edge: '#1E1A16', ink: '#1E1A16', accent: '#A3261B', tint: ['#1E1A16', '#A3261B'], art: [100, 76, 76], box: [28, 126, 172, 222], mark: [28, 228], mo: ['#FFF3D6', '#A3261B'] },
+  warli: { bg: '#7A4A2A', edge: '#FFF3E2', ink: '#FFF3E2', accent: '#F2C94C', tint: ['#FFF3E2', '#F2C94C'], art: [100, 76, 52], box: [16, 146, 184, 232], mark: [14, 243], mo: ['#FFF3E2', '#F2C94C'] },
+  bandhani: { bg: '#A3195B', edge: '#F2C94C', ink: '#FFE7F1', accent: '#F2C94C', tint: ['#FFE7F1', '#F2C94C'], art: [100, 72, 54], box: [36, 108, 164, 198], mark: [14, 246], mo: ['#FFE7F1', '#F2C94C'] },
+  dhaka: { bg: '#8E1B1B', edge: '#1E1A16', ink: '#1E1A16', accent: '#8E1B1B', tint: ['#8E1B1B', '#1E1A16'], art: [100, 82, 56], box: [28, 116, 172, 194], mark: [30, 196], mo: ['#F6EEDF', '#8E1B1B'] },
+  madhubani: { bg: '#FBF1DC', edge: '#C0392B', ink: '#1E1A16', accent: '#C0392B', tint: ['#1E1A16', '#1E1A16'], art: [100, 70, 44], box: [22, 114, 178, 204], mark: [20, 236], mo: ['#F2A33A', '#C0392B'] },
+  kalamkari: { bg: '#F3E6CF', edge: '#8B3A1E', ink: '#2F3E5C', accent: '#8B3A1E', tint: ['#8B3A1E', '#2F3E5C'], art: [100, 80, 54], box: [18, 124, 182, 204], mark: [14, 213], mo: ['#D9A04A', '#8B3A1E'] },
+  mysuru: { bg: '#0E3A2C', edge: '#D9B25C', ink: '#F3DFA8', accent: '#D9B25C', tint: ['#F3DFA8', '#D9B25C'], art: [100, 80, 62], box: [26, 128, 174, 218], mark: [24, 228], mo: ['#F3DFA8', '#D9B25C'] },
+  phulkari: { bg: '#C2410C', edge: '#F59E0B', ink: '#FEF3C7', accent: '#FCD34D', tint: ['#FEF3C7', '#FCD34D'], art: [100, 78, 56], box: [30, 120, 170, 202], mark: [26, 210], mo: ['#FEF3C7', '#FCD34D'] },
+  island: { bg: '#0E7C86', edge: '#FDE68A', ink: '#FFFFFF', accent: '#FDE68A', tint: ['#FFFFFF', '#FDE68A'], art: [100, 82, 62], box: [16, 130, 184, 206], mark: [14, 244], mo: ['#FFFFFF', '#FDE68A'] },
+};
+const isRegional = d => !!RS[d];
+// The style's patterns and borders as an SVG (no words, no motif): used as the card's ground in the maker,
+// the shared image and the thumbnails alike.
+function styleSVG(id) {
+  const R = [];
+  const put = s => R.push(s);
+  const rep = (n, fn) => Array.from({ length: n }, (_, i) => fn(i)).join('');
+  let defs = '';
+  switch (id) {
+    case 'kasavu':
+      put(`<rect width="200" height="250" fill="#F8F1E0"/><rect width="200" height="13" fill="#C9A243"/><rect y="15.5" width="200" height="1.4" fill="#C9A243"/>`);
+      put(`<rect y="206" width="200" height="13" fill="#C9A243"/><rect y="222.5" width="200" height="4" fill="#C9A243"/>`);
+      // The zari's small temple-points along the bands.
+      put(`<g fill="#C9A243">${rep(25, i => `<path d="M${i * 8} 17 l4 4 l4 -4z"/><path d="M${i * 8} 206 l4 -4 l4 4z"/>`)}</g>`);
+      put(`<circle cx="100" cy="70" r="47" fill="none" stroke="#C9A243" stroke-width=".8" opacity=".55"/>`);
+      break;
+    case 'kolam': {
+      put(`<rect width="200" height="250" fill="#9C3D22"/>`);
+      const dots = [];
+      for (const i of [-1, 0, 1]) for (const j of [-1, 0, 1]) if (i || j) dots.push(`<circle cx="${100 + 32 * i}" cy="${74 + 32 * j}" r="2.6"/>`);
+      put(`<g fill="#FFF6E8" opacity=".9">${dots.join('')}</g>`);
+      put(`<g fill="none" stroke="#FFF6E8" stroke-width="2" stroke-linecap="round" opacity=".9"><path d="M68 42 Q100 8 132 42 Q166 74 132 106 Q100 140 68 106 Q34 74 68 42Z"/>
+        <path d="M100 32 C108 37 108 47 100 50 C92 47 92 37 100 32Z M100 116 C92 111 92 101 100 98 C108 101 108 111 100 116Z M58 74 C63 66 73 66 76 74 C73 82 63 82 58 74Z M142 74 C137 82 127 82 124 74 C127 66 137 66 142 74Z"/></g>`);
+      // Small dot grids with their loops in the top corners.
+      for (const [cx, cy] of [[22, 22], [178, 22]]) put(`<g fill="#FFF6E8" opacity=".75">${rep(9, k => `<circle cx="${cx + 8 * (k % 3 - 1)}" cy="${cy + 8 * (Math.floor(k / 3) - 1)}" r="1.2"/>`)}</g><path d="M${cx - 8} ${cy - 12} Q${cx} ${cy - 20} ${cx + 8} ${cy - 12} Q${cx + 20} ${cy} ${cx + 8} ${cy + 12} Q${cx} ${cy + 20} ${cx - 8} ${cy + 12} Q${cx - 20} ${cy} ${cx - 8} ${cy - 12}Z" fill="none" stroke="#FFF6E8" stroke-width="1" opacity=".6"/>`);
+      put(`<path d="M-10 238 Q0 228 10 238 T30 238 T50 238 T70 238 T90 238 T110 238 T130 238 T150 238 T170 238 T190 238 T210 238" fill="none" stroke="#F2C94C" stroke-width="1.5" opacity=".75"/>`);
+      break;
+    }
+    case 'alpana':
+      put(`<rect width="200" height="250" fill="#B3172B"/>`);
+      put(`<g fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" opacity=".92">
+        ${rep(8, i => `<path transform="rotate(${i * 45} 100 76)" d="M100 ${i % 2 ? 26 : 18} C${i % 2 ? 106 : 110} ${i % 2 ? 34 : 30} ${i % 2 ? 106 : 110} 40 100 46 C${i % 2 ? 94 : 90} 40 ${i % 2 ? 94 : 90} ${i % 2 ? 34 : 30} 100 ${i % 2 ? 26 : 18}Z"/>`)}
+        <circle cx="100" cy="76" r="30" stroke-width="1" opacity=".6"/><circle cx="100" cy="76" r="64" stroke-dasharray="1 7"/>
+        ${rep(8, i => `<path transform="rotate(${i * 45 + 22.5} 100 76)" d="M100 16 c4 -4 9 -2 8 3 c-1 4 -6 4 -6 1"/>`)}
+        <path d="M0 10 ${rep(8, () => 'q12.5 14 25 0')}" /><path d="M0 240 ${rep(8, () => 'q12.5 -14 25 0')}"/></g>`);
+      put(`<g fill="#FFFFFF" opacity=".7">${rep(16, i => `<circle cx="${6.25 + i * 12.5}" cy="${i % 2 ? 26 : 22}" r="1.1"/><circle cx="${6.25 + i * 12.5}" cy="${i % 2 ? 224 : 228}" r="1.1"/>`)}</g>`);
+      break;
+    case 'pattachitra':
+      defs += `<pattern id="pt" width="10" height="10" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="10" height="10" fill="#E2AE4C"/><rect width="5" height="10" fill="#A3261B"/></pattern>`;
+      put(`<rect width="200" height="250" fill="#E2AE4C"/><rect x="7.5" y="7.5" width="185" height="235" rx="6" fill="none" stroke="#1E1A16" stroke-width="3"/>`);
+      put(`<path fill="url(#pt)" fill-rule="evenodd" d="M13 13H187V237H13Z M20 20V230H180V20Z"/><rect x="13" y="13" width="174" height="224" fill="none" stroke="#1E1A16" stroke-width="1"/><rect x="20" y="20" width="160" height="210" fill="none" stroke="#1E1A16" stroke-width="1"/>`);
+      put(`<g fill="#1E1A16">${[[20, 20], [180, 20], [20, 230], [180, 230]].map(([x, y]) => `<rect x="${x - 4}" y="${y - 4}" width="8" height="8"/>`).join('')}</g>`);
+      put(`<g fill="none" stroke="#1E1A16" stroke-width="1.2" opacity=".75"><path d="M60 118 h80"/><path d="M70 122 h60" stroke-dasharray="2 3"/></g>`);
+      break;
+    case 'warli': {
+      put(`<rect width="200" height="250" fill="#7A4A2A"/><rect x="6" y="6" width="188" height="238" rx="6" fill="none" stroke="#FFF3E2" stroke-width="1.2" stroke-dasharray="1 5" stroke-linecap="round" opacity=".7"/>`);
+      put(`<circle cx="100" cy="76" r="38" fill="none" stroke="#FFF3E2" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/>`);
+      // The tarpa dance: figures in a ring, heads outward, holding hands.
+      const fig = `<circle cx="0" cy="-10.5" r="2.8" stroke="none"/><path d="M-4 -7 L4 -7 L0 -0.5Z M0 -0.5 L-4 6 L4 6Z" stroke="none"/><path d="M-4 -6.5 L-8.5 -2 M4 -6.5 L8.5 -2 M-2.5 6 L-3.5 11 M2.5 6 L3.5 11" fill="none"/>`;
+      put(`<g fill="#FFF3E2" stroke="#FFF3E2" stroke-width="1.3" stroke-linecap="round">${rep(12, i => `<g transform="rotate(${i * 30} 100 76) translate(100 ${76 - 54})">${fig}</g>`)}</g>`);
+      put(`<g fill="#FFF3E2" opacity=".85"><circle cx="26" cy="26" r="6"/>${rep(8, i => `<path transform="rotate(${i * 45} 26 26)" d="M26 15 l1.5 -4 h-3z"/>`)}<path d="M178 20 a9 9 0 1 0 6 16 a7 7 0 1 1 -6 -16z"/></g>`);
+      put(`<path d="M20 238 H180" stroke="#FFF3E2" stroke-width="1.4" stroke-dasharray="6 4" opacity=".6"/>`);
+      break;
+    }
+    case 'bandhani':
+      defs += `<pattern id="bd" width="14" height="14" patternUnits="userSpaceOnUse"><g fill="#FFE7F1"><circle cx="2.4" cy="3.5" r="1"/><circle cx="4.6" cy="3.5" r="1"/><circle cx="3.5" cy="2.4" r="1"/><circle cx="3.5" cy="4.6" r="1"/></g><circle cx="10.5" cy="10.5" r="1.5" fill="#F2C94C"/></pattern>`;
+      put(`<rect width="200" height="250" fill="#A3195B"/><rect width="200" height="250" fill="url(#bd)" opacity=".9"/>`);
+      put(`<ellipse cx="100" cy="125" rx="86" ry="106" fill="#A3195B" stroke="#F2C94C" stroke-width="3"/><ellipse cx="100" cy="125" rx="80" ry="100" fill="none" stroke="#FFE7F1" stroke-width="1.1" stroke-dasharray="1 4" stroke-linecap="round"/>`);
+      break;
+    case 'dhaka':
+      defs += `<pattern id="dk" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="14" height="14" fill="#8E1B1B"/><path d="M0 0h7v7H0zM7 7h7v7H7z" fill="#1E1A16"/></pattern>`;
+      put(`<rect width="200" height="250" fill="url(#dk)"/><rect x="15" y="28" width="170" height="194" rx="10" fill="#F6EEDF"/>`);
+      put(`<rect x="18.5" y="31.5" width="163" height="187" rx="8" fill="none" stroke="#8E1B1B" stroke-width="3"/><rect x="23.5" y="36.5" width="153" height="177" rx="6" fill="none" stroke="#1E1A16" stroke-width="1"/>`);
+      // The woven bands of small triangles across the panel's head and foot.
+      put(`<g>${rep(14, i => `<path d="M${30 + i * 10} 48 l5 -7 l5 7z" fill="${i % 2 ? '#1E1A16' : '#8E1B1B'}"/><path d="M${30 + i * 10} 202 l5 7 l5 -7z" fill="${i % 2 ? '#8E1B1B' : '#1E1A16'}"/>`)}</g>`);
+      put(`<g fill="#F6EEDF" opacity=".9">${rep(5, i => `<path d="M${20 + i * 40} 14 l4 -4 l4 4 l-4 4z"/><path d="M${20 + i * 40} 236 l4 -4 l4 4 l-4 4z"/>`)}</g>`);
+      break;
+    case 'madhubani':
+      put(`<rect width="200" height="250" fill="#FBF1DC"/><rect x="7.5" y="7.5" width="185" height="235" rx="8" fill="none" stroke="#1E1A16" stroke-width="2"/><rect x="12.5" y="12.5" width="175" height="225" rx="6" fill="none" stroke="#C0392B" stroke-width="2" stroke-dasharray="4 3"/>`);
+      // The sun round the motif, then the paired fish at the foot.
+      put(`<circle cx="100" cy="70" r="30" fill="#F2A33A" fill-opacity=".45" stroke="#1E1A16" stroke-width="2"/><g stroke="#1E1A16" stroke-width="2" stroke-linecap="round">${rep(16, i => `<path transform="rotate(${i * 22.5} 100 70)" d="M100 ${i % 2 ? 34 : 31} V${i % 2 ? 28 : 22}"/>`)}</g>`);
+      put(`<g stroke="#1E1A16" stroke-width="1.6" stroke-linejoin="round"><path d="M56 222 C66 211 82 211 92 222 C82 233 66 233 56 222Z M56 222 l-8 -7 v14z" fill="#C0392B"/><path d="M144 222 C134 211 118 211 108 222 C118 233 134 233 144 222Z M144 222 l8 -7 v14z" fill="#2E86AB"/>
+        <path d="M66 222 h20 M114 222 h20" fill="none" stroke-dasharray="2 3"/><circle cx="87" cy="220" r="1.2" fill="#1E1A16"/><circle cx="113" cy="220" r="1.2" fill="#1E1A16"/></g>`);
+      put(`<g fill="#C0392B">${[[22, 22], [178, 22]].map(([x, y]) => `<path d="M${x} ${y - 6} l6 6 l-6 6 l-6 -6z"/>`).join('')}</g>`);
+      break;
+    case 'kalamkari':
+      defs += `<pattern id="kk" width="20" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#8B3A1E"/><rect x="10" width="10" height="10" fill="#2F3E5C"/></pattern><pattern id="kk2" width="20" height="10" patternUnits="userSpaceOnUse"><rect width="10" height="10" fill="#2F3E5C"/><rect x="10" width="10" height="10" fill="#8B3A1E"/></pattern>`;
+      put(`<rect width="200" height="250" fill="#F3E6CF"/><rect width="200" height="30" fill="url(#kk)"/><rect y="33" width="200" height="1.4" fill="#8B3A1E"/><rect y="222" width="200" height="28" fill="url(#kk2)"/><rect y="218.6" width="200" height="1.4" fill="#8B3A1E"/>`);
+      put(`<g fill="#F3E6CF">${rep(10, i => `<circle cx="${10 + i * 20}" cy="30" r="2.2"/><circle cx="${10 + i * 20}" cy="222" r="2.2"/>`)}</g>`);
+      // Pen-drawn neem and mango leaves on a vine either side of the motif.
+      for (const s of [1, -1]) {
+        const x = v => 100 + s * v;
+        put(`<g fill="none" stroke="#8B3A1E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M${x(36)} 116 C${x(44)} 96 ${x(42)} 70 ${x(52)} 48"/>
+          <path d="M${x(40)} 100 C${x(58)} 98 ${x(66)} 86 ${x(64)} 76 C${x(52)} 78 ${x(42)} 88 ${x(40)} 100Z" fill="#4F7A3A"/>
+          <path d="M${x(45)} 70 C${x(60)} 62 ${x(70)} 50 ${x(66)} 40 C${x(54)} 44 ${x(46)} 56 ${x(45)} 70Z" fill="#D9A04A"/>
+          <path d="M${x(43)} 108 C${x(52)} 112 ${x(58)} 112 ${x(62)} 108" /><circle cx="${x(52)}" cy="46" r="3" fill="#8B3A1E"/>
+          <path d="M${x(48)} 92 L${x(58)} 84 M${x(50)} 62 L${x(60)} 52" stroke-width="1"/></g>`);
+      }
+      break;
+    case 'mysuru':
+      defs += `<radialGradient id="my" cx=".5" cy=".3" r=".8"><stop offset="0" stop-color="#1E5A44"/><stop offset="1" stop-color="#0E3A2C"/></radialGradient>`;
+      put(`<rect width="200" height="250" fill="url(#my)"/>`);
+      put(`<path d="M10 240 V80 C10 40 50 14 100 10 C150 14 190 40 190 80 V240 Z" fill="none" stroke="#D9B25C" stroke-width="2.2"/><path d="M16 234 V82 C16 46 54 22 100 17 C146 22 184 46 184 82 V234 Z" fill="none" stroke="#D9B25C" stroke-width="1" opacity=".5"/>`);
+      put(`<g fill="#D9B25C"><circle cx="100" cy="6" r="3"/><path d="M96 10 h8 l-4 5z"/><rect x="5" y="78" width="10" height="4" rx="1"/><rect x="185" y="78" width="10" height="4" rx="1"/><rect x="5" y="236" width="10" height="4" rx="1"/><rect x="185" y="236" width="10" height="4" rx="1"/></g>`);
+      put(`<g fill="#D9B25C" opacity=".7">${rep(9, i => { const a = Math.PI * (0.15 + 0.7 * i / 8), r = 74; return `<circle cx="${(100 - Math.cos(a) * r * 1.05).toFixed(1)}" cy="${(88 - Math.sin(a) * r).toFixed(1)}" r="1.3"/>`; })}</g>`);
+      break;
+    case 'phulkari':
+      defs += `<pattern id="pk" width="18" height="18" patternUnits="userSpaceOnUse"><rect width="18" height="18" fill="#C2410C"/><path d="M9 1 L17 9 L9 17 L1 9Z" fill="#F59E0B"/><path d="M9 5 L13 9 L9 13 L5 9Z" fill="#FCD34D"/><path d="M9 7.5 L10.5 9 L9 10.5 L7.5 9Z" fill="#C2410C"/></pattern>`;
+      put(`<rect width="200" height="250" fill="url(#pk)"/><rect x="19" y="34" width="162" height="182" rx="10" fill="#7C2D12"/><rect x="23.5" y="38.5" width="153" height="173" rx="7" fill="none" stroke="#FCD34D" stroke-width="1" stroke-dasharray="2 2"/>`);
+      break;
+    case 'island':
+      defs += `<linearGradient id="is" x1="0" y1="0" x2=".18" y2="1"><stop offset="0" stop-color="#0E7C86"/><stop offset="1" stop-color="#0B4F6C"/></linearGradient>`;
+      put(`<rect width="200" height="250" fill="url(#is)"/>`);
+      put(`<g fill="none" stroke="#FFFFFF" stroke-opacity=".35" stroke-width="1.6"><path d="M0 214 Q25 204 50 214 T100 214 T150 214 T200 214"/><path d="M0 228 Q25 218 50 228 T100 228 T150 228 T200 228"/><path d="M0 242 Q25 232 50 242 T100 242 T150 242 T200 242" stroke-opacity=".2"/></g>`);
+      put(`<g fill="#F472B6" opacity=".92">${rep(5, i => `<ellipse transform="rotate(${i * 72} 34 36)" cx="34" cy="24" rx="8" ry="12"/>`)}</g><g stroke="#FDE68A" stroke-width="1.2" stroke-linecap="round"><path d="M34 36 L46 50"/></g><circle cx="34" cy="36" r="3.2" fill="#FDE68A"/><circle cx="46" cy="50" r="1.6" fill="#FDE68A"/>`);
+      put(`<g fill="none" stroke="#FFFFFF" stroke-opacity=".3" stroke-width="1.2" stroke-linecap="round"><path d="M186 4 C176 18 172 30 170 44 M186 4 C190 16 194 22 200 26 M186 4 C178 8 168 10 160 8"/></g>`);
+      break;
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 250" width="400" height="500">${defs ? `<defs>${defs}</defs>` : ''}${R.join('')}</svg>`;
+}
+const styleURLs = {};
+const styleURL = id => styleURLs[id] ||= 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(styleSVG(id));
+const styleImgs = {};
+async function styleImage(id) {
+  if (styleImgs[id]) return styleImgs[id];
+  const img = new Image(); img.src = styleURL(id); await img.decode().catch(() => {});
+  return styleImgs[id] = img;
+}
+// A small card in a style: its ground, and the motif in the middle in the style's ink.
+const emblemMask = m => `-webkit-mask:url(emblems/${m}.svg) center/contain no-repeat;mask:url(emblems/${m}.svg) center/contain no-repeat`;
+function styleThumb(id, m, cls) {
+  const R = RS[id], [x, y, s] = R.art;
+  return `<span class="${cls}"><img src="${styleURL(id)}" alt=""><i style="left:${(x - s / 2) / 2}%;top:${(y - s / 2) / 2.5}%;width:${s / 2}%;height:${s / 2.5}%;background:linear-gradient(${R.tint[0]},${R.tint[1]});${emblemMask(m)}"></i></span>`;
+}
+// The words on a card, in the card's language: festival or occasion, addressed or not.
+function cardWords(f, date, st) {
+  const L = st.lang || lang(), N = pack?.language || 'en', o = f.occ && OCC[f.occ];
+  const nameIn = x => (x === 'en' && f.localNames?.[S.home?.country]) || (f.names[x] ?? f.names.en);
+  const titleIn = x => o ? gxIn(x, `occ.${o.id}.title`) : nameIn(x);
+  const title = titleIn(L), otherL = L === 'en' ? N : 'en', other = otherL !== L ? titleIn(otherL) : '';
+  const named = !!(o && st.to && OCC_LINE_TO.includes(o.id));
+  const line = o ? (named ? gxIn(L, `occ.${o.id}.lineTo`, st.to) : gxIn(L, `occ.${o.id}.line`))
+    : (f.content?.greeting?.[L] ?? f.content?.greeting?.en ?? f.content?.summary?.[L] ?? f.content?.summary?.en ?? '');
+  return { L, title, sub: other && other !== title ? other : '', line, occ: !!o,
+    dear: st.to && !named ? tIn(L, 'card.dear', st.to) : '', from: st.from ? tIn(L, 'card.with', st.from) : '',
+    kicker: o ? '' : tIn(L, 'card.happy'), tag: o ? '' : tIn(L, 'card.tag.' + cardTheme(f.card)),
+    dateText: date ? dtf({ day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }, L).format(parse(date)) : '' };
+}
+// A regional card drawn on a canvas (the maker's preview and the shared image are the same drawing).
+async function drawRegional(g, W, H, id, f, date, st, line) {
+  const R = RS[id], u = W / 200, w = cardWords(f, date, st);
+  g.drawImage(await styleImage(id), 0, 0, W, H);
+  const [ax, ay, as] = R.art, em = await tintedEmblem(motifOf(f), R.tint[0], R.tint[1]);
+  g.drawImage(em, (ax - as / 2) * u, (ay - as / 2) * u, as * u, as * u);
+  const [x0, y0, x1, y1] = R.box, cx = (x0 + x1) / 2 * u, maxW = (x1 - x0) * u;
+  const serif = z => `600 ${z}px Georgia, "Noto Serif", serif`, ital = z => `italic ${z}px Georgia, "Noto Serif", serif`;
+  const sub = /[A-Za-z]/.test(w.sub) ? w.sub.toUpperCase() : w.sub;
+  // Every word is drawn: the message and then the title are set smaller until the block fits the box.
+  let tz = 20 * u, lz = 8 * u;
+  const lines = (s, font) => { g.font = font; return s ? cardLines(g, s, maxW) : []; };
+  const plan = () => {
+    const items = [];
+    if (w.dear) items.push({ s: [w.dear], font: ital(7.5 * u), z: 7.5 * u, color: R.ink, gap: 3 * u });
+    if (w.kicker) items.push({ s: [w.kicker.toUpperCase()], font: `600 ${6 * u}px Georgia, serif`, z: 6 * u, color: R.accent, gap: 3 * u, track: 1.6 * u });
+    items.push({ s: lines(w.title, serif(tz)).slice(0, 3), font: serif(tz), z: tz, color: R.ink, gap: 3 * u, lh: 1.12 });
+    if (sub) items.push({ s: lines(sub, `600 ${6.5 * u}px Georgia, serif`).slice(0, 2), font: `600 ${6.5 * u}px Georgia, serif`, z: 6.5 * u, color: R.accent, gap: 5 * u, track: 1.2 * u });
+    if (line) items.push({ s: lines(line, ital(lz)), font: ital(lz), z: lz, color: R.ink, gap: 4 * u, lh: 1.35 });
+    if (w.from) items.push({ s: [w.from], font: `600 ${7.5 * u}px Georgia, serif`, z: 7.5 * u, color: R.accent, gap: 3 * u });
+    if (w.dateText) items.push({ s: [w.dateText], font: `${5.8 * u}px Georgia, serif`, z: 5.8 * u, color: R.ink, gap: 0, alpha: .7 });
+    const h = items.reduce((a, it) => a + it.s.length * it.z * (it.lh || 1.2) + it.gap, 0);
+    return { items, h };
+  };
+  let P = plan();
+  while (P.h > (y1 - y0) * u && lz > 5 * u) { lz -= .25 * u; P = plan(); }
+  while (P.h > (y1 - y0) * u && tz > 11 * u) { tz -= .5 * u; P = plan(); }
+  let y = y0 * u + Math.max(0, ((y1 - y0) * u - P.h) / 2);
+  g.textAlign = 'center'; g.textBaseline = 'alphabetic';
+  for (const it of P.items) {
+    g.font = it.font; g.fillStyle = it.color; g.globalAlpha = it.alpha ?? 1;
+    // Tracking only for Latin capitals: spaced out, an Indic script's letters fall apart.
+    if ('letterSpacing' in g) g.letterSpacing = `${it.track && !/[^\x00-\x7F]/.test(it.s.join('')) ? it.track : 0}px`;
+    for (const l of it.s) { y += it.z * (it.lh || 1.2); g.fillText(l, cx, y - it.z * (it.lh ? (it.lh - 1) / 2 + .2 : .2)); }
+    y += it.gap; g.globalAlpha = 1;
+  }
+  if ('letterSpacing' in g) g.letterSpacing = '0px';
 }
 const cardBg = (m, p) => `background:linear-gradient(${PALETTES[p][0]},${PALETTES[p][1]})`;
 const cardArt = (m, p) => `background:${PALETTES[p][4]};-webkit-mask:url(cards/${m || 'lotus'}.svg) center/100% 100%;mask:url(cards/${m || 'lotus'}.svg) center/100% 100%;opacity:.85`;
@@ -2310,7 +2634,8 @@ const DCOL = { light: { paper: ['#F8F1E3', '#F1E5CF'], ink: '#6E1631', gold: '#B
 const tintCache = {};
 async function tintedEmblem(m, a, b) {
   const k = m + a + b; if (tintCache[k]) return tintCache[k];
-  const img = new Image(); img.src = `emblems/${m}.svg`; await img.decode().catch(() => {});
+  const img = new Image(); img.src = `emblems/${m}.svg`; const ok = await img.decode().then(() => true, () => false);
+  if (!ok && m !== 'garland') return tintCache[k] = await tintedEmblem('garland', a, b);
   const c = document.createElement('canvas'); c.width = c.height = 360; const g = c.getContext('2d');
   g.drawImage(img, 0, 0, 360, 360); g.globalCompositeOperation = 'source-in';
   const gr = g.createLinearGradient(0, 0, 0, 360); gr.addColorStop(0, a); gr.addColorStop(1, b); g.fillStyle = gr; g.fillRect(0, 0, 360, 360);
@@ -2324,6 +2649,7 @@ function cardLines(g, s, maxW) {
   return out;
 }
 async function drawDesign(g, W, H, d, f, date, native, line, st) {
+  const wd = cardWords(f, date, st);
   await document.fonts.load(`48px "Great Vibes"`).catch(() => {});
   const C = DCOL[d === 'arch' ? 'arch' : d === 'mandala' ? 'mandala' : 'light'], u = W / 320, TAU = Math.PI * 2;
   const bg = g.createLinearGradient(0, 0, 0, H); bg.addColorStop(0, C.paper[0]); bg.addColorStop(1, C.paper[1]); g.fillStyle = bg; g.fillRect(0, 0, W, H);
@@ -2364,13 +2690,13 @@ async function drawDesign(g, W, H, d, f, date, native, line, st) {
   // Every word is drawn: a text that would run long is set smaller (fitFont), never cut.
   const wrap = (s, font, color, gap, maxW) => { g.font = font; g.fillStyle = color; for (const l of cardLines(g, s, maxW)) { g.fillText(l, cx, y); y += gap; } };
   const fitFont = (s, make, from, min, maxW, lines) => { let z = from; g.font = make(z); while (z > min && cardLines(g, s, maxW).length > lines) { z -= 0.5; g.font = make(z); } return z; };
-  if (st.to) { g.font = `italic ${13 * u}px Georgia, serif`; g.fillStyle = C.ink; g.fillText(t('card.dear', st.to), cx, y); y += 20 * u; }
-  caps(t('card.happy').toUpperCase(), 11, C.ink, 4); y += 48 * u;
+  if (wd.dear) { g.font = `italic ${13 * u}px Georgia, serif`; g.fillStyle = C.ink; g.fillText(wd.dear, cx, y); y += 20 * u; }
+  if (wd.kicker) caps(wd.kicker.toUpperCase(), 11, C.ink, 4); y += 48 * u;
   const maxW = (left ? .56 : .8) * W, script = z => `${z}px "Great Vibes", cursive`;
   // The name on one line if it fits at a fair size, else on two.
-  let size = fitFont(fname(f), script, (left ? 44 : 52) * u, 30 * u, maxW, 1);
-  if (cardLines(g, fname(f), maxW).length > 1) size = fitFont(fname(f), script, (left ? 40 : 44) * u, 16 * u, maxW, 2);
-  const nameLines = cardLines(g, fname(f), maxW);
+  let size = fitFont(wd.title, script, (left ? 44 : 52) * u, 30 * u, maxW, 1);
+  if (cardLines(g, wd.title, maxW).length > 1) size = fitFont(wd.title, script, (left ? 40 : 44) * u, 16 * u, maxW, 2);
+  const nameLines = cardLines(g, wd.title, maxW);
   g.fillStyle = C.ink; nameLines.forEach((l, i) => { g.fillText(l, cx, y); if (i < nameLines.length - 1) y += size * 1.05; }); y += 26 * u;
   if (native) { const z = fitFont(native, z => `600 ${z}px Georgia, serif`, 17 * u, 10 * u, (left ? .58 : .86) * W, 2); wrap(native, `600 ${z}px Georgia, serif`, C.gold, z * 1.15, (left ? .58 : .86) * W); y += 2 * u; }
   // Divider: line, four petals, line.
@@ -2383,81 +2709,142 @@ async function drawDesign(g, W, H, d, f, date, native, line, st) {
     while (z > 6 * u && y + cardLines(g, line, lw).length * z * 1.33 > foot) { z -= 0.25 * u; g.font = `italic ${z}px Georgia, serif`; }
     wrap(line, `italic ${z}px Georgia, serif`, C.ink, z * 1.33, lw);
   }
-  if (st.from) { y += 6 * u; g.font = `600 ${13 * u}px Georgia, serif`; g.fillStyle = C.gold; g.fillText(t('card.with', st.from), cx, y); y += 18 * u; }
+  if (wd.from) { y += 6 * u; g.font = `600 ${13 * u}px Georgia, serif`; g.fillStyle = C.gold; g.fillText(wd.from, cx, y); y += 18 * u; }
   // The emblem, as large as the space above the tagline allows.
   const room = H - (d === 'arch' || d === 'mandala' ? 92 : 84) * u - y, es = Math.min(88 * u, room - 16 * u);
-  if (!left && es > 40 * u) { const em = await tintedEmblem(f.card || 'lotus', C.accent, C.gold); g.fillStyle = C.dark ? 'rgba(226,184,92,.12)' : 'rgba(182,138,51,.1)'; g.beginPath(); g.arc(W / 2, y + 8 * u + es / 2, es * .57, 0, TAU); g.fill(); g.drawImage(em, W / 2 - es / 2, y + 8 * u, es, es); }
+  if (!left && es > 40 * u) { const em = await tintedEmblem(motifOf(f), C.accent, C.gold); g.fillStyle = C.dark ? 'rgba(226,184,92,.12)' : 'rgba(182,138,51,.1)'; g.beginPath(); g.arc(W / 2, y + 8 * u + es / 2, es * .57, 0, TAU); g.fill(); g.drawImage(em, W / 2 - es / 2, y + 8 * u, es, es); }
   y = H - (d === 'arch' || d === 'mandala' ? 66 : 58) * u;
-  wrap(t('card.tag.' + cardTheme(f.card)).toUpperCase(), `500 ${9.5 * u}px Georgia, serif`, C.ink, 14 * u, (left ? .5 : .8) * W, 2);
-  g.font = `${9 * u}px Georgia, serif`; g.fillStyle = C.ink; g.globalAlpha = .6; g.fillText(greg(date, { day: 'numeric', month: 'long', year: 'numeric' }), cx, y); g.globalAlpha = 1;
+  if (wd.tag) wrap(wd.tag.toUpperCase(), `500 ${9.5 * u}px Georgia, serif`, C.ink, 14 * u, (left ? .5 : .8) * W, 2); else y += 14 * u;
+  if (wd.dateText) { g.font = `${9 * u}px Georgia, serif`; g.fillStyle = C.ink; g.globalAlpha = .6; g.fillText(wd.dateText, cx, y); g.globalAlpha = 1; }
 }
-// The motion's light and accent: the palette's, or the design's gold and accent.
-const motionColors = st => { if (st.design && st.design !== 'classic') { const C = DCOL[st.design === 'arch' ? 'arch' : st.design === 'mandala' ? 'mandala' : 'light']; return [C.gold, C.accent]; } return [PALETTES[st.p][4], PALETTES[st.p][3]]; };
-function cardMaker(f, date) {
-  const st = { p: cardPalette(f.card), to: '', from: '', msg: '', design: suggestedDesign(f.card), motion: 'still' };
-  st.motion = st.design === 'classic' ? suggestedMotion(f.card) : 'still';
-  const o = sheet(`<h2 class="serif">${esc(t('gr.card'))}</h2><div id="gcard" class="gcard"></div>
-    <p class="label">${esc(t('card.design'))}</p><div class="chips" id="gde">${DESIGNS.map(m => `<button class="chip" data-de="${m}">${esc(t('card.d.' + m))}</button>`).join('')}</div>
-    <p class="label">${esc(t('card.motion'))}</p><div class="chips" id="gmo">${MOTIONS.map(m => `<button class="chip" data-mo="${m}">${esc(t('card.m.' + m))}</button>`).join('')}</div>
-    <div id="gpal"><p class="label">${esc(t('card.colour'))}</p><div style="display:flex;gap:8px;flex-wrap:wrap">${PALETTES.map((_, i) => `<button class="cardthumb" data-p="${i}" style="${cardBg(f.card, i)}"><i style="${cardArt(f.card, i)}"></i></button>`).join('')}</div></div>
+// The motion's light and accent: the palette's, the design's gold and accent, or the regional style's.
+const motionColors = st => { if (isRegional(st.design)) return RS[st.design].mo; if (st.design && st.design !== 'classic') { const C = DCOL[st.design === 'arch' ? 'arch' : st.design === 'mandala' ? 'mandala' : 'light']; return [C.gold, C.accent]; } return [PALETTES[st.p][4], PALETTES[st.p][3]]; };
+// A style's swatch for the strip: the classic in its palette, a design in its paper and gold, a regional style drawn.
+function styleSwatch(d, f, st) {
+  const m = motifOf(f);
+  if (d === 'classic') return `<span class="gsw" style="${cardBg(m, st.p)}"><i style="${cardArt(m, st.p)}"></i></span>`;
+  if (isRegional(d)) return styleThumb(d, m, 'gsw');
+  const C = DCOL[d === 'arch' ? 'arch' : d === 'mandala' ? 'mandala' : 'light'];
+  return `<span class="gsw" style="background:linear-gradient(${C.paper[0]},${C.paper[1]});box-shadow:inset 0 0 0 2px ${C.gold}"><i style="left:25%;top:30%;width:50%;height:40%;background:linear-gradient(${C.accent},${C.gold});${emblemMask(m)}"></i></span>`;
+}
+// The card maker, as on iOS (GreetingCardMaker): the card on top; under it the style strip (the six designs and
+// the twelve regional styles; choosing one turns the card over to it), English or the tradition's script, Moving
+// or Still, who it is to and from, the message, then Send and Save.
+// opt: { to } for a card addressed to someone, { style } to open in a style.
+function cardMaker(f, date, opt = {}) {
+  const occ = f.occ && OCC[f.occ], memory = f.occ === 'memory', N = pack?.language || 'en';
+  const st = { p: occ ? occ.p : cardPalette(f.card), to: opt.to || '', from: '', msg: '', lang: lang(), design: opt.style || suggestedStyle(f), motion: 'still' };
+  // The motion a Moving card has: the motif's own, sparkle where its own is still.
+  let kind = suggestedMotion(motifOf(f)); if (kind === 'still') kind = 'sparkle';
+  st.motion = memory || !(st.design === 'classic' || isRegional(st.design)) ? 'still' : suggestedMotion(motifOf(f));
+  const STYLES = [...DESIGNS, ...REGIONAL], styleName = d => isRegional(d) ? gx(`st.${d}.name`) : t('card.d.' + d);
+  const head = occ ? gx(`occ.${occ.id}.name`) + (date ? ' · ' + greg(date, { weekday: 'long', day: 'numeric', month: 'long' }) : '') : `${fname(f)} · ${greg(date, { weekday: 'long', day: 'numeric', month: 'long' })}`;
+  const o = sheet(`<p class="small muted gx-mhead">${esc(head)}</p><h2 class="serif" style="margin-top:0">${esc(t('gr.card'))}</h2><div id="gcard" class="gcard"></div>
+    <p class="label">${esc(gx('gx.style'))}</p><div class="gstrip" id="gstrip">${STYLES.map(d => `<button class="gst" data-de="${d}" aria-label="${esc(styleName(d))}">${styleSwatch(d, f, st)}<span>${esc(styleName(d))}</span></button>`).join('')}</div>
+    <div class="gtogs">${N !== 'en' ? `<div class="seg" id="glang"><button data-lg="en">English</button><button data-lg="${N}">${esc(langName(N))}</button></div>` : ''}
+      ${memory ? '' : `<div class="seg" id="gmove"><button data-mv="1">${esc(gx('gx.moving'))}</button><button data-mv="0">${esc(gx('gx.still'))}</button></div>`}</div>
+    ${memory ? '' : `<div class="chips gkinds" id="gmo">${MOTIONS.filter(m => m !== 'still').map(m => `<button class="chip" data-mo="${m}">${esc(t('card.m.' + m))}</button>`).join('')}</div>`}
+    <div id="gpal"><p class="label">${esc(t('card.colour'))}</p><div style="display:flex;gap:8px;flex-wrap:wrap">${PALETTES.map((_, i) => `<button class="cardthumb" data-p="${i}" style="${cardBg(motifOf(f), i)}"><i style="${cardArt(motifOf(f), i)}"></i></button>`).join('')}</div></div>
     <label class="field"><span>${esc(t('card.to'))}</span><input id="gto" maxlength="40"></label>
     <label class="field"><span>${esc(t('card.from'))}</span><input id="gfrom" maxlength="40"></label>
     <label class="field"><span>${esc(t('card.message'))}</span><textarea id="gmsg" maxlength="300" rows="3"></textarea></label>
-    <div class="chips">${['card.wish1', 'card.wish2', 'card.wish3'].map(k => `<button class="chip" data-w="${esc(t(k, fname(f)))}">${esc(t(k, fname(f)))}</button>`).join('')}</div>
-    <button class="btn block" id="gshare" style="margin-top:12px">${esc(t('f.share'))}</button>`);
-  const native = f.names[pack.language] !== fname(f) ? f.names[pack.language] : '';
-  const line = () => st.msg || text(f.content?.greeting) || text(f.content?.summary) || '';
-  const draw = () => {
-    const P = PALETTES[st.p];
-    o.querySelectorAll('[data-de]').forEach(b => b.classList.toggle('on', b.dataset.de === st.design));
+    ${occ ? '' : `<div class="chips">${['card.wish1', 'card.wish2', 'card.wish3'].map(k => `<button class="chip" data-w="${esc(t(k, fname(f)))}">${esc(t(k, fname(f)))}</button>`).join('')}</div>`}
+    <div class="gacts"><button class="btn" id="gshare">${SHARE_ICON} ${esc(gx('gx.send'))}</button><button class="btn soft" id="gsave">${esc(gx('gx.save'))}</button></div>`);
+  o.querySelector('#gto').value = st.to;
+  const words = () => cardWords(f, date, st);
+  // The other language's name, above the title (as the classic card and the designs have always shown it).
+  const nativeOf = w => w.L === 'en' ? w.sub : '';
+  const line = () => st.msg || words().line;
+  const controls = () => {
+    o.querySelectorAll('[data-de]').forEach(b => { const on = b.dataset.de === st.design; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on); });
     o.querySelector('#gpal').style.display = st.design === 'classic' ? '' : 'none';
-    if (st.design !== 'classic') {
-      // A designed card: drawn on a canvas, the same drawing as the shared image.
-      o.querySelector('#gcard').innerHTML = `<div class="gcard-in"><canvas class="gdesign" width="640" height="800" style="position:absolute;inset:0;width:100%;height:100%"></canvas><canvas class="gmotion" width="640" height="800"></canvas><div class="gbrand"><img src="icon-192.png" alt="">Eka</div></div>`;
-      drawDesign(o.querySelector('.gdesign').getContext('2d'), 640, 800, st.design, f, date, native, line(), st);
-      o.querySelectorAll('[data-mo]').forEach(b => b.classList.toggle('on', b.dataset.mo === st.motion));
-      return;
-    }
-    o.querySelector('#gcard').innerHTML = `<div class="gcard-in" style="${cardBg(f.card, st.p)};color:${P[2]}"><i style="${cardArt(f.card, st.p)}"></i>
-      <div class="gtext">${st.to ? `<div class="gdear">${esc(t('card.dear', st.to))}</div>` : ''}${native ? `<div class="gnat" style="color:${P[3]}">${esc(native)}</div>` : ''}
-      <div class="serif gname">${esc(fname(f))}</div><div class="gdate">${esc(greg(date, { day: 'numeric', month: 'long', year: 'numeric' }))}</div>
-      ${line() ? `<div class="gline">${esc(line())}</div>` : ''}${st.from ? `<div class="gfrom" style="color:${P[3]}">${esc(t('card.with', st.from))}</div>` : ''}</div>
-      <canvas class="gmotion" width="640" height="800"></canvas><div class="gbrand"><img src="icon-192.png" alt="">Eka</div></div>`;
-    // Long words set smaller until the whole block stands inside the card.
-    const gt = o.querySelector('.gtext'); for (let z = 1; z > 0.45 && gt.scrollHeight > gt.clientHeight + 1; z -= 0.04) gt.style.zoom = z;
+    o.querySelectorAll('[data-lg]').forEach(b => b.classList.toggle('on', b.dataset.lg === st.lang));
+    o.querySelectorAll('[data-mv]').forEach(b => b.classList.toggle('on', (b.dataset.mv === '1') === (st.motion !== 'still')));
+    const mo = o.querySelector('#gmo'); if (mo) mo.style.display = st.motion === 'still' ? 'none' : '';
     o.querySelectorAll('[data-mo]').forEach(b => b.classList.toggle('on', b.dataset.mo === st.motion));
   };
+  // The card's face, fully drawn before it is shown.
+  const face = async () => {
+    const el = document.createElement('div'); el.className = 'gcard-in';
+    const w = words(), native = nativeOf(w);
+    if (st.design === 'classic') {
+      const P = PALETTES[st.p], m = motifOf(f);
+      el.style.cssText = `${cardBg(m, st.p)};color:${P[2]}`;
+      el.innerHTML = `<i style="${cardArt(m, st.p)}"></i>
+        <div class="gtext">${w.dear ? `<div class="gdear">${esc(w.dear)}</div>` : ''}${native ? `<div class="gnat" style="color:${P[3]}">${esc(native)}</div>` : ''}
+        <div class="serif gname">${esc(w.title)}</div>${w.dateText ? `<div class="gdate">${esc(w.dateText)}</div>` : ''}
+        ${line() ? `<div class="gline">${esc(line())}</div>` : ''}${w.from ? `<div class="gfrom" style="color:${P[3]}">${esc(w.from)}</div>` : ''}</div>
+        <canvas class="gmotion" width="640" height="800"></canvas><div class="gbrand"><img src="icon-192.png" alt="">Eka</div>`;
+      return el;
+    }
+    // A designed or regional card: drawn on a canvas, the same drawing as the shared image.
+    const cv = document.createElement('canvas'); cv.className = 'gdesign'; cv.width = 640; cv.height = 800;
+    if (isRegional(st.design)) await drawRegional(cv.getContext('2d'), 640, 800, st.design, f, date, st, line());
+    else await drawDesign(cv.getContext('2d'), 640, 800, st.design, f, date, native, line(), st);
+    el.appendChild(cv);
+    el.insertAdjacentHTML('beforeend', `<canvas class="gmotion" width="640" height="800"></canvas><div class="gbrand"><img src="icon-192.png" alt="">Eka</div>`);
+    if (isRegional(st.design)) { const R = RS[st.design], b = el.querySelector('.gbrand'); b.style.right = `${R.mark[0] * 1.6}px`; b.style.bottom = `${(250 - R.mark[1]) * 1.6 - 3}px`; b.style.color = R.ink; b.style.setProperty('color', R.ink, 'important'); }
+    return el;
+  };
+  // Long words in the classic card set smaller until the whole block stands inside it.
+  const fit = el => { const gt = el.querySelector('.gtext'); if (gt) for (let z = 1; z > 0.45 && gt.scrollHeight > gt.clientHeight + 1; z -= 0.04) gt.style.zoom = z; };
+  let seq = 0;
+  const draw = async turn => {
+    const my = ++seq, box = o.querySelector('#gcard'), old = box.firstElementChild;
+    controls();
+    if (turn && old) {
+      // Half a turn out, the new face in; a cross-fade when less motion is asked for.
+      const how = still() ? ['fadeout', 'fadein'] : ['tyout', 'tyin'];
+      old.classList.add(how[0]);
+      const [el] = await Promise.all([face(), new Promise(r => setTimeout(r, 300))]);
+      if (my !== seq || !o.isConnected) return;
+      box.replaceChildren(el); fit(el); el.classList.add(how[1]); setTimeout(() => el.classList.remove(how[1]), 320);
+      return;
+    }
+    const el = await face();
+    if (my !== seq || !o.isConnected) return;
+    box.replaceChildren(el); fit(el);
+  };
   // The preview's motion, drawn every frame while the card maker is open.
-  const t0 = performance.now(), still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const t0 = performance.now(), calm = still();
   const tick = ts => {
     if (!o.isConnected) return;
     const cv = o.querySelector('.gmotion');
-    if (cv) { const g = cv.getContext('2d'); g.clearRect(0, 0, 640, 800); if (st.motion !== 'still') drawMotion(g, st.motion, still ? 0 : (ts - t0) / 1000, 640, 800, ...motionColors(st)); }
+    if (cv) { const g = cv.getContext('2d'); g.clearRect(0, 0, 640, 800); if (st.motion !== 'still') drawMotion(g, st.motion, calm ? 0 : (ts - t0) / 1000, 640, 800, ...motionColors(st)); }
     requestAnimationFrame(tick);
   };
   requestAnimationFrame(tick);
-  o.querySelectorAll('[data-p]').forEach(b => b.onclick = () => { st.p = +b.dataset.p; draw(); });
-  o.querySelectorAll('[data-mo]').forEach(b => b.onclick = () => { st.motion = b.dataset.mo; draw(); });
-  o.querySelectorAll('[data-de]').forEach(b => b.onclick = () => { st.design = b.dataset.de; draw(); });
+  o.querySelectorAll('[data-p]').forEach(b => b.onclick = () => { st.p = +b.dataset.p; draw(true); o.querySelectorAll('.gst[data-de="classic"] .gsw').forEach(s => s.outerHTML = styleSwatch('classic', f, st)); });
+  o.querySelectorAll('[data-mo]').forEach(b => b.onclick = () => { st.motion = kind = b.dataset.mo; controls(); });
+  o.querySelectorAll('[data-mv]').forEach(b => b.onclick = () => { st.motion = b.dataset.mv === '1' ? kind : 'still'; controls(); });
+  o.querySelectorAll('[data-lg]').forEach(b => b.onclick = () => { if (st.lang === b.dataset.lg) return; st.lang = b.dataset.lg; draw(true); });
+  o.querySelectorAll('[data-de]').forEach(b => b.onclick = () => { if (st.design === b.dataset.de) return; st.design = b.dataset.de; draw(true); });
   o.querySelector('#gto').oninput = e => { st.to = e.target.value; draw(); };
   o.querySelector('#gfrom').oninput = e => { st.from = e.target.value; draw(); };
   o.querySelector('#gmsg').oninput = e => { st.msg = e.target.value; draw(); };
   o.querySelectorAll('[data-w]').forEach(b => b.onclick = () => { st.msg = b.dataset.w; o.querySelector('#gmsg').value = st.msg; draw(); });
-  o.querySelector('#gshare').onclick = async () => {
-    const btn = o.querySelector('#gshare'), label = btn.textContent;
-    let blob = await cardImage(f, date, st, native, line()), type = 'image/png', ext = 'png';
-    // A moving card goes out as a looping GIF.
+  // The card as a file: a still image, or a looping GIF when it moves.
+  const make = async btn => {
+    const label = btn.innerHTML;
+    let blob = await cardImage(f, date, st, nativeOf(words()), line()), type = 'image/png', ext = 'png';
     if (st.motion !== 'still') {
       btn.disabled = true; btn.textContent = t('card.making');
       const gif = await cardGif(blob, st).catch(() => null);
-      btn.disabled = false; btn.textContent = label;
+      btn.disabled = false; btn.innerHTML = label;
       if (gif) { blob = gif; type = 'image/gif'; ext = 'gif'; }
     }
-    const file = new File([blob], `${f.id}.${ext}`, { type });
-    if (navigator.canShare?.({ files: [file] })) { try { await navigator.share({ files: [file] }); return; } catch {} }
-    const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = file.name; a.click();
+    return { blob, file: new File([blob], `${f.id}.${ext}`, { type }) };
   };
+  const download = (blob, nameF) => { const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = nameF; a.click(); };
+  o.querySelector('#gshare').onclick = async () => {
+    const { blob, file } = await make(o.querySelector('#gshare'));
+    if (navigator.canShare?.({ files: [file] })) { try { await navigator.share({ files: [file] }); return; } catch {} }
+    download(blob, file.name);
+  };
+  o.querySelector('#gsave').onclick = async () => { const { blob, file } = await make(o.querySelector('#gsave')); download(blob, file.name); };
   draw();
+  // The chosen style in view on the strip.
+  requestAnimationFrame(() => o.querySelector('.gst.on')?.scrollIntoView({ block: 'nearest', inline: 'center' }));
 }
 // A moving card as a looping GIF, as on iOS (CardGIF): one four-second loop at 15 frames a second.
 async function cardGif(png, st) {
@@ -2475,12 +2862,22 @@ async function cardGif(png, st) {
 }
 // The card as a 1080 x 1350 image: gradient, tinted art, then the words.
 async function cardImage(f, date, st, native, line) {
+  const w = cardWords(f, date, st);
+  if (isRegional(st.design)) {
+    const c = document.createElement('canvas'); c.width = 1080; c.height = 1350; const g = c.getContext('2d'), R = RS[st.design], u = 1080 / 200;
+    await drawRegional(g, 1080, 1350, st.design, f, date, st, line);
+    const logo = new Image(); logo.src = 'icon-192.png'; await logo.decode().catch(() => {});
+    // A quiet signature in the bottom corner: the icon and "Eka", clear of the style's border.
+    const x = 1080 - R.mark[0] * u, y = R.mark[1] * u;
+    g.globalAlpha = .6; if (logo.complete) g.drawImage(logo, x - 74, y - 22, 26, 26);
+    g.font = '600 24px Georgia, serif'; g.fillStyle = R.ink; g.textAlign = 'left'; g.fillText('Eka', x - 42, y); g.globalAlpha = 1;
+    return new Promise(r => c.toBlob(r, 'image/png'));
+  }
   if (st.design && st.design !== 'classic') {
     const c = document.createElement('canvas'); c.width = 1080; c.height = 1350; const g = c.getContext('2d');
     await drawDesign(g, 1080, 1350, st.design, f, date, native, line, st);
     const logo = new Image(); logo.src = 'icon-192.png'; await logo.decode().catch(() => {});
-    // The mark in the bottom corner, inside the border.
-    // A quiet signature in the bottom corner: the icon and "Eka".
+    // A quiet signature in the bottom corner: the icon and "Eka", inside the border.
     const C = DCOL[st.design === 'arch' ? 'arch' : st.design === 'mandala' ? 'mandala' : 'light'];
     g.globalAlpha = .55; if (logo.complete) g.drawImage(logo, 1080 - 86 - 74, 1350 - 76 - 24, 26, 26);
     g.font = '600 24px Georgia, serif'; g.fillStyle = C.ink; g.textAlign = 'left'; g.fillText('Eka', 1080 - 86 - 42, 1350 - 80); g.globalAlpha = 1;
@@ -2489,21 +2886,20 @@ async function cardImage(f, date, st, native, line) {
   const P = PALETTES[st.p], W = 1080, H = 1350, c = document.createElement('canvas'); c.width = W; c.height = H;
   const g = c.getContext('2d'), grad = g.createLinearGradient(0, 0, 0, H); grad.addColorStop(0, P[0]); grad.addColorStop(1, P[1]);
   g.fillStyle = grad; g.fillRect(0, 0, W, H);
-  const img = new Image(); img.src = `cards/${f.card || 'lotus'}.svg`; await img.decode();
+  const img = new Image(); img.src = `cards/${motifOf(f)}.svg`; await img.decode().catch(() => {});
   const art = document.createElement('canvas'); art.width = W; art.height = H; const a = art.getContext('2d');
-  a.drawImage(img, 0, 0, W, H); a.globalCompositeOperation = 'source-in'; a.fillStyle = P[4]; a.fillRect(0, 0, W, H);
+  if (img.complete && img.naturalWidth) a.drawImage(img, 0, 0, W, H); a.globalCompositeOperation = 'source-in'; a.fillStyle = P[4]; a.fillRect(0, 0, W, H);
   g.globalAlpha = .85; g.drawImage(art, 0, 0); g.globalAlpha = 1; g.textAlign = 'center';
   let y = H * .36;
   const put = (s, font, color, gap) => { g.font = font; g.fillStyle = color; for (const l of cardLines(g, s, W - 220)) { g.fillText(l, W / 2, y); y += gap; } };
   // A long message is set smaller until it fits in seven lines; every word stays.
   const fit = (s, make, from, min, lines) => { let z = from; g.font = make(z); while (z > min && cardLines(g, s, W - 220).length > lines) { z -= 1; g.font = make(z); } return z; };
-  if (st.to) put(t('card.dear', st.to), 'italic 48px Georgia, serif', P[2], 70);
+  if (w.dear) put(w.dear, 'italic 48px Georgia, serif', P[2], 70);
   if (native) { const z = fit(native, z => `bold ${z}px sans-serif`, 80, 40, 2); put(native, `bold ${z}px sans-serif`, P[3], z * 1.25); }
-  { const z = fit(fname(f), z => `bold ${z}px Georgia, serif`, 76, 40, 2); put(fname(f), `bold ${z}px Georgia, serif`, P[2], z * 0.95); }
-  put(greg(date, { day: 'numeric', month: 'long', year: 'numeric' }), '500 38px sans-serif', P[2], 80);
+  { const z = fit(w.title, z => `bold ${z}px Georgia, serif`, 76, 40, 2); put(w.title, `bold ${z}px Georgia, serif`, P[2], z * 0.95); }
+  if (w.dateText) put(w.dateText, '500 38px sans-serif', P[2], 80); else y += 40;
   if (line) { const z = fit(line, z => `italic ${z}px Georgia, serif`, 40, 22, 7); put(line, `italic ${z}px Georgia, serif`, P[2], z * 1.35); }
-  if (st.from) { y += 16; put(t('card.with', st.from), '600 44px Georgia, serif', P[3], 60); }
-  // A small Kaal mark at the foot, for the brand.
+  if (w.from) { y += 16; put(w.from, '600 44px Georgia, serif', P[3], 60); }
   const logo = new Image(); logo.src = 'icon-192.png'; await logo.decode().catch(() => {});
   // A quiet signature in the bottom corner: the icon and "Eka".
   g.globalAlpha = .6; if (logo.complete) g.drawImage(logo, W - 40 - 74, H - 34 - 24, 26, 26);
