@@ -481,7 +481,21 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .tile .tbline { font-size: 12px; opacity: .82; margin-top: 4px; position: relative; }
 .tile.turned .tfront { transform: rotateY(180deg); }
 .tile.turned .tback { transform: rotateY(360deg); }
-@media (prefers-reduced-motion: reduce) { .tile .tfront, .tile .tback { transition: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .tile .tfront, .tile .tback { transition: opacity .6s ease; }
+  .tile .tback { transform: none; opacity: 0; }
+  .tile.turned .tfront { transform: none; opacity: 0; }
+  .tile.turned .tback { transform: none; opacity: 1; }
+}
 .tiles.style-colourful .tile .tfront { border-color: transparent; background: color-mix(in srgb, var(--tint) 9%, var(--card)); }
 .tiles.style-minimal .tile .gl, .tiles.style-minimal .tile .tart { display: none; }
 .tiles.style-mosaic .tile:nth-child(3n):not(.trow) { grid-column: 1 / -1; }
+
+/* The vrat journal's year at a glance. */
+.vy-row { display: flex; gap: 10px; align-items: flex-start; padding: 5px 0; border-bottom: 1px solid var(--line); }
+.vy-row:last-child { border-bottom: 0; }
+.vy-m { width: 44px; flex: none; font-weight: 600; font-size: 14px; }
+.vy-marks { display: flex; flex-wrap: wrap; gap: 4px 6px; }
+.vy-marks i { font-style: normal; width: 16px; text-align: center; color: var(--muted); }
+.vy-marks i.k { color: var(--gold); }
+.vy-marks i.f { opacity: .35; }

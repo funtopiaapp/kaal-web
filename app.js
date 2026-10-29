@@ -1,7 +1,7 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610281853';
+import { engine, onRestart } from './engine.js?v=202610282021';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -290,17 +290,18 @@ function sinceSunrise(sunrise) {
 }
 let homeTick = null, flipTimer = null;
 // Now and then one tile turns over, chosen at random, never the same twice running; it comes back by itself.
-// The setting, or the browser asking for less motion, keeps the tiles still.
+// The setting keeps the tiles still; asking the browser for less motion makes them fade instead of turn.
 function startFlips(root) {
   clearTimeout(flipTimer);
-  if (S.tileFlip === false || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (S.tileFlip === false) return;
   let last = null;
   const tick = () => {
     if (tab !== 'home' || !root.isConnected) return;
     const els = [...root.querySelectorAll('.tile:not(.trow)')].filter(e => e.querySelector('.tback') && e.dataset.k !== last);
     const el = els[Math.floor(Math.random() * els.length)];
-    if (el) { last = el.dataset.k; el.classList.add('turned'); setTimeout(() => el.classList.remove('turned'), 4200); }
-    flipTimer = setTimeout(tick, 2400 + Math.random() * 2600);
+    const every = Math.max(3, S.tileFlipEvery || 5) * 1000;
+    if (el) { last = el.dataset.k; el.classList.add('turned'); setTimeout(() => el.classList.remove('turned'), Math.min(4200, every * .6 + 1000)); }
+    flipTimer = setTimeout(tick, every * (.8 + Math.random() * .4));
   };
   flipTimer = setTimeout(tick, 1200);
 }
@@ -498,14 +499,15 @@ function arrangeSheet(keys, x) {
   const draw = () => {
     o.querySelector('#arr').innerHTML = `<h2 class="serif">${esc(t('hm.arrange'))}</h2>
       <p class="label">${esc(t('ar.style'))}</p><div class="chips">${TILE_STYLES.map(st => `<button class="chip ${S.tileStyle === st ? 'on' : ''}" data-st="${st}">${esc(t('ar.s.' + st))}</button>`).join('')}</div>
-      <label class="list-row"><input type="checkbox" data-flip ${S.tileFlip !== false ? 'checked' : ''}><span class="grow">${esc(t('hm.flip'))}</span></label>
+      <label class="list-row"><input type="checkbox" data-flip ${S.tileFlip !== false ? 'checked' : ''}><span class="grow">${esc(t('hm.flip'))}</span></label>${S.tileFlip !== false ? `<div class="seg" style="margin-top:8px" aria-label="${esc(t('hm.flipEvery'))}">${[3, 5, 10, 20, 30].map(n => `<button data-fe="${n}" class="${(S.tileFlipEvery || 5) === n ? 'on' : ''}">${esc(t('hm.secs', String(n)))}</button>`).join('')}</div>` : ''}
       <div class="card"><button class="linkbtn block" data-auto>✨ ${esc(t('ar.auto'))}</button><button class="linkbtn block" data-shuf>🔀 ${esc(t('ar.shuffle'))}</button><button class="linkbtn block" data-reset>↺ ${esc(t('ar.reset'))}</button>
       <p class="small muted">${esc(t('ar.autoNote'))}</p></div>
       <p class="label">${esc(t('ar.order'))}</p><div class="card">${order.map((k, i) => `<div class="list-row"><span class="grow">${esc(label(k))}</span><button class="arrow" data-up="${i}" aria-label="Up">↑</button><button class="arrow" data-dn="${i}" aria-label="Down">↓</button></div>`).join('')}</div>
       <button class="btn block" data-done>${esc(t('c.done'))}</button>`;
     const q = (sel, f) => o.querySelectorAll(sel).forEach(b => b.onclick = () => { f(b); draw(); });
     q('[data-st]', b => { S.tileStyle = b.dataset.st; });
-    o.querySelector('[data-flip]').onchange = e => { S.tileFlip = e.target.checked; save(); };
+    o.querySelector('[data-flip]').onchange = e => { S.tileFlip = e.target.checked; save(); draw(); };
+    q('[data-fe]', b => { S.tileFlipEvery = +b.dataset.fe; save(); });
     q('[data-up]', b => { const i = +b.dataset.up; if (i > 0) [order[i - 1], order[i]] = [order[i], order[i - 1]]; });
     q('[data-dn]', b => { const i = +b.dataset.dn; if (i < order.length - 1) [order[i + 1], order[i]] = [order[i], order[i + 1]]; });
     q('[data-reset]', () => { order = [...keys]; });
@@ -863,6 +865,19 @@ function vratRun(key) {
   for (const [, kept] of Object.entries(S.vratLog).filter(([id]) => id.startsWith(key + '|')).sort((a, b) => a[0] < b[0] ? 1 : -1)) { if (!kept) break; n++; }
   return n;
 }
+// The longest run ever kept in a row: for one vrat, or the best of any.
+function vratBest(key) {
+  const keys = key ? [key] : [...new Set(Object.keys(S.vratLog).map(id => id.split('|')[0]))];
+  return Math.max(0, ...keys.map(k => { let best = 0, run = 0;
+    for (const [, kept] of Object.entries(S.vratLog).filter(([id]) => id.startsWith(k + '|')).sort((a, b) => a[0] < b[0] ? -1 : 1)) { run = kept ? run + 1 : 0; best = Math.max(best, run); }
+    return best; }));
+}
+// Kept and answered, all time or in a year: "Kept 18 of 21 · 86%".
+function vratRate(year) {
+  const xs = Object.entries(S.vratLog).filter(([id]) => !year || id.split('|')[1].startsWith(year));
+  const kept = xs.filter(([, k]) => k).length;
+  return xs.length ? t('vj.rate', String(kept), String(xs.length), Math.round(kept / xs.length * 100) + '%') : '';
+}
 function answerVrat(id, kept) {
   if (kept === null) delete S.vratLog[id]; else S.vratLog[id] = kept;
   save();
@@ -940,6 +955,22 @@ async function vratCalendar() {
     ${shown.map(e => `<div class="list-row"><div class="grow">${esc(recName(e.key))}<div class="small muted">${esc(greg(e.date, { day: 'numeric', month: 'short', year: 'numeric' }))}</div></div><span style="font-size:20px">${mark(S.vratLog[e.id])}</span></div>`).join('')}</div>`;
 }
 
+// A whole year of vrats, month by month: a star for each kept, a moon where not this time, a ring where still to mark.
+let vyYear = null;
+async function vratYear() {
+  const thisYear = +today().slice(0, 4), y = Math.min(vyYear || thisYear, thisYear);
+  const days = await vratDays(`${y}-01-01`, `${y}-12-31`);
+  for (const id of Object.keys(S.vratLog)) { const [key, date] = id.split('|'); if (date.startsWith(y + '-') && !days.some(e => e.id === id)) days.push({ key, date, id }); }
+  days.sort((a, b) => a.date < b.date ? -1 : 1);
+  const mark = e => { const a = S.vratLog[e.id]; return a === true ? '<i class="k">★</i>' : a === false ? '<i>☾</i>' : `<i class="${e.date > today() ? 'f' : ''}">◌</i>`; };
+  const months = [...Array(12)].map((_, i) => { const mm = `${y}-${pad(i + 1)}`, here = days.filter(e => e.date.startsWith(mm));
+    return `<div class="vy-row"><span class="vy-m">${esc(dtf({ month: 'short', timeZone: 'UTC' }).format(parse(mm + '-15')))}</span><span class="vy-marks">${here.length ? here.map(mark).join('') : '<span class="muted">–</span>'}</span></div>`; }).join('');
+  return `<div class="card"><p class="label">${esc(t('vj.glance'))}</p>
+    <div class="dayhead" style="margin:0"><div class="nav"><button class="arrow" data-vy="-1">‹</button><b class="serif" style="font-size:20px">${y}</b><button class="arrow" data-vy="1" ${y >= thisYear ? 'disabled' : ''}>›</button></div></div>
+    <p class="gold" style="font-weight:700;margin:6px 0">★ ${vratsKept(null, String(y))}${vratRate(String(y)) ? ` <span class="small muted" style="font-weight:400">· ${esc(vratRate(String(y)))}</span>` : ''}</p>
+    <div class="vy">${months}</div><p class="small muted">${esc(t('vj.glanceNote'))}</p></div>`;
+}
+
 async function viewVrats() {
   loading();
   const choices = pack.dailySignificance.filter((r, i, a) => a.findIndex(x => x.key === r.key) === i);
@@ -949,11 +980,15 @@ async function viewVrats() {
   $('#main').innerHTML = `<div class="card"><p class="label">${esc(t('vj.title'))}</p>
       ${S.vrats.length ? `<div class="journal-head"><span class="gold big">★</span><div><div class="big">${vratsKept()}</div><div class="small muted">${esc(t('vj.total'))}</div></div>
         <div class="small muted" style="margin-left:auto">${esc(t('vj.year', vratsKept(null, today().slice(0, 4))))}</div></div>
-        ${S.vrats.filter(k => vratsKept(k)).map(k => `<div class="row"><span>${esc(recName(k))}</span><span class="v">${vratRun(k) > 1 ? `<small style="display:inline">${esc(t('vj.run', vratRun(k)))} · </small>` : ''}<span class="gold">★ ${vratsKept(k)}</span></span></div>`).join('')}
+        ${vratBest() > 1 ? `<div class="row"><span>🔥 ${esc(t('vj.best', String(vratBest())))}</span></div>` : ''}
+        ${vratRate(today().slice(0, 4)) ? `<div class="row"><span class="muted">${esc(t('vj.thisYear'))}</span><span class="v">${esc(vratRate(today().slice(0, 4)))}</span></div>` : ''}
+        ${vratRate() && vratRate() !== vratRate(today().slice(0, 4)) ? `<div class="row"><span class="muted">${esc(t('vj.allTime'))}</span><span class="v">${esc(vratRate())}</span></div>` : ''}
+        ${S.vrats.filter(k => vratsKept(k)).map(k => `<div class="row"><span>${esc(recName(k))}</span><span class="v">${vratRun(k) > 1 ? `<small style="display:inline">${esc(t('vj.run', vratRun(k)))} · </small>` : ''}${vratBest(k) > Math.max(vratRun(k), 1) ? `<small style="display:inline">${esc(t('vj.best', String(vratBest(k))))} · </small>` : ''}<span class="gold">★ ${vratsKept(k)}</span></span></div>`).join('')}
         <p class="small muted">${esc(t('vj.askBody'))}</p>` : `<p class="small muted">${esc(t('vj.empty'))}</p>`}</div>
     ${recent.length ? `<div class="card"><p class="label">${esc(t('vj.recent'))}</p>${recent.reverse().map(v => `<div class="list-row"><div class="grow">${esc(recName(v.key))}<div class="small muted">${esc(greg(v.date, { day: 'numeric', month: 'short', year: 'numeric' }))}</div></div>
         <button class="btn soft" data-mark="${esc(v.id)}" data-to="1" title="${esc(t('vj.kept'))}">★</button><button class="btn soft" data-mark="${esc(v.id)}" data-to="0" title="${esc(t('vj.notThisTime'))}">☾</button>
         <span style="width:28px;text-align:center;font-size:20px">${icon(S.vratLog[v.id])}</span></div>`).join('')}<p class="small muted">${esc(t('vj.recentNote'))}</p></div>` : ''}
+    ${S.vrats.length || Object.keys(S.vratLog).length ? await vratYear() : ''}
     ${await vratCalendar()}
     <div class="card"><p class="label">${esc(t('vg.list'))}</p>${choices.map(r => `<details class="factor"><summary><span class="grow"><b>${esc(recName(r.key))}</b><span class="small muted" style="display:block">${esc(text(r.content?.summary))}</span></span></summary>
         ${r.content?.traditions ? `<p class="label" style="margin:10px 0 2px">${esc(t('vg.title'))}</p><p style="margin:0">${esc(text(r.content.traditions))}</p>` : ''}
@@ -969,6 +1004,7 @@ async function viewVrats() {
     const d = parse(vcMonth || today().slice(0, 8) + '01'); d.setUTCMonth(d.getUTCMonth() + +b.dataset.vc, 1); vcMonth = ymd(d); viewVrats();
   });
   $('#main').querySelectorAll('[data-vf]').forEach(b => b.onclick = () => { vcFilter = b.dataset.vf || null; viewVrats(); });
+  $('#main').querySelectorAll('[data-vy]').forEach(b => b.onclick = () => { vyYear = (vyYear || +today().slice(0, 4)) + +b.dataset.vy; viewVrats(); });
 }
 
 // ---------------------------------------------------------------- families
@@ -2355,7 +2391,7 @@ function viewSettings() {
       <p class="small muted" style="margin-top:10px">${esc(t('th.dark'))}</p><div class="chips">${DARK.map(id => `<button class="chip ${S.dark === id ? 'on' : ''}" data-dk="${id}">${esc(t('th.' + id))}</button>`).join('')}</div></div>
     <div class="card"><label class="list-row"><input type="checkbox" id="vaish" ${S.vaishnava ? 'checked' : ''}><span class="grow"><b>${esc(t('s.vaishnava'))}</b><div class="small muted">${esc(t('s.vaishnavaNote'))}</div></span></label></div>
     <div class="card"><label class="list-row"><input type="checkbox" id="pdfmark" ${S.pdfWatermark !== false ? 'checked' : ''}><span class="grow"><b>${esc(t('pdf.section'))}</b><div class="small muted">${esc(t('pdf.watermarkOn'))}</div></span></label></div>
-    <div class="card"><label class="list-row"><input type="checkbox" id="tflip" ${S.tileFlip !== false ? 'checked' : ''}><span class="grow"><b>${esc(t('hm.flip'))}</b><div class="small muted">${esc(t('hm.flipNote'))}</div></span></label></div>
+    <div class="card"><label class="list-row"><input type="checkbox" id="tflip" ${S.tileFlip !== false ? 'checked' : ''}><span class="grow"><b>${esc(t('hm.flip'))}</b><div class="small muted">${esc(t('hm.flipNote'))}</div></span></label>${S.tileFlip !== false ? `<div class="seg" style="margin-top:8px" aria-label="${esc(t('hm.flipEvery'))}">${[3, 5, 10, 20, 30].map(n => `<button data-fe="${n}" class="${(S.tileFlipEvery || 5) === n ? 'on' : ''}">${esc(t('hm.secs', String(n)))}</button>`).join('')}</div>` : ''}</div>
     <div class="card"><p class="label">${esc(t('s.clock'))}</p><div class="seg">${[[0, 's.clockSystem'], [12, 's.clock12'], [24, 's.clock24']].map(([v, k]) => `<button data-ck="${v}" class="${(S.clock || 0) === v ? 'on' : ''}">${esc(t(k))}</button>`).join('')}</div></div>
     <div class="card"><p class="label">${esc(t('ts.title'))}</p><div class="seg">${TEXT_SIZES.map((z, i) => `<button data-tz="${i}" class="${S.textSize === i ? 'on' : ''}" style="font-size:${Math.round(12 * z + (i - 1) * 2)}px">A</button>`).join('')}</div>
       <p class="small muted" style="margin-top:8px">${esc(t('ts.sample'))}</p></div>
@@ -2370,7 +2406,8 @@ function viewSettings() {
   $('#main').querySelectorAll('[data-l]').forEach(b => b.onclick = () => { S.native = b.dataset.l === '1'; save(); render(); });
   $('#main').querySelectorAll('[data-th]').forEach(b => b.onclick = () => { S.theme = b.dataset.th; save(); render(); });
   $('#main').querySelector('#pdfmark').onchange = e => { S.pdfWatermark = e.target.checked; save(); };
-  $('#main').querySelector('#tflip').onchange = e => { S.tileFlip = e.target.checked; save(); };
+  $('#main').querySelector('#tflip').onchange = e => { S.tileFlip = e.target.checked; save(); viewSettings(); };
+  $('#main').querySelectorAll('[data-fe]').forEach(b => b.onclick = () => { S.tileFlipEvery = +b.dataset.fe; save(); viewSettings(); });
   $('#main').querySelector('#vaish').onchange = async e => { S.vaishnava = e.target.checked; save(); await loadPack(); await resetCalendars(); render(); };
   $('#main').querySelectorAll('[data-ck]').forEach(b => b.onclick = () => { S.clock = +b.dataset.ck; save(); render(); });
   $('#main').querySelectorAll('[data-tz]').forEach(b => b.onclick = () => { S.textSize = +b.dataset.tz; save(); render(); });
