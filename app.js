@@ -1,7 +1,7 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610292239';
+import { engine, onRestart } from './engine.js?v=202610292303';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -2004,7 +2004,7 @@ function festRow(f, date, o, away) {
   if (o) return `<div class="frow turn v rise" style="--i:${o.i}" data-f="${esc(f.id)}" data-d="${date}">${festRow(f, date, null, o.away).replace(/^<div class="fest ([^"]*)" data-f="[^"]*" data-d="[^"]*">/, '<div class="fest tfront $1">')}${lacquer(o.back, o.fam, true)}</div>`;
   return `<div class="fest ${f.tier === 'major' ? 'major' : ''}" data-f="${esc(f.id)}" data-d="${date}"><div class="bar2"></div>
     <div style="min-width:44px;text-align:center"><b>${+date.slice(8)}</b><div class="small muted">${esc(dtf({ month: 'short', timeZone: 'UTC' }).format(parse(date)))}</div></div>
-    <div><b>${esc(fname(f))}</b>${bookmarked(f.id) ? ` <span class="gold" title="${esc(t('r3w.bookmarked', fname(f)))}">★</span>` : ''}<div class="small muted">${esc(fother(f))}</div>${away ? `<div class="small muted faway">${PIN}${esc(away.place.name)} · ${esc(dtf({ day: 'numeric', month: 'short', timeZone: 'UTC' }).format(parse(away.date)))} · ${esc(relation(date, away.date))}</div>` : ''}</div>
+    <div><b>${esc(fname(f))}</b>${bookmarked(f.id) ? ` <span class="gold" title="${esc(t('r3w.bookmarked', fname(f)))}">★</span>` : ''}<div class="small muted">${esc(fother(f))}</div>${away ? `<div class="small muted faway">${PIN}${esc(away.place.name)}${away.date === date ? '' : ` · ${esc(dtf({ day: 'numeric', month: 'short', timeZone: 'UTC' }).format(parse(away.date)))}`} · ${esc(relation(date, away.date))}</div>` : ''}</div>
     <div class="when">${n === 0 ? esc(t('day.today')) : n === 1 ? esc(t('day.tomorrow')) : n > 1 ? esc(t('day.inDays', n)) : ''}</div></div>`;
 }
 
@@ -2033,7 +2033,7 @@ async function viewFestivals() {
   }
   // Where the user lives now, each festival's date there, read once for the whole list.
   const away = awayPlace(), idx = away ? await awayIndex(today(), addDays(today(), 370), away).catch(() => null) : null;
-  const awayOf = x => { const d = idx && nearestDate(idx.get(x.f.id), x.date); return d && d !== x.date ? { place: away, date: d } : null; };
+  const awayOf = x => { const d = idx && nearestDate(idx.get(x.f.id), x.date); return d ? { place: away, date: d } : null; };
   // Quiet chips: the chosen kind filled, the rest outlined.
   let html = `<div class="chips noprint fkinds" style="margin-bottom:12px">${[['major', 'f.major'], ['regional', 'ff.regional'], ['fasting', 'ff.fasting'], ['jayanti', 'ff.jayanti'], ['all', 'f.all']].map(([k, l]) => `<button class="chip ${kind === k ? 'on' : ''}" data-fk="${k}">${esc(t(l))}</button>`).join('')}</div>`;
   let month = '', i = 0;
