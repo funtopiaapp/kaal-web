@@ -812,3 +812,121 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 /* The header pills say what they are, small above what is chosen. */
 .badge { display: inline-flex; flex-direction: column; align-items: flex-start; line-height: 1.15; }
 .badge .bdgcap { font-size: 9.5px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: var(--muted); }
+
+/* Games: the prototype's paper, lacquer, wood board, tamarind seeds and cowries (design/games/games-prototype.html),
+   on the app's own paper, card, ink and lines. Its colours are tokens on .gm, light and dark. */
+.gm { --paper-2: var(--sunken); --clay: #B5523B; --clay-soft: #FBEDE7; --maroon: #7A2335; --maroon-soft: #F7E6E9; --gold-bright: #E8C25A; --gold-soft: #F7EBCF; --gold-ink: #7A5612;
+  --indigo: #2A1F5C; --indigo-deep: #11113E; --indigo-soft: #E4EAF2; --green: #0F5A4A; --green-soft: #E6F1EC;
+  --wood: #8E3A27; --wood-deep: #5E2418; --pit: #4A1C12; --seed: #7B4A22; --seed-hi: #C08A52; --sq-a: #FBF1DC; --sq-b: #F3DFA8; --snake: #3F6A8A; --ladder: #8F6510; --on-dark: #FFFFFF;
+  display: flex; flex-direction: column; gap: 16px; font-size: 14px; line-height: 1.45; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .gm {
+  --clay: #E07A5F; --clay-soft: #3A2620; --maroon: #D9798C; --maroon-soft: #3A2329; --gold-soft: #3A3020; --gold-ink: #E8C98A; --indigo-soft: #262A3A; --green: #6FC1A5; --green-soft: #1F322B;
+  --wood: #6E2C1E; --wood-deep: #3E180F; --pit: #2A0F09; --seed: #A06A3A; --seed-hi: #DDA66A; --sq-a: #2F2820; --sq-b: #43371F; --snake: #8FB3CF; --ladder: #E2C27A; } }
+:root[data-theme="dark"] .gm {
+  --clay: #E07A5F; --clay-soft: #3A2620; --maroon: #D9798C; --maroon-soft: #3A2329; --gold-soft: #3A3020; --gold-ink: #E8C98A; --indigo-soft: #262A3A; --green: #6FC1A5; --green-soft: #1F322B;
+  --wood: #6E2C1E; --wood-deep: #3E180F; --pit: #2A0F09; --seed: #A06A3A; --seed-hi: #DDA66A; --sq-a: #2F2820; --sq-b: #43371F; --snake: #8FB3CF; --ladder: #E2C27A; }
+.gm h1, .gm h2, .gm h3 { margin: 0; font-weight: 650; text-wrap: balance; }
+.gm > .linkbtn { align-self: flex-start; padding: 0; margin-bottom: -8px; }
+.gm-title { display: flex; flex-direction: column; gap: 2px; }
+.gm-title h1, .gm-title h2 { font-size: 28px; line-height: 1.15; }
+.gm-sub { font-size: 12.5px; color: var(--muted); }
+.gm-eyebrow { font-size: 10.5px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold-bright); }
+.gm-h { font-size: 19px; font-weight: 650; }
+.gm-hero { position: relative; overflow: hidden; border-radius: 26px; padding: 18px; background: linear-gradient(160deg, var(--indigo), var(--indigo-deep)); color: var(--on-dark); display: flex; gap: 14px; align-items: center; box-shadow: 0 18px 36px -18px rgba(17,17,62,.7); }
+.gm-herotx { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.gm-hero h3 { font-size: 24px; line-height: 1.1; }
+.gm-other { font-size: 15px; opacity: .85; }
+.gm-when { font-size: 12.5px; opacity: .88; font-variant-numeric: tabular-nums; }
+.gm-vigil { margin: -6px 0 0; }
+.gm-pill { align-self: flex-start; border: 0; cursor: pointer; font-size: 12.5px; font-weight: 700; border-radius: 99px; padding: 7px 13px; }
+.gm-hero .gm-pill { margin-top: 6px; }
+.gm-pill.gold { background: var(--gold-bright); color: var(--indigo-deep); }
+.gm-pill.clay { background: var(--clay); color: var(--on-dark); }
+.gm-pill.ghost { background: var(--card); color: var(--ink); box-shadow: inset 0 0 0 1px var(--line); }
+.gm-pill:disabled { opacity: .45; cursor: default; }
+.gm-sec { display: flex; flex-direction: column; gap: 10px; }
+.gm-sech { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.gm-hs { display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; }
+.gm-tile { flex: none; width: 104px; border: 0; cursor: pointer; background: var(--card); border-radius: 18px; padding: 10px 8px; display: flex; flex-direction: column; align-items: center; gap: 6px; text-align: center; box-shadow: inset 0 0 0 1px var(--line); }
+.gm-tile:disabled { cursor: default; }
+.gm-tile .ic, .gm-fcard .ic { width: 58px; height: 58px; border-radius: 14px; flex: none; display: flex; align-items: center; justify-content: center; }
+.gm-tile b { font-size: 12px; font-weight: 600; line-height: 1.2; }
+.gm-tile span:not(.ic) { font-size: 10.5px; color: var(--muted); }
+.gm-fam { display: flex; flex-direction: column; gap: 10px; }
+.gm-fcard { border: 0; width: 100%; text-align: left; cursor: pointer; background: var(--card); border-radius: 20px; padding: 12px 14px; display: flex; gap: 12px; align-items: center; box-shadow: inset 0 0 0 1px var(--line); }
+.gm-fcard:disabled { cursor: default; color: inherit; }
+.gm-fcard .ic { width: 56px; height: 56px; }
+.gm-fcard .gm-tx { display: flex; flex-direction: column; gap: 2px; min-width: 0; flex: 1; }
+.gm-fcard .nm { font-size: 16.5px; font-weight: 650; }
+.gm-fcard .rg { font-size: 12px; color: var(--muted); }
+.gm-fcard .go { font-size: 12px; font-weight: 700; border-radius: 99px; padding: 6px 11px; flex: none; }
+.gm .soon { font-size: 10px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: var(--muted); }
+.gm-note { font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 10px; margin: 0; }
+.gm-tile:focus-visible, .gm-fcard:focus-visible, .gm-pill:focus-visible, .gm .pit:focus-visible, .gm .ap-hit:focus-visible { outline: 2.5px solid var(--clay); outline-offset: 2px; }
+/* What each game shares: the turn line, the banner, the rules folded away. */
+.gm-status { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+.gm-who { display: flex; gap: 8px; align-items: center; font-size: 13px; font-weight: 600; }
+.gm-pos { display: flex; gap: 10px; font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.gm-pos > span { display: inline-flex; align-items: center; gap: 4px; }
+.gm-dot { width: 12px; height: 12px; border-radius: 50%; flex: none; display: inline-block; }
+.gm-pos .gm-dot { width: 9px; height: 9px; }
+.gm-banner { min-height: 44px; border-radius: 14px; padding: 10px 12px; font-size: 13px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; background: var(--paper-2); transition: background .25s; }
+.gm-banner.virtue { background: var(--gold-soft); color: var(--gold-ink); }
+.gm-banner.vice { background: var(--indigo-soft); }
+.gm-banner.win { background: var(--gold-bright); color: var(--indigo-deep); font-weight: 700; }
+.gm-banner b { font-family: ui-serif, Georgia, serif; font-size: 15px; }
+.gm-how { background: var(--card); border-radius: 16px; box-shadow: inset 0 0 0 1px var(--line); padding: 0 14px; }
+.gm-how summary { cursor: pointer; list-style: none; padding: 11px 0; font-weight: 600; font-size: 13px; display: flex; justify-content: space-between; }
+.gm-how summary::-webkit-details-marker { display: none; }
+.gm-how summary::after { content: "+"; color: var(--clay); font-weight: 700; }
+.gm-how[open] summary::after { content: "–"; }
+.gm-how ul { margin: 0 0 12px; padding-left: 18px; font-size: 12.5px; color: var(--muted); display: flex; flex-direction: column; gap: 4px; }
+.gm-boardwrap { border-radius: 18px; overflow: hidden; max-width: 520px; width: 100%; align-self: center; }
+.gm svg { display: block; max-width: 100%; height: auto; }
+.gm-btns { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.gm-seg { display: flex; gap: 4px; background: var(--paper-2); border-radius: 99px; padding: 3px; }
+.gm-seg button { flex: 1; border: 0; background: transparent; cursor: pointer; border-radius: 99px; padding: 7px 6px; font-size: 12px; font-weight: 600; color: var(--muted); }
+.gm-seg button[aria-pressed="true"] { background: var(--card); color: var(--ink); box-shadow: 0 1px 3px rgba(30,15,5,.18); }
+/* The virtue board */
+.gm .pp-sq-a { fill: var(--sq-a); } .gm .pp-sq-b { fill: var(--sq-b); }
+.gm .pp-num { font-size: 7px; fill: var(--muted); font-variant-numeric: tabular-nums; }
+.gm .pp-lab { font-size: 7px; font-weight: 700; }
+.gm .tok { transition: transform .15s ease-out; }
+.gm .tok.slide { transition: transform .65s cubic-bezier(.4,.1,.3,1); }
+.gm .cowries { display: flex; gap: 6px; align-items: center; }
+.gm .cowrie { width: 26px; height: 20px; }
+.gm .cowries.tumble .cowrie { animation: gm-tumble .7s ease-in-out; }
+.gm .cowries.tumble .cowrie:nth-child(2n) { animation-duration: .6s; animation-direction: reverse; }
+@keyframes gm-tumble { 0% { transform: translateY(0) rotate(0); } 30% { transform: translateY(-14px) rotate(200deg); } 60% { transform: translateY(-4px) rotate(330deg); } 100% { transform: translateY(0) rotate(360deg); } }
+.gm-throwN { font-family: ui-serif, Georgia, serif; font-size: 22px; font-weight: 650; min-width: 1.2em; text-align: center; font-variant-numeric: tabular-nums; }
+.gm-legend { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; font-size: 11.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.gm-legend b { color: var(--ink); font-weight: 600; }
+/* The pit board: wood, fourteen pits, the seeds in each. */
+.gm .pl-board { background: linear-gradient(170deg, var(--wood), var(--wood-deep)); border-radius: 22px; padding: 12px 10px; display: flex; flex-direction: column; gap: 8px; box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 14px 26px -16px rgba(40,10,0,.7); max-width: 520px; width: 100%; align-self: center; }
+.gm .pl-row { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 5px; }
+.gm .pit { position: relative; aspect-ratio: 1; max-width: 100%; border-radius: 50%; border: 0; padding: 0; background: radial-gradient(circle at 50% 38%, var(--pit), var(--wood-deep) 75%); box-shadow: inset 0 3px 6px rgba(0,0,0,.6), 0 1px 0 rgba(255,255,255,.12); cursor: default; }
+.gm .pit.mine { cursor: pointer; }
+.gm .pit.mine:not(:disabled):hover { box-shadow: inset 0 3px 6px rgba(0,0,0,.6), 0 0 0 2px var(--gold-bright); }
+.gm .pit.hot { box-shadow: inset 0 3px 6px rgba(0,0,0,.6), 0 0 0 2.5px var(--gold-bright); }
+.gm .pit.took { box-shadow: inset 0 3px 6px rgba(0,0,0,.6), 0 0 0 2.5px var(--clay); }
+.gm .pit svg { position: absolute; inset: 8%; width: 84%; height: 84%; }
+.gm .pit .n { position: absolute; right: -2px; bottom: -4px; font-size: 10px; font-weight: 700; background: var(--gold-soft); color: var(--gold-ink); border-radius: 99px; padding: 0 5px; font-variant-numeric: tabular-nums; }
+.gm .pit:disabled { cursor: default; }
+.gm .pit.next { box-shadow: inset 0 3px 6px rgba(0,0,0,.6), 0 0 0 3px var(--gold-bright); animation: gm-glow 1s ease-in-out infinite; cursor: pointer; }
+@keyframes gm-glow { 50% { box-shadow: inset 0 3px 6px rgba(0,0,0,.6), 0 0 0 3px var(--gold-bright), 0 0 14px 3px rgba(232,194,90,.7); } }
+.gm .pl-strip { display: flex; justify-content: space-between; align-items: center; color: var(--on-dark); font-size: 12px; padding: 0 4px; }
+.gm .pl-strip b { font-family: ui-serif, Georgia, serif; font-size: 17px; color: var(--gold-bright); font-variant-numeric: tabular-nums; }
+.gm .pl-strip.turn span { color: var(--gold-bright); font-weight: 700; }
+.gm-hand { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--muted); min-height: 26px; }
+.gm-hand svg { width: 26px; height: 26px; }
+/* The triangle of tigers and goats */
+.gm .ap-line { stroke: var(--gold-ink); stroke-width: 1.6; fill: none; stroke-linecap: round; }
+.gm .ap-pt { fill: var(--gold-ink); }
+.gm .ap-hit { fill: transparent; cursor: pointer; }
+.gm .ap-target { fill: var(--clay); opacity: .55; pointer-events: none; }
+.gm .piece { transition: transform .35s cubic-bezier(.3,.1,.3,1), opacity .35s; }
+.gm .piece.gone { opacity: 0; }
+.gm .piece.sel circle.rim { stroke: var(--clay); stroke-width: 3; }
+.gm-counter { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.gm-counter b { color: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .gm .pit.next { animation: none; } .gm .tok, .gm .tok.slide, .gm .piece { transition: none; } .gm .cowries.tumble .cowrie { animation: none; } }

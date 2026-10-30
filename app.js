@@ -1,7 +1,8 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610292323';
+import { engine, onRestart } from './engine.js?v=202610292329';
+import { showGames, GM, gameKey, VIGIL } from './games.js?v=202610292329';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -25,7 +26,7 @@ const CULTURES = [
 ];
 const LIGHT = ['kaal', 'ivory', 'rose', 'sage'], DARK = ['kaal-dark', 'night', 'charcoal', 'peacock'];
 const TABS = [['home', 'hm.home'], ['today', 'tab.today'], ['calendar', 'tab.calendar'], ['festivals', 'tab.festivals'], ['muhurtham', 'tab.muhurtham'],
-  ['people', 'mn.profiles'], ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['match', 'mt.label'], ['greetings', 'gr.title'], ['guide', 'gd.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['prayers', 'py.title'], ['oldtime', 'ot.title'], ['settings', 'tab.settings']];
+  ['people', 'mn.profiles'], ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['match', 'mt.label'], ['greetings', 'gr.title'], ['guide', 'gd.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['prayers', 'py.title'], ['games', 'gm.menu'], ['oldtime', 'ot.title'], ['settings', 'tab.settings']];
 
 // ---------------------------------------------------------------- state
 const saved = (() => { try { return JSON.parse(localStorage.getItem('kaal-web') || '{}'); } catch { return {}; } })();
@@ -263,7 +264,7 @@ function shell() {
   $('#tabs').querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { tab = b.dataset.tab; if (tab === 'today') { dayDate = null; dayPlace = null; } render(); });
   $('#tabs').querySelector('[data-more]').onclick = () => {
     const o = sheet(`<h2 class="serif">${esc(t('mn.more'))}</h2><div class="morehub">${rest.map(([id, k]) => `<button class="tile" data-mt="${id}"><b>${esc(t(k))}</b></button>`).join('')}</div>`);
-    o.querySelectorAll('[data-mt]').forEach(b => b.onclick = () => { o.remove(); tab = b.dataset.mt; render(); scrollTo(0, 0); });
+    o.querySelectorAll('[data-mt]').forEach(b => b.onclick = () => { o.remove(); tab = b.dataset.mt; if (tab === 'games') GM.screen = null; render(); scrollTo(0, 0); });
   };
   // The copyright with the web build's version (the stamp build-web.sh puts on app.js).
   const build = V;
@@ -300,6 +301,7 @@ async function render() {
     if (tab === 'jathakam') return await viewJathakam();
     if (tab === 'temples') return await viewTemples();
     if (tab === 'prayers') return await viewPrayers();
+    if (tab === 'games') return viewGames();
     if (tab === 'oldtime') return await viewOldTime();
     if (tab === 'sky') return await viewSky();
     if (tab === 'people') return await viewPeople();
@@ -591,7 +593,7 @@ const TILE_STYLES = ['classic', 'mosaic', 'colourful', 'minimal'];
 // Reorder Home's tiles, put what's coming soonest first, juggle, and pick a style.
 function arrangeSheet(keys, x) {
   let order = orderTiles(keys.map(k => `data-k="${k}"`)).map(h => h.match(/data-k="([^"]+)"/)[1]);
-  const label = k => ({ festivals: t('tab.festivals'), day: t('dm.title'), dial: t('r3.dial'), vrats: t('vj.title'), calendar: t('tab.calendar'), jathakam: t('jk.chart'), sky: t('sk.title'), temples: t('tm.title'), people: t('fam.family'), match: t('mt.label'), greetings: t('gr.title'), birthstar: t('bs.result'), settings: t('tab.settings'), prayers: t('py.title'), oldtime: t('ot.title') })[k] || k;
+  const label = k => ({ festivals: t('tab.festivals'), day: t('dm.title'), dial: t('r3.dial'), vrats: t('vj.title'), calendar: t('tab.calendar'), jathakam: t('jk.chart'), sky: t('sk.title'), temples: t('tm.title'), people: t('fam.family'), match: t('mt.label'), greetings: t('gr.title'), birthstar: t('bs.result'), settings: t('tab.settings'), prayers: t('py.title'), games: t('gm.menu'), oldtime: t('ot.title') })[k] || k;
   const o = sheet('<div id="arr"></div>');
   const draw = () => {
     o.querySelector('#arr').innerHTML = `<h2 class="serif">${esc(t('hm.arrange'))}</h2>
@@ -636,6 +638,7 @@ const HOME_ICONS = {
   settings: '<path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/>',
   dial: '<circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v3M12 17.5v3M3.5 12h3M17.5 12h3"/><path d="M12 12l3.5-3.5"/>',
   muhurtham: '<circle cx="9" cy="14" r="5"/><circle cx="15" cy="14" r="5"/><path d="M10 4l2 3 2-3"/>',
+  games: '<path d="M5 21 9 3M10.5 21l4-18"/><path d="M6.3 16h4.5M7.4 11.5h4.5M8.5 7h4.5"/><path d="M20 4c-3 2 1 5-2 8s1 5-2 8"/>',
 };
 async function viewHome() {
   await loadPrayers().catch(() => {});
@@ -646,6 +649,7 @@ async function viewHome() {
   const fine = await engine({ op: 'timings', handle: await cal(+d.slice(0, 4)), date: d }).catch(() => null);
   const coming = await upcoming(d, 180);
   const fest = coming.find(x => x.f.tier !== 'minor' && x.date <= addDays(d, 90));
+  const vigil = coming.find(x => VIGIL.test(x.f.id));
   const greet = coming.find(x => x.f.tier !== 'minor');
   const vrat = (await vratDays(d, addDays(d, 14)))[0];
   const now = Date.now() / 1000;
@@ -677,7 +681,7 @@ async function viewHome() {
   const svg = k => `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icon(k)}</svg>`;
   // The tiles: a colour family each; the front holds the chip, the feature's name in the serif, a glimpse of what is
   // inside and a line beneath; the back (turned to now and then) a caption, one fact and a line.
-  const FAM = { festivals: 'gold', day: 'clay', dial: 'gold', calendar: 'clay', vrats: 'maroon', prayers: 'green', oldtime: 'gold', people: 'clay', match: 'maroon', greetings: 'gold', sky: 'indigo', temples: 'gold', jathakam: 'indigo', birthstar: 'gold', settings: 'quiet' };
+  const FAM = { festivals: 'gold', day: 'clay', dial: 'gold', calendar: 'clay', vrats: 'maroon', prayers: 'green', games: 'indigo', oldtime: 'gold', people: 'clay', match: 'maroon', greetings: 'gold', sky: 'indigo', temples: 'gold', jathakam: 'indigo', birthstar: 'gold', settings: 'quiet' };
   const chips = xs => xs.length ? `<span class="chips">${xs.slice(0, 3).map(x => `<span>${esc(x)}</span>`).join('')}</span>` : '';
   const backOf = (label, k, b) => b && b.fact ? `<span class="tback" aria-hidden="true"><span class="tbrings"></span><span class="tbframe"></span><span class="tbsym">${svg(k)}</span>
       <span class="tbname">${esc(label)}</span><span class="tbcap">${esc(b.caption)}</span><span class="tbfact">${esc(b.fact)}</span>${b.line ? `<span class="tbline">${esc(b.line)}</span>` : ''}</span>` : '';
@@ -744,6 +748,8 @@ async function viewHome() {
       back: { caption: t('tb.yours'), fact: t('vj.keptOf', String(kept)), line: vrat ? `${recName(vrat.key)} · ${when(vrat.date)}` : '' } }),
     tile('prayers', 'prayers', t('py.title'), { glimpse: verse[0] ? `<span class="gscript">${esc(verse[0])}</span>` : '', detail: tp ? prayerTitle(tp) : t('pr.today'),
       back: tp && { caption: t('tb.verse'), fact: verse.slice(0, 2).join('\n'), line: prayerTitle(tp) } }),
+    tile('games', 'games', t('gm.menu'), { glimpse: chips(['pp', 'pl', 'ap'].map(g => t(gameKey(g, S.culture)))), detail: vigil ? `${fname(vigil.f)} · ${vigil.date === d ? t('gm.tonight') : when(vigil.date)}` : t('gm.tagline'),
+      back: { caption: t('gm.fromTradition'), fact: t(gameKey('pp', S.culture)), line: ['pl', 'ap'].map(g => t(gameKey(g, S.culture))).join(' · ') } }),
     tile('oldtime', 'oldtime', t('ot.title'), { glimpse: `<span class="gnums"><b>${since[0]}</b><small>${esc(units[0])}</small><b>${since[1]}</b><small>${esc(units[1])}</small></span>`, detail: t('ot.toTrad', units[0]),
       back: { caption: t('tb.old'), fact: t('tb.unit', units[0]), line: t('tb.sixty', units[0]) } }),
     tile('people', 'people', t('fam.family'), { glimpse: initials.length ? `<span class="ginit">${initials.map(x => `<i>${esc(x)}</i>`).join('')}</span>` : '', detail: person ? `${personText(person)} · ${when(person.date)}` : t('pp.add'),
@@ -784,7 +790,7 @@ async function viewHome() {
       <button class="linkbtn" data-arrange>▦ ${esc(t('hm.arrange'))}</button></div>
     <div class="tiles style-${esc(S.tileStyle)}">${orderTiles(tiles).join('')}</div>
     <div class="small muted" style="text-align:center;margin-top:8px">Eka Panchang · ${esc(t('o.tagline'))}</div></div>`;
-  $('#main').querySelectorAll('[data-go]').forEach(b => b.onclick = () => { if (b.dataset.go === 'dial') return openDial(today()); tab = b.dataset.go; render(); scrollTo(0, 0); });
+  $('#main').querySelectorAll('[data-go]').forEach(b => b.onclick = () => { if (b.dataset.go === 'dial') return openDial(today()); tab = b.dataset.go; if (tab === 'games') GM.screen = null; render(); scrollTo(0, 0); });
   // Long press or right-click a tile: its shortcuts and what it is.
   onHold($('#main .wide[data-go="muhurtham"]'), (x, y) => popMenu(x, y, [{ label: t('r3.what'), icon: 'info', fn: () => explainer('muh') }]));
   $('#main').querySelectorAll('.tile[data-k]').forEach(el => { if (el.dataset.k !== 'settings' && el.dataset.k !== 'greetings' && el.dataset.k !== 'jathakam') onHold(el, (x, y) => tileMenu(el.dataset.k, x, y, { fest, tp })); });
@@ -1470,6 +1476,21 @@ function distText(km) {
   const v = miles ? km / 1.609344 : km;
   return new Intl.NumberFormat(locale(), { style: 'unit', unit: miles ? 'mile' : 'kilometer', maximumFractionDigits: 0 }).format(v);
 }
+// ---------------------------------------------------------------- games
+// As on iOS (GamesView): the board games of festival nights, in games.js. The hero counts down to Vaikuntha
+// Ekadashi, whose night the virtue board is played, from the tradition's own festival list.
+let vigilFor = null;
+function viewGames() {
+  const d = today(), key = `${S.culture}|${S.home?.id}|${d}`;
+  if (vigilFor?.key !== key) vigilFor = { key, p: upcoming(d, 400).then(xs => xs.find(x => VIGIL.test(x.f.id)) || null).catch(() => { vigilFor = null; return null; }) };
+  const c = CULTURES.find(x => x.id === S.culture);
+  showGames($('#main'), { t, tIn, esc, lang: lang(), culture: S.culture, packLang: pack.language, cultureName: c ? (S.native ? c.native : c.en) : '', loading, active: () => tab === 'games',
+    vigil: () => (vigilFor?.p || Promise.resolve(null)).then(v => {
+      if (!v) return null;
+      const n = daysBetween(d, v.date);
+      return { name: fname(v.f), today: n === 0, when: n === 1 ? t('day.tomorrow') : t('day.inDays', n), date: greg(v.date) };
+    }) });
+}
 // ---------------------------------------------------------------- prayers
 // As on iOS (PrayersView): traditional hymns by deity, for daily worship. Devotion only: nothing
 // here reads a profile, star or chart, and the app's own words say what a hymn is, never what it
@@ -1847,10 +1868,13 @@ async function festivalSheet(id, date) {
     ${steps.length ? `<div class="card"><p class="label">${esc(t('f.howTo'))}</p><ol>${steps.map(s => `<li>${esc(s)}</li>`).join('')}</ol></div>` : ''}
     ${f.variations?.length ? `<div class="card"><p class="label">${esc(t('f.notes'))}</p>${(lang() !== 'en' && f.variationsNative?.length ? f.variationsNative : f.variations).map(v => `<p class="small">${esc(v)}</p>`).join('')}</div>` : ''}
     ${how ? `<div class="card"><p class="label">${esc(t('f.dateHow'))}</p><p class="small muted">${esc(explainHow(how))}</p></div>` : ''}
+    ${VIGIL.test(id) ? `<button class="btn block noprint" data-game style="margin-bottom:8px">${esc(t('gm.festivalLink', t(gameKey('pp', S.culture))))}</button>` : ''}
     <button class="btn soft block noprint" data-fics style="margin-bottom:8px">🗓 ${esc(t('r3w.festToCal', fname(f)))}</button>
     <p class="small muted noprint">${esc(t('r3w.calWhy'))}</p>
     <button class="btn soft block noprint" onclick="window.print()">${SHARE_ICON} ${esc(t('pdf.share'))}</button>`);
   fo.querySelector('[data-fics]').onclick = () => festivalIcs(f, date);
+  // Vaikuntha Ekadashi's night: the virtue board, one tap away.
+  fo.querySelector('[data-game]')?.addEventListener('click', () => { fo.remove(); GM.screen = 'pp'; tab = 'games'; render(); scrollTo(0, 0); });
   // Once chosen, the page opens again with both places (and the list behind it gains its away lines).
   fo.querySelector('[data-addaway]')?.addEventListener('click', () => pickAway(() => { fo.remove(); if (tab === 'festivals') render(); festivalSheet(id, date); }));
   fo.querySelector('[data-bm]').onclick = e => { toggleBookmark(f.id); const on = bookmarked(f.id), b = e.currentTarget;
@@ -3317,6 +3341,7 @@ function tileMenu(k, x, y, ctx) {
     vrats: [{ label: t('r3.yearGlance'), icon: 'vrats', fn: go('vrats', () => $('#main .vy')?.closest('.card')?.scrollIntoView({ behavior: still() ? 'auto' : 'smooth', block: 'start' })) }],
     prayers: [ctx.tp && { label: t('pr.today'), icon: 'prayers', fn: () => { PRV.id = ctx.tp.id; go('prayers')(); } }],
     people: [{ label: t('r3.addPerson'), icon: 'people', fn: go('people', () => personEditor(null)) }],
+    games: ['pp', 'pl', 'ap'].map(g => ({ label: t(gameKey(g, S.culture)), icon: 'games', fn: () => { GM.screen = g; go('games')(); } })),
   }[k] || [];
   popMenu(x, y, [...items, guide]);
 }
