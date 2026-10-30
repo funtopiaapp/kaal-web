@@ -1,7 +1,7 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610291844';
+import { engine, onRestart } from './engine.js?v=202610292239';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -138,7 +138,7 @@ async function cal(year, place = S.home) {
 async function resetCalendars() {
   // A screen still loading may hold one of these; close them a little later.
   const old = [...handles.values()];
-  handles.clear();
+  handles.clear(); placeFests.clear();
   setTimeout(() => old.forEach(h => h.then(handle => engine({ op: 'close', handle })).catch(() => {})), 60000);
 }
 const day = async (s, place = S.home) => engine({ op: 'day', handle: await cal(+s.slice(0, 4), place), date: s });
@@ -151,6 +151,45 @@ async function upcoming(from, days) {
     }
   }
   return out.sort((a, b) => a.date < b.date ? -1 : 1);
+}
+// ---------------------------------------------------------------- at home and away
+// The away place (where the user lives now), unless it is home itself.
+const awayPlace = () => S.away && S.away.id !== S.home?.id ? S.away : null;
+// Another place's festivals for a year, read once per tradition, place and year.
+const placeFests = new Map();
+function festsAt(y, place) {
+  const key = `${S.culture}|${place.id}|${place.latitude}|${y}`;
+  if (!placeFests.has(key)) {
+    const p = cal(y, place).then(handle => engine({ op: 'festivals', handle }));
+    p.catch(() => { if (placeFests.get(key) === p) placeFests.delete(key); });
+    placeFests.set(key, p);
+  }
+  return placeFests.get(key);
+}
+// The festival dates there by id, for home dates from..to (three days more each side, so the edge of a year is not missed).
+async function awayIndex(from, to, place) {
+  const idx = new Map();
+  for (let y = +addDays(from, -3).slice(0, 4); y <= +addDays(to, 3).slice(0, 4); y++)
+    for (const o of await festsAt(y, place)) { if (!idx.has(o.id)) idx.set(o.id, []); idx.get(o.id).push(o.date); }
+  return idx;
+}
+// The same festival there: of its dates, the one nearest the home date, within three days either way.
+function nearestDate(dates, date) {
+  let best = null, bn = 4;
+  for (const d of dates || []) { const n = Math.abs(daysBetween(date, d)); if (n < bn) { bn = n; best = d; } }
+  return best;
+}
+// How the away date stands to home's: Same day, A day earlier, 3 days later.
+function relation(home, away) {
+  const n = daysBetween(home, away);
+  return t(n === 0 ? 'ha.same' : n === -1 ? 'ha.earlier' : n === 1 ? 'ha.later' : n < 0 ? 'ha.earlierN' : 'ha.laterN', Math.abs(n));
+}
+// A time on the clock of a given place.
+const clockIn = (u, tz) => dtf({ hour: 'numeric', minute: '2-digit', ...hourOpts(), timeZone: tz }).format(new Date(u * 1000));
+const PIN = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
+// The away place chosen from the same search as home's.
+function pickAway(done) {
+  sheet(`<h2 class="serif">${esc(t('s.away'))}</h2><div id="awp"></div>`, o => placePicker(o.querySelector('#awp'), p => { S.away = p; save(); o.remove(); done?.(); }));
 }
 
 // ---------------------------------------------------------------- places
@@ -1762,6 +1801,14 @@ function explainHow(how) {
 }
 
 // ---------------------------------------------------------------- festival page
+// One place's row in At home and away: its date, and when the festival is kept there (or its moonrise), on its own clock.
+function haRow(cls, label, place, date, w, moon, rel) {
+  const at = u => clockIn(u, place.tz);
+  return `<div class="harow ${cls}"><div class="hahead"><span class="label">${esc(label)} · ${esc(place.name)}</span>${rel ? `<span class="pill">${esc(rel)}</span>` : ''}</div>
+    <div class="hadate">${esc(greg(date))}</div>
+    ${w ? `<div class="small">${esc(t('f.keptAt', t('k.' + w.kala)))}</div><div class="hatime">${esc(w.start === w.end ? at(w.start) : `${at(w.start)} – ${at(w.end)}`)}</div>`
+      : moon ? `<div class="small">${esc(t('sun.moonrise'))}</div><div class="hatime">${esc(at(moon))}</div>` : ''}</div>`;
+}
 async function festivalSheet(id, date) {
   const f = pack.festivals.find(x => x.id === id); if (!f) return;
   const handle = await cal(+date.slice(0, 4));
@@ -1769,18 +1816,31 @@ async function festivalSheet(id, date) {
   const how = occ.find(o => o.id === id && o.date === date)?.how || '';
   // An Ekadashi's parana the next morning; the moonrise for fasts kept until the moon is seen.
   const parana = /ekadas/.test(id) ? await engine({ op: 'parana', handle, date }).catch(() => null) : null;
-  const byMoon = /karva|karwa|sankashti|sankatahara|chauth|chandra-darshan|ganesh-chaturthi/.test(id) && p.moonrise && w?.kala !== 'moonrise';
+  const moonFast = /karva|karwa|sankashti|sankatahara|chauth|chandra-darshan|ganesh-chaturthi/.test(id);
+  const byMoon = moonFast && p.moonrise && w?.kala !== 'moonrise';
+  // The same festival where the user lives now: its own date there, and its times on that calendar.
+  const away = awayPlace();
+  const there = away ? await (async () => {
+    const d = nearestDate((await awayIndex(date, date, away)).get(id), date);
+    if (!d) return null;
+    const ah = await cal(+d.slice(0, 4), away);
+    const [ap, aw] = await Promise.all([day(d, away), engine({ op: 'window', handle: ah, id, date: d }).catch(() => null)]);
+    return { date: d, w: aw, moon: moonFast && aw?.kala !== 'moonrise' ? ap.moonrise : null };
+  })().catch(() => null) : null;
   const steps = f.content?.howTo ? (f.content.howTo[lang()] ?? f.content.howTo.en ?? []) : [];
   const fo = sheet(`<div style="clear:both"></div>
     <button class="btn soft noprint" data-bm style="float:right;margin-left:8px" aria-pressed="${bookmarked(f.id)}" title="${esc(t(bookmarked(f.id) ? 'r3.unbookmarkFest' : 'r3.bookmarkFest', fname(f)))}">${bookmarked(f.id) ? '★' : '☆'}</button>
     ${f.tier === 'major' ? `<span class="pill">${esc(t('f.major'))}</span>` : ''}${isHoliday(f) ? `<span class="pill">${esc(t('f.holiday'))}</span>` : ''}
     <h1 class="serif" style="margin:6px 0 0">${esc(fname(f))}</h1><div class="muted">${esc(fother(f))}</div>
     <div style="color:var(--accent);font-weight:700;margin-top:6px">${esc(greg(date))}</div>
-    <div class="small muted">📍 ${esc(t('f.forPlace', S.home.name))} · ${esc(cultureDate(p.solar, keptLunar(f, p.lunar)))}</div>
+    <div class="small muted">${esc(cultureDate(p.solar, keptLunar(f, p.lunar)))}</div>
     <p>${esc(text(f.content?.summary))}</p>
-    ${w ? `<div class="card"><p class="label">${esc(t('f.pujaTime'))}</p><div>${esc(t('f.keptAt', t('k.' + w.kala)))}</div><div style="font-size:20px;font-weight:700;color:var(--accent)">${esc(w.start === w.end ? clock(w.start) : span(w))}</div><div class="small muted">${esc(t('f.pujaFor', S.home.name))}</div></div>` : ''}
+    <div class="card hacard"><p class="label">${esc(t('ha.title'))}</p>
+      ${haRow('home', t('dual.home'), S.home, date, w, byMoon ? p.moonrise : null)}
+      ${!away ? `<div class="haadd noprint"><p class="small muted">${esc(t('ha.addHint'))}</p><button class="btn soft" data-addaway>${PIN} ${esc(t('s.addAway'))}</button></div>`
+        : there ? haRow('away', t('dual.away'), away, there.date, there.w, there.moon, relation(date, there.date))
+        : `<div class="harow away"><div class="hahead"><span class="label">${esc(t('dual.away'))} · ${esc(away.name)}</span></div><div class="small muted">${esc(t('ha.none'))}</div></div>`}</div>
     ${parana ? `<div class="card"><p class="label">${esc(t('v.parana'))}</p><div class="small" style="color:var(--accent);font-weight:700">${esc(greg(addDays(date, 1), { weekday: 'short', day: 'numeric', month: 'short' }))}</div><div style="font-size:20px;font-weight:700">${esc(span(parana))}</div>${parana.dvadashiEnd ? `<div class="small muted">${esc(t('v.dvadashiEnds', clock(parana.dvadashiEnd)))}</div>` : ''}<div class="small muted">${esc(t('v.paranaWhy'))}</div></div>` : ''}
-    ${byMoon ? `<div class="card"><p class="label">${esc(t('sun.moonrise'))}</p><div style="font-size:20px;font-weight:700;color:var(--accent)">${esc(clock(p.moonrise))}</div><div class="small muted">${esc(t('f.pujaFor', S.home.name))}</div></div>` : ''}
     ${f.content?.traditions ? `<div class="card"><p class="label">${esc(t('f.traditions'))}</p><p>${esc(text(f.content.traditions))}</p></div>` : ''}
     ${f.local?.[S.home?.country] ? `<div class="card"><p class="label">${esc(t('f.whereYouLive'))}</p><p>${esc((lang() !== 'en' && f.localNative?.[S.home.country]) || f.local[S.home.country])}</p></div>` : ''}
     ${f.content?.story ? `<div class="card"><p class="label">${esc(t('f.story'))}</p><p>${esc(text(f.content.story))}</p></div>` : ''}
@@ -1791,6 +1851,8 @@ async function festivalSheet(id, date) {
     <p class="small muted noprint">${esc(t('r3w.calWhy'))}</p>
     <button class="btn soft block noprint" onclick="window.print()">${SHARE_ICON} ${esc(t('pdf.share'))}</button>`);
   fo.querySelector('[data-fics]').onclick = () => festivalIcs(f, date);
+  // Once chosen, the page opens again with both places (and the list behind it gains its away lines).
+  fo.querySelector('[data-addaway]')?.addEventListener('click', () => pickAway(() => { fo.remove(); if (tab === 'festivals') render(); festivalSheet(id, date); }));
   fo.querySelector('[data-bm]').onclick = e => { toggleBookmark(f.id); const on = bookmarked(f.id), b = e.currentTarget;
     b.textContent = on ? '★' : '☆'; b.setAttribute('aria-pressed', on); b.title = t(on ? 'r3.unbookmarkFest' : 'r3.bookmarkFest', fname(f)); toast(t(on ? 'r3w.bookmarked' : 'r3w.unbookmarked', fname(f))); };
 }
@@ -1936,12 +1998,13 @@ async function printYear(y, place) {
 const festBack = (f, date) => { const sum = text(f.content?.summary);
   return { caption: fname(f), fact: sum || greg(date, { weekday: 'long', day: 'numeric', month: 'long' }) }; };
 // With o (the festivals list), the row rises in at its place and turns now and then to its one line or its date.
-function festRow(f, date, o) {
+// With away ({ place, date }), a quiet second line where the festival falls on another day there.
+function festRow(f, date, o, away) {
   const n = daysBetween(today(), date);
-  if (o) return `<div class="frow turn v rise" style="--i:${o.i}" data-f="${esc(f.id)}" data-d="${date}">${festRow(f, date).replace(/^<div class="fest ([^"]*)" data-f="[^"]*" data-d="[^"]*">/, '<div class="fest tfront $1">')}${lacquer(o.back, o.fam, true)}</div>`;
+  if (o) return `<div class="frow turn v rise" style="--i:${o.i}" data-f="${esc(f.id)}" data-d="${date}">${festRow(f, date, null, o.away).replace(/^<div class="fest ([^"]*)" data-f="[^"]*" data-d="[^"]*">/, '<div class="fest tfront $1">')}${lacquer(o.back, o.fam, true)}</div>`;
   return `<div class="fest ${f.tier === 'major' ? 'major' : ''}" data-f="${esc(f.id)}" data-d="${date}"><div class="bar2"></div>
     <div style="min-width:44px;text-align:center"><b>${+date.slice(8)}</b><div class="small muted">${esc(dtf({ month: 'short', timeZone: 'UTC' }).format(parse(date)))}</div></div>
-    <div><b>${esc(fname(f))}</b>${bookmarked(f.id) ? ` <span class="gold" title="${esc(t('r3w.bookmarked', fname(f)))}">★</span>` : ''}<div class="small muted">${esc(fother(f))}</div></div>
+    <div><b>${esc(fname(f))}</b>${bookmarked(f.id) ? ` <span class="gold" title="${esc(t('r3w.bookmarked', fname(f)))}">★</span>` : ''}<div class="small muted">${esc(fother(f))}</div>${away ? `<div class="small muted faway">${PIN}${esc(away.place.name)} · ${esc(dtf({ day: 'numeric', month: 'short', timeZone: 'UTC' }).format(parse(away.date)))} · ${esc(relation(date, away.date))}</div>` : ''}</div>
     <div class="when">${n === 0 ? esc(t('day.today')) : n === 1 ? esc(t('day.tomorrow')) : n > 1 ? esc(t('day.inDays', n)) : ''}</div></div>`;
 }
 
@@ -1968,6 +2031,9 @@ async function viewFestivals() {
     }
     list.sort((a, b) => a.date < b.date ? -1 : a.date > b.date ? 1 : (a.obs ? 1 : 0) - (b.obs ? 1 : 0));
   }
+  // Where the user lives now, each festival's date there, read once for the whole list.
+  const away = awayPlace(), idx = away ? await awayIndex(today(), addDays(today(), 370), away).catch(() => null) : null;
+  const awayOf = x => { const d = idx && nearestDate(idx.get(x.f.id), x.date); return d && d !== x.date ? { place: away, date: d } : null; };
   // Quiet chips: the chosen kind filled, the rest outlined.
   let html = `<div class="chips noprint fkinds" style="margin-bottom:12px">${[['major', 'f.major'], ['regional', 'ff.regional'], ['fasting', 'ff.fasting'], ['jayanti', 'ff.jayanti'], ['all', 'f.all']].map(([k, l]) => `<button class="chip ${kind === k ? 'on' : ''}" data-fk="${k}">${esc(t(l))}</button>`).join('')}</div>`;
   let month = '', i = 0;
@@ -1975,7 +2041,7 @@ async function viewFestivals() {
     const mm = x.date.slice(0, 7);
     if (mm !== month) { month = mm; html += `<p class="label" style="margin-top:14px">${esc(dtf({ month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(x.date)))}</p>`; }
     html += x.obs ? `<div class="list-row obs rise" style="--i:${i++}"><span style="color:var(--gold)">☾</span><span class="grow">${esc(recName(x.obs))}</span><span class="small muted">${esc(dtf({ day: 'numeric', month: 'short', timeZone: 'UTC' }).format(parse(x.date)))}</span></div>`
-      : festRow(x.f, x.date, { i: i++, back: festBack(x.f, x.date), fam: KINDS.fasting(x.f) ? 'maroon' : 'gold' });
+      : festRow(x.f, x.date, { i: i++, back: festBack(x.f, x.date), fam: KINDS.fasting(x.f) ? 'maroon' : 'gold', away: awayOf(x) });
   }
   $('#main').innerHTML = html + `<button class="btn soft block noprint" onclick="window.print()">${SHARE_ICON} ${esc(t('pdf.share'))}</button>`;
   $('#main').querySelectorAll('[data-fk]').forEach(b => b.onclick = () => { fKind = b.dataset.fk; viewFestivals(); });
@@ -3051,6 +3117,7 @@ function viewSettings() {
       <div class="chips">${CULTURES.map(c => `<button class="chip ${S.culture === c.id ? 'on' : ''}" data-c="${c.id}">${c.native}<br><small>${c.en}</small></button>`).join('')}</div>
       <label class="field"><span>${esc(t('s.language'))}</span><div class="seg"><button data-l="0" class="${!S.native ? 'on' : ''}">English</button><button data-l="1" class="${S.native ? 'on' : ''}">${esc(langName(pack.language))}</button></div></label></div>
     <div class="card"><p class="label">${esc(t('s.home'))}</p><div><b>${esc(S.home.name)}</b> <span class="small muted">${esc([S.home.region, S.home.country].filter(Boolean).join(', '))}</span></div><div id="hp" style="margin-top:8px"></div></div>
+    <div class="card"><p class="label">${esc(t('s.away'))}</p>${S.away ? `<div><b>${esc(S.away.name)}</b> <span class="small muted">${esc([S.away.region, S.away.country].filter(Boolean).join(', '))}</span></div><button class="btn soft" data-noaway style="margin-top:8px">${esc(t('s.removeAway'))}</button>` : `<p class="small muted">${esc(t('ha.addHint'))}</p>`}<div id="ap" style="margin-top:8px"></div></div>
     <div class="card"><p class="label">${esc(t('s.appearance'))}</p>
       <div class="seg">${['system', 'light', 'dark'].map(m => `<button data-th="${m}" class="${S.theme === m ? 'on' : ''}">${esc(t('s.' + m))}</button>`).join('')}</div>
       <p class="small muted" style="margin-top:10px">${esc(t('th.light'))}</p><div class="chips">${LIGHT.map(id => `<button class="chip ${S.light === id ? 'on' : ''}" data-lt="${id}">${esc(t('th.' + id))}</button>`).join('')}</div>
@@ -3081,6 +3148,8 @@ function viewSettings() {
   $('#main').querySelectorAll('[data-lt]').forEach(b => b.onclick = () => { S.light = b.dataset.lt; save(); render(); });
   $('#main').querySelectorAll('[data-dk]').forEach(b => b.onclick = () => { S.dark = b.dataset.dk; save(); render(); });
   placePicker($('#hp'), async p => { S.home = p; save(); await resetCalendars(); tab = 'today'; render(); });
+  placePicker($('#ap'), p => { S.away = p; save(); viewSettings(); });
+  $('#main').querySelector('[data-noaway]')?.addEventListener('click', () => { delete S.away; save(); viewSettings(); });
   wireBackup($('#main'));
 }
 

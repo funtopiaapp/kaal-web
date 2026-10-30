@@ -68,6 +68,20 @@ input[type=text], input[type=date], input[type=time], select { width: 100%; padd
 .fest .bar2 { width: 5px; align-self: stretch; border-radius: 3px; background: var(--gold); }
 .fest.major .bar2 { background: var(--accent); }
 .fest .when { margin-left: auto; text-align: right; font-size: 13px; color: var(--muted); white-space: nowrap; }
+/* At home and away: home's row tinted with the accent, away's quieter on the sunken ground but as legible. */
+.hacard .harow { border-radius: 12px; padding: 10px 12px; margin-top: 8px; border: 1px solid var(--line); background: var(--sunken); }
+.hacard .harow.home { background: color-mix(in srgb, var(--accent) 9%, var(--card)); border-color: color-mix(in srgb, var(--accent) 38%, transparent); }
+.hacard .hahead { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+.hacard .hahead .label { margin: 0; }
+.hacard .harow.home .hahead .label { color: var(--accent); }
+.hacard .hahead .pill { margin: 0; }
+.hacard .hadate { font-weight: 700; margin: 2px 0; }
+.hacard .hatime { font-size: 20px; font-weight: 700; color: var(--accent); }
+.hacard .harow.away .hatime { color: var(--ink); }
+.hacard .haadd { margin-top: 10px; }
+.hacard .haadd p { margin: 0 0 8px; }
+.fest .faway { display: flex; align-items: center; gap: 4px; margin-top: 2px; }
+.fest .faway svg { flex: none; }
 .rec { padding: 10px 12px; border-radius: 12px; background: var(--sunken); margin-bottom: 8px; }
 
 .grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
