@@ -1,8 +1,8 @@
 // Runs the Kaal engine (kaal_wasm.wasm) off the main thread: a year takes a
 // second or two to compute, and the page stays responsive meanwhile.
 let x = null;
-const ready = WebAssembly.instantiateStreaming(fetch('kaal_wasm.wasm?v=202610292329'), {})
-  .catch(() => fetch('kaal_wasm.wasm?v=202610292329').then(r => r.arrayBuffer()).then(b => WebAssembly.instantiate(b, {})))
+const ready = WebAssembly.instantiateStreaming(fetch('kaal_wasm.wasm?v=202610300738'), {})
+  .catch(() => fetch('kaal_wasm.wasm?v=202610300738').then(r => r.arrayBuffer()).then(b => WebAssembly.instantiate(b, {})))
   .then(r => { x = r.instance.exports; });
 
 function call(req) {

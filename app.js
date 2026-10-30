@@ -1,8 +1,8 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610292329';
-import { showGames, GM, gameKey, VIGIL } from './games.js?v=202610292329';
+import { engine, onRestart } from './engine.js?v=202610300738';
+import { showGames, GM, gameKey, VIGIL } from './games.js?v=202610300738';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -3341,7 +3341,7 @@ function tileMenu(k, x, y, ctx) {
     vrats: [{ label: t('r3.yearGlance'), icon: 'vrats', fn: go('vrats', () => $('#main .vy')?.closest('.card')?.scrollIntoView({ behavior: still() ? 'auto' : 'smooth', block: 'start' })) }],
     prayers: [ctx.tp && { label: t('pr.today'), icon: 'prayers', fn: () => { PRV.id = ctx.tp.id; go('prayers')(); } }],
     people: [{ label: t('r3.addPerson'), icon: 'people', fn: go('people', () => personEditor(null)) }],
-    games: ['pp', 'pl', 'ap'].map(g => ({ label: t(gameKey(g, S.culture)), icon: 'games', fn: () => { GM.screen = g; go('games')(); } })),
+    games: ['pp', 'pl', 'ap', 'ac', 'nm', 'bc'].map(g => ({ label: t(gameKey(g, S.culture)), icon: 'games', fn: () => { GM.screen = g; go('games')(); } })),
   }[k] || [];
   popMenu(x, y, [...items, guide]);
 }

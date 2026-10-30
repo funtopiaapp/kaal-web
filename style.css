@@ -860,7 +860,6 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .gm-fcard .nm { font-size: 16.5px; font-weight: 650; }
 .gm-fcard .rg { font-size: 12px; color: var(--muted); }
 .gm-fcard .go { font-size: 12px; font-weight: 700; border-radius: 99px; padding: 6px 11px; flex: none; }
-.gm .soon { font-size: 10px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; color: var(--muted); }
 .gm-note { font-size: 11.5px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 10px; margin: 0; }
 .gm-tile:focus-visible, .gm-fcard:focus-visible, .gm-pill:focus-visible, .gm .pit:focus-visible, .gm .ap-hit:focus-visible { outline: 2.5px solid var(--clay); outline-offset: 2px; }
 /* What each game shares: the turn line, the banner, the rules folded away. */
@@ -930,3 +929,36 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .gm-counter { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .gm-counter b { color: var(--ink); }
 @media (prefers-reduced-motion: reduce) { .gm .pit.next { animation: none; } .gm .tok, .gm .tok.slide, .gm .piece { transition: none; } .gm .cowries.tumble .cowrie { animation: none; } }
+.gm-level { display: flex; flex-direction: column; gap: 4px; }
+.gm-level[hidden] { display: none; }
+/* The square race: five by five squares, the crossed squares safe */
+.gm { --indigo-ink: #2A1F5C; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .gm { --indigo-ink: #A59BEA; } }
+:root[data-theme="dark"] .gm { --indigo-ink: #A59BEA; }
+.gm .ac-sq { fill: var(--sq-a); stroke: var(--maroon); stroke-width: 1.3; }
+.gm .ac-sq.in { fill: var(--paper-2); }
+.gm .ac-sq.home { fill: var(--gold-soft); }
+.gm .ac-x { stroke: var(--maroon); stroke-width: 1.2; stroke-linecap: round; opacity: .75; pointer-events: none; }
+.gm .ac-hit { fill: transparent; cursor: default; }
+.gm .ac-hit.can { cursor: pointer; }
+.gm .ac-can { fill: none; stroke: var(--gold-bright); stroke-width: 3; pointer-events: none; animation: gm-acglow 1s ease-in-out infinite; }
+@keyframes gm-acglow { 50% { stroke-width: 5; opacity: .75; } }
+.gm .ac-dest { fill: var(--clay); opacity: .5; pointer-events: none; }
+.gm .acp { transition: transform .15s ease-out; }
+.gm .acp.slide { transition: transform .6s cubic-bezier(.4,.1,.3,1); }
+.gm .ac-seat { font-size: 7.5px; font-weight: 700; letter-spacing: .6px; text-transform: uppercase; pointer-events: none; paint-order: stroke; stroke: var(--gold-soft); stroke-width: 3px; stroke-linejoin: round; }
+.gm .ac-hit:focus-visible { outline: 2.5px solid var(--clay); outline-offset: -2px; }
+/* The line of three: three squares joined at their middles */
+.gm .nm-line { stroke: var(--gold-ink); stroke-width: 1.8; fill: none; stroke-linecap: square; }
+.gm .nm-pt { fill: var(--gold-ink); }
+.gm .nm-mill { stroke: var(--gold-bright); stroke-width: 9; stroke-linecap: round; opacity: 0; pointer-events: none; transition: opacity .3s; }
+.gm .nm-mill.on { opacity: .85; }
+.gm .piece.rm circle.rim { stroke: var(--clay); stroke-width: 3; stroke-dasharray: 3 2.4; }
+/* Bagh Chal: the square board of twenty-five points */
+.gm .bc-line { stroke: var(--green); stroke-width: 1.6; fill: none; stroke-linecap: round; }
+.gm .bc-pt { fill: var(--green); }
+/* Bagh Chal's card sits under the tiger and goats family. */
+.gm-fcard.sub { margin: -6px 0 0 28px; width: calc(100% - 28px); padding: 9px 12px; border-radius: 16px; }
+.gm-fcard.sub .ic { width: 44px; height: 44px; border-radius: 12px; }
+.gm-fcard.sub .nm { font-size: 15px; }
+@media (prefers-reduced-motion: reduce) { .gm .acp, .gm .acp.slide, .gm .nm-mill { transition: none; } .gm .ac-can { animation: none; } }
