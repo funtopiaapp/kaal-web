@@ -1,8 +1,8 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610300947';
-import { showGames, GM, gameKey, VIGIL } from './games.js?v=202610300947';
+import { engine, onRestart, warm } from './engine.js?v=202610301031';
+import { showGames, GM, gameKey, VIGIL } from './games.js?v=202610301031';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -86,9 +86,15 @@ const ymd = d => `${d.getUTCFullYear()}-${pad(d.getUTCMonth() + 1)}-${pad(d.getU
 const parse = s => { const [y, m, d] = s.split('-').map(Number); return new Date(Date.UTC(y, m - 1, d, 12)); };
 const addDays = (s, n) => { const d = parse(s); d.setUTCDate(d.getUTCDate() + n); return ymd(d); };
 const daysBetween = (a, b) => Math.round((parse(b) - parse(a)) / 86400000);
-function today(tz = S.home?.tz) {
-  return new Intl.DateTimeFormat('en-CA', { timeZone: tz || undefined, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date());
+// Formatters are costly to build and never change: each locale and set of options is built once.
+const INTL = new Map();
+function intl(L, o) {
+  const k = L + JSON.stringify(o);
+  let f = INTL.get(k); if (!f) INTL.set(k, f = new Intl.DateTimeFormat(L, o));
+  return f;
 }
+const civil = tz => intl('en-CA', { timeZone: tz || undefined, year: 'numeric', month: '2-digit', day: '2-digit' });
+function today(tz = S.home?.tz) { return civil(tz).format(new Date()); }
 // The calendar can be looked at for another city without changing home:
 // monthPlace for the month grid, dayPlace for a day opened from it.
 let monthPlace = null, dayPlace = null;
@@ -96,17 +102,23 @@ const here = () => dayPlace || S.home;
 // Month and weekday names by language (from ICU). Browsers carry little or no date data for some
 // languages (Odia, Nepali), and fall back to English or "2026 M10 23"; Kaal fills in the names itself.
 const DATE_NAMES = {"ml": {"ml": ["ജനുവരി", "ഫെബ്രുവരി", "മാർച്ച്", "ഏപ്രിൽ", "മേയ്", "ജൂൺ", "ജൂലൈ", "ഓഗസ്റ്റ്", "സെപ്റ്റംബർ", "ഒക്‌ടോബർ", "നവംബർ", "ഡിസംബർ"], "ms": ["ജനു", "ഫെബ്രു", "മാർ", "ഏപ്രി", "മേയ്", "ജൂൺ", "ജൂലൈ", "ഓഗ", "സെപ്റ്റം", "ഒക്ടോ", "നവം", "ഡിസം"], "wl": ["ഞായറാഴ്‌ച", "തിങ്കളാഴ്‌ച", "ചൊവ്വാഴ്‌ച", "ബുധനാഴ്‌ച", "വ്യാഴാഴ്‌ച", "വെള്ളിയാഴ്‌ച", "ശനിയാഴ്‌ച"], "ws": ["ഞായർ", "തിങ്കൾ", "ചൊവ്വ", "ബുധൻ", "വ്യാഴം", "വെള്ളി", "ശനി"]}, "ta": {"ml": ["ஜனவரி", "பிப்ரவரி", "மார்ச்", "ஏப்ரல்", "மே", "ஜூன்", "ஜூலை", "ஆகஸ்ட்", "செப்டம்பர்", "அக்டோபர்", "நவம்பர்", "டிசம்பர்"], "ms": ["ஜன.", "பிப்.", "மார்.", "ஏப்.", "மே", "ஜூன்", "ஜூலை", "ஆக.", "செப்.", "அக்.", "நவ.", "டிச."], "wl": ["ஞாயிறு", "திங்கள்", "செவ்வாய்", "புதன்", "வியாழன்", "வெள்ளி", "சனி"], "ws": ["ஞாயி.", "திங்.", "செவ்.", "புத.", "வியா.", "வெள்.", "சனி"]}, "hi": {"ml": ["जनवरी", "फ़रवरी", "मार्च", "अप्रैल", "मई", "जून", "जुलाई", "अगस्त", "सितंबर", "अक्तूबर", "नवंबर", "दिसंबर"], "ms": ["जन॰", "फ़र॰", "मार्च", "अप्रैल", "मई", "जून", "जुल॰", "अग॰", "सित॰", "अक्तू॰", "नव॰", "दिस॰"], "wl": ["रविवार", "सोमवार", "मंगलवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"], "ws": ["रवि", "सोम", "मंगल", "बुध", "गुरु", "शुक्र", "शनि"]}, "te": {"ml": ["జనవరి", "ఫిబ్రవరి", "మార్చి", "ఏప్రిల్", "మే", "జూన్", "జులై", "ఆగస్టు", "సెప్టెంబర్", "అక్టోబర్", "నవంబర్", "డిసెంబర్"], "ms": ["జన", "ఫిబ్ర", "మార్చి", "ఏప్రి", "మే", "జూన్", "జులై", "ఆగ", "సెప్టెం", "అక్టో", "నవం", "డిసెం"], "wl": ["ఆదివారం", "సోమవారం", "మంగళవారం", "బుధవారం", "గురువారం", "శుక్రవారం", "శనివారం"], "ws": ["ఆది", "సోమ", "మంగళ", "బుధ", "గురు", "శుక్ర", "శని"]}, "kn": {"ml": ["ಜನವರಿ", "ಫೆಬ್ರವರಿ", "ಮಾರ್ಚ್", "ಏಪ್ರಿಲ್", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗಸ್ಟ್", "ಸೆಪ್ಟೆಂಬರ್", "ಅಕ್ಟೋಬರ್", "ನವೆಂಬರ್", "ಡಿಸೆಂಬರ್"], "ms": ["ಜನ", "ಫೆಬ್ರ", "ಮಾರ್ಚ್", "ಏಪ್ರಿ", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗ", "ಸೆಪ್ಟೆಂ", "ಅಕ್ಟೋ", "ನವೆಂ", "ಡಿಸೆಂ"], "wl": ["ಭಾನುವಾರ", "ಸೋಮವಾರ", "ಮಂಗಳವಾರ", "ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"], "ws": ["ಭಾನು", "ಸೋಮ", "ಮಂಗಳ", "ಬುಧ", "ಗುರು", "ಶುಕ್ರ", "ಶನಿ"]}, "gu": {"ml": ["જાન્યુઆરી", "ફેબ્રુઆરી", "માર્ચ", "એપ્રિલ", "મે", "જૂન", "જુલાઈ", "ઑગસ્ટ", "સપ્ટેમ્બર", "ઑક્ટોબર", "નવેમ્બર", "ડિસેમ્બર"], "ms": ["જાન્યુ", "ફેબ્રુ", "માર્ચ", "એપ્રિલ", "મે", "જૂન", "જુલાઈ", "ઑગસ્ટ", "સપ્ટે", "ઑક્ટો", "નવે", "ડિસે"], "wl": ["રવિવાર", "સોમવાર", "મંગળવાર", "બુધવાર", "ગુરુવાર", "શુક્રવાર", "શનિવાર"], "ws": ["રવિ", "સોમ", "મંગળ", "બુધ", "ગુરુ", "શુક્ર", "શનિ"]}, "mr": {"ml": ["जानेवारी", "फेब्रुवारी", "मार्च", "एप्रिल", "मे", "जून", "जुलै", "ऑगस्ट", "सप्टेंबर", "ऑक्टोबर", "नोव्हेंबर", "डिसेंबर"], "ms": ["जाने", "फेब्रु", "मार्च", "एप्रि", "मे", "जून", "जुलै", "ऑग", "सप्टें", "ऑक्टो", "नोव्हें", "डिसें"], "wl": ["रविवार", "सोमवार", "मंगळवार", "बुधवार", "गुरुवार", "शुक्रवार", "शनिवार"], "ws": ["रवि", "सोम", "मंगळ", "बुध", "गुरु", "शुक्र", "शनि"]}, "bn": {"ml": ["জানুয়ারী", "ফেব্রুয়ারী", "মার্চ", "এপ্রিল", "মে", "জুন", "জুলাই", "আগস্ট", "সেপ্টেম্বর", "অক্টোবর", "নভেম্বর", "ডিসেম্বর"], "ms": ["জানু", "ফেব", "মার্চ", "এপ্রিল", "মে", "জুন", "জুলাই", "আগস্ট", "সেপ্টেঃ", "অক্টোঃ", "নভেঃ", "ডিসেঃ"], "wl": ["রবিবার", "সোমবার", "মঙ্গলবার", "বুধবার", "বৃহস্পতিবার", "শুক্রবার", "শনিবার"], "ws": ["রবি", "সোম", "মঙ্গল", "বুধ", "বৃহস্পতি", "শুক্র", "শনি"]}, "or": {"ml": ["ଜାନୁଆରୀ", "ଫେବୃଆରୀ", "ମାର୍ଚ୍ଚ", "ଅପ୍ରେଲ", "ମଇ", "ଜୁନ", "ଜୁଲାଇ", "ଅଗଷ୍ଟ", "ସେପ୍ଟେମ୍ବର", "ଅକ୍ଟୋବର", "ନଭେମ୍ବର", "ଡିସେମ୍ବର"], "ms": ["ଜାନୁଆରୀ", "ଫେବୃଆରୀ", "ମାର୍ଚ୍ଚ", "ଅପ୍ରେଲ", "ମଇ", "ଜୁନ", "ଜୁଲାଇ", "ଅଗଷ୍ଟ", "ସେପ୍ଟେମ୍ବର", "ଅକ୍ଟୋବର", "ନଭେମ୍ବର", "ଡିସେମ୍ବର"], "wl": ["ରବିବାର", "ସୋମବାର", "ମଙ୍ଗଳବାର", "ବୁଧବାର", "ଗୁରୁବାର", "ଶୁକ୍ରବାର", "ଶନିବାର"], "ws": ["ରବି", "ସୋମ", "ମଙ୍ଗଳ", "ବୁଧ", "ଗୁରୁ", "ଶୁକ୍ର", "ଶନି"]}, "ne": {"ml": ["जनवरी", "फेब्रुअरी", "मार्च", "अप्रिल", "मे", "जुन", "जुलाई", "अगस्ट", "सेप्टेम्बर", "अक्टोबर", "नोभेम्बर", "डिसेम्बर"], "ms": ["जनवरी", "फेब्रुअरी", "मार्च", "अप्रिल", "मे", "जुन", "जुलाई", "अगस्ट", "सेप्टेम्बर", "अक्टोबर", "नोभेम्बर", "डिसेम्बर"], "wl": ["आइतबार", "सोमबार", "मङ्गलबार", "बुधबार", "बिहिबार", "शुक्रबार", "शनिबार"], "ws": ["आइत", "सोम", "मङ्गल", "बुध", "बिहि", "शुक्र", "शनि"]}};
+const DTF = new Map();
 function dtf(opts, L = lang()) {
-  const f = new Intl.DateTimeFormat(L === 'en' ? 'en-IN' : `${L}-IN`, opts), N = DATE_NAMES[L];
-  if (!N) return f;
-  const num = (d, o) => +new Intl.DateTimeFormat('en-US', { ...o, timeZone: opts.timeZone }).format(d);
-  const wd = d => ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(new Intl.DateTimeFormat('en-US', { weekday: 'short', timeZone: opts.timeZone }).format(d));
-  return { format: d => f.formatToParts(d).map(p => {
+  const key = L + JSON.stringify(opts);
+  if (DTF.has(key)) return DTF.get(key);
+  const f = intl(L === 'en' ? 'en-IN' : `${L}-IN`, opts), N = DATE_NAMES[L];
+  if (!N) { DTF.set(key, f); return f; }
+  const num = d => +intl('en-US', { month: 'numeric', timeZone: opts.timeZone }).format(d);
+  const wd = d => ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(intl('en-US', { weekday: 'short', timeZone: opts.timeZone }).format(d));
+  // The parts too (the calendar's sunrise drops the day period), with the names filled in.
+  const parts = d => f.formatToParts(d).map(p => {
     const latin = /[A-Za-z]/.test(p.value);
-    if (p.type === 'month' && (latin || opts.month === 'long' && /^\d+$/.test(p.value))) return N[opts.month === 'short' ? 'ms' : 'ml'][num(d, { month: 'numeric' }) - 1];
-    if (p.type === 'weekday' && latin) return N[opts.weekday === 'short' ? 'ws' : 'wl'][wd(d)];
-    return p.value;
-  }).join('') };
+    if (p.type === 'month' && (latin || opts.month === 'long' && /^\d+$/.test(p.value))) return { ...p, value: N[opts.month === 'short' ? 'ms' : 'ml'][num(d) - 1] };
+    if (p.type === 'weekday' && latin) return { ...p, value: N[opts.weekday === 'short' ? 'ws' : 'wl'][wd(d)] };
+    return p;
+  });
+  const w = { format: d => parts(d).map(p => p.value).join(''), formatToParts: parts };
+  DTF.set(key, w); return w;
 }
 const greg = (s, opts = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }) =>
   dtf({ ...opts, timeZone: 'UTC' }).format(parse(s));
@@ -150,11 +162,19 @@ async function resetCalendars() {
   setTimeout(() => old.forEach(h => h.then(handle => engine({ op: 'close', handle })).catch(() => {})), 60000);
 }
 const day = async (s, place = S.home) => engine({ op: 'day', handle: await cal(+s.slice(0, 4), place), date: s });
+// A festival of the pack by its id.
+const festIndex = new WeakMap();
+function festById(id) {
+  let m = festIndex.get(pack); if (!m) festIndex.set(pack, m = new Map(pack.festivals.map(f => [f.id, f])));
+  return m.get(id);
+}
 async function upcoming(from, days) {
   const to = addDays(from, days); const out = [];
+  // Each year asked for at once, so two years open side by side.
+  for (let y = +from.slice(0, 4); y <= +to.slice(0, 4); y++) cal(y);
   for (let y = +from.slice(0, 4); y <= +to.slice(0, 4); y++) {
     for (const o of await engine({ op: 'festivals', handle: await cal(y) })) {
-      const f = pack.festivals.find(x => x.id === o.id);
+      const f = festById(o.id);
       if (f && !f.hidden && o.date >= from && o.date <= to) out.push({ f, date: o.date, how: o.how });
     }
   }
@@ -202,22 +222,32 @@ function pickAway(done) {
 
 // ---------------------------------------------------------------- places
 let PLACES = null;
-async function places() {
-  if (PLACES) return PLACES;
-  const tsv = await (await fetch('places.tsv?v=' + V)).text();
-  PLACES = tsv.trim().split('\n').map(l => { const c = l.split('\t');
-    return { id: +c[0], name: c[1], ascii: c[2].toLowerCase(), alts: c[3].toLowerCase(), country: c[4], region: c[5], latitude: +c[6], longitude: +c[7], tz: c[8], pop: +c[9] }; });
-  PLACES.sort((a, b) => b.pop - a.pop);
+// The 34,000 places are read in slices, so the page never stops for long; each keeps its names lower-cased for the search.
+function places() {
+  PLACES ??= fetch('places.tsv?v=' + V).then(r => r.text()).then(async tsv => {
+    const lines = tsv.trim().split('\n'), out = [];
+    for (let i = 0; i < lines.length; i += 1000) {
+      if (i) await new Promise(r => setTimeout(r));
+      for (const l of lines.slice(i, i + 1000)) { const c = l.split('\t'), alts = c[3].toLowerCase();
+        out.push({ id: +c[0], name: c[1], ascii: c[2].toLowerCase(), alts, country: c[4], region: c[5], latitude: +c[6], longitude: +c[7], tz: c[8], pop: +c[9], lower: c[1].toLowerCase(), altl: alts.split('|') }); }
+    }
+    return out.sort((a, b) => b.pop - a.pop);
+  });
+  PLACES.catch(() => { PLACES = null; });
   return PLACES;
 }
+// A place's own name first, then an exact alternate name, then prefixes (as kaal-core's search).
+const placeRank = (p, q) => p.lower === q || p.ascii === q ? 0 : p.altl.includes(q) ? 1
+  : p.lower.startsWith(q) || p.ascii.startsWith(q) || p.altl.some(a => a.startsWith(q)) ? 2 : 3;
+// Typing on: a place that matches the longer text matched the shorter one, so only the last matches are looked at again.
+let lastSearch = null;
 async function searchPlaces(q) {
   q = q.trim().toLowerCase(); if (q.length < 2) return [];
   const all = await places();
-  // A place's own name first, then an exact alternate name, then prefixes (as kaal-core's search).
-  const rank = p => p.name.toLowerCase() === q || p.ascii === q ? 0 : p.alts.split('|').includes(q) ? 1
-    : p.name.toLowerCase().startsWith(q) || p.ascii.startsWith(q) || p.alts.split('|').some(a => a.startsWith(q)) ? 2 : 3;
-  const out = [[], [], []];
-  for (const p of all) { const r = rank(p); if (r < 3) out[r].push(p); }
+  const pool = lastSearch && q.startsWith(lastSearch.q) ? lastSearch.hits : all;
+  const out = [[], [], []], hits = [];
+  for (const p of pool) { const r = placeRank(p, q); if (r < 3) { out[r].push(p); hits.push(p); } }
+  lastSearch = { q, hits };
   return out.flat().slice(0, 20);
 }
 async function nearest(lat, lon) {
@@ -230,8 +260,13 @@ function placePicker(container, onPick) {
   container.innerHTML = `<input type="text" placeholder="${esc(t('o.search'))}" class="q">
     <button class="btn soft block" style="margin-top:8px" data-loc>📍 ${esc(t('o.useLocation'))}</button><div class="results"></div>`;
   const out = container.querySelector('.results');
+  // The list is read while the picker waits, not on the first letter typed.
+  places().catch(() => {});
+  let asked = 0;
   container.querySelector('.q').addEventListener('input', async e => {
-    const rs = await searchPlaces(e.target.value);
+    // Only the latest text's answer is shown.
+    const n = ++asked, rs = await searchPlaces(e.target.value);
+    if (n !== asked) return;
     out.innerHTML = rs.map((p, i) => `<div class="list-row" data-i="${i}" style="cursor:pointer"><div class="grow"><b>${esc(p.name)}</b><div class="small muted">${esc([p.region, p.country].filter(Boolean).join(', '))}</div></div></div>`).join('');
     out.querySelectorAll('[data-i]').forEach(el => el.onclick = () => onPick(plain(rs[+el.dataset.i])));
   });
@@ -648,6 +683,8 @@ const HOME_ICONS = {
   games: '<path d="M5 21 9 3M10.5 21l4-18"/><path d="M6.3 16h4.5M7.4 11.5h4.5M8.5 7h4.5"/><path d="M20 4c-3 2 1 5-2 8s1 5-2 8"/>',
 };
 async function viewHome() {
+  // The years the coming festivals need start opening at once.
+  for (let y = +today().slice(0, 4); y <= +addDays(today(), 180).slice(0, 4); y++) cal(y);
   await loadPrayers().catch(() => {});
   const d = today();
   dayDate = null; dayPlace = null;
@@ -836,7 +873,7 @@ async function viewDay() {
   const WEEK = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
   const vara = p.nextSunrise && WEEK.includes(p.weekday) ? t('dial.nextAt', name('weekdays', WEEK[(WEEK.indexOf(p.weekday) + 1) % 7]), clock(p.nextSunrise)) : '';
   const [tv, td] = limb(p.tithis, 'tithis'), [nv, nd] = limb(p.nakshatras, 'nakshatras'), [yv, yd] = limb(p.yogas, 'yogas'), [kv, kd] = limb(p.karanas, 'karanas');
-  const fests = p.occurrences.filter(o => !o.recurring).map(o => ({ o, f: pack.festivals.find(f => f.id === o.id) })).filter(x => x.f && !x.f.hidden);
+  const fests = p.occurrences.filter(o => !o.recurring).map(o => ({ o, f: festById(o.id) })).filter(x => x.f && !x.f.hidden);
   const recs = [...new Set(p.occurrences.filter(o => o.recurring && (!pack.dailySignificance.find(r => r.key === o.id)?.optIn || S.vrats.includes(o.id))).map(o => o.id))];
   const people = await peopleOn(d);
   const checkIns = d === today() && !dayPlace ? await vratCheckIns() : [];
@@ -845,7 +882,13 @@ async function viewDay() {
   const calWins = [];
   const calBtn = (k, w) => { if (!w || w.end <= Date.now() / 1000) return ''; calWins.push([k, w]);
     return ` <button class="calbtn noprint" data-calw="${calWins.length - 1}" title="${esc(t('r3w.addToCal'))}" aria-label="${esc(t('r3w.addToCal') + ': ' + t(k))}">🗓</button>`; };
-  const skyToday = dayPlace ? [] : (await skyEvents(+d.slice(0, 4)).catch(() => [])).filter(e => new Intl.DateTimeFormat('en-CA', { timeZone: S.home.tz }).format(new Date(e.at * 1000)) === d);
+  // The year's sky takes a few seconds the first time: the day does not wait for it, its events join when read.
+  const skyP = dayPlace ? Promise.resolve([]) : skyEvents(+d.slice(0, 4)).catch(() => []);
+  const skyOf = list => list.filter(e => intl('en-CA', { timeZone: S.home.tz }).format(new Date(e.at * 1000)) === d);
+  const skyRead = await Promise.race([skyP, Promise.resolve(null)]), skyToday = skyOf(skyRead || []);
+  const obsOther = fests.length || recs.length || people.length;
+  const obsHead = sky => obsOther || sky.length ? `<p class="label">${esc(t('day.observances'))}</p>` : '';
+  const skyRows = sky => sky.map(e => `<div class="rec" data-goto-sky style="cursor:pointer">✦ ${esc(skyTitle(e))} · ${esc(clock(e.at))}</div>`).join('');
   $('#main').innerHTML = `
     ${checkIns.slice(0, 3).map(checkInCard).join('')}
     <div class="dayhead"><div class="nav"><button class="arrow" data-shift="-1" aria-label="Previous day">‹</button>
@@ -853,8 +896,7 @@ async function viewDay() {
       <div class="small muted">📍 ${esc(t('f.forPlace', here().name))}</div></div>
       <button class="arrow" data-shift="1" aria-label="Next day">›</button></div>
       ${d !== today() ? `<button class="btn soft noprint" data-today>${esc(t('day.jumpToday'))}</button>` : ''}<button class="btn soft noprint" data-dialday>◷ ${esc(t('dial.open'))}</button> <button class="btn soft noprint" data-addnote>＋ ${esc(t('r3.addNote'))}</button></div>
-    ${fests.length || recs.length || people.length || skyToday.length ? `<p class="label">${esc(t('day.observances'))}</p>` : ''}
-    ${skyToday.map(e => `<div class="rec" data-goto-sky style="cursor:pointer">✦ ${esc(skyTitle(e))} · ${esc(clock(e.at))}</div>`).join('')}
+    <div id="daysky" style="display:contents">${obsHead(skyToday)}${skyRows(skyToday)}</div>
     ${fests.map(({ f, o }) => `<div class="fest ${f.tier === 'major' ? 'major' : ''}" data-f="${esc(f.id)}" data-d="${o.date}"><div class="bar2"></div><div><b>${esc(fname(f))}</b><div class="small muted">${esc(fother(f))}</div><div class="small muted">${esc(text(f.content?.summary))}</div></div><div class="when">›</div></div>`).join('')}
     ${people.map(x => `<div class="rec">🎁 <b>${esc(x.title)}</b> <span class="small muted">${esc(x.line)}</span></div>`).join('')}
     ${recs.map(k => { const r = pack.dailySignificance.find(r => r.key === k); return `<div class="rec">🌙 <b>${esc(recName(k))}</b>${/sank/.test(k) && p.moonrise ? ` <span class="small" style="color:var(--accent);font-weight:700">· ${esc(t('sun.moonrise'))} ${esc(clock(p.moonrise))}</span>` : ''}<div class="small muted">${esc(text(r?.content?.summary))}</div></div>`; }).join('')}
@@ -889,7 +931,10 @@ async function viewDay() {
   $('#main').querySelectorAll('[data-shift]').forEach(b => b.onclick = () => { dayDate = addDays(d, +b.dataset.shift); tab = 'today'; viewDay(); });
   $('#main').querySelector('[data-today]')?.addEventListener('click', () => { dayDate = null; viewDay(); });
   wireCheckIns();
-  $('#main').querySelectorAll('[data-goto-sky]').forEach(x => x.onclick = () => { tab = 'sky'; render(); });
+  const wireSky = () => $('#main').querySelectorAll('[data-goto-sky]').forEach(x => x.onclick = () => { tab = 'sky'; render(); });
+  wireSky();
+  const box = $('#main #daysky');
+  if (!skyRead) skyP.then(list => { const sky = skyOf(list); if (sky.length && box.isConnected) { box.innerHTML = obsHead(sky) + skyRows(sky); wireSky(); } });
   wireMuhurtas(fine, d);
   wireFestivals();
   startTurns($('#main'), '.limb.turn');
@@ -919,7 +964,7 @@ function dayDetail(p, f, d) {
 // tradition's own first; the current and next periods, the rest on request.
 const FAVOURED = new Set(['amrita', 'shubha', 'labha', 'chara', 'amirdha', 'uthi', 'laabam', 'dhanam', 'sugam']);
 let mAll = false;
-function civilIn(u) { return new Intl.DateTimeFormat('en-CA', { timeZone: here().tz, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(u * 1000)); }
+function civilIn(u) { return civil(here().tz).format(new Date(u * 1000)); }
 function stamp(u, d) {
   if (civilIn(u) === d) return clock(u);
   return dtf({ day: 'numeric', month: 'short', timeZone: here().tz }).format(new Date(u * 1000)) + ' ' + clock(u);
@@ -1417,7 +1462,7 @@ function eclipseSheet(e) {
 
 async function viewSky() {
   loading();
-  const tz = S.home.tz, nowLocal = new Intl.DateTimeFormat('en-GB', { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()).split(':');
+  const tz = S.home.tz, nowLocal = intl('en-GB', { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()).split(':');
   const now = await engine({ op: 'jataka', date: today(), minutes: +nowLocal[0] * 60 + +nowLocal[1], location: S.home });
   const ev = (await skyEvents(skyYear)).filter(e => skyFilter === 'all' || (skyFilter === 'eclipses' ? e.kind.endsWith('eclipse') : skyFilter === 'ingress' ? e.kind === 'ingress' : e.kind === 'retrograde' || e.kind === 'direct'));
   const month = u => dtf({ month: 'long', year: 'numeric', timeZone: tz }).format(new Date(u * 1000));
@@ -1635,7 +1680,7 @@ async function ghatiDial(el, place) {
   let off = 0, offAt = -1;
   const wall = ms => {
     if (offAt < 0 || ms - offAt > 60000) {
-      const q = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: place.tz, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
+      const q = Object.fromEntries(intl('en-US', { timeZone: place.tz, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' })
         .formatToParts(new Date(ms)).map(x => [x.type, x.value]));
       off = Date.UTC(+q.year, +q.month - 1, +q.day, +q.hour % 24, +q.minute, +q.second) - Math.floor(ms / 1000) * 1000; offAt = ms;
     }
@@ -1672,7 +1717,7 @@ async function ghatiDial(el, place) {
 async function viewOldTime() {
   const u = timeUnitNames(), place = OT.place || S.home;
   OT.date ||= today(place.tz);
-  if (OT.time == null) { const now = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: place.tz }).format(new Date()); OT.time = now; }
+  if (OT.time == null) { const now = intl('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: place.tz }).format(new Date()); OT.time = now; }
   const opts = n => Array.from({ length: 60 }, (_, i) => `<option ${i === n ? 'selected' : ''}>${i}</option>`).join('');
   $('#main').innerHTML = `<h2 class="serif" style="margin-bottom:4px">${esc(t('ot.title'))}</h2><p class="muted" style="margin-top:0">${esc(t('ot.intro', u[0], u[1]))}</p>
     <div class="card ghati clocks" id="otdial"></div>
@@ -1701,14 +1746,14 @@ async function viewOldTime() {
   let r, head;
   if (OT.toClock) {
     const unit = OT.proportional ? (pd.nextSunrise - pd.sunrise) / 60 : 1440, tt = pd.sunrise + Math.floor(OT.n * unit + OT.v * unit / 60);
-    const on = new Intl.DateTimeFormat('en-CA', { timeZone: place.tz }).format(new Date(tt * 1000));
+    const on = intl('en-CA', { timeZone: place.tz }).format(new Date(tt * 1000));
     r = tradTime(pd, tt, OT.proportional, false, OT.date);
     head = t('ot.clockIs', clockAt(tt), greg(on, { day: 'numeric', month: 'long', year: 'numeric' }));
   } else {
     // The clock time on that date where the place is: its offset there, then the instant.
     const [hh, mm] = OT.time.split(':').map(Number), [y, mo, dd] = OT.date.split('-').map(Number);
     const guess = Date.UTC(y, mo - 1, dd, hh, mm) / 1000;
-    const off = (() => { const f = new Intl.DateTimeFormat('en-US', { timeZone: place.tz, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' });
+    const off = (() => { const f = intl('en-US', { timeZone: place.tz, hourCycle: 'h23', year: 'numeric', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' });
       const q = Object.fromEntries(f.formatToParts(new Date(guess * 1000)).map(x => [x.type, x.value])); return (Date.UTC(+q.year, +q.month - 1, +q.day, +q.hour, +q.minute) / 1000) - guess; })();
     const tt = guess - off;
     if (tt < pd.sunrise) { const prev = addDays(OT.date, -1), py = await day(prev, place); r = tradTime(py, tt, OT.proportional, true, prev); }
@@ -1795,7 +1840,7 @@ function ruleTerm(w) {
   return w.replace(/_/g, ' ');
 }
 const monthOrSign = k => pack.names.lunarMonths?.[k] ? name('lunarMonths', k) : pack.names.solarMonths?.[k] ? name('solarMonths', k) : name('rashis', k);
-const eventName = id => { const f = pack.festivals.find(f => f.id === id); return f ? fname(f) : recName(id); };
+const eventName = id => { const f = festById(id); return f ? fname(f) : recName(id); };
 function explainHow(how) {
   if (!how) return '';
   let m, tail = '';
@@ -1838,7 +1883,7 @@ function haRow(cls, label, place, date, w, moon, rel) {
       : moon ? `<div class="small">${esc(t('sun.moonrise'))}</div><div class="hatime">${esc(at(moon))}</div>` : ''}</div>`;
 }
 async function festivalSheet(id, date) {
-  const f = pack.festivals.find(x => x.id === id); if (!f) return;
+  const f = festById(id); if (!f) return;
   const handle = await cal(+date.slice(0, 4));
   const [p, w, occ] = await Promise.all([day(date), engine({ op: 'window', handle, id, date }), engine({ op: 'festivals', handle })]);
   const how = occ.find(o => o.id === id && o.date === date)?.how || '';
@@ -1894,7 +1939,7 @@ async function festivalSheet(id, date) {
 async function daySummary(d, place) {
   const [p, fine] = await Promise.all([day(d, place), engine({ op: 'timings', handle: await cal(+d.slice(0, 4), place), date: d }).catch(() => null)]);
   const sp = starPerson(), n0 = p.nakshatras[0], tr = sp && n0 ? taraOf(sp.anchor.nakshatra, n0.key) : 0;
-  const fs = p.occurrences.filter(o => !o.recurring).map(o => pack.festivals.find(f => f.id === o.id)).filter(f => f && !f.hidden);
+  const fs = p.occurrences.filter(o => !o.recurring).map(o => festById(o.id)).filter(f => f && !f.hidden);
   const best = fine?.choghadiya.find(x => !x.night && ['amrita', 'shubha', 'labha'].includes(x.key));
   const row = (k, v) => `<div class="row"><span class="muted">${esc(k)}</span><span class="v">${esc(v)}</span></div>`;
   const o = sheet(`<div class="muted">${esc(greg(d))}</div><h2 class="serif" style="margin:4px 0 10px">${esc(cultureDate(p.solar, p.lunar))}</h2>
@@ -1931,7 +1976,7 @@ async function viewMonth(turn = 0) {
   const sunF = dtf({ hour: 'numeric', minute: '2-digit', ...hourOpts(), timeZone: place.tz });
   const hm = u => u ? sunF.formatToParts(new Date(u * 1000)).filter(x => x.type !== 'dayPeriod').map(x => x.value).join('').trim() : '';
   const grid = cells.map(c => {
-    const fs = c.festivals.map(id => pack.festivals.find(f => f.id === id)).filter(f => f && !f.hidden);
+    const fs = c.festivals.map(id => festById(id)).filter(f => f && !f.hidden);
     fs.forEach(f => items.push({ f, date: c.date }));
     const major = fs.some(f => f.tier === 'major'), special = c.recurring.some(r => marked.includes(r));
     const sub = solar && c.solar ? String(c.solar.day) : name('tithis', c.tithi);
@@ -1978,7 +2023,7 @@ async function viewMonth(turn = 0) {
   });
   $('#main').querySelectorAll('[data-day]').forEach(c => { c.onclick = () => daySummary(c.dataset.day, place);
     // Long press or right-click a day: open it, bookmark its festival, add a note or event.
-    onHold(c, (x, y) => dayMenu(c.dataset.day, x, y, c.dataset.fs ? c.dataset.fs.split(',').map(id => pack.festivals.find(f => f.id === id)).filter(Boolean) : [], place)); });
+    onHold(c, (x, y) => dayMenu(c.dataset.day, x, y, c.dataset.fs ? c.dataset.fs.split(',').map(id => festById(id)).filter(Boolean) : [], place)); });
   $('#main').querySelector('[data-legend]').onclick = legendGuide;
   calPeople($('#calpeople'), sp);
   $('#main').querySelector('#calstyle').onchange = e => { S.calStyle = e.target.value; save(); viewMonth(); };
@@ -2007,7 +2052,7 @@ async function printYear(y, place) {
   const solar = pack.display.primary === 'solar';
   const c = CULTURES.find(c => c.id === S.culture);
   const title = t('pdf.yearTitle', c ? (S.native ? c.native : c.en) : 'Eka Panchang', y);
-  const fests = cells.flatMap(x => x.festivals.map(id => pack.festivals.find(f => f.id === id)).filter(f => f && !f.hidden && f.tier !== 'minor').map(f => ({ f, date: x.date })));
+  const fests = cells.flatMap(x => x.festivals.map(id => festById(id)).filter(f => f && !f.hidden && f.tier !== 'minor').map(f => ({ f, date: x.date })));
   const wd = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'].map(k => name('weekdays', k).slice(0, lang() === 'en' ? 3 : 4));
   let html = `<div class="yearprint"><h1 class="serif">${esc(title)}</h1><p class="small muted">${esc(t('f.forPlace', place.name))}</p>${fests.map(x => festRow(x.f, x.date)).join('')}`;
   for (let mo = 1; mo <= 12; mo++) {
@@ -2016,7 +2061,7 @@ async function printYear(y, place) {
     const lead = parse(`${y}-${pad(mo)}-01`).getUTCDay();
     html += `<section class="ym"><h2 class="serif">${esc(head)}</h2><div class="muted">${esc(dtf({ month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(`${y}-${pad(mo)}-01`)))}</div>
       <div class="grid">${wd.map(w => `<div class="wd">${esc(w)}</div>`).join('')}${'<div class="cell empty"></div>'.repeat(lead)}${mc.map(x => {
-        const fs = x.festivals.map(id => pack.festivals.find(f => f.id === id)).filter(f => f && !f.hidden);
+        const fs = x.festivals.map(id => festById(id)).filter(f => f && !f.hidden);
         return `<div class="cell ${fs.length ? 'fest' : ''}"><div class="d">${+x.date.slice(8)}</div><div class="t">${esc(solar && x.solar ? String(x.solar.day) : name('tithis', x.tithi))}</div><div class="n">${esc(name('nakshatras', x.nakshatra))}</div>${fs.slice(0, 2).map(f => `<div class="n" style="color:var(--accent)">${esc(fname(f))}</div>`).join('')}</div>`;
       }).join('')}</div></section>`;
   }
@@ -3202,7 +3247,7 @@ function toast(msg) {
 function zonedUnix(date, hhmm, tz) {
   const [y, m, d] = date.split('-').map(Number), [h, mi] = (hhmm || '00:00').split(':').map(Number);
   const guess = Date.UTC(y, m - 1, d, h, mi) / 1000;
-  const off = u => { const p = Object.fromEntries(new Intl.DateTimeFormat('en-US', { timeZone: tz, hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).formatToParts(new Date(u * 1000)).map(x => [x.type, x.value]));
+  const off = u => { const p = Object.fromEntries(intl('en-US', { timeZone: tz, hourCycle: 'h23', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).formatToParts(new Date(u * 1000)).map(x => [x.type, x.value]));
     return Date.UTC(+p.year, +p.month - 1, +p.day, +p.hour % 24, +p.minute, +p.second) / 1000 - u; };
   const u = guess - off(guess); return guess - off(u);
 }
@@ -3526,7 +3571,9 @@ async function loadPack() {
   pack = JSON.parse(packJson);
 }
 (async () => {
-  STR = await (await fetch('strings.json?v=' + V)).json();
-  await loadPack();
+  warm();
+  // The text and the pack are read side by side.
+  const str = fetch('strings.json?v=' + V).then(r => r.json());
+  await loadPack(); STR = await str;
   render();
 })();

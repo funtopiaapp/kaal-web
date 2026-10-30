@@ -596,6 +596,13 @@ html.still .tyin, html.still .g2.pagein { animation: fadein .2s; }
 .row.limb > .tfront { display: flex; justify-content: space-between; gap: 12px; flex: 1; }
 /* Festival rows in the list. */
 .frow { margin-bottom: 8px; cursor: pointer; --r: 12px; }
+/* The festival list's rows below the first screens are laid out only when scrolled near (their rise is long over by then).
+   Only where the clip can be widened: a row turning over reaches 15px past its box. */
+@supports (overflow-clip-margin: 16px) {
+  #main:has(> .fkinds) > .frow:nth-child(n+20), #main:has(> .fkinds) > .list-row.obs:nth-child(n+20) { content-visibility: auto; contain-intrinsic-size: auto 70px; overflow-clip-margin: 16px; animation: none; }
+  #main:has(> .fkinds) > .list-row.obs:nth-child(n+20) { contain-intrinsic-size: auto 24px; }
+}
+@media print { #main:has(> .fkinds) > .frow, #main:has(> .fkinds) > .list-row.obs { content-visibility: visible; } }
 .frow > .fest.tfront { margin: 0; }
 /* Deities in Prayers, and today's verse word by word. */
 .prdeity { display: block; border: 0; padding: 0; background: none; font: inherit; color: inherit; text-align: left; cursor: pointer; --r: 16px; }
