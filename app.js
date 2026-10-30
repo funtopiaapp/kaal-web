@@ -1,8 +1,8 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610300738';
-import { showGames, GM, gameKey, VIGIL } from './games.js?v=202610300738';
+import { engine, onRestart } from './engine.js?v=202610300947';
+import { showGames, GM, gameKey, VIGIL } from './games.js?v=202610300947';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -32,6 +32,13 @@ const TABS = [['home', 'hm.home'], ['today', 'tab.today'], ['calendar', 'tab.cal
 const saved = (() => { try { return JSON.parse(localStorage.getItem('kaal-web') || '{}'); } catch { return {}; } })();
 const S = Object.assign({ tileOrder: [], tileStyle: 'classic', textSize: 1, culture: '', native: false, home: null, theme: 'system', light: 'kaal', dark: 'kaal-dark', people: [], vrats: [], vratLog: {}, families: [] }, saved);
 function save() { try { localStorage.setItem('kaal-web', JSON.stringify(S)); } catch {} }
+// Animations: the user's own choice (S.motion, kept only once the switch is flipped), else on for a higher-end device and
+// off for a lower-end one: data saver on, under 4 GB of memory or under 4 cores. Off is the same as the browser asking
+// for less motion: html.still, which the stylesheet and still() both read.
+const LOW_END = (() => { try { const n = navigator; return !!n.connection?.saveData || (n.deviceMemory != null && n.deviceMemory < 4) || (n.hardwareConcurrency != null && n.hardwareConcurrency < 4); } catch { return false; } })();
+const motionOn = () => typeof S.motion === 'boolean' ? S.motion : !LOW_END;
+const applyMotion = () => document.documentElement.classList.toggle('still', !motionOn());
+applyMotion();
 // The app's text size, 0 (smaller) to 4 (largest), as on iOS: the whole page scales.
 const SHARE_ICON = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>';
 const TEXT_SIZES = [0.9, 1, 1.15, 1.3, 1.45];
@@ -359,13 +366,13 @@ function sinceSunrise(sunrise) {
   return t('hm.sinceSunrise', `${Math.floor(s / 1440)} ${names[0]} ${Math.floor((s % 1440) / 24)} ${names[1]}`);
 }
 let homeTick = null, turnTimer = null, holdTurns = false;
-const still = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+const still = () => !motionOn() || matchMedia('(prefers-reduced-motion: reduce)').matches;
 // Now and then one card turns over, chosen at random among those on screen, never the same twice running; it comes
 // back by itself. One loop per screen: a new one, or a new screen, ends the last. The setting keeps them all still;
 // asking the browser for less motion makes them fade instead of turn.
 function startTurns(root, sel) {
   clearTimeout(turnTimer);
-  if (S.tileFlip === false) return;
+  if (S.tileFlip === false || !motionOn()) return;
   const view = tab, id = e => e.dataset.k || e;
   let last = null;
   const tick = () => {
@@ -451,10 +458,10 @@ function skyStrip(p, tz) {
 function animateSky(svg) {
   if (!svg) return;
   const n = k => +svg.dataset[k], mid = n('mid'), W = 320, hz = 60, lift = hz - 6, D = 86400, t0 = performance.now();
-  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const calm = still();
   const height = (t, rise, span, amp) => { let f = ((t - rise) % D + D) % D; return span > 0 && f <= span ? Math.sin(Math.PI * f / span) * amp : null; };
   const step = ts => {
-    const p = still ? 1 : Math.min(1, (ts - t0) / 1600), e = 1 - (1 - p) ** 3, real = Date.now() / 1000, now = mid + (real - mid) * e, x = (now - mid) / D * W;
+    const p = calm ? 1 : Math.min(1, (ts - t0) / 1600), e = 1 - (1 - p) ** 3, real = Date.now() / 1000, now = mid + (real - mid) * e, x = (now - mid) / D * W;
     const sh = height(now, n('rise'), n('sun'), lift), mh = n('moon') ? height(now, n('mrise'), n('moon'), lift * .72) : null;
     const sun = svg.querySelector('.sunnow'), moon = svg.querySelector('.moonnow'), line = svg.querySelector('.nowline');
     line.setAttribute('x1', x); line.setAttribute('x2', x);
@@ -598,7 +605,7 @@ function arrangeSheet(keys, x) {
   const draw = () => {
     o.querySelector('#arr').innerHTML = `<h2 class="serif">${esc(t('hm.arrange'))}</h2>
       <p class="label">${esc(t('ar.style'))}</p><div class="chips">${TILE_STYLES.map(st => `<button class="chip ${S.tileStyle === st ? 'on' : ''}" data-st="${st}">${esc(t('ar.s.' + st))}</button>`).join('')}</div>
-      <label class="list-row"><input type="checkbox" data-flip ${S.tileFlip !== false ? 'checked' : ''}><span class="grow">${esc(t('hm.flip'))}</span></label>${S.tileFlip !== false ? `<div class="seg" style="margin-top:8px" aria-label="${esc(t('hm.flipEvery'))}">${[3, 5, 10, 20, 30].map(n => `<button data-fe="${n}" class="${(S.tileFlipEvery || 5) === n ? 'on' : ''}">${esc(t('hm.secs', String(n)))}</button>`).join('')}</div>` : ''}
+      <label class="list-row${motionOn() ? '' : ' dim'}"><input type="checkbox" data-flip ${S.tileFlip !== false ? 'checked' : ''}${motionOn() ? '' : ' disabled'}><span class="grow">${esc(t('hm.flip'))}</span></label>${S.tileFlip !== false && motionOn() ? `<div class="seg" style="margin-top:8px" aria-label="${esc(t('hm.flipEvery'))}">${[3, 5, 10, 20, 30].map(n => `<button data-fe="${n}" class="${(S.tileFlipEvery || 5) === n ? 'on' : ''}">${esc(t('hm.secs', String(n)))}</button>`).join('')}</div>` : ''}
       <div class="card"><button class="linkbtn block" data-auto>✨ ${esc(t('ar.auto'))}</button><button class="linkbtn block" data-shuf>🔀 ${esc(t('ar.shuffle'))}</button><button class="linkbtn block" data-reset>↺ ${esc(t('ar.reset'))}</button>
       <p class="small muted">${esc(t('ar.autoNote'))}</p></div>
       <p class="label">${esc(t('ar.order'))}</p><div class="card">${order.map((k, i) => `<div class="list-row"><span class="grow">${esc(label(k))}</span><button class="arrow" data-up="${i}" aria-label="Up">↑</button><button class="arrow" data-dn="${i}" aria-label="Down">↓</button></div>`).join('')}</div>
@@ -1049,9 +1056,9 @@ function celebrate(key, count, run, year) {
   o.onclick = e => { if (e.target === o || e.target.tagName === 'BUTTON') close(); };
   document.body.appendChild(o);
   const n = o.querySelector('.cel-count'); let i = +n.textContent;
-  const still = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const tick = () => { if (i < count) { n.textContent = ++i; setTimeout(tick, still ? 0 : 90); } };
-  setTimeout(tick, still ? 0 : 400);
+  const calm = still();
+  const tick = () => { if (i < count) { n.textContent = ++i; setTimeout(tick, calm ? 0 : 90); } };
+  setTimeout(tick, calm ? 0 : 400);
 }
 // The vrat calendar: a star on each day kept, a moon where it was not this
 // time, a dashed ring where it is unanswered.
@@ -3148,7 +3155,8 @@ function viewSettings() {
       <p class="small muted" style="margin-top:10px">${esc(t('th.dark'))}</p><div class="chips">${DARK.map(id => `<button class="chip ${S.dark === id ? 'on' : ''}" data-dk="${id}">${esc(t('th.' + id))}</button>`).join('')}</div></div>
     <div class="card"><label class="list-row"><input type="checkbox" id="vaish" ${S.vaishnava ? 'checked' : ''}><span class="grow"><b>${esc(t('s.vaishnava'))}</b><div class="small muted">${esc(t('s.vaishnavaNote'))}</div></span></label></div>
     <div class="card"><label class="list-row"><input type="checkbox" id="pdfmark" ${S.pdfWatermark !== false ? 'checked' : ''}><span class="grow"><b>${esc(t('pdf.section'))}</b><div class="small muted">${esc(t('pdf.watermarkOn'))}</div></span></label></div>
-    <div class="card"><label class="list-row"><input type="checkbox" id="tflip" ${S.tileFlip !== false ? 'checked' : ''}><span class="grow"><b>${esc(t('hm.flip'))}</b><div class="small muted">${esc(t('hm.flipNote'))}</div></span></label>${S.tileFlip !== false ? `<div class="seg" style="margin-top:8px" aria-label="${esc(t('hm.flipEvery'))}">${[3, 5, 10, 20, 30].map(n => `<button data-fe="${n}" class="${(S.tileFlipEvery || 5) === n ? 'on' : ''}">${esc(t('hm.secs', String(n)))}</button>`).join('')}</div>` : ''}</div>
+    <div class="card"><label class="list-row"><input type="checkbox" id="motion" ${motionOn() ? 'checked' : ''}><span class="grow"><b>${esc(t('s.motion'))}</b><div class="small muted">${esc(t('s.motionNote'))}</div><div class="small muted">${esc(t(LOW_END ? 's.motionLow' : 's.motionHigh'))}</div></span></label>
+      <label class="list-row${motionOn() ? '' : ' dim'}"><input type="checkbox" id="tflip" ${S.tileFlip !== false ? 'checked' : ''}${motionOn() ? '' : ' disabled'}><span class="grow"><b>${esc(t('hm.flip'))}</b><div class="small muted">${esc(t('hm.flipNote'))}</div></span></label>${S.tileFlip !== false && motionOn() ? `<div class="seg" style="margin-top:8px" aria-label="${esc(t('hm.flipEvery'))}">${[3, 5, 10, 20, 30].map(n => `<button data-fe="${n}" class="${(S.tileFlipEvery || 5) === n ? 'on' : ''}">${esc(t('hm.secs', String(n)))}</button>`).join('')}</div>` : ''}</div>
     <div class="card"><p class="label">${esc(t('s.clock'))}</p><div class="seg">${[[0, 's.clockSystem'], [12, 's.clock12'], [24, 's.clock24']].map(([v, k]) => `<button data-ck="${v}" class="${(S.clock || 0) === v ? 'on' : ''}">${esc(t(k))}</button>`).join('')}</div></div>
     <div class="card"><p class="label">${esc(t('ts.title'))}</p><div class="seg">${TEXT_SIZES.map((z, i) => `<button data-tz="${i}" class="${S.textSize === i ? 'on' : ''}" style="font-size:${Math.round(12 * z + (i - 1) * 2)}px">A</button>`).join('')}</div>
       <p class="small muted" style="margin-top:8px">${esc(t('ts.sample'))}</p></div>
@@ -3164,6 +3172,7 @@ function viewSettings() {
   $('#main').querySelectorAll('[data-l]').forEach(b => b.onclick = () => { S.native = b.dataset.l === '1'; save(); render(); });
   $('#main').querySelectorAll('[data-th]').forEach(b => b.onclick = () => { S.theme = b.dataset.th; save(); render(); });
   $('#main').querySelector('#pdfmark').onchange = e => { S.pdfWatermark = e.target.checked; save(); };
+  $('#main').querySelector('#motion').onchange = e => { S.motion = e.target.checked; save(); applyMotion(); viewSettings(); };
   $('#main').querySelector('#tflip').onchange = e => { S.tileFlip = e.target.checked; save(); viewSettings(); };
   $('#main').querySelectorAll('[data-fe]').forEach(b => b.onclick = () => { S.tileFlipEvery = +b.dataset.fe; save(); viewSettings(); });
   $('#main').querySelector('#vaish').onchange = async e => { S.vaishnava = e.target.checked; save(); await loadPack(); await resetCalendars(); render(); };
@@ -3489,7 +3498,7 @@ function backupCard() {
 function wireBackup(root) {
   root.querySelector('[data-bk]').onclick = () => {
     const file = `eka-panchang-backup-${today()}.json`;
-    download(file, JSON.stringify({ app: 'eka-panchang-web', version: 1, exported: new Date().toISOString(), data: S }, null, 1), 'application/json');
+    download(file, JSON.stringify({ app: 'eka-panchang-web', version: 1, exported: new Date().toISOString(), data: { ...S, motion: undefined } }, null, 1), 'application/json');
     toast(t('r3w.saved', file));
   };
   const input = root.querySelector('#rsfile');
@@ -3504,7 +3513,7 @@ function wireBackup(root) {
       <p class="small muted">${esc(t('r3w.restoreCounts', (data.people || []).length, Object.keys(data.vratLog || {}).length, (data.notes || []).length))}</p>
       <div style="display:flex;gap:8px"><button class="btn soft" style="flex:1" data-rno>${esc(t('c.cancel'))}</button><button class="btn" style="flex:1" data-ryes>${esc(t('r3w.restore'))}</button></div>`);
     o.querySelector('[data-rno]').onclick = () => o.remove();
-    o.querySelector('[data-ryes]').onclick = () => { try { localStorage.setItem('kaal-web', JSON.stringify(data)); } catch { return toast(t('r3w.badFile')); } location.reload(); };
+    o.querySelector('[data-ryes]').onclick = () => { try { localStorage.setItem('kaal-web', JSON.stringify({ ...data, motion: S.motion })); } catch { return toast(t('r3w.badFile')); } location.reload(); };
   };
 }
 

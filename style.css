@@ -111,9 +111,11 @@ input[type=text], input[type=date], input[type=time], select { width: 100%; padd
 .ring.mini { width: 36px; height: 36px; margin: 8px auto; } .ring.mini::after { inset: 12px; } .ring.mini i { width: 6px; height: 6px; top: -3px; left: 15px; }
 @keyframes spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .ring { animation: none; } }
+html.still .ring { animation: none; }
 .list-row { display: flex; align-items: center; gap: 10px; padding: 10px 0; border-top: 1px solid var(--line); }
 .list-row:first-child { border-top: 0; }
 .list-row .grow { flex: 1; min-width: 0; }
+.list-row.dim { opacity: .5; }
 .banner { background: var(--soft); color: var(--accent); padding: 8px 12px; border-radius: 10px; font-size: 13px; margin-bottom: 12px; }
 footer.foot { max-width: 760px; margin: 0 auto; padding: 0 16px 40px; font-size: 12px; color: var(--muted); }
 
@@ -145,6 +147,7 @@ footer.foot { max-width: 760px; margin: 0 auto; padding: 0 16px 40px; font-size:
 @keyframes stardrop { 0% { transform: translateY(-150px) scale(.6) rotate(-40deg); opacity: 0; } 30% { opacity: 1; } }
 @keyframes spark { 0% { opacity: 1; transform: rotate(var(--a)) translateY(0) scale(.4); } 100% { opacity: 0; transform: rotate(var(--a)) translateY(calc(-1 * var(--r, 120px))) scale(1.2); } }
 @media (prefers-reduced-motion: reduce) { .celebrate, .cel-card, .cel-star span, .cel-star i { animation: none; } }
+html.still .celebrate, html.still .cel-card, html.still .cel-star span, html.still .cel-star i { animation: none; }
 
 .placechip { margin-top: 6px; border: 0; border-radius: 999px; padding: 4px 12px; background: var(--soft); color: var(--accent); font-weight: 700; font-size: 13px; width: auto; }
 
@@ -288,6 +291,7 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 @keyframes twinkle { 0%, 100% { opacity: .2; } 50% { opacity: .75; } }
 @keyframes glow { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.15); } }
 @media (prefers-reduced-motion: reduce) { .sky .star, .sky .glow { animation: none; } }
+html.still .sky .star, html.still .sky .glow { animation: none; }
 .gcard-in .gmotion { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
 .morehub { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .morehub .tile { min-height: 64px; justify-content: center; }
@@ -386,6 +390,7 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 @keyframes fade { to { opacity: 1; } }
 @keyframes turn { 0% { transform: scaleX(1); } 50% { transform: scaleX(.05); } 100% { transform: scaleX(1); } }
 @media (prefers-reduced-motion: reduce) { .bloom * { animation: none !important; opacity: 1 !important; transform: none; stroke-dashoffset: 0 !important; } .bloom .pt > path { transform: scale(1); } }
+html.still .bloom * { animation: none !important; opacity: 1 !important; transform: none; stroke-dashoffset: 0 !important; } html.still .bloom .pt > path { transform: scale(1); }
 .about .aboutlogo { width: 56px; height: 56px; border-radius: 14px; display: block; }
 
 /* A festival day: its name on two lines where the star sits, the tradition's day by the date; the sun's times at every foot. */
@@ -519,6 +524,10 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
   .turn.turned > .tfront, .turn.v.turned > .tfront { transform: none; opacity: 0; }
   .turn.turned > .tback, .turn.v.turned > .tback { transform: none; opacity: 1; }
 }
+html.still .turn > .tfront, html.still .turn > .tback { transition: opacity .6s ease; }
+html.still .turn > .tback, html.still .turn.v > .tback { transform: none; opacity: 0; }
+html.still .turn.turned > .tfront, html.still .turn.v.turned > .tfront { transform: none; opacity: 0; }
+html.still .turn.turned > .tback, html.still .turn.v.turned > .tback { transform: none; opacity: 1; }
 @media print { .turn > .tback { display: none; } .turn.turned > .tfront { transform: none; } }
 .tiles.style-colourful .tile .tfront { border-color: transparent; background: color-mix(in srgb, var(--tint) 9%, var(--card)); }
 .tiles.style-minimal .tile .gl, .tiles.style-minimal .tile .tart { display: none; }
@@ -537,7 +546,10 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .vy-row.fut { opacity: .4; }
 @keyframes vypop { from { opacity: 0; transform: scale(.5); } }
 @media (prefers-reduced-motion: reduce) { .vy-marks i { animation: none; } }
+html.still .vy-marks i { animation: none; }
 
+/* Animations off (html.still: the setting, or a lower-end device by default) is the same as the browser asking for less motion:
+   each prefers-reduced-motion block is followed by its html.still twin. */
 /* Motion: a staggered rise, a card turned over to new content, a page of the month turned, chips popping in.
    Only one thing moves at a time; with less motion asked for, the end states (or a fade) instead. */
 .rise { animation: rise .45s cubic-bezier(.2,.75,.25,1) both; animation-delay: calc(min(var(--i, 0), 14) * var(--step, 55ms)); }
@@ -567,6 +579,9 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
   .tyout, .g2.pageout, .g2.pageout-back { animation: fadeout .2s forwards; }
   .tyin, .g2.pagein { animation: fadein .2s; }
 }
+html.still .rise, html.still .pop, html.still .fillin, html.still .fillin .tick, html.still .fillin .cross { animation: none; }
+html.still .tyout, html.still .g2.pageout, html.still .g2.pageout-back { animation: fadeout .2s forwards; }
+html.still .tyin, html.still .g2.pagein { animation: fadein .2s; }
 
 /* Calendar days: the front holds the day as before; a festival's or vrat's day turns to its name. */
 .c2 > .tfront { display: flex; flex-direction: column; gap: 1px; flex: 1; min-height: 0; width: 100%; }
@@ -591,6 +606,7 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .ww { display: inline-block; animation: wordin .5s ease both; animation-delay: calc(min(var(--i, 0), 30) * 110ms + .3s); }
 @keyframes wordin { from { opacity: 0; transform: translateY(3px); } }
 @media (prefers-reduced-motion: reduce) { .ww { animation: none; } }
+html.still .ww { animation: none; }
 
 /* The vrat celebration's run, rolling up to its number. */
 .roll { display: inline-block; height: 1.25em; line-height: 1.25em; overflow: hidden; vertical-align: bottom; }
@@ -599,6 +615,7 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 @keyframes roll { from { transform: translateY(0); } }
 .vy-row.rise { --step: 80ms; }
 @media (prefers-reduced-motion: reduce) { .roll > span { animation: none; } }
+html.still .roll > span { animation: none; }
 
 /* The birth star finder's ring of twenty-seven. */
 .starring { position: relative; max-width: 260px; margin: 0 auto; }
@@ -624,6 +641,7 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .prow.soon { border-radius: 12px; padding-left: 8px; padding-right: 8px; background: color-mix(in srgb, var(--gold) 7%, transparent); animation: glowsoft 4s ease-in-out infinite; }
 @keyframes glowsoft { 0%, 100% { box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 25%, transparent); } 50% { box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 45%, transparent), 0 0 16px -2px color-mix(in srgb, var(--gold) 45%, transparent); } }
 @media (prefers-reduced-motion: reduce) { .prow.soon { animation: none; box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 35%, transparent); } }
+html.still .prow.soon { animation: none; box-shadow: 0 0 0 1px color-mix(in srgb, var(--gold) 35%, transparent); }
 
 /* Traditional time: the dial of sixty. */
 .ghati { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; justify-content: center; }
@@ -642,6 +660,7 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .ghati .gbig { font-size: 34px; font-weight: 700; color: var(--accent); line-height: 1.1; }
 .ghati .gbig small { font-size: 15px; font-weight: 500; color: var(--muted); }
 @media (prefers-reduced-motion: reduce) { .ghati .hand { transition: none; } }
+html.still .ghati .hand { transition: none; }
 
 /* Sky: the planets' dots twinkle gently; a faint field of stars drifts behind them. Their places never move. */
 .starfield { position: relative; overflow: hidden; }
@@ -654,6 +673,7 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .gdot { display: inline-block; animation: gtwinkle 3.6s ease-in-out infinite; animation-delay: calc(var(--i, 0) * -.83s); }
 @keyframes gtwinkle { 0%, 100% { opacity: 1; } 50% { opacity: .55; } }
 @media (prefers-reduced-motion: reduce) { .starfield::before, .gdot { animation: none; } }
+html.still .starfield::before, html.still .gdot { animation: none; }
 
 /* Temples: the head of a card (name, place, age) turns now and then to what the list holds of it. */
 .tmhead { --r: 10px; }
@@ -705,6 +725,7 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .tile.droptarget { transform: scale(.97); }
 .tile.droptarget .tfront { outline: 2px solid var(--accent); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) { .tile { transition: none; } .tile.lifting, .tile.droptarget { transform: none; } .pmenu { animation: none; } }
+html.still .tile { transition: none; } html.still .tile.lifting, html.still .tile.droptarget { transform: none; } html.still .pmenu { animation: none; }
 
 /* The Dial tile's ring. */
 .tile .gring { display: block; width: 64px; height: 64px; }
@@ -808,6 +829,7 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .gacts { display: flex; gap: 8px; margin-top: 14px; }
 .gacts .btn:first-child { flex: 2; } .gacts .btn:last-child { flex: 1; }
 @media (prefers-reduced-motion: reduce) { .gx-hero .gx-float { animation: none; transform: rotate(-3deg); } }
+html.still .gx-hero .gx-float { animation: none; transform: rotate(-3deg); }
 
 /* The header pills say what they are, small above what is chosen. */
 .badge { display: inline-flex; flex-direction: column; align-items: flex-start; line-height: 1.15; }
@@ -929,6 +951,7 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .gm-counter { display: flex; gap: 14px; flex-wrap: wrap; font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; }
 .gm-counter b { color: var(--ink); }
 @media (prefers-reduced-motion: reduce) { .gm .pit.next { animation: none; } .gm .tok, .gm .tok.slide, .gm .piece { transition: none; } .gm .cowries.tumble .cowrie { animation: none; } }
+html.still .gm .pit.next { animation: none; } html.still .gm .tok, html.still .gm .tok.slide, html.still .gm .piece { transition: none; } html.still .gm .cowries.tumble .cowrie { animation: none; }
 .gm-level { display: flex; flex-direction: column; gap: 4px; }
 .gm-level[hidden] { display: none; }
 /* The square race: five by five squares, the crossed squares safe */
@@ -962,3 +985,4 @@ input.search { width: 100%; box-sizing: border-box; padding: 10px 12px; border-r
 .gm-fcard.sub .ic { width: 44px; height: 44px; border-radius: 12px; }
 .gm-fcard.sub .nm { font-size: 15px; }
 @media (prefers-reduced-motion: reduce) { .gm .acp, .gm .acp.slide, .gm .nm-mill { transition: none; } .gm .ac-can { animation: none; } }
+html.still .gm .acp, html.still .gm .acp.slide, html.still .gm .nm-mill { transition: none; } html.still .gm .ac-can { animation: none; }

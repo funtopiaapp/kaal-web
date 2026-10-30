@@ -461,7 +461,8 @@ const SVGNS = 'http://www.w3.org/2000/svg';
 function el(tag, attrs, parent) { const e = document.createElementNS(SVGNS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
 const $ = id => root.querySelector('#gm-' + id);
 const wait = ms => new Promise(r => setTimeout(r, ms));
-const still = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Animations off (html.still: the setting, or a lower-end device) is the same as the browser asking for less motion.
+const still = () => document.documentElement.classList.contains('still') || matchMedia('(prefers-reduced-motion: reduce)').matches;
 const T = ms => still() ? Math.min(ms, 40) : ms;
 // A screen's work stops when another screen, or another tab, takes its place.
 const alive = my => my === run && root?.isConnected && C.active();
