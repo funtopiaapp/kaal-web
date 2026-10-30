@@ -1,7 +1,7 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart } from './engine.js?v=202610292303';
+import { engine, onRestart } from './engine.js?v=202610292323';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -186,7 +186,7 @@ function relation(home, away) {
 }
 // A time on the clock of a given place.
 const clockIn = (u, tz) => dtf({ hour: 'numeric', minute: '2-digit', ...hourOpts(), timeZone: tz }).format(new Date(u * 1000));
-const PIN = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
+const AWAY_PIN = '<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
 // The away place chosen from the same search as home's.
 function pickAway(done) {
   sheet(`<h2 class="serif">${esc(t('s.away'))}</h2><div id="awp"></div>`, o => placePicker(o.querySelector('#awp'), p => { S.away = p; save(); o.remove(); done?.(); }));
@@ -1837,7 +1837,7 @@ async function festivalSheet(id, date) {
     <p>${esc(text(f.content?.summary))}</p>
     <div class="card hacard"><p class="label">${esc(t('ha.title'))}</p>
       ${haRow('home', t('dual.home'), S.home, date, w, byMoon ? p.moonrise : null)}
-      ${!away ? `<div class="haadd noprint"><p class="small muted">${esc(t('ha.addHint'))}</p><button class="btn soft" data-addaway>${PIN} ${esc(t('s.addAway'))}</button></div>`
+      ${!away ? `<div class="haadd noprint"><p class="small muted">${esc(t('ha.addHint'))}</p><button class="btn soft" data-addaway>${AWAY_PIN} ${esc(t('s.addAway'))}</button></div>`
         : there ? haRow('away', t('dual.away'), away, there.date, there.w, there.moon, relation(date, there.date))
         : `<div class="harow away"><div class="hahead"><span class="label">${esc(t('dual.away'))} · ${esc(away.name)}</span></div><div class="small muted">${esc(t('ha.none'))}</div></div>`}</div>
     ${parana ? `<div class="card"><p class="label">${esc(t('v.parana'))}</p><div class="small" style="color:var(--accent);font-weight:700">${esc(greg(addDays(date, 1), { weekday: 'short', day: 'numeric', month: 'short' }))}</div><div style="font-size:20px;font-weight:700">${esc(span(parana))}</div>${parana.dvadashiEnd ? `<div class="small muted">${esc(t('v.dvadashiEnds', clock(parana.dvadashiEnd)))}</div>` : ''}<div class="small muted">${esc(t('v.paranaWhy'))}</div></div>` : ''}
@@ -2004,7 +2004,7 @@ function festRow(f, date, o, away) {
   if (o) return `<div class="frow turn v rise" style="--i:${o.i}" data-f="${esc(f.id)}" data-d="${date}">${festRow(f, date, null, o.away).replace(/^<div class="fest ([^"]*)" data-f="[^"]*" data-d="[^"]*">/, '<div class="fest tfront $1">')}${lacquer(o.back, o.fam, true)}</div>`;
   return `<div class="fest ${f.tier === 'major' ? 'major' : ''}" data-f="${esc(f.id)}" data-d="${date}"><div class="bar2"></div>
     <div style="min-width:44px;text-align:center"><b>${+date.slice(8)}</b><div class="small muted">${esc(dtf({ month: 'short', timeZone: 'UTC' }).format(parse(date)))}</div></div>
-    <div><b>${esc(fname(f))}</b>${bookmarked(f.id) ? ` <span class="gold" title="${esc(t('r3w.bookmarked', fname(f)))}">★</span>` : ''}<div class="small muted">${esc(fother(f))}</div>${away ? `<div class="small muted faway">${PIN}${esc(away.place.name)}${away.date === date ? '' : ` · ${esc(dtf({ day: 'numeric', month: 'short', timeZone: 'UTC' }).format(parse(away.date)))}`} · ${esc(relation(date, away.date))}</div>` : ''}</div>
+    <div><b>${esc(fname(f))}</b>${bookmarked(f.id) ? ` <span class="gold" title="${esc(t('r3w.bookmarked', fname(f)))}">★</span>` : ''}<div class="small muted">${esc(fother(f))}</div>${away ? `<div class="small muted faway">${AWAY_PIN}${esc(away.place.name)}${away.date === date ? '' : ` · ${esc(dtf({ day: 'numeric', month: 'short', timeZone: 'UTC' }).format(parse(away.date)))}`} · ${esc(relation(date, away.date))}</div>` : ''}</div>
     <div class="when">${n === 0 ? esc(t('day.today')) : n === 1 ? esc(t('day.tomorrow')) : n > 1 ? esc(t('day.inDays', n)) : ''}</div></div>`;
 }
 
