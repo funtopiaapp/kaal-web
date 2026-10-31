@@ -1,9 +1,9 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart, warm } from './engine.js?v=202610310207';
-import { showGames, GM, gameKey, VIGIL } from './games.js?v=202610310207';
-import * as FAMILY from './family.js?v=202610310207';
+import { engine, onRestart, warm } from './engine.js?v=202610310801';
+import { showGames, GM, gameKey, VIGIL } from './games.js?v=202610310801';
+import * as FAMILY from './family.js?v=202610310801';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -300,6 +300,8 @@ function shell() {
   };
   infoButton();
   // English or the tradition's language, beside the tradition picker.
+  // The name in the header, in the language the app is read in.
+  if (pack) { const b = $('.brand span'); if (b) b.textContent = t('app.name'); document.title = t('app.name'); }
   if (pack) { $('#langbadge').innerHTML = `<span class="bdgcap">${esc(t('s.language'))}</span><span>🗣 ${esc(S.native ? langName(pack.language) : 'English')} ▾</span>`; $('#langbadge').onclick = () => { S.native = !S.native; save(); render(); }; }
   const house = '<svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px;margin-right:4px"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>';
   // The daily five one tap away; everything else under More.
@@ -818,7 +820,7 @@ async function viewHome() {
     tile('settings', 'settings', t('tab.settings'), { row: true, value: c ? (S.native ? c.native : c.en) : '' }),
   ];
   $('#main').innerHTML = `<div class="home">
-    <div class="homehead"><div><div class="small muted"><b>${esc(greg(d))} · ${esc(cultureDate(p.solar, p.lunar))}</b></div><div class="serif wordmark">Eka Panchang</div>
+    <div class="homehead"><div><div class="small muted"><b>${esc(greg(d))} · ${esc(cultureDate(p.solar, p.lunar))}</b></div><div class="serif wordmark">${esc(t('app.name'))}</div>
       <div class="small"><b id="clocks">${esc(clocks())}</b></div><div class="small muted" id="nazhika">${esc(sinceSunrise(p.sunrise))}</div></div>
       <button class="placepill" data-go="settings">📍 ${esc(S.home.name)}</button></div>
     <div class="homehero">
@@ -3252,7 +3254,7 @@ function viewSettings() {
     <div class="card"><p class="label">${esc(t('ts.title'))}</p><div class="seg">${TEXT_SIZES.map((z, i) => `<button data-tz="${i}" class="${S.textSize === i ? 'on' : ''}" style="font-size:${Math.round(12 * z + (i - 1) * 2)}px">A</button>`).join('')}</div>
       <p class="small muted" style="margin-top:8px">${esc(t('ts.sample'))}</p></div>
     ${backupCard()}
-    <div class="card about"><p class="label">${esc(t('s.about'))}</p><img src="icon-192.png" alt="" class="aboutlogo"><h3 class="serif" style="margin:6px 0 2px">Eka Panchang</h3>
+    <div class="card about"><p class="label">${esc(t('s.about'))}</p><img src="icon-192.png" alt="" class="aboutlogo"><h3 class="serif" style="margin:6px 0 2px">${esc(t('app.name'))}</h3>
       <p class="serif" style="color:var(--accent);font-size:18px;margin:0 0 10px">${esc(t('ab.motto'))}</p>
       <p class="small muted" style="margin:-6px 0 10px">Eka Panchang · web ${esc(V)}</p>
       ${[['ab.nameT', 'ab.name'], ['ab.diasporaT', 'ab.diaspora'], ['ab.privacyT', 'ab.privacy'], ['ab.respectT', 'ab.respect']].map(([h, b]) => `<p style="margin:10px 0 2px"><b>${esc(t(h))}</b></p><p class="small" style="margin:0">${esc(t(b))}</p>`).join('')}
