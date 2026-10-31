@@ -9,6 +9,8 @@ let X = null;
 export const FAM = { screen: 'hub', arg: null, pendingWay: null };
 export function initFamily(ctx) { X = ctx; X.onRestart(() => OH.clear()); }
 const t = (k, ...a) => X.t(k, ...a);
+// The tradition's own word for the family deity: Kuladeivam, Paradevata, Mane devaru, Kuldevi...
+export const kulaTerm = () => { const k = 'kula.term.' + X.S.culture, s = X.t(k); return s !== k ? s : t('kula.term.default'); };
 const esc = s => X.esc(s);
 
 // ---------------------------------------------------------------- the document
@@ -236,7 +238,7 @@ async function viewHub(main) {
       ${items.length ? `<div class="card fm-feed">${items.map(x => `<div class="fm-feed-it">${avatar(x.who, true)}<span class="tx">${esc(x.text)}<br><span class="tm">${esc(ago(x.at))}</span></span></div>`).join('')}</div>`
         : `<p class="small muted">${esc(t('fam.hub.empty'))}</p>`}</section>
     <section class="fm-sec"><span class="fm-sec-h serif">${esc(t('fam.hub.features'))}</span>
-      <div class="fm-feats">${feats.map(([s, ic, tint, k], i) => `<button class="fm-feat rise" style="--i:${i + 1}" data-fgo="${s}"><span class="fm-ic ${tint}">${ICON[ic]}</span><b>${esc(t(k))}</b><span class="d">${esc(t(k + 'D'))}</span></button>`).join('')}</div></section>
+      <div class="fm-feats">${feats.map(([s, ic, tint, k], i) => `<button class="fm-feat rise" style="--i:${i + 1}" data-fgo="${s}"><span class="fm-ic ${tint}">${ICON[ic]}</span><b>${esc(s === 'kula' ? kulaTerm() : t(k))}</b><span class="d">${esc(t(k + 'D'))}</span></button>`).join('')}</div></section>
     <div class="card fm-circle" role="group" aria-label="${esc(t('fam.circle.title'))}"><span class="fm-ic green">${ICON.circle}</span><div><div class="fm-circlehead"><b>${esc(t('fam.circle.title'))}</b><span class="fm-soon">${esc(t('fam.circle.soon'))}</span></div><p class="small muted">${esc(t('fam.circle.body'))}</p></div></div>
     <div class="card"><label class="field" style="margin-top:0"><span>${esc(t('fam.hub.me'))}</span><input type="text" id="fmme" maxlength="40" value="${esc(meName())}"></label>
       <p class="small muted" style="margin:-4px 0 8px">${esc(t('fam.hub.meNote'))}</p>
@@ -263,7 +265,7 @@ function feed() {
     if (ph) out.push({ at: ph.modified, who: who(ph), text: t('fam.feed.photo', by(ph), nm) });
   }
   for (const v of F.voices) out.push({ at: v.modified, who: v.speaker, text: t('fam.feed.voice', v.speaker, attachTitle(v.attach)) });
-  if (F.kula) out.push({ at: F.kula.modified, who: who(F.kula), text: t('fam.feed.kula', [deityName(F.kula.deity), templeLabel(F.kula.temple)].filter(Boolean).join(', ')) });
+  if (F.kula) out.push({ at: F.kula.modified, who: who(F.kula), text: t('fam.feed.kulaT', kulaTerm(), [deityName(F.kula.deity), kulaTempleLabel(F.kula)].filter(Boolean).join(', ')) });
   for (const c of F.cities) out.push({ at: c.modified, who: c.person || who(c), text: t('fam.feed.city', c.person || who(c), c.place?.name || '') });
   return out.filter(x => x.at).sort((a, b) => a.at < b.at ? 1 : -1).slice(0, 5);
 }
@@ -854,7 +856,7 @@ const DEITIES = [
 ];
 const DEITY = Object.fromEntries(DEITIES.map(([k, label, prayers, temples, icon]) => [k, { k, label, prayers, temples, icon }]));
 const GURUVAYUR = ['guruvayur', 'ambalappuzha', 'guruvayur-mammiyoor'];
-const deityName = k => DEITY[k] ? t(DEITY[k].label) : k || '';
+const deityName = k => DEITY[k] ? t(DEITY[k].label) : k === 'custom' ? (ownOf(doc().kula)?.name || t('fam.kula.own')) : k || '';
 // The festivals that also ring, per deity: one JSON literal, the same on iOS and Android.
 const KULA_FESTS = {"murugan":["thaipusam","thaipusam-mu","thai-pooyam","soorasamharam","subrahmanya-sashti","subrahmanya-shashti-te","champa-shashti","vaikasi-visakam","panguni-uthiram","painkuni-uthram","karthigai-deepam","thrikkarthika"],"venkateswara":["vaikunta-ekadashi","vaikuntha-ekadashi-kn","mukkoti-ekadasi","mukkoti-ekadasi-te","purattasi-sani"],"devi":["navarathiri","navarathri-ml","navaratri-kn","navaratri-te","navratri","navratri-gu","navratri-mr","ghatasthapana","durga-puja-bn","durga-puja-or","maha-shashthi","maha-saptami","maha-ashtami-bn","maha-ashtami-ne","maha-navami","maha-navami-bn","maha-navami-ne","maha-navami-te","mahanavami","durga-ashtami","durga-ashtami-gu","durgashtami","durgashtami-te","kali-puja","jagaddhatri-puja","aadi-velli","aadi-pooram","attukal-pongala","bonalu","bathukamma","vijayadashami-kn","vijayadashami-ml","vijayadashami-ta","vijayadashami-te","vijaya-dashami-ne","bijoya-dashami"],"bhagavathi":["navarathiri","navarathri-ml","navaratri-kn","navaratri-te","navratri","navratri-gu","navratri-mr","ghatasthapana","durga-puja-bn","durga-puja-or","maha-shashthi","maha-saptami","maha-ashtami-bn","maha-ashtami-ne","maha-navami","maha-navami-bn","maha-navami-ne","maha-navami-te","mahanavami","durga-ashtami","durga-ashtami-gu","durgashtami","durgashtami-te","kali-puja","jagaddhatri-puja","aadi-velli","aadi-pooram","attukal-pongala","bonalu","bathukamma","vijayadashami-kn","vijayadashami-ml","vijayadashami-ta","vijayadashami-te","vijaya-dashami-ne","bijoya-dashami"],"ganesha":["ganesh-chaturthi","ganesh-chaturthi-gu","ganesh-chaturthi-ne","ganesh-chaturthi-or","ganesha-chaturthi-kn","ganeshotsav","vinayagar-chathurthi","vinayaka-chathurthi-ml","vinayaka-chavithi","ganesha-jayanti-mr","sakat-chauth","anant-chaturdashi","anant-chaturdashi-gu","anant-chaturdashi-mr"],"shiva":["maha-shivaratri","maha-shivaratri-bn","maha-shivaratri-gu","maha-shivaratri-kn","maha-shivaratri-ml","maha-shivaratri-mr","maha-shivaratri-ne","maha-shivaratri-or","maha-shivaratri-ta","maha-shivaratri-te","arudra-darshan","thiruvathira","karthigai-deepam","kartika-purnima-mr","kedara-gowri"],"vishnu":["vaikunta-ekadashi","vaikuntha-ekadashi-kn","mukkoti-ekadasi","mukkoti-ekadasi-te","narasimha-jayanti","narasimha-jayanti-gu","narasimha-jayanti-kn","narasimha-jayanti-te","narasimha-jayanthi-ml","tulsi-vivah","tulsi-vivah-gu","tulsi-vivah-mr","tulasi-habba"],"krishna":["janmashtami","janmashtami-bn","janmashtami-gu","janmashtami-mr","janmashtami-ne","janmashtami-or","gokulashtami","krishna-janmashtami-kn","krishnashtami-te","ashtami-rohini","gopalkala","radha-ashtami","gita-jayanti","gita-jayanti-gu","govardhan-puja","dol-purnima","dola-purnima","jhulan-purnima"],"guruvayurappan":["guruvayur-ekadasi","ashtami-rohini","vishu"],"hanuman":["hanuman-jayanti","hanuman-jayanti-gu","hanuman-jayanti-kn","hanuman-jayanti-mr","hanuman-jayanti-ne","hanuman-jayanti-te","hanumath-jayanthi-ta"],"ayyappa":["mandala-kalam","mandala-pooja","makaravilakku","painkuni-uthram","panguni-uthiram"],"lakshmi":["varalakshmi-vratam","varalakshmi-vratam-te","varamahalakshmi","kojagari-lakshmi-puja","kojagiri","kojagrat-purnima","sharad-purnima","sharad-purnima-gu","lakshmi-puja-mr","laxmi-puja-ne","diwali","diwali-gu","deepavali-kn","dhanteras","dhanteras-gu","dhanteras-mr"]};
 const RULES = { murugan: ['SHASHTI', 'KRITTIKA'], venkateswara: ['saturday', 'EKADASHI'], devi: ['friday', 'POURNAMI'], bhagavathi: ['friday', 'POURNAMI'],
@@ -885,9 +887,10 @@ const KCACHE = new Map();
 // The deity's days from..to at a place: date -> the reason ("Saturday", "Thaipusam", "Mandala season, day 12").
 // Festivals first, then each rule in its order; Masa Shivaratri from the tithi at nishita when the pack has no observance.
 export function kulaMarks(from, to, place = X.S.home, deity = doc().kula?.deity) {
-  if (!deity || !DEITY[deity]) return Promise.resolve(new Map());
-  const key = `${deity}|${X.S.culture}|${X.S.vaishnava ? 1 : 0}|${place.id}|${place.latitude}|${from}|${to}`;
-  if (!KCACHE.has(key)) { const p = computeMarks(from, to, place, deity); p.catch(() => KCACHE.delete(key)); KCACHE.set(key, p); }
+  const own = deity === 'custom' ? ownOf(doc().kula) : null;
+  if (!deity || (!DEITY[deity] && !own)) return Promise.resolve(new Map());
+  const key = `${deity}|${own ? JSON.stringify(own.rules) : ''}|${X.S.culture}|${X.S.vaishnava ? 1 : 0}|${place.id}|${place.latitude}|${from}|${to}`;
+  if (!KCACHE.has(key)) { const p = own ? ownMarks(from, to, place, own.rules) : computeMarks(from, to, place, deity); p.catch(() => KCACHE.delete(key)); KCACHE.set(key, p); }
   return KCACHE.get(key);
 }
 async function computeMarks(from, to, place, deity) {
@@ -940,7 +943,7 @@ async function computeMarks(from, to, place, deity) {
   }
   return out;
 }
-export const kulaOn = () => !!(doc().kula?.deity && doc().kula.onCalendar);
+export const kulaOn = () => { const k = doc().kula; return !!(k?.onCalendar && (DEITY[k.deity] || ownOf(k))); };
 export const kulaDeityName = () => deityName(doc().kula?.deity);
 export const kulaLegend = () => `<span><i class="fm-kulamk"></i>${esc(t('fam.kula.legend', kulaDeityName()))}</span>`;
 export const kulaNote = (d, reason) => t('fam.kula.dayNote', shortDate(d), reason, kulaDeityName());
@@ -950,6 +953,152 @@ export function kulaPrayers(book) {
   const order = [k, ...DEITY[k].prayers.filter(d => d !== k)];
   const ps = order.flatMap(d => book.prayers.filter(p => p.deity === d));
   return { prayers: ps, deity: order.find(d => book.deities.includes(d)) || null, name: deityName(k) };
+}
+// ---------------------------------------------------------------- our own family deity
+// A village or family deity not in the list: { deity: 'custom', custom: { id, name, altName, temple: {name, place?},
+// rules } }, the same document on every platform. Each rule is a festival of the tradition's pack, a tithi, a star or
+// a weekday, every month (week) or only in one month of the tradition's own month system.
+export const ownOf = k => k?.deity === 'custom' && k.custom && typeof k.custom === 'object' ? { ...k.custom, rules: Array.isArray(k.custom.rules) ? k.custom.rules : [] } : null;
+const ownFull = c => c?.name ? c.name + (c.altName ? ` (${c.altName})` : '') : '';
+export const kulaTempleLabel = k => { const c = ownOf(k); return c ? [c.temple?.name, c.temple?.place?.name].filter(Boolean).join(', ') : templeLabel(k?.temple); };
+// The tradition's primary month system: its solar months (Tamil, Malayalam, Bengali...) or its lunar months.
+function monthSys() {
+  const pk = X.pack(), solar = pk?.display?.primary === 'solar', table = solar ? 'solarMonths' : 'lunarMonths';
+  // A month of the other system (a deity written under another tradition) still reads as a name.
+  const name = m => [table, solar ? 'lunarMonths' : 'solarMonths'].map(tb => pk?.names?.[tb]?.[m] ? X.name(tb, m) : null).find(Boolean) || m;
+  return { solar, keys: Object.keys(pk?.names?.[table] || {}), name, of: c => solar ? c.solar?.month : (c.lunar && !c.lunar.adhika ? c.lunar.month : null) };
+}
+const TITHI_KEYS = () => Object.keys(X.pack()?.names?.tithis || {});
+// Tithi 1–15 within its paksha; 15 is Purnima in Shukla and Amavasya in Krishna. The engine's index runs 1–30.
+const tithiIdx = r => (r.paksha === 'krishna' ? 15 : 0) + (+r.tithi || 0);
+const tithiName = (paksha, n) => n === 15 ? X.name('tithis', paksha === 'krishna' ? 'amavasya' : 'purnima') : `${X.name('paksha', paksha === 'krishna' ? 'krishna' : 'shukla')} ${X.name('tithis', TITHI_KEYS()[n - 1])}`;
+// A rule as words: "Panguni Uthiram", "Uthiram in Panguni", "Shukla Sashti, every month", "Fridays in Aadi".
+function ruleText(r) {
+  const M = monthSys(), mon = r.month ? M.name(r.month) : '';
+  if (r.type === 'festival') { const f = X.festById(r.id); return t('fam.kula.ruleFest', f ? X.fname(f) : r.id); }
+  // "Fridays in Aadi": in English the plain weekday, since the pack's English names (Velli) take no plural.
+  if (r.type === 'weekday') { const wk = WD[r.day] || 'sunday', w = mon && X.lang() === 'en' ? wk[0].toUpperCase() + wk.slice(1) : X.name('weekdays', wk); return mon ? t('fam.kula.ruleWeekM', w, mon) : t('fam.kula.ruleWeekly', w); }
+  const base = r.type === 'tithi' ? tithiName(r.paksha, +r.tithi) : X.name('nakshatras', r.key);
+  return mon ? t('fam.kula.ruleTithiM', base, mon) : t('fam.kula.ruleEvery', base);
+}
+// The words on a ringed day: the festival, the rule kept once a year, or the tithi, star or weekday itself.
+function ruleReason(r) {
+  if (r.type === 'festival' || r.month) return ruleText(r);
+  return r.type === 'weekday' ? X.name('weekdays', WD[r.day] || 'sunday') : r.type === 'tithi' ? tithiName(r.paksha, +r.tithi) : X.name('nakshatras', r.key);
+}
+// A day kept by a rule, from what the engine gives each day at sunrise; a tithi or star that holds two sunrises counts
+// on the first.
+function ruleHit(r, c, prev, M) {
+  if (r.month && M.of(c) !== r.month) return false;
+  if (r.type === 'festival') return (c.festivals || []).includes(r.id);
+  if (r.type === 'weekday') return c.weekday === WD[r.day];
+  if (r.type === 'tithi') { const i = tithiIdx(r); return c.tithiIndex === i && prev?.tithiIndex !== i; }
+  if (r.type === 'nakshatra') return c.nakshatra === r.key && prev?.nakshatra !== r.key;
+  return false;
+}
+export async function ownMarks(from, to, place, rules) {
+  const cells = await cellsRange(X.addDays(from, -1), to, place), out = new Map(), M = monthSys();
+  // The festival rules first, then the others in their saved order.
+  for (const r of [...rules.filter(x => x.type === 'festival'), ...rules.filter(x => x.type !== 'festival')]) {
+    const why = ruleReason(r);
+    cells.forEach((c, i) => { if (c.date >= from && c.date <= to && !out.has(c.date) && ruleHit(r, c, cells[i - 1], M)) out.set(c.date, why); });
+  }
+  return out;
+}
+// Our temple's festival: the next day of the first festival rule, else of the first rule kept once a year; at the
+// temple's place when it has one, else at home.
+async function ownNext(c) {
+  const M = monthSys(), r = c.rules.find(x => x.type === 'festival') || c.rules.find(x => x.month && M.keys.includes(x.month)); if (!r) return null;
+  const place = c.temple?.place?.tz && c.temple.place.latitude != null ? c.temple.place : X.S.home;
+  const td = X.today(), m = await ownMarks(td, X.addDays(td, 400), place, [r]);
+  const date = [...m.keys()].sort()[0];
+  return date ? { date, rule: r, place } : null;
+}
+async function ownTempleCard(el, c) {
+  if (!c.rules.some(x => x.type === 'festival' || x.month)) { el.innerHTML = ''; return; }
+  el.innerHTML = `<p class="small muted">${esc(t('fam.clock.reading'))}</p>`;
+  const r = await ownNext(c).catch(() => null);
+  if (!el.isConnected) return;
+  if (!r) { el.innerHTML = ''; return; }
+  const nm = ruleText(r.rule), sub = c.temple?.name || '', dateText = X.greg(r.date, { weekday: 'short', day: 'numeric', month: 'long', year: 'numeric' });
+  el.innerHTML = `<div class="fm-temple"><span class="fm-eyebrow">${esc(t('fam.kula.festival'))}</span><h3 class="serif">${esc(nm)}</h3>
+    ${sub ? `<span class="small" style="opacity:.85">${esc(sub)}</span>` : ''}<span class="fm-when">${esc(t('fam.kula.festivalWhen', dateText, r.place.name))}</span>
+    <button class="fm-pill gold" data-tshare>${X.SHARE_ICON} ${esc(t('fam.kula.shareFam'))}</button></div>`;
+  el.querySelector('[data-tshare]').onclick = async e => {
+    e.currentTarget.disabled = true;
+    const fest = r.rule.type === 'festival' ? X.festById(r.rule.id) : null, f = { id: fest?.id || 'kula-' + (c.id || 'own'), card: fest?.card || 'diya', names: { en: nm }, content: {} };
+    const design = X.REGION_STYLE[X.S.culture] || 'heritage', place = [sub, r.place.name].filter(Boolean).join(', ');
+    try {
+      const png = await X.cardImage(f, null, { p: X.cardPalette(f.card), to: '', from: c.name, msg: '', lang: X.lang(), design, motion: 'still', words: { title: nm, sub: sub || c.name, kicker: t('fam.kula.festival'), from: c.name } }, '', `${dateText} · ${r.place.name}`);
+      await shareFiles([new File([png], `${f.id}-temple.png`, { type: 'image/png' })], t('fam.kula.shareText', nm, place || c.name, dateText), nm);
+    } catch { X.toast(t('fam.err.file')); }
+    if (el.isConnected) el.querySelector('[data-tshare]').disabled = false;
+  };
+}
+// The editor: a name (any script) and another spelling, the temple and its place, and the days kept.
+function ownEditor(done) {
+  // Choosing a listed deity keeps our own in the document, so the editor opens with it again.
+  const k0 = doc().kula, cur = ownOf(k0), c0 = cur || ownOf({ deity: 'custom', custom: k0?.custom }), M = monthSys(), pk = X.pack();
+  const st = { tplace: c0?.temple?.place || null, rules: (c0?.rules || []).map(r => ({ ...r })), kind: 'festival' };
+  const o = X.sheet(`<h2 class="serif">${esc(t('fam.kula.ownTitle'))}</h2><p class="small muted">${esc(t('fam.kula.ownHint'))}</p>
+    <label class="field"><span>${esc(t('fam.kula.name'))}</span><input type="text" id="foN" maxlength="80" placeholder="${esc(t('fam.kula.namePh'))}" value="${esc(c0?.name || '')}"></label>
+    <label class="field"><span>${esc(t('fam.kula.alt'))}</span><input type="text" id="foA" maxlength="80" value="${esc(c0?.altName || '')}"></label>
+    <label class="field"><span>${esc(t('fam.kula.oTemple'))}</span><input type="text" id="foT" maxlength="120" placeholder="${esc(t('fam.kula.templePh'))}" value="${esc(c0?.temple?.name || '')}"></label>
+    <div class="fm-chips fm-oplace" id="foP"></div>
+    <p class="label">${esc(t('fam.kula.days'))}</p><div id="foR"></div>
+    <div class="card fm-oadd"><div class="fm-chips" role="group" aria-label="${esc(t('fam.kula.addDay'))}">${['festival', 'tithi', 'nakshatra', 'weekday'].map(k => `<button class="fm-chip" data-ok="${k}" aria-pressed="false">${esc(t('fam.kula.r.' + k))}</button>`).join('')}</div>
+      <div id="foF" class="fm-ofields"></div><button class="btn soft fm-sm" data-oadd>＋ ${esc(t('fam.kula.addDay'))}</button></div>
+    <p class="small fm-warn" id="foE" role="alert" hidden></p>
+    <div class="fm-btns"><button class="btn soft" data-no>${esc(t('c.cancel'))}</button><button class="btn" data-yes>${esc(t('c.save'))}</button></div>
+    ${c0 ? `<button class="linkbtn" data-odel style="margin-top:10px">${esc(t('fam.kula.delOwn'))}</button>` : ''}`);
+  const q = s => o.querySelector(s);
+  const opt = (v, label, sel) => `<option value="${esc(v)}" ${sel ? 'selected' : ''}>${esc(label)}</option>`;
+  const monthSel = every => `<select id="foM" aria-label="${esc(t('fam.kula.days'))}">${opt('', t(every))}${M.keys.map(m => opt(m, t('fam.kula.onlyIn', M.name(m)))).join('')}</select>`;
+  const drawPlace = () => {
+    q('#foP').innerHTML = `<button class="fm-chip" data-opl aria-pressed="${!!st.tplace}">📍 ${esc(st.tplace?.name || t('fam.kula.oTemplePlace'))}</button>${st.tplace ? `<button class="fm-chip" data-oplx aria-label="${esc(t('fam.remove'))}">✕</button>` : ''}`;
+    q('[data-opl]').onclick = () => { const o2 = X.sheet(`<h2 class="serif">${esc(t('fam.kula.oTemplePlace'))}</h2><div id="fmcp"></div>`, o2 => X.placePicker(o2.querySelector('#fmcp'), place => { o2.remove(); st.tplace = place; drawPlace(); })); };
+    q('[data-oplx]')?.addEventListener('click', () => { st.tplace = null; drawPlace(); });
+  };
+  const drawRules = () => {
+    q('#foR').innerHTML = st.rules.length ? `<div class="card fm-list">${st.rules.map((r, i) => `<div class="fm-check fm-orule"><span class="grow">${esc(ruleText(r))}</span><button class="fm-more" data-orm="${i}" aria-label="${esc(t('fam.remove'))}: ${esc(ruleText(r))}">✕</button></div>`).join('')}</div>` : '';
+    o.querySelectorAll('[data-orm]').forEach(b => b.onclick = () => { st.rules.splice(+b.dataset.orm, 1); drawRules(); });
+  };
+  const fests = () => (pk?.festivals || []).filter(f => !f.hidden).map(f => [f.id, X.fname(f)]).sort((a, b) => a[1].localeCompare(b[1], X.lang()));
+  const drawFields = () => {
+    o.querySelectorAll('[data-ok]').forEach(b => b.setAttribute('aria-pressed', b.dataset.ok === st.kind));
+    const k = st.kind, el = q('#foF');
+    if (k === 'festival') el.innerHTML = `<select id="foX" aria-label="${esc(t('fam.kula.r.festival'))}">${fests().map(([id, n]) => opt(id, n)).join('')}</select>`;
+    else if (k === 'tithi') {
+      el.innerHTML = `<select id="foK" aria-label="${esc(t('fam.kula.r.tithi'))}">${opt('shukla', t('fam.kula.shukla'))}${opt('krishna', t('fam.kula.krishna'))}</select><select id="foX" aria-label="${esc(t('fam.kula.r.tithi'))}"></select>${monthSel('fam.kula.everyMonth')}`;
+      const fill = () => { const pa = q('#foK').value, v = q('#foX').value || '6'; q('#foX').innerHTML = Array.from({ length: 15 }, (_, i) => opt(i + 1, i === 14 ? X.name('tithis', pa === 'krishna' ? 'amavasya' : 'purnima') : X.name('tithis', TITHI_KEYS()[i]), String(i + 1) === v)).join(''); };
+      q('#foK').onchange = fill; fill();
+    } else if (k === 'nakshatra') el.innerHTML = `<select id="foX" aria-label="${esc(t('fam.kula.r.nakshatra'))}">${Object.keys(pk?.names?.nakshatras || {}).map(n => opt(n, X.name('nakshatras', n))).join('')}</select>${monthSel('fam.kula.everyMonth')}`;
+    else el.innerHTML = `<select id="foX" aria-label="${esc(t('fam.kula.r.weekday'))}">${WD.map((w, i) => opt(i, X.name('weekdays', w), i === 5)).join('')}</select>${monthSel('fam.kula.everyWeek')}`;
+  };
+  o.querySelectorAll('[data-ok]').forEach(b => b.onclick = () => { st.kind = b.dataset.ok; drawFields(); });
+  q('[data-oadd]').onclick = () => {
+    const k = st.kind, v = q('#foX')?.value, m = q('#foM')?.value || undefined; if (v == null || v === '') return;
+    const r = k === 'festival' ? { type: k, id: v } : k === 'tithi' ? { type: k, paksha: q('#foK').value, tithi: +v } : k === 'nakshatra' ? { type: k, key: v } : { type: k, day: +v };
+    if (m && k !== 'festival') r.month = m;
+    if (!st.rules.some(x => JSON.stringify(x) === JSON.stringify(r))) st.rules.push(r);
+    q('#foE').hidden = true; drawRules();
+  };
+  const err = k => { const e = q('#foE'); e.textContent = t(k); e.hidden = false; };
+  q('[data-no]').onclick = () => o.remove();
+  q('[data-yes]').onclick = () => {
+    const name = q('#foN').value.trim().slice(0, 80); if (!name) { err('fam.kula.needName'); return q('#foN').focus(); }
+    if (!st.rules.length) return err('fam.kula.needDay');
+    const tname = q('#foT').value.trim().slice(0, 120);
+    const custom = { id: c0?.id || uuid(), name, altName: q('#foA').value.trim().slice(0, 80) || null,
+      temple: tname || st.tplace ? { ...(tname ? { name: tname } : {}), ...(st.tplace ? { place: st.tplace } : {}) } : null, rules: st.rules };
+    const F = doc(); F.kula = F.kula ? touch({ ...F.kula, deity: 'custom', custom, temple: null }) : rec({ deity: 'custom', custom, temple: null, onCalendar: true });
+    persist(); o.remove(); done(true);
+  };
+  // Deleting our own while it is chosen leaves no family deity; while a listed one is chosen, only ours goes.
+  q('[data-odel]')?.addEventListener('click', () => confirmSheet(t('fam.kula.delOwn'), ownFull(c0), t('fam.delete'), () => {
+    const F = doc(); F.kula = cur ? null : touch({ ...F.kula, custom: null }); persist(); o.remove(); done(); }));
+  drawPlace(); drawRules(); drawFields();
+  setTimeout(() => q('#foN').focus(), 50);
 }
 const templeLabel = tp => !tp ? '' : tp.id ? (TEMPLE_NAMES.get(tp.id) || '') : [tp.name, tp.place].filter(Boolean).join(', ');
 const TEMPLE_NAMES = new Map();
@@ -1015,36 +1164,39 @@ async function viewKula(main) {
   PRAYERS ??= await X.loadPrayers().catch(() => null);
   if (X.tab() !== 'family' || FAM.screen !== 'kula') return;
   const draw = async (pop) => {
-    const F = doc(), k = F.kula, D = k && DEITY[k.deity];
+    const F = doc(), k = F.kula, D = k && DEITY[k.deity], own = ownOf(k), term = kulaTerm();
     const filt = D ? T.temples.filter(x => (k.deity === 'guruvayurappan' ? GURUVAYUR.includes(x.id) || D.temples.includes(x.deity) : D.temples.includes(x.deity)))
       .sort((a, b) => X.kmFrom(X.S.home, a) - X.kmFrom(X.S.home, b)).slice(0, 6) : [];
     const tp = k?.temple, tpRow = tp?.id ? T.temples.find(x => x.id === tp.id) : null;
     if (tpRow && !filt.some(x => x.id === tpRow.id)) filt.unshift(tpRow);
     const kp = kulaPrayers(PRAYERS);
-    main.innerHTML = `<div class="fm">${back()}<div class="fm-title"><span class="small muted">${esc(t('fam.kula.sub'))}</span><h2 class="serif">${esc(t('fam.kula.title'))}</h2></div>
-      <section class="fm-sec"><span class="fm-eyebrow">${esc(t('fam.kula.deity'))}</span><div class="fm-chips">${DEITIES.map(([d, label, , , icon]) => `<button class="fm-chip" data-kd="${d}" aria-pressed="${k?.deity === d}">${X.deityIcon(icon, 14)} ${esc(t(label))}</button>`).join('')}</div></section>
-      ${!k ? `<p class="muted">${esc(t('fam.kula.none'))}</p></div>` : `
-      <section class="fm-sec"><span class="fm-eyebrow">${esc(t('fam.kula.temple'))}</span><div class="fm-chips">${filt.map(x => `<button class="fm-chip" data-kt="${esc(x.id)}" aria-pressed="${tp?.id === x.id}">${esc(x.name)}</button>`).join('')}
-        ${tp && !tp.id ? `<button class="fm-chip" aria-pressed="true" data-ktyped>${esc(templeLabel(tp))}</button>` : ''}<button class="fm-chip" data-kother>${esc(t('fam.kula.templeOther'))}</button></div></section>
+    main.innerHTML = `<div class="fm">${back()}<div class="fm-title"><span class="small muted">${esc(t('fam.kula.sub'))}</span><h2 class="serif">${esc(term)}</h2></div>
+      <section class="fm-sec"><span class="fm-eyebrow">${esc(t('fam.kula.deity'))}</span><div class="fm-chips">${DEITIES.map(([d, label, , , icon]) => `<button class="fm-chip" data-kd="${d}" aria-pressed="${k?.deity === d}">${X.deityIcon(icon, 14)} ${esc(t(label))}</button>`).join('')}<button class="fm-chip" data-kown aria-pressed="${!!own}">＋ ${esc(own ? ownFull(own) : t('fam.kula.own'))}</button></div></section>
+      ${!k || (k.deity === 'custom' && !own) ? `<p class="muted">${esc(t('fam.kula.none'))}</p></div>` : `
+      ${own ? `<div class="card fm-own"><div class="fm-sec-top"><span class="grow"><b class="serif">${esc(own.name)}</b>${own.altName ? ` <span class="small muted">${esc(own.altName)}</span>` : ''}</span><button class="btn soft fm-sm" data-kedit>${esc(t('c.edit'))}</button></div>
+        ${kulaTempleLabel(k) ? `<p class="small muted" style="margin:2px 0 0">${esc(t('fam.kula.oTemple'))}: ${esc(kulaTempleLabel(k))}</p>` : ''}</div>` : `<section class="fm-sec"><span class="fm-eyebrow">${esc(t('fam.kula.temple'))}</span><div class="fm-chips">${filt.map(x => `<button class="fm-chip" data-kt="${esc(x.id)}" aria-pressed="${tp?.id === x.id}">${esc(x.name)}</button>`).join('')}
+        ${tp && !tp.id ? `<button class="fm-chip" aria-pressed="true" data-ktyped>${esc(templeLabel(tp))}</button>` : ''}<button class="fm-chip" data-kother>${esc(t('fam.kula.templeOther'))}</button></div></section>`}
       <div class="card fm-kcard"><div class="fm-sec-top"><span class="fm-sec-h serif">${esc(X.dtf({ month: 'long', year: 'numeric', timeZone: 'UTC' }).format(X.parse(X.today())))}</span><span class="small muted">◯ ${esc(t('fam.kula.legend', deityName(k.deity)))}</span></div>
-        <p class="small muted" style="margin:2px 0 8px">${esc(t('fam.kula.rule.' + (k.deity === 'bhagavathi' ? 'devi' : k.deity)))}</p>
+        <p class="small muted" style="margin:2px 0 8px">${esc(own ? own.rules.map(ruleText).join(' · ') : t('fam.kula.rule.' + (k.deity === 'bhagavathi' ? 'devi' : k.deity)))}</p>
         <div class="fm-cal" data-kcal><p class="small muted">…</p></div><div class="fm-daynote" data-knote aria-live="polite">${esc(t('fam.kula.tapDay'))}</div></div>
       <div class="card"><div class="fm-switch"><span id="fmkoc">${esc(t('fam.kula.onCalendar'))}<span class="small muted">${esc(t('fam.kula.onCalendarNote', deityName(k.deity)))}</span></span>${sw(k.onCalendar, 'fmkocs', 'fmkoc')}</div></div>
       <div data-ktf></div>
-      <section class="fm-sec"><span class="fm-sec-h serif">${esc(t('py.title'))}</span>${kp?.prayers.length ? `<div class="fm-plist">${kp.prayers.map((p, i) => `<button data-kpr="${esc(p.id)}"><span>${esc(X.prayerTitle(p))}${i === 0 ? ` <span class="fm-tag gold">${esc(t('fam.kula.ours'))}</span>` : ''}</span><span aria-hidden="true">›</span></button>`).join('')}</div>` : `<p class="small muted">${esc(t('fam.kula.noPrayers', deityName(k.deity)))}</p>`}</section>
-      <button class="linkbtn" data-kclear>${esc(t('fam.kula.clear'))}</button></div>`}`;
+      <section class="fm-sec"><span class="fm-sec-h serif">${esc(t('py.title'))}</span>${kp?.prayers.length ? `<div class="fm-plist">${kp.prayers.map((p, i) => `<button data-kpr="${esc(p.id)}"><span>${esc(X.prayerTitle(p))}${i === 0 ? ` <span class="fm-tag gold">${esc(t('fam.kula.oursT', term))}</span>` : ''}</span><span aria-hidden="true">›</span></button>`).join('')}</div>` : `<p class="small muted">${esc(own ? t('fam.kula.oNoPrayers') : t('fam.kula.noPrayers', deityName(k.deity)))}</p>`}</section>
+      <button class="linkbtn" data-kclear>${esc(own ? t('fam.kula.delOwn') : t('fam.kula.clearT', term))}</button></div>`}`;
     main.querySelector('[data-fback]').onclick = () => go('hub');
     const save = (fields) => { const F2 = doc(); F2.kula = F2.kula ? touch({ ...F2.kula, ...fields }) : rec({ deity: null, temple: null, onCalendar: true, ...fields }); persist(); };
     main.querySelectorAll('[data-kd]').forEach(b => b.onclick = () => { const d = b.dataset.kd; if (k?.deity === d) return; save({ deity: d }); draw(true); });
-    if (!k) return;
+    main.querySelector('[data-kown]').onclick = () => ownEditor(() => draw(true));
+    if (!k || (k.deity === 'custom' && !own)) return;
+    main.querySelector('[data-kedit]')?.addEventListener('click', () => ownEditor(() => draw(true)));
     main.querySelectorAll('[data-kt]').forEach(b => b.onclick = () => { save({ temple: tp?.id === b.dataset.kt ? null : { id: b.dataset.kt } }); draw(); });
     main.querySelector('[data-ktyped]')?.addEventListener('click', () => { save({ temple: null }); draw(); });
-    main.querySelector('[data-kother]').onclick = () => templeSearch(T, x => { save({ temple: x }); draw(); });
+    main.querySelector('[data-kother]')?.addEventListener('click', () => () => templeSearch(T, x => { save({ temple: x }); draw(); }));
     main.querySelector('#fmkocs').onclick = () => { save({ onCalendar: !k.onCalendar }); draw(); };
-    main.querySelector('[data-kclear]').onclick = () => { doc().kula = null; persist(); draw(); };
+    main.querySelector('[data-kclear]').onclick = () => own ? confirmSheet(t('fam.kula.delOwn'), ownFull(own), t('fam.delete'), () => { doc().kula = null; persist(); draw(); }) : (doc().kula = null, persist(), draw());
     main.querySelectorAll('[data-kpr]').forEach(b => b.onclick = () => X.openPrayer(b.dataset.kpr));
     kulaMonth(main.querySelector('[data-kcal]'), main.querySelector('[data-knote]'), k.deity, pop && !X.still());
-    templeCard(main.querySelector('[data-ktf]'), tpRow, tp);
+    if (own) ownTempleCard(main.querySelector('[data-ktf]'), own); else templeCard(main.querySelector('[data-ktf]'), tpRow, tp);
   };
   draw();
 }

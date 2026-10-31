@@ -1,9 +1,9 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart, warm } from './engine.js?v=202610310801';
-import { showGames, GM, gameKey, VIGIL } from './games.js?v=202610310801';
-import * as FAMILY from './family.js?v=202610310801';
+import { engine, onRestart, warm } from './engine.js?v=202610310832';
+import { showGames, GM, gameKey, VIGIL } from './games.js?v=202610310832';
+import * as FAMILY from './family.js?v=202610310832';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -1604,7 +1604,7 @@ async function viewPrayers() {
     return `${tp ? `<button class="card" data-pr="${tp.id}" style="width:100%;text-align:left;border:0;cursor:pointer;color:#fff;background:linear-gradient(135deg,var(--accent),color-mix(in srgb,var(--accent) 80%,transparent))">
         <div style="display:flex;align-items:center"><span class="small grow" style="font-weight:700;letter-spacing:1px;opacity:.85">${esc(t('pr.today').toUpperCase())}</span><span style="color:#fff;opacity:.9">${deityIcon(tp.deity, 32)}</span></div><div class="serif" style="font-size:24px;font-weight:700">${esc(prayerTitle(tp))}</div><div style="opacity:.9">${esc(prayerSubtitle(tp))}</div>
         <div class="small" style="opacity:.9">${esc(prayerLine(tp))}</div>${verse(tp)}<div class="small" style="opacity:.8">${esc(t('pr.weekday', name('weekdays', day), t('deity.' + tp.deity)))}</div></button>` : ''}
-      ${kp?.prayers.length ? `<p class="label">${esc(t('fam.kula.ours'))} · ${esc(kp.name)}</p>${kp.prayers.map(prayerRow).join('')}` : ''}
+      ${kp?.prayers.length ? `<p class="label">${esc(t('fam.kula.oursT', FAMILY.kulaTerm()))} · ${esc(kp.name)}</p>${kp.prayers.map(prayerRow).join('')}` : ''}
       ${favs.length ? `<p class="label">${esc(t('pr.favorites'))}</p>${favs.map(prayerRow).join('')}` : ''}
       <p class="label">${esc(t('pr.deities'))}</p><div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px">${decks.map(d => { const hs = book.prayers.filter(p => p.deity === d), n = hs.length, count = n === 1 ? t('pr.k.hymn') : t('pr.hymns', n);
         // Each deity turns now and then to how many hymns it holds and the first of them.
@@ -3548,7 +3548,7 @@ function legendGuide() {
   const groups = [['star', '<b class="mk">✦</b>'], ['janma', '<b class="mk">✪</b>'], ['moon', '<b>● ○</b>'], ['sun', '<b>↑ ↓</b>'], ['fest', '<i class="fd"></i>'], ['note', `<span class="notepin">${PIN}</span>`]];
   const lines = g => { const out = []; for (let i = 1; STR[`r3.lg.${g}.${i}`]; i++) out.push(t(`r3.lg.${g}.${i}`)); return out; };
   // The family deity's gold ring, when a kuladevata is chosen.
-  const kula = FAMILY.kulaOn() ? `<div class="lgrow rise" style="--i:${groups.length}"><span class="lgmark"><i class="fm-kulamk"></i></span><div><p><b>${esc(t('fam.kula.lg.title'))}</b></p>${[1, 2].map(i => `<p>${esc(t('fam.kula.lg.' + i))}</p>`).join('')}</div></div>` : '';
+  const kula = FAMILY.kulaOn() ? `<div class="lgrow rise" style="--i:${groups.length}"><span class="lgmark"><i class="fm-kulamk"></i></span><div><p><b>${esc(t('fam.kula.lg.title'))}</b></p><p>${esc(t('fam.kula.lgT', FAMILY.kulaTerm()))}</p><p>${esc(t('fam.kula.lg.2'))}</p></div></div>` : '';
   sheet(`<h2 class="serif">${esc(t('r3.legendTitle'))}</h2><div class="calleg lgguide">${groups.map(([g, mark], i) => { const ls = lines(g); return ls.length ? `<div class="lgrow rise" style="--i:${i}"><span class="lgmark">${mark}</span><div>${ls.map(s => `<p>${esc(s)}</p>`).join('')}</div></div>` : ''; }).join('')}${kula}</div>
     <p class="small muted">${esc(t('r3.g.note'))}</p>`);
 }

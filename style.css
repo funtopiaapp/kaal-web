@@ -1215,3 +1215,12 @@ html.still .gm .acp, html.still .gm .acp.slide, html.still .gm .nm-mill { transi
 @media (prefers-reduced-motion: reduce) { .fresh, .fm-rec.on, .fm-cal .fm-d.kr.kpop { animation: none; } .fm-sw, .fm-sw::after, .fm-rec i { transition: none; } }
 html.still .fresh, html.still .fm-rec.on, html.still .fm-cal .fm-d.kr.kpop { animation: none; } html.still .fm-sw, html.still .fm-sw::after, html.still .fm-rec i { transition: none; }
 .fm [hidden], .fm-waybox [hidden], .fm-voice [hidden] { display: none !important; }
+/* Our own family deity: the editor's days kept and the card above the month. */
+.fm-oadd { margin-top: 8px; display: flex; flex-direction: column; gap: 10px; }
+.fm-ofields { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 8px; }
+.fm-oadd .fm-sm { align-self: flex-start; }
+.fm-orule { align-items: center; }
+.fm-orule .grow { flex: 1; min-width: 0; }
+.fm-own .fm-sec-top { align-items: center; }
+.fm-own .grow { flex: 1; min-width: 0; }
+.fm-oplace { margin: 2px 0 12px; }
