@@ -1,0 +1,3437 @@
+{
+ "version": 1,
+ "regions": {
+  "tamil-nadu": {
+   "en": "Tamil Nadu",
+   "native": {
+    "ta": "தமிழ்நாடு"
+   },
+   "traditions": [
+    "tamil",
+    "sri-lankan-tamil",
+    "malaysian-tamil",
+    "south-african-tamil"
+   ]
+  },
+  "kerala": {
+   "en": "Kerala",
+   "native": {
+    "ml": "കേരളം"
+   },
+   "traditions": [
+    "malayalam"
+   ]
+  },
+  "karnataka": {
+   "en": "Karnataka",
+   "native": {
+    "kn": "ಕರ್ನಾಟಕ"
+   },
+   "traditions": [
+    "kannada"
+   ]
+  },
+  "andhra-telangana": {
+   "en": "Andhra Pradesh and Telangana",
+   "native": {
+    "te": "ఆంధ్రప్రదేశ్, తెలంగాణ"
+   },
+   "traditions": [
+    "telugu"
+   ]
+  },
+  "maharashtra": {
+   "en": "Maharashtra",
+   "native": {
+    "mr": "महाराष्ट्र"
+   },
+   "traditions": [
+    "marathi"
+   ]
+  },
+  "gujarat": {
+   "en": "Gujarat",
+   "native": {
+    "gu": "ગુજરાત"
+   },
+   "traditions": [
+    "gujarati"
+   ]
+  },
+  "north-india": {
+   "en": "North India",
+   "native": {
+    "hi": "उत्तर भारत"
+   },
+   "traditions": [
+    "north-indian"
+   ]
+  },
+  "bengal": {
+   "en": "Bengal",
+   "native": {
+    "bn": "বাংলা"
+   },
+   "traditions": [
+    "bengali"
+   ]
+  },
+  "odisha": {
+   "en": "Odisha",
+   "native": {
+    "or": "ଓଡ଼ିଶା"
+   },
+   "traditions": [
+    "odia"
+   ]
+  },
+  "nepal": {
+   "en": "Nepal",
+   "native": {
+    "ne": "नेपाल"
+   },
+   "traditions": [
+    "nepali"
+   ]
+  },
+  "sri-lanka": {
+   "en": "Sri Lanka",
+   "native": {
+    "ta": "இலங்கை"
+   },
+   "traditions": [
+    "sri-lankan-tamil"
+   ]
+  },
+  "caribbean": {
+   "en": "Caribbean",
+   "native": {},
+   "traditions": [
+    "caribbean"
+   ]
+  }
+ },
+ "deities": [
+  {
+   "id": "aiyanar",
+   "region": "tamil-nadu",
+   "en": "Aiyanar",
+   "names": {
+    "ta": "ஐயனார்",
+    "ml": "അയ്യനാര്‍"
+   },
+   "alt": [
+    "Ayyanar",
+    "Ayyan",
+    "Sastha",
+    "Chathan"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Sri Perungaraiyadi Meenda Ayyanar Temple",
+     "nameNative": {
+      "ta": "ஸ்ரீ பெருங்காரையடி மீண்ட அய்யனார் கோவில்"
+     },
+     "town": "",
+     "district": "Pudukkottai",
+     "state": "Tamil Nadu",
+     "lat": 10.27639,
+     "lon": 79.04389,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q7586181",
+     "festival": {
+      "type": "festival",
+      "id": "masi-magam"
+     }
+    },
+    {
+     "name": "Singamadai Ayyanar Temple, Nalli",
+     "nameNative": {
+      "ta": "நள்ளி சிங்கமுடைய அய்யனார் கோவில்"
+     },
+     "town": "Nalli, Sattur",
+     "district": "Virudhunagar",
+     "state": "Tamil Nadu",
+     "lat": 9.22722,
+     "lon": 77.90306,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q16310412"
+    },
+    {
+     "name": "Allinagaram Veerappa Ayyanar Temple Theni",
+     "nameNative": {
+      "ta": "தேனி - அல்லிநகரம் வீரப்ப அய்யனார் கோயில்"
+     },
+     "town": "Allinagaram, Theni",
+     "district": "Theni",
+     "state": "Tamil Nadu",
+     "lat": 10.02767,
+     "lon": 77.47644,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q12984608"
+    },
+    {
+     "name": "Kumbakonam Yanayadi Ayyanar Temple",
+     "nameNative": {
+      "ta": "கும்பகோணம் யானையடி அய்யனார் கோயில்"
+     },
+     "town": "Kumbakonam",
+     "district": "Thanjavur",
+     "state": "Tamil Nadu",
+     "lat": 10.97056,
+     "lon": 79.37424,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q19805770"
+    }
+   ],
+   "rules": [
+    {
+     "type": "festival",
+     "id": "maha-shivaratri-ta"
+    }
+   ],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q1318266",
+    "https://en.wikipedia.org/wiki/Aiyanar",
+    "https://ta.wikipedia.org/wiki/ஐயனார்",
+    "https://www.wikidata.org/wiki/Q7586181",
+    "https://en.wikipedia.org/wiki/Sri_Perungaraiyadi_Meenda_Ayyanar_Temple",
+    "https://ta.wikipedia.org/wiki/பெருங்காரையடி_மீண்ட_அய்யனார்_கோவில்",
+    "https://www.wikidata.org/wiki/Q16310412",
+    "https://en.wikipedia.org/wiki/Singamadai_Ayyanar_Temple,_Nalli",
+    "https://ta.wikipedia.org/wiki/நள்ளி_சிங்கமுடைய_அய்யனார்_கோவில்",
+    "https://www.wikidata.org/wiki/Q12984608",
+    "https://ta.wikipedia.org/wiki/அல்லிநகரம்_வீரப்ப_அய்யனார்_கோயில்,_தேனி",
+    "https://www.wikidata.org/wiki/Q19805770",
+    "https://ta.wikipedia.org/wiki/கும்பகோணம்_யானையடி_அய்யனார்_கோயில்"
+   ]
+  },
+  {
+   "id": "sastha",
+   "region": "kerala",
+   "en": "Sastha (Dharma Sastha)",
+   "names": {
+    "ml": "ശാസ്താവ്",
+    "ta": "சாஸ்தா"
+   },
+   "alt": [
+    "Shasta",
+    "Dharmasasta",
+    "Chathan"
+   ],
+   "type": "major-form",
+   "temples": [
+    {
+     "name": "Achankovil Sastha Temple",
+     "nameNative": {
+      "ta": "அச்சன்கோவில் தர்மசாஸ்தா",
+      "ml": "അച്ചൻകോവിൽ ശാസ്താ ക്ഷേത്രം"
+     },
+     "town": "Achankovil",
+     "district": "Kollam",
+     "state": "Kerala",
+     "lat": 9.09167,
+     "lon": 77.12139,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q27870186"
+    },
+    {
+     "name": "Aryankavu Sastha Temple",
+     "nameNative": {
+      "ta": "ஆரியங்காவு ஐயப்பன் கோவில்",
+      "ml": "ആര്യങ്കാവ് ധർമ്മശാസ്താക്ഷേത്രം"
+     },
+     "town": "Aryankavu",
+     "district": "Kollam",
+     "state": "Kerala",
+     "lat": 8.99983,
+     "lon": 77.1659,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q27887695"
+    },
+    {
+     "name": "Kulathupuzha Sastha Temple",
+     "nameNative": {
+      "ta": "குளத்துப்புழை அய்யப்பன் கோவில்",
+      "ml": "കുളത്തൂപ്പുഴ ശ്രീധർമ്മശാസ്താക്ഷേത്രം"
+     },
+     "town": "Kulathupuzha",
+     "district": "Kollam",
+     "state": "Kerala",
+     "lat": 8.90095,
+     "lon": 77.05913,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q20576785"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q7490588",
+    "https://www.wikidata.org/wiki/Q5269323",
+    "https://en.wikipedia.org/wiki/Shasta_(deity)",
+    "https://en.wikipedia.org/wiki/Aiyanar",
+    "https://www.wikidata.org/wiki/Q27870186",
+    "https://en.wikipedia.org/wiki/Achankovil_Sastha_Temple",
+    "https://ml.wikipedia.org/wiki/അച്ചൻകോവിൽ_ശാസ്താക്ഷേത്രം",
+    "https://ta.wikipedia.org/wiki/அச்சன்கோவில்_தர்மசாஸ்தா",
+    "https://www.wikidata.org/wiki/Q27887695",
+    "https://en.wikipedia.org/wiki/Aryankavu_Sastha_Temple",
+    "https://ml.wikipedia.org/wiki/ആര്യങ്കാവ്_ധർമ്മശാസ്താക്ഷേത്രം",
+    "https://ta.wikipedia.org/wiki/ஆரியங்காவு_ஐயப்பன்_கோவில்",
+    "https://www.wikidata.org/wiki/Q20576785",
+    "https://en.wikipedia.org/wiki/Kulathupuzha_Sastha_Temple",
+    "https://ml.wikipedia.org/wiki/കുളത്തൂപ്പുഴ_ശ്രീധർമ്മശാസ്താക്ഷേത്രം",
+    "https://ta.wikipedia.org/wiki/குளத்துப்புழை_அய்யப்பன்_கோவில்"
+   ]
+  },
+  {
+   "id": "karuppasamy",
+   "region": "tamil-nadu",
+   "en": "Karuppasamy (Karuppannaswamy)",
+   "names": {
+    "ta": "கருப்பண்ணசுவாமி",
+    "ml": "കറുപ്പുസ്വാമി"
+   },
+   "alt": [
+    "Karuppuswamy",
+    "Karupparayan",
+    "Karuppar",
+    "Karuppan",
+    "Sangili Karuppan"
+   ],
+   "type": "village-guardian",
+   "temples": [
+    {
+     "name": "Palanisettipatti Dam Karuppasamy Temple",
+     "nameNative": {
+      "ta": "பழனிசெட்டிபட்டி அணைக் கருப்பசாமி கோயில்"
+     },
+     "town": "Palanisettipatti",
+     "district": "Theni",
+     "state": "Tamil Nadu",
+     "lat": 9.9931,
+     "lon": 77.46663,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q16312773"
+    },
+    {
+     "name": "Vannikonendal Karuppasamy Temple",
+     "nameNative": {
+      "ta": "வன்னிகோனேந்தல் கருப்பசாமி கோவில்"
+     },
+     "town": "Vannikonendal",
+     "district": "Tirunelveli",
+     "state": "Tamil Nadu",
+     "lat": 8.96112,
+     "lon": 77.63331,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q25553726"
+    },
+    {
+     "name": "Mavur Karuppar temple",
+     "nameNative": {
+      "ta": "மாவூர் கருப்பர் கோயில்"
+     },
+     "town": "Mavur",
+     "district": "Ramanathapuram",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q31369583"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q3524835",
+    "https://en.wikipedia.org/wiki/Karuppannaswamy",
+    "https://ta.wikipedia.org/wiki/கருப்பண்ணசாமி",
+    "https://www.wikidata.org/wiki/Q31369583",
+    "https://www.wikidata.org/wiki/Q16312773",
+    "https://ta.wikipedia.org/wiki/பழனிசெட்டிபட்டி_அணைக்_கருப்பசாமி_கோயில்",
+    "https://www.wikidata.org/wiki/Q25553726",
+    "https://ta.wikipedia.org/wiki/வன்னிகோனேந்தல்_கருப்பசாமி_கோவில்",
+    "https://ta.wikipedia.org/wiki/மாவூர்_கருப்பர்_கோயில்",
+    "https://www.wikidata.org/wiki/Q25552170",
+    "https://ta.wikipedia.org/wiki/பதினெட்டாம்_படி_கருப்பசாமி"
+   ]
+  },
+  {
+   "id": "madurai-veeran",
+   "region": "tamil-nadu",
+   "en": "Madurai Veeran",
+   "names": {
+    "ta": "மதுரை வீரன்"
+   },
+   "alt": [
+    "Veeran"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Meenakshi Temple",
+     "nameNative": {
+      "ta": "மதுரை மீனாட்சியம்மன் கோவில்",
+      "ml": "മധുര മീനാക്ഷി ക്ഷേത്രം"
+     },
+     "town": "Madurai",
+     "district": "Madurai",
+     "lat": 9.91972,
+     "lon": 78.11944,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q1424358"
+    },
+    {
+     "name": "Samayapuram Mariamman Temple",
+     "nameNative": {
+      "ta": "சமயபுரம் மாரியம்மன் கோயில்"
+     },
+     "town": "Samayapuram",
+     "district": "Tiruchirappalli",
+     "state": "Tamil Nadu",
+     "lat": 10.9185,
+     "lon": 78.7389,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q10951668"
+    },
+    {
+     "name": "Kuvagam Madurai Veeran Temple",
+     "nameNative": {
+      "ta": "குவாகம் மதுரைவீரன் கோயில்"
+     },
+     "town": "Kuvagam",
+     "district": "Ariyalur",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q31374936"
+    },
+    {
+     "name": "Vaarappatti Madhurai Veeran temple",
+     "nameNative": {
+      "ta": "வாரப்பட்டி மதுரை வீரன் கோயில்"
+     },
+     "town": "Varappatti",
+     "district": "Coimbatore",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q31369255"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q6728840",
+    "https://ta.wikipedia.org/wiki/மதுரை_வீரன்",
+    "https://en.wikipedia.org/wiki/Madurai_Veeran",
+    "https://www.wikidata.org/wiki/Q1424358",
+    "https://en.wikipedia.org/wiki/Meenakshi_Temple",
+    "https://ml.wikipedia.org/wiki/മധുര_മീനാക്ഷി_ക്ഷേത്രം",
+    "https://ta.wikipedia.org/wiki/மதுரை_மீனாட்சி_சுந்தரேசுவரர்_கோயில்",
+    "https://www.wikidata.org/wiki/Q10951668",
+    "https://en.wikipedia.org/wiki/Mariamman_Temple,_Samayapuram",
+    "https://ta.wikipedia.org/wiki/சமயபுரம்_மாரியம்மன்_கோயில்",
+    "https://www.wikidata.org/wiki/Q31374936",
+    "https://ta.wikipedia.org/wiki/குவாகம்_மதுரைவீரன்_கோயில்",
+    "https://www.wikidata.org/wiki/Q31369255",
+    "https://ta.wikipedia.org/wiki/வாரப்பட்டி_மதுரை_வீரன்_கோயில்"
+   ]
+  },
+  {
+   "id": "muneeswarar",
+   "region": "tamil-nadu",
+   "en": "Muneeswarar (Muniyandi, Muniyappan)",
+   "names": {
+    "ta": "முனீசுவரர்"
+   },
+   "alt": [
+    "Muneeswaran",
+    "Munisvaran",
+    "Muniandi",
+    "Muniyandi",
+    "Muniyappan",
+    "Muni Ayya",
+    "Ayya"
+   ],
+   "type": "village-guardian",
+   "temples": [
+    {
+     "name": "Vallam Fort Muneeswarar Temple",
+     "nameNative": {
+      "ta": "வல்லம் கோட்டை முனியாண்டவர் கோயில்"
+     },
+     "town": "Vallam",
+     "district": "Thanjavur",
+     "state": "Tamil Nadu",
+     "lat": 10.71814,
+     "lon": 79.06243,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q31368419"
+    },
+    {
+     "name": "Arasoor Tharma Muneeswarar temple",
+     "nameNative": {
+      "ta": "அரசூர் தர்ம முனீஸ்வரர் கோயில்"
+     },
+     "town": "Arasoor",
+     "district": "Ramanathapuram",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q31366974"
+    },
+    {
+     "name": "Asthampatti Muneeswarar temple",
+     "nameNative": {
+      "ta": "அஸ்தம்பட்டி முனீஸ்வரர் கோயில்"
+     },
+     "town": "Asthampatti, Salem",
+     "district": "Salem",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q40195540"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q3524788",
+    "https://ta.wikipedia.org/wiki/முனீசுவரர்",
+    "https://www.wikidata.org/wiki/Q31355996",
+    "https://www.wikidata.org/wiki/Q31368419",
+    "https://en.wikipedia.org/wiki/Muneeswarar",
+    "https://ta.wikipedia.org/wiki/வல்லம்_கோட்டை_முனியாண்டவர்_கோயில்",
+    "https://www.wikidata.org/wiki/Q31366974",
+    "https://ta.wikipedia.org/wiki/அரசூர்_தர்ம_முனீஸ்வரர்_கோயில்",
+    "https://www.wikidata.org/wiki/Q40195540",
+    "https://ta.wikipedia.org/wiki/அஸ்தம்பட்டி_முனீஸ்வரர்_கோயில்"
+   ]
+  },
+  {
+   "id": "sudalai-madan",
+   "region": "tamil-nadu",
+   "en": "Sudalai Madan (Sudalai Madasamy)",
+   "names": {
+    "ta": "சுடலை மாடன்"
+   },
+   "alt": [
+    "Sudalai Madasamy",
+    "Sudalai Madaswamy",
+    "Madan",
+    "Madan Thampuran",
+    "Chudala Madan"
+   ],
+   "type": "village-guardian",
+   "temples": [
+    {
+     "name": "பாளையங்கோட்டை ஸ்ரீ சுடலை மாடசுவாமி கோயில்",
+     "nameNative": {
+      "ta": "பாளையங்கோட்டை ஸ்ரீ சுடலை மாடசுவாமி கோயில்"
+     },
+     "town": "Palayamkottai",
+     "district": "Tirunelveli",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q31379465"
+    },
+    {
+     "name": "மைலாடி ஞான மூர்த்தி என்ற சுடலை மாடசாமி கோயில்",
+     "nameNative": {
+      "ta": "மைலாடி ஞான மூர்த்தி என்ற சுடலை மாடசாமி கோயில்"
+     },
+     "town": "Mylaudy",
+     "district": "Kanniyakumari",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q31377691"
+    },
+    {
+     "name": "பேட்டை சுடலை மாடசுவாமி கோயில்",
+     "nameNative": {
+      "ta": "பேட்டை சுடலை மாடசுவாமி கோயில்"
+     },
+     "town": "Pettai",
+     "district": "Tirunelveli",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q31379483"
+    },
+    {
+     "name": "Arulmigu Shri Sudalai Eswarar Thirukovil",
+     "town": "Maramangalam",
+     "district": "Thoothukudi",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata"
+    },
+    {
+     "name": "Sri Sudalai Madan Temple",
+     "town": "Mukkani",
+     "district": "Thoothukudi",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q12978608",
+    "https://ta.wikipedia.org/wiki/சுடலை_மாடன்",
+    "https://www.wikidata.org/wiki/Q31377691",
+    "https://en.wikipedia.org/wiki/Sudalai_Madan",
+    "https://www.wikidata.org/wiki/Q31379465",
+    "https://ta.wikipedia.org/wiki/பாளையங்கோட்டை_ஸ்ரீ_சுடலை_மாடசுவாமி_கோயில்",
+    "https://ta.wikipedia.org/wiki/மைலாடி_ஞான_மூர்த்தி_என்ற_சுடலை_மாடசாமி_கோயில்",
+    "https://www.wikidata.org/wiki/Q31379483",
+    "https://ta.wikipedia.org/wiki/பேட்டை_சுடலை_மாடசுவாமி_கோயில்"
+   ]
+  },
+  {
+   "id": "isakki-amman",
+   "region": "tamil-nadu",
+   "en": "Isakki Amman",
+   "names": {
+    "ta": "இசக்கி அம்மன்"
+   },
+   "alt": [
+    "Isakki",
+    "Esakki",
+    "Esakki Amman"
+   ],
+   "type": "village-guardian",
+   "temples": [
+    {
+     "name": "Arulmigu Isakki Amman Temple",
+     "town": "Kulasekaranputhoor",
+     "district": "Kanniyakumari",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata"
+    },
+    {
+     "name": "Muppandal Isakki Amman Temple",
+     "nameNative": {
+      "ta": "ஆரல்வாய்மொழி முப்பந்தல் இசக்கியம்மன் கோயில்"
+     },
+     "town": "Muppandal",
+     "district": "Kanniyakumari",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata"
+    },
+    {
+     "name": "தெற்குபட்டி இசக்கி அம்மன் கோயில்",
+     "nameNative": {
+      "ta": "தெற்குபட்டி இசக்கி அம்மன் கோயில்"
+     },
+     "town": "Therkupatti",
+     "district": "Tirunelveli",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q31379302"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q12974266",
+    "https://en.wikipedia.org/wiki/Isakki",
+    "https://ta.wikipedia.org/wiki/இசக்கி_அம்மன்",
+    "https://www.wikidata.org/wiki/Q31379302",
+    "https://ta.wikipedia.org/wiki/தெற்குபட்டி_இசக்கி_அம்மன்_கோயில்"
+   ]
+  },
+  {
+   "id": "periyachi-pechiamman",
+   "region": "tamil-nadu",
+   "en": "Periyachi / Pechi Amman",
+   "names": {
+    "ta": "பெரியாச்சி"
+   },
+   "alt": [
+    "Pechi Amman",
+    "Periyachi Amman",
+    "Periyandichi Amman",
+    "Periyachi Kali Amman"
+   ],
+   "type": "village-guardian",
+   "temples": [
+    {
+     "name": "Pachyamman Temple, Madurai",
+     "nameNative": {
+      "ta": "பேச்சியம்மன் கோயில், மதுரை"
+     },
+     "town": "Madurai",
+     "district": "Madurai",
+     "lat": 9.92822,
+     "lon": 78.11457,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q25551087"
+    },
+    {
+     "name": "பேச்சிப்பாறை பேச்சியம்மன் கோயில்",
+     "nameNative": {
+      "ta": "பேச்சிப்பாறை பேச்சியம்மன் கோயில்"
+     },
+     "town": "Pechiparai",
+     "district": "Kanniyakumari",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q31376804"
+    },
+    {
+     "name": "Oththaveetu Pechchiyamman temple",
+     "nameNative": {
+      "ta": "ஒத்தவீடு பேச்சியம்மன் கோயில்"
+     },
+     "town": "Oththaveedu",
+     "district": "Madurai",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q31366487"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q7168954",
+    "https://www.wikidata.org/wiki/Q25551087",
+    "https://en.wikipedia.org/wiki/Periyachi",
+    "https://ta.wikipedia.org/wiki/பேச்சியம்மன்_கோயில்,_மதுரை",
+    "https://www.wikidata.org/wiki/Q31376804",
+    "https://ta.wikipedia.org/wiki/பேச்சிப்பாறை_பேச்சியம்மன்_கோயில்",
+    "https://www.wikidata.org/wiki/Q31366487",
+    "https://ta.wikipedia.org/wiki/ஒத்தவீடு_பேச்சியம்மன்_கோயில்"
+   ]
+  },
+  {
+   "id": "mariamman",
+   "region": "tamil-nadu",
+   "en": "Mariamman",
+   "names": {
+    "ta": "மாரியம்மன்",
+    "ml": "മാരിയമ്മൻ"
+   },
+   "alt": [
+    "Maariamma",
+    "Amman",
+    "Aatha",
+    "Muthumariamman",
+    "Karumariamman"
+   ],
+   "type": "major-form",
+   "temples": [
+    {
+     "name": "Samayapuram Mariamman Temple",
+     "nameNative": {
+      "ta": "சமயபுரம் மாரியம்மன் கோயில்"
+     },
+     "town": "Samayapuram",
+     "district": "Tiruchirappalli",
+     "state": "Tamil Nadu",
+     "lat": 10.9185,
+     "lon": 78.7389,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q10951668"
+    },
+    {
+     "name": "Punnainallur Mariamman",
+     "nameNative": {
+      "ta": "புன்னைநல்லூர் மாரியம்மன் கோயில்"
+     },
+     "town": "Punnainallur",
+     "district": "Thanjavur",
+     "state": "Tamil Nadu",
+     "lat": 10.78532,
+     "lon": 79.18959,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q7260454"
+    },
+    {
+     "name": "Periya Mariamman Temple",
+     "nameNative": {
+      "ta": "பெரிய மாரியம்மன் கோயில், ஈரோடு"
+     },
+     "town": "Erode",
+     "district": "Erode",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q28174020"
+    },
+    {
+     "name": "Salem  Koṭṭai  Mariamman Temple",
+     "nameNative": {
+      "ta": "சேலம் கோட்டை மாரியம்மன் கோயில்"
+     },
+     "town": "Salem",
+     "district": "Salem",
+     "state": "Tamil Nadu",
+     "lat": 11.6542,
+     "lon": 78.15916,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q16309849"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q1200549",
+    "https://en.wikipedia.org/wiki/Mariamman",
+    "https://www.wikidata.org/wiki/Q10951668",
+    "https://en.wikipedia.org/wiki/Mariamman_Temple,_Samayapuram",
+    "https://ta.wikipedia.org/wiki/சமயபுரம்_மாரியம்மன்_கோயில்",
+    "https://www.wikidata.org/wiki/Q7260454",
+    "https://en.wikipedia.org/wiki/Punnainallur_Mariamman_Temple",
+    "https://ta.wikipedia.org/wiki/புன்னைநல்லூர்_மாரியம்மன்_கோயில்",
+    "https://www.wikidata.org/wiki/Q28174020",
+    "https://en.wikipedia.org/wiki/Periya_Mariamman_Temple",
+    "https://ta.wikipedia.org/wiki/பெரிய_மாரியம்மன்_கோயில்,_ஈரோடு",
+    "https://www.wikidata.org/wiki/Q16309849",
+    "https://ta.wikipedia.org/wiki/சேலம்_கோட்டை_மாரியம்மன்_கோயில்"
+   ]
+  },
+  {
+   "id": "angala-parameswari",
+   "region": "tamil-nadu",
+   "en": "Angala Parameswari (Angalamman)",
+   "names": {
+    "ta": "அங்காள பரமேசுவரி"
+   },
+   "alt": [
+    "Angalamman",
+    "Angala Devi",
+    "Ankalamman",
+    "Angali"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Angalaparameswari Devi Temple, Melmalayanur",
+     "nameNative": {
+      "ta": "அங்காள பரமேசுவரி அம்மன் கோயில், மேல்மலையனூர்"
+     },
+     "town": "Melmalayanur",
+     "district": "Viluppuram",
+     "state": "Tamil Nadu",
+     "lat": 12.34512,
+     "lon": 79.32408,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q12973293"
+    },
+    {
+     "name": "Angala Parameswari Temple, Royapuram",
+     "nameNative": {
+      "ta": "அங்காள பரமேஸ்வரி கோயில்,ராயபுரம்"
+     },
+     "town": "Royapuram",
+     "district": "Chennai",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q4761921"
+    },
+    {
+     "name": "Vallam Angala Parameshwari Temple",
+     "nameNative": {
+      "ta": "வல்லம் அங்காள பரமேசுவரி கோயில்"
+     },
+     "town": "Vallam",
+     "district": "Thanjavur",
+     "state": "Tamil Nadu",
+     "lat": 10.71891,
+     "lon": 79.05725,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q31368422"
+    },
+    {
+     "name": "Angala Parameswariyamman Temple, Udayakottai",
+     "nameNative": {
+      "ta": "அங்காள பரமேசுவரியம்மன் கோவில், இடையகோட்டை"
+     },
+     "town": "Idayakottai",
+     "district": "Dindigul",
+     "state": "Tamil Nadu",
+     "lat": 9.96983,
+     "lon": 77.40703,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q12973291"
+    }
+   ],
+   "rules": [
+    {
+     "type": "tithi",
+     "paksha": "krishna",
+     "tithi": 15
+    },
+    {
+     "type": "tithi",
+     "paksha": "shukla",
+     "tithi": 15
+    }
+   ],
+   "sources": [
+    "https://ta.wikipedia.org/wiki/அங்காள_பரமேசுவரி",
+    "https://www.wikidata.org/wiki/Q4761922",
+    "https://www.wikidata.org/wiki/Q123018476",
+    "https://www.wikidata.org/wiki/Q31365582",
+    "https://www.wikidata.org/wiki/Q40195391",
+    "https://en.wikipedia.org/wiki/Angala_Devi",
+    "https://www.wikidata.org/wiki/Q12973293",
+    "https://ta.wikipedia.org/wiki/அங்காளபரமேசுவரி_அம்மன்_கோயில்,_மேல்மலையனூர்",
+    "https://www.wikidata.org/wiki/Q4761921",
+    "https://en.wikipedia.org/wiki/Angala_Parameswari_Temple,_Royapuram",
+    "https://www.wikidata.org/wiki/Q31368422",
+    "https://ta.wikipedia.org/wiki/வல்லம்_அங்காள_பரமேசுவரி_கோயில்",
+    "https://www.wikidata.org/wiki/Q12973291",
+    "https://ta.wikipedia.org/wiki/அங்காள_பரமேசுவரியம்மன்_கோவில்,_இடையகோட்டை"
+   ]
+  },
+  {
+   "id": "kaliamman",
+   "region": "tamil-nadu",
+   "en": "Kaliamman (Kali as village goddess)",
+   "names": {
+    "ta": "காளியம்மன்"
+   },
+   "alt": [
+    "Kali Amman",
+    "Mathura Kaliamman",
+    "Madurakaliamman",
+    "Kondathu Kaliamman",
+    "Vettudaiyar Kaliamman"
+   ],
+   "type": "major-form",
+   "temples": [
+    {
+     "name": "Mathura Kaliamman Temple, Siruvachur",
+     "nameNative": {
+      "ta": "மதுரகாளியம்மன்"
+     },
+     "town": "Siruvachur",
+     "district": "Perambalur",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q6787357"
+    },
+    {
+     "name": "Pariyur Kondathu Kaliamman",
+     "nameNative": {
+      "ta": "paariyur kovil"
+     },
+     "town": "Pariyur, Gobichettipalayam",
+     "district": "Erode",
+     "state": "Tamil Nadu",
+     "lat": 11.4775,
+     "lon": 77.45611,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q7137563"
+    },
+    {
+     "name": "Kollangudi Vettudaiyar Kaliamman Temple",
+     "nameNative": {
+      "ta": "வெட்டுடையகாளியம்மன் கோயில்"
+     },
+     "town": "Kollangudi",
+     "district": "Sivaganga",
+     "state": "Tamil Nadu",
+     "lat": 9.84409,
+     "lon": 78.58624,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q16312938"
+    },
+    {
+     "name": "Kaliamman Temple, Thanjavur",
+     "nameNative": {
+      "ta": "தஞ்சாவூர் காளியம்மன் கோயில்"
+     },
+     "town": "Thanjavur",
+     "district": "Thanjavur",
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q31368765"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q31368765",
+    "https://www.wikidata.org/wiki/Q132127",
+    "https://www.wikidata.org/wiki/Q3350517",
+    "https://www.wikidata.org/wiki/Q6787357",
+    "https://en.wikipedia.org/wiki/Mathura_Kaliamman_Temple,_Siruvachur",
+    "https://ta.wikipedia.org/wiki/சிறுவாச்சூர்_மதுரகாளியம்மன்_கோவில்",
+    "https://www.wikidata.org/wiki/Q7137563",
+    "https://en.wikipedia.org/wiki/Pariyur_Kondathu_Kaliamman_Temple",
+    "https://ta.wikipedia.org/wiki/பாரியூர்_கொண்டத்துக்காளியம்மன்_கோவில்",
+    "https://www.wikidata.org/wiki/Q16312938",
+    "https://ta.wikipedia.org/wiki/கொல்லங்குடி_வெட்டுடையகாளியம்மன்_கோயில்",
+    "https://en.wikipedia.org/wiki/Kaliamman_Temple,_Thanjavur",
+    "https://ta.wikipedia.org/wiki/தஞ்சாவூர்_காளியம்மன்_கோயில்"
+   ]
+  },
+  {
+   "id": "kathavarayan",
+   "region": "tamil-nadu",
+   "en": "Kathavarayan",
+   "names": {
+    "ta": "காத்தவராய சாமி"
+   },
+   "alt": [
+    "Kathavaraya Swamy"
+   ],
+   "type": "village-guardian",
+   "temples": [
+    {
+     "name": "Nellukada Mariamman temple",
+     "nameNative": {
+      "ta": "நெல்லுக்கடை மாரியம்மன் கோயில்"
+     },
+     "town": "Nagapattinam",
+     "district": "Nagapattinam",
+     "state": "Tamil Nadu",
+     "lat": 10.76121,
+     "lon": 79.84048,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q31368275"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q15708149",
+    "https://ta.wikipedia.org/wiki/காத்தவராய_சாமி",
+    "https://en.wikipedia.org/wiki/Kathavarayan_(deity)",
+    "https://www.wikidata.org/wiki/Q31368275",
+    "https://en.wikipedia.org/wiki/Nellukkadai_Mariamman_Temple",
+    "https://ta.wikipedia.org/wiki/நெல்லுக்கடை_மாரியம்மன்_கோயில்"
+   ]
+  },
+  {
+   "id": "kateri-amman",
+   "region": "tamil-nadu",
+   "en": "Kateri Amman",
+   "names": {
+    "ta": "காட்டேரி அம்மன்"
+   },
+   "alt": [
+    "Kateri"
+   ],
+   "type": "village-guardian",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q24908177",
+    "https://en.wikipedia.org/wiki/Kateri_Amman"
+   ]
+  },
+  {
+   "id": "draupadi-amman",
+   "region": "tamil-nadu",
+   "en": "Draupadi Amman (Thiraupathi Amman)",
+   "names": {
+    "ta": "திரௌபதியம்மன்"
+   },
+   "alt": [
+    "Draupadi Amman",
+    "Thiraupathi Amman"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Draupadi Temple Thanjavur",
+     "nameNative": {
+      "ta": "தஞ்சாவூர் திரௌபதியம்மன் கோயில்"
+     },
+     "town": "Thanjavur",
+     "district": "Thanjavur",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q31368737"
+    },
+    {
+     "name": "Draupadi Amman Temple, Vanchinapuram",
+     "nameNative": {
+      "ta": "வஞ்சினாபுரம் திரௌபதிஅம்மன் கோயில்"
+     },
+     "town": "Vanchinapuram",
+     "district": "Ariyalur",
+     "state": "Tamil Nadu",
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q31374715"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q31368737",
+    "https://www.wikidata.org/wiki/Q31374715",
+    "https://en.wikipedia.org/wiki/Draupadi",
+    "https://ta.wikipedia.org/wiki/தஞ்சாவூர்_திரௌபதியம்மன்_கோயில்",
+    "https://ta.wikipedia.org/wiki/வஞ்சினாபுரம்_திரௌபதிஅம்மன்_கோயில்",
+    "https://en.wikipedia.org/wiki/Periyachi"
+   ]
+  },
+  {
+   "id": "bhagavathi",
+   "region": "kerala",
+   "en": "Bhagavathi (Devi, the Goddess)",
+   "names": {
+    "ml": "ഭഗവതി",
+    "ta": "பகவதி அம்மன்"
+   },
+   "alt": [
+    "Bhagavati",
+    "Bhagavathy"
+   ],
+   "type": "major-form",
+   "temples": [
+    {
+     "name": "Kodungallur Bhagavathy Temple",
+     "nameNative": {
+      "ta": "கொடுங்கல்லூர் பகவதி கோவில்",
+      "ml": "കൊടുങ്ങല്ലൂർ കുരുംബ ഭഗവതി ക്ഷേത്രം"
+     },
+     "town": "Kodungallur",
+     "district": "Thrissur",
+     "state": "Kerala",
+     "lat": 10.22686,
+     "lon": 76.19878,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q13111344"
+    },
+    {
+     "name": "Attukal Temple",
+     "nameNative": {
+      "ta": "ஆற்றுக்கால் பகவதி கோவில்",
+      "ml": "ആറ്റുകാൽ ഭഗവതി ക്ഷേത്രം"
+     },
+     "town": "Attukal, Thiruvananthapuram",
+     "district": "Thiruvananthapuram",
+     "state": "Kerala",
+     "lat": 8.47,
+     "lon": 76.96,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q4818741",
+     "festival": {
+      "type": "festival",
+      "id": "attukal-pongala"
+     }
+    },
+    {
+     "name": "Chottanikkara Temple",
+     "nameNative": {
+      "ta": "சோற்றானிக்கரை கோவில்",
+      "ml": "ചോറ്റാനിക്കര ക്ഷേത്രം"
+     },
+     "town": "Chottanikkara",
+     "district": "Ernakulam",
+     "state": "Kerala",
+     "lat": 9.933,
+     "lon": 76.391,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q3531081"
+    },
+    {
+     "name": "Chettikulangara Devi Temple",
+     "nameNative": {
+      "ta": "செட்டிகுளங்கரா தேவி கோயில்",
+      "ml": "ചെട്ടികുളങ്ങര ശ്രീ ഭഗവതി ക്ഷേത്രം"
+     },
+     "town": "Chettikulangara",
+     "district": "Alappuzha",
+     "state": "Kerala",
+     "lat": 9.227,
+     "lon": 76.517,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q5094200",
+     "festival": {
+      "type": "nakshatra",
+      "key": "bharani",
+      "month": "kumbha"
+     }
+    },
+    {
+     "name": "Madayi Kavu",
+     "nameNative": {
+      "ta": "மடாயி காவு",
+      "ml": "മാടായിക്കാവ്"
+     },
+     "town": "Madayi",
+     "district": "Kannur",
+     "state": "Kerala",
+     "lat": 12.03472,
+     "lon": 75.26143,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q6726567",
+     "festival": {
+      "type": "nakshatra",
+      "key": "purva_phalguni",
+      "month": "meena"
+     }
+    },
+    {
+     "name": "Kalarivathukkal Bhagavathy Temple",
+     "nameNative": {
+      "ta": "களரிவாத்துக்கல் கோயில்"
+     },
+     "town": "",
+     "district": "Kannur",
+     "state": "Kerala",
+     "lat": 11.92463,
+     "lon": 75.35304,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q15232896"
+    },
+    {
+     "name": "Mondaicaud Bhagavathi Temple",
+     "nameNative": {
+      "ta": "மண்டைக்காடு ஸ்ரீ பகவதி அம்மன் கோவில்",
+      "ml": "മണ്ടയ്ക്കാട് ഭഗവതി അമ്മൻ ക്ഷേത്രം"
+     },
+     "town": "Mandaikadu",
+     "district": "Kanniyakumari",
+     "state": "Tamil Nadu",
+     "lat": 8.16326,
+     "lon": 77.28015,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q6898595"
+    },
+    {
+     "name": "Karivellur Muchilot Bhagavathy Temple",
+     "nameNative": {
+      "ml": "കരിവെള്ളൂർ മുച്ചിലോട്ട് ഭഗവതി ക്ഷേത്രം"
+     },
+     "town": "Karivellur",
+     "district": "Kannur",
+     "state": "Kerala",
+     "lat": 12.17285,
+     "lon": 75.19256,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q13111015"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q1939506",
+    "https://ml.wikipedia.org/wiki/ഭഗവതി",
+    "https://ml.wikipedia.org/wiki/കുലദേവത",
+    "https://en.wikipedia.org/wiki/Chettikulangara_Devi_Temple",
+    "https://ml.wikipedia.org/wiki/മാടായിക്കാവ്_ഭഗവതിക്ഷേത്രം",
+    "https://www.wikidata.org/wiki/Q13111344",
+    "https://en.wikipedia.org/wiki/Kodungallur_Sree_Kurumba_Bhagavathy_Temple",
+    "https://ml.wikipedia.org/wiki/കൊടുങ്ങല്ലൂർ_ശ്രീ_കുരുംബഭഗവതി_ക്ഷേത്രം",
+    "https://ta.wikipedia.org/wiki/கொடுங்கல்லூர்_பகவதி_கோவில்",
+    "https://www.wikidata.org/wiki/Q4818741",
+    "https://en.wikipedia.org/wiki/Attukal_Temple",
+    "https://ml.wikipedia.org/wiki/ആറ്റുകാൽ_ഭഗവതി_ക്ഷേത്രം",
+    "https://ta.wikipedia.org/wiki/ஆற்றுக்கால்_பகவதி_கோவில்",
+    "https://www.wikidata.org/wiki/Q3531081",
+    "https://en.wikipedia.org/wiki/Chottanikkara_Temple",
+    "https://ml.wikipedia.org/wiki/ചോറ്റാനിക്കര_ഭഗവതിക്ഷേത്രം",
+    "https://ta.wikipedia.org/wiki/சோட்டானிக்கரை_கோவில்",
+    "https://www.wikidata.org/wiki/Q5094200",
+    "https://ml.wikipedia.org/wiki/ചെട്ടികുളങ്ങര_ശ്രീ_ഭഗവതി_ക്ഷേത്രം",
+    "https://ta.wikipedia.org/wiki/செட்டிகுளங்கரா_தேவி_கோயில்",
+    "https://www.wikidata.org/wiki/Q6726567",
+    "https://en.wikipedia.org/wiki/Madayi_Kavu",
+    "https://ta.wikipedia.org/wiki/மடாயி_காவு",
+    "https://www.wikidata.org/wiki/Q15232896",
+    "https://en.wikipedia.org/wiki/Kalarivathukkal_Temple",
+    "https://ta.wikipedia.org/wiki/களரிவாத்துக்கல்_கோயில்",
+    "https://www.wikidata.org/wiki/Q6898595",
+    "https://en.wikipedia.org/wiki/Mondaicaud_Amman_Temple",
+    "https://ml.wikipedia.org/wiki/മണ്ടയ്ക്കാട്_ഭഗവതി_അമ്മൻ_ക്ഷേത്രം",
+    "https://ta.wikipedia.org/wiki/மண்டைக்காடு_பகவதி_அம்மன்_கோவில்",
+    "https://www.wikidata.org/wiki/Q13111015",
+    "https://ml.wikipedia.org/wiki/കരിവെള്ളൂർ_മുച്ചിലോട്ട്_ഭഗവതി_ക്ഷേത്രം",
+    "https://en.wikipedia.org/wiki/Kodungallur_Bhagavathy_Temple"
+   ]
+  },
+  {
+   "id": "bhadrakali",
+   "region": "kerala",
+   "en": "Bhadrakali",
+   "names": {
+    "ml": "ഭദ്രകാളി",
+    "ta": "பத்ரகாளி"
+   },
+   "alt": [
+    "Bhadra Kali",
+    "Bhadrakaali"
+   ],
+   "type": "major-form",
+   "temples": [
+    {
+     "name": "Kodungallur Bhagavathy Temple",
+     "nameNative": {
+      "ta": "கொடுங்கல்லூர் பகவதி கோவில்",
+      "ml": "കൊടുങ്ങല്ലൂർ കുരുംബ ഭഗവതി ക്ഷേത്രം"
+     },
+     "town": "Kodungallur",
+     "district": "Thrissur",
+     "state": "Kerala",
+     "lat": 10.22686,
+     "lon": 76.19878,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q13111344"
+    },
+    {
+     "name": "Madayi Kavu",
+     "nameNative": {
+      "ta": "மடாயி காவு",
+      "ml": "മാടായിക്കാവ്"
+     },
+     "town": "Madayi",
+     "district": "Kannur",
+     "state": "Kerala",
+     "lat": 12.03472,
+     "lon": 75.26143,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q6726567",
+     "festival": {
+      "type": "nakshatra",
+      "key": "purva_phalguni",
+      "month": "meena"
+     }
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q3350517",
+    "https://en.wikipedia.org/wiki/Bhadrakali",
+    "https://ml.wikipedia.org/wiki/കുലദേവത",
+    "https://ml.wikipedia.org/wiki/മാടായിക്കാവ്_ഭഗവതിക്ഷേത്രം",
+    "https://www.wikidata.org/wiki/Q13111344",
+    "https://en.wikipedia.org/wiki/Kodungallur_Sree_Kurumba_Bhagavathy_Temple",
+    "https://ml.wikipedia.org/wiki/കൊടുങ്ങല്ലൂർ_ശ്രീ_കുരുംബഭഗവതി_ക്ഷേത്രം",
+    "https://ta.wikipedia.org/wiki/கொடுங்கல்லூர்_பகவதி_கோவில்",
+    "https://www.wikidata.org/wiki/Q6726567",
+    "https://en.wikipedia.org/wiki/Madayi_Kavu",
+    "https://ta.wikipedia.org/wiki/மடாயி_காவு"
+   ]
+  },
+  {
+   "id": "muthappan",
+   "region": "kerala",
+   "en": "Muthappan",
+   "names": {
+    "ml": "മുത്തപ്പൻ",
+    "ta": "முத்தப்பன்"
+   },
+   "alt": [
+    "Sree Muthappan",
+    "Thiruvappana",
+    "Vellattam"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Muthappan Temple",
+     "nameNative": {
+      "ta": "முத்தப்பன் கோயில்"
+     },
+     "town": "Parassinikadavu",
+     "district": "Kannur",
+     "state": "Kerala",
+     "lat": 11.9825,
+     "lon": 75.4021,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q6943826"
+    },
+    {
+     "name": "Nileshwar Muthappan Madappura",
+     "town": "Nileshwar",
+     "district": "Kasaragod",
+     "state": "Kerala",
+     "lat": 12.25063,
+     "lon": 75.13005,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q16258032"
+    },
+    {
+     "name": "Altharakkal Sree Muthappan Madapura",
+     "nameNative": {
+      "ml": "ആൽത്തറക്കാൽ ശ്രീ മുത്തപ്പൻ മടപ്പുര"
+     },
+     "town": "Altharakkal",
+     "district": "Kasaragod",
+     "state": "Kerala",
+     "lat": 12.36453,
+     "lon": 75.10438,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q87652762"
+    },
+    {
+     "name": "Padavil Shri Muthappan Madapura",
+     "nameNative": {
+      "ml": "പടവിൽ ശ്രീ മുത്തപ്പൻ മടപ്പുര"
+     },
+     "town": "Padavil",
+     "district": "Kannur",
+     "state": "Kerala",
+     "lat": 12.04838,
+     "lon": 75.33274,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q25588536"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q1955916",
+    "https://www.wikidata.org/wiki/Q6943826",
+    "https://en.wikipedia.org/wiki/Theyyam",
+    "https://ml.wikipedia.org/wiki/കുലദേവത",
+    "https://en.wikipedia.org/wiki/Muthappan",
+    "https://en.wikipedia.org/wiki/Muthappan_Temple",
+    "https://ml.wikipedia.org/wiki/പറശ്ശിനിക്കടവ്_മുത്തപ്പൻ_ക്ഷേത്രം",
+    "https://ta.wikipedia.org/wiki/முத்தப்பன்_கோயில்",
+    "https://www.wikidata.org/wiki/Q16258032",
+    "https://en.wikipedia.org/wiki/Nileshwar_Muthappan_Madappura",
+    "https://www.wikidata.org/wiki/Q87652762",
+    "https://en.wikipedia.org/wiki/Altharakkal_Sree_Muthappan_Madapura",
+    "https://ml.wikipedia.org/wiki/ആൽത്തറക്കാൽ_ശ്രീ_മുത്തപ്പൻ_മടപ്പുര",
+    "https://www.wikidata.org/wiki/Q25588536",
+    "https://ml.wikipedia.org/wiki/പടവിൽ_ശ്രീ_മുത്തപ്പൻ_മടപ്പുര"
+   ]
+  },
+  {
+   "id": "vishnumoorthi",
+   "region": "kerala",
+   "en": "Vishnumoorthi",
+   "names": {
+    "ml": "വിഷ്ണുമൂർത്തി"
+   },
+   "alt": [
+    "Vishnumoorthy",
+    "Vishnu Moorthy"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Vaikunteshwara temple",
+     "town": "Kottappuram, Nileshwaram",
+     "district": "Kasaragod",
+     "state": "Kerala",
+     "tz": "Asia/Kolkata"
+    },
+    {
+     "name": "Chimeni Sri Vishnumoorthi Temple",
+     "town": "Chimeni",
+     "district": "",
+     "state": "Kerala",
+     "tz": "Asia/Kolkata"
+    },
+    {
+     "name": "Marathakkad Sri Iver Paradevatha Kshethram",
+     "town": "Kuppam, Taliparamba",
+     "district": "Kannur",
+     "state": "Kerala",
+     "tz": "Asia/Kolkata"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q13114745",
+    "https://ml.wikipedia.org/wiki/വിഷ്ണുമൂർത്തി",
+    "https://en.wikipedia.org/wiki/Vishnumoorthy_Theyyam",
+    "https://en.wikipedia.org/wiki/Theyyam"
+   ]
+  },
+  {
+   "id": "chamundi",
+   "region": "kerala",
+   "en": "Chamundi (incl. Raktha Chamundi theyyam)",
+   "names": {
+    "ml": "ചാമുണ്ഡി",
+    "ta": "சாமுண்டி"
+   },
+   "alt": [
+    "Chamunda",
+    "Chamundeshwari",
+    "Raktha Chamundi",
+    "Rakta Chamundi"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Kootayanimoodu chamundi temple",
+     "nameNative": {
+      "ta": "கூடையாணிமூடு சாமுண்டி கோயில்",
+      "ml": "കൂറ്റായിണിമൂട് ചാമുണ്ഡിക്ഷേത്രം"
+     },
+     "town": "Kootayanimoodu",
+     "district": "Thiruvananthapuram",
+     "state": "Kerala",
+     "lat": 8.56281,
+     "lon": 77.05489,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q17060074"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q1061550",
+    "https://www.wikidata.org/wiki/Q31700277",
+    "https://www.wikidata.org/wiki/Q16137357",
+    "https://ml.wikipedia.org/wiki/രക്തചാമുണ്ഡി",
+    "https://www.wikidata.org/wiki/Q17060074",
+    "https://en.wikipedia.org/wiki/Kootayanimoodu_Chamundi_Temple",
+    "https://ta.wikipedia.org/wiki/கூடையாணிமூடு_சாமுண்டி_கோயில்",
+    "https://en.wikipedia.org/wiki/Theyyam"
+   ]
+  },
+  {
+   "id": "pottan-theyyam",
+   "region": "kerala",
+   "en": "Pottan Theyyam",
+   "names": {
+    "ml": "പൊട്ടൻ തെയ്യം"
+   },
+   "alt": [
+    "Pottan"
+   ],
+   "type": "regional",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q7235201",
+    "https://en.wikipedia.org/wiki/Pottan_Theyyam",
+    "https://en.wikipedia.org/wiki/Theyyam"
+   ]
+  },
+  {
+   "id": "vettakkorumakan",
+   "region": "kerala",
+   "en": "Vettakkorumakan",
+   "names": {
+    "ml": "വേട്ടയ്ക്കൊരുമകൻ"
+   },
+   "alt": [],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Vettakkorumakan Kavu Temple",
+     "nameNative": {
+      "ml": "വേട്ടക്കൊരുമകൻ കാവ് ക്ഷേത്രം"
+     },
+     "town": "Olassa",
+     "district": "Kottayam",
+     "state": "Kerala",
+     "lat": 9.60542,
+     "lon": 76.47648,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q125147202"
+    },
+    {
+     "name": "Vettakkorumakan Temple",
+     "nameNative": {
+      "ml": "വേട്ടക്കൊരുമകൻ ക്ഷേത്രം"
+     },
+     "town": "Kayyur",
+     "district": "Kasaragod",
+     "state": "Kerala",
+     "lat": 12.26891,
+     "lon": 75.18426,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q124387725"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q7923793",
+    "https://www.wikidata.org/wiki/Q125147202",
+    "https://en.wikipedia.org/wiki/Vettakkorumakan",
+    "https://ml.wikipedia.org/wiki/വേട്ടയ്ക്കൊരുമകൻ",
+    "https://www.wikidata.org/wiki/Q124387725"
+   ]
+  },
+  {
+   "id": "chamundeshwari",
+   "region": "karnataka",
+   "en": "Chamundeshwari",
+   "names": {
+    "kn": "ಚಾಮುಂಡೇಶ್ವರಿ"
+   },
+   "alt": [
+    "Chamundi",
+    "Chamunda"
+   ],
+   "type": "major-form",
+   "temples": [
+    {
+     "name": "Chamundeshwari Temple",
+     "nameNative": {
+      "kn": "ಚಾಮುಂಡೇಶ್ವರಿ ದೇವಸ್ಥಾನ"
+     },
+     "town": "Chamundi Hills, Mysuru",
+     "district": "Mysuru",
+     "lat": 12.27248,
+     "lon": 76.6707,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q1061529"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q1061550",
+    "https://en.wikipedia.org/wiki/Chamunda",
+    "https://www.wikidata.org/wiki/Q1061529",
+    "https://en.wikipedia.org/wiki/Chamundeshwari_Temple",
+    "https://kn.wikipedia.org/wiki/ಚಾಮುಂಡೇಶ್ವರಿ_ದೇವಸ್ಥಾನ,_ಮೈಸೂರು"
+   ]
+  },
+  {
+   "id": "yellamma-kn",
+   "region": "karnataka",
+   "en": "Yellamma",
+   "names": {
+    "kn": "ಯಲ್ಲಮ್ಮ"
+   },
+   "alt": [
+    "Renuka",
+    "Renuka Yellamma"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Yellamma Temple, Saundatti",
+     "nameNative": {
+      "kn": "ಯಲ್ಲಮ್ಮ ದೇವಿ ದೇವಸ್ಥಾನ ಸವದತ್ತಿ"
+     },
+     "town": "Saundatti",
+     "district": "Belagavi",
+     "lat": 15.754,
+     "lon": 75.16,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q24952148"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q1389331",
+    "https://en.wikipedia.org/wiki/Renuka",
+    "https://www.wikidata.org/wiki/Q24952148",
+    "https://en.wikipedia.org/wiki/Yellamma_Temple,_Saundatti",
+    "https://kn.wikipedia.org/wiki/ಯಲ್ಲಮ್ಮ_ದೇವಿ_ದೇವಸ್ಥಾನ_ಸವದತ್ತಿ"
+   ]
+  },
+  {
+   "id": "mailara",
+   "region": "karnataka",
+   "en": "Mailara",
+   "names": {
+    "kn": "ಮೈಲಾರ ಲಿಂಗೇಶ್ವರ"
+   },
+   "alt": [
+    "Mailara Lingeshwara",
+    "Mylara",
+    "Khandoba"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Mylara Lingeshwara Temple",
+     "nameNative": {
+      "kn": "ಮೈಲಾರ ಲಿಂಗೇಶ್ವರ ದೇವಸ್ಥಾನ"
+     },
+     "town": "Mylara",
+     "district": "Vijayanagara",
+     "lat": 14.80806,
+     "lon": 75.69083,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q6947633"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Khandoba",
+    "https://www.wikidata.org/wiki/Q638964",
+    "https://www.wikidata.org/wiki/Q6947633",
+    "https://en.wikipedia.org/wiki/Mylara_Lingeshwara_Temple",
+    "https://kn.wikipedia.org/wiki/ಮೈಲಾರ_ಲಿಂಗೇಶ್ವರ_ದೇವಸ್ಥಾನ,_ಮೈಲಾರ"
+   ]
+  },
+  {
+   "id": "banashankari",
+   "region": "karnataka",
+   "en": "Banashankari",
+   "names": {
+    "kn": "ಬನಶಂಕರಿ"
+   },
+   "alt": [
+    "Banashankari Amma"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Banashankari Amma Temple",
+     "nameNative": {
+      "kn": "ಬನಶಂಕರಿ ಅಮ್ಮ ದೇವಸ್ಥಾನ"
+     },
+     "town": "Cholachagudda, Badami",
+     "district": "Bagalkot",
+     "lat": 15.88722,
+     "lon": 75.705,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q4853950"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q4853950",
+    "https://en.wikipedia.org/wiki/Banashankari_Amma_Temple",
+    "https://kn.wikipedia.org/wiki/ಬನಶಂಕರಿ_ದೇವಿ_ಕ್ಷೇತ್ರ"
+   ]
+  },
+  {
+   "id": "panjurli",
+   "region": "karnataka",
+   "en": "Panjurli",
+   "names": {
+    "kn": "ಪಂಜುರ್ಲಿ"
+   },
+   "alt": [
+    "Panchuruli",
+    "Panjuruli"
+   ],
+   "type": "village-guardian",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q136645746",
+    "https://en.wikipedia.org/wiki/Panjurli",
+    "https://kn.wikipedia.org/wiki/ಪಂಜುರ್ಲಿ",
+    "https://en.wikipedia.org/wiki/Buta_Kola",
+    "https://www.wikidata.org/wiki/Q4902233"
+   ]
+  },
+  {
+   "id": "guliga",
+   "region": "karnataka",
+   "en": "Guliga",
+   "names": {
+    "kn": "ಗುಳಿಗ"
+   },
+   "alt": [
+    "Gulikan",
+    "Guliga Daiva"
+   ],
+   "type": "village-guardian",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://kn.wikipedia.org/wiki/ಗುಳಿಗ",
+    "https://en.wikipedia.org/wiki/Gulikan_Theyyam",
+    "https://en.wikipedia.org/wiki/Panjurli",
+    "https://en.wikipedia.org/wiki/Buta_Kola"
+   ]
+  },
+  {
+   "id": "ellamma",
+   "region": "andhra-telangana",
+   "en": "Ellamma",
+   "names": {
+    "te": "ఎల్లమ్మ"
+   },
+   "alt": [
+    "Yellamma",
+    "Renuka"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Balkampet Yellamma Temple",
+     "nameNative": {
+      "te": "బల్కంపేట ఎల్లమ్మ దేవాలయం"
+     },
+     "town": "Balkampet, Hyderabad",
+     "district": "Hyderabad",
+     "lat": 17.4475,
+     "lon": 78.4491,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q4851060"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q1389331",
+    "https://en.wikipedia.org/wiki/Renuka",
+    "https://te.wikipedia.org/wiki/ఎల్లమ్మ",
+    "https://www.wikidata.org/wiki/Q4851060",
+    "https://en.wikipedia.org/wiki/Balkampet_Yellamma_Temple"
+   ]
+  },
+  {
+   "id": "maisamma",
+   "region": "andhra-telangana",
+   "en": "Maisamma",
+   "names": {
+    "te": "మైసమ్మ"
+   },
+   "alt": [
+    "Mesai"
+   ],
+   "type": "village-guardian",
+   "temples": [
+    {
+     "name": "Katta Maisamma Temple",
+     "nameNative": {
+      "te": "కట్ట మైసమ్మ దేవాలయం"
+     },
+     "town": "",
+     "district": "",
+     "lat": 17.61667,
+     "lon": 78.8,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q6378277"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q21725382",
+    "https://en.wikipedia.org/wiki/Maisamma",
+    "https://www.wikidata.org/wiki/Q6378277",
+    "https://en.wikipedia.org/wiki/Katta_Maisamma_Temple"
+   ]
+  },
+  {
+   "id": "poleramma",
+   "region": "andhra-telangana",
+   "en": "Poleramma",
+   "names": {
+    "te": "పోలేరమ్మ"
+   },
+   "alt": [],
+   "type": "village-guardian",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q19895307",
+    "https://en.wikipedia.org/wiki/Poleramma",
+    "https://te.wikipedia.org/wiki/పోలేరమ్మ"
+   ]
+  },
+  {
+   "id": "gangamma",
+   "region": "andhra-telangana",
+   "en": "Gangamma",
+   "names": {
+    "te": "గంగమ్మ"
+   },
+   "alt": [
+    "Tataiahgunta Gangamma",
+    "Boyakonda Gangamma"
+   ],
+   "type": "village-guardian",
+   "temples": [
+    {
+     "name": "Tataiahgunta Gangamma Temple",
+     "town": "Tirupati",
+     "district": "Tirupati",
+     "lat": 13.65,
+     "lon": 79.42,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q7809386"
+    },
+    {
+     "name": "Boyakonda Gangamma Temple",
+     "nameNative": {
+      "te": "బొయకొండ గంగమ్మ"
+     },
+     "town": "Boyakonda",
+     "district": "Chittoor",
+     "lat": 13.56756,
+     "lon": 78.46317,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q4952193"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://te.wikipedia.org/wiki/గంగమ్మ",
+    "https://www.wikidata.org/wiki/Q16999489",
+    "https://en.wikipedia.org/wiki/Gangamma_Jatara",
+    "https://www.wikidata.org/wiki/Q7809386",
+    "https://en.wikipedia.org/wiki/Tirupati_Ganga_Jatara",
+    "https://www.wikidata.org/wiki/Q4952193",
+    "https://en.wikipedia.org/wiki/Boyakonda_Gangamma"
+   ]
+  },
+  {
+   "id": "peddamma",
+   "region": "andhra-telangana",
+   "en": "Peddamma",
+   "names": {
+    "te": "పెద్దమ్మ"
+   },
+   "alt": [
+    "Peddamma Thalli"
+   ],
+   "type": "village-guardian",
+   "temples": [
+    {
+     "name": "Sri Peddamma Thalli Temple",
+     "nameNative": {
+      "te": "పెద్దమ్మ ఆలయం, జూబ్లీహిల్స్"
+     },
+     "town": "Jubilee Hills, Hyderabad",
+     "district": "Hyderabad",
+     "lat": 17.43065,
+     "lon": 78.40499,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q7159040"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q7159040",
+    "https://en.wikipedia.org/wiki/Sri_Peddamma_Thalli_Temple",
+    "https://te.wikipedia.org/wiki/పెద్దమ్మ_ఆలయం_(జూబ్లీహిల్స్)"
+   ]
+  },
+  {
+   "id": "pothuraju",
+   "region": "andhra-telangana",
+   "en": "Pothuraju",
+   "names": {
+    "te": "పోతురాజు"
+   },
+   "alt": [
+    "Potu Raju"
+   ],
+   "type": "village-guardian",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Pothuraju",
+    "https://te.wikipedia.org/wiki/పోతురాజు"
+   ]
+  },
+  {
+   "id": "kanaka-durga",
+   "region": "andhra-telangana",
+   "en": "Kanaka Durga",
+   "names": {
+    "te": "కనకదుర్గ"
+   },
+   "alt": [],
+   "type": "major-form",
+   "temples": [
+    {
+     "name": "Kanaka Durga Temple",
+     "nameNative": {
+      "te": "కనకదుర్గ ఆలయం"
+     },
+     "town": "Vijayawada",
+     "district": "NTR",
+     "lat": 16.5154,
+     "lon": 80.6059,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q6360375"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q6360375",
+    "https://en.wikipedia.org/wiki/Kanaka_Durga_Temple",
+    "https://te.wikipedia.org/wiki/కనకదుర్గ_ఆలయం"
+   ]
+  },
+  {
+   "id": "sammakka-saralamma",
+   "region": "andhra-telangana",
+   "en": "Sammakka Saralamma",
+   "names": {
+    "te": "సమ్మక్క సారలమ్మ"
+   },
+   "alt": [
+    "Sammakka Sarakka"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Medaram",
+     "nameNative": {
+      "te": "మేడారం"
+     },
+     "town": "Medaram, Tadvai",
+     "district": "Mulugu",
+     "lat": 18.31922,
+     "lon": 80.24346,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q6805144"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q3523584",
+    "https://en.wikipedia.org/wiki/Sammakka_Saralamma_Jatara",
+    "https://te.wikipedia.org/wiki/సమ్మక్క_సారక్క_జాతర",
+    "https://www.wikidata.org/wiki/Q6805144"
+   ]
+  },
+  {
+   "id": "khandoba",
+   "region": "maharashtra",
+   "en": "Khandoba",
+   "names": {
+    "mr": "खंडोबा"
+   },
+   "alt": [
+    "Martanda Bhairava",
+    "Malhari"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Khandoba Temple, Jejuri",
+     "nameNative": {
+      "mr": "खंडोबा मंदिर (जेजुरी)"
+     },
+     "town": "Jejuri",
+     "district": "Pune",
+     "lat": 18.27238,
+     "lon": 74.16042,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q110823714"
+    }
+   ],
+   "rules": [
+    {
+     "type": "festival",
+     "id": "champa-shashthi"
+    }
+   ],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q638964",
+    "https://en.wikipedia.org/wiki/Khandoba",
+    "https://mr.wikipedia.org/wiki/खंडोबा",
+    "https://www.wikidata.org/wiki/Q110823714",
+    "https://en.wikipedia.org/wiki/Khandoba_Temple,_Jejuri"
+   ]
+  },
+  {
+   "id": "tulja-bhavani",
+   "region": "maharashtra",
+   "en": "Tulja Bhavani",
+   "names": {
+    "mr": "तुळजाभवानी"
+   },
+   "alt": [
+    "Bhavani",
+    "Tuljabhavani"
+   ],
+   "type": "major-form",
+   "temples": [
+    {
+     "name": "Tulja Bhavani Temple",
+     "nameNative": {
+      "mr": "तुळजा भवानी मंदिर"
+     },
+     "town": "Tuljapur",
+     "district": "Dharashiv",
+     "lat": 18.0114,
+     "lon": 76.1256,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q7852108"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q7852108",
+    "https://en.wikipedia.org/wiki/Tulja_Bhavani_Temple",
+    "https://mr.wikipedia.org/wiki/तुळजाभवानी_मंदिर"
+   ]
+  },
+  {
+   "id": "ekvira",
+   "region": "maharashtra",
+   "en": "Ekvira",
+   "names": {
+    "mr": "एकवीरा आई"
+   },
+   "alt": [
+    "Ekvira Aai"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Ekvira temple",
+     "town": "Karla",
+     "district": "Pune",
+     "lat": 18.78333,
+     "lon": 73.47056,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q5350628"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q5350628",
+    "https://en.wikipedia.org/wiki/Ekvira",
+    "https://mr.wikipedia.org/wiki/एकविरा"
+   ]
+  },
+  {
+   "id": "mahalakshmi-kolhapur",
+   "region": "maharashtra",
+   "en": "Mahalakshmi of Kolhapur",
+   "names": {
+    "mr": "महालक्ष्मी"
+   },
+   "alt": [
+    "Ambabai"
+   ],
+   "type": "major-form",
+   "temples": [
+    {
+     "name": "Mahalakshmi Temple, Kolhapur",
+     "nameNative": {
+      "mr": "महालक्ष्मी मंदिर, कोल्हापूर"
+     },
+     "town": "Kolhapur",
+     "district": "Kolhapur",
+     "lat": 16.7,
+     "lon": 74.23333,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q3595240"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q3595240",
+    "https://en.wikipedia.org/wiki/Mahalakshmi_Temple,_Kolhapur",
+    "https://mr.wikipedia.org/wiki/महालक्ष्मी_मंदिर_(कोल्हापूर)",
+    "https://en.wikipedia.org/wiki/Jyotiba_Temple"
+   ]
+  },
+  {
+   "id": "renuka-mahur",
+   "region": "maharashtra",
+   "en": "Renuka of Mahur",
+   "names": {
+    "mr": "रेणुका"
+   },
+   "alt": [
+    "Renuka Mata",
+    "Mahur Devi"
+   ],
+   "type": "major-form",
+   "temples": [
+    {
+     "name": "Renuka Devi Temple, Mahur",
+     "nameNative": {
+      "mr": "माहूर"
+     },
+     "town": "Mahur",
+     "district": "Nanded",
+     "lat": 19.84778,
+     "lon": 77.92389,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q3823613"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q1389331",
+    "https://en.wikipedia.org/wiki/Renuka",
+    "https://www.wikidata.org/wiki/Q3823613",
+    "https://en.wikipedia.org/wiki/Mahur,_Maharashtra"
+   ]
+  },
+  {
+   "id": "jotiba",
+   "region": "maharashtra",
+   "en": "Jyotiba",
+   "names": {
+    "mr": "ज्योतिबा"
+   },
+   "alt": [
+    "Kedareshvar",
+    "Jotiba"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Jyotiba Temple",
+     "nameNative": {
+      "mr": "ज्योतिबा मंदिर"
+     },
+     "town": "Wadi Ratnagiri",
+     "district": "Kolhapur",
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q6319435"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q6319435",
+    "https://en.wikipedia.org/wiki/Jyotiba_Temple",
+    "https://mr.wikipedia.org/wiki/ज्योतिबा_मंदिर"
+   ]
+  },
+  {
+   "id": "saptashrungi",
+   "region": "maharashtra",
+   "en": "Saptashrungi",
+   "names": {
+    "mr": "सप्तशृंगी देवी"
+   },
+   "alt": [
+    "Saptashringi"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Saptashrungi temple",
+     "town": "Saptashrungi Gad, Vani",
+     "district": "Nashik",
+     "lat": 20.39028,
+     "lon": 73.90861,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q6096471",
+     "festival": {
+      "type": "tithi",
+      "paksha": "shukla",
+      "tithi": 15,
+      "month": "chaitra"
+     }
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q6096471",
+    "https://en.wikipedia.org/wiki/Saptashrungi",
+    "https://mr.wikipedia.org/wiki/सप्तशृंगी_देवी"
+   ]
+  },
+  {
+   "id": "bhairavnath",
+   "region": "maharashtra",
+   "en": "Bhairavnath",
+   "names": {
+    "mr": "काळभैरव"
+   },
+   "alt": [
+    "Bhairava",
+    "Kala Bhairava"
+   ],
+   "type": "village-guardian",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q854730",
+    "https://en.wikipedia.org/wiki/Bhairava"
+   ]
+  },
+  {
+   "id": "ambaji",
+   "region": "gujarat",
+   "en": "Ambaji",
+   "names": {
+    "gu": "અંબાજી"
+   },
+   "alt": [
+    "Arasuri Amba",
+    "Amba"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Ambaji Mata Temple",
+     "nameNative": {
+      "gu": "અંબાજી માતા મંદિર"
+     },
+     "town": "Ambaji",
+     "district": "Banaskantha",
+     "lat": 24.33,
+     "lon": 72.85,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q135975178",
+     "festival": {
+      "type": "tithi",
+      "paksha": "shukla",
+      "tithi": 15,
+      "month": "bhadrapada"
+     }
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q135975178",
+    "https://en.wikipedia.org/wiki/Ambaji_Mata_Temple",
+    "https://gu.wikipedia.org/wiki/અંબાજી"
+   ]
+  },
+  {
+   "id": "chamunda-chotila",
+   "region": "gujarat",
+   "en": "Chamunda of Chotila",
+   "names": {
+    "gu": "ચામુંડા"
+   },
+   "alt": [
+    "Chamunda"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Chamunda temple, Chotila hill",
+     "nameNative": {
+      "gu": "ચોટીલા"
+     },
+     "town": "Chotila",
+     "district": "Surendranagar",
+     "lat": 22.425,
+     "lon": 71.2,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q2723942"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q1061550",
+    "https://en.wikipedia.org/wiki/Chamunda",
+    "https://gu.wikipedia.org/wiki/ચામુંડા",
+    "https://www.wikidata.org/wiki/Q2723942",
+    "https://en.wikipedia.org/wiki/Chotila"
+   ]
+  },
+  {
+   "id": "khodiyar",
+   "region": "gujarat",
+   "en": "Khodiyar",
+   "names": {
+    "gu": "ખોડિયાર"
+   },
+   "alt": [
+    "Khodiyar Mata"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Khodiyar Temple, Rajpara",
+     "nameNative": {
+      "gu": "ખોડિયાર મંદિર - રાજપરા"
+     },
+     "town": "Rajpara",
+     "district": "Bhavnagar",
+     "lat": 21.72244,
+     "lon": 72.00546,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q2730907"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Khodiyar",
+    "https://gu.wikipedia.org/wiki/ખોડિયાર",
+    "https://www.wikidata.org/wiki/Q2730907",
+    "https://gu.wikipedia.org/wiki/ખોડિયાર_મંદિર_-_રાજપરા_(ગુજરાત)"
+   ]
+  },
+  {
+   "id": "momai",
+   "region": "gujarat",
+   "en": "Momai",
+   "names": {
+    "gu": "મોમાઈ"
+   },
+   "alt": [
+    "Momai Mata"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Momai Mora temple",
+     "town": "Momai Mora, Rapar",
+     "district": "Kutch",
+     "tz": "Asia/Kolkata"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q106829254",
+    "https://en.wikipedia.org/wiki/Momai"
+   ]
+  },
+  {
+   "id": "ashapura",
+   "region": "gujarat",
+   "en": "Ashapura Mata",
+   "names": {
+    "gu": "આશાપુરા માતા"
+   },
+   "alt": [
+    "Ashapura"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Mata no Madh",
+     "nameNative": {
+      "gu": "માતાનો મઢ"
+     },
+     "town": "Mata no Madh",
+     "district": "Kutch",
+     "lat": 23.54233,
+     "lon": 68.94976,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q6785911"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q4804575",
+    "https://en.wikipedia.org/wiki/Ashapura_Mata",
+    "https://gu.wikipedia.org/wiki/આશાપુરા_માતા",
+    "https://www.wikidata.org/wiki/Q6785911",
+    "https://en.wikipedia.org/wiki/Mata_no_Madh"
+   ]
+  },
+  {
+   "id": "bahuchara",
+   "region": "gujarat",
+   "en": "Bahuchara Mata",
+   "names": {
+    "gu": "બહુચર માતા"
+   },
+   "alt": [
+    "Bahucharaji",
+    "Bechar Ma"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Bahuchar Mata Temple, Becharaji",
+     "town": "Becharaji",
+     "district": "Mehsana",
+     "lat": 23.50012,
+     "lon": 72.04485,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q125498630"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q803672",
+    "https://en.wikipedia.org/wiki/Bahuchara_Mata",
+    "https://gu.wikipedia.org/wiki/બહુચર_માતા",
+    "https://www.wikidata.org/wiki/Q125498630",
+    "https://en.wikipedia.org/wiki/Bahuchar_Mata_Temple,_Becharaji"
+   ]
+  },
+  {
+   "id": "vaishno-devi",
+   "region": "north-india",
+   "en": "Vaishno Devi",
+   "names": {
+    "hi": "वैष्णो देवी"
+   },
+   "alt": [
+    "Mata Rani"
+   ],
+   "type": "major-form",
+   "temples": [
+    {
+     "name": "Vaishno Devi Temple",
+     "nameNative": {
+      "hi": "वैष्णो देवी मंदिर"
+     },
+     "town": "Trikuta hills, Katra",
+     "district": "Reasi",
+     "lat": 33.03,
+     "lon": 74.94806,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q611371"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q611371",
+    "https://en.wikipedia.org/wiki/Vaishno_Devi",
+    "https://en.wikipedia.org/wiki/Vaishno_Devi_Temple",
+    "https://hi.wikipedia.org/wiki/वैष्णो_देवी_मंदिर"
+   ]
+  },
+  {
+   "id": "karni-mata",
+   "region": "north-india",
+   "en": "Karni Mata",
+   "names": {
+    "hi": "करणी माता"
+   },
+   "alt": [
+    "Karniji"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Karni Mata Temple",
+     "nameNative": {
+      "hi": "करणी माता मन्दिर, बीकानेर"
+     },
+     "town": "Deshnoke",
+     "district": "Bikaner",
+     "lat": 27.79056,
+     "lon": 73.34083,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q15233884"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q1106783",
+    "https://en.wikipedia.org/wiki/Karni_Mata",
+    "https://www.wikidata.org/wiki/Q15233884",
+    "https://en.wikipedia.org/wiki/Karni_Mata_Temple",
+    "https://hi.wikipedia.org/wiki/करणी_माता_मन्दिर,_बीकानेर"
+   ]
+  },
+  {
+   "id": "kaila-devi",
+   "region": "north-india",
+   "en": "Kaila Devi",
+   "names": {
+    "hi": "कैलादेवी"
+   },
+   "alt": [
+    "Kaileshwari"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Kaila Devi Temple",
+     "nameNative": {
+      "hi": "कैलादेवी मंदिर"
+     },
+     "town": "Kailadevi",
+     "district": "Karauli",
+     "lat": 26.3351,
+     "lon": 76.8938,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q12980457"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q12980457",
+    "https://en.wikipedia.org/wiki/Kaila_Devi_Temple",
+    "https://hi.wikipedia.org/wiki/कैलादेवी_मंदिर"
+   ]
+  },
+  {
+   "id": "sheetala",
+   "region": "north-india",
+   "en": "Sheetala",
+   "names": {
+    "hi": "शीतला देवी"
+   },
+   "alt": [
+    "Shitala",
+    "Sheetla Mata",
+    "Shitala Mata"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Sheetla Mata Mandir",
+     "town": "Gurugram",
+     "district": "Gurugram",
+     "lat": 28.4783,
+     "lon": 77.0305,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q24947043"
+    }
+   ],
+   "rules": [
+    {
+     "type": "festival",
+     "id": "sheetala-ashtami"
+    }
+   ],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q2279552",
+    "https://en.wikipedia.org/wiki/Shitala",
+    "https://hi.wikipedia.org/wiki/शीतला_देवी",
+    "https://www.wikidata.org/wiki/Q24947043",
+    "https://en.wikipedia.org/wiki/Sheetla_Mata_Mandir_Gurgaon"
+   ]
+  },
+  {
+   "id": "jeen-mata",
+   "region": "north-india",
+   "en": "Jeen Mata",
+   "names": {
+    "hi": "जीण माता"
+   },
+   "alt": [
+    "Jeenmata"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Jeen Mata temple",
+     "town": "Jeenmata",
+     "district": "Sikar",
+     "lat": 27.44415,
+     "lon": 75.19446,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q6172898"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q6172898",
+    "https://en.wikipedia.org/wiki/Jeenmata",
+    "https://hi.wikipedia.org/wiki/जीण_माता"
+   ]
+  },
+  {
+   "id": "gogaji",
+   "region": "north-india",
+   "en": "Gogaji",
+   "names": {
+    "hi": "गोगाजी"
+   },
+   "alt": [
+    "Goga",
+    "Gugga",
+    "Jaharveer"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Gogamedi",
+     "nameNative": {
+      "hi": "गोगामेड़ी"
+     },
+     "town": "Gogamedi",
+     "district": "Hanumangarh",
+     "lat": 29.1573,
+     "lon": 75.02898,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q5577307"
+    }
+   ],
+   "rules": [
+    {
+     "type": "tithi",
+     "paksha": "krishna",
+     "tithi": 9,
+     "month": "bhadrapada"
+    }
+   ],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q3635344",
+    "https://en.wikipedia.org/wiki/Gogaji",
+    "https://hi.wikipedia.org/wiki/गोगाजी",
+    "https://www.wikidata.org/wiki/Q5577307",
+    "https://en.wikipedia.org/wiki/Gogamedi"
+   ]
+  },
+  {
+   "id": "ramdevji",
+   "region": "north-india",
+   "en": "Ramdevji",
+   "names": {
+    "hi": "रामदेव जी"
+   },
+   "alt": [
+    "Ramdev Pir",
+    "Ramsha Pir"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Ramdevra",
+     "nameNative": {
+      "hi": "रामदेवरा"
+     },
+     "town": "Ramdevra",
+     "district": "Jaisalmer",
+     "lat": 27.01,
+     "lon": 71.92,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q7289326"
+    }
+   ],
+   "rules": [
+    {
+     "type": "tithi",
+     "paksha": "shukla",
+     "tithi": 5,
+     "month": "chaitra"
+    }
+   ],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q3635299",
+    "https://en.wikipedia.org/wiki/Ramdev_Pir",
+    "https://hi.wikipedia.org/wiki/रामदेव_पीर",
+    "https://www.wikidata.org/wiki/Q7289326",
+    "https://en.wikipedia.org/wiki/Ramdevra"
+   ]
+  },
+  {
+   "id": "tejaji",
+   "region": "north-india",
+   "en": "Tejaji",
+   "names": {
+    "hi": "तेजाजी"
+   },
+   "alt": [
+    "Veer Teja"
+   ],
+   "type": "regional",
+   "temples": [],
+   "rules": [
+    {
+     "type": "tithi",
+     "paksha": "shukla",
+     "tithi": 10,
+     "month": "bhadrapada"
+    }
+   ],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q7918119",
+    "https://en.wikipedia.org/wiki/Veer_Teja",
+    "https://hi.wikipedia.org/wiki/तेजाजी"
+   ]
+  },
+  {
+   "id": "pabuji",
+   "region": "north-india",
+   "en": "Pabuji",
+   "names": {
+    "hi": "पाबूजी"
+   },
+   "alt": [],
+   "type": "regional",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q7121831",
+    "https://en.wikipedia.org/wiki/Pabuji",
+    "https://hi.wikipedia.org/wiki/पाबूजी"
+   ]
+  },
+  {
+   "id": "bhairava",
+   "region": "north-india",
+   "en": "Bhairava",
+   "names": {
+    "hi": "भैरव"
+   },
+   "alt": [
+    "Kal Bhairav"
+   ],
+   "type": "village-guardian",
+   "temples": [
+    {
+     "name": "Kal Bhairav Temple",
+     "nameNative": {
+      "hi": "काल भैरव मंदिर"
+     },
+     "town": "Ujjain",
+     "district": "Ujjain",
+     "lat": 23.21817,
+     "lon": 75.76862,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q15646113"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q854730",
+    "https://en.wikipedia.org/wiki/Bhairava",
+    "https://www.wikidata.org/wiki/Q15646113",
+    "https://en.wikipedia.org/wiki/Kal_Bhairav_Temple,_Ujjain"
+   ]
+  },
+  {
+   "id": "kali-bn",
+   "region": "bengal",
+   "en": "Kali",
+   "names": {
+    "bn": "কালী"
+   },
+   "alt": [
+    "Kalika",
+    "Dakshina Kali"
+   ],
+   "type": "major-form",
+   "temples": [
+    {
+     "name": "Kalighat Kali Temple",
+     "nameNative": {
+      "bn": "কালীঘাট মন্দির"
+     },
+     "town": "Kalighat, Kolkata",
+     "district": "Kolkata",
+     "lat": 22.52028,
+     "lon": 88.34208,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q535970"
+    },
+    {
+     "name": "Dakshineswar Kali Temple",
+     "nameNative": {
+      "bn": "দক্ষিণেশ্বর কালীবাড়ি"
+     },
+     "town": "Dakshineswar",
+     "district": "North 24 Parganas",
+     "lat": 22.655,
+     "lon": 88.35778,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q1157765"
+    }
+   ],
+   "rules": [
+    {
+     "type": "festival",
+     "id": "kali-puja"
+    }
+   ],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q132127",
+    "https://en.wikipedia.org/wiki/Kali_Puja",
+    "https://www.wikidata.org/wiki/Q535970",
+    "https://en.wikipedia.org/wiki/Kalighat_Temple",
+    "https://www.wikidata.org/wiki/Q1157765",
+    "https://en.wikipedia.org/wiki/Dakshineswar_Kali_Temple"
+   ]
+  },
+  {
+   "id": "manasa",
+   "region": "bengal",
+   "en": "Manasa",
+   "names": {
+    "bn": "মনসা"
+   },
+   "alt": [
+    "Padma",
+    "Vishahari"
+   ],
+   "type": "regional",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q1518806",
+    "https://en.wikipedia.org/wiki/Manasa",
+    "https://bn.wikipedia.org/wiki/মনসা"
+   ]
+  },
+  {
+   "id": "shitala-bn",
+   "region": "bengal",
+   "en": "Shitala",
+   "names": {
+    "bn": "শীতলা"
+   },
+   "alt": [
+    "Sheetala"
+   ],
+   "type": "regional",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q2279552",
+    "https://en.wikipedia.org/wiki/Shitala",
+    "https://bn.wikipedia.org/wiki/শীতলা"
+   ]
+  },
+  {
+   "id": "dharma-thakur",
+   "region": "bengal",
+   "en": "Dharma Thakur",
+   "names": {
+    "bn": "ধর্মঠাকুর"
+   },
+   "alt": [
+    "Dharmaraj",
+    "Dharmathakur"
+   ],
+   "type": "village-guardian",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q5269341",
+    "https://en.wikipedia.org/wiki/Dharmathakur",
+    "https://bn.wikipedia.org/wiki/ধর্মঠাকুর"
+   ]
+  },
+  {
+   "id": "chandi",
+   "region": "bengal",
+   "en": "Chandi",
+   "names": {
+    "bn": "চণ্ডী"
+   },
+   "alt": [
+    "Mangal Chandi"
+   ],
+   "type": "regional",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q2088394",
+    "https://en.wikipedia.org/wiki/Chandi",
+    "https://bn.wikipedia.org/wiki/চণ্ডী"
+   ]
+  },
+  {
+   "id": "bonbibi",
+   "region": "bengal",
+   "en": "Bonbibi",
+   "names": {
+    "bn": "বনবিবি"
+   },
+   "alt": [],
+   "type": "regional",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q892156",
+    "https://en.wikipedia.org/wiki/Bonbibi",
+    "https://bn.wikipedia.org/wiki/বনবিবি"
+   ]
+  },
+  {
+   "id": "shashthi",
+   "region": "bengal",
+   "en": "Shashthi",
+   "names": {
+    "bn": "ষষ্ঠী দেবী"
+   },
+   "alt": [
+    "Shashthi Devi"
+   ],
+   "type": "regional",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q534133",
+    "https://en.wikipedia.org/wiki/Shashthi",
+    "https://bn.wikipedia.org/wiki/ষষ্ঠী_দেবী"
+   ]
+  },
+  {
+   "id": "jagannath",
+   "region": "odisha",
+   "en": "Jagannath",
+   "names": {
+    "or": "ଜଗନ୍ନାଥ"
+   },
+   "alt": [],
+   "type": "major-form",
+   "temples": [
+    {
+     "name": "Jagannath Temple",
+     "nameNative": {
+      "or": "ଶ୍ରୀମନ୍ଦିର"
+     },
+     "town": "Puri",
+     "district": "Puri",
+     "lat": 19.80472,
+     "lon": 85.81833,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q1678260"
+    }
+   ],
+   "rules": [
+    {
+     "type": "festival",
+     "id": "rath-yatra-or"
+    }
+   ],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q1370311",
+    "https://en.wikipedia.org/wiki/Jagannath",
+    "https://or.wikipedia.org/wiki/ଜଗନ୍ନାଥ",
+    "https://www.wikidata.org/wiki/Q1678260",
+    "https://en.wikipedia.org/wiki/Jagannath_Temple,_Puri"
+   ]
+  },
+  {
+   "id": "samaleswari",
+   "region": "odisha",
+   "en": "Samaleswari",
+   "names": {
+    "or": "ସମଲେଶ୍ୱରୀ"
+   },
+   "alt": [
+    "Samleswari"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Samaleswari Temple",
+     "nameNative": {
+      "or": "ସମଲେଶ୍ୱରୀ ମନ୍ଦିର"
+     },
+     "town": "Sambalpur",
+     "district": "Sambalpur",
+     "lat": 21.474,
+     "lon": 83.959,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q106462775"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q106462775",
+    "https://en.wikipedia.org/wiki/Samleswari_Temple",
+    "https://or.wikipedia.org/wiki/ସମଲେଶ୍ୱରୀ"
+   ]
+  },
+  {
+   "id": "tara-tarini",
+   "region": "odisha",
+   "en": "Tara Tarini",
+   "names": {
+    "or": "ତାରାତାରିଣୀ"
+   },
+   "alt": [],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Tara Tarini Temple",
+     "nameNative": {
+      "or": "ତାରାତାରିଣୀ ମନ୍ଦିର"
+     },
+     "town": "Purushottampur",
+     "district": "Ganjam",
+     "lat": 19.4897,
+     "lon": 84.8998,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q5717871"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q5717871",
+    "https://en.wikipedia.org/wiki/Tara_Tarini_Mandir",
+    "https://or.wikipedia.org/wiki/ତାରାତାରିଣୀ_ମନ୍ଦିର"
+   ]
+  },
+  {
+   "id": "tarini",
+   "region": "odisha",
+   "en": "Maa Tarini",
+   "names": {
+    "or": "ତାରିଣୀ"
+   },
+   "alt": [
+    "Tarini"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Maa Tarini Temple",
+     "nameNative": {
+      "or": "ତାରିଣୀ ମନ୍ଦିର"
+     },
+     "town": "Ghatgaon",
+     "district": "Keonjhar",
+     "lat": 21.3833,
+     "lon": 85.8833,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q15724231"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q15724231",
+    "https://en.wikipedia.org/wiki/Maa_Tarini_Temple,_Ghatgaon",
+    "https://or.wikipedia.org/wiki/ତାରିଣୀ_ମନ୍ଦିର,_ଘଟଗାଁ"
+   ]
+  },
+  {
+   "id": "mangala",
+   "region": "odisha",
+   "en": "Maa Mangala",
+   "names": {
+    "or": "ମଙ୍ଗଳା"
+   },
+   "alt": [
+    "Mangala"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Maa Mangala Temple",
+     "nameNative": {
+      "or": "ମଙ୍ଗଳା ମନ୍ଦିର"
+     },
+     "town": "Kakatpur",
+     "district": "Puri",
+     "lat": 19.99992,
+     "lon": 86.19479,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q4500835"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q4500835",
+    "https://en.wikipedia.org/wiki/Maa_Mangala_Mandir,_Kakatpur",
+    "https://or.wikipedia.org/wiki/ମଙ୍ଗଳା_ମନ୍ଦିର"
+   ]
+  },
+  {
+   "id": "biraja",
+   "region": "odisha",
+   "en": "Biraja",
+   "names": {
+    "or": "ବିରଜା"
+   },
+   "alt": [
+    "Viraja",
+    "Girija"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Biraja Temple",
+     "nameNative": {
+      "or": "ବିରଜା ମନ୍ଦିର"
+     },
+     "town": "Jajpur",
+     "district": "Jajpur",
+     "lat": 20.83376,
+     "lon": 86.33814,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q4915588"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q4915588",
+    "https://en.wikipedia.org/wiki/Biraja_Temple",
+    "https://or.wikipedia.org/wiki/ବିରଜା_ମନ୍ଦିର"
+   ]
+  },
+  {
+   "id": "cuttack-chandi",
+   "region": "odisha",
+   "en": "Cuttack Chandi",
+   "names": {
+    "or": "କଟକ ଚଣ୍ଡୀ"
+   },
+   "alt": [
+    "Kataka Chandi"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Cuttack Chandi Temple",
+     "nameNative": {
+      "or": "କଟକ ଚଣ୍ଡୀ ମନ୍ଦିର"
+     },
+     "town": "Cuttack",
+     "district": "Cuttack",
+     "lat": 20.47724,
+     "lon": 85.86256,
+     "tz": "Asia/Kolkata",
+     "wikidata": "Q5196920"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q5196920",
+    "https://en.wikipedia.org/wiki/Kataka_Chandi_Mandir",
+    "https://or.wikipedia.org/wiki/କଟକ_ଚଣ୍ଡୀ_ମନ୍ଦିର"
+   ]
+  },
+  {
+   "id": "masto",
+   "region": "nepal",
+   "en": "Masto",
+   "names": {
+    "ne": "मष्टो"
+   },
+   "alt": [
+    "Masta"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Dhandar shrine",
+     "nameNative": {
+      "ne": "धन्दार (ढण्डार) थान"
+     },
+     "town": "Masta",
+     "district": "Bajhang",
+     "tz": "Asia/Kathmandu"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://ne.wikipedia.org/wiki/मष्टो"
+   ]
+  },
+  {
+   "id": "dakshinkali",
+   "region": "nepal",
+   "en": "Dakshinkali",
+   "names": {
+    "ne": "दक्षिणकाली"
+   },
+   "alt": [
+    "Dakshin Kali"
+   ],
+   "type": "major-form",
+   "temples": [
+    {
+     "name": "Dakshinkali Temple",
+     "nameNative": {
+      "ne": "दक्षिणकाली मन्दिर"
+     },
+     "town": "Pharping",
+     "district": "Kathmandu",
+     "lat": 27.58333,
+     "lon": 85.25,
+     "tz": "Asia/Kathmandu",
+     "wikidata": "Q5210100"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q5210100",
+    "https://en.wikipedia.org/wiki/Dakshinkali_Temple",
+    "https://ne.wikipedia.org/wiki/दक्षिणकाली_मन्दिर"
+   ]
+  },
+  {
+   "id": "kal-bhairav-ne",
+   "region": "nepal",
+   "en": "Kal Bhairav",
+   "names": {
+    "ne": "काल भैरव"
+   },
+   "alt": [
+    "Bhairab",
+    "Bhairava"
+   ],
+   "type": "village-guardian",
+   "temples": [
+    {
+     "name": "Kal Bhairav, Kathmandu Durbar Square",
+     "nameNative": {
+      "ne": "काल भैरव (काठमाडौँ)"
+     },
+     "town": "Kathmandu",
+     "district": "Kathmandu",
+     "lat": 27.70472,
+     "lon": 85.30722,
+     "tz": "Asia/Kathmandu",
+     "wikidata": "Q106208411"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q854730",
+    "https://en.wikipedia.org/wiki/Bhairava",
+    "https://www.wikidata.org/wiki/Q106208411",
+    "https://ne.wikipedia.org/wiki/काल_भैरव_(काठमाडौँ)"
+   ]
+  },
+  {
+   "id": "manakamana",
+   "region": "nepal",
+   "en": "Manakamana",
+   "names": {
+    "ne": "मनकामना"
+   },
+   "alt": [],
+   "type": "major-form",
+   "temples": [
+    {
+     "name": "Manakamana Temple",
+     "nameNative": {
+      "ne": "मनकामना मन्दिर"
+     },
+     "town": "Manakamana",
+     "district": "Gorkha",
+     "lat": 27.9,
+     "lon": 84.58333,
+     "tz": "Asia/Kathmandu",
+     "wikidata": "Q2385286"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q2385286",
+    "https://en.wikipedia.org/wiki/Manakamana_Temple",
+    "https://ne.wikipedia.org/wiki/मनकामना_मन्दिर"
+   ]
+  },
+  {
+   "id": "guhyeshwari",
+   "region": "nepal",
+   "en": "Guhyeshwari",
+   "names": {
+    "ne": "गुह्येश्वरी"
+   },
+   "alt": [],
+   "type": "major-form",
+   "temples": [
+    {
+     "name": "Guhyeshwari Temple",
+     "nameNative": {
+      "ne": "गुह्येश्वरी मन्दिर"
+     },
+     "town": "Kathmandu",
+     "district": "Kathmandu",
+     "lat": 27.71111,
+     "lon": 85.35333,
+     "tz": "Asia/Kathmandu",
+     "wikidata": "Q5615319"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q5615319",
+    "https://en.wikipedia.org/wiki/Guhyeshwari_Temple",
+    "https://ne.wikipedia.org/wiki/गुह्येश्वरी"
+   ]
+  },
+  {
+   "id": "kannaki-amman",
+   "region": "sri-lanka",
+   "en": "Kannaki Amman",
+   "names": {
+    "ta": "கண்ணகி அம்மன்"
+   },
+   "alt": [
+    "Pattini",
+    "Kannagi"
+   ],
+   "type": "regional",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q7148593",
+    "https://en.wikipedia.org/wiki/Pattini",
+    "https://en.wikipedia.org/wiki/Kannagi",
+    "https://ta.wikipedia.org/wiki/பத்தினி"
+   ]
+  },
+  {
+   "id": "vairavar",
+   "region": "sri-lanka",
+   "en": "Vairavar",
+   "names": {
+    "ta": "வைரவர்"
+   },
+   "alt": [
+    "Bhairava",
+    "Bhairavar"
+   ],
+   "type": "village-guardian",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Village_deities_of_Sri_Lankan_Tamils",
+    "https://www.wikidata.org/wiki/Q854730",
+    "https://en.wikipedia.org/wiki/Bhairava"
+   ]
+  },
+  {
+   "id": "kanakambikai",
+   "region": "sri-lanka",
+   "en": "Kanakambikai Amman",
+   "names": {
+    "ta": "கனகாம்பிகை அம்பாள்"
+   },
+   "alt": [
+    "Kanakampikai Amman"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Iranaimadu Kanakambikai Amman Temple",
+     "nameNative": {
+      "ta": "இரணைமடு கனகாம்பிகை அம்பாள் பெருங்கோவில்"
+     },
+     "town": "Iranaimadu",
+     "district": "Kilinochchi",
+     "tz": "Asia/Colombo",
+     "wikidata": "Q12974573"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Village_deities_of_Sri_Lankan_Tamils",
+    "https://www.wikidata.org/wiki/Q12974573",
+    "https://ta.wikipedia.org/wiki/இரணைமடு_கனகாம்பிகை_அம்பாள்_பெருங்கோவில்"
+   ]
+  },
+  {
+   "id": "bhadrakali-lk",
+   "region": "sri-lanka",
+   "en": "Bhadrakali",
+   "names": {
+    "ta": "பத்திரகாளி"
+   },
+   "alt": [
+    "Pathirakali Amman"
+   ],
+   "type": "regional",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Village_deities_of_Sri_Lankan_Tamils",
+    "https://www.wikidata.org/wiki/Q3350517"
+   ]
+  },
+  {
+   "id": "kathirkamam",
+   "region": "sri-lanka",
+   "en": "Kathirkamam Murugan",
+   "names": {
+    "ta": "முருகன்"
+   },
+   "alt": [
+    "Kataragama",
+    "Kataragama deviyo",
+    "Skanda"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Kataragama Temple",
+     "nameNative": {
+      "ta": "கதிர்காமம்"
+     },
+     "town": "Kataragama",
+     "district": "Monaragala",
+     "lat": 6.41667,
+     "lon": 81.33333,
+     "tz": "Asia/Colombo",
+     "wikidata": "Q15234273"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q15234273",
+    "https://en.wikipedia.org/wiki/Kataragama_Temple",
+    "https://ta.wikipedia.org/wiki/கதிர்காமம்_(கோயில்)",
+    "https://www.wikidata.org/wiki/Q380817"
+   ]
+  },
+  {
+   "id": "kali-mai",
+   "region": "caribbean",
+   "en": "Kali Mai",
+   "names": {},
+   "alt": [
+    "Kalimai",
+    "Kali",
+    "Maha Kali"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Maha Kali Shakti Temple",
+     "town": "Timehri",
+     "district": "Demerara-Mahaica",
+     "tz": "America/Guyana"
+    },
+    {
+     "name": "Mariamman Temple, Whim",
+     "town": "Whim, Berbice",
+     "district": "East Berbice-Corentyne",
+     "tz": "America/Guyana"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://en.wikipedia.org/wiki/Caribbean_Shaktism"
+   ]
+  }
+ ]
+}

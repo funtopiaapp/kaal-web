@@ -1,9 +1,9 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart, warm } from './engine.js?v=202610310832';
-import { showGames, GM, gameKey, VIGIL } from './games.js?v=202610310832';
-import * as FAMILY from './family.js?v=202610310832';
+import { engine, onRestart, warm } from './engine.js?v=202610310957';
+import { showGames, GM, gameKey, VIGIL } from './games.js?v=202610310957';
+import * as FAMILY from './family.js?v=202610310957';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -3259,8 +3259,9 @@ function viewSettings() {
       <p class="small muted" style="margin:-6px 0 10px">Eka Panchang · web ${esc(V)}</p>
       ${[['ab.nameT', 'ab.name'], ['ab.diasporaT', 'ab.diaspora'], ['ab.privacyT', 'ab.privacy'], ['ab.respectT', 'ab.respect']].map(([h, b]) => `<p style="margin:10px 0 2px"><b>${esc(t(h))}</b></p><p class="small" style="margin:0">${esc(t(b))}</p>`).join('')}
       <p class="small muted" style="margin-top:12px">${esc(t('web.what'))}</p>
-      <p class="small muted">${esc(t('s.attribution'))}</p><p class="small"><a href="https://funtopiaapp.github.io/kaal-privacy/">${esc(t('mn.support'))}</a> · <a href="https://funtopiaapp.github.io/kaal-privacy/privacy.html">${esc(t('mn.privacy'))}</a></p>
+      <p class="small muted">${esc(t('s.attribution'))}</p><div data-kcred></div><p class="small"><a href="https://funtopiaapp.github.io/kaal-privacy/">${esc(t('mn.support'))}</a> · <a href="https://funtopiaapp.github.io/kaal-privacy/privacy.html">${esc(t('mn.privacy'))}</a></p>
       <p class="small muted">Web edition for testing · all features unlocked</p></div>`;
+  FAMILY.kulaCredits($('#main').querySelector('[data-kcred]')).catch(() => {});
   $('#main').querySelectorAll('[data-c]').forEach(b => b.onclick = async () => { S.culture = b.dataset.c; save(); await loadPack(); await resetCalendars(); render(); });
   $('#main').querySelectorAll('[data-l]').forEach(b => b.onclick = () => { S.native = b.dataset.l === '1'; save(); render(); });
   $('#main').querySelectorAll('[data-th]').forEach(b => b.onclick = () => { S.theme = b.dataset.th; save(); render(); });
