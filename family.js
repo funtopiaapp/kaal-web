@@ -375,8 +375,8 @@ function wireWay(box, f, date, ro = false) {
     b.textContent = ol.hidden ? (r?.author?.name ? t('fam.way.showSteps', r.author.name) : t('fam.way.showStepsPlain')) : t('fam.way.hideSteps');
   });
   q('[data-addrecipe]')?.addEventListener('click', () => recipeEditor(f, null, again));
-  q('#fmrdays')?.addEventListener('change', e => { const w = ensureWay(f); w.remind = { ...(w.remind || {}), days: +e.target.value, modified: nowISO() }; persist(); again(); });
-  q('[data-fics]')?.addEventListener('click', async () => { const w = wayFor(f.id); if (w) familyReminderIcs(f, await currentOcc(f.id) || date, w); });
+  q('#fmrdays')?.addEventListener('change', e => { const w = ensureWay(f); w.remind = { ...(w.remind || {}), on: true, days: +e.target.value, modified: nowISO() }; persist(); again(); });
+  q('[data-fics]')?.addEventListener('click', async () => { const w = wayFor(f.id); if (w) { if (!w.remind?.on) { w.remind = { days: 3, ...(w.remind || {}), on: true, modified: nowISO() }; persist(); } familyReminderIcs(f, await currentOcc(f.id) || date, w); } });
   q('[data-addphotos]')?.addEventListener('change', async e => {
     const files = [...e.target.files || []]; e.target.value = '';
     const w = ensureWay(f), room = LIMIT.photos - w.photos.length;
@@ -451,6 +451,26 @@ function wayText(w) {
   if (w.buy.length) { L.push('', t('fam.way.buy') + ':'); sorted(w.buy).forEach(b => L.push(`– ${b.text}`)); }
   L.push('', t('fam.way.shareFooter'));
   return L.join('\n');
+}
+// The family-way reminders as iOS keeps them (FamilyReminders): each way set to remind, at its festival's current
+// occurrence less the days chosen, at 9:00 on this device's clock. The web lists them on Alerts; it sends nothing.
+export async function wayReminders() {
+  const out = [];
+  for (const w of doc().ways.filter(w => w.remind?.on)) {
+    const f = X.festById(w.festivalId), occ = f ? await currentOcc(w.festivalId) : null; if (!occ) continue;
+    const days = w.remind.days || 3, [y, m, d] = X.addDays(occ, -days).split('-').map(Number);
+    out.push({ f, w, occ, days, at: new Date(y, m - 1, d, 9).getTime() / 1000, left: w.buy.filter(b => !isDone(b, occ)).length });
+  }
+  return out;
+}
+export const wayRemindersOn = () => doc().ways.some(w => w.remind?.on);
+// On: every way with something in it reminds; off: none does. One way alone by its festival id.
+export function setWayReminders(on, festivalId = null) {
+  for (const w of doc().ways) {
+    if (festivalId ? w.festivalId !== festivalId : on && !(w.steps.length || w.recipes.length || w.buy.length)) continue;
+    w.remind = { days: 3, ...(w.remind || {}), on, modified: nowISO() };
+  }
+  persist();
 }
 // The web sends no notifications: a calendar file with the festival, our steps and list, and an alarm at 9:00 at home.
 export function familyReminderIcs(f, date, w) {

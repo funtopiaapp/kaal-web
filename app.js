@@ -1,9 +1,9 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart, warm } from './engine.js?v=202610311147';
-import { showGames, GM, gameKey, VIGIL } from './games.js?v=202610311147';
-import * as FAMILY from './family.js?v=202610311147';
+import { engine, onRestart, warm } from './engine.js?v=202610311421';
+import { showGames, GM, gameKey, VIGIL } from './games.js?v=202610311421';
+import * as FAMILY from './family.js?v=202610311421';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -27,11 +27,14 @@ const CULTURES = [
 ];
 const LIGHT = ['kaal', 'ivory', 'rose', 'sage'], DARK = ['kaal-dark', 'night', 'charcoal', 'peacock'];
 const TABS = [['home', 'hm.home'], ['today', 'tab.today'], ['calendar', 'tab.calendar'], ['festivals', 'tab.festivals'], ['muhurtham', 'tab.muhurtham'],
-  ['people', 'mn.profiles'], ['family', 'fam.hub.title'], ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['match', 'mt.label'], ['greetings', 'gr.title'], ['guide', 'gd.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['prayers', 'py.title'], ['games', 'gm.menu'], ['oldtime', 'ot.title'], ['settings', 'tab.settings']];
+  ['people', 'mn.profiles'], ['family', 'fam.hub.title'], ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['match', 'mt.label'], ['greetings', 'gr.title'], ['guide', 'gd.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['prayers', 'py.title'], ['games', 'gm.menu'], ['oldtime', 'ot.title'], ['alerts', 'al.title'], ['settings', 'tab.settings']];
 
 // ---------------------------------------------------------------- state
 const saved = (() => { try { return JSON.parse(localStorage.getItem('kaal-web') || '{}'); } catch { return {}; } })();
-const S = Object.assign({ tileOrder: [], tileStyle: 'classic', textSize: 1, culture: '', native: false, home: null, theme: 'system', light: 'kaal', dark: 'kaal-dark', people: [], vrats: [], vratLog: {}, families: [] }, saved);
+const S = Object.assign({ tileOrder: [], tileStyle: 'classic', textSize: 1, culture: '', native: false, home: null, theme: 'system', light: 'kaal', dark: 'kaal-dark', people: [], vrats: [], vratLog: {}, families: [],
+  // Reminders, named and set as on iOS (Settings): the web cannot send them, Alerts lists them with a calendar file each.
+  eveningBriefing: true, eveningMinutes: 19 * 60, weekAhead: true, morningAlert: true, morningBriefing: false, morningMinutes: 6 * 60 + 30, morningAtSunrise: false,
+  rahuHeadsUp: false, paranaAlert: true, dashaAlerts: true, followedFestivals: [], mutedFestivals: [], alertSkip: [], todayAlerts: [] }, saved);
 function save() { try { localStorage.setItem('kaal-web', JSON.stringify(S)); } catch {} }
 // The same, saying whether it was kept (a full localStorage is not): Family tells the user.
 function saveOk() { try { localStorage.setItem('kaal-web', JSON.stringify(S)); return true; } catch { return false; } }
@@ -298,7 +301,7 @@ function shell() {
     const o = sheet(`<h2 class="serif">${esc(t('s.tradition'))}</h2><p class="small muted">${esc(t('s.traditionWhat'))}</p><div class="chips">${CULTURES.map(x => `<button class="chip ${S.culture === x.id ? 'on' : ''}" data-tc="${x.id}">${x.native}<br><small>${x.en}</small></button>`).join('')}</div>`);
     o.querySelectorAll('[data-tc]').forEach(b => b.onclick = async () => { o.remove(); if (b.dataset.tc === S.culture) return; S.culture = b.dataset.tc; save(); await loadPack(); await resetCalendars(); render(); });
   };
-  infoButton();
+  infoButton(); bellButton();
   // English or the tradition's language, beside the tradition picker.
   // The name in the header, in the language the app is read in.
   if (pack) { const b = $('.brand span'); if (b) b.textContent = t('app.name'); document.title = t('app.name'); }
@@ -354,6 +357,7 @@ async function render() {
     if (tab === 'people') return await viewPeople();
     if (tab === 'family') return await FAMILY.viewFamily($('#main'));
     if (tab === 'settings') return viewSettings();
+    if (tab === 'alerts') return await viewAlerts();
   } catch (e) { $('#main').innerHTML = `<div class="card">${esc(t('c.error', e.message))}</div>`; }
 }
 
@@ -931,7 +935,9 @@ async function viewDay() {
     <button class="btn soft block noprint" onclick="window.print()">${SHARE_ICON} ${esc(t('pdf.share'))}</button>`;
   $('#main').querySelector('[data-dialday]')?.addEventListener('click', () => openDial(d));
   $('#main').querySelectorAll('[data-calw]').forEach(b => b.onclick = () => { const [k, w] = calWins[+b.dataset.calw];
-    icsFile(`${t(k)} ${d}`, [{ uid: `${k}-${d}-${here().name}`, start: w.start, end: w.end, title: t('r3.alertTitle', t(k), clock(w.start)), text: `${greg(d)} · ${here().name}`, alarms: ['-PT10M'] }]); });
+    icsFile(`${t(k)} ${d}`, [{ uid: `${k}-${d}-${here().name}`, start: w.start, end: w.end, title: t('r3.alertTitle', t(k), clock(w.start)), text: `${greg(d)} · ${here().name}`, alarms: ['-PT10M'] }]);
+    // Kept as a today-only alert (iOS: "today-<key>-<start>"), listed on Alerts until it has begun.
+    if (d === today(S.home.tz) && !dayPlace) { const id = `today-${k}-${w.start}`; S.todayAlerts = [...(S.todayAlerts || []).filter(a => a.id !== id && a.start > Date.now() / 1000), { id, key: k, start: w.start, date: d }]; save(); bellButton(); } });
   // The day's own notes and events, and one more.
   const notesBox = $('#main').querySelector('#daynotes');
   const drawNotes = () => { notesBox.innerHTML = noteRows(d); wireNoteRows(notesBox, d, drawNotes); };
@@ -3253,6 +3259,7 @@ function viewSettings() {
     <div class="card"><p class="label">${esc(t('s.clock'))}</p><div class="seg">${[[0, 's.clockSystem'], [12, 's.clock12'], [24, 's.clock24']].map(([v, k]) => `<button data-ck="${v}" class="${(S.clock || 0) === v ? 'on' : ''}">${esc(t(k))}</button>`).join('')}</div></div>
     <div class="card"><p class="label">${esc(t('ts.title'))}</p><div class="seg">${TEXT_SIZES.map((z, i) => `<button data-tz="${i}" class="${S.textSize === i ? 'on' : ''}" style="font-size:${Math.round(12 * z + (i - 1) * 2)}px">A</button>`).join('')}</div>
       <p class="small muted" style="margin-top:8px">${esc(t('ts.sample'))}</p></div>
+    <div class="card"><button class="list-row linkrow" data-goalerts style="width:100%;border:0;background:none;color:inherit;font:inherit;cursor:pointer;text-align:left"><span class="grow"><b>${esc(t('s.notifications'))}</b><div class="small muted">${esc(t('al.title'))}</div></span><span class="muted">›</span></button></div>
     ${backupCard()}
     <div class="card about"><p class="label">${esc(t('s.about'))}</p><img src="icon-192.png" alt="" class="aboutlogo"><h3 class="serif" style="margin:6px 0 2px">${esc(t('app.name'))}</h3>
       <p class="serif" style="color:var(--accent);font-size:18px;margin:0 0 10px">${esc(t('ab.motto'))}</p>
@@ -3277,6 +3284,7 @@ function viewSettings() {
   placePicker($('#hp'), async p => { S.home = p; save(); await resetCalendars(); tab = 'today'; render(); });
   placePicker($('#ap'), p => { S.away = p; save(); viewSettings(); });
   $('#main').querySelector('[data-noaway]')?.addEventListener('click', () => { delete S.away; save(); viewSettings(); });
+  $('#main').querySelector('[data-goalerts]').onclick = () => { tab = 'alerts'; render(); scrollTo(0, 0); };
   wireBackup($('#main'));
 }
 
@@ -3539,6 +3547,7 @@ function dayMenu(date, x, y, fests, place) {
   for (const f of fests.slice(0, 2)) {
     items.push({ label: t(bookmarked(f.id) ? 'r3.unbookmarkFest' : 'r3.bookmarkFest', fname(f)), icon: 'star', fn: () => { toggleBookmark(f.id); toast(bookmarked(f.id) ? t('r3w.bookmarked', fname(f)) : t('r3w.unbookmarked', fname(f))); viewMonth(); } });
     items.push({ label: t('r3w.festToCal', fname(f)), icon: 'calendar', fn: () => festivalIcs(f, date) });
+    items.push(festFollowItem(f));
   }
   items.push({ label: t('r3.addNote'), icon: 'book', fn: () => noteEditor(date, null, () => viewMonth()) });
   for (const n of notesOn(date)) items.push({ label: `${t('r3.editNote')}: ${n.title}`, icon: 'book', fn: () => noteEditor(date, n, () => viewMonth()) });
@@ -3621,6 +3630,260 @@ async function loadPack() {
   if (S.vaishnava) packJson = packJson.replace(/"kala":\s*"ekadashi"/g, '"kala": "ekadashi-vaishnava"');
   pack = JSON.parse(packJson);
 }
+// ---------------------------------------------------------------- alerts
+// What would be reminded, by the iOS rules (Core/Reminders.swift, FamilyReminders, the notes and the today-only
+// alerts): a rolling 14 days, nearest first, keyed as iOS keys its notifications. The web cannot alert once the
+// page is closed, so nothing is scheduled: each one can go to the user's own calendar instead.
+const AL_WINDOW = 14;
+const AL_ICON = { morning: '☀', evening: '🌙', festival: '🪔', rahu: '⏳', parana: '🍽', vrat: '★', family: '🎁', note: '📌', way: '🧺', today: '⏰', other: '🔔' };
+// The identifier's prefix (iOS: brief-, evening-, week-, morning-, rahu-, parana-, vrat-, person-, note-, family-, today-, dasha-) to its kind.
+const alKind = id => ({ brief: 'morning', evening: 'evening', week: 'festival', morning: 'festival', rahu: 'rahu', parana: 'parana', vrat: 'vrat', person: 'family', note: 'note', family: 'way', today: 'today', dasha: 'other' })[id.split('-')[0]] || 'other';
+const alKindLabel = x => x.id.startsWith('dasha-') ? t('s.dashaAlerts') : t('al.k.' + x.kind);
+// A festival followed (always reminded), muted (never) or left to the general settings, as on iOS.
+const festAlert = id => (S.followedFestivals || []).includes(id) ? 'follow' : (S.mutedFestivals || []).includes(id) ? 'mute' : 'standard';
+function setFestAlert(id, a) {
+  S.followedFestivals = (S.followedFestivals || []).filter(x => x !== id); S.mutedFestivals = (S.mutedFestivals || []).filter(x => x !== id);
+  if (a === 'follow') S.followedFestivals.push(id); if (a === 'mute') S.mutedFestivals.push(id);
+  save(); bellButton();
+}
+const festFollowItem = f => festAlert(f.id) === 'follow'
+  ? { label: t('r3.remindStop', fname(f)), icon: 'festivals', fn: () => { setFestAlert(f.id, 'standard'); if (tab === 'alerts') drawAlerts(); } }
+  : { label: t('r3.remindAbout', fname(f)), icon: 'festivals', fn: () => { setFestAlert(f.id, 'follow'); toast(t('r3.reminded', fname(f))); if (tab === 'alerts') drawAlerts(); } };
+const homeDate = u => intl('en-CA', { timeZone: S.home.tz, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date(u * 1000));
+
+async function alertPlan() {
+  const tz = S.home.tz, td = today(tz), now = Date.now() / 1000, out = [], end = addDays(td, AL_WINDOW);
+  const at = (date, mins) => zonedUnix(date, `${pad(Math.floor(mins / 60))}:${pad(mins % 60)}`, tz);
+  const briefMins = S.morningBriefing && !S.morningAtSunrise ? S.morningMinutes : 9 * 60;
+  const days = new Map(), dayOf = d => { if (!days.has(d)) days.set(d, day(d).catch(() => null)); return days.get(d); };
+  const push = (id, when, title, body, open) => out.push({ id, kind: alKind(id), at: when, title, body, open });
+  const limbs = d => [d.tithis[0] && name('tithis', d.tithis[0].key), d.nakshatras[0] && name('nakshatras', d.nakshatras[0].key)].filter(Boolean).join(' · ');
+  const rahuLine = d => t('n.rahuAt', clockIn(d.rahuKalam.start, tz), clockIn(d.rahuKalam.end, tz), S.home.name);
+  const myVrats = d => [...new Set(d.occurrences.filter(o => o.recurring && S.vrats.includes(o.id)).map(o => o.id))].sort().map(recName);
+  const festsOn = d => [...new Set(d.occurrences.filter(o => !o.recurring && festById(o.id) && !festById(o.id).hidden).map(o => o.id))].map(festById);
+  const personTitle = p => t(p.kind === 'remembrance' ? 'pp.remembranceOf' : 'pp.birthdayOf', p.name);
+  // The days kept for people the user has added (those to be reminded of), to a day past the window.
+  const people = [];
+  for (const p of S.people.filter(p => p.anchor && p.remind !== false))
+    for (let y = +td.slice(0, 4); y <= +addDays(end, 1).slice(0, 4); y++)
+      for (const d of await engine({ op: 'personalDates', handle: await cal(y), anchor: p.anchor, kind: p.kind || 'birthday', basis: p.basis }).catch(() => []))
+        if (d >= td && d <= addDays(end, 1)) people.push({ p, date: d });
+
+  // The evening before: the briefing, with the user's vrats and people's days for tomorrow, or those alone.
+  for (let i = 0; i < AL_WINDOW; i++) {
+    const date = addDays(td, i), tom = addDays(date, 1), personal = people.filter(x => x.date === tom).map(x => personTitle(x.p));
+    if (!(S.eveningBriefing || S.vrats.length || personal.length)) continue;
+    const d = await dayOf(tom); if (!d) continue;
+    const vr = myVrats(d), vrLine = vr.length ? [t('n.vrat', vr.join(', '))] : [];
+    if (S.eveningBriefing) {
+      const fs = festsOn(d).map(fname);
+      push(`evening-${tom}`, at(date, S.eveningMinutes), t('n.tomorrow', cultureDate(d.solar, d.lunar)), [limbs(d), fs.join(', '), ...personal, ...vrLine, rahuLine(d)].filter(Boolean).join('\n'), { day: tom });
+    } else if (vr.length || personal.length) push(`evening-${tom}`, at(date, S.eveningMinutes), t('n.tomorrowPlain'), [...personal, ...vrLine].join('\n'), { day: tom });
+    // The parana, the morning after an Ekadashi the user keeps.
+    if (S.vrats.includes('ekadashi') && S.paranaAlert && d.occurrences.some(o => o.id === 'ekadashi')) {
+      const p = await engine({ op: 'parana', handle: await cal(+tom.slice(0, 4)), date: tom }).catch(() => null);
+      if (p) push(`parana-${tom}`, p.start, t('n.parana'), t('n.paranaUntil', clockIn(p.end, tz), S.home.name) + '\n' + t('vj.ask', recName('ekadashi')), { day: addDays(tom, 1) });
+    }
+  }
+  // The morning briefing (at the set time or at sunrise) and the heads-up ten minutes before Rahu Kalam.
+  if (S.morningBriefing || S.rahuHeadsUp) for (let i = 0; i < AL_WINDOW; i++) {
+    const date = addDays(td, i), d = await dayOf(date); if (!d) continue;
+    if (S.morningBriefing) {
+      const fs = festsOn(d).filter(f => festAlert(f.id) !== 'mute'), vr = myVrats(d);
+      const lines = [limbs(d), ...fs.map(fname), ...people.filter(x => x.date === date).map(x => personTitle(x.p)), ...(vr.length ? [t('n.vrat', vr.join(', '))] : []), rahuLine(d)];
+      push(`brief-${date}`, S.morningAtSunrise ? d.sunrise : at(date, S.morningMinutes), t('n.todayIs', cultureDate(d.solar, d.lunar)), lines.filter(Boolean).join('\n'), fs.length === 1 ? { fest: fs[0].id, date } : { day: date });
+    }
+    if (S.rahuHeadsUp) push(`rahu-${date}`, d.rahuKalam.start - 600, t('n.rahuSoon'), rahuLine(d), { day: date });
+  }
+  // The vrat check-in once each vrat is over; the Ekadashi's rides on the parana alert when that is on.
+  for (const v of await vratDays(addDays(td, -1), addDays(td, AL_WINDOW - 1))) {
+    if (S.vratLog[v.id] !== undefined || (v.key === 'ekadashi' && S.paranaAlert)) continue;
+    const c = await vratCloses(v); if (c && c > now) push(`vrat-${v.id}`, c, t('vj.ask', recName(v.key)), t('vj.askBody'), { tab: 'vrats' });
+  }
+  // A person's day on its morning, when the briefing (which carries it) is off.
+  if (!S.morningBriefing) for (const { p, date } of people) if (date <= end)
+    push(`person-${p.id}-${date}`, at(date, 7 * 60), t('n.today', personTitle(p)), t('n.dateFor', t('day.today').toLowerCase(), S.home.name), { day: date, person: p.id });
+  // Festivals a week ahead and on the morning: major ones (and regional on the morning) by the general settings,
+  // a followed one always, a muted one never.
+  for (const { f, date } of await upcoming(td, AL_WINDOW + 7)) {
+    const ch = festAlert(f.id), nm = fname(f), open = { fest: f.id, date };
+    if (ch === 'follow' || (ch === 'standard' && S.weekAhead && f.tier === 'major')) {
+      const ad = addDays(date, -7);
+      if (ad >= td && ad <= end) push(`week-${f.id}-${date}`, at(ad, briefMins), t('n.weekAhead', nm), (text(f.content?.summary) || t('n.prepare')) + '\n' + t('n.dateFor', greg(date, { day: 'numeric', month: 'short', year: 'numeric' }), S.home.name), open);
+    }
+    if ((ch === 'follow' || (ch === 'standard' && S.morningAlert && f.tier !== 'minor')) && !S.morningBriefing && date >= td && date <= end)
+      push(`morning-${f.id}-${date}`, at(date, 7 * 60), t('n.today', nm), t('n.dateFor', t('day.today').toLowerCase(), S.home.name) + '\n' + t('n.tapHow'), open);
+  }
+  // Dasha changes for the family's birth profiles: each new mahadasha and antardasha, a week ahead and on the day.
+  if (S.dashaAlerts) {
+    const horizon = now + (AL_WINDOW + 7) * 86400;
+    for (const p of S.people.filter(p => p.kind !== 'remembrance' && p.date && p.place && p.remind !== false)) {
+      const j = await jataka(p).catch(() => null);
+      for (const m of j?.vimshottari?.periods || []) {
+        if (!(m.end > now && m.start < horizon)) continue;
+        (m.children || []).forEach((a, i) => {
+          if (!(a.start > now && a.start <= horizon)) return;
+          const title = i === 0 ? t('n.mahaStarts', p.name, name('grahas', m.key)) : t('n.antarStarts', p.name, name('grahas', a.key), name('grahas', m.key));
+          const dd = homeDate(a.start);
+          for (const ahead of [7, 0]) { const ad = addDays(dd, -ahead); if (ad >= td) push(`dasha-${p.id}-${a.start}-${ahead}`, at(ad, briefMins), ahead ? t('n.inAWeek', title) : title, t('n.dashaBody', greg(dd, { day: 'numeric', month: 'short', year: 'numeric' })), { tab: 'jathakam' }); }
+        });
+      }
+    }
+  }
+  // The user's own notes: at the time, on the morning (8:00) or the day before; a yearly one at its next return.
+  for (const n of S.notes || []) {
+    if (!n.remind || n.remind === 'none') continue;
+    const mins = n.allDay !== false || !n.time ? null : +n.time.slice(0, 2) * 60 + +n.time.slice(3, 5);
+    const fire = d => mins == null ? at(n.remind === 'before' ? addDays(d, -1) : d, 8 * 60)
+      : n.remind === 'at' ? at(d, mins) : n.remind === 'morning' ? at(d, Math.min(mins, 8 * 60)) : at(addDays(d, -1), mins);
+    const dates = n.yearly ? [0, 1, 2].map(k => `${+td.slice(0, 4) - 1 + k}${n.date.slice(4)}`).filter(d => d >= n.date) : [n.date];
+    const d = dates.find(d => fire(d) > now);
+    if (d) push(`note-${n.id}`, fire(d), n.title, [greg(d, { weekday: 'short', day: 'numeric', month: 'short' }) + (mins == null ? '' : ' · ' + n.time), n.text].filter(Boolean).join('\n'), { note: n.id, date: d });
+  }
+  // Our family's way: the nearest eight, the set days before at 9:00.
+  out.push(...(await FAMILY.wayReminders()).filter(x => x.at > now).sort((a, b) => a.at - b.at).slice(0, 8).map(x => ({
+    id: `family-${x.f.id}-${x.occ}`, kind: 'way', at: x.at, title: x.days === 1 ? t('fam.n.title1', fname(x.f)) : t('fam.n.title', fname(x.f), x.days),
+    body: x.left === 0 ? t('fam.n.bodyNone') : x.left === 1 ? t('fam.n.body1') : t('fam.n.body', x.left), open: { way: x.f.id, date: x.occ } })));
+  // Today-only alerts set from Today's timings: ten minutes before.
+  for (const a of S.todayAlerts || []) if (a.date === td && a.start > now)
+    push(a.id, Math.max(a.start - 600, now + 1), t('r3.alertTitle', t(a.key), clockIn(a.start, tz)), t('r3.alertBody', S.home.name), { day: td, today: a.id });
+  return out.filter(x => x.at > now).sort((a, b) => a.at - b.at);
+}
+
+// Something due today: a festival (not a minor one, nor muted), a vrat the user keeps, a family day or a today-only
+// alert, until Alerts has been opened today.
+async function dueToday() {
+  const td = today(S.home.tz);
+  if (S.alertsSeen === td) return false;
+  if ((S.todayAlerts || []).some(a => a.date === td && a.start > Date.now() / 1000)) return true;
+  const d = await day(td).catch(() => null); if (!d) return false;
+  if (d.occurrences.some(o => o.recurring ? S.vrats.includes(o.id) : (f => f && !f.hidden && festAlert(o.id) !== 'mute' && (f.tier !== 'minor' || festAlert(o.id) === 'follow'))(festById(o.id)))) return true;
+  return (await peopleOn(td)).length > 0;
+}
+const BELL = '<svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>';
+let bellKey = '', bellDue = false;
+// The bell in the header on every screen, with a dot when something is due today.
+function bellButton() {
+  let b = $('#bellbtn');
+  if (!b) { b = document.createElement('button'); b.id = 'bellbtn'; b.className = 'badge infob bellb'; b.innerHTML = BELL + '<span class="belldot" hidden></span>'; document.querySelector('.badges')?.appendChild(b); }
+  const ready = !!(S.culture && S.home && pack && S.onboardProfile !== 'pending');
+  b.hidden = !ready; b.setAttribute('aria-label', t('al.title')); b.title = t('al.title');
+  b.classList.toggle('on', tab === 'alerts');
+  b.onclick = () => { tab = 'alerts'; render(); scrollTo(0, 0); };
+  if (!ready) return;
+  const dot = b.querySelector('.belldot');
+  const key = [today(S.home.tz), S.culture, S.home.id, S.alertsSeen, S.vrats.join(), (S.mutedFestivals || []).join(), (S.followedFestivals || []).join(), S.people.length, (S.todayAlerts || []).map(a => a.id).join()].join('|');
+  if (key === bellKey) { dot.hidden = !bellDue; b.setAttribute('aria-label', t('al.title') + (bellDue ? ' •' : '')); return; }
+  bellKey = key; dot.hidden = true;
+  dueToday().then(v => { if (bellKey !== key) return; bellDue = v; dot.hidden = !v; b.setAttribute('aria-label', t('al.title') + (v ? ' •' : '')); }).catch(() => {});
+}
+
+let alPlan = [], alRun = 0;
+async function viewAlerts() {
+  const td = today(S.home.tz);
+  if (S.alertsSeen !== td) { S.alertsSeen = td; save(); }
+  bellButton();
+  const sw = (key, label, note = '', on = !!S[key]) => `<label class="list-row"><input type="checkbox" data-sw="${key}" ${on ? 'checked' : ''}><span class="grow"><b>${esc(label)}</b>${note ? `<div class="small muted">${esc(note)}</div>` : ''}</span></label>`;
+  const hhmm = m => `${pad(Math.floor(m / 60))}:${pad(m % 60)}`;
+  const timeRow = (key, label, disabled) => `<label class="list-row al-sub${disabled ? ' dim' : ''}"><span class="grow">${esc(label)}</span><input type="time" data-tm="${key}" value="${hhmm(S[key])}" ${disabled ? 'disabled' : ''}></label>`;
+  const festList = (ids, empty) => ids.length ? ids.map(id => festById(id)).filter(Boolean).map(f => `<div class="list-row"><span class="grow">${esc(fname(f))}</span><button class="btn soft" data-unf="${esc(f.id)}" aria-label="${esc(t('fa.standard') + ': ' + fname(f))}">✕</button></div>`).join('') : `<p class="small muted">${esc(empty)}</p>`;
+  const todays = (S.todayAlerts || []).filter(a => a.date === td && a.start > Date.now() / 1000);
+  $('#main').innerHTML = `<h2 class="serif" style="margin-bottom:4px">${esc(t('al.title'))}</h2>
+    <div class="card al-status"><span class="al-bell" aria-hidden="true">${BELL}</span><p class="small" style="margin:0">${esc(t('al.webNote'))}</p></div>
+    <p class="label">${esc(t('al.coming'))}</p><div class="card" id="alcoming"><p class="small muted">…</p></div>
+    ${todays.length ? `<p class="label">${esc(t('al.today'))}</p><div class="card">${todays.sort((a, b) => a.start - b.start).map(a => `<div class="list-row"><span class="al-ic" aria-hidden="true">${AL_ICON.today}</span><div class="grow"><b>${esc(t(a.key))}</b><div class="small muted">${esc(clockIn(a.start, S.home.tz))}</div></div><button class="btn soft" data-todayoff="${esc(a.id)}">${esc(t('r3.alertOff'))}</button></div>`).join('')}</div>` : ''}
+    <p class="label">${esc(t('al.switches'))}</p>
+    <div class="card">${sw('morningBriefing', t('s.mBriefing'))}
+      ${S.morningBriefing ? `<label class="list-row al-sub"><input type="checkbox" data-sw="morningAtSunrise" ${S.morningAtSunrise ? 'checked' : ''}><span class="grow">${esc(t('s.atSunrise'))}</span></label>${timeRow('morningMinutes', t('s.morningTime'), S.morningAtSunrise)}` : ''}
+      ${sw('eveningBriefing', t('s.evening'))}${S.eveningBriefing ? timeRow('eveningMinutes', t('s.eveningTime'), false) : ''}
+      ${sw('weekAhead', t('s.weekAhead'))}${sw('morningAlert', t('s.morning'))}
+      ${sw('rahuHeadsUp', t('s.rahuHeadsUp'))}
+      ${sw('paranaAlert', t('v.paranaAlert'), recName('ekadashi'))}
+      <button class="list-row al-link" data-govrats><span class="grow"><b>${esc(t('v.title'))}</b><div class="small muted">${esc(S.vrats.map(recName).join(', '))}</div></span><span class="muted">›</span></button>
+      ${S.people.some(p => p.anchor) ? sw('people', t('al.k.family'), '', S.people.some(p => p.anchor && p.remind !== false)) : ''}
+      ${sw('dashaAlerts', t('s.dashaAlerts'))}
+      ${FAMILY.doc().ways.length ? sw('ways', t('al.k.way'), '', FAMILY.wayRemindersOn()) : ''}
+      <p class="small muted">${esc(t('fa.settingsNote'))}</p></div>
+    <p class="label">${esc(t('al.following'))}</p><div class="card">${festList(S.followedFestivals || [], t('fa.noneFollowed'))}</div>
+    ${(S.mutedFestivals || []).length ? `<p class="label">${esc(t('al.muted'))}</p><div class="card">${festList(S.mutedFestivals, '')}</div>` : ''}
+    ${(S.followedFestivals || []).length + (S.mutedFestivals || []).length > 1 ? `<button class="btn soft block" data-festreset>↺ ${esc(t('fa.standard'))}</button>` : ''}`;
+  const m = $('#main');
+  m.querySelectorAll('[data-sw]').forEach(c => c.onchange = () => {
+    const k = c.dataset.sw;
+    if (k === 'people') { for (const p of S.people) { if (c.checked) delete p.remind; else p.remind = false; } }
+    else if (k === 'ways') FAMILY.setWayReminders(c.checked);
+    else S[k] = c.checked;
+    save();
+    // A switch that shows or hides its time redraws the switches; the list is worked out again either way.
+    if (['morningBriefing', 'morningAtSunrise', 'eveningBriefing'].includes(k)) viewAlerts(); else drawAlerts();
+  });
+  m.querySelectorAll('[data-tm]').forEach(i => i.onchange = () => { const [h, mi] = (i.value || '').split(':').map(Number); if (Number.isFinite(h) && Number.isFinite(mi)) { S[i.dataset.tm] = h * 60 + mi; save(); drawAlerts(); } });
+  m.querySelector('[data-govrats]').onclick = () => { tab = 'vrats'; render(); scrollTo(0, 0); };
+  m.querySelectorAll('[data-unf]').forEach(b => b.onclick = () => { setFestAlert(b.dataset.unf, 'standard'); viewAlerts(); });
+  m.querySelector('[data-festreset]')?.addEventListener('click', () => { S.followedFestivals = []; S.mutedFestivals = []; save(); viewAlerts(); });
+  m.querySelectorAll('[data-todayoff]').forEach(b => b.onclick = () => { S.todayAlerts = (S.todayAlerts || []).filter(a => a.id !== b.dataset.todayoff); save(); viewAlerts(); });
+  await drawAlerts();
+}
+// The coming alerts, worked out again (after a switch, a skip or a turn-off) without redrawing the rest.
+async function drawAlerts() {
+  const run = ++alRun, box = $('#alcoming'); if (!box) return;
+  box.setAttribute('aria-busy', 'true');
+  const plan = await alertPlan().catch(e => { console.warn(e); return []; });
+  if (run !== alRun || !box.isConnected) return;
+  alPlan = plan.slice(0, 20);
+  const skip = new Set(S.alertSkip || []), td = today(S.home.tz), motion = !still();
+  const when = u => { const d = homeDate(u), n = daysBetween(td, d);
+    return `${n === 0 ? t('day.today') : n === 1 ? t('day.tomorrow') : greg(d, { weekday: 'short', day: 'numeric', month: 'short' })} · ${clockIn(u, S.home.tz)}`; };
+  box.removeAttribute('aria-busy');
+  box.innerHTML = alPlan.length ? alPlan.map((x, i) => `<div class="list-row al-row${skip.has(x.id) ? ' dim' : ''}${motion ? ' rise' : ''}" style="--i:${i}" data-al="${i}">
+      <span class="al-ic" aria-hidden="true">${AL_ICON[x.kind] || AL_ICON.other}</span>
+      <button class="grow al-open" data-alopen="${i}"><span class="small muted">${esc(when(x.at))} · ${esc(alKindLabel(x))}${skip.has(x.id) ? ` · <b>${esc(t('al.skipped'))}</b>` : ''}</span><b>${esc(x.title)}</b><span class="small muted al-body">${esc(x.body.split('\n')[0])}</span></button>
+      <button class="calbtn" data-alics="${i}" title="${esc(t('al.addCal'))}" aria-label="${esc(t('al.addCal') + ': ' + x.title)}">🗓</button>
+      <button class="btn soft al-more" data-almore="${i}" aria-label="${esc(x.title)} ⋯">⋯</button></div>`).join('')
+    : `<p class="small muted">${esc(t('al.none'))}</p>`;
+  box.querySelectorAll('[data-alopen]').forEach(b => b.onclick = () => alOpen(alPlan[+b.dataset.alopen]));
+  box.querySelectorAll('[data-alics]').forEach(b => b.onclick = () => alIcs(alPlan[+b.dataset.alics]));
+  box.querySelectorAll('[data-almore]').forEach(b => b.onclick = () => { const r = b.getBoundingClientRect(); alMenu(alPlan[+b.dataset.almore], r.left, r.bottom + 4); });
+  box.querySelectorAll('[data-al]').forEach(row => onHold(row, (x, y) => alMenu(alPlan[+row.dataset.al], x, y)));
+}
+const alIcs = x => icsFile(x.title, [{ uid: x.id, start: x.at, end: x.at + 900, title: x.title, text: x.body, alarms: ['PT0S'] }]);
+// Opening an alert opens what it is about: its day, festival, note or family way.
+function alOpen(x) {
+  const o = x.open || {};
+  if (o.fest) return festivalSheet(o.fest, o.date);
+  if (o.note) { const n = (S.notes || []).find(n => n.id === o.note); if (n) return noteEditor(o.date, n, () => drawAlerts()); }
+  if (o.way) { FAMILY.famRoute('#family/way/' + encodeURIComponent(o.way)); tab = 'family'; render(); return scrollTo(0, 0); }
+  if (o.tab) { tab = o.tab; render(); return scrollTo(0, 0); }
+  dayDate = o.day || null; dayPlace = null; tab = 'today'; render(); scrollTo(0, 0);
+}
+// What "Turn off these" turns off for each kind: the setting it comes from (as on iOS), or that one person, note or way.
+function alTurnOff(x) {
+  const o = x.open || {};
+  if (x.kind === 'morning') return () => { S.morningBriefing = false; };
+  if (x.kind === 'evening') return () => { S.eveningBriefing = false; };
+  if (x.kind === 'rahu') return () => { S.rahuHeadsUp = false; };
+  if (x.kind === 'parana') return () => { S.paranaAlert = false; };
+  if (x.id.startsWith('dasha-')) return () => { S.dashaAlerts = false; };
+  if (x.kind === 'festival') return festAlert(o.fest) === 'follow' ? () => setFestAlert(o.fest, 'standard') : x.id.startsWith('week-') ? () => { S.weekAhead = false; } : () => { S.morningAlert = false; };
+  if (x.kind === 'family' && o.person) return () => { const p = S.people.find(p => p.id === o.person); if (p) p.remind = false; };
+  if (x.kind === 'note') return () => { const n = (S.notes || []).find(n => n.id === o.note); if (n) n.remind = 'none'; };
+  if (x.kind === 'way') return () => FAMILY.setWayReminders(false, o.way);
+  if (x.kind === 'today') return () => { S.todayAlerts = (S.todayAlerts || []).filter(a => a.id !== o.today); };
+  return null;
+}
+function alMenu(x, px, py) {
+  if (!x) return;
+  const skipped = (S.alertSkip || []).includes(x.id), off = alTurnOff(x), f = x.open?.fest && festById(x.open.fest);
+  const after = () => { save(); bellButton(); x.kind === 'today' || ['morning', 'evening'].includes(x.kind) ? viewAlerts() : drawAlerts(); };
+  popMenu(px, py, [
+    { label: f ? t('r3.openFest', fname(f)) : t('r3.openDay'), icon: f ? 'festivals' : 'calendar', fn: () => alOpen(x) },
+    { label: t('al.addCal'), icon: 'calendar', fn: () => alIcs(x) },
+    { label: t(skipped ? 'al.unskip' : 'al.skip'), icon: 'day', fn: () => { S.alertSkip = skipped ? S.alertSkip.filter(id => id !== x.id) : [...(S.alertSkip || []), x.id].slice(-200); save(); drawAlerts(); } },
+    off && { label: t('al.turnOff'), icon: 'settings', fn: () => { off(); after(); } },
+    f && festAlert(f.id) !== 'mute' && { label: `${t('fa.mute')}: ${fname(f)}`, icon: 'festivals', fn: () => { setFestAlert(f.id, 'mute'); viewAlerts(); } },
+  ]);
+}
+
 (async () => {
   warm();
   // The text and the pack are read side by side.
@@ -3632,6 +3895,7 @@ async function loadPack() {
     pack: () => pack, lang, tab: () => tab, go: tb => { tab = tb; render(); }, openPrayer: id => { PRV.id = id; PRV.deity = null; tab = 'prayers'; render(); scrollTo(0, 0); } });
   // Family's links (#family, #family/way/<festival>, #family/kula, #family/clock) open its screens.
   if (FAMILY.famRoute(location.hash)) tab = 'family';
-  addEventListener('hashchange', () => { if (FAMILY.famRoute(location.hash)) { tab = 'family'; render(); } });
+  else if (location.hash === '#alerts') tab = 'alerts';
+  addEventListener('hashchange', () => { if (FAMILY.famRoute(location.hash)) { tab = 'family'; render(); } else if (location.hash === '#alerts') { tab = 'alerts'; render(); } });
   render();
 })();

@@ -1224,3 +1224,19 @@ html.still .fresh, html.still .fm-rec.on, html.still .fm-cal .fm-d.kr.kpop { ani
 .fm-own .fm-sec-top { align-items: center; }
 .fm-own .grow { flex: 1; min-width: 0; }
 .fm-oplace { margin: 2px 0 12px; }
+
+/* Alerts: the bell in the header (with a dot when something is due today) and its screen. */
+.badge.bellb { position: relative; color: var(--accent); }
+.badge.bellb[hidden] { display: none; }
+.badge.bellb.on { background: color-mix(in srgb, var(--accent) 18%, var(--soft)); }
+.belldot { position: absolute; top: 3px; right: 3px; width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 2px var(--paper); }
+.belldot[hidden] { display: none; }
+.al-status { display: flex; gap: 12px; align-items: center; }
+.al-bell { flex: none; width: 36px; height: 36px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--soft); color: var(--accent); }
+.al-ic { flex: none; width: 26px; text-align: center; font-size: 18px; }
+.al-open { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; padding: 0; min-width: 0; }
+.al-open .al-body { display: block; max-width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.al-row .calbtn { margin-left: 0; }
+.al-more { flex: none; padding: 4px 10px; }
+.al-sub { padding-left: 26px; }
+.al-link { width: 100%; border: 0; border-top: 1px solid var(--line); background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
