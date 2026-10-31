@@ -109,6 +109,20 @@
    "traditions": [
     "caribbean"
    ]
+  },
+  "fiji": {
+   "en": "Fiji",
+   "native": {},
+   "traditions": [
+    "fijian"
+   ]
+  },
+  "mauritius": {
+   "en": "Mauritius",
+   "native": {},
+   "traditions": [
+    "mauritian"
+   ]
   }
  },
  "deities": [
@@ -3419,17 +3433,488 @@
      "name": "Maha Kali Shakti Temple",
      "town": "Timehri",
      "district": "Demerara-Mahaica",
-     "tz": "America/Guyana"
+     "tz": "America/Guyana",
+     "lat": 6.508,
+     "lon": -58.252
     },
     {
      "name": "Mariamman Temple, Whim",
      "town": "Whim, Berbice",
      "district": "East Berbice-Corentyne",
      "tz": "America/Guyana"
+    },
+    {
+     "name": "Sri Kaliamman Kovil",
+     "town": "Arouca",
+     "district": "Tunapuna–Piarco",
+     "lat": 10.63333,
+     "lon": -61.33333,
+     "tz": "America/Port_of_Spain"
+    },
+    {
+     "name": "Jai Kali Shakti Mandir",
+     "town": "Saint Augustine",
+     "district": "Tunapuna–Piarco",
+     "lat": 10.65,
+     "lon": -61.4,
+     "tz": "America/Port_of_Spain"
     }
    ],
    "rules": [],
    "sources": [
+    "https://en.wikipedia.org/wiki/Caribbean_Shaktism",
+    "https://www.wikidata.org/wiki/Q132127",
+    "https://www.wikidata.org/wiki/Q7805525",
+    "https://www.wikidata.org/wiki/Q4795612",
+    "https://www.wikidata.org/wiki/Q7400994"
+   ]
+  },
+  {
+   "id": "murugan-fj",
+   "region": "fiji",
+   "en": "Murugan (Shiri Siva Subramaniya Swami)",
+   "names": {},
+   "alt": [
+    "Siva Subramaniya Swami",
+    "Subramaniya",
+    "Kartikeya",
+    "Nadi Swami"
+   ],
+   "type": "major-form",
+   "temples": [
+    {
+     "name": "Sri Siva Subramaniya Temple",
+     "town": "Nadi",
+     "district": "Ba",
+     "lat": -17.80731,
+     "lon": 177.41498,
+     "tz": "Pacific/Fiji",
+     "wikidata": "Q853256"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q380817",
+    "https://www.wikidata.org/wiki/Q853256",
+    "https://en.wikipedia.org/wiki/Sri_Siva_Subramaniya_Temple",
+    "https://en.wikipedia.org/wiki/Thaipusam",
+    "https://en.wikipedia.org/wiki/Hinduism_in_Fiji"
+   ]
+  },
+  {
+   "id": "mariamman-fj",
+   "region": "fiji",
+   "en": "Mariamman",
+   "names": {},
+   "alt": [
+    "Mariamma",
+    "Maha Mariamman"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Sri Raj Mahamariamman Temple",
+     "town": "Suva",
+     "district": "Rewa",
+     "lat": -18.13333,
+     "lon": 178.43333,
+     "tz": "Pacific/Fiji"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q1200549",
+    "https://en.wikipedia.org/wiki/Mariamman",
+    "https://en.wikipedia.org/wiki/Thaipusam"
+   ]
+  },
+  {
+   "id": "draupadi-amman-fj",
+   "region": "fiji",
+   "en": "Draupadi Amman",
+   "names": {},
+   "alt": [
+    "Draupati Amman",
+    "Draupadi"
+   ],
+   "type": "regional",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q7806757",
+    "https://en.wikipedia.org/wiki/Thimithi"
+   ]
+  },
+  {
+   "id": "muneeswaran-fj",
+   "region": "fiji",
+   "en": "Muneeswaran",
+   "names": {},
+   "alt": [
+    "Muneeswarar",
+    "Muniswaran",
+    "Munishvaran"
+   ],
+   "type": "village-guardian",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q3524788",
+    "https://en.wikipedia.org/wiki/Muneeswarar"
+   ]
+  },
+  {
+   "id": "karuppasamy-fj",
+   "region": "fiji",
+   "en": "Karuppasamy (Sangili Karuppan)",
+   "names": {},
+   "alt": [
+    "Karuppannaswamy",
+    "Sangili Karuppan",
+    "Sangani Baba"
+   ],
+   "type": "village-guardian",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q3524835",
+    "https://en.wikipedia.org/wiki/Karuppannaswamy"
+   ]
+  },
+  {
+   "id": "shiva-mu",
+   "region": "mauritius",
+   "en": "Shiva (Ganga Talao)",
+   "names": {},
+   "alt": [
+    "Shiva",
+    "Mahadev",
+    "Mangal Mahadev"
+   ],
+   "type": "major-form",
+   "temples": [
+    {
+     "name": "Ganga Talao (Grand Bassin)",
+     "town": "Grand Bassin",
+     "district": "Savanne",
+     "lat": -20.41806,
+     "lon": 57.49194,
+     "tz": "Indian/Mauritius",
+     "wikidata": "Q2338515",
+     "festival": {
+      "type": "festival",
+      "id": "maha-shivaratri"
+     }
+    },
+    {
+     "name": "Maheswarnath Mandir",
+     "town": "Triolet",
+     "district": "Pamplemousses",
+     "lat": -20.0424,
+     "lon": 57.5524,
+     "tz": "Indian/Mauritius",
+     "wikidata": "Q19893523"
+    }
+   ],
+   "rules": [
+    {
+     "type": "festival",
+     "id": "maha-shivaratri"
+    }
+   ],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q11378",
+    "https://www.wikidata.org/wiki/Q2338515",
+    "https://en.wikipedia.org/wiki/Ganga_Talao",
+    "https://www.wikidata.org/wiki/Q19899414",
+    "https://en.wikipedia.org/wiki/Mangal_Mahadev",
+    "https://www.wikidata.org/wiki/Q19893523",
+    "https://en.wikipedia.org/wiki/Maheswarnath_Mandir",
+    "https://en.wikipedia.org/wiki/Hinduism_in_Mauritius"
+   ]
+  },
+  {
+   "id": "kali-mai-mu",
+   "region": "mauritius",
+   "en": "Kali Mai",
+   "names": {},
+   "alt": [
+    "Kalimaye",
+    "Kali Maiya",
+    "Maa Kaali",
+    "Kali"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Kali Maiya",
+     "town": "Goodlands",
+     "district": "Rivière du Rempart",
+     "lat": -20.035,
+     "lon": 57.64306,
+     "tz": "Indian/Mauritius"
+    },
+    {
+     "name": "Maa Kaali Mandir",
+     "town": "Pointe aux Piments",
+     "district": "Pamplemousses",
+     "lat": -20.06922,
+     "lon": 57.52324,
+     "tz": "Indian/Mauritius"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q132127",
+    "https://en.wikipedia.org/wiki/Maheswarnath_Mandir",
+    "https://fr.wikipedia.org/wiki/Goodlands_(île_Maurice)",
+    "https://www.wikidata.org/wiki/Q3110720",
+    "https://fr.wikipedia.org/wiki/Pointe-aux-Piments",
+    "https://www.wikidata.org/wiki/Q24050272"
+   ]
+  },
+  {
+   "id": "mariamman-mu",
+   "region": "mauritius",
+   "en": "Mariamman",
+   "names": {},
+   "alt": [
+    "Mariamma",
+    "Madhur Kannanour Mariamman"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Arulmigou Shri Madhur Kannanour Mariamman Thirukkovil",
+     "town": "Port Louis",
+     "district": "Port Louis",
+     "lat": -20.16194,
+     "lon": 57.49889,
+     "tz": "Indian/Mauritius"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q1200549",
+    "https://en.wikipedia.org/wiki/Mariamman",
+    "https://www.wikidata.org/wiki/Q3929"
+   ]
+  },
+  {
+   "id": "murugan-mu",
+   "region": "mauritius",
+   "en": "Murugan",
+   "names": {},
+   "alt": [
+    "Kartikeya",
+    "Subramaniam",
+    "Soopramaniar"
+   ],
+   "type": "major-form",
+   "temples": [
+    {
+     "name": "Siva Soopramaniar Kovil",
+     "town": "Goodlands",
+     "district": "Rivière du Rempart",
+     "lat": -20.035,
+     "lon": 57.64306,
+     "tz": "Indian/Mauritius"
+    }
+   ],
+   "rules": [
+    {
+     "type": "festival",
+     "id": "thaipusam-mu"
+    }
+   ],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q380817",
+    "https://en.wikipedia.org/wiki/Hinduism_in_Mauritius",
+    "https://en.wikipedia.org/wiki/Tamil_Mauritians",
+    "https://en.wikipedia.org/wiki/Thaipusam",
+    "https://fr.wikipedia.org/wiki/Goodlands_(île_Maurice)"
+   ]
+  },
+  {
+   "id": "draupadi-amman-mu",
+   "region": "mauritius",
+   "en": "Draupadi Amman",
+   "names": {},
+   "alt": [
+    "Draupati Amman",
+    "Draupadi"
+   ],
+   "type": "regional",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q7806757",
+    "https://en.wikipedia.org/wiki/Thimithi",
+    "https://www.wikidata.org/wiki/Q1057886",
+    "https://en.wikipedia.org/wiki/Draupadi"
+   ]
+  },
+  {
+   "id": "kateri-amman-mu",
+   "region": "mauritius",
+   "en": "Kateri Amman",
+   "names": {},
+   "alt": [
+    "Kateri",
+    "Katteri Amman"
+   ],
+   "type": "village-guardian",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q24908177",
+    "https://en.wikipedia.org/wiki/Kateri_Amman"
+   ]
+  },
+  {
+   "id": "karuppasamy-mu",
+   "region": "mauritius",
+   "en": "Karuppasamy (Sangili Karuppan)",
+   "names": {},
+   "alt": [
+    "Karuppannaswamy",
+    "Sangili Karuppan",
+    "Sangani Baba"
+   ],
+   "type": "village-guardian",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q3524835",
+    "https://en.wikipedia.org/wiki/Karuppannaswamy"
+   ]
+  },
+  {
+   "id": "mariamman-cb",
+   "region": "caribbean",
+   "en": "Mariamman",
+   "names": {},
+   "alt": [
+    "Mari-Eman",
+    "Mariamma",
+    "Mari Amma"
+   ],
+   "type": "regional",
+   "temples": [
+    {
+     "name": "Mariamman Temple, Whim",
+     "town": "Whim, Berbice",
+     "district": "East Berbice-Corentyne",
+     "tz": "America/Guyana"
+    },
+    {
+     "name": "Temple Mariamman Lalsingue",
+     "town": "Les Abymes",
+     "district": "Guadeloupe",
+     "lat": 16.27056,
+     "lon": -61.50472,
+     "tz": "America/Guadeloupe"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q1200549",
+    "https://en.wikipedia.org/wiki/Mariamman",
+    "https://en.wikipedia.org/wiki/Caribbean_Shaktism",
+    "https://en.wikipedia.org/wiki/Hinduism_in_Martinique"
+   ]
+  },
+  {
+   "id": "madurai-veeran-cb",
+   "region": "caribbean",
+   "en": "Madurai Veeran (Maldevidan)",
+   "names": {},
+   "alt": [
+    "Maldevidan",
+    "Madurai Veeran"
+   ],
+   "type": "village-guardian",
+   "temples": [
+    {
+     "name": "Hindu temple, Basse-Pointe",
+     "town": "Basse-Pointe",
+     "district": "Martinique",
+     "lat": 14.86861,
+     "lon": -61.12028,
+     "tz": "America/Martinique"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q6728840",
+    "https://en.wikipedia.org/wiki/Madurai_Veeran",
+    "https://en.wikipedia.org/wiki/Caribbean_Shaktism",
+    "https://www.wikidata.org/wiki/Q16984208",
+    "https://en.wikipedia.org/wiki/Hinduism_in_Martinique"
+   ]
+  },
+  {
+   "id": "sangani-baba",
+   "region": "caribbean",
+   "en": "Sangani Baba (Karuppasamy)",
+   "names": {},
+   "alt": [
+    "Sanganie Baba",
+    "Karuppasamy",
+    "Sangili Karuppan"
+   ],
+   "type": "village-guardian",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q3524835",
+    "https://en.wikipedia.org/wiki/Karuppannaswamy",
+    "https://en.wikipedia.org/wiki/Caribbean_Shaktism"
+   ]
+  },
+  {
+   "id": "muneeswaran-cb",
+   "region": "caribbean",
+   "en": "Muneeswaran",
+   "names": {},
+   "alt": [
+    "Muniswaran",
+    "Muneshwarran",
+    "Munishvaran"
+   ],
+   "type": "village-guardian",
+   "temples": [
+    {
+     "name": "Muneshwarran Mandir",
+     "town": "Chaguanas",
+     "district": "Chaguanas",
+     "lat": 10.51444,
+     "lon": -61.4075,
+     "tz": "America/Port_of_Spain"
+    }
+   ],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q3524788",
+    "https://en.wikipedia.org/wiki/Muneeswarar",
+    "https://en.wikipedia.org/wiki/Caribbean_Shaktism"
+   ]
+  },
+  {
+   "id": "kateri-amman-cb",
+   "region": "caribbean",
+   "en": "Kateri Amman",
+   "names": {},
+   "alt": [
+    "Kateri Maa",
+    "Kateri"
+   ],
+   "type": "village-guardian",
+   "temples": [],
+   "rules": [],
+   "sources": [
+    "https://www.wikidata.org/wiki/Q24908177",
+    "https://en.wikipedia.org/wiki/Kateri_Amman",
     "https://en.wikipedia.org/wiki/Caribbean_Shaktism"
    ]
   }

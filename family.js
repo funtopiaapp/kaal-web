@@ -772,8 +772,10 @@ async function memYears(id) {
   const occ = await currentOcc(id), td = X.today(), y0 = occ ? +occ.slice(0, 4) : +td.slice(0, 4);
   const ended = occ && X.addDays(occ, (f.durationDays || 1) - 1) < td;
   const ys = [...(ended ? [y0] : []), ...[1, 2, 3, 4, 5, 6].map(k => y0 - k)], out = [];
-  for (const y of ys) {
-    const ds = (await X.festsAt(y, X.S.home).catch(() => [])).filter(o => o.id === id && o.date < td && (!occ || o.date !== occ || ended)).map(o => o.date).sort().reverse();
+  // Every year asked for at once, so the two calendar workers open them side by side; read in order.
+  const lists = ys.map(y => X.festsAt(y, X.S.home).catch(() => []));
+  for (const [i, y] of ys.entries()) {
+    const ds = (await lists[i]).filter(o => o.id === id && o.date < td && (!occ || o.date !== occ || ended)).map(o => o.date).sort().reverse();
     for (const d of ds) out.push({ year: +d.slice(0, 4), date: d });
   }
   return out;
@@ -877,6 +879,7 @@ const temples = () => TEMPLES_P ??= fetch('temples.json?v=' + X.V).then(r => r.j
 let TEMPLES_P = null;
 async function cellsRange(from, to, place) {
   const out = [];
+  for (let y = +from.slice(0, 4); y <= +to.slice(0, 4); y++) X.cal(y, place).catch(() => {});
   for (let y = +from.slice(0, 4); y <= +to.slice(0, 4); y++) {
     const a = from > `${y}-01-01` ? from : `${y}-01-01`, b = to < `${y}-12-31` ? to : `${y}-12-31`;
     out.push(...await X.engine({ op: 'month', handle: await X.cal(y, place), from: a, to: b }));
@@ -929,8 +932,9 @@ async function computeMarks(from, to, place, deity) {
     if (r === 'MANDALA') {
       const has = id => pk.festivals.some(f => f.id === id);
       if (has('mandala-kalam') && has('mandala-pooja')) {
-        const all = [];
-        for (let y = +from.slice(0, 4) - 1; y <= +to.slice(0, 4); y++) all.push(...await X.festsAt(y, place).catch(() => []));
+        const all = [], ps = [];
+        for (let y = +from.slice(0, 4) - 1; y <= +to.slice(0, 4); y++) ps.push(X.festsAt(y, place).catch(() => []));
+        for (const p of ps) all.push(...await p);
         const ends = all.filter(o => o.id === 'mandala-pooja').map(o => o.date).sort();
         for (const s of all.filter(o => o.id === 'mandala-kalam').map(o => o.date)) {
           const e = ends.find(d => d >= s); if (!e) continue;
@@ -1320,16 +1324,29 @@ export const secondOn = () => !!(doc().second?.culture && doc().second.onCalenda
 export const secondName = () => doc().second?.culture ? cultureName(doc().second.culture) : '';
 export const secondLegend = () => `<span><i class="fm-sdot"></i>${esc(t('fam.two.legend', secondName()))}</span>`;
 // The second tradition's major and regional festivals at home, from..to: the name in English and in its own script.
+// A year's list is read once per tradition, place and year (each month page and the clock's card only filter it); the
+// years asked for at once, so two years open side by side.
+const TWO = new Map();
+function overlayYear(c, place, y) {
+  const key = `${c}|${place.id}|${place.latitude}|${place.longitude}|${y}`;
+  if (!TWO.has(key)) {
+    const p = packOf(c).then(async ({ json, pack }) => {
+      const by = new Map(pack.festivals.map(f => [f.id, f])), out = [];
+      for (const o of await X.engine({ op: 'festivals', handle: await openWith(y, place, c, json) })) {
+        const f = by.get(o.id);
+        if (f && !f.hidden && f.tier !== 'minor') out.push({ date: o.date, id: o.id, en: f.names.en, native: f.names[pack.language] && f.names[pack.language] !== f.names.en ? f.names[pack.language] : '', lang: pack.language, f });
+      }
+      return out;
+    });
+    p.catch(() => { if (TWO.get(key) === p) TWO.delete(key); }); TWO.set(key, p);
+  }
+  return TWO.get(key);
+}
 export async function overlayFor(from, to) {
   const sc = doc().second; if (!sc?.culture) return [];
-  const { json, pack } = await packOf(sc.culture), out = [];
-  for (let y = +from.slice(0, 4); y <= +to.slice(0, 4); y++) {
-    for (const o of await X.engine({ op: 'festivals', handle: await openWith(y, X.S.home, sc.culture, json) })) {
-      if (o.date < from || o.date > to) continue;
-      const f = pack.festivals.find(x => x.id === o.id);
-      if (f && !f.hidden && f.tier !== 'minor') out.push({ date: o.date, id: o.id, en: f.names.en, native: f.names[pack.language] && f.names[pack.language] !== f.names.en ? f.names[pack.language] : '', lang: pack.language, f });
-    }
-  }
+  const ys = []; for (let y = +from.slice(0, 4); y <= +to.slice(0, 4); y++) ys.push(overlayYear(sc.culture, X.S.home, y));
+  const out = [];
+  for (const p of ys) for (const x of await p) if (x.date >= from && x.date <= to) out.push(x);
   return out.sort((a, b) => a.date < b.date ? -1 : 1);
 }
 export const secondLabel = x => `<span class="fm-s2">${esc(x.en)}</span>${x.native ? ` <span class="fm-s2n" lang="${esc(x.lang)}">${esc(x.native)}</span>` : ''}`;
