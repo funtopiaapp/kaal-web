@@ -1,9 +1,10 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart, warm } from './engine.js?v=202611010813';
-import { showGames, GM, gameKey, VIGIL } from './games.js?v=202611010813';
-import * as FAMILY from './family.js?v=202611010813';
+import { engine, onRestart, warm } from './engine.js?v=202611011029';
+import { showGames, GM, gameKey, VIGIL } from './games.js?v=202611011029';
+import * as FAMILY from './family.js?v=202611011029';
+import { translit, hasLatin, scriptLetter } from './translit.js?v=202611011029';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -2516,6 +2517,8 @@ const OCC_LINE_TO = ['birthday', 'starBirthday', 'anniversary', 'sixtieth'];
 // New motifs (rings, cradle, thread, mandap) are being drawn: until a card's art is there, the garland stands in.
 const MOTIF_MISSING = new Set();
 let motifsProbed = null;
+// The rules for writing a typed name in a card's script (translit.json), read when the card maker first opens.
+let TRANSLIT = null;
 const probeMotifs = () => motifsProbed ||= Promise.all(['rings', 'cradle', 'thread', 'mandap'].map(m =>
   fetch(`cards/${m}.svg`, { method: 'HEAD' }).then(r => { if (!r.ok) MOTIF_MISSING.add(m); }).catch(() => MOTIF_MISSING.add(m))));
 const motifOf = f => { const m = f.card || 'lotus'; return MOTIF_MISSING.has(m) ? 'garland' : m; };
@@ -2595,7 +2598,7 @@ async function viewGreetings() {
 // The twelve regional styles, as on iOS (RegionalCardStyles): each drawn in code on a 200 x 250 card, its folk
 // art's patterns, borders and colours; the card's motif in the middle tinted to the style's ink, then the words.
 // art: [x, y, size] of the motif; box: [left, top, right, bottom] the words stand in; mark: [right, baseline] of
-// the Eka signature; mo: the motion's light and accent.
+// the Eka signature, below the words' box and clear of the art ("Made with Eka Panchang" runs well left of it); mo: the motion's light and accent.
 const REGIONAL = ['kasavu', 'kolam', 'alpana', 'pattachitra', 'warli', 'bandhani', 'dhaka', 'madhubani', 'kalamkari', 'mysuru', 'phulkari', 'island'];
 const RS = {
   kasavu: { bg: '#F8F1E0', edge: '#C9A243', ink: '#6B4A12', accent: '#9A7424', tint: ['#8C5A12', '#C9A243'], art: [100, 70, 82], box: [18, 120, 182, 196], mark: [14, 240], mo: ['#C9A243', '#E9A23B'] },
@@ -2603,9 +2606,9 @@ const RS = {
   alpana: { bg: '#B3172B', edge: '#FFFFFF', ink: '#FFFFFF', accent: '#FFD9A0', tint: ['#FFFFFF', '#FFD9A0'], art: [100, 76, 50], box: [16, 144, 184, 220], mark: [14, 247], mo: ['#FFFFFF', '#FFD9A0'] },
   pattachitra: { bg: '#E2AE4C', edge: '#1E1A16', ink: '#1E1A16', accent: '#A3261B', tint: ['#1E1A16', '#A3261B'], art: [100, 76, 76], box: [28, 126, 172, 222], mark: [28, 228], mo: ['#FFF3D6', '#A3261B'] },
   warli: { bg: '#7A4A2A', edge: '#FFF3E2', ink: '#FFF3E2', accent: '#F2C94C', tint: ['#FFF3E2', '#F2C94C'], art: [100, 76, 52], box: [16, 146, 184, 232], mark: [14, 243], mo: ['#FFF3E2', '#F2C94C'] },
-  bandhani: { bg: '#A3195B', edge: '#F2C94C', ink: '#FFE7F1', accent: '#F2C94C', tint: ['#FFE7F1', '#F2C94C'], art: [100, 72, 54], box: [36, 108, 164, 198], mark: [14, 246], mo: ['#FFE7F1', '#F2C94C'] },
-  dhaka: { bg: '#8E1B1B', edge: '#1E1A16', ink: '#1E1A16', accent: '#8E1B1B', tint: ['#8E1B1B', '#1E1A16'], art: [100, 82, 56], box: [28, 116, 172, 194], mark: [30, 196], mo: ['#F6EEDF', '#8E1B1B'] },
-  madhubani: { bg: '#FBF1DC', edge: '#C0392B', ink: '#1E1A16', accent: '#C0392B', tint: ['#1E1A16', '#1E1A16'], art: [100, 70, 44], box: [22, 114, 178, 204], mark: [20, 236], mo: ['#F2A33A', '#C0392B'] },
+  bandhani: { bg: '#A3195B', edge: '#F2C94C', ink: '#FFE7F1', accent: '#F2C94C', tint: ['#FFE7F1', '#F2C94C'], art: [100, 72, 54], box: [36, 104, 164, 192], mark: [50, 201], mo: ['#FFE7F1', '#F2C94C'] },
+  dhaka: { bg: '#8E1B1B', edge: '#1E1A16', ink: '#1E1A16', accent: '#8E1B1B', tint: ['#8E1B1B', '#1E1A16'], art: [100, 72, 48], box: [28, 102, 172, 186], mark: [30, 199], mo: ['#F6EEDF', '#8E1B1B'] },
+  madhubani: { bg: '#FBF1DC', edge: '#C0392B', ink: '#1E1A16', accent: '#C0392B', tint: ['#1E1A16', '#1E1A16'], art: [100, 70, 44], box: [22, 114, 178, 196], mark: [20, 209], mo: ['#F2A33A', '#C0392B'] },
   kalamkari: { bg: '#F3E6CF', edge: '#8B3A1E', ink: '#2F3E5C', accent: '#8B3A1E', tint: ['#8B3A1E', '#2F3E5C'], art: [100, 80, 54], box: [18, 124, 182, 204], mark: [14, 213], mo: ['#D9A04A', '#8B3A1E'] },
   mysuru: { bg: '#0E3A2C', edge: '#D9B25C', ink: '#F3DFA8', accent: '#D9B25C', tint: ['#F3DFA8', '#D9B25C'], art: [100, 80, 62], box: [26, 128, 174, 218], mark: [24, 228], mo: ['#F3DFA8', '#D9B25C'] },
   phulkari: { bg: '#C2410C', edge: '#F59E0B', ink: '#FEF3C7', accent: '#FCD34D', tint: ['#FEF3C7', '#FCD34D'], art: [100, 78, 56], box: [30, 120, 170, 202], mark: [26, 210], mo: ['#FEF3C7', '#FCD34D'] },
@@ -2941,8 +2944,8 @@ function cardMaker(f, date, opt = {}) {
       ${memory ? '' : `<div class="seg" id="gmove"><button data-mv="1">${esc(gx('gx.moving'))}</button><button data-mv="0">${esc(gx('gx.still'))}</button></div>`}</div>
     ${memory ? '' : `<div class="chips gkinds" id="gmo">${MOTIONS.filter(m => m !== 'still').map(m => `<button class="chip" data-mo="${m}">${esc(t('card.m.' + m))}</button>`).join('')}</div>`}
     <div id="gpal"><p class="label">${esc(t('card.colour'))}</p><div style="display:flex;gap:8px;flex-wrap:wrap">${PALETTES.map((_, i) => `<button class="cardthumb" data-p="${i}" style="${cardBg(motifOf(f), i)}"><i style="${cardArt(motifOf(f), i)}"></i></button>`).join('')}</div></div>
-    <label class="field"><span>${esc(t('card.to'))}</span><input id="gto" maxlength="40"></label>
-    <label class="field"><span>${esc(t('card.from'))}</span><input id="gfrom" maxlength="40"></label>
+    <div class="gnamerow"><label class="field"><span>${esc(t('card.to'))}</span><input id="gto" type="text" maxlength="40"></label><button class="gnatbtn" data-nat="gto" hidden></button></div>
+    <div class="gnamerow"><label class="field"><span>${esc(t('card.from'))}</span><input id="gfrom" type="text" maxlength="40"></label><button class="gnatbtn" data-nat="gfrom" hidden></button></div>
     <label class="field"><span>${esc(t('card.message'))}</span><textarea id="gmsg" maxlength="300" rows="3"></textarea></label>
     ${occ ? '' : `<div class="chips">${['card.wish1', 'card.wish2', 'card.wish3'].map(k => `<button class="chip" data-w="${esc(t(k, fname(f)))}">${esc(t(k, fname(f)))}</button>`).join('')}</div>`}
     <div class="gacts"><button class="btn" id="gshare">${SHARE_ICON} ${esc(gx('gx.send'))}</button><button class="btn soft" id="gsave">${esc(gx('gx.save'))}</button></div>`);
@@ -2958,7 +2961,15 @@ function cardMaker(f, date, opt = {}) {
     o.querySelectorAll('[data-mv]').forEach(b => b.classList.toggle('on', (b.dataset.mv === '1') === (st.motion !== 'still')));
     const mo = o.querySelector('#gmo'); if (mo) mo.style.display = st.motion === 'still' ? 'none' : '';
     o.querySelectorAll('[data-mo]').forEach(b => b.classList.toggle('on', b.dataset.mo === st.motion));
+    natButtons();
   };
+  // Beside To and From on a card not in English: the script's first letter writes the typed name in the card's
+  // script, in place ("Vijay" -> "വിജയ്"); hidden once the name has no English letters left.
+  const natButtons = () => o.querySelectorAll('[data-nat]').forEach(b => {
+    b.hidden = st.lang === 'en' || !TRANSLIT?.scripts?.[st.lang] || !hasLatin(o.querySelector('#' + b.dataset.nat).value);
+    b.textContent = scriptLetter(TRANSLIT, st.lang);
+    b.setAttribute('aria-label', t('card.nativeName', langName(st.lang)));
+  });
   // The card's face, fully drawn before it is shown.
   const face = async () => {
     const el = document.createElement('div'); el.className = 'gcard-in';
@@ -2970,7 +2981,7 @@ function cardMaker(f, date, opt = {}) {
         <div class="gtext">${w.dear ? `<div class="gdear">${esc(w.dear)}</div>` : ''}${native ? `<div class="gnat" style="color:${P[3]}">${esc(native)}</div>` : ''}
         <div class="serif gname">${esc(w.title)}</div>${w.dateText ? `<div class="gdate">${esc(w.dateText)}</div>` : ''}
         ${line() ? `<div class="gline">${esc(line())}</div>` : ''}${w.from ? `<div class="gfrom" style="color:${P[3]}">${esc(w.from)}</div>` : ''}</div>
-        <canvas class="gmotion" width="640" height="800"></canvas><div class="gbrand"><img src="icon-192.png" alt="">Eka</div>`;
+        <canvas class="gmotion" width="640" height="800"></canvas><div class="gbrand"><img src="icon-192.png" alt="">${esc(tIn(st.lang, 'card.madeWith'))}</div>`;
       return el;
     }
     // A designed or regional card: drawn on a canvas, the same drawing as the shared image.
@@ -2978,8 +2989,10 @@ function cardMaker(f, date, opt = {}) {
     if (isRegional(st.design)) await drawRegional(cv.getContext('2d'), 640, 800, st.design, f, date, st, line());
     else await drawDesign(cv.getContext('2d'), 640, 800, st.design, f, date, native, line(), st);
     el.appendChild(cv);
-    el.insertAdjacentHTML('beforeend', `<canvas class="gmotion" width="640" height="800"></canvas><div class="gbrand"><img src="icon-192.png" alt="">Eka</div>`);
+    el.insertAdjacentHTML('beforeend', `<canvas class="gmotion" width="640" height="800"></canvas><div class="gbrand"><img src="icon-192.png" alt="">${esc(tIn(st.lang, 'card.madeWith'))}</div>`);
     if (isRegional(st.design)) { const R = RS[st.design], b = el.querySelector('.gbrand'); b.style.right = `${R.mark[0] * 1.6}px`; b.style.bottom = `${(250 - R.mark[1]) * 1.6 - 3}px`; b.style.color = R.ink; b.style.setProperty('color', R.ink, 'important'); }
+    else if (st.design === 'botanical') Object.assign(el.querySelector('.gbrand').style, { left: '22px', right: 'auto' });
+    if (!isRegional(st.design)) el.querySelector('.gbrand').style.setProperty('color', DCOL[st.design === 'arch' ? 'arch' : st.design === 'mandala' ? 'mandala' : 'light'].ink, 'important');
     return el;
   };
   // Long words in the classic card set smaller until the whole block stands inside it.
@@ -3015,8 +3028,13 @@ function cardMaker(f, date, opt = {}) {
   o.querySelectorAll('[data-mv]').forEach(b => b.onclick = () => { st.motion = b.dataset.mv === '1' ? kind : 'still'; controls(); });
   o.querySelectorAll('[data-lg]').forEach(b => b.onclick = () => { if (st.lang === b.dataset.lg) return; st.lang = b.dataset.lg; draw(true); });
   o.querySelectorAll('[data-de]').forEach(b => b.onclick = () => { if (st.design === b.dataset.de) return; st.design = b.dataset.de; draw(true); });
-  o.querySelector('#gto').oninput = e => { st.to = e.target.value; draw(); };
-  o.querySelector('#gfrom').oninput = e => { st.from = e.target.value; draw(); };
+  o.querySelector('#gto').oninput = e => { st.to = e.target.value; natButtons(); draw(); };
+  o.querySelector('#gfrom').oninput = e => { st.from = e.target.value; natButtons(); draw(); };
+  o.querySelectorAll('[data-nat]').forEach(b => b.onclick = () => {
+    const input = o.querySelector('#' + b.dataset.nat);
+    input.value = translit(TRANSLIT, input.value, st.lang); input.dispatchEvent(new Event('input'));
+  });
+  if (!TRANSLIT) fetch('translit.json?v=' + V).then(r => r.json()).then(j => { TRANSLIT = j; if (o.isConnected) natButtons(); }).catch(() => {});
   o.querySelector('#gmsg').oninput = e => { st.msg = e.target.value; draw(); };
   o.querySelectorAll('[data-w]').forEach(b => b.onclick = () => { st.msg = b.dataset.w; o.querySelector('#gmsg').value = st.msg; draw(); });
   // The card as a file: a still image, or a looping GIF when it moves.
@@ -3062,21 +3080,18 @@ async function cardImage(f, date, st, native, line) {
   if (isRegional(st.design)) {
     const c = document.createElement('canvas'); c.width = 1080; c.height = 1350; const g = c.getContext('2d'), R = RS[st.design], u = 1080 / 200;
     await drawRegional(g, 1080, 1350, st.design, f, date, st, line);
-    const logo = new Image(); logo.src = 'icon-192.png'; await logo.decode().catch(() => {});
-    // A quiet signature in the bottom corner: the icon and "Eka", clear of the style's border.
-    const x = 1080 - R.mark[0] * u, y = R.mark[1] * u;
-    g.globalAlpha = .6; if (logo.complete) g.drawImage(logo, x - 74, y - 22, 26, 26);
-    g.font = '600 24px Georgia, serif'; g.fillStyle = R.ink; g.textAlign = 'left'; g.fillText('Eka', x - 42, y); g.globalAlpha = 1;
+    // A quiet signature in the bottom corner, clear of the style's border.
+    await signature(g, 1080 - R.mark[0] * u, R.mark[1] * u, R.ink, .6, st.lang);
     return new Promise(r => c.toBlob(r, 'image/png'));
   }
   if (st.design && st.design !== 'classic') {
     const c = document.createElement('canvas'); c.width = 1080; c.height = 1350; const g = c.getContext('2d');
     await drawDesign(g, 1080, 1350, st.design, f, date, native, line, st);
-    const logo = new Image(); logo.src = 'icon-192.png'; await logo.decode().catch(() => {});
-    // A quiet signature in the bottom corner: the icon and "Eka", inside the border.
+    // A quiet signature in the bottom corner, inside the border.
     const C = DCOL[st.design === 'arch' ? 'arch' : st.design === 'mandala' ? 'mandala' : 'light'];
-    g.globalAlpha = .55; if (logo.complete) g.drawImage(logo, 1080 - 86 - 74, 1350 - 76 - 24, 26, 26);
-    g.font = '600 24px Georgia, serif'; g.fillStyle = C.ink; g.textAlign = 'left'; g.fillText('Eka', 1080 - 86 - 42, 1350 - 80); g.globalAlpha = 1;
+    // Botanical's words stand at the left, its flowers at the right: its signature goes under the words.
+    if (st.design === 'botanical') await signature(g, 86, 1350 - 64, C.ink, .55, st.lang, true);
+    else await signature(g, 1080 - 86, 1350 - 80, C.ink, .55, st.lang);
     return new Promise(r => c.toBlob(r, 'image/png'));
   }
   const P = PALETTES[st.p], W = 1080, H = 1350, c = document.createElement('canvas'); c.width = W; c.height = H;
@@ -3096,11 +3111,20 @@ async function cardImage(f, date, st, native, line) {
   if (w.dateText) put(w.dateText, '500 38px sans-serif', P[2], 80); else y += 40;
   if (line) { const z = fit(line, z => `italic ${z}px Georgia, serif`, 40, 22, 7); put(line, `italic ${z}px Georgia, serif`, P[2], z * 1.35); }
   if (w.from) { y += 16; put(w.from, '600 44px Georgia, serif', P[3], 60); }
-  const logo = new Image(); logo.src = 'icon-192.png'; await logo.decode().catch(() => {});
-  // A quiet signature in the bottom corner: the icon and "Eka".
-  g.globalAlpha = .6; if (logo.complete) g.drawImage(logo, W - 40 - 74, H - 34 - 24, 26, 26);
-  g.font = '600 24px Georgia, serif'; g.fillStyle = P[2]; g.textAlign = 'left'; g.fillText('Eka', W - 40 - 42, H - 38); g.globalAlpha = 1;
+  // A quiet signature in the bottom corner.
+  await signature(g, W - 40, H - 38, P[2], .6, st.lang);
   return new Promise(r => c.toBlob(r, 'image/png'));
+}
+// The card's signature on a 1080-wide image: the icon and "Made with Eka Panchang" in the card's language, ending at
+// x on the baseline y, or starting at x when left (about 10.5pt on a 360pt card, as on iOS).
+async function signature(g, x, y, color, alpha, L, left = false) {
+  const logo = new Image(); logo.src = 'icon-192.png'; await logo.decode().catch(() => {});
+  const text = tIn(L, 'card.madeWith');
+  g.save(); g.globalAlpha = alpha; g.font = '600 31px Georgia, serif'; g.fillStyle = color;
+  const tw = g.measureText(text).width, start = left ? x + 46 : x - tw;
+  g.textAlign = 'left'; g.fillText(text, start, y);
+  if (logo.complete) g.drawImage(logo, start - 46, y - 29, 36, 36);
+  g.restore();
 }
 
 // ---------------------------------------------------------------- guide
