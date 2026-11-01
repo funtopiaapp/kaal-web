@@ -4106,6 +4106,258 @@
    }
   },
   {
+   "id": "republic-day-ta",
+   "names": {
+    "en": "Republic Day",
+    "ta": "குடியரசு தினம்"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 1,
+    "day": 26
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "lotus",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "26 January: the day the Constitution of India came into force in 1950.",
+     "ta": "ஜனவரி 26: 1950இல் இந்நாளில் இந்திய அரசமைப்புச் சட்டம் நடைமுறைக்கு வந்தது."
+    },
+    "traditions": {
+     "en": "The day opens with the parade on Kartavya Path in New Delhi, where the states' tableaux show their dances and crafts, and with flag hoisting at schools, offices and housing societies across the country. Families watch the parade together, children sing and perform at school, and sweets are shared.",
+     "ta": "புது தில்லி கர்தவ்ய பாதையில் நடைபெறும் அணிவகுப்புடன் நாள் தொடங்குகிறது; மாநிலங்களின் அலங்கார ஊர்திகள் அவற்றின் நடனங்களையும் கைவினைகளையும் காட்டுகின்றன. நாடெங்கும் பள்ளிகளிலும் அலுவலகங்களிலும் கொடியேற்றம் நடைபெறுகிறது; குடும்பங்கள் சேர்ந்து அணிவகுப்பைக் காண்கின்றன, குழந்தைகள் பள்ளியில் பாடி நிகழ்ச்சிகள் நடத்துகின்றனர், இனிப்புகள் பகிரப்படுகின்றன."
+    },
+    "greeting": {
+     "en": "Happy Republic Day! Warm wishes to you and your family.",
+     "ta": "இனிய குடியரசு தின நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "independence-day-ta",
+   "names": {
+    "en": "Independence Day",
+    "ta": "சுதந்திர தினம்"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 8,
+    "day": 15
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "kite",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "15 August: the day India became independent in 1947.",
+     "ta": "ஆகஸ்ட் 15: 1947இல் இந்நாளில் இந்தியா சுதந்திரம் பெற்றது."
+    },
+    "traditions": {
+     "en": "The Prime Minister speaks from the Red Fort in Delhi, and the flag is raised at schools, offices and homes. In Delhi and many other towns the sky fills with kites; children sing and dance at school programmes, and families spend the holiday together.",
+     "ta": "தில்லி செங்கோட்டையிலிருந்து பிரதமர் உரையாற்றுகிறார்; பள்ளிகளிலும் அலுவலகங்களிலும் வீடுகளிலும் கொடியேற்றப்படுகிறது. தில்லியிலும் பல நகரங்களிலும் வானம் பட்டங்களால் நிறைகிறது; குழந்தைகள் பள்ளி நிகழ்ச்சிகளில் பாடி ஆடுகின்றனர், குடும்பங்கள் விடுமுறையை ஒன்றாகக் கழிக்கின்றன."
+    },
+    "greeting": {
+     "en": "Happy Independence Day! Warm wishes to you and your family.",
+     "ta": "இனிய சுதந்திர தின நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "gandhi-jayanti-ta",
+   "names": {
+    "en": "Gandhi Jayanti",
+    "ta": "காந்தி ஜெயந்தி"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 10,
+    "day": 2
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "thread",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "2 October: the birthday of Mahatma Gandhi, born at Porbandar in 1869.",
+     "ta": "அக்டோபர் 2: 1869இல் போர்பந்தரில் பிறந்த மகாத்மா காந்தியின் பிறந்தநாள்."
+    },
+    "traditions": {
+     "en": "People gather at Rajghat in Delhi and at Gandhi memorials across the country for prayer meetings where his favourite bhajans, Vaishnava Jana To and Raghupati Raghava Raja Ram, are sung. Many spend the day spinning khadi, cleaning their neighbourhoods and reading his words; the United Nations keeps it as the International Day of Non-Violence.",
+     "ta": "தில்லி ராஜ்காட்டிலும் நாடெங்குமுள்ள காந்தி நினைவிடங்களிலும் பிரார்த்தனைக் கூட்டங்கள் நடைபெறுகின்றன; அவருக்குப் பிடித்த 'வைஷ்ணவ ஜனதோ', 'ரகுபதி ராகவ ராஜாராம்' பாடல்கள் பாடப்படுகின்றன. பலர் இந்நாளில் கதர் நூற்கின்றனர், தெருக்களைச் சுத்தம் செய்கின்றனர், அவரது எழுத்துகளை வாசிக்கின்றனர்; ஐக்கிய நாடுகள் இதைச் சர்வதேச அகிம்சை நாளாகக் கொண்டாடுகிறது."
+    },
+    "greeting": {
+     "en": "Warm wishes on Gandhi Jayanti: may truth and kindness light the way.",
+     "ta": "காந்தி ஜெயந்தி நல்வாழ்த்துகள்! உண்மையும் அன்பும் வழிகாட்டட்டும்."
+    }
+   }
+  },
+  {
+   "id": "thiruvalluvar-day",
+   "names": {
+    "en": "Thiruvalluvar Day",
+    "ta": "திருவள்ளுவர் தினம்"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "thai-pongal",
+    "offsetDays": 1
+   },
+   "tier": "regional",
+   "holidayIn": [
+    "IN-TN"
+   ],
+   "localNames": {},
+   "card": "books",
+   "local": {},
+   "durationDays": 1,
+   "variations": [
+    "Tamil Nadu keeps Thiruvalluvar Day on Thai 2, the day of Mattu Pongal. In a year when the Vakya almanacs place Thai 1 a day later (2026), the holiday list keeps it a day later too (16 January 2026)."
+   ],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, Chennai",
+    "Government of Tamil Nadu holidays 2026, G.O.(Ms.) No. 708"
+   ],
+   "content": {
+    "summary": {
+     "en": "Thai 2: the day Tamil Nadu honours Thiruvalluvar, the poet of the Thirukkural.",
+     "ta": "தை 2: திருக்குறள் தந்த திருவள்ளுவரைத் தமிழ்நாடு போற்றும் நாள்."
+    },
+    "traditions": {
+     "en": "Garlands are laid at Thiruvalluvar's statues, from the tall one at Kanyakumari to the memorial at Valluvar Kottam in Chennai, and schools hold Kural recitation and speech contests. The state gives its Thiruvalluvar Award to a scholar on this day, and families often read a few couplets together at home.",
+     "ta": "கன்னியாகுமரியின் உயர்ந்த சிலை முதல் சென்னை வள்ளுவர் கோட்டம் வரை திருவள்ளுவர் சிலைகளுக்கு மாலை அணிவிக்கப்படுகிறது; பள்ளிகளில் குறள் ஒப்பித்தல், பேச்சுப் போட்டிகள் நடைபெறுகின்றன. இந்நாளில் அரசு ஒரு அறிஞருக்குத் திருவள்ளுவர் விருது வழங்குகிறது; குடும்பங்கள் வீட்டில் சேர்ந்து சில குறள்களை வாசிக்கின்றன."
+    },
+    "greeting": {
+     "en": "Warm wishes on Thiruvalluvar Day: may the Kural's wisdom guide your year.",
+     "ta": "இனிய திருவள்ளுவர் தின நல்வாழ்த்துகள்! வள்ளுவன் வழியில் வாழ்வு சிறக்கட்டும்."
+    }
+   }
+  },
+  {
+   "id": "tamil-nadu-day",
+   "names": {
+    "en": "Tamil Nadu Day",
+    "ta": "தமிழ்நாடு நாள்"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 7,
+    "day": 18
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "kolam",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of Tamil Nadu: Tamil Nadu Day kept on 18 July and on 1 November from 2026 (The News Minute, 2026; tnpscthervupettagam.com)"
+   ],
+   "content": {
+    "summary": {
+     "en": "18 July: the day in 1967 the Madras Legislative Assembly resolved to name the state Tamil Nadu.",
+     "ta": "ஜூலை 18: மதராஸ் மாநிலத்துக்குத் தமிழ்நாடு எனப் பெயரிட 1967இல் சட்டமன்றம் தீர்மானம் நிறைவேற்றிய நாள்."
+    },
+    "traditions": {
+     "en": "Schools and colleges hold essay, speech and quiz contests on the history of the Tamil land, and the government holds celebrations across the districts. The name took effect on 14 January 1969; from 2026 the state keeps both this day and 1 November as Tamil Nadu Day.",
+     "ta": "பள்ளிகளிலும் கல்லூரிகளிலும் தமிழ்நாட்டின் வரலாறு குறித்துக் கட்டுரை, பேச்சு, வினாடி வினாப் போட்டிகள் நடைபெறுகின்றன; மாவட்டங்கள்தோறும் அரசு விழாக்கள் நடத்துகிறது. இப்பெயர் 1969 ஜனவரி 14 முதல் நடைமுறைக்கு வந்தது; 2026 முதல் இந்நாளையும் நவம்பர் 1ஐயும் தமிழ்நாடு நாளாக அரசு கொண்டாடுகிறது."
+    },
+    "greeting": {
+     "en": "Happy Tamil Nadu Day! Warm wishes to every Tamil home.",
+     "ta": "அனைவருக்கும் இனிய தமிழ்நாடு நாள் நல்வாழ்த்துகள்!"
+    }
+   }
+  },
+  {
+   "id": "tamil-nadu-formation-day",
+   "names": {
+    "en": "Tamil Nadu Formation Day",
+    "ta": "தமிழ்நாடு உருவான நாள்"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 11,
+    "day": 1
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "kolam",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of Tamil Nadu: Tamil Nadu Day kept on 18 July and on 1 November from 2026 (The News Minute, 2026; tnpscthervupettagam.com)",
+    "States Reorganisation Act, 1956: Kerala, Mysore (Karnataka), Madras and Madhya Pradesh formed on 1 November 1956"
+   ],
+   "content": {
+    "summary": {
+     "en": "1 November: the day in 1956 the Tamil-speaking state took its present borders, when the states were redrawn by language.",
+     "ta": "நவம்பர் 1: மொழிவாரியாக மாநிலங்கள் பிரிக்கப்பட்டபோது, 1956இல் தமிழ் பேசும் மாநிலம் இன்றைய எல்லைகளைப் பெற்ற நாள்."
+    },
+    "traditions": {
+     "en": "The day remembers how the Tamil-speaking lands were brought together within one state, and those who worked for its borders. Schools hold Tamil programmes and contests, and from 2026 the state keeps both this day and 18 July as Tamil Nadu Day.",
+     "ta": "தமிழ் பேசும் நிலங்கள் ஒரே மாநிலமாக இணைந்ததையும், அதன் எல்லைகளுக்காக உழைத்தவர்களையும் இந்நாள் நினைவுகூர்கிறது. பள்ளிகளில் தமிழ் நிகழ்ச்சிகளும் போட்டிகளும் நடைபெறுகின்றன; 2026 முதல் இந்நாளையும் ஜூலை 18ஐயும் தமிழ்நாடு நாளாக அரசு கொண்டாடுகிறது."
+    },
+    "greeting": {
+     "en": "Warm wishes on Tamil Nadu's birthday, to every Tamil home!",
+     "ta": "தமிழ்நாடு உருவான நாள் நல்வாழ்த்துகள்! தமிழ் மண் என்றும் செழிக்கட்டும்."
+    }
+   }
+  },
+  {
    "id": "kamada-ekadashi-ta",
    "names": {
     "en": "Kamada Ekadashi",

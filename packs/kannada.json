@@ -3448,6 +3448,307 @@
    }
   },
   {
+   "id": "republic-day-kn",
+   "names": {
+    "en": "Republic Day",
+    "kn": "ಗಣರಾಜ್ಯೋತ್ಸವ"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 1,
+    "day": 26
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "lotus",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "26 January: the day the Constitution of India came into force in 1950.",
+     "kn": "ಜನವರಿ 26: 1950ರಲ್ಲಿ ಇದೇ ದಿನ ಭಾರತದ ಸಂವಿಧಾನ ಜಾರಿಗೆ ಬಂತು."
+    },
+    "traditions": {
+     "en": "The day opens with the parade on Kartavya Path in New Delhi, where the states' tableaux show their dances and crafts, and with flag hoisting at schools, offices and housing societies across the country. Families watch the parade together, children sing and perform at school, and sweets are shared.",
+     "kn": "ನವದೆಹಲಿಯ ಕರ್ತವ್ಯ ಪಥದಲ್ಲಿ ನಡೆಯುವ ಪಥಸಂಚಲನದೊಂದಿಗೆ ದಿನ ಆರಂಭವಾಗುತ್ತದೆ; ರಾಜ್ಯಗಳ ಸ್ತಬ್ಧಚಿತ್ರಗಳು ಅವುಗಳ ನೃತ್ಯ ಮತ್ತು ಕರಕುಶಲತೆಯನ್ನು ತೋರಿಸುತ್ತವೆ. ದೇಶದಾದ್ಯಂತ ಶಾಲೆಗಳಲ್ಲಿ, ಕಚೇರಿಗಳಲ್ಲಿ ಧ್ವಜಾರೋಹಣ ನಡೆಯುತ್ತದೆ; ಕುಟುಂಬಗಳು ಒಟ್ಟಿಗೆ ಪಥಸಂಚಲನ ನೋಡುತ್ತವೆ, ಮಕ್ಕಳು ಶಾಲೆಯಲ್ಲಿ ಹಾಡಿ ಕಾರ್ಯಕ್ರಮ ನೀಡುತ್ತಾರೆ, ಸಿಹಿ ಹಂಚಲಾಗುತ್ತದೆ."
+    },
+    "greeting": {
+     "en": "Happy Republic Day! Warm wishes to you and your family.",
+     "kn": "ಗಣರಾಜ್ಯೋತ್ಸವದ ಹಾರ್ದಿಕ ಶುಭಾಶಯಗಳು!"
+    }
+   }
+  },
+  {
+   "id": "independence-day-kn",
+   "names": {
+    "en": "Independence Day",
+    "kn": "ಸ್ವಾತಂತ್ರ್ಯ ದಿನಾಚರಣೆ"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 8,
+    "day": 15
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "kite",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "15 August: the day India became independent in 1947.",
+     "kn": "ಆಗಸ್ಟ್ 15: 1947ರಲ್ಲಿ ಇದೇ ದಿನ ಭಾರತ ಸ್ವತಂತ್ರವಾಯಿತು."
+    },
+    "traditions": {
+     "en": "The Prime Minister speaks from the Red Fort in Delhi, and the flag is raised at schools, offices and homes. In Delhi and many other towns the sky fills with kites; children sing and dance at school programmes, and families spend the holiday together.",
+     "kn": "ದೆಹಲಿಯ ಕೆಂಪುಕೋಟೆಯಿಂದ ಪ್ರಧಾನಮಂತ್ರಿ ಭಾಷಣ ಮಾಡುತ್ತಾರೆ; ಶಾಲೆಗಳಲ್ಲಿ, ಕಚೇರಿಗಳಲ್ಲಿ, ಮನೆಗಳಲ್ಲಿ ಧ್ವಜ ಹಾರಿಸಲಾಗುತ್ತದೆ. ದೆಹಲಿ ಮತ್ತು ಅನೇಕ ಊರುಗಳಲ್ಲಿ ಆಕಾಶ ಗಾಳಿಪಟಗಳಿಂದ ತುಂಬುತ್ತದೆ; ಮಕ್ಕಳು ಶಾಲಾ ಕಾರ್ಯಕ್ರಮಗಳಲ್ಲಿ ಹಾಡಿ ಕುಣಿಯುತ್ತಾರೆ, ಕುಟುಂಬಗಳು ರಜೆಯನ್ನು ಒಟ್ಟಿಗೆ ಕಳೆಯುತ್ತವೆ."
+    },
+    "greeting": {
+     "en": "Happy Independence Day! Warm wishes to you and your family.",
+     "kn": "ಸ್ವಾತಂತ್ರ್ಯ ದಿನಾಚರಣೆಯ ಹಾರ್ದಿಕ ಶುಭಾಶಯಗಳು!"
+    }
+   }
+  },
+  {
+   "id": "gandhi-jayanti-kn",
+   "names": {
+    "en": "Gandhi Jayanti",
+    "kn": "ಗಾಂಧಿ ಜಯಂತಿ"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 10,
+    "day": 2
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "thread",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "2 October: the birthday of Mahatma Gandhi, born at Porbandar in 1869.",
+     "kn": "ಅಕ್ಟೋಬರ್ 2: 1869ರಲ್ಲಿ ಪೋರಬಂದರಿನಲ್ಲಿ ಜನಿಸಿದ ಮಹಾತ್ಮ ಗಾಂಧಿಯವರ ಜನ್ಮದಿನ."
+    },
+    "traditions": {
+     "en": "People gather at Rajghat in Delhi and at Gandhi memorials across the country for prayer meetings where his favourite bhajans, Vaishnava Jana To and Raghupati Raghava Raja Ram, are sung. Many spend the day spinning khadi, cleaning their neighbourhoods and reading his words; the United Nations keeps it as the International Day of Non-Violence.",
+     "kn": "ದೆಹಲಿಯ ರಾಜಘಾಟ್‌ನಲ್ಲಿ ಮತ್ತು ದೇಶದಾದ್ಯಂತ ಗಾಂಧಿ ಸ್ಮಾರಕಗಳಲ್ಲಿ ಪ್ರಾರ್ಥನಾ ಸಭೆಗಳು ನಡೆಯುತ್ತವೆ; ಅವರ ಪ್ರಿಯ ಭಜನೆಗಳಾದ 'ವೈಷ್ಣವ ಜನತೋ' ಮತ್ತು 'ರಘುಪತಿ ರಾಘವ ರಾಜಾರಾಮ್' ಹಾಡಲಾಗುತ್ತದೆ. ಅನೇಕರು ಈ ದಿನ ಖಾದಿ ನೂಲುತ್ತಾರೆ, ತಮ್ಮ ಬೀದಿಗಳನ್ನು ಸ್ವಚ್ಛಗೊಳಿಸುತ್ತಾರೆ, ಅವರ ಮಾತುಗಳನ್ನು ಓದುತ್ತಾರೆ; ವಿಶ್ವಸಂಸ್ಥೆ ಇದನ್ನು ಅಂತರರಾಷ್ಟ್ರೀಯ ಅಹಿಂಸಾ ದಿನವಾಗಿ ಆಚರಿಸುತ್ತದೆ."
+    },
+    "greeting": {
+     "en": "Warm wishes on Gandhi Jayanti: may truth and kindness light the way.",
+     "kn": "ಗಾಂಧಿ ಜಯಂತಿಯ ಶುಭಾಶಯಗಳು! ಸತ್ಯ ಮತ್ತು ಕರುಣೆ ದಾರಿ ತೋರಲಿ."
+    }
+   }
+  },
+  {
+   "id": "karnataka-rajyotsava",
+   "names": {
+    "en": "Kannada Rajyotsava",
+    "kn": "ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 11,
+    "day": 1
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-KA"
+   ],
+   "localNames": {},
+   "card": "elephant",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "States Reorganisation Act, 1956: Kerala, Mysore (Karnataka), Madras and Madhya Pradesh formed on 1 November 1956",
+    "Government of Karnataka, DPAR public holidays 2026"
+   ],
+   "content": {
+    "summary": {
+     "en": "1 November: the birthday of Karnataka, formed in 1956 when the Kannada-speaking regions came together as one state.",
+     "kn": "ನವೆಂಬರ್ 1: ಕನ್ನಡ ಮಾತನಾಡುವ ಪ್ರದೇಶಗಳು ಒಂದಾಗಿ 1956ರಲ್ಲಿ ಕರ್ನಾಟಕ ರಾಜ್ಯ ಉದಯವಾದ ದಿನ."
+    },
+    "traditions": {
+     "en": "Homes, schools, offices and autorickshaws are decked in yellow and red, Kannada songs ring out from every street, and the state gives the Rajyotsava Awards to people from every walk of life. Neighbourhoods hold programmes of Kannada music and theatre, and the celebrations run through the month of November.",
+     "kn": "ಮನೆಗಳು, ಶಾಲೆಗಳು, ಕಚೇರಿಗಳು, ಆಟೋರಿಕ್ಷಾಗಳು ಹಳದಿ ಕೆಂಪು ಬಣ್ಣದಿಂದ ಅಲಂಕೃತವಾಗುತ್ತವೆ; ಬೀದಿ ಬೀದಿಗಳಲ್ಲಿ ಕನ್ನಡ ಹಾಡುಗಳು ಮೊಳಗುತ್ತವೆ; ಸರ್ಕಾರ ಎಲ್ಲ ಕ್ಷೇತ್ರಗಳ ಸಾಧಕರಿಗೆ ರಾಜ್ಯೋತ್ಸವ ಪ್ರಶಸ್ತಿ ನೀಡುತ್ತದೆ. ಬಡಾವಣೆಗಳಲ್ಲಿ ಕನ್ನಡ ಸಂಗೀತ, ನಾಟಕ ಕಾರ್ಯಕ್ರಮಗಳು ನಡೆಯುತ್ತವೆ; ಸಂಭ್ರಮ ನವೆಂಬರ್ ತಿಂಗಳಿಡೀ ಮುಂದುವರಿಯುತ್ತದೆ."
+    },
+    "story": {
+     "en": "Kannada speakers once lived across Mysore State, the Bombay and Madras Presidencies, Hyderabad State and Coorg. On 1 November 1956 they were brought together as the new Mysore State, and on 1 November 1973 it took the name Karnataka.",
+     "kn": "ಕನ್ನಡಿಗರು ಒಮ್ಮೆ ಮೈಸೂರು ರಾಜ್ಯ, ಬಾಂಬೆ ಮತ್ತು ಮದ್ರಾಸ್ ಪ್ರಾಂತ್ಯಗಳು, ಹೈದರಾಬಾದ್ ರಾಜ್ಯ ಮತ್ತು ಕೊಡಗಿನಲ್ಲಿ ಹಂಚಿಹೋಗಿದ್ದರು. 1956ರ ನವೆಂಬರ್ 1ರಂದು ಅವರೆಲ್ಲ ಹೊಸ ಮೈಸೂರು ರಾಜ್ಯದಲ್ಲಿ ಒಂದಾದರು; 1973ರ ನವೆಂಬರ್ 1ರಂದು ರಾಜ್ಯಕ್ಕೆ ಕರ್ನಾಟಕ ಎಂಬ ಹೆಸರು ಬಂತು."
+    },
+    "greeting": {
+     "en": "Happy Kannada Rajyotsava! Warm wishes to every Kannadiga home.",
+     "kn": "ಎಲ್ಲರಿಗೂ ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವದ ಹಾರ್ದಿಕ ಶುಭಾಶಯಗಳು! ಸಿರಿಗನ್ನಡಂ ಗೆಲ್ಗೆ!"
+    }
+   }
+  },
+  {
+   "id": "kanakadasa-jayanti",
+   "names": {
+    "en": "Kanakadasa Jayanti",
+    "kn": "ಕನಕದಾಸ ಜಯಂತಿ"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "kartika",
+    "tithi": 18
+   },
+   "tier": "regional",
+   "holidayIn": [
+    "IN-KA"
+   ],
+   "localNames": {},
+   "card": "veena",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, Bengaluru",
+    "Government of Karnataka, DPAR public holidays 2026"
+   ],
+   "content": {
+    "summary": {
+     "en": "The birthday of Kanakadasa, the sixteenth-century poet-saint of the Haridasa tradition, kept in Kartika.",
+     "kn": "ಹದಿನಾರನೆಯ ಶತಮಾನದ ಹರಿದಾಸ ಪರಂಪರೆಯ ಕವಿ-ಸಂತ ಕನಕದಾಸರ ಜಯಂತಿ, ಕಾರ್ತಿಕ ಮಾಸದಲ್ಲಿ."
+    },
+    "traditions": {
+     "en": "His keertanas are sung in homes, temples and schools, and processions carry his portrait through the towns, above all at Kaginele, his birthplace in Haveri district. At Udupi, people visit the Kanakana Kindi, the window through which Krishna is said to have turned to give him darshan.",
+     "kn": "ಮನೆ, ದೇವಾಲಯ, ಶಾಲೆಗಳಲ್ಲಿ ಅವರ ಕೀರ್ತನೆಗಳನ್ನು ಹಾಡಲಾಗುತ್ತದೆ; ಊರುಗಳಲ್ಲಿ, ವಿಶೇಷವಾಗಿ ಹಾವೇರಿ ಜಿಲ್ಲೆಯ ಅವರ ಹುಟ್ಟೂರು ಕಾಗಿನೆಲೆಯಲ್ಲಿ, ಅವರ ಭಾವಚಿತ್ರದ ಮೆರವಣಿಗೆ ನಡೆಯುತ್ತದೆ. ಉಡುಪಿಯಲ್ಲಿ ಶ್ರೀಕೃಷ್ಣ ತಿರುಗಿ ದರ್ಶನ ನೀಡಿದನೆಂದು ಹೇಳಲಾಗುವ ಕನಕನ ಕಿಂಡಿಯನ್ನು ಭಕ್ತರು ನೋಡುತ್ತಾರೆ."
+    },
+    "greeting": {
+     "en": "Warm wishes on Kanakadasa Jayanti: may his songs fill your home.",
+     "kn": "ಕನಕದಾಸ ಜಯಂತಿಯ ಶುಭಾಶಯಗಳು! ದಾಸರ ಕೀರ್ತನೆಗಳು ಮನೆ ಮನ ತುಂಬಲಿ."
+    }
+   }
+  },
+  {
+   "id": "bengaluru-karaga",
+   "names": {
+    "en": "Bengaluru Karaga",
+    "kn": "ಬೆಂಗಳೂರು ಕರಗ"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "chaitra",
+    "tithi": 15
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "kalash",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, Bengaluru"
+   ],
+   "content": {
+    "summary": {
+     "en": "Chaitra Purnima: the night the Karaga of Draupadi leaves the Dharmaraya Swamy temple in Bengaluru's old town.",
+     "kn": "ಚೈತ್ರ ಹುಣ್ಣಿಮೆ: ಬೆಂಗಳೂರಿನ ಹಳೆಯ ಪೇಟೆಯ ಧರ್ಮರಾಯಸ್ವಾಮಿ ದೇವಾಲಯದಿಂದ ದ್ರೌಪದಿಯ ಕರಗ ಹೊರಡುವ ರಾತ್ರಿ."
+    },
+    "traditions": {
+     "en": "The festival runs for some eleven days at the Dharmaraya Swamy temple in Thigalarapete. On the full-moon night the Karaga, a tall flower-covered pot crowned with jasmine, is carried on the head of the priest dressed as Draupadi, surrounded by veerakumaras with swords, through the lanes of the old city until dawn; it stops at the dargah of Hazrat Tawakkal Mastan on the way, as it has for generations.",
+     "kn": "ತಿಗಳರಪೇಟೆಯ ಧರ್ಮರಾಯಸ್ವಾಮಿ ದೇವಾಲಯದಲ್ಲಿ ಸುಮಾರು ಹನ್ನೊಂದು ದಿನ ಉತ್ಸವ ನಡೆಯುತ್ತದೆ. ಹುಣ್ಣಿಮೆಯ ರಾತ್ರಿ ಮಲ್ಲಿಗೆ ಹೂವಿನಿಂದ ಅಲಂಕೃತವಾದ ಎತ್ತರದ ಕರಗವನ್ನು ದ್ರೌಪದಿಯ ವೇಷದ ಅರ್ಚಕರು ತಲೆಯ ಮೇಲೆ ಹೊತ್ತು, ಖಡ್ಗ ಹಿಡಿದ ವೀರಕುಮಾರರೊಡನೆ ಬೆಳಗಿನವರೆಗೂ ಹಳೆಯ ಪೇಟೆಯ ಬೀದಿಗಳಲ್ಲಿ ಸಾಗುತ್ತಾರೆ; ತಲೆಮಾರುಗಳಿಂದ ನಡೆದುಬಂದಂತೆ ದಾರಿಯಲ್ಲಿ ಹಜರತ್ ತವಕ್ಕಲ್ ಮಸ್ತಾನ್ ದರ್ಗಾದಲ್ಲಿ ಕರಗ ನಿಲ್ಲುತ್ತದೆ."
+    },
+    "greeting": {
+     "en": "Wishing you a joyful Bengaluru Karaga under the Chaitra full moon!",
+     "kn": "ಬೆಂಗಳೂರು ಕರಗದ ಶುಭಾಶಯಗಳು! ಚೈತ್ರ ಹುಣ್ಣಿಮೆಯ ಬೆಳದಿಂಗಳು ಮನೆ ತುಂಬಲಿ."
+    }
+   }
+  },
+  {
+   "id": "kaveri-sankramana",
+   "names": {
+    "en": "Kaveri Sankramana (Tula Sankramana)",
+    "kn": "ಕಾವೇರಿ ಸಂಕ್ರಮಣ"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "tula",
+    "day": 1,
+    "dayRule": {
+     "type": "sankranti-day"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "ganga",
+   "local": {},
+   "durationDays": 1,
+   "variations": [
+    "At Talakaveri in Kodagu the river's spring rises at the moment of Tula Sankramana, the day the Sun enters Tula; the temple announces the hour."
+   ],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, Bengaluru"
+   ],
+   "content": {
+    "summary": {
+     "en": "Tula Sankramana: the day the Kaveri's spring rises at Talakaveri in Kodagu, the Teerthodbhava.",
+     "kn": "ತುಲಾ ಸಂಕ್ರಮಣ: ಕೊಡಗಿನ ತಲಕಾವೇರಿಯಲ್ಲಿ ಕಾವೇರಿಯ ತೀರ್ಥೋದ್ಭವವಾಗುವ ದಿನ."
+    },
+    "traditions": {
+     "en": "Thousands gather at the kundike at Talakaveri for the moment the spring wells up, and carry the teertha home in pots to keep through the year. In Kodava homes the women drape their saris in the Kodava style and worship the Kaveri as Kaveramma with a lamp, a coconut and rice; Bhagamandala below is crowded with pilgrims bathing at the meeting of the rivers.",
+     "kn": "ಕುಂಡಿಕೆಯಲ್ಲಿ ತೀರ್ಥ ಉಕ್ಕುವ ಕ್ಷಣಕ್ಕಾಗಿ ಸಾವಿರಾರು ಜನ ತಲಕಾವೇರಿಯಲ್ಲಿ ಸೇರುತ್ತಾರೆ; ತೀರ್ಥವನ್ನು ಕೊಡಗಳಲ್ಲಿ ಮನೆಗೆ ಒಯ್ದು ವರ್ಷವಿಡೀ ಇಡುತ್ತಾರೆ. ಕೊಡವ ಮನೆಗಳಲ್ಲಿ ಮಹಿಳೆಯರು ಕೊಡವ ಶೈಲಿಯಲ್ಲಿ ಸೀರೆಯುಟ್ಟು, ದೀಪ, ತೆಂಗಿನಕಾಯಿ, ಅಕ್ಕಿಯೊಂದಿಗೆ ಕಾವೇರಮ್ಮನನ್ನು ಪೂಜಿಸುತ್ತಾರೆ; ಕೆಳಗಿನ ಭಾಗಮಂಡಲದ ಸಂಗಮದಲ್ಲಿ ಯಾತ್ರಿಕರು ಸ್ನಾನ ಮಾಡುತ್ತಾರೆ."
+    },
+    "greeting": {
+     "en": "Warm wishes on Kaveri Sankramana: may Mother Kaveri keep every field green.",
+     "kn": "ಕಾವೇರಿ ಸಂಕ್ರಮಣದ ಶುಭಾಶಯಗಳು! ಕಾವೇರಿ ಮಾತೆ ನಾಡನ್ನು ಸದಾ ಹಸಿರಾಗಿಡಲಿ."
+    }
+   }
+  },
+  {
    "id": "kamada-ekadashi-kn",
    "names": {
     "en": "Kamada Ekadashi",

@@ -1,9 +1,9 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart, warm } from './engine.js?v=202610311421';
-import { showGames, GM, gameKey, VIGIL } from './games.js?v=202610311421';
-import * as FAMILY from './family.js?v=202610311421';
+import { engine, onRestart, warm } from './engine.js?v=202611010813';
+import { showGames, GM, gameKey, VIGIL } from './games.js?v=202611010813';
+import * as FAMILY from './family.js?v=202611010813';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 

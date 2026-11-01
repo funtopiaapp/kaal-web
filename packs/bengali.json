@@ -3080,6 +3080,335 @@
    }
   },
   {
+   "id": "republic-day-bn",
+   "names": {
+    "en": "Republic Day",
+    "bn": "প্রজাতন্ত্র দিবস"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 1,
+    "day": 26
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "lotus",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "26 January: the day the Constitution of India came into force in 1950.",
+     "bn": "26 জানুয়ারি: 1950 সালের এই দিনে ভারতের সংবিধান কার্যকর হয়।"
+    },
+    "traditions": {
+     "en": "The day opens with the parade on Kartavya Path in New Delhi, where the states' tableaux show their dances and crafts, and with flag hoisting at schools, offices and housing societies across the country. Families watch the parade together, children sing and perform at school, and sweets are shared.",
+     "bn": "নয়াদিল্লির কর্তব্য পথে কুচকাওয়াজ দিয়ে দিন শুরু হয়; রাজ্যগুলির ট্যাবলোয় তাদের নাচ আর কারুশিল্প দেখা যায়। সারা দেশে স্কুল, অফিস আর পাড়ায় পতাকা উত্তোলন হয়; পরিবার একসঙ্গে বসে কুচকাওয়াজ দেখে, ছোটরা স্কুলে গান গায় ও অনুষ্ঠান করে, মিষ্টি বিলি হয়।"
+    },
+    "greeting": {
+     "en": "Happy Republic Day! Warm wishes to you and your family.",
+     "bn": "প্রজাতন্ত্র দিবসের আন্তরিক শুভেচ্ছা!"
+    }
+   }
+  },
+  {
+   "id": "independence-day-bn",
+   "names": {
+    "en": "Independence Day",
+    "bn": "স্বাধীনতা দিবস"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 8,
+    "day": 15
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "kite",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "15 August: the day India became independent in 1947.",
+     "bn": "15 আগস্ট: 1947 সালের এই দিনে ভারত স্বাধীন হয়।"
+    },
+    "traditions": {
+     "en": "The Prime Minister speaks from the Red Fort in Delhi, and the flag is raised at schools, offices and homes. In Delhi and many other towns the sky fills with kites; children sing and dance at school programmes, and families spend the holiday together.",
+     "bn": "দিল্লির লালকেল্লা থেকে প্রধানমন্ত্রী ভাষণ দেন, আর স্কুল, অফিস ও বাড়িতে পতাকা তোলা হয়। দিল্লি ও বহু শহরে আকাশ ঘুড়িতে ভরে যায়; ছোটরা স্কুলের অনুষ্ঠানে গান গায় ও নাচে, পরিবার ছুটির দিনটা একসঙ্গে কাটায়।"
+    },
+    "greeting": {
+     "en": "Happy Independence Day! Warm wishes to you and your family.",
+     "bn": "স্বাধীনতা দিবসের আন্তরিক শুভেচ্ছা!"
+    }
+   }
+  },
+  {
+   "id": "gandhi-jayanti-bn",
+   "names": {
+    "en": "Gandhi Jayanti",
+    "bn": "গান্ধী জয়ন্তী"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 10,
+    "day": 2
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "thread",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "2 October: the birthday of Mahatma Gandhi, born at Porbandar in 1869.",
+     "bn": "2 অক্টোবর: 1869 সালে পোরবন্দরে জন্ম নেওয়া মহাত্মা গান্ধীর জন্মদিন।"
+    },
+    "traditions": {
+     "en": "People gather at Rajghat in Delhi and at Gandhi memorials across the country for prayer meetings where his favourite bhajans, Vaishnava Jana To and Raghupati Raghava Raja Ram, are sung. Many spend the day spinning khadi, cleaning their neighbourhoods and reading his words; the United Nations keeps it as the International Day of Non-Violence.",
+     "bn": "দিল্লির রাজঘাটে আর দেশজুড়ে গান্ধী স্মারকে প্রার্থনাসভা হয়; তাঁর প্রিয় ভজন 'বৈষ্ণব জন তো' আর 'রঘুপতি রাঘব রাজা রাম' গাওয়া হয়। অনেকে এই দিনে চরকায় সুতো কাটেন, পাড়া পরিষ্কার করেন, তাঁর লেখা পড়েন; রাষ্ট্রসংঘ দিনটিকে আন্তর্জাতিক অহিংসা দিবস হিসেবে পালন করে।"
+    },
+    "greeting": {
+     "en": "Warm wishes on Gandhi Jayanti: may truth and kindness light the way.",
+     "bn": "গান্ধী জয়ন্তীর শুভেচ্ছা! সত্য আর করুণা পথ দেখাক।"
+    }
+   }
+  },
+  {
+   "id": "netaji-jayanti",
+   "names": {
+    "en": "Netaji Jayanti",
+    "bn": "নেতাজি জয়ন্তী"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 1,
+    "day": 23
+   },
+   "tier": "regional",
+   "holidayIn": [
+    "IN-WB"
+   ],
+   "localNames": {},
+   "card": "diya",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of West Bengal, Finance Department holidays 2026"
+   ],
+   "content": {
+    "summary": {
+     "en": "23 January: the birthday of Netaji Subhas Chandra Bose, born at Cuttack in 1897.",
+     "bn": "23 জানুয়ারি: 1897 সালে কটকে জন্ম নেওয়া নেতাজি সুভাষচন্দ্র বসুর জন্মদিন।"
+    },
+    "traditions": {
+     "en": "At 12:15 in the afternoon, the hour of his birth, conch shells are blown across Bengal. Schools and neighbourhood clubs hold prabhat pheris and programmes before his portrait, and his family home at Elgin Road in Kolkata, Netaji Bhawan, fills with visitors.",
+     "bn": "দুপুর 12টা 15 মিনিটে, তাঁর জন্মের সময়ে, বাংলা জুড়ে শাঁখ বাজে। স্কুল আর পাড়ার ক্লাবে প্রভাতফেরি ও তাঁর প্রতিকৃতির সামনে অনুষ্ঠান হয়, আর কলকাতার এলগিন রোডের নেতাজি ভবনে মানুষের ভিড় জমে।"
+    },
+    "greeting": {
+     "en": "Remembering Netaji Subhas Chandra Bose with warm wishes on his birthday.",
+     "bn": "নেতাজি সুভাষচন্দ্র বসুর জন্মজয়ন্তীতে সকলকে আন্তরিক শুভেচ্ছা!"
+    }
+   }
+  },
+  {
+   "id": "bhasha-dibas",
+   "names": {
+    "en": "Bhasha Dibas (International Mother Language Day)",
+    "bn": "ভাষা দিবস"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 2,
+    "day": 21
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "alpana",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "UNESCO, International Mother Language Day, 21 February (proclaimed 1999)"
+   ],
+   "content": {
+    "summary": {
+     "en": "21 February, Ekushe: the day of the Bangla language, kept by UNESCO as International Mother Language Day.",
+     "bn": "21 ফেব্রুয়ারি, একুশে: বাংলা ভাষার দিন, ইউনেস্কো যাকে আন্তর্জাতিক মাতৃভাষা দিবস হিসেবে পালন করে।"
+    },
+    "traditions": {
+     "en": "At dawn people walk barefoot in prabhat pheri to the Shaheed Minar, singing Amar bhaiyer rokte rangano, to lay flowers in memory of the students of 1952 who gave their lives for Bangla. The ground around is painted with alpana, and in Kolkata and across Bengal schools and clubs hold recitations, songs and book fairs in Bangla.",
+     "bn": "ভোরে খালি পায়ে প্রভাতফেরিতে 'আমার ভাইয়ের রক্তে রাঙানো' গাইতে গাইতে মানুষ শহীদ মিনারে যান, বাংলার জন্য প্রাণ দেওয়া 1952 সালের ছাত্রদের স্মরণে ফুল দেন। চারপাশ আলপনায় সাজানো হয়, আর কলকাতা ও বাংলা জুড়ে স্কুল-ক্লাবে আবৃত্তি, গান আর বাংলা বইমেলা হয়।"
+    },
+    "greeting": {
+     "en": "On Bhasha Dibas, warm wishes to every mother tongue, and to Bangla.",
+     "bn": "ভাষা দিবসে সকলকে জানাই মাতৃভাষার প্রতি ভালোবাসা আর আন্তরিক শুভেচ্ছা!"
+    }
+   }
+  },
+  {
+   "id": "charak-puja",
+   "names": {
+    "en": "Charak Puja (Chaitra Sankranti)",
+    "bn": "চড়ক পূজা"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "pohela-boishakh",
+    "offsetDays": -1
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "shiva",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, Kolkata"
+   ],
+   "content": {
+    "summary": {
+     "en": "Chaitra Sankranti, the last day of the Bengali year: the close of Gajan, the festival of Shiva, with the Charak.",
+     "bn": "চৈত্র সংক্রান্তি, বাংলা বছরের শেষ দিন: শিবের উৎসব গাজনের সমাপ্তি, চড়কের মেলা।"
+    },
+    "traditions": {
+     "en": "Through Chaitra the gajan sannyasis, men who take a vow for the month, go from village to village with songs and dances of Shiva and Gauri. On the last day the Charak pole is raised in the village and the fair gathers around it, with toys, sweets and the first mangoes; homes are cleaned for Pohela Boishakh, and the Chaitra sales fill the markets.",
+     "bn": "চৈত্র মাস জুড়ে গাজনের সন্ন্যাসীরা, যাঁরা মাসভর ব্রত নেন, শিব-গৌরীর গান আর নাচ নিয়ে গ্রামে গ্রামে ঘোরেন। শেষ দিনে গ্রামে চড়কগাছ তোলা হয়, তাকে ঘিরে মেলা বসে, খেলনা, মিষ্টি আর প্রথম আমের পসরা; পয়লা বৈশাখের জন্য ঘরদোর পরিষ্কার হয়, চৈত্র সেলে বাজার ভরে ওঠে।"
+    },
+    "greeting": {
+     "en": "Warm wishes on Charak and Chaitra Sankranti: farewell to the old year, welcome to the new!",
+     "bn": "চৈত্র সংক্রান্তি ও চড়কের শুভেচ্ছা! পুরোনো বছরকে বিদায়, নতুনকে স্বাগত।"
+    }
+   }
+  },
+  {
+   "id": "nazrul-jayanti",
+   "names": {
+    "en": "Nazrul Jayanti (11 Jyoishtho)",
+    "bn": "নজরুল জয়ন্তী"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "vrishabha",
+    "day": 11
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "veena",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, Kolkata"
+   ],
+   "content": {
+    "summary": {
+     "en": "11 Jyoishtho: the birthday of Kazi Nazrul Islam, the rebel poet of Bengal, born at Churulia in 1899.",
+     "bn": "11 জ্যৈষ্ঠ: 1899 সালে চুরুলিয়ায় জন্ম নেওয়া বিদ্রোহী কবি কাজী নজরুল ইসলামের জন্মদিন।"
+    },
+    "traditions": {
+     "en": "Schools, clubs and cultural groups hold evenings of Nazrul Geeti, recitations of Bidrohi and his poems for children, and dance to his songs; Churulia in Paschim Bardhaman holds a fair. Many homes keep the day beside Rabindra Jayanti a fortnight earlier.",
+     "bn": "স্কুল, ক্লাব আর সাংস্কৃতিক সংগঠনে নজরুলগীতির সন্ধ্যা, 'বিদ্রোহী' ও ছোটদের কবিতার আবৃত্তি, তাঁর গানে নাচ হয়; পশ্চিম বর্ধমানের চুরুলিয়ায় মেলা বসে। অনেক বাড়িতে দুই সপ্তাহ আগের রবীন্দ্রজয়ন্তীর সঙ্গে এই দিনটিও পালিত হয়।"
+    },
+    "greeting": {
+     "en": "Warm wishes on Nazrul Jayanti, with the songs of the rebel poet.",
+     "bn": "নজরুল জয়ন্তীর শুভেচ্ছা! বিদ্রোহী কবির গানে ভরে উঠুক মন।"
+    }
+   }
+  },
+  {
+   "id": "poush-mela",
+   "names": {
+    "en": "Poush Mela (Santiniketan)",
+    "bn": "পৌষ মেলা"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "dhanu",
+    "day": 7
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "harvest",
+   "local": {},
+   "durationDays": 3,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Visva-Bharati, Santiniketan: Poush Utsav from 7 Poush",
+    "Reference almanac, Kolkata"
+   ],
+   "content": {
+    "summary": {
+     "en": "7 Poush: the winter fair of Santiniketan, begun by the Tagore family in the nineteenth century.",
+     "bn": "7 পৌষ: ঠাকুর পরিবারের সূচনা করা শান্তিনিকেতনের শীতের মেলা।"
+    },
+    "traditions": {
+     "en": "The fair opens at dawn with the Vaitalik, songs sung in procession through the ashram, and prayers at the Chhatimtala. For three days the grounds fill with Baul singers, the crafts of Birbhum, kantha, dokra and leather work, pithe and the new jaggery of the season, and visitors from across Bengal.",
+     "bn": "ভোরে আশ্রম জুড়ে বৈতালিকের গানে আর ছাতিমতলার উপাসনায় মেলা শুরু হয়। তিন দিন ধরে মাঠ ভরে থাকে বাউলের গানে, বীরভূমের কাঁথা, ডোকরা আর চামড়ার কাজে, পিঠে আর নতুন গুড়ে, আর বাংলার নানা প্রান্তের মানুষে।"
+    },
+    "greeting": {
+     "en": "Wishing you a joyful Poush Mela, with Baul songs and the winter sun of Santiniketan!",
+     "bn": "পৌষ মেলার শুভেচ্ছা! বাউলের গানে আর শীতের রোদে ভরে উঠুক দিন।"
+    }
+   }
+  },
+  {
    "id": "kamada-ekadashi-bn",
    "names": {
     "en": "Kamada Ekadashi",

@@ -3255,6 +3255,263 @@
    }
   },
   {
+   "id": "republic-day-ml",
+   "names": {
+    "en": "Republic Day",
+    "ml": "റിപ്പബ്ലിക് ദിനം"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 1,
+    "day": 26
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "lotus",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "26 January: the day the Constitution of India came into force in 1950.",
+     "ml": "ജനുവരി 26: 1950-ൽ ഇതേ ദിവസം ഇന്ത്യയുടെ ഭരണഘടന നിലവിൽ വന്നു."
+    },
+    "traditions": {
+     "en": "The day opens with the parade on Kartavya Path in New Delhi, where the states' tableaux show their dances and crafts, and with flag hoisting at schools, offices and housing societies across the country. Families watch the parade together, children sing and perform at school, and sweets are shared.",
+     "ml": "ന്യൂഡൽഹിയിലെ കർത്തവ്യപഥിലെ പരേഡോടെ ദിവസം തുടങ്ങുന്നു; സംസ്ഥാനങ്ങളുടെ നിശ്ചലദൃശ്യങ്ങൾ അവയുടെ നൃത്തങ്ങളും കരകൗശലങ്ങളും അവതരിപ്പിക്കുന്നു. രാജ്യമെങ്ങും സ്കൂളുകളിലും ഓഫീസുകളിലും പതാക ഉയർത്തുന്നു; കുടുംബങ്ങൾ ഒന്നിച്ചിരുന്ന് പരേഡ് കാണുന്നു, കുട്ടികൾ സ്കൂളിൽ പാട്ടും പരിപാടികളും അവതരിപ്പിക്കുന്നു, മധുരം പങ്കിടുന്നു."
+    },
+    "greeting": {
+     "en": "Happy Republic Day! Warm wishes to you and your family.",
+     "ml": "എല്ലാവർക്കും റിപ്പബ്ലിക് ദിനാശംസകൾ!"
+    }
+   }
+  },
+  {
+   "id": "independence-day-ml",
+   "names": {
+    "en": "Independence Day",
+    "ml": "സ്വാതന്ത്ര്യദിനം"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 8,
+    "day": 15
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "kite",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "15 August: the day India became independent in 1947.",
+     "ml": "ഓഗസ്റ്റ് 15: 1947-ൽ ഇതേ ദിവസം ഇന്ത്യ സ്വതന്ത്രയായി."
+    },
+    "traditions": {
+     "en": "The Prime Minister speaks from the Red Fort in Delhi, and the flag is raised at schools, offices and homes. In Delhi and many other towns the sky fills with kites; children sing and dance at school programmes, and families spend the holiday together.",
+     "ml": "ഡൽഹിയിലെ ചെങ്കോട്ടയിൽ നിന്ന് പ്രധാനമന്ത്രി രാജ്യത്തെ അഭിസംബോധന ചെയ്യുന്നു; സ്കൂളുകളിലും ഓഫീസുകളിലും വീടുകളിലും പതാക ഉയർത്തുന്നു. ഡൽഹിയിലും പല നഗരങ്ങളിലും ആകാശം പട്ടങ്ങൾ കൊണ്ട് നിറയുന്നു; കുട്ടികൾ സ്കൂൾ പരിപാടികളിൽ പാടുകയും ആടുകയും ചെയ്യുന്നു, കുടുംബങ്ങൾ അവധി ഒന്നിച്ചു ചെലവഴിക്കുന്നു."
+    },
+    "greeting": {
+     "en": "Happy Independence Day! Warm wishes to you and your family.",
+     "ml": "എല്ലാവർക്കും സ്വാതന്ത്ര്യദിനാശംസകൾ!"
+    }
+   }
+  },
+  {
+   "id": "gandhi-jayanti-ml",
+   "names": {
+    "en": "Gandhi Jayanti",
+    "ml": "ഗാന്ധിജയന്തി"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 10,
+    "day": 2
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "thread",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "2 October: the birthday of Mahatma Gandhi, born at Porbandar in 1869.",
+     "ml": "ഒക്ടോബർ 2: 1869-ൽ പോർബന്തറിൽ ജനിച്ച മഹാത്മാഗാന്ധിയുടെ ജന്മദിനം."
+    },
+    "traditions": {
+     "en": "People gather at Rajghat in Delhi and at Gandhi memorials across the country for prayer meetings where his favourite bhajans, Vaishnava Jana To and Raghupati Raghava Raja Ram, are sung. Many spend the day spinning khadi, cleaning their neighbourhoods and reading his words; the United Nations keeps it as the International Day of Non-Violence.",
+     "ml": "ഡൽഹിയിലെ രാജ്ഘട്ടിലും രാജ്യമെങ്ങുമുള്ള ഗാന്ധിസ്മാരകങ്ങളിലും പ്രാർത്ഥനായോഗങ്ങൾ നടക്കുന്നു; അദ്ദേഹത്തിനു പ്രിയപ്പെട്ട 'വൈഷ്ണവ ജനതോ', 'രഘുപതി രാഘവ രാജാറാം' എന്നീ ഭജനകൾ പാടുന്നു. പലരും ഈ ദിവസം ഖാദി നൂൽക്കുന്നു, പരിസരം വൃത്തിയാക്കുന്നു, അദ്ദേഹത്തിന്റെ വാക്കുകൾ വായിക്കുന്നു; ഐക്യരാഷ്ട്രസഭ ഇത് അന്താരാഷ്ട്ര അഹിംസാദിനമായി ആചരിക്കുന്നു."
+    },
+    "greeting": {
+     "en": "Warm wishes on Gandhi Jayanti: may truth and kindness light the way.",
+     "ml": "ഗാന്ധിജയന്തി ആശംസകൾ! സത്യവും സ്നേഹവും വഴികാട്ടട്ടെ."
+    }
+   }
+  },
+  {
+   "id": "kerala-piravi",
+   "names": {
+    "en": "Kerala Piravi",
+    "ml": "കേരളപ്പിറവി"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 11,
+    "day": 1
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "coconut",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "States Reorganisation Act, 1956: Kerala, Mysore (Karnataka), Madras and Madhya Pradesh formed on 1 November 1956",
+    "Kerala Tourism, festival calendar (keralatourism.org/event)"
+   ],
+   "content": {
+    "summary": {
+     "en": "1 November: the birthday of Kerala, formed in 1956 when the Malayalam-speaking lands came together as one state.",
+     "ml": "നവംബർ 1: മലയാളം സംസാരിക്കുന്ന നാടുകൾ ഒന്നായി 1956-ൽ കേരളസംസ്ഥാനം രൂപംകൊണ്ട ദിവസം."
+    },
+    "traditions": {
+     "en": "Schools and offices celebrate with Malayalam: children come in kasavu mundu and set-saree, recite poems and sing the songs of Kerala, and many places hold quizzes on the state's history. The day also opens Malayalam Bhasha Varam, a week given to the language, and the government's Keraleeyam festival has filled Thiruvananthapuram with art, food and lights.",
+     "ml": "സ്കൂളുകളും ഓഫീസുകളും മലയാളത്തോടെ ആഘോഷിക്കുന്നു: കുട്ടികൾ കസവുമുണ്ടും സെറ്റുസാരിയും ഉടുത്തു വന്ന് കവിതകൾ ചൊല്ലുന്നു, കേരളഗാനങ്ങൾ പാടുന്നു; പലയിടത്തും കേരളചരിത്ര ക്വിസുകൾ നടക്കുന്നു. ഭാഷയ്ക്കായുള്ള മലയാളഭാഷാ വാരാചരണവും ഈ ദിവസം തുടങ്ങുന്നു; സർക്കാരിന്റെ കേരളീയം ഉത്സവം തിരുവനന്തപുരത്തെ കലയും ഭക്ഷണവും വെളിച്ചവും കൊണ്ട് നിറച്ചിട്ടുണ്ട്."
+    },
+    "story": {
+     "en": "Before 1956 the Malayalam-speaking people lived in three places: the princely states of Travancore and Cochin, joined as Travancore-Cochin in 1949, and the Malabar district of the Madras Presidency. Under the States Reorganisation Act, Malabar and Kasaragod joined Travancore-Cochin, the southern taluks of Travancore went to Madras State, and Kerala was born on 1 November 1956.",
+     "ml": "1956-നു മുമ്പ് മലയാളികൾ മൂന്നിടങ്ങളിലായിരുന്നു: 1949-ൽ തിരു-കൊച്ചിയായി ഒന്നിച്ച തിരുവിതാംകൂർ, കൊച്ചി നാട്ടുരാജ്യങ്ങളിലും മദ്രാസ് പ്രസിഡൻസിയിലെ മലബാർ ജില്ലയിലും. സംസ്ഥാന പുനഃസംഘടനാ നിയമപ്രകാരം മലബാറും കാസർകോടും തിരു-കൊച്ചിയോടു ചേർന്നു, തിരുവിതാംകൂറിന്റെ തെക്കൻ താലൂക്കുകൾ മദ്രാസ് സംസ്ഥാനത്തിനു ചേർന്നു; 1956 നവംബർ 1-ന് കേരളം പിറന്നു."
+    },
+    "greeting": {
+     "en": "Happy Kerala Piravi! Wishing God's Own Country, and every Malayali, a joyful birthday.",
+     "ml": "എല്ലാ മലയാളികൾക്കും ഹൃദയം നിറഞ്ഞ കേരളപ്പിറവി ആശംസകൾ!"
+    }
+   }
+  },
+  {
+   "id": "aranmula-vallamkali",
+   "names": {
+    "en": "Aranmula Uthrattathi Vallamkali",
+    "ml": "ആറന്മുള ഉത്രട്ടാതി വള്ളംകളി"
+   },
+   "rule": {
+    "type": "nakshatra-in-solar-month",
+    "month": "simha",
+    "nakshatra": "uttara_bhadrapada"
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "boat",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, Kollam",
+    "Kerala Tourism, festival calendar (keralatourism.org/event)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Uthrattathi in Chingam: the snake boats of the Pampa villages row for Parthasarathy at Aranmula.",
+     "ml": "ചിങ്ങത്തിലെ ഉത്രട്ടാതി: പമ്പയിലെ കരകളുടെ പള്ളിയോടങ്ങൾ ആറന്മുള പാർത്ഥസാരഥിക്കായി തുഴയുന്ന ദിവസം."
+    },
+    "traditions": {
+     "en": "Some fifty palliyodams, the long snake boats of the villages along the Pampa, gather before the Aranmula Parthasarathy temple. The rowers, in white mundu and turbans, keep time to the vanchipattu, the boat songs, and the boats go in pairs rather than to win; the day is an offering, and the village feast, the Vallasadya, follows in the temple through the season.",
+     "ml": "പമ്പയുടെ കരകളിലെ അമ്പതോളം പള്ളിയോടങ്ങൾ ആറന്മുള പാർത്ഥസാരഥി ക്ഷേത്രത്തിനു മുന്നിൽ ഒത്തുചേരുന്നു. വെള്ളമുണ്ടും തലപ്പാവുമണിഞ്ഞ തുഴക്കാർ വഞ്ചിപ്പാട്ടിന്റെ താളത്തിൽ തുഴയുന്നു; ജയിക്കാനല്ല, ജോടികളായി നീങ്ങുന്ന ഒരു വഴിപാടാണിത്. ഈ കാലത്ത് ക്ഷേത്രത്തിൽ വള്ളസദ്യയും നടക്കുന്നു."
+    },
+    "story": {
+     "en": "The story told is of a devotee of Kattoor who sent the Onam provisions to the temple by boat each year; when the boat was once waylaid, the villages around sent their own boats to guard it, and the guard of honour became the boat festival on the day Parthasarathy's idol is said to have been installed.",
+     "ml": "കാട്ടൂരിലെ ഒരു ഭക്തൻ ഓരോ വർഷവും തിരുവോണത്തിനുള്ള വിഭവങ്ങൾ തോണിയിൽ ക്ഷേത്രത്തിലേക്കയച്ചിരുന്നു; ഒരിക്കൽ ആ തോണി തടയപ്പെട്ടപ്പോൾ ചുറ്റുമുള്ള കരക്കാർ തങ്ങളുടെ വള്ളങ്ങളയച്ച് അതിനു കാവലൊരുക്കി; ആ അകമ്പടിയാണ്, പാർത്ഥസാരഥിയുടെ പ്രതിഷ്ഠാദിനമായി കരുതുന്ന ഉത്രട്ടാതിയിലെ വള്ളംകളിയായത് എന്നാണ് കഥ."
+    },
+    "greeting": {
+     "en": "Wishing you a joyful Aranmula Vallamkali, with the snake boats racing to the vanchipattu!",
+     "ml": "വഞ്ചിപ്പാട്ടിന്റെ താളത്തിൽ ആറന്മുള ഉത്രട്ടാതി വള്ളംകളി ആശംസകൾ!"
+    }
+   }
+  },
+  {
+   "id": "mannarasala-ayilyam",
+   "names": {
+    "en": "Mannarasala Ayilyam",
+    "ml": "മണ്ണാറശാല ആയില്യം"
+   },
+   "rule": {
+    "type": "nakshatra-in-solar-month",
+    "month": "tula",
+    "nakshatra": "ashlesha"
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "naga",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, Kollam",
+    "Mannarasala Sree Nagaraja Temple, festivals (mannarasala.org)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Ayilyam in Thulam: the great day of the Mannarasala Nagaraja temple near Haripad.",
+     "ml": "തുലാമാസത്തിലെ ആയില്യം: ഹരിപ്പാടിനടുത്ത് മണ്ണാറശാല നാഗരാജക്ഷേത്രത്തിന്റെ മഹോത്സവം."
+    },
+    "traditions": {
+     "en": "Mannarasala's temple stands in a sacred grove of thousands of serpent images. On Ayilyam the priestess of the Mannarasala family, the Valiyamma, carries the Nagaraja in procession from the temple to the family home, the Ezhunnallathu and families come with offerings of turmeric and milk. Kerala's sarpakavus, the serpent groves kept in many old homes, are honoured on the same star.",
+     "ml": "ആയിരക്കണക്കിനു നാഗപ്രതിമകൾ നിറഞ്ഞ കാവിലാണ് മണ്ണാറശാല ക്ഷേത്രം. ആയില്യത്തിന് ഇല്ലത്തെ അമ്മ, വലിയമ്മ, നാഗരാജാവിനെ എഴുന്നള്ളിച്ച് ക്ഷേത്രത്തിൽ നിന്ന് ഇല്ലത്തേക്കു കൊണ്ടുപോകുന്നു; ഭക്തർ മഞ്ഞളും പാലുമായി എത്തുന്നു. പല തറവാടുകളിലെയും സർപ്പക്കാവുകളിലും അന്ന് പൂജ നടക്കുന്നു."
+    },
+    "greeting": {
+     "en": "Warm wishes on Mannarasala Ayilyam, the festival of the Nagaraja of the green groves.",
+     "ml": "മണ്ണാറശാല ആയില്യം ആശംസകൾ! നാഗരാജാവിന്റെ അനുഗ്രഹം എല്ലാവർക്കും."
+    }
+   }
+  },
+  {
    "id": "kamada-ekadashi-ml",
    "names": {
     "en": "Kamada Ekadashi",

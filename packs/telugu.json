@@ -3511,6 +3511,215 @@
    }
   },
   {
+   "id": "republic-day-te",
+   "names": {
+    "en": "Republic Day",
+    "te": "గణతంత్ర దినోత్సవం"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 1,
+    "day": 26
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "lotus",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "26 January: the day the Constitution of India came into force in 1950.",
+     "te": "జనవరి 26: 1950లో ఈ రోజున భారత రాజ్యాంగం అమలులోకి వచ్చింది."
+    },
+    "traditions": {
+     "en": "The day opens with the parade on Kartavya Path in New Delhi, where the states' tableaux show their dances and crafts, and with flag hoisting at schools, offices and housing societies across the country. Families watch the parade together, children sing and perform at school, and sweets are shared.",
+     "te": "న్యూఢిల్లీలోని కర్తవ్య పథ్‌లో జరిగే కవాతుతో రోజు మొదలవుతుంది; రాష్ట్రాల శకటాలు వాటి నృత్యాలను, హస్తకళలను ప్రదర్శిస్తాయి. దేశమంతటా పాఠశాలల్లో, కార్యాలయాల్లో జెండా ఆవిష్కరణ జరుగుతుంది; కుటుంబాలు కలిసి కవాతు చూస్తాయి, పిల్లలు బడిలో పాటలు పాడి కార్యక్రమాలు ప్రదర్శిస్తారు, మిఠాయిలు పంచుకుంటారు."
+    },
+    "greeting": {
+     "en": "Happy Republic Day! Warm wishes to you and your family.",
+     "te": "గణతంత్ర దినోత్సవ శుభాకాంక్షలు!"
+    }
+   }
+  },
+  {
+   "id": "independence-day-te",
+   "names": {
+    "en": "Independence Day",
+    "te": "స్వాతంత్ర్య దినోత్సవం"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 8,
+    "day": 15
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "kite",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "15 August: the day India became independent in 1947.",
+     "te": "ఆగస్టు 15: 1947లో ఈ రోజున భారతదేశం స్వాతంత్ర్యం పొందింది."
+    },
+    "traditions": {
+     "en": "The Prime Minister speaks from the Red Fort in Delhi, and the flag is raised at schools, offices and homes. In Delhi and many other towns the sky fills with kites; children sing and dance at school programmes, and families spend the holiday together.",
+     "te": "ఢిల్లీలోని ఎర్రకోట నుంచి ప్రధానమంత్రి ప్రసంగిస్తారు; పాఠశాలల్లో, కార్యాలయాల్లో, ఇళ్లలో జెండా ఎగురవేస్తారు. ఢిల్లీలో, ఎన్నో పట్టణాల్లో ఆకాశం గాలిపటాలతో నిండిపోతుంది; పిల్లలు బడి కార్యక్రమాల్లో పాటలు పాడి నృత్యం చేస్తారు, కుటుంబాలు సెలవును కలిసి గడుపుతాయి."
+    },
+    "greeting": {
+     "en": "Happy Independence Day! Warm wishes to you and your family.",
+     "te": "స్వాతంత్ర్య దినోత్సవ శుభాకాంక్షలు!"
+    }
+   }
+  },
+  {
+   "id": "gandhi-jayanti-te",
+   "names": {
+    "en": "Gandhi Jayanti",
+    "te": "గాంధీ జయంతి"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 10,
+    "day": 2
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "thread",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "2 October: the birthday of Mahatma Gandhi, born at Porbandar in 1869.",
+     "te": "అక్టోబర్ 2: 1869లో పోరుబందర్‌లో జన్మించిన మహాత్మా గాంధీ జయంతి."
+    },
+    "traditions": {
+     "en": "People gather at Rajghat in Delhi and at Gandhi memorials across the country for prayer meetings where his favourite bhajans, Vaishnava Jana To and Raghupati Raghava Raja Ram, are sung. Many spend the day spinning khadi, cleaning their neighbourhoods and reading his words; the United Nations keeps it as the International Day of Non-Violence.",
+     "te": "ఢిల్లీలోని రాజ్‌ఘాట్‌లో, దేశమంతటా గాంధీ స్మారకాల వద్ద ప్రార్థనా సభలు జరుగుతాయి; ఆయనకు ఇష్టమైన 'వైష్ణవ జనతో', 'రఘుపతి రాఘవ రాజారామ్' భజనలు పాడతారు. చాలామంది ఈ రోజు ఖాదీ వడుకుతారు, తమ వీధులను శుభ్రం చేస్తారు, ఆయన మాటలు చదువుతారు; ఐక్యరాజ్యసమితి దీనిని అంతర్జాతీయ అహింసా దినంగా పాటిస్తుంది."
+    },
+    "greeting": {
+     "en": "Warm wishes on Gandhi Jayanti: may truth and kindness light the way.",
+     "te": "గాంధీ జయంతి శుభాకాంక్షలు! సత్యం, దయ మనకు దారి చూపాలి."
+    }
+   }
+  },
+  {
+   "id": "telangana-formation-day",
+   "names": {
+    "en": "Telangana Formation Day",
+    "te": "తెలంగాణ ఆవిర్భావ దినోత్సవం"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 6,
+    "day": 2
+   },
+   "tier": "regional",
+   "holidayIn": [
+    "IN-TG"
+   ],
+   "localNames": {},
+   "card": "bathukamma",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Andhra Pradesh Reorganisation Act, 2014: Telangana formed on the appointed day, 2 June 2014",
+    "Government of Telangana, General Administration Department holidays 2026"
+   ],
+   "content": {
+    "summary": {
+     "en": "2 June: Telangana's birthday, the day the state was formed in 2014.",
+     "te": "జూన్ 2: 2014లో తెలంగాణ రాష్ట్రం ఏర్పడిన రోజు."
+    },
+    "traditions": {
+     "en": "The state celebrates with the Telangana Ratham of folk art, Bathukamma songs and Perini and Oggu Katha performances, cultural programmes in Hyderabad and in every district, and lights on the public buildings. Families mark it with the state's own dishes and a day out.",
+     "te": "జానపద కళల ప్రదర్శనలు, బతుకమ్మ పాటలు, పేరిణి, ఒగ్గు కథ ప్రదర్శనలతో, హైదరాబాద్‌లో, ప్రతి జిల్లాలో సాంస్కృతిక కార్యక్రమాలతో రాష్ట్రం వేడుక చేసుకుంటుంది; ప్రభుత్వ భవనాలు దీపాలతో వెలుగుతాయి. కుటుంబాలు తెలంగాణ వంటకాలతో, విహారంతో ఈ రోజును గుర్తు చేసుకుంటాయి."
+    },
+    "greeting": {
+     "en": "Happy Telangana Formation Day! Warm wishes to every home in Telangana.",
+     "te": "అందరికీ తెలంగాణ ఆవిర్భావ దినోత్సవ శుభాకాంక్షలు!"
+    }
+   }
+  },
+  {
+   "id": "telugu-language-day",
+   "names": {
+    "en": "Telugu Language Day",
+    "te": "తెలుగు భాషా దినోత్సవం"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 8,
+    "day": 29
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "books",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Telugu Language Day, the birthday of Gidugu Venkata Ramamurthy (29 August), kept by the governments of Andhra Pradesh and Telangana"
+   ],
+   "content": {
+    "summary": {
+     "en": "29 August: the birthday of Gidugu Venkata Ramamurthy, who brought spoken Telugu into writing and the classroom.",
+     "te": "ఆగస్టు 29: వ్యావహారిక తెలుగును రచనలోకి, బడిలోకి తెచ్చిన గిడుగు వెంకట రామమూర్తి పంతులు జయంతి."
+    },
+    "traditions": {
+     "en": "Schools and colleges in Andhra Pradesh and Telangana hold recitations of Vemana and Sumati padyams, essay and elocution contests and Avadhanam performances, and writers and teachers of the language are honoured. Many families use the day to read Telugu books with their children.",
+     "te": "ఆంధ్రప్రదేశ్, తెలంగాణలలోని పాఠశాలలు, కళాశాలల్లో వేమన, సుమతీ పద్యాల పఠనం, వ్యాస, వక్తృత్వ పోటీలు, అవధానాలు జరుగుతాయి; భాషా రచయితలను, ఉపాధ్యాయులను సత్కరిస్తారు. చాలా కుటుంబాలు ఈ రోజు పిల్లలతో కలిసి తెలుగు పుస్తకాలు చదువుతాయి."
+    },
+    "greeting": {
+     "en": "Happy Telugu Language Day! To the sweetness of Telugu, in every home.",
+     "te": "తెలుగు భాషా దినోత్సవ శుభాకాంక్షలు! దేశ భాషలందు తెలుగు లెస్స!"
+    }
+   }
+  },
+  {
    "id": "kamada-ekadashi-te",
    "names": {
     "en": "Kamada Ekadashi",

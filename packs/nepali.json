@@ -3043,6 +3043,174 @@
    }
   },
   {
+   "id": "sambidhan-diwas",
+   "names": {
+    "en": "Constitution Day (Sambidhan Diwas)",
+    "ne": "संविधान दिवस"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "kanya",
+    "day": 3
+   },
+   "tier": "regional",
+   "holidayIn": [
+    "NP"
+   ],
+   "localNames": {},
+   "card": "diya",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of Nepal, Ministry of Home Affairs public holidays (Constitution Day, Asoj 3; National Paddy Day, Asar 15)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Asoj 3: the day the Constitution of Nepal was promulgated in 2072 BS (2015).",
+     "ne": "असोज ३: वि.सं. २०७२ मा नेपालको संविधान जारी भएको दिन।"
+    },
+    "traditions": {
+     "en": "A national holiday, kept with a programme at Tundikhel in Kathmandu and in every district, and with oil lamps and lights on homes and public buildings in the evening.",
+     "ne": "राष्ट्रिय बिदा; काठमाडौँको टुँडिखेल र सबै जिल्लामा कार्यक्रम हुन्छन्, र साँझ घर तथा सार्वजनिक भवनमा दियो र बत्ती बालिन्छ।"
+    },
+    "greeting": {
+     "en": "Warm wishes on Constitution Day to every home in Nepal.",
+     "ne": "संविधान दिवसको हार्दिक शुभकामना!"
+    }
+   }
+  },
+  {
+   "id": "asar-pandhra",
+   "names": {
+    "en": "Asar Pandhra (National Paddy Day)",
+    "ne": "असार पन्ध्र"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "mithuna",
+    "day": 15
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "harvest",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of Nepal, Ministry of Home Affairs public holidays (Constitution Day, Asoj 3; National Paddy Day, Asar 15)",
+    "Reference almanac, Kathmandu"
+   ],
+   "content": {
+    "summary": {
+     "en": "Asar 15: National Paddy Day, the height of rice planting, kept with curd and beaten rice.",
+     "ne": "असार १५: राष्ट्रिय धान दिवस, रोपाइँको रमझम, दही चिउरा खाने दिन।"
+    },
+    "traditions": {
+     "en": "Families go to the terraced fields to plant rice in the monsoon mud, singing asare geet and splashing each other with mud, and the day's meal is dahi chiura, curd with beaten rice. Towns and schools join in with planting programmes, and city families who have no field of their own still share a bowl of dahi chiura.",
+     "ne": "परिवारहरू वर्षाको हिलोमा धान रोप्न खेत जान्छन्, असारे गीत गाउँछन्, एकअर्कालाई हिलो छ्याप्छन्, र दिनको खाना दही चिउरा हुन्छ। सहर र विद्यालयमा पनि रोपाइँ कार्यक्रम हुन्छन्, र आफ्नो खेत नभएका सहरिया परिवारले पनि दही चिउरा बाँडेर खान्छन्।"
+    },
+    "greeting": {
+     "en": "Happy Asar Pandhra! Wishing you curd, chiura and green paddy fields.",
+     "ne": "असार पन्ध्र अर्थात् धान दिवसको शुभकामना! दही चिउरा खाऔँ, खेत हरियो होस्।"
+    }
+   }
+  },
+  {
+   "id": "ghode-jatra",
+   "names": {
+    "en": "Ghode Jatra",
+    "ne": "घोडेजात्रा"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "phalguna",
+    "tithi": 30,
+    "observance": {
+     "kala": "madhyahna"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "chariot",
+   "local": {},
+   "durationDays": 1,
+   "variations": [
+    "A holiday in the Kathmandu Valley only; the day is the new moon of Chaitra as Nepal's almanacs keep it."
+   ],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, Kathmandu"
+   ],
+   "content": {
+    "summary": {
+     "en": "The new moon of Chaitra: the horse festival at Tundikhel in Kathmandu, with Pahan Charhe in the old city.",
+     "ne": "चैत्र औँसी: काठमाडौँको टुँडिखेलमा घोडेजात्रा, पुरानो सहरमा पाहाँचह्रे।"
+    },
+    "traditions": {
+     "en": "By day, horses race and parade on the Tundikhel parade ground before the President and crowds from across the valley. In the old city the Newar festival of Pahan Charhe brings the mother goddesses out on their chariots, and families invite married daughters and relatives home for a feast.",
+     "ne": "दिउँसो टुँडिखेलमा राष्ट्रपति र उपत्यकाभरिका दर्शकको अगाडि घोडा दौडाइन्छ र प्रदर्शन हुन्छ। पुरानो सहरमा नेवार पर्व पाहाँचह्रेमा मातृदेवीहरू खटमा निस्कन्छन्, र परिवारले विवाहित छोरीचेली र आफन्तलाई भोजमा बोलाउँछन्।"
+    },
+    "greeting": {
+     "en": "Wishing you a joyful Ghode Jatra and Pahan Charhe!",
+     "ne": "घोडेजात्रा र पाहाँचह्रेको शुभकामना!"
+    }
+   }
+  },
+  {
+   "id": "yomari-punhi",
+   "names": {
+    "en": "Yomari Punhi",
+    "ne": "योमरी पुन्ही"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "margashirsha",
+    "tithi": 15
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "moon",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, Kathmandu"
+   ],
+   "content": {
+    "summary": {
+     "en": "The full moon of Mangsir: the Newar harvest festival of the yomari, a sweet rice-flour dumpling.",
+     "ne": "मङ्सिर पूर्णिमा: योमरी बनाएर मनाइने नेवार समुदायको फसल पर्व।"
+    },
+    "traditions": {
+     "en": "With the new rice harvested, families shape yomari from the new rice flour, filled with chaku (molasses) and sesame or khuwa, and offer them first to Annapurna and the god of the granary. Children go from house to house singing for yomari, and the season's last full moon is kept with a fair at Panauti and Dhulikhel.",
+     "ne": "नयाँ धान भित्र्याएपछि परिवारहरू नयाँ चामलको पिठोमा चाकु र तिल वा खुवा भरेर योमरी बनाउँछन्, र पहिले अन्नपूर्णा र भकारीका देवतालाई चढाउँछन्। बालबालिका घरघर गएर योमरी माग्ने गीत गाउँछन्।"
+    },
+    "greeting": {
+     "en": "Happy Yomari Punhi! May your home be as sweet as a warm yomari.",
+     "ne": "योमरी पुन्हीको शुभकामना! योमरी जस्तै मीठो होस् जीवन।"
+    }
+   }
+  },
+  {
    "id": "kamada-ekadashi-ne",
    "names": {
     "en": "Kamada Ekadashi",

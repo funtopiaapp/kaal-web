@@ -5196,6 +5196,216 @@
      "gu": "દેવપોઢી એકાદશીએ શાંત, ભક્તિભર્યા દિવસની શુભેચ્છાઓ."
     }
    }
+  },
+  {
+   "id": "republic-day-gu",
+   "names": {
+    "en": "Republic Day",
+    "gu": "પ્રજાસત્તાક દિન"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 1,
+    "day": 26
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "lotus",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "26 January: the day the Constitution of India came into force in 1950.",
+     "gu": "26 જાન્યુઆરી: 1950માં આ દિવસે ભારતનું બંધારણ અમલમાં આવ્યું."
+    },
+    "traditions": {
+     "en": "The day opens with the parade on Kartavya Path in New Delhi, where the states' tableaux show their dances and crafts, and with flag hoisting at schools, offices and housing societies across the country. Families watch the parade together, children sing and perform at school, and sweets are shared.",
+     "gu": "દિવસની શરૂઆત નવી દિલ્હીના કર્તવ્ય પથ પરની પરેડથી થાય છે, જેમાં રાજ્યોની ઝાંખીઓ તેમનાં નૃત્ય અને હસ્તકલા રજૂ કરે છે. દેશભરની શાળાઓ, કચેરીઓ અને સોસાયટીઓમાં ધ્વજવંદન થાય છે; પરિવારો સાથે બેસીને પરેડ જુએ છે, બાળકો શાળામાં ગીતો અને કાર્યક્રમો રજૂ કરે છે, અને મીઠાઈ વહેંચાય છે."
+    },
+    "greeting": {
+     "en": "Happy Republic Day! Warm wishes to you and your family.",
+     "gu": "પ્રજાસત્તાક દિનની હાર્દિક શુભેચ્છાઓ!"
+    }
+   }
+  },
+  {
+   "id": "independence-day-gu",
+   "names": {
+    "en": "Independence Day",
+    "gu": "સ્વાતંત્ર્ય દિન"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 8,
+    "day": 15
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "kite",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "15 August: the day India became independent in 1947.",
+     "gu": "15 ઑગસ્ટ: 1947માં આ દિવસે ભારત સ્વતંત્ર થયું."
+    },
+    "traditions": {
+     "en": "The Prime Minister speaks from the Red Fort in Delhi, and the flag is raised at schools, offices and homes. In Delhi and many other towns the sky fills with kites; children sing and dance at school programmes, and families spend the holiday together.",
+     "gu": "વડાપ્રધાન દિલ્હીના લાલ કિલ્લા પરથી સંબોધન કરે છે, અને શાળાઓ, કચેરીઓ અને ઘરોમાં ધ્વજ લહેરાવાય છે. દિલ્હી અને ઘણાં શહેરોમાં આકાશ પતંગોથી ભરાઈ જાય છે; બાળકો શાળાના કાર્યક્રમોમાં ગાય છે અને નાચે છે, અને પરિવારો રજા સાથે વિતાવે છે."
+    },
+    "greeting": {
+     "en": "Happy Independence Day! Warm wishes to you and your family.",
+     "gu": "સ્વાતંત્ર્ય દિનની હાર્દિક શુભેચ્છાઓ!"
+    }
+   }
+  },
+  {
+   "id": "gandhi-jayanti-gu",
+   "names": {
+    "en": "Gandhi Jayanti",
+    "gu": "ગાંધી જયંતી"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 10,
+    "day": 2
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "thread",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "2 October: the birthday of Mahatma Gandhi, born at Porbandar in 1869.",
+     "gu": "2 ઑક્ટોબર: 1869માં પોરબંદરમાં જન્મેલા મહાત્મા ગાંધીનો જન્મદિવસ."
+    },
+    "traditions": {
+     "en": "People gather at Rajghat in Delhi and at Gandhi memorials across the country for prayer meetings where his favourite bhajans, Vaishnava Jana To and Raghupati Raghava Raja Ram, are sung. Many spend the day spinning khadi, cleaning their neighbourhoods and reading his words; the United Nations keeps it as the International Day of Non-Violence.",
+     "gu": "દિલ્હીના રાજઘાટ અને દેશભરનાં ગાંધી સ્મારકો પર પ્રાર્થનાસભાઓ થાય છે, જેમાં તેમનાં પ્રિય ભજનો 'વૈષ્ણવ જન તો' અને 'રઘુપતિ રાઘવ રાજારામ' ગવાય છે. ઘણા લોકો આ દિવસે રેંટિયો કાંતે છે, પોતાના વિસ્તારની સફાઈ કરે છે અને ગાંધીજીના વિચારો વાંચે છે; સંયુક્ત રાષ્ટ્ર તેને આંતરરાષ્ટ્રીય અહિંસા દિવસ તરીકે ઊજવે છે."
+    },
+    "greeting": {
+     "en": "Warm wishes on Gandhi Jayanti: may truth and kindness light the way.",
+     "gu": "ગાંધી જયંતીની હાર્દિક શુભેચ્છાઓ! સત્ય અને કરુણા માર્ગ ચીંધે."
+    }
+   }
+  },
+  {
+   "id": "gujarat-sthapana-divas",
+   "names": {
+    "en": "Gujarat Sthapana Divas",
+    "gu": "ગુજરાત સ્થાપના દિવસ"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 5,
+    "day": 1
+   },
+   "tier": "major",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "toran",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Bombay Reorganisation Act, 1960: Maharashtra and Gujarat formed on 1 May 1960"
+   ],
+   "content": {
+    "summary": {
+     "en": "1 May: Gujarat's birthday, the day the Gujarati-speaking state was formed in 1960.",
+     "gu": "1 મે: 1960માં ગુજરાતી ભાષી રાજ્ય ગુજરાતની સ્થાપનાનો દિવસ."
+    },
+    "traditions": {
+     "en": "The state holds its celebration in a different district each year, with garba, folk music and exhibitions of crafts, and Narmad's song Jay Jay Garavi Gujarat is sung in schools. Gujarati families everywhere, from Ahmedabad to London and New Jersey, mark it with programmes and a Gujarati thali.",
+     "gu": "રાજ્ય દર વર્ષે જુદા જિલ્લામાં ગરબા, લોકસંગીત અને હસ્તકલાનાં પ્રદર્શનો સાથે ઉજવણી કરે છે, અને શાળાઓમાં નર્મદનું 'જય જય ગરવી ગુજરાત' ગવાય છે. અમદાવાદથી લંડન અને ન્યૂ જર્સી સુધી ગુજરાતી પરિવારો કાર્યક્રમો અને ગુજરાતી થાળી સાથે આ દિવસ ઊજવે છે."
+    },
+    "story": {
+     "en": "After 1956 Gujarati and Marathi speakers shared the large bilingual Bombay State. The Mahagujarat movement asked for a Gujarati-speaking state, and on 1 May 1960 Bombay State was divided into Gujarat and Maharashtra.",
+     "gu": "1956 પછી ગુજરાતી અને મરાઠી ભાષીઓ દ્વિભાષી મુંબઈ રાજ્યમાં સાથે હતા. મહાગુજરાત આંદોલને ગુજરાતી ભાષી રાજ્યની માગણી કરી, અને 1 મે 1960ના રોજ મુંબઈ રાજ્યનું ગુજરાત અને મહારાષ્ટ્રમાં વિભાજન થયું."
+    },
+    "greeting": {
+     "en": "Happy Gujarat Day! Warm wishes to every Gujarati home, near and far.",
+     "gu": "સૌ ગુજરાતીઓને ગુજરાત સ્થાપના દિવસની હાર્દિક શુભેચ્છાઓ! જય જય ગરવી ગુજરાત!"
+    }
+   }
+  },
+  {
+   "id": "vasi-uttarayan",
+   "names": {
+    "en": "Vasi Uttarayan",
+    "gu": "વાસી ઉત્તરાયણ"
+   },
+   "rule": {
+    "type": "relative",
+    "to": "uttarayan",
+    "offsetDays": 1
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "kite",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, Ahmedabad"
+   ],
+   "content": {
+    "summary": {
+     "en": "The day after Uttarayan: a second day of kite flying across Gujarat.",
+     "gu": "ઉત્તરાયણનો બીજો દિવસ: આખા ગુજરાતમાં પતંગ ચગાવવાનો વધુ એક દિવસ."
+    },
+    "traditions": {
+     "en": "Families go back up to the terraces at dawn with the kites and the spools of manja left from the day before, and the cries of kai po che go on until dusk. The meal is leftover undhiyu, jalebi and chikki, and in the evening tukkal lanterns rise into the sky.",
+     "gu": "પરિવારો આગલા દિવસના બાકી પતંગ અને દોરીની ફીરકીઓ લઈને વહેલી સવારે ફરી ધાબે ચડે છે, અને સાંજ સુધી 'કાપ્યો છે'ની બૂમો ગાજે છે. જમવામાં વાસી ઊંધિયું, જલેબી અને ચીકી હોય છે, અને સાંજે આકાશમાં તુક્કલ ચડે છે."
+    },
+    "greeting": {
+     "en": "Happy Vasi Uttarayan! One more day of kites, undhiyu and terrace laughter.",
+     "gu": "વાસી ઉત્તરાયણની હાર્દિક શુભેચ્છાઓ! કાપ્યો છે... ની બૂમો ફરી ગાજે!"
+    }
+   }
   }
  ],
  "dailySignificance": [

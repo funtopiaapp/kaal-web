@@ -5213,6 +5213,263 @@
      ]
     }
    }
+  },
+  {
+   "id": "republic-day-mr",
+   "names": {
+    "en": "Republic Day",
+    "mr": "प्रजासत्ताक दिन"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 1,
+    "day": 26
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "lotus",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "26 January: the day the Constitution of India came into force in 1950.",
+     "mr": "26 जानेवारी: 1950 मध्ये याच दिवशी भारताचे संविधान लागू झाले."
+    },
+    "traditions": {
+     "en": "The day opens with the parade on Kartavya Path in New Delhi, where the states' tableaux show their dances and crafts, and with flag hoisting at schools, offices and housing societies across the country. Families watch the parade together, children sing and perform at school, and sweets are shared.",
+     "mr": "नवी दिल्लीतील कर्तव्य पथावरील संचलनाने दिवसाची सुरुवात होते; राज्यांचे चित्ररथ त्यांची नृत्ये आणि हस्तकला दाखवतात. देशभरातील शाळा, कार्यालये आणि सोसायट्यांमध्ये ध्वजवंदन होते; कुटुंबे एकत्र बसून संचलन पाहतात, मुले शाळेत गाणी आणि कार्यक्रम सादर करतात, आणि मिठाई वाटली जाते."
+    },
+    "greeting": {
+     "en": "Happy Republic Day! Warm wishes to you and your family.",
+     "mr": "प्रजासत्ताक दिनाच्या हार्दिक शुभेच्छा!"
+    }
+   }
+  },
+  {
+   "id": "independence-day-mr",
+   "names": {
+    "en": "Independence Day",
+    "mr": "स्वातंत्र्य दिन"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 8,
+    "day": 15
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "kite",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "15 August: the day India became independent in 1947.",
+     "mr": "15 ऑगस्ट: 1947 मध्ये याच दिवशी भारत स्वतंत्र झाला."
+    },
+    "traditions": {
+     "en": "The Prime Minister speaks from the Red Fort in Delhi, and the flag is raised at schools, offices and homes. In Delhi and many other towns the sky fills with kites; children sing and dance at school programmes, and families spend the holiday together.",
+     "mr": "पंतप्रधान दिल्लीतील लाल किल्ल्यावरून देशाला संबोधित करतात, आणि शाळा, कार्यालये व घरांवर ध्वज फडकवला जातो. दिल्लीत आणि अनेक शहरांत आकाश पतंगांनी भरून जाते; मुले शाळेच्या कार्यक्रमांत गाणी व नृत्य सादर करतात, आणि कुटुंबे सुट्टी एकत्र घालवतात."
+    },
+    "greeting": {
+     "en": "Happy Independence Day! Warm wishes to you and your family.",
+     "mr": "स्वातंत्र्य दिनाच्या हार्दिक शुभेच्छा!"
+    }
+   }
+  },
+  {
+   "id": "gandhi-jayanti-mr",
+   "names": {
+    "en": "Gandhi Jayanti",
+    "mr": "गांधी जयंती"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 10,
+    "day": 2
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "thread",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "2 October: the birthday of Mahatma Gandhi, born at Porbandar in 1869.",
+     "mr": "2 ऑक्टोबर: 1869 मध्ये पोरबंदर येथे जन्मलेल्या महात्मा गांधींचा जन्मदिवस."
+    },
+    "traditions": {
+     "en": "People gather at Rajghat in Delhi and at Gandhi memorials across the country for prayer meetings where his favourite bhajans, Vaishnava Jana To and Raghupati Raghava Raja Ram, are sung. Many spend the day spinning khadi, cleaning their neighbourhoods and reading his words; the United Nations keeps it as the International Day of Non-Violence.",
+     "mr": "दिल्लीतील राजघाट आणि देशभरातील गांधी स्मारकांवर प्रार्थनासभा होतात, ज्यांत त्यांची आवडती भजने 'वैष्णव जन तो' आणि 'रघुपती राघव राजाराम' गायली जातात. अनेक जण या दिवशी चरखा चालवतात, आपला परिसर स्वच्छ करतात आणि त्यांचे विचार वाचतात; संयुक्त राष्ट्रे हा दिवस आंतरराष्ट्रीय अहिंसा दिन म्हणून पाळतात."
+    },
+    "greeting": {
+     "en": "Warm wishes on Gandhi Jayanti: may truth and kindness light the way.",
+     "mr": "गांधी जयंतीच्या हार्दिक शुभेच्छा! सत्य आणि करुणा मार्ग दाखवोत."
+    }
+   }
+  },
+  {
+   "id": "maharashtra-din",
+   "names": {
+    "en": "Maharashtra Din",
+    "mr": "महाराष्ट्र दिन"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 5,
+    "day": 1
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-MH"
+   ],
+   "localNames": {},
+   "card": "rangoli",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Bombay Reorganisation Act, 1960: Maharashtra and Gujarat formed on 1 May 1960",
+    "Government of Maharashtra, General Administration Department public holidays 2026"
+   ],
+   "content": {
+    "summary": {
+     "en": "1 May: Maharashtra's birthday, the day the Marathi-speaking state was formed in 1960.",
+     "mr": "1 मे: 1960 मध्ये मराठी भाषिक महाराष्ट्र राज्याची स्थापना झाली तो दिवस."
+    },
+    "traditions": {
+     "en": "The day begins with the parade at Shivaji Park in Mumbai and the remembrance at Hutatma Chowk of the 106 who gave their lives for the Samyukta Maharashtra movement. Schools sing Jai Jai Maharashtra Maza, and towns hold lezim, lavani and powada programmes; it is also Kamgar Din, Workers' Day.",
+     "mr": "मुंबईतील शिवाजी पार्कवरील संचलनाने आणि संयुक्त महाराष्ट्र चळवळीतील 106 हुतात्म्यांच्या हुतात्मा चौकातील स्मरणाने दिवसाची सुरुवात होते. शाळांमध्ये 'जय जय महाराष्ट्र माझा' गायले जाते, आणि गावोगावी लेझीम, लावणी, पोवाड्यांचे कार्यक्रम होतात; हाच दिवस कामगार दिनही आहे."
+    },
+    "story": {
+     "en": "After 1956 Marathi and Gujarati speakers shared the bilingual Bombay State. The Samyukta Maharashtra movement asked for a Marathi-speaking state with Mumbai as its capital, and on 1 May 1960 Maharashtra and Gujarat were formed.",
+     "mr": "1956 नंतर मराठी आणि गुजराती भाषिक द्विभाषिक मुंबई राज्यात एकत्र होते. संयुक्त महाराष्ट्र चळवळीने मुंबईसह मराठी भाषिकांच्या राज्याची मागणी केली, आणि 1 मे 1960 रोजी महाराष्ट्र व गुजरात ही राज्ये स्थापन झाली."
+    },
+    "greeting": {
+     "en": "Happy Maharashtra Din! Warm wishes to every Marathi home.",
+     "mr": "सर्व महाराष्ट्रवासीयांना महाराष्ट्र दिनाच्या हार्दिक शुभेच्छा! जय महाराष्ट्र!"
+    }
+   }
+  },
+  {
+   "id": "marathi-bhasha-din",
+   "names": {
+    "en": "Marathi Bhasha Gaurav Din",
+    "mr": "मराठी भाषा गौरव दिन"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 2,
+    "day": 27
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "books",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of Maharashtra, Marathi Bhasha Gaurav Din, the birthday of Kusumagraj (27 February)"
+   ],
+   "content": {
+    "summary": {
+     "en": "27 February: the birthday of the poet Kusumagraj, kept as the day of pride in the Marathi language.",
+     "mr": "27 फेब्रुवारी: कवी कुसुमाग्रज यांचा जन्मदिवस, मराठी भाषा गौरव दिन."
+    },
+    "traditions": {
+     "en": "Schools, colleges and offices hold readings of Kusumagraj's poems, granthdindis carrying books in procession, and elocution and writing contests, and the state gives its awards for Marathi literature. Libraries and Marathi mandals across India and abroad hold readings for children.",
+     "mr": "शाळा, महाविद्यालये आणि कार्यालयांमध्ये कुसुमाग्रजांच्या कवितांचे वाचन, ग्रंथदिंडी, वक्तृत्व आणि लेखन स्पर्धा होतात, आणि राज्य मराठी साहित्याचे पुरस्कार देते. देशभरातील आणि परदेशातील ग्रंथालये व मराठी मंडळे मुलांसाठी वाचनाचे कार्यक्रम घेतात."
+    },
+    "greeting": {
+     "en": "Happy Marathi Bhasha Din! To the language of Dnyaneshwar and Tukaram, in every home.",
+     "mr": "मराठी भाषा गौरव दिनाच्या हार्दिक शुभेच्छा! माझा मराठीची बोलु कौतुके!"
+    }
+   }
+  },
+  {
+   "id": "shiv-jayanti",
+   "names": {
+    "en": "Shiv Jayanti",
+    "mr": "शिवजयंती"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 2,
+    "day": 19
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-MH"
+   ],
+   "localNames": {},
+   "card": "mountain",
+   "local": {},
+   "durationDays": 1,
+   "variations": [
+    "The state keeps 19 February; some families and mandals also keep it by the tithi, Phalguna Krishna Tritiya."
+   ],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of Maharashtra, General Administration Department public holidays 2026"
+   ],
+   "content": {
+    "summary": {
+     "en": "19 February: the birthday of Chhatrapati Shivaji Maharaj, born at Shivneri fort in 1630.",
+     "mr": "19 फेब्रुवारी: 1630 मध्ये शिवनेरी किल्ल्यावर जन्मलेल्या छत्रपती शिवाजी महाराजांची जयंती."
+    },
+    "traditions": {
+     "en": "Torches are run from the forts to the towns through the night, and at Shivneri a cradle ceremony, the palna, celebrates his birth. Towns hold processions with dhol-tasha, lezim and powadas, the ballads of his life, and children climb the forts and dress as the young Shivaji.",
+     "mr": "रात्रभर गडांवरून गावांपर्यंत शिवज्योत नेली जाते, आणि शिवनेरीवर पाळणा गाऊन जन्मोत्सव साजरा होतो. गावोगावी ढोल-ताशा, लेझीम आणि महाराजांच्या जीवनावरील पोवाड्यांसह मिरवणुका निघतात, आणि मुले गड चढतात, बाल शिवाजींची वेशभूषा करतात."
+    },
+    "greeting": {
+     "en": "Warm wishes on Shiv Jayanti, remembering Chhatrapati Shivaji Maharaj.",
+     "mr": "छत्रपती शिवाजी महाराज जयंतीच्या हार्दिक शुभेच्छा!"
+    }
+   }
   }
  ],
  "dailySignificance": [

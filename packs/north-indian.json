@@ -6677,6 +6677,630 @@
      ]
     }
    }
+  },
+  {
+   "id": "republic-day",
+   "names": {
+    "en": "Republic Day",
+    "hi": "गणतंत्र दिवस"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 1,
+    "day": 26
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "lotus",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "26 January: the day the Constitution of India came into force in 1950.",
+     "hi": "26 जनवरी: 1950 में इसी दिन भारत का संविधान लागू हुआ।"
+    },
+    "traditions": {
+     "en": "The day opens with the parade on Kartavya Path in New Delhi, where the states' tableaux show their dances and crafts, and with flag hoisting at schools, offices and housing societies across the country. Families watch the parade together, children sing and perform at school, and sweets are shared.",
+     "hi": "दिन की शुरुआत नई दिल्ली में कर्तव्य पथ की परेड से होती है, जिसमें राज्यों की झाँकियाँ उनके नृत्य और शिल्प दिखाती हैं; देश भर के स्कूलों, दफ़्तरों और मोहल्लों में ध्वजारोहण होता है। परिवार साथ बैठकर परेड देखते हैं, बच्चे स्कूल में गीत और कार्यक्रम प्रस्तुत करते हैं, और मिठाई बाँटी जाती है।"
+    },
+    "greeting": {
+     "en": "Happy Republic Day! Warm wishes to you and your family.",
+     "hi": "गणतंत्र दिवस की हार्दिक शुभकामनाएँ!"
+    }
+   }
+  },
+  {
+   "id": "independence-day",
+   "names": {
+    "en": "Independence Day",
+    "hi": "स्वतंत्रता दिवस"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 8,
+    "day": 15
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "kite",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "15 August: the day India became independent in 1947.",
+     "hi": "15 अगस्त: 1947 में इसी दिन भारत स्वतंत्र हुआ।"
+    },
+    "traditions": {
+     "en": "The Prime Minister speaks from the Red Fort in Delhi, and the flag is raised at schools, offices and homes. In Delhi and many other towns the sky fills with kites; children sing and dance at school programmes, and families spend the holiday together.",
+     "hi": "प्रधानमंत्री दिल्ली के लाल क़िले से देश को संबोधित करते हैं, और स्कूलों, दफ़्तरों और घरों में ध्वज फहराया जाता है। दिल्ली और कई शहरों में आसमान पतंगों से भर जाता है; बच्चे स्कूल के कार्यक्रमों में गाते और नाचते हैं, और परिवार छुट्टी साथ बिताते हैं।"
+    },
+    "greeting": {
+     "en": "Happy Independence Day! Warm wishes to you and your family.",
+     "hi": "स्वतंत्रता दिवस की हार्दिक शुभकामनाएँ!"
+    }
+   }
+  },
+  {
+   "id": "gandhi-jayanti",
+   "names": {
+    "en": "Gandhi Jayanti",
+    "hi": "गांधी जयंती"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 10,
+    "day": 2
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "thread",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "2 October: the birthday of Mahatma Gandhi, born at Porbandar in 1869.",
+     "hi": "2 अक्टूबर: महात्मा गांधी का जन्मदिन, जिनका जन्म 1869 में पोरबंदर में हुआ।"
+    },
+    "traditions": {
+     "en": "People gather at Rajghat in Delhi and at Gandhi memorials across the country for prayer meetings where his favourite bhajans, Vaishnava Jana To and Raghupati Raghava Raja Ram, are sung. Many spend the day spinning khadi, cleaning their neighbourhoods and reading his words; the United Nations keeps it as the International Day of Non-Violence.",
+     "hi": "दिल्ली के राजघाट और देश भर के गांधी स्मारकों पर प्रार्थना सभाएँ होती हैं, जिनमें उनके प्रिय भजन 'वैष्णव जन तो' और 'रघुपति राघव राजा राम' गाए जाते हैं। कई लोग इस दिन चरखा कातते हैं, अपने मोहल्ले की सफ़ाई करते हैं और उनके विचार पढ़ते हैं; संयुक्त राष्ट्र इसे अंतरराष्ट्रीय अहिंसा दिवस के रूप में मनाता है।"
+    },
+    "greeting": {
+     "en": "Warm wishes on Gandhi Jayanti: may truth and kindness light the way.",
+     "hi": "गांधी जयंती की हार्दिक शुभकामनाएँ! सत्य और करुणा राह रोशन करें।"
+    }
+   }
+  },
+  {
+   "id": "baisakhi",
+   "names": {
+    "en": "Baisakhi",
+    "hi": "बैसाखी"
+   },
+   "rule": {
+    "type": "solar-date",
+    "month": "mesha",
+    "day": 1
+   },
+   "tier": "regional",
+   "holidayIn": [
+    "IN-PB"
+   ],
+   "localNames": {},
+   "card": "harvest",
+   "local": {},
+   "durationDays": 1,
+   "variations": [
+    "Kept on Mesha Sankranti, 13 or 14 April: Punjab's harvest festival and, for Sikh families, the day the Khalsa was founded in 1699."
+   ],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, New Delhi",
+    "HinduPad Hindu festivals 2027 (https://hindupad.com/hindu-festivals-2027/)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Mesha Sankranti: Punjab's harvest festival, when the wheat is ready to cut.",
+     "hi": "मेष संक्रांति: पंजाब का फ़सल उत्सव, जब गेहूँ कटाई के लिए तैयार होता है।"
+    },
+    "traditions": {
+     "en": "Farmers give thanks for the rabi harvest, and villages and towns gather for bhangra and giddha to the dhol, with fairs, wrestling and food. Families bathe in rivers and sarovars; for Sikh families it is also the day the Khalsa was founded at Anandpur Sahib in 1699, kept at gurdwaras with kirtan, nagar kirtan processions and langar.",
+     "hi": "किसान रबी की फ़सल के लिए आभार प्रकट करते हैं, और गाँव-शहर ढोल पर भंगड़ा और गिद्दा, मेले, कुश्ती और पकवानों के लिए जुटते हैं। परिवार नदियों और सरोवरों में स्नान करते हैं; सिख परिवारों के लिए यह 1699 में आनंदपुर साहिब में ख़ालसा की स्थापना का दिन भी है, जो गुरुद्वारों में कीर्तन, नगर कीर्तन और लंगर के साथ मनाया जाता है।"
+    },
+    "greeting": {
+     "en": "Happy Baisakhi! May the golden harvest fill every home with joy.",
+     "hi": "बैसाखी की लख-लख बधाइयाँ! सुनहरी फ़सल हर घर में ख़ुशियाँ भर दे।"
+    }
+   }
+  },
+  {
+   "id": "jitiya",
+   "names": {
+    "en": "Jivitputrika Vrat (Jitiya)",
+    "hi": "जीवित्पुत्रिका व्रत"
+   },
+   "rule": {
+    "type": "tithi-in-lunar-month",
+    "month": "bhadrapada",
+    "tithi": 23
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "cradle",
+   "local": {},
+   "durationDays": 1,
+   "variations": [
+    "Kept above all in Bihar, eastern Uttar Pradesh and Jharkhand, and in Nepal's Mithila; families who follow a different almanac may begin the fast a day earlier."
+   ],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, New Delhi",
+    "HinduPad Hindu festivals 2027 (https://hindupad.com/hindu-festivals-2027/)"
+   ],
+   "content": {
+    "summary": {
+     "en": "Ashvin Krishna Ashtami: the three-day vrat mothers keep for their children's long life.",
+     "hi": "आश्विन कृष्ण अष्टमी: संतान की लंबी आयु के लिए माताओं का तीन दिन का व्रत।"
+    },
+    "traditions": {
+     "en": "Mothers in Bihar, eastern Uttar Pradesh, Jharkhand and Mithila begin with Nahay Khay, a bath and a meal of marua roti and noni saag, then keep a full fast, without water, on the Ashtami. They worship Jimutavahana and hear the story of the eagle and the jackal, and break the fast the next day.",
+     "hi": "बिहार, पूर्वी उत्तर प्रदेश, झारखंड और मिथिला की माताएँ नहाय-खाय से शुरुआत करती हैं, स्नान और मड़ुआ की रोटी व नोनी साग का भोजन, फिर अष्टमी को निर्जला व्रत रखती हैं। वे जीमूतवाहन की पूजा करती हैं, चील और सियारिन की कथा सुनती हैं, और अगले दिन पारण करती हैं।"
+    },
+    "greeting": {
+     "en": "Warm wishes on Jitiya, to every mother and her children.",
+     "hi": "जीवित्पुत्रिका व्रत (जितिया) की हार्दिक शुभकामनाएँ! हर माँ और उसकी संतान सदा सुखी रहें।"
+    }
+   }
+  },
+  {
+   "id": "hindi-diwas",
+   "names": {
+    "en": "Hindi Diwas",
+    "hi": "हिंदी दिवस"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 9,
+    "day": 14
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "books",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Ministry of Home Affairs, Department of Official Language: Hindi Diwas, 14 September (Constituent Assembly, 1949)"
+   ],
+   "content": {
+    "summary": {
+     "en": "14 September: the day in 1949 the Constituent Assembly adopted Hindi in the Devanagari script as an official language of the Union.",
+     "hi": "14 सितंबर: 1949 में इसी दिन संविधान सभा ने देवनागरी में लिखी हिंदी को संघ की राजभाषा के रूप में अपनाया।"
+    },
+    "traditions": {
+     "en": "Schools, colleges and offices hold poetry recitations, essay and debate contests, and Hindi Pakhwada, a fortnight of programmes for the language. It is also the birthday of Beohar Rajendra Simha, who worked for Hindi in the Constituent Assembly.",
+     "hi": "स्कूलों, कॉलेजों और दफ़्तरों में कविता-पाठ, निबंध और वाद-विवाद प्रतियोगिताएँ होती हैं, और भाषा के लिए हिंदी पखवाड़ा मनाया जाता है। यह संविधान सभा में हिंदी के लिए काम करने वाले ब्योहार राजेंद्र सिंह का जन्मदिन भी है।"
+    },
+    "greeting": {
+     "en": "Happy Hindi Diwas! To the language of Kabir, Tulsidas and Premchand.",
+     "hi": "हिंदी दिवस की हार्दिक शुभकामनाएँ! कबीर, तुलसी और प्रेमचंद की भाषा सदा फले-फूले।"
+    }
+   }
+  },
+  {
+   "id": "up-diwas",
+   "names": {
+    "en": "Uttar Pradesh Diwas",
+    "hi": "उत्तर प्रदेश दिवस"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 1,
+    "day": 24
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "ganga",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "State governments' foundation days: Uttar Pradesh (24 January 1950), Bihar (22 March 1912), Rajasthan (30 March 1949), Himachal Pradesh (15 April 1948)"
+   ],
+   "content": {
+    "summary": {
+     "en": "24 January: the day in 1950 the United Provinces took the name Uttar Pradesh.",
+     "hi": "24 जनवरी: 1950 में इसी दिन संयुक्त प्रांत का नाम उत्तर प्रदेश हुआ।"
+    },
+    "traditions": {
+     "en": "The state celebrates with exhibitions of each district's craft, from Banarasi silk to Moradabad brass and Lucknow chikan, with folk music and Awadhi, Braj and Bhojpuri programmes.",
+     "hi": "राज्य बनारसी रेशम से लेकर मुरादाबाद के पीतल और लखनऊ की चिकनकारी तक, हर ज़िले के शिल्प की प्रदर्शनी, लोकसंगीत और अवधी, ब्रज व भोजपुरी कार्यक्रमों के साथ यह दिन मनाता है।"
+    },
+    "greeting": {
+     "en": "Happy Uttar Pradesh Diwas! Warm wishes to every home in UP.",
+     "hi": "उत्तर प्रदेश दिवस की हार्दिक शुभकामनाएँ!"
+    }
+   }
+  },
+  {
+   "id": "bihar-diwas",
+   "names": {
+    "en": "Bihar Diwas",
+    "hi": "बिहार दिवस"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 3,
+    "day": 22
+   },
+   "tier": "minor",
+   "holidayIn": [
+    "IN-BR"
+   ],
+   "localNames": {},
+   "card": "sun",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "State governments' foundation days: Uttar Pradesh (24 January 1950), Bihar (22 March 1912), Rajasthan (30 March 1949), Himachal Pradesh (15 April 1948)"
+   ],
+   "content": {
+    "summary": {
+     "en": "22 March: the day in 1912 Bihar was made a province of its own, separated from Bengal.",
+     "hi": "22 मार्च: 1912 में इसी दिन बंगाल से अलग होकर बिहार एक स्वतंत्र प्रांत बना।"
+    },
+    "traditions": {
+     "en": "Patna's Gandhi Maidan hosts three days of music, Madhubani and other crafts, and food from litti chokha to khaja, and Bihari families across India and abroad gather for programmes of Bhojpuri, Maithili and Magahi song.",
+     "hi": "पटना के गांधी मैदान में तीन दिन संगीत, मधुबनी समेत शिल्प और लिट्टी-चोखा से खाजा तक के पकवानों का उत्सव होता है, और देश-विदेश में बसे बिहारी परिवार भोजपुरी, मैथिली और मगही गीतों के कार्यक्रमों के लिए जुटते हैं।"
+    },
+    "greeting": {
+     "en": "Happy Bihar Diwas! Warm wishes to every Bihari home, near and far.",
+     "hi": "बिहार दिवस की हार्दिक शुभकामनाएँ!"
+    }
+   }
+  },
+  {
+   "id": "rajasthan-diwas",
+   "names": {
+    "en": "Rajasthan Diwas",
+    "hi": "राजस्थान दिवस"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 3,
+    "day": 30
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "toran",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "State governments' foundation days: Uttar Pradesh (24 January 1950), Bihar (22 March 1912), Rajasthan (30 March 1949), Himachal Pradesh (15 April 1948)"
+   ],
+   "content": {
+    "summary": {
+     "en": "30 March: the day in 1949 the princely states of Rajputana came together as Greater Rajasthan.",
+     "hi": "30 मार्च: 1949 में इसी दिन राजपूताना की रियासतें मिलकर वृहत् राजस्थान बनीं।"
+    },
+    "traditions": {
+     "en": "Jaipur and the other towns celebrate with folk music and dance, ghoomar, kalbelia and the Manganiyar singers, lit-up forts and havelis, and fairs of block prints, blue pottery and puppets.",
+     "hi": "जयपुर और अन्य शहर लोकसंगीत और नृत्य, घूमर, कालबेलिया और मांगणियार गायकों, रोशनी से सजे क़िलों और हवेलियों, और ठप्पा छपाई, ब्लू पॉटरी और कठपुतलियों के मेलों के साथ यह दिन मनाते हैं।"
+    },
+    "greeting": {
+     "en": "Happy Rajasthan Diwas! Padharo mhare des!",
+     "hi": "राजस्थान दिवस की हार्दिक शुभकामनाएँ! पधारो म्हारे देस!"
+    }
+   }
+  },
+  {
+   "id": "himachal-diwas",
+   "names": {
+    "en": "Himachal Day",
+    "hi": "हिमाचल दिवस"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 4,
+    "day": 15
+   },
+   "tier": "minor",
+   "holidayIn": [
+    "IN-HP"
+   ],
+   "localNames": {},
+   "card": "mountain",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "State governments' foundation days: Uttar Pradesh (24 January 1950), Bihar (22 March 1912), Rajasthan (30 March 1949), Himachal Pradesh (15 April 1948)"
+   ],
+   "content": {
+    "summary": {
+     "en": "15 April: the day in 1948 the hill states came together as Himachal Pradesh.",
+     "hi": "15 अप्रैल: 1948 में इसी दिन पहाड़ी रियासतें मिलकर हिमाचल प्रदेश बनीं।"
+    },
+    "traditions": {
+     "en": "Shimla and the district towns hold the state function with Nati, the folk dance of the hills, in Kullu and Kinnauri dress, with programmes of pahari song and food from siddu to madra.",
+     "hi": "शिमला और ज़िला मुख्यालयों में राज्य समारोह होते हैं, जिनमें कुल्लवी और किन्नौरी पोशाक में पहाड़ों का लोकनृत्य नाटी, पहाड़ी गीत और सिड्डू से मदरा तक के व्यंजन होते हैं।"
+    },
+    "greeting": {
+     "en": "Happy Himachal Day! Warm wishes from the mountains to every home.",
+     "hi": "हिमाचल दिवस की हार्दिक शुभकामनाएँ!"
+    }
+   }
+  },
+  {
+   "id": "haryana-diwas",
+   "names": {
+    "en": "Haryana Day",
+    "hi": "हरियाणा दिवस"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 11,
+    "day": 1
+   },
+   "tier": "minor",
+   "holidayIn": [
+    "IN-HR"
+   ],
+   "localNames": {},
+   "card": "harvest",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Punjab Reorganisation Act, 1966: Haryana formed on 1 November 1966"
+   ],
+   "content": {
+    "summary": {
+     "en": "1 November: the day in 1966 Haryana was formed as a state of its own.",
+     "hi": "1 नवंबर: 1966 में इसी दिन हरियाणा अलग राज्य बना।"
+    },
+    "traditions": {
+     "en": "Towns hold programmes of Haryanvi folk song and dance, the phag and the ghoomar of the region, wrestling and sports, and the state honours its farmers and athletes.",
+     "hi": "शहरों में हरियाणवी लोकगीत और नृत्य, फाग और घूमर, कुश्ती और खेलों के कार्यक्रम होते हैं, और राज्य अपने किसानों और खिलाड़ियों का सम्मान करता है।"
+    },
+    "greeting": {
+     "en": "Happy Haryana Day! Warm wishes to every home in Haryana.",
+     "hi": "हरियाणा दिवस की हार्दिक शुभकामनाएँ!"
+    }
+   }
+  },
+  {
+   "id": "mp-sthapana-diwas",
+   "names": {
+    "en": "Madhya Pradesh Sthapana Diwas",
+    "hi": "मध्य प्रदेश स्थापना दिवस"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 11,
+    "day": 1
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "tree",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "States Reorganisation Act, 1956: Kerala, Mysore (Karnataka), Madras and Madhya Pradesh formed on 1 November 1956"
+   ],
+   "content": {
+    "summary": {
+     "en": "1 November: the day in 1956 Madhya Pradesh was formed, when the states were redrawn.",
+     "hi": "1 नवंबर: 1956 में राज्यों के पुनर्गठन के साथ इसी दिन मध्य प्रदेश बना।"
+    },
+    "traditions": {
+     "en": "Bhopal's Lal Parade Ground and the district towns hold the Madhya Pradesh Utsav, with the folk arts of Malwa, Bundelkhand and Nimar, Gond painting and tribal dance, and the state's awards.",
+     "hi": "भोपाल के लाल परेड मैदान और ज़िलों में मध्य प्रदेश उत्सव होता है, जिसमें मालवा, बुंदेलखंड और निमाड़ की लोककलाएँ, गोंड चित्रकला, जनजातीय नृत्य और राज्य सम्मान होते हैं।"
+    },
+    "greeting": {
+     "en": "Happy Madhya Pradesh Sthapana Diwas! Warm wishes to the heart of India.",
+     "hi": "मध्य प्रदेश स्थापना दिवस की हार्दिक शुभकामनाएँ!"
+    }
+   }
+  },
+  {
+   "id": "chhattisgarh-rajyotsava",
+   "names": {
+    "en": "Chhattisgarh Rajyotsava",
+    "hi": "छत्तीसगढ़ राज्योत्सव"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 11,
+    "day": 1
+   },
+   "tier": "minor",
+   "holidayIn": [
+    "IN-CG"
+   ],
+   "localNames": {},
+   "card": "harvest",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Madhya Pradesh, Uttar Pradesh and Bihar Reorganisation Acts, 2000: Chhattisgarh (1 November), Uttarakhand (9 November) and Jharkhand (15 November 2000)"
+   ],
+   "content": {
+    "summary": {
+     "en": "1 November: Chhattisgarh's birthday, the day the state was formed in 2000.",
+     "hi": "1 नवंबर: सन् 2000 में इसी दिन छत्तीसगढ़ राज्य बना।"
+    },
+    "traditions": {
+     "en": "Raipur holds the Rajyotsava for several days, with panthi, raut nacha and karma dances, the Pandavani of the Mahabharata, crafts of dhokra and bell metal, and the state's honours.",
+     "hi": "रायपुर में कई दिनों तक राज्योत्सव चलता है, जिसमें पंथी, राउत नाचा और करमा नृत्य, महाभारत की पंडवानी, ढोकरा और बेल मेटल शिल्प और राज्य सम्मान होते हैं।"
+    },
+    "greeting": {
+     "en": "Happy Chhattisgarh Rajyotsava! Warm wishes to the rice bowl of India.",
+     "hi": "छत्तीसगढ़ राज्योत्सव की हार्दिक शुभकामनाएँ!"
+    }
+   }
+  },
+  {
+   "id": "uttarakhand-diwas",
+   "names": {
+    "en": "Uttarakhand Sthapana Diwas",
+    "hi": "उत्तराखंड स्थापना दिवस"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 11,
+    "day": 9
+   },
+   "tier": "minor",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "mountain",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Madhya Pradesh, Uttar Pradesh and Bihar Reorganisation Acts, 2000: Chhattisgarh (1 November), Uttarakhand (9 November) and Jharkhand (15 November 2000)"
+   ],
+   "content": {
+    "summary": {
+     "en": "9 November: Uttarakhand's birthday, the day the hill state was formed in 2000.",
+     "hi": "9 नवंबर: सन् 2000 में इसी दिन पहाड़ी राज्य उत्तराखंड बना।"
+    },
+    "traditions": {
+     "en": "Dehradun and the district towns hold programmes of Garhwali and Kumaoni song and dance, choliya and jhora, with the hills' food and crafts, and remember those who worked for the state.",
+     "hi": "देहरादून और ज़िलों में गढ़वाली और कुमाऊँनी गीत-नृत्य, छोलिया और झोड़ा, पहाड़ के व्यंजन और शिल्प के कार्यक्रम होते हैं, और राज्य के लिए काम करने वालों को याद किया जाता है।"
+    },
+    "greeting": {
+     "en": "Happy Uttarakhand Day! Warm wishes from Devbhoomi to every home.",
+     "hi": "उत्तराखंड स्थापना दिवस की हार्दिक शुभकामनाएँ!"
+    }
+   }
+  },
+  {
+   "id": "jharkhand-sthapana-diwas",
+   "names": {
+    "en": "Jharkhand Sthapana Diwas",
+    "hi": "झारखंड स्थापना दिवस"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 11,
+    "day": 15
+   },
+   "tier": "minor",
+   "holidayIn": [
+    "IN-JH"
+   ],
+   "localNames": {},
+   "card": "tree",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Madhya Pradesh, Uttar Pradesh and Bihar Reorganisation Acts, 2000: Chhattisgarh (1 November), Uttarakhand (9 November) and Jharkhand (15 November 2000)"
+   ],
+   "content": {
+    "summary": {
+     "en": "15 November: Jharkhand's birthday, formed in 2000 on the birth anniversary of Birsa Munda.",
+     "hi": "15 नवंबर: सन् 2000 में भगवान बिरसा मुंडा की जयंती पर बना झारखंड राज्य का स्थापना दिवस।"
+    },
+    "traditions": {
+     "en": "Ranchi and the districts celebrate with the drums and dances of the state's peoples, Chhau, Paika and Jhumar, and garlands at the memorials of Birsa Munda, who is remembered across Jharkhand on this day.",
+     "hi": "रांची और ज़िलों में राज्य के लोगों के ढोल-मांदर और नृत्य, छऊ, पाइका और झूमर के साथ उत्सव होता है, और बिरसा मुंडा के स्मारकों पर माल्यार्पण होता है, जिन्हें इस दिन पूरे झारखंड में याद किया जाता है।"
+    },
+    "greeting": {
+     "en": "Happy Jharkhand Sthapana Diwas! Warm wishes to the land of forests.",
+     "hi": "झारखंड स्थापना दिवस की हार्दिक शुभकामनाएँ!"
+    }
+   }
   }
  ],
  "dailySignificance": [

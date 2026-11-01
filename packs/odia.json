@@ -1398,7 +1398,7 @@
    },
    "tier": "major",
    "holidayIn": [
-    "IN-OR"
+    "IN-OD"
    ],
    "localNames": {},
    "card": "harvest",
@@ -1464,7 +1464,7 @@
    },
    "tier": "major",
    "holidayIn": [
-    "IN-OR"
+    "IN-OD"
    ],
    "localNames": {},
    "card": "swan",
@@ -1533,7 +1533,7 @@
    },
    "tier": "major",
    "holidayIn": [
-    "IN-OR",
+    "IN-OD",
     "MU",
     "LK"
    ],
@@ -1660,7 +1660,7 @@
    },
    "tier": "major",
    "holidayIn": [
-    "IN-OR",
+    "IN-OD",
     "GY",
     "SR",
     "IN-DL",
@@ -1843,7 +1843,7 @@
    },
    "tier": "major",
    "holidayIn": [
-    "IN-OR"
+    "IN-OD"
    ],
    "localNames": {},
    "card": "tulsi",
@@ -2046,7 +2046,7 @@
    },
    "tier": "major",
    "holidayIn": [
-    "IN-OR"
+    "IN-OD"
    ],
    "localNames": {},
    "card": "swing",
@@ -2092,7 +2092,7 @@
    },
    "tier": "major",
    "holidayIn": [
-    "IN-OR"
+    "IN-OD"
    ],
    "localNames": {},
    "card": "chariot",
@@ -2366,7 +2366,7 @@
    },
    "tier": "major",
    "holidayIn": [
-    "IN-OR"
+    "IN-OD"
    ],
    "localNames": {},
    "card": "krishna",
@@ -2435,7 +2435,7 @@
    },
    "tier": "major",
    "holidayIn": [
-    "IN-OR",
+    "IN-OD",
     "MU"
    ],
    "localNames": {},
@@ -2510,7 +2510,7 @@
    },
    "tier": "major",
    "holidayIn": [
-    "IN-OR"
+    "IN-OD"
    ],
    "localNames": {},
    "card": "harvest",
@@ -2617,7 +2617,7 @@
    },
    "tier": "major",
    "holidayIn": [
-    "IN-OR"
+    "IN-OD"
    ],
    "localNames": {},
    "card": "durga",
@@ -2670,7 +2670,7 @@
    },
    "tier": "major",
    "holidayIn": [
-    "IN-OR"
+    "IN-OD"
    ],
    "localNames": {},
    "card": "navratri",
@@ -2793,7 +2793,7 @@
    },
    "tier": "major",
    "holidayIn": [
-    "IN-OR"
+    "IN-OD"
    ],
    "localNames": {},
    "card": "diya",
@@ -2939,6 +2939,222 @@
     "greeting": {
      "en": "Warm Prathamastami wishes to every eldest child and the mothers who bless them!",
      "or": "ପ୍ରତିଟି ପ୍ରଥମ ସନ୍ତାନ ଓ ସେମାନଙ୍କୁ ଆଶୀର୍ବାଦ କରୁଥିବା ମାଆମାନଙ୍କୁ ପ୍ରଥମାଷ୍ଟମୀର ଶୁଭେଚ୍ଛା!"
+    }
+   }
+  },
+  {
+   "id": "republic-day-or",
+   "names": {
+    "en": "Republic Day",
+    "or": "ସାଧାରଣତନ୍ତ୍ର ଦିବସ"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 1,
+    "day": 26
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "lotus",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "26 January: the day the Constitution of India came into force in 1950.",
+     "or": "26 ଜାନୁଆରୀ: 1950ରେ ଏହି ଦିନ ଭାରତର ସମ୍ବିଧାନ ଲାଗୁ ହୋଇଥିଲା।"
+    },
+    "traditions": {
+     "en": "The day opens with the parade on Kartavya Path in New Delhi, where the states' tableaux show their dances and crafts, and with flag hoisting at schools, offices and housing societies across the country. Families watch the parade together, children sing and perform at school, and sweets are shared.",
+     "or": "ନୂଆଦିଲ୍ଲୀର କର୍ତ୍ତବ୍ୟ ପଥରେ ପ୍ୟାରେଡ୍‌ରେ ଦିନ ଆରମ୍ଭ ହୁଏ; ରାଜ୍ୟମାନଙ୍କ ଝାଙ୍କି ସେମାନଙ୍କ ନୃତ୍ୟ ଓ କାରୁକଳା ଦେଖାଏ। ସାରା ଦେଶରେ ବିଦ୍ୟାଳୟ ଓ କାର୍ଯ୍ୟାଳୟରେ ପତାକା ଉତ୍ତୋଳନ ହୁଏ; ପରିବାର ଏକାଠି ବସି ପ୍ୟାରେଡ୍ ଦେଖନ୍ତି, ପିଲାମାନେ ବିଦ୍ୟାଳୟରେ ଗୀତ ଗାଇ କାର୍ଯ୍ୟକ୍ରମ କରନ୍ତି, ଓ ମିଠା ବଣ୍ଟାଯାଏ।"
+    },
+    "greeting": {
+     "en": "Happy Republic Day! Warm wishes to you and your family.",
+     "or": "ସାଧାରଣତନ୍ତ୍ର ଦିବସର ହାର୍ଦ୍ଦିକ ଶୁଭେଚ୍ଛା!"
+    }
+   }
+  },
+  {
+   "id": "independence-day-or",
+   "names": {
+    "en": "Independence Day",
+    "or": "ସ୍ୱାଧୀନତା ଦିବସ"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 8,
+    "day": 15
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "kite",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "15 August: the day India became independent in 1947.",
+     "or": "15 ଅଗଷ୍ଟ: 1947ରେ ଏହି ଦିନ ଭାରତ ସ୍ୱାଧୀନ ହୋଇଥିଲା।"
+    },
+    "traditions": {
+     "en": "The Prime Minister speaks from the Red Fort in Delhi, and the flag is raised at schools, offices and homes. In Delhi and many other towns the sky fills with kites; children sing and dance at school programmes, and families spend the holiday together.",
+     "or": "ଦିଲ୍ଲୀର ଲାଲକିଲ୍ଲାରୁ ପ୍ରଧାନମନ୍ତ୍ରୀ ଅଭିଭାଷଣ ଦିଅନ୍ତି, ଏବଂ ବିଦ୍ୟାଳୟ, କାର୍ଯ୍ୟାଳୟ ଓ ଘରେ ପତାକା ଉତ୍ତୋଳନ ହୁଏ। ଦିଲ୍ଲୀ ଓ ଅନେକ ସହରରେ ଆକାଶ ଗୁଡ଼ିରେ ଭରିଯାଏ; ପିଲାମାନେ ବିଦ୍ୟାଳୟ କାର୍ଯ୍ୟକ୍ରମରେ ଗୀତ ଗାଆନ୍ତି ଓ ନାଚନ୍ତି, ପରିବାର ଛୁଟି ଦିନଟି ଏକାଠି କଟାନ୍ତି।"
+    },
+    "greeting": {
+     "en": "Happy Independence Day! Warm wishes to you and your family.",
+     "or": "ସ୍ୱାଧୀନତା ଦିବସର ହାର୍ଦ୍ଦିକ ଶୁଭେଚ୍ଛା!"
+    }
+   }
+  },
+  {
+   "id": "gandhi-jayanti-or",
+   "names": {
+    "en": "Gandhi Jayanti",
+    "or": "ଗାନ୍ଧୀ ଜୟନ୍ତୀ"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 10,
+    "day": 2
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN"
+   ],
+   "localNames": {},
+   "card": "thread",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India, national days (india.gov.in) and DoPT holiday list 2026 (O.M. 03.07.2025)"
+   ],
+   "content": {
+    "summary": {
+     "en": "2 October: the birthday of Mahatma Gandhi, born at Porbandar in 1869.",
+     "or": "2 ଅକ୍ଟୋବର: 1869ରେ ପୋରବନ୍ଦରରେ ଜନ୍ମିତ ମହାତ୍ମା ଗାନ୍ଧୀଙ୍କ ଜନ୍ମଦିନ।"
+    },
+    "traditions": {
+     "en": "People gather at Rajghat in Delhi and at Gandhi memorials across the country for prayer meetings where his favourite bhajans, Vaishnava Jana To and Raghupati Raghava Raja Ram, are sung. Many spend the day spinning khadi, cleaning their neighbourhoods and reading his words; the United Nations keeps it as the International Day of Non-Violence.",
+     "or": "ଦିଲ୍ଲୀର ରାଜଘାଟ ଓ ସାରା ଦେଶର ଗାନ୍ଧୀ ସ୍ମାରକରେ ପ୍ରାର୍ଥନା ସଭା ହୁଏ; ତାଙ୍କ ପ୍ରିୟ ଭଜନ 'ବୈଷ୍ଣବ ଜନ ତୋ' ଓ 'ରଘୁପତି ରାଘବ ରାଜା ରାମ' ଗାନ କରାଯାଏ। ଅନେକେ ଏହି ଦିନ ଚରଖାରେ ସୂତା କାଟନ୍ତି, ନିଜ ଅଞ୍ଚଳ ସଫା କରନ୍ତି ଓ ତାଙ୍କ ବାଣୀ ପଢ଼ନ୍ତି; ଜାତିସଂଘ ଏହାକୁ ଆନ୍ତର୍ଜାତିକ ଅହିଂସା ଦିବସ ଭାବେ ପାଳନ କରେ।"
+    },
+    "greeting": {
+     "en": "Warm wishes on Gandhi Jayanti: may truth and kindness light the way.",
+     "or": "ଗାନ୍ଧୀ ଜୟନ୍ତୀର ଶୁଭେଚ୍ଛା! ସତ୍ୟ ଓ କରୁଣା ବାଟ ଦେଖାଉ।"
+    }
+   }
+  },
+  {
+   "id": "utkala-dibasa",
+   "names": {
+    "en": "Utkala Dibasa (Odisha Day)",
+    "or": "ଉତ୍କଳ ଦିବସ"
+   },
+   "rule": {
+    "type": "fixed-gregorian",
+    "month": 4,
+    "day": 1
+   },
+   "tier": "major",
+   "holidayIn": [
+    "IN-OD"
+   ],
+   "localNames": {},
+   "card": "boat",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Government of India (Constitution of Orissa) Order, 1936: Orissa a separate province from 1 April 1936",
+    "Government of Odisha, General Administration Department holidays 2026"
+   ],
+   "content": {
+    "summary": {
+     "en": "1 April: Odisha's birthday, the day in 1936 the Odia-speaking lands became a province of their own.",
+     "or": "1 ଅପ୍ରେଲ: 1936ରେ ଓଡ଼ିଆ ଭାଷାଭାଷୀ ଅଞ୍ଚଳ ନେଇ ସ୍ୱତନ୍ତ୍ର ପ୍ରଦେଶ ଗଠନ ହୋଇଥିବା ଦିନ।"
+    },
+    "traditions": {
+     "en": "Schools sing Bande Utkala Janani, and the state remembers Utkal Gourab Madhusudan Das and the others who worked for a united Odisha. Towns hold Odissi and folk dance, Pala and exhibitions of pattachitra and filigree, and families share Odia dishes.",
+     "or": "ବିଦ୍ୟାଳୟରେ 'ବନ୍ଦେ ଉତ୍କଳ ଜନନୀ' ଗାନ ହୁଏ, ଏବଂ ଉତ୍କଳ ଗୌରବ ମଧୁସୂଦନ ଦାସଙ୍କ ସମେତ ସ୍ୱତନ୍ତ୍ର ଓଡ଼ିଶା ପାଇଁ କାମ କରିଥିବା ମହାପୁରୁଷଙ୍କୁ ସ୍ମରଣ କରାଯାଏ। ସହରରେ ଓଡ଼ିଶୀ ଓ ଲୋକନୃତ୍ୟ, ପାଲା, ପଟ୍ଟଚିତ୍ର ଓ ତାରକସି ପ୍ରଦର୍ଶନୀ ହୁଏ, ଏବଂ ପରିବାର ଓଡ଼ିଆ ଖାଦ୍ୟ ବାଣ୍ଟନ୍ତି।"
+    },
+    "story": {
+     "en": "For a century the Odia-speaking people lived divided between the Bengal, Madras and Central Provinces. The Utkal Sammilani, founded in 1903, worked for their union, and on 1 April 1936 Orissa was made a separate province, the first in India formed on the basis of language.",
+     "or": "ଶହେ ବର୍ଷ ଧରି ଓଡ଼ିଆ ଭାଷାଭାଷୀ ଲୋକେ ବଙ୍ଗ, ମାନ୍ଦ୍ରାଜ ଓ ମଧ୍ୟପ୍ରଦେଶ ମଧ୍ୟରେ ବିଭକ୍ତ ଥିଲେ। 1903ରେ ଗଠିତ ଉତ୍କଳ ସମ୍ମିଳନୀ ସେମାନଙ୍କ ମିଳନ ପାଇଁ କାମ କଲା, ଏବଂ 1936 ଅପ୍ରେଲ 1ରେ ଭାଷା ଭିତ୍ତିରେ ଭାରତର ପ୍ରଥମ ପ୍ରଦେଶ ଭାବେ ଓଡ଼ିଶା ଗଠନ ହେଲା।"
+    },
+    "greeting": {
+     "en": "Happy Utkala Dibasa! Warm wishes to every Odia home.",
+     "or": "ସମସ୍ତ ଓଡ଼ିଆଙ୍କୁ ଉତ୍କଳ ଦିବସର ହାର୍ଦ୍ଦିକ ଶୁଭେଚ୍ଛା! ବନ୍ଦେ ଉତ୍କଳ ଜନନୀ!"
+    }
+   }
+  },
+  {
+   "id": "manabasa-gurubara",
+   "names": {
+    "en": "Manabasa Gurubara (Thursdays of Margasira)",
+    "or": "ମାଣବସା ଗୁରୁବାର"
+   },
+   "rule": {
+    "type": "nth-weekday",
+    "weekday": "thursday",
+    "within": {
+     "type": "solar-month",
+     "month": "vrishchika"
+    }
+   },
+   "tier": "regional",
+   "holidayIn": [],
+   "localNames": {},
+   "card": "lakshmi",
+   "local": {},
+   "durationDays": 1,
+   "variations": [],
+   "variationsNative": [],
+   "localNative": {},
+   "hidden": false,
+   "overrides": {},
+   "sources": [
+    "Reference almanac, Bhubaneswar"
+   ],
+   "content": {
+    "summary": {
+     "en": "The Thursdays of Margasira, when Odia homes welcome Lakshmi with the mana of new paddy.",
+     "or": "ମାର୍ଗଶିର ମାସର ଗୁରୁବାର, ଯେତେବେଳେ ଓଡ଼ିଆ ଘରେ ନୂଆ ଧାନର ମାଣ ସହ ମା' ଲକ୍ଷ୍ମୀଙ୍କୁ ପୂଜା କରାଯାଏ।"
+    },
+    "traditions": {
+     "en": "Before dawn the women of the house paint jhoti, rice-paste patterns of Lakshmi's footprints and sheaves of paddy, from the door to the shrine. The mana, a measuring basket filled with the new harvest's paddy, is worshipped as Lakshmi, pithas are made, and the Lakshmi Purana of Balaram Das is read, with its story of Lakshmi's visit to Shriya's humble home.",
+     "or": "ଭୋରରୁ ଘରର ମହିଳାମାନେ ଦୁଆରଠାରୁ ଠାକୁରଘର ଯାଏ ଲକ୍ଷ୍ମୀଙ୍କ ପାଦ ଓ ଧାନ ଶିଷାର ଝୋଟି ଚିତା ଦିଅନ୍ତି। ନୂଆ ଧାନ ଭରା ମାଣକୁ ଲକ୍ଷ୍ମୀ ରୂପେ ପୂଜା କରାଯାଏ, ପିଠା ତିଆରି ହୁଏ, ଏବଂ ଶ୍ରିୟାଙ୍କ ଘରକୁ ଲକ୍ଷ୍ମୀଙ୍କ ଆଗମନ କାହାଣୀ ଥିବା ବଳରାମ ଦାସଙ୍କ ଲକ୍ଷ୍ମୀ ପୁରାଣ ପାଠ ହୁଏ।"
+    },
+    "greeting": {
+     "en": "Warm wishes on Manabasa Gurubara: may Lakshmi walk into your home on the jhoti.",
+     "or": "ମାଣବସା ଗୁରୁବାରର ଶୁଭେଚ୍ଛା! ଝୋଟି ଚିତା ଦେଇ ଘରକୁ ମା' ଲକ୍ଷ୍ମୀ ଆସନ୍ତୁ।"
     }
    }
   },
