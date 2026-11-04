@@ -1,10 +1,10 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart, warm } from './engine.js?v=202611032348';
-import { showGames, GM, gameKey, VIGIL } from './games.js?v=202611032348';
-import * as FAMILY from './family.js?v=202611032348';
-import { translit, hasLatin, scriptLetter } from './translit.js?v=202611032348';
+import { engine, onRestart, warm } from './engine.js?v=202611040845';
+import { showGames, GM, gameKey, VIGIL } from './games.js?v=202611040845';
+import * as FAMILY from './family.js?v=202611040845';
+import { translit, hasLatin, scriptLetter } from './translit.js?v=202611040845';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -1654,16 +1654,16 @@ function prayerReader(p) {
 // ---------------------------------------------------------------- traditional time
 // As on iOS (OldTimeView): clock time and nazhika/vinazhika (ghati/pal...) from that day's sunrise, both
 // ways. A nazhika is 24 minutes, or the day (sunrise to the next sunrise) in sixty; muhurtas (15 by day,
-// 15 by night) and yamas (4 and 4) follow the day's and night's own lengths. The count can run from sunset
-// instead (the night's reckoning): the panchangam day's sunset, or, for a daytime moment, the evening before. Free.
+// 15 by night) and yamas (4 and 4) follow the day's and night's own lengths. At night the count is also given
+// from that evening's sunset (`ns`), as night times were traditionally written; nazhika entered can be either. Free.
 const OT = { toClock: false, proportional: false, fromSunset: false, date: null, time: null, n: 15, v: 0, place: null };
 const timeUnitNames = () => { const u = pack?.display?.timeUnits; return (S.native ? u?.native : u?.en) || u?.en || ['ghati', 'pal']; };
-function tradTime(p, t, prop, before, dayDate, base = p.sunrise) {
-  const unit = prop ? (p.nextSunrise - p.sunrise) / 60 : 1440, el = t - base;
-  const n = Math.min(59, Math.floor(el / unit)), v = Math.min(59, Math.floor((el - n * unit) / (unit / 60)));
-  const night = t >= p.sunset, from = night ? p.sunset : p.sunrise, span = night ? p.nextSunrise - p.sunset : p.sunset - p.sunrise;
+function tradTime(p, t, prop, before, dayDate) {
+  const unit = prop ? (p.nextSunrise - p.sunrise) / 60 : 1440;
+  const count = base => { const el = Math.max(0, t - base), n = Math.min(59, Math.floor(el / unit)); return [n, Math.min(59, Math.floor((el - n * unit) / (unit / 60)))]; };
+  const [n, v] = count(p.sunrise), night = t >= p.sunset, from = night ? p.sunset : p.sunrise, span = night ? p.nextSunrise - p.sunset : p.sunset - p.sunrise;
   const part = (t - from) / Math.max(span, 1);
-  return { n, v, night, muhurta: Math.min(15, Math.floor(part * 15) + 1), yama: Math.min(4, Math.floor(part * 4) + 1), before, dayDate, p };
+  return { n, v, ns: night ? count(p.sunset) : null, night, muhurta: Math.min(15, Math.floor(part * 15) + 1), yama: Math.min(4, Math.floor(part * 4) + 1), before, dayDate, p };
 }
 // Now, two clocks side by side for the chosen place: the ordinary clock of twelve hours (its second hand sweeping,
 // or stepping when less motion is asked for), and the dial of sixty, its hand at the time since this morning's
@@ -1747,12 +1747,11 @@ async function viewOldTime() {
     <div class="seg" style="margin:8px 0"><button data-ot="0" class="${!OT.toClock ? 'on' : ''}">${esc(t('ot.toTrad', u[0]))}</button><button data-ot="1" class="${OT.toClock ? 'on' : ''}">${esc(t('ot.toClock', u[0]))}</button></div>
     <div class="card">
       <label class="field"><span>${esc(t('ot.date'))}</span><input type="date" id="otd" value="${OT.date}" min="1900-01-01" max="2100-12-31"></label>
-      ${OT.toClock ? `<label class="field"><span>${esc(u[0])}</span><select id="otn">${opts(OT.n)}</select></label><label class="field"><span>${esc(u[1])}</span><select id="otv">${opts(OT.v)}</select></label>`
+      ${OT.toClock ? `<div class="seg" style="margin:8px 0"><button data-os="0" class="${!OT.fromSunset ? 'on' : ''}">${esc(t('ot.afterSunrise'))}</button><button data-os="1" class="${OT.fromSunset ? 'on' : ''}">${esc(t('ot.afterSunset'))}</button></div><label class="field"><span>${esc(u[0])}</span><select id="otn">${opts(OT.n)}</select></label><label class="field"><span>${esc(u[1])}</span><select id="otv">${opts(OT.v)}</select></label>`
         : `<label class="field"><span>${esc(t('pp.time'))}</span><input type="time" id="ott" value="${OT.time}"></label>`}
       <div class="field"><span>${esc(t('pp.place'))}: <b>${esc(place.name)}</b></span><div id="otpick"></div></div>
     </div>
     <div class="seg" style="margin:8px 0"><button data-op="0" class="${!OT.proportional ? 'on' : ''}">${esc(t('ot.fixed'))}</button><button data-op="1" class="${OT.proportional ? 'on' : ''}">${esc(t('ot.proportional'))}</button></div>
-    <div class="seg" style="margin:8px 0"><button data-os="0" class="${!OT.fromSunset ? 'on' : ''}">${esc(t('ot.afterSunrise'))}</button><button data-os="1" class="${OT.fromSunset ? 'on' : ''}">${esc(t('ot.afterSunset'))}</button></div>
     <div id="otres"><div class="loading"><div class="ring"><i></i></div></div></div>
     <p class="small muted">${esc(t('ot.units', u[0], u[1]))}</p>`;
   const m = $('#main');
@@ -1768,7 +1767,7 @@ async function viewOldTime() {
   // The calculation, for the chosen place (its own year tables).
   const pd = await day(OT.date, place).catch(() => null); if (!pd || tab !== 'oldtime') return;
   const clockAt = u2 => dtf({ hour: 'numeric', minute: '2-digit', ...hourOpts(), timeZone: place.tz }).format(new Date(u2 * 1000));
-  let r, head, early = false;
+  let r, head, sub = '';
   if (OT.toClock) {
     const unit = OT.proportional ? (pd.nextSunrise - pd.sunrise) / 60 : 1440, tt = (OT.fromSunset ? pd.sunset : pd.sunrise) + Math.floor(OT.n * unit + OT.v * unit / 60);
     const on = intl('en-CA', { timeZone: place.tz }).format(new Date(tt * 1000));
@@ -1785,18 +1784,13 @@ async function viewOldTime() {
     const tt = guess - off;
     if (tt < pd.sunrise) { const prev = addDays(OT.date, -1), py = await day(prev, place); r = tradTime(py, tt, OT.proportional, true, prev); }
     else r = tradTime(pd, tt, OT.proportional, false, OT.date);
-    if (OT.fromSunset) {
-      // From that panchangam day's sunset; a daytime moment, from the evening before. (Before sunrise is already
-      // after the previous day's sunset, so the note on the previous day's sunrise does not apply.)
-      early = tt < r.p.sunset;
-      const base = early ? (await day(addDays(r.dayDate, -1), place)).sunset : r.p.sunset;
-      r = tradTime(r.p, tt, OT.proportional, false, r.dayDate, base);
-    }
-    head = t(OT.fromSunset ? 'ot.resultNight' : 'ot.result', r.n, u[0], r.v, u[1]);
+    // At night, after that evening's sunset first, then (smaller) after sunrise.
+    head = r.ns ? t('ot.resultNight', r.ns[0], u[0], r.ns[1], u[1]) : t('ot.result', r.n, u[0], r.v, u[1]);
+    if (r.ns) sub = t('ot.result', r.n, u[0], r.v, u[1]);
   }
   const secs = Math.floor((r.p.nextSunrise - r.p.sunrise) / 60);
   $('#otres').innerHTML = `<div class="card"><div class="serif" style="font-size:24px;font-weight:700;color:var(--accent)">${esc(head)}</div>
-    ${early ? `<p class="small" style="color:var(--accent);margin:6px 0 0">${esc(t('ot.beforeSunsetNote'))}</p>` : ''}
+    ${sub ? `<p class="small muted" style="margin:4px 0 0">${esc(sub)}</p>` : ''}
     <p style="font-weight:600;margin:8px 0 4px">${esc(t('ot.dayOf', greg(r.dayDate)))}</p>${r.before ? `<p class="small" style="color:var(--accent);margin:0 0 6px">${esc(t('ot.prevDay'))}</p>` : ''}
     <div class="row"><span class="muted">${esc(t('sun.sunrise'))}</span><span class="v">${esc(clockAt(r.p.sunrise))}</span></div>
     <div class="row"><span class="muted">${esc(t('sun.sunset'))}</span><span class="v">${esc(clockAt(r.p.sunset))}</span></div>
