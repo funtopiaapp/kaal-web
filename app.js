@@ -1,10 +1,10 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart, warm } from './engine.js?v=202611040845';
-import { showGames, GM, gameKey, VIGIL } from './games.js?v=202611040845';
-import * as FAMILY from './family.js?v=202611040845';
-import { translit, hasLatin, scriptLetter } from './translit.js?v=202611040845';
+import { engine, onRestart, warm } from './engine.js?v=202611120746';
+import { showGames, GM, gameKey, VIGIL } from './games.js?v=202611120746';
+import * as FAMILY from './family.js?v=202611120746';
+import { translit, hasLatin, scriptLetter } from './translit.js?v=202611120746';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -49,7 +49,31 @@ applyMotion();
 // The app's text size, 0 (smaller) to 4 (largest), as on iOS: the whole page scales.
 const SHARE_ICON = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px" aria-hidden="true"><path d="M12 3v12M7 8l5-5 5 5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>';
 const TEXT_SIZES = [0.9, 1, 1.15, 1.3, 1.45];
-const applyTextSize = () => { document.documentElement.style.setProperty('--ts', TEXT_SIZES[S.textSize] ?? 1); document.body.style.zoom = TEXT_SIZES[S.textSize] ?? 1; };
+const applyTextSize = () => { document.documentElement.style.setProperty('--ts', TEXT_SIZES[S.textSize] ?? 1); document.body.style.zoom = TEXT_SIZES[S.textSize] ?? 1; fitSoon(document.body); };
+// Text never ends in "…": where the room is fixed (calendar squares, card
+// backs, weekday heads) it steps its size down until it fits, to half.
+const FIT = '.wd, .cell .t, .cell .n, .c2 .t, .c2 .n, .c2 .fn, .c2 .sun, .c2 > .tback .tbfact, .tback.wide .tbcap, .tback.wide .tbfact, .tmhead > .tback .tbfact, .tmhead > .tback .tbline, .gx-float > b, .gx-thumb > b'
+  // and a single long word (a big text size, a long Malayalam name) never runs out of its box.
+  + ', .tile .lb, .wide .big, .homehead .wordmark, .sun > div > *, .fest .when, .navchips select';
+function fitText(el) {
+  el.style.fontSize = '';
+  if (!el.clientWidth) return;
+  const cs = getComputedStyle(el), from = parseFloat(cs.fontSize);
+  // A select's chosen line is measured, since the box itself never reports it.
+  const g = el.tagName === 'SELECT' && (fitText.g ||= document.createElement('canvas').getContext('2d')), label = g && el.selectedOptions[0]?.text || '';
+  const over = g ? () => { g.font = `${cs.fontWeight} ${el.style.fontSize || cs.fontSize} ${cs.fontFamily}`; return g.measureText(label).width > el.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight) - 22; }
+    : () => el.scrollWidth > el.clientWidth + 1 || el.scrollHeight > el.clientHeight + 1;
+  for (let z = from; z > from * 0.5 && over();) { z -= 0.5; el.style.fontSize = z + 'px'; }
+}
+let fitQ = new Set();
+function fitSoon(node) {
+  if (!fitQ.size) requestAnimationFrame(() => { const q = fitQ; fitQ = new Set(); for (const n of q) if (n.isConnected) { if (n.matches(FIT)) fitText(n); n.querySelectorAll(FIT).forEach(fitText); } });
+  fitQ.add(node);
+}
+new MutationObserver(ms => { for (const m of ms) { const n = m.target.nodeType === 1 ? m.target : m.target.parentElement; if (n && !(m.type === 'attributes')) fitSoon(n.closest(FIT) || n); } })
+  .observe(document.documentElement, { childList: true, subtree: true, characterData: true });
+addEventListener('resize', () => fitSoon(document.body));
+document.fonts?.ready.then(() => fitSoon(document.body));
 
 let STR = {}, pack = null, packJson = '', tab = 'home', dayDate = null, monthDate = null;
 const handles = new Map();
@@ -842,7 +866,7 @@ async function viewHome() {
         <span class="rahu">${esc(t('time.rahu'))} ${esc(span(p.rahuKalam))}</span>
       </button>
       <button class="wide" data-go="muhurtham"><span class="ic">${svg('muhurtham')}</span>
-        <span class="tx"><span class="lb">${esc(t('tab.muhurtham'))}</span><span class="serif big">${esc(t('m.pwTitle'))}</span><span class="dt">${esc(events.join(', '))}…</span></span><span class="chev" aria-hidden="true">›</span></button>
+        <span class="tx"><span class="lb">${esc(t('tab.muhurtham'))}</span><span class="serif big">${esc(t('m.pwTitle'))}</span><span class="dt">${esc(events.join(', '))}</span></span><span class="chev" aria-hidden="true">›</span></button>
     </div>
     <div class="arrangebar"><span class="tsize"><button data-ts="-1" aria-label="${esc(t('ts.smaller'))}">A−</button><button data-ts="1" aria-label="${esc(t('ts.larger'))}" style="font-size:17px">A+</button></span>
       <button class="linkbtn" data-arrange>▦ ${esc(t('hm.arrange'))}</button></div>
@@ -1269,6 +1293,15 @@ function familiesManager() {
 // As on iOS (Views/JatakamViews.swift): the chart and its vargas in South,
 // North or East Indian style, three dasha systems, and the family's dasha
 // sandhis. Charts only, no reading.
+// The chart for a moment (prashna), beside the person's: { date, minutes } in the place's own time, or null when off.
+let jkMoment = null;
+// The city it is cast for: one chosen here (jkMomentAt), else the chosen person's birthplace.
+let jkMomentAt = null;
+const jkShown = () => births().find(p => p.id === jkPerson) || births()[0];
+const momentPlace = () => jkMomentAt || jkShown()?.place || awayPlace() || S.home;
+const momentNow = () => { const tz = momentPlace().tz;
+  const [h, m] = intl('en-GB', { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()).split(':');
+  return { date: intl('en-CA', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date()), minutes: (+h % 24) * 60 + +m }; };
 let jkSection = 0, jkPerson = null, jkVarga = 1, jkSystem = 'vimshottari', jkAhead = true, jkSpan = 20;
 const jkCache = new Map();
 const births = () => S.people.filter(p => p.kind !== 'remembrance' && p.place);
@@ -1291,6 +1324,30 @@ async function gunaMilanSheet(bride, groom) {
     ${m.nadiZero ? rule('gm.nadiRule', 'nadi') : ''}${m.bhakootZero ? rule('gm.bhakootRule', 'bhakoot') : ''}
     <div class="card"><p class="label">${esc(t('mt.mangalTitle'))}</p>${kuja(bride, r.brideKuja)}${kuja(groom, r.groomKuja)}</div>
     <p class="small muted">${esc(t('gm.note'))}</p>`);
+}
+
+// The chart reading (content/packs/reading.json), as on iOS: four highlights and the full reading.
+// The web is free, so the full reading shows for everyone.
+let READING = null;
+async function readingFor(p) {
+  READING ??= await (await fetch('packs/reading.json?v=' + V)).json();
+  const names = {};
+  for (const t of ['rashis', 'grahas', 'nakshatras', 'chartYogas']) names[t] = Object.fromEntries(Object.keys(pack?.names?.[t] || {}).map(k => [k, name(t, k)]));
+  return engine({ op: 'reading', date: p.date, minutes: p.minutes ?? undefined, location: p.place, pack: READING, lang: lang(), names, now: Math.floor(Date.now() / 1000) });
+}
+const rdText = x => esc(x).replace(/\{d:(-?\d+)\}/g, (_, u) => esc(dtf({ month: 'short', year: 'numeric' }).format(new Date(+u * 1000))));
+let rdFocus = null, rdOpen = (() => { try { return localStorage.getItem('readingHighlights') !== '0'; } catch { return true; } })();
+function readingHtml(rd) {
+  const u = rd.ui || {}, why = e => e.why ? `<div class="rd-why"><b>${esc(u.why)}</b> ${rdText(e.why)}</div>` : '';
+  const icon = { nature: '☀', mind: '☾', now: '⏳', strength: '✦' };
+  const shown = rd.sections.filter(s => !rdFocus || s.key === rdFocus);
+  return `<div class="rd-head"><h2 class="serif">${esc(u.highlights)}</h2><button class="rd-fold ${rdOpen ? '' : 'shut'}" data-rdfold aria-label="${esc(rdOpen ? u.hide : u.show)}">⌄</button></div>
+    ${rdOpen ? `<div class="rd-hl">${rd.highlights.map((h, i) => `<div class="rd-flip" style="animation-delay:${i * 70}ms"><div class="rd-inner" data-rdflip>
+      <div class="card rd-card rd-front t${i % 4} ${rdFocus === h.section ? 'on' : ''}"><div class="rd-ic">${icon[h.key] || ''}</div><div class="rd-k">${esc(h.label)} <span class="rd-turn">↻</span></div><div class="rd-t">${rdText(h.title)}</div></div>
+      <div class="card rd-card rd-back t${i % 4}"><p>${rdText(h.text)}</p>${why(h)}<button class="rd-read" data-rdfocus="${esc(h.section || '')}">📖 ${esc(t('rd.read'))}</button></div></div></div>`).join('')}</div>` : ''}
+    <p class="small muted">${esc(u.disclaimer)}</p>
+    <div class="rd-head"><h2 class="serif">${esc(u.full)}</h2>${rdFocus ? `<button class="linkbtn" data-rdall>${esc(u.all)}</button>` : ''}</div>
+    ${shown.map((s, i) => `<details class="card rd-sec" ${i === 0 || rdFocus ? 'open' : ''}><summary>${esc(s.title)}</summary>${s.intro ? `<p class="small muted">${esc(s.intro)}</p>` : ''}${(u.nudge?.[s.key] || []).map(id => { const e = (pack?.muhurtham?.events || []).find(x => x.id === id); return e ? `<button class="rd-nudge" data-rdnudge="${esc(id)}">✦ ${esc((u.nudgeText || '').replace('{event}', e.names?.[lang()] || e.names?.en || id))}</button>` : ''; }).join('')}${s.entries.map(e => `<div class="rd-e"><h3>${rdText(e.title)}</h3><p>${rdText(e.text)}</p>${why(e)}</div>`).join('')}</details>`).join('')}`;
 }
 
 async function jataka(p) {
@@ -1389,17 +1446,29 @@ async function viewJathakam() {
   }
   const j = person && jkSection !== 2 ? await jataka(person) : null;
   if (j && !j.timeKnown) body += `<div class="banner">${esc(t('jk.noTime'))}</div>`;
+  if (person && jkSection === 0) {
+    const mp = momentPlace();
+    body += `<div class="card"><label style="display:flex;align-items:center;gap:8px;font-weight:600"><input type="checkbox" id="jkm" ${jkMoment ? 'checked' : ''} style="width:auto">🕐 ${esc(t('jk.moment'))}</label>
+      ${jkMoment ? `<div style="display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap"><input type="date" id="jkmd" value="${jkMoment.date}" style="width:auto"><input type="time" id="jkmt" value="${pad(Math.floor(jkMoment.minutes / 60))}:${pad(jkMoment.minutes % 60)}" style="width:auto"><button class="btn soft" data-now>${esc(t('jk.now'))}</button></div><button class="linkbtn" data-mplace style="margin-top:6px;font-weight:600">📍 ${esc(mp.name)} ›</button><div id="jkpp" style="margin-top:8px"></div>` : ''}</div>`;
+  }
+  const mj = jkMoment && jkSection === 0 ? await engine({ op: 'jataka', date: jkMoment.date, minutes: jkMoment.minutes, location: momentPlace() }) : null;
   if (j && jkSection === 0) {
+    const tools = j => { const v = j.vargas.find(x => x.number === jkVarga) || j.vargas[0];
+      return `<div class="chart-tools"><select id="jkv">${j.vargas.map(x => `<option value="${x.number}" ${x.number === v.number ? 'selected' : ''}>${esc(vargaName(x.number))}</option>`).join('')}</select>
+      <select id="jks">${['south', 'north', 'east'].map(st => `<option value="${st}" ${chartStyle() === st ? 'selected' : ''}>${esc(t('jk.' + st))}</option>`).join('')}</select></div>`; };
+    const chart = j => {
     const v = j.vargas.find(x => x.number === jkVarga) || j.vargas[0];
     const retro = new Set(j.grahas.filter(g => g.retrograde).map(g => g.graha));
     const moon = j.grahas.find(g => g.graha === 'moon').sign;
     const dm = d => `${Math.floor(d)}°${pad(Math.floor((d % 1) * 60))}′`;
     const row = (n, g) => `<div class="row"><span>${esc(n)}${g.retrograde ? ' ᴿ' : ''}</span><span class="v">${esc(name('rashis', g.sign))} ${dm(g.degrees)}<small>${esc(name('nakshatras', g.nakshatra))} · ${esc(t('bs.pada', g.pada))}</small></span></div>`;
-    body += `<div class="chart-tools"><select id="jkv">${j.vargas.map(x => `<option value="${x.number}" ${x.number === v.number ? 'selected' : ''}>${esc(vargaName(x.number))}</option>`).join('')}</select>
-      <select id="jks">${['south', 'north', 'east'].map(st => `<option value="${st}" ${chartStyle() === st ? 'selected' : ''}>${esc(t('jk.' + st))}</option>`).join('')}</select></div>
-      ${chartSvg(chartStyle(), v.lagna, v.lagna || moon, v.signs, retro, vargaName(v.number))}
+    return `${chartSvg(chartStyle(), v.lagna, v.lagna || moon, v.signs, retro, vargaName(v.number))}
       ${v.number === 1 ? `<div class="card"><p class="label">${esc(t('jk.grahas'))}</p>${j.lagna ? row(t('bs.lagna'), j.lagna) : ''}${j.grahas.map(g => row(name('grahas', g.graha), g)).join('')}
-        <div class="small muted">ᴿ ${esc(t('jk.retro'))} · Lahiri ${j.ayanamsa.toFixed(4)}°</div></div>` : ''}`;
+        <div class="small muted">ᴿ ${esc(t('jk.retro'))} · Lahiri ${j.ayanamsa.toFixed(4)}°</div></div>` : ''}`; };
+    // With the moment on: its chart first, then the person's; side by side when there is room.
+    const rd = await readingFor(person).catch(() => null);
+    body += tools(j) + (mj ? `<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px">
+      <div><p class="label">${esc(t('jk.moment'))}</p>${chart(mj)}</div><div><p class="label">${esc(person.name)}</p>${chart(j)}</div></div>` : chart(j)) + (rd ? readingHtml(rd) : '');
   }
   if (j && jkSection === 1) {
     const d = jkSystem === 'yogini' ? j.yogini : jkSystem === 'chara' && j.chara ? j.chara : j.vimshottari;
@@ -1433,10 +1502,24 @@ async function viewJathakam() {
       ${sandhis.length ? `<div class="card"><p class="label">${esc(t('jk.sandhi'))}</p>${sandhis.map(x => `<div class="list-row"><div class="grow"><b>${esc(x.p.name)}</b><div><span style="color:${GCOL[x.a.key]}">●</span> ${esc(name('grahas', x.a.key))} → <span style="color:${GCOL[x.b.key]}">●</span> ${esc(name('grahas', x.b.key))}</div><div class="small muted">${esc(dLabel(x.s))} – ${esc(dLabel(x.e))}</div></div><b style="color:var(--accent)">${esc(dLabel(x.b.start))}</b></div>`).join('')}</div>` : ''}
       <button class="btn soft" data-add>＋ ${esc(t('m.addProfile'))}</button>`}`;
   }
-  $('#main').innerHTML = `<div class="seg" style="margin-bottom:14px">${[['jk.chart', 0], ['jk.dasha', 1], ['jk.strength', 3], ['jk.family', 2]].map(([k, i]) => `<button data-jk="${i}" class="${jkSection === i ? 'on' : ''}">${esc(t(k))}</button>`).join('')}</div>${body}<p class="small muted">${esc(t('jk.chartNote'))}</p>`;
+  $('#main').innerHTML = `<div class="seg" style="margin-bottom:14px">${[['jk.chart', 0], ['jk.dasha', 1], ['jk.strength', 3], ['jk.family', 2]].map(([k, i]) => `<button data-jk="${i}" class="${jkSection === i ? 'on' : ''}">${esc(t(k))}</button>`).join('')}</div>${body}${mj ? `<p class="small muted">${esc(t('jk.momentNote', momentPlace().name))}</p>` : ''}<p class="small muted">${esc(t('jk.chartNote'))}</p>`;
   const q = x => $('#main').querySelector(x), qa = x => $('#main').querySelectorAll(x);
   qa('[data-jk]').forEach(b => b.onclick = () => { jkSection = +b.dataset.jk; viewJathakam(); });
-  q('#jkp')?.addEventListener('change', e => { jkPerson = e.target.value; viewJathakam(); });
+  // Another person: their birthplace, and the moment back to now.
+  q('#jkp')?.addEventListener('change', e => { jkPerson = e.target.value; jkMomentAt = null; if (jkMoment) jkMoment = momentNow(); viewJathakam(); });
+  q('#jkm')?.addEventListener('change', e => { jkMoment = e.target.checked ? momentNow() : null; viewJathakam(); });
+  q('[data-now]')?.addEventListener('click', () => { jkMoment = momentNow(); viewJathakam(); });
+  // Another city: the same date and clock time, read there.
+  q('[data-mplace]')?.addEventListener('click', () => placePicker(q('#jkpp'), p => { jkMomentAt = p; viewJathakam(); }));
+  const setMoment = () => { const d = q('#jkmd').value, [h, m] = (q('#jkmt').value || '').split(':');
+    if (/^\d{4}-\d{2}-\d{2}$/.test(d) && h != null && m != null) { jkMoment = { date: d, minutes: +h * 60 + +m }; viewJathakam(); } };
+  q('#jkmd')?.addEventListener('change', setMoment);
+  q('#jkmt')?.addEventListener('change', setMoment);
+  q('[data-rdfold]')?.addEventListener('click', () => { rdOpen = !rdOpen; try { localStorage.setItem('readingHighlights', rdOpen ? '1' : '0'); } catch {} viewJathakam(); });
+  qa('[data-rdfocus]').forEach(b => b.onclick = e => { e.stopPropagation(); const k = b.dataset.rdfocus; rdFocus = rdFocus === k ? null : k; viewJathakam(); });
+  qa('[data-rdflip]').forEach(b => b.onclick = () => b.classList.toggle('flipped'));
+  qa('[data-rdnudge]').forEach(b => b.onclick = () => { M.event = b.dataset.rdnudge; M.browse = false; M.results = null; tab = 'muhurtham'; render(); scrollTo(0, 0); });
+  q('[data-rdall]')?.addEventListener('click', () => { rdFocus = null; viewJathakam(); });
   q('#jkv')?.addEventListener('change', e => { jkVarga = +e.target.value; viewJathakam(); });
   q('#jks')?.addEventListener('change', e => { S.chartStyle = e.target.value; save(); viewJathakam(); });
   q('#jkspan')?.addEventListener('change', e => { jkSpan = +e.target.value; viewJathakam(); });
@@ -2035,12 +2118,12 @@ async function viewMonth(turn = 0) {
       ${cs !== 'minimal' && c.sunrise ? `<span class="sun" aria-hidden="true">↑${esc(hm(c.sunrise))} ↓${esc(hm(c.sunset))}</span>` : ''}</span>${back}</button>`;
   }).join('');
   $('#main').innerHTML = `<div class="dayhead"><div class="nav"><button class="arrow" data-m="-1">‹</button>
-      <div><button class="mtitle" data-jump><h1 class="serif" style="font-size:24px;margin:0">${esc(head)}</h1><div class="muted">${esc(dtf({ month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(m)))}</div>${yl ? `<div class="small muted">${esc(yl)}</div>` : ''}</button>
-      <select id="calstyle" class="placechip noprint" aria-label="${esc(t('cs.title'))}">${[['festive', 'cs.festive'], ['minimal', 'cs.minimal'], ['classic', 'cs.classic']].map(([v, k]) => `<option value="${v}" ${(S.calStyle || 'festive') === v ? 'selected' : ''}>🎨 ${esc(t(k))}</option>`).join('')}</select>
+      <div><button class="mtitle" data-jump><h1 class="serif" style="font-size:24px;margin:0">${esc(head)}</h1><div class="muted">${esc(dtf({ month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(m)))}</div>${yl ? `<div class="small muted">${esc(yl)}</div>` : ''}</button></div>
+      <button class="arrow" data-m="1">›</button></div>
+      <div class="navchips"><select id="calstyle" class="placechip noprint" aria-label="${esc(t('cs.title'))}">${[['festive', 'cs.festive'], ['minimal', 'cs.minimal'], ['classic', 'cs.classic']].map(([v, k]) => `<option value="${v}" ${(S.calStyle || 'festive') === v ? 'selected' : ''}>🎨 ${esc(t(k))}</option>`).join('')}</select>
       ${m !== today().slice(0, 8) + '01' ? `<button class="btn" data-mtoday style="padding:3px 12px;font-size:13px">${esc(t('day.today'))}</button>` : ''}
       <select class="placechip noprint" aria-label="${esc(t('cal.location'))}"><option value="home" ${!monthPlace ? 'selected' : ''}>📍 ${esc(S.home.name)}</option>
-        ${monthPlace ? `<option value="other" selected>📍 ${esc(monthPlace.name)}</option>` : ''}<option value="pick">${esc(t('cal.other'))}</option></select></div>
-      <button class="arrow" data-m="1">›</button></div></div>
+        ${monthPlace ? `<option value="other" selected>📍 ${esc(monthPlace.name)}</option>` : ''}<option value="pick">${esc(t('cal.other'))}</option></select></div></div>
     ${S.pdfWatermark !== false ? `<div class="printmark"><img alt="" src="emblems-print/${(items.find(x => x.f.tier === 'major') || items[0])?.f.card || 'lotus'}.svg"></div>` : ''}
     <div class="grid g2 ${turn ? 'pagein' + (turn < 0 ? ' back' : '') : 'fadein'}">${wd.map(w => `<div class="wd">${esc(w)}</div>`).join('')}${'<div></div>'.repeat(lead)}${grid}</div>
     <div class="small muted calleg">${sp ? `<div><span><b class="mk">✦</b> ${esc(t('cal.ring0'))}</span><span><b class="mk">✪</b> ${esc(t('cal.ring1'))}</span></div>
@@ -3821,7 +3904,7 @@ async function viewAlerts() {
   const todays = (S.todayAlerts || []).filter(a => a.date === td && a.start > Date.now() / 1000);
   $('#main').innerHTML = `<h2 class="serif" style="margin-bottom:4px">${esc(t('al.title'))}</h2>
     <div class="card al-status"><span class="al-bell" aria-hidden="true">${BELL}</span><p class="small" style="margin:0">${esc(t('al.webNote'))}</p></div>
-    <p class="label">${esc(t('al.coming'))}</p><div class="card" id="alcoming"><p class="small muted">…</p></div>
+    <p class="label">${esc(t('al.coming'))}</p><div class="card" id="alcoming"><div class="ring mini"><i></i></div></div>
     ${todays.length ? `<p class="label">${esc(t('al.today'))}</p><div class="card">${todays.sort((a, b) => a.start - b.start).map(a => `<div class="list-row"><span class="al-ic" aria-hidden="true">${AL_ICON.today}</span><div class="grow"><b>${esc(t(a.key))}</b><div class="small muted">${esc(clockIn(a.start, S.home.tz))}</div></div><button class="btn soft" data-todayoff="${esc(a.id)}">${esc(t('r3.alertOff'))}</button></div>`).join('')}</div>` : ''}
     <p class="label">${esc(t('al.switches'))}</p>
     <div class="card">${sw('morningBriefing', t('s.mBriefing'))}

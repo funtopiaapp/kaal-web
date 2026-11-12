@@ -498,8 +498,8 @@ const ICONS = {
 const FAMS = [
   { g: 'pl', fam: 'gm.fam.pit', bg: 'var(--clay-soft)', go: 'background:var(--clay);color:var(--on-dark)', names: ['pallanguzhi', 'aliGuliMane', 'vamanaGuntalu'] },
   { g: 'ap', fam: 'gm.fam.hunt', bg: 'var(--green-soft)', go: 'background:var(--green);color:var(--paper)', names: ['aaduPuli', 'huliGatta', 'puliMeka', 'baghBandi'] },
-  // Bagh Chal, the square board of the same hunt, sits under it.
-  { g: 'bc', sub: true, title: 'gm.g.baghChal', line: 'gm.bc.card', bg: 'var(--green-soft)', go: 'background:var(--green);color:var(--paper)' },
+  // Bagh Chal, the square board of the same hunt, a family card of its own.
+  { g: 'bc', title: 'gm.g.baghChal', line: 'gm.bc.card', bg: 'var(--green-soft)', go: 'background:var(--green);color:var(--paper)' },
   { g: 'ac', fam: 'gm.fam.race', bg: 'var(--maroon-soft)', go: 'background:var(--maroon);color:var(--paper)', names: ['ashtaChamma', 'chowkaBara', 'thayam', 'dayakattam'] },
   { g: 'nm', fam: 'gm.fam.mill', bg: 'var(--indigo-soft)', go: 'background:var(--ink);color:var(--paper)', names: ['navakankari', 'nineMen'] },
   { g: 'pp', fam: 'gm.fam.virtue', bg: 'var(--gold-soft)', go: 'background:var(--gold-ink);color:var(--paper)', names: ['paramapadam', 'vaikunthapali', 'gyanChaupar', 'mokshaPatam'] },
@@ -554,7 +554,7 @@ async function homeScreen() {
     <div class="gm-sec rise" style="--i:2"><div class="gm-sech"><span class="gm-h serif">${esc(t('gm.fromTradition'))}</span><span class="gm-sub">${esc(C.cultureName)}</span></div>
       <div class="gm-hs">${tile('pl', t('gm.fam.pit'), 3)}${C.culture === 'nepali' ? tile('bc', t('gm.fam.hunt'), 4) : tile('ap', t('gm.fam.hunt'), 4)}${tile('pp', t('gm.fam.virtue'), 5)}${tile('ac', t('gm.fam.race'), 6)}</div></div>
     <div class="gm-fam"><span class="gm-h serif rise" style="--i:6">${esc(t('gm.families'))}</span>
-      ${FAMS.map((f, i) => `<button class="gm-fcard${f.sub ? ' sub' : ''} rise" style="--i:${7 + i}" data-go="${f.g}">
+      ${FAMS.map((f, i) => `<button class="gm-fcard rise" style="--i:${7 + i}" data-go="${f.g}">
         <span class="ic" style="background:${f.bg}">${ICONS[f.g]}</span>
         <span class="gm-tx"><span class="nm serif">${esc(t(f.title || f.fam))}</span><span class="rg">${esc(f.line ? t(f.line) : f.names.map(n => t('gm.g.' + n)).join(' · '))}</span></span>
         <span class="go" style="${f.go}">${esc(t('gm.play'))}</span></button>`).join('')}</div>

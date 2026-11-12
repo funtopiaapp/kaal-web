@@ -399,7 +399,7 @@ function editText(it, hint, done) {
   setTimeout(() => o.querySelector('#fmet').focus(), 50);
 }
 function photoSheet(f, id, done, ro) {
-  const o = X.sheet(`<div class="fm-full" id="fmfull"><p class="small muted">…</p></div>${ro ? '' : `<button class="btn soft block" data-rm>${esc(t('fam.remove'))}</button>`}`);
+  const o = X.sheet(`<div class="fm-full" id="fmfull"><div class="ring mini"><i></i></div></div>${ro ? '' : `<button class="btn soft block" data-rm>${esc(t('fam.remove'))}</button>`}`);
   o.classList.add('full');
   mediaURL('media', id).then(u => { const el = o.querySelector('#fmfull'); el.innerHTML = u ? `<img src="${u}" alt="">` : `<p class="muted">${esc(t('fam.way.photoElsewhere'))}</p>`; });
   o.querySelector('[data-rm]')?.addEventListener('click', () => confirmSheet(t('fam.way.deletePhoto'), '', t('fam.remove'), () => {
@@ -1263,7 +1263,7 @@ async function viewKula(main) {
         ${tp && !tp.id ? `<button class="fm-chip" aria-pressed="true" data-ktyped>${esc(templeLabel(tp))}</button>` : ''}<button class="fm-chip" data-kother>${esc(t('fam.kula.templeOther'))}</button></div></section>`}
       <div class="card fm-kcard"><div class="fm-sec-top"><span class="fm-sec-h serif">${esc(X.dtf({ month: 'long', year: 'numeric', timeZone: 'UTC' }).format(X.parse(X.today())))}</span><span class="small muted">◯ ${esc(t('fam.kula.legend', deityName(k.deity)))}</span></div>
         <p class="small muted" style="margin:2px 0 8px">${esc(own ? own.rules.map(ruleText).join(' · ') : t('fam.kula.rule.' + (k.deity === 'bhagavathi' ? 'devi' : k.deity)))}</p>
-        <div class="fm-cal" data-kcal><p class="small muted">…</p></div><div class="fm-daynote" data-knote aria-live="polite">${esc(t('fam.kula.tapDay'))}</div></div>
+        <div class="fm-cal" data-kcal><div class="ring mini"><i></i></div></div><div class="fm-daynote" data-knote aria-live="polite">${esc(t('fam.kula.tapDay'))}</div></div>
       <div class="card"><div class="fm-switch"><span id="fmkoc">${esc(t('fam.kula.onCalendar'))}<span class="small muted">${esc(t('fam.kula.onCalendarNote', deityName(k.deity)))}</span></span>${sw(k.onCalendar, 'fmkocs', 'fmkoc')}</div></div>
       <div data-ktf></div>
       <section class="fm-sec"><span class="fm-sec-h serif">${esc(t('py.title'))}</span>${kp?.prayers.length ? `<div class="fm-plist">${kp.prayers.map((p, i) => `<button data-kpr="${esc(p.id)}"><span>${esc(X.prayerTitle(p))}${i === 0 ? ` <span class="fm-tag gold">${esc(t('fam.kula.oursT', term))}</span>` : ''}</span><span aria-hidden="true">›</span></button>`).join('')}</div>` : `<p class="small muted">${esc(own ? t('fam.kula.oNoPrayers') : t('fam.kula.noPrayers', deityName(k.deity)))}</p>`}</section>
