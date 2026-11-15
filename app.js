@@ -1,10 +1,10 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart, warm } from './engine.js?v=202611142013';
-import { showGames, GM, gameKey, VIGIL } from './games.js?v=202611142013';
-import * as FAMILY from './family.js?v=202611142013';
-import { translit, hasLatin, scriptLetter } from './translit.js?v=202611142013';
+import { engine, onRestart, warm } from './engine.js?v=202611142356';
+import { showGames, GM, gameKey, VIGIL } from './games.js?v=202611142356';
+import * as FAMILY from './family.js?v=202611142356';
+import { translit, hasLatin, scriptLetter } from './translit.js?v=202611142356';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -28,7 +28,7 @@ const CULTURES = [
 ];
 const LIGHT = ['kaal', 'ivory', 'rose', 'sage'], DARK = ['kaal-dark', 'night', 'charcoal', 'peacock'];
 const TABS = [['home', 'hm.home'], ['today', 'tab.today'], ['calendar', 'tab.calendar'], ['festivals', 'tab.festivals'], ['muhurtham', 'tab.muhurtham'],
-  ['people', 'mn.profiles'], ['family', 'fam.hub.title'], ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['match', 'mt.label'], ['greetings', 'gr.title'], ['guide', 'gd.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['prayers', 'py.title'], ['games', 'gm.menu'], ['oldtime', 'ot.title'], ['alerts', 'al.title'], ['settings', 'tab.settings']];
+  ['people', 'mn.profiles'], ['family', 'fam.hub.title'], ['elsewhere', 'ep.title'], ['birthstar', 'bs.title'], ['vrats', 'v.title'], ['jathakam', 'jk.title'], ['match', 'mt.label'], ['greetings', 'gr.title'], ['guide', 'gd.title'], ['sky', 'sk.title'], ['temples', 'tm.title'], ['prayers', 'py.title'], ['games', 'gm.menu'], ['oldtime', 'ot.title'], ['alerts', 'al.title'], ['settings', 'tab.settings']];
 
 // ---------------------------------------------------------------- state
 const saved = (() => { try { return JSON.parse(localStorage.getItem('kaal-web') || '{}'); } catch { return {}; } })();
@@ -339,7 +339,7 @@ function shell() {
   $('#tabs').querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { tab = b.dataset.tab; if (tab === 'today') { dayDate = null; dayPlace = null; } render(); });
   $('#tabs').querySelector('[data-more]').onclick = () => {
     const o = sheet(`<h2 class="serif">${esc(t('mn.more'))}</h2><div class="morehub">${rest.map(([id, k]) => `<button class="tile" data-mt="${id}"><b>${esc(t(k))}</b></button>`).join('')}</div>`);
-    o.querySelectorAll('[data-mt]').forEach(b => b.onclick = () => { o.remove(); tab = b.dataset.mt; if (tab === 'games') GM.screen = null; if (tab === 'family') FAMILY.FAM.screen = 'hub'; render(); scrollTo(0, 0); });
+    o.querySelectorAll('[data-mt]').forEach(b => b.onclick = () => { o.remove(); tab = b.dataset.mt; if (tab === 'games') GM.screen = null; if (tab === 'elsewhere') EP.step = 'list'; if (tab === 'family') FAMILY.FAM.screen = 'hub'; render(); scrollTo(0, 0); });
   };
   // The copyright with the web build's version (the stamp build-web.sh puts on app.js).
   const build = V;
@@ -368,6 +368,7 @@ async function render() {
     if (tab === 'calendar') return await viewMonth();
     if (tab === 'festivals') return await viewFestivals();
     if (tab === 'muhurtham') return viewMuhurtham();
+    if (tab === 'elsewhere') return await viewElsewhere();
     if (tab === 'birthstar') return viewBirthStar();
     if (tab === 'match') return await viewMatch();
     if (tab === 'guide') return viewGuide();
@@ -716,6 +717,7 @@ const HOME_ICONS = {
   settings: '<path d="M4 7h10M18 7h2M4 17h4M12 17h8"/><circle cx="16" cy="7" r="2"/><circle cx="10" cy="17" r="2"/>',
   dial: '<circle cx="12" cy="12" r="8.5"/><path d="M12 3.5v3M12 17.5v3M3.5 12h3M17.5 12h3"/><path d="M12 12l3.5-3.5"/>',
   muhurtham: '<circle cx="9" cy="14" r="5"/><circle cx="15" cy="14" r="5"/><path d="M10 4l2 3 2-3"/>',
+  elsewhere: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>',
   games: '<path d="M5 21 9 3M10.5 21l4-18"/><path d="M6.3 16h4.5M7.4 11.5h4.5M8.5 7h4.5"/><path d="M20 4c-3 2 1 5-2 8s1 5-2 8"/>',
 };
 async function viewHome() {
@@ -761,7 +763,7 @@ async function viewHome() {
   const svg = k => `<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icon(k)}</svg>`;
   // The tiles: a colour family each; the front holds the chip, the feature's name in the serif, a glimpse of what is
   // inside and a line beneath; the back (turned to now and then) a caption, one fact and a line.
-  const FAM = { festivals: 'gold', day: 'clay', dial: 'gold', calendar: 'clay', vrats: 'maroon', prayers: 'green', games: 'indigo', oldtime: 'gold', people: 'clay', family: 'green', match: 'maroon', greetings: 'gold', sky: 'indigo', temples: 'gold', jathakam: 'indigo', birthstar: 'gold', settings: 'quiet' };
+  const FAM = { festivals: 'gold', elsewhere: 'gold', day: 'clay', dial: 'gold', calendar: 'clay', vrats: 'maroon', prayers: 'green', games: 'indigo', oldtime: 'gold', people: 'clay', family: 'green', match: 'maroon', greetings: 'gold', sky: 'indigo', temples: 'gold', jathakam: 'indigo', birthstar: 'gold', settings: 'quiet' };
   const chips = xs => xs.length ? `<span class="chips">${xs.slice(0, 3).map(x => `<span>${esc(x)}</span>`).join('')}</span>` : '';
   const backOf = (label, k, b) => b && b.fact ? `<span class="tback" aria-hidden="true"><span class="tbrings"></span><span class="tbframe"></span><span class="tbsym">${svg(k)}</span>
       <span class="tbname">${esc(label)}</span><span class="tbcap">${esc(b.caption)}</span><span class="tbfact">${esc(b.fact)}</span>${b.line ? `<span class="tbline">${esc(b.line)}</span>` : ''}</span>` : '';
@@ -819,6 +821,8 @@ async function viewHome() {
         ${chips(more.slice(0, 2).map(x => `${fname(x.f)} · ${when(x.date)}`))}`,
       back: more[0] && { caption: t('tb.next'), fact: fname(more[0].f), line: `${when(more[0].date)} · ${shortDate(more[0].date)}` },
     } : { detail: t('f.upcoming') }),
+    tile('elsewhere', 'elsewhere', t('ep.title'), { glimpse: chips(EP.checked.map(x => x.name)), detail: t('ep.tile'),
+      back: fest && { caption: t('ep.title'), fact: fname(fest.f), line: t('ep.tile') } }),
     tile('day', 'today', t('dm.title'), { glimpse: bar, detail: chog ? `${chog[0]} · ${chog[1]}` : t('time.section'), back: nextPeriod }),
     tile('dial', 'dial', t('r3.dial'), { glimpse: dialRing, detail: chog ? `${plabel(ch[i].key)} · ${t('p.until', clock(ch[i].end))}` : t('time.section'), back: nextPeriod }),
     tile('calendar', 'calendar', t('tab.calendar'), { glimpse: `<span class="gweek">${letters.map(l => `<em>${esc(l)}</em>`).join('')}${week.join('')}</span>`, detail: greg(d, { month: 'long', year: 'numeric' }),
@@ -872,7 +876,7 @@ async function viewHome() {
       <button class="linkbtn" data-arrange>▦ ${esc(t('hm.arrange'))}</button></div>
     <div class="tiles style-${esc(S.tileStyle)}">${orderTiles(tiles).join('')}</div>
     <div class="small muted" style="text-align:center;margin-top:8px">Eka Panchang · ${esc(t('o.tagline'))}</div></div>`;
-  $('#main').querySelectorAll('[data-go]').forEach(b => b.onclick = () => { if (b.dataset.go === 'dial') return openDial(today()); tab = b.dataset.go; if (tab === 'games') GM.screen = null; if (tab === 'family') FAMILY.FAM.screen = 'hub'; render(); scrollTo(0, 0); });
+  $('#main').querySelectorAll('[data-go]').forEach(b => b.onclick = () => { if (b.dataset.go === 'dial') return openDial(today()); tab = b.dataset.go; if (tab === 'games') GM.screen = null; if (tab === 'elsewhere') EP.step = 'list'; if (tab === 'family') FAMILY.FAM.screen = 'hub'; render(); scrollTo(0, 0); });
   // Long press or right-click a tile: its shortcuts and what it is.
   onHold($('#main .wide[data-go="muhurtham"]'), (x, y) => popMenu(x, y, [{ label: t('r3.what'), icon: 'info', fn: () => explainer('muh') }]));
   $('#main').querySelectorAll('.tile[data-k]').forEach(el => { if (el.dataset.k !== 'settings' && el.dataset.k !== 'greetings' && el.dataset.k !== 'jathakam') onHold(el, (x, y) => tileMenu(el.dataset.k, x, y, { fest, tp })); });
@@ -2012,7 +2016,7 @@ async function festivalSheet(id, date, opts = {}) {
   const how = occ.find(o => o.id === id && o.date === date)?.how || '';
   // An Ekadashi's parana the next morning; the moonrise for fasts kept until the moon is seen.
   const parana = /ekadas/.test(id) ? await engine({ op: 'parana', handle, date }).catch(() => null) : null;
-  const moonFast = /karva|karwa|sankashti|sankatahara|chauth|chandra-darshan|ganesh-chaturthi/.test(id);
+  const moonFast = MOON_FAST.test(id);
   const byMoon = moonFast && p.moonrise && w?.kala !== 'moonrise';
   // The same festival where the user lives now: its own date there, and its times on that calendar.
   const away = awayPlace();
@@ -2035,7 +2039,8 @@ async function festivalSheet(id, date, opts = {}) {
       ${haRow('home', t('dual.home'), S.home, date, w, byMoon ? p.moonrise : null)}
       ${!away ? `<div class="haadd noprint"><p class="small muted">${esc(t('ha.addHint'))}</p><button class="btn soft" data-addaway>${AWAY_PIN} ${esc(t('s.addAway'))}</button></div>`
         : there ? haRow('away', t('dual.away'), away, there.date, there.w, there.moon, relation(date, there.date))
-        : `<div class="harow away"><div class="hahead"><span class="label">${esc(t('dual.away'))} · ${esc(away.name)}</span></div><div class="small muted">${esc(t('ha.none'))}</div></div>`}</div>
+        : `<div class="harow away"><div class="hahead"><span class="label">${esc(t('dual.away'))} · ${esc(away.name)}</span></div><div class="small muted">${esc(t('ha.none'))}</div></div>`}
+      <button class="linkbtn noprint" data-epcheck style="margin-top:8px">${EP_GLOBE} ${esc(t('ep.check'))}</button></div>
     ${parana ? `<div class="card"><p class="label">${esc(t('v.parana'))}</p><div class="small" style="color:var(--accent);font-weight:700">${esc(greg(addDays(date, 1), { weekday: 'short', day: 'numeric', month: 'short' }))}</div><div style="font-size:20px;font-weight:700">${esc(span(parana))}</div>${parana.dvadashiEnd ? `<div class="small muted">${esc(t('v.dvadashiEnds', clock(parana.dvadashiEnd)))}</div>` : ''}<div class="small muted">${esc(t('v.paranaWhy'))}</div></div>` : ''}
     ${FAMILY.familyWaySection()}
     ${f.content?.traditions ? `<div class="card"><p class="label">${esc(t('f.traditions'))}</p><p>${esc(text(f.content.traditions))}</p></div>` : ''}
@@ -2054,10 +2059,100 @@ async function festivalSheet(id, date, opts = {}) {
   // Vaikuntha Ekadashi's night: the virtue board, one tap away.
   fo.querySelector('[data-game]')?.addEventListener('click', () => { fo.remove(); GM.screen = 'pp'; tab = 'games'; render(); scrollTo(0, 0); });
   // Once chosen, the page opens again with both places (and the list behind it gains its away lines).
+  // Festival in another place, straight to its city step; home and away stay as they are.
+  fo.querySelector('[data-epcheck]').onclick = () => { fo.remove(); Object.assign(EP, { step: 'city', id, date }); tab = 'elsewhere'; render(); scrollTo(0, 0); };
   fo.querySelector('[data-addaway]')?.addEventListener('click', () => pickAway(() => { fo.remove(); if (tab === 'festivals') render(); festivalSheet(id, date); }));
   fo.querySelector('[data-bm]').onclick = e => { toggleBookmark(f.id); const on = bookmarked(f.id), b = e.currentTarget;
     b.textContent = on ? '★' : '☆'; b.setAttribute('aria-pressed', on); b.title = t(on ? 'r3.unbookmarkFest' : 'r3.bookmarkFest', fname(f)); toast(t(on ? 'r3w.bookmarked' : 'r3w.unbookmarked', fname(f))); };
   return fo;
+}
+
+// ---------------------------------------------------------------- festival in another place
+// As on iOS (ElsewhereView): a festival, then any city, and its date and time there beside home's.
+// Home and away are never changed; the cities looked up are kept for this visit, latest first (six at most).
+const EP = { step: 'list', id: null, date: null, there: null, checked: [], query: '' };
+let epAsked = 0;
+// Fasts kept until the moon is seen: their moonrise when the festival has no window of its own.
+const MOON_FAST = /karva|karwa|sankashti|sankatahara|chauth|chandra-darshan|ganesh-chaturthi/;
+const EP_GLOBE = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-2px"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></svg>';
+function epSetThere(p) { EP.there = p; EP.checked = [p, ...EP.checked.filter(x => x.id !== p.id)].slice(0, 6); }
+// The festival's window that day, on the place's own clock; else the moonrise for fasts kept until the moon is seen.
+async function epTime(id, d, place) {
+  const at = u => clockIn(u, place.tz);
+  const w = await engine({ op: 'window', handle: await cal(+d.slice(0, 4), place), id, date: d }).catch(() => null);
+  if (w) return `${t('k.' + w.kala)} · ${w.start === w.end ? at(w.start) : `${at(w.start)} – ${at(w.end)}`}`;
+  if (MOON_FAST.test(id)) { const p = await day(d, place).catch(() => null); if (p?.moonrise) return `${t('sun.moonrise')} ${at(p.moonrise)}`; }
+  return '';
+}
+async function viewElsewhere() {
+  if (EP.step === 'city' && festById(EP.id)) return epCity();
+  if (EP.step === 'result' && festById(EP.id) && EP.there) return await epResult();
+  EP.step = 'list';
+  loading();
+  // Each festival once, at its next date at home.
+  const seen = new Set(), items = (await upcoming(today(), 400)).filter(x => !seen.has(x.f.id) && seen.add(x.f.id));
+  if (tab !== 'elsewhere' || EP.step !== 'list') return;
+  $('#main').innerHTML = `<h2 class="serif" style="margin-top:0">${esc(t('ep.title'))}</h2><p>${esc(t('ep.blurb'))}</p>
+    <p class="label">${esc(t('ep.step1'))}</p><input type="text" class="q" placeholder="${esc(t('ep.search'))}" value="${esc(EP.query)}"><div class="eplist" style="margin-top:10px"></div>`;
+  const out = $('#main').querySelector('.eplist');
+  const draw = () => {
+    const q = EP.query.trim().toLowerCase();
+    const shown = q ? items.filter(x => [fname(x.f), fother(x.f), x.f.id].some(s => s.toLowerCase().includes(q))) : items;
+    out.innerHTML = shown.map((x, i) => `<div class="list-row" data-ep="${i}" role="button" tabindex="0" style="cursor:pointer"><div class="grow"><b>${esc(fname(x.f))}</b>
+      <div class="small muted">${esc(t('dual.home'))} · ${esc(greg(x.date, { day: 'numeric', month: 'short', year: 'numeric' }))}</div></div><span class="muted" aria-hidden="true">›</span></div>`).join('');
+    out.querySelectorAll('[data-ep]').forEach(el => {
+      const go = () => { const x = shown[+el.dataset.ep]; Object.assign(EP, { step: 'city', id: x.f.id, date: x.date }); viewElsewhere(); scrollTo(0, 0); };
+      el.onclick = go; el.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } };
+    });
+  };
+  $('#main').querySelector('.q').addEventListener('input', e => { EP.query = e.target.value; draw(); });
+  draw();
+}
+// Step 2: the city, from the same search as home's (or where the browser is).
+function epCity() {
+  const f = festById(EP.id);
+  $('#main').innerHTML = `<button class="linkbtn" data-epback>‹ ${esc(t('ep.title'))}</button>
+    <h2 class="serif" style="margin:6px 0 0">${esc(fname(f))}</h2><div class="small muted">${esc(t('dual.home'))} · ${esc(greg(EP.date))}</div>
+    <p class="label" style="margin-top:14px">${esc(t('ep.step2'))}</p><div id="eppick"></div>`;
+  $('#main').querySelector('[data-epback]').onclick = () => { EP.step = 'list'; viewElsewhere(); };
+  placePicker($('#eppick'), p => { epSetThere(p); EP.step = 'result'; viewElsewhere(); scrollTo(0, 0); });
+}
+// The festival in the chosen city, beside home, and in the other cities checked.
+async function epResult() {
+  const n = ++epAsked, { id, date, there: place } = EP, f = festById(id);
+  loading();
+  const near = async pl => nearestDate((await awayIndex(date, date, pl)).get(id), date);
+  const there = await near(place).catch(() => null);
+  const [homeTime, thereTime, how, others] = await Promise.all([
+    epTime(id, date, S.home),
+    there ? epTime(id, there, place) : '',
+    there ? festsAt(+there.slice(0, 4), place).then(os => os.find(o => o.id === id && o.date === there)?.how || '').catch(() => '') : '',
+    Promise.all(EP.checked.filter(p => p.id !== place.id).map(async p => ({ p, d: await near(p).catch(() => null) }))),
+  ]);
+  if (n !== epAsked || tab !== 'elsewhere' || EP.step !== 'result') return;
+  const full = [place.name, place.region, place.country].filter(Boolean).join(', ');
+  $('#main').innerHTML = `<button class="linkbtn" data-epback>‹ ${esc(t('ep.title'))}</button>
+    <h1 class="serif" style="margin:6px 0 0">${esc(fname(f))}</h1>${fother(f) ? `<div class="muted">${esc(fother(f))}</div>` : ''}
+    <div class="card hacard" style="margin-top:14px">
+      <div class="harow"><div class="hahead"><span class="label" style="text-transform:none;letter-spacing:0">${AWAY_PIN} ${esc(full)}</span>${there ? `<span class="pill">${esc(relation(date, there))}</span>` : ''}</div>
+        ${there ? `<div class="hadate" style="font-size:20px">${esc(greg(there))}</div>
+          ${thereTime ? `<div class="hatime">${esc(thereTime)}</div><div class="small muted">${esc(t('ep.ownTime', place.name))}</div>` : ''}
+          ${how ? `<p class="small" style="margin:8px 0 0">${esc(t('ep.why', explainHow(how)))}</p>` : ''}`
+        : `<div class="small muted">${esc(t('ha.none'))}</div>`}</div>
+      <div class="harow home"><div class="hahead"><span class="label">${esc(t('dual.home'))} · ${esc(S.home.name)}</span></div>
+        <div class="hadate">${esc(greg(date))}</div>${homeTime ? `<div class="small">${esc(homeTime)}</div>` : ''}</div></div>
+    ${others.length ? `<div class="card"><p class="label">${esc(t('ep.checked'))}</p>${others.map(({ p, d }, i) => `<div class="list-row" data-epc="${i}" role="button" tabindex="0" style="cursor:pointer">
+      <div class="grow"><b>${esc(p.name)}</b><div class="small muted">${esc(d ? greg(d, { day: 'numeric', month: 'short', year: 'numeric' }) : t('ha.none'))}</div></div>
+      ${d ? `<span class="small" style="font-weight:700;color:${d === date ? 'var(--muted)' : 'var(--accent)'}">${esc(relation(date, d))}</span>` : ''}</div>`).join('')}</div>` : ''}
+    <button class="btn block" data-epother>${AWAY_PIN} ${esc(t('cal.other'))}</button>
+    <p class="small muted" style="text-align:center">${esc(t('ep.unchanged'))}</p>`;
+  const m = $('#main');
+  m.querySelector('[data-epback]').onclick = () => { EP.step = 'list'; viewElsewhere(); };
+  m.querySelector('[data-epother]').onclick = () => { EP.step = 'city'; viewElsewhere(); scrollTo(0, 0); };
+  m.querySelectorAll('[data-epc]').forEach(el => {
+    const go = () => { epSetThere(others[+el.dataset.epc].p); viewElsewhere(); };
+    el.onclick = go; el.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } };
+  });
 }
 
 // ---------------------------------------------------------------- month
