@@ -1,10 +1,10 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart, warm } from './engine.js?v=202611120746';
-import { showGames, GM, gameKey, VIGIL } from './games.js?v=202611120746';
-import * as FAMILY from './family.js?v=202611120746';
-import { translit, hasLatin, scriptLetter } from './translit.js?v=202611120746';
+import { engine, onRestart, warm } from './engine.js?v=202611142013';
+import { showGames, GM, gameKey, VIGIL } from './games.js?v=202611142013';
+import * as FAMILY from './family.js?v=202611142013';
+import { translit, hasLatin, scriptLetter } from './translit.js?v=202611142013';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -1295,10 +1295,21 @@ function familiesManager() {
 // sandhis. Charts only, no reading.
 // The chart for a moment (prashna), beside the person's: { date, minutes } in the place's own time, or null when off.
 let jkMoment = null;
-// The city it is cast for: one chosen here (jkMomentAt), else the chosen person's birthplace.
-let jkMomentAt = null;
-const jkShown = () => births().find(p => p.id === jkPerson) || births()[0];
-const momentPlace = () => jkMomentAt || jkShown()?.place || awayPlace() || S.home;
+// The place it is cast for: one chosen here (jkMomentAt, kept until changed), else where the device is
+// (jkHere: its exact latitude and longitude, with the nearest city's name and time zone), else where the user lives.
+let jkMomentAt = null, jkHere = null;
+const momentPlace = () => jkMomentAt || jkHere || awayPlace() || S.home;
+// Asked only when the moment is switched on; a moment still at the now it was switched on with moves to now there.
+function locateMoment() {
+  const was = jkMoment;
+  navigator.geolocation?.getCurrentPosition(async pos => {
+    const { latitude, longitude } = pos.coords, p = await nearest(latitude, longitude);
+    if (!p) return;
+    jkHere = { ...plain(p), latitude, longitude };
+    if (jkMoment && jkMoment === was && !jkMomentAt) jkMoment = momentNow();
+    if (jkMoment && tab === 'jathakam') viewJathakam();
+  }, () => {}, { timeout: 8000, maximumAge: 300000 });
+}
 const momentNow = () => { const tz = momentPlace().tz;
   const [h, m] = intl('en-GB', { timeZone: tz, hour: '2-digit', minute: '2-digit', hour12: false }).format(new Date()).split(':');
   return { date: intl('en-CA', { timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit' }).format(new Date()), minutes: (+h % 24) * 60 + +m }; };
@@ -1449,7 +1460,7 @@ async function viewJathakam() {
   if (person && jkSection === 0) {
     const mp = momentPlace();
     body += `<div class="card"><label style="display:flex;align-items:center;gap:8px;font-weight:600"><input type="checkbox" id="jkm" ${jkMoment ? 'checked' : ''} style="width:auto">🕐 ${esc(t('jk.moment'))}</label>
-      ${jkMoment ? `<div style="display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap"><input type="date" id="jkmd" value="${jkMoment.date}" style="width:auto"><input type="time" id="jkmt" value="${pad(Math.floor(jkMoment.minutes / 60))}:${pad(jkMoment.minutes % 60)}" style="width:auto"><button class="btn soft" data-now>${esc(t('jk.now'))}</button></div><button class="linkbtn" data-mplace style="margin-top:6px;font-weight:600">📍 ${esc(mp.name)} ›</button><div id="jkpp" style="margin-top:8px"></div>` : ''}</div>`;
+      ${jkMoment ? `<div style="display:flex;gap:8px;align-items:center;margin-top:8px;flex-wrap:wrap"><input type="date" id="jkmd" value="${jkMoment.date}" style="width:auto"><input type="time" id="jkmt" value="${pad(Math.floor(jkMoment.minutes / 60))}:${pad(jkMoment.minutes % 60)}" style="width:auto"><button class="btn soft" data-now>${esc(t('jk.now'))}</button></div><button class="linkbtn" data-mplace style="margin-top:6px;font-weight:600">📍 ${mp === jkHere ? `<svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor" style="vertical-align:-1px" aria-hidden="true"><path d="M21 3 3 10.5l7.5 3L13.5 21z"/></svg> ` : ''}${esc(mp.name)} ›</button><div id="jkpp" style="margin-top:8px"></div>` : ''}</div>`;
   }
   const mj = jkMoment && jkSection === 0 ? await engine({ op: 'jataka', date: jkMoment.date, minutes: jkMoment.minutes, location: momentPlace() }) : null;
   if (j && jkSection === 0) {
@@ -1505,9 +1516,9 @@ async function viewJathakam() {
   $('#main').innerHTML = `<div class="seg" style="margin-bottom:14px">${[['jk.chart', 0], ['jk.dasha', 1], ['jk.strength', 3], ['jk.family', 2]].map(([k, i]) => `<button data-jk="${i}" class="${jkSection === i ? 'on' : ''}">${esc(t(k))}</button>`).join('')}</div>${body}${mj ? `<p class="small muted">${esc(t('jk.momentNote', momentPlace().name))}</p>` : ''}<p class="small muted">${esc(t('jk.chartNote'))}</p>`;
   const q = x => $('#main').querySelector(x), qa = x => $('#main').querySelectorAll(x);
   qa('[data-jk]').forEach(b => b.onclick = () => { jkSection = +b.dataset.jk; viewJathakam(); });
-  // Another person: their birthplace, and the moment back to now.
-  q('#jkp')?.addEventListener('change', e => { jkPerson = e.target.value; jkMomentAt = null; if (jkMoment) jkMoment = momentNow(); viewJathakam(); });
-  q('#jkm')?.addEventListener('change', e => { jkMoment = e.target.checked ? momentNow() : null; viewJathakam(); });
+  // Another person: the moment and its place stay.
+  q('#jkp')?.addEventListener('change', e => { jkPerson = e.target.value; viewJathakam(); });
+  q('#jkm')?.addEventListener('change', e => { jkMoment = e.target.checked ? momentNow() : null; if (jkMoment) locateMoment(); viewJathakam(); });
   q('[data-now]')?.addEventListener('click', () => { jkMoment = momentNow(); viewJathakam(); });
   // Another city: the same date and clock time, read there.
   q('[data-mplace]')?.addEventListener('click', () => placePicker(q('#jkpp'), p => { jkMomentAt = p; viewJathakam(); }));
