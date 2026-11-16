@@ -84,6 +84,8 @@ input[type=text], input[type=date], input[type=time], select { width: 100%; padd
 .hacard .hatime { font-size: 20px; font-weight: 700; color: var(--accent); }
 .hacard .harow.away .hatime { color: var(--ink); }
 .hacard .haadd { margin-top: 10px; }
+.whydiff { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--line); overflow-wrap: break-word; }
+.whydiff .whyhead { display: flex; align-items: center; gap: 6px; font-weight: 700; font-size: 14px; color: var(--ink); }
 .hacard .haadd p { margin: 0 0 8px; }
 .fest .faway { display: flex; align-items: center; gap: 4px; margin-top: 2px; }
 .fest .faway svg { flex: none; }

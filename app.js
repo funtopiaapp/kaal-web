@@ -1,10 +1,10 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart, warm } from './engine.js?v=202611160342';
-import { showGames, GM, gameKey, VIGIL } from './games.js?v=202611160342';
-import * as FAMILY from './family.js?v=202611160342';
-import { translit, hasLatin, scriptLetter } from './translit.js?v=202611160342';
+import { engine, onRestart, warm } from './engine.js?v=202611160449';
+import { showGames, GM, gameKey, VIGIL } from './games.js?v=202611160449';
+import * as FAMILY from './family.js?v=202611160449';
+import { translit, hasLatin, scriptLetter } from './translit.js?v=202611160449';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -2112,6 +2112,34 @@ function explainHow(how) {
   return how + tail;
 }
 
+// ---------------------------------------------------------------- why the dates differ
+// As on iOS (WhyDiffers, RuleText.whyDiffers): how far apart home's and the other place's clocks are
+// on that date, then the rule each place chose its day by (once, when both chose by the same rule).
+function tzOffsetMin(tz, date) {
+  const at = new Date(date + 'T12:00:00Z');
+  try {
+    const z = new Intl.DateTimeFormat('en-US', { timeZone: tz, timeZoneName: 'longOffset' }).formatToParts(at).find(x => x.type === 'timeZoneName')?.value || '';
+    const m = z.match(/([+-])(\d{1,2})(?::(\d{2}))?/);
+    return m ? (m[1] === '-' ? -1 : 1) * (+m[2] * 60 + +(m[3] || 0)) : 0;
+  } catch { return 0; }
+}
+const WHY_ICON = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;flex:none"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.2-2.4 3.6"/><path d="M12 17h.01"/></svg>';
+function whyDiffersText(home, other, date) {
+  if (!home?.tz || !other?.tz) return '';
+  const gap = tzOffsetMin(home.tz, date) - tzOffsetMin(other.tz, date);
+  if (gap === 0) return t('hw.sameZone');
+  const m = Math.abs(gap), span = m % 60 === 0 ? t('hw.h', m / 60) : t('hw.hm', Math.floor(m / 60), m % 60);
+  const [ahead, behind] = gap > 0 ? [home.name, other.name] : [other.name, home.name];
+  return t('hw.ahead', ahead, span, behind) + ' ' + t('hw.moment');
+}
+function whyDiffersBlock(other, date, homeHow, otherHow) {
+  const h = homeHow ? explainHow(homeHow) : '', o = otherHow ? explainHow(otherHow) : '';
+  const why = whyDiffersText(S.home, other, date), line = s => `<p class="small" style="margin:4px 0 0">${esc(s)}</p>`;
+  return `<div class="whydiff"><div class="whyhead">${WHY_ICON}<span>${esc(t('hw.title'))}</span></div>
+    ${why ? `<p class="small muted" style="margin:4px 0 0">${esc(why)}</p>` : ''}
+    ${h && o && h === o ? line(t('hw.rule', h)) : (h ? line(`${S.home.name}: ${h}`) : '') + (o ? line(`${other.name}: ${o}`) : '')}</div>`;
+}
+
 // ---------------------------------------------------------------- festival page
 // One place's row in At home and away: its date, and when the festival is kept there (or its moonrise), on its own clock.
 function haRow(cls, label, place, date, w, moon, rel) {
@@ -2137,7 +2165,8 @@ async function festivalSheet(id, date, opts = {}) {
     if (!d) return null;
     const ah = await cal(+d.slice(0, 4), away);
     const [ap, aw] = await Promise.all([day(d, away), engine({ op: 'window', handle: ah, id, date: d }).catch(() => null)]);
-    return { date: d, w: aw, moon: moonFast && aw?.kala !== 'moonrise' ? ap.moonrise : null };
+    const how = d !== date ? (await festsAt(+d.slice(0, 4), away).catch(() => [])).find(o => o.id === id && o.date === d)?.how || '' : '';
+    return { date: d, w: aw, moon: moonFast && aw?.kala !== 'moonrise' ? ap.moonrise : null, how };
   })().catch(() => null) : null;
   const steps = f.content?.howTo ? (f.content.howTo[lang()] ?? f.content.howTo.en ?? []) : [];
   const fo = sheet(`<div style="clear:both"></div>
@@ -2150,7 +2179,7 @@ async function festivalSheet(id, date, opts = {}) {
     <div class="card hacard"><p class="label">${esc(t('ha.title'))}</p>
       ${haRow('home', t('dual.home'), S.home, date, w, byMoon ? p.moonrise : null)}
       ${!away ? `<div class="haadd noprint"><p class="small muted">${esc(t('ha.addHint'))}</p><button class="btn soft" data-addaway>${AWAY_PIN} ${esc(t('s.addAway'))}</button></div>`
-        : there ? haRow('away', t('dual.away'), away, there.date, there.w, there.moon, relation(date, there.date))
+        : there ? haRow('away', t('dual.away'), away, there.date, there.w, there.moon, relation(date, there.date)) + (there.date !== date ? whyDiffersBlock(away, date, how, there.how) : '')
         : `<div class="harow away"><div class="hahead"><span class="label">${esc(t('dual.away'))} · ${esc(away.name)}</span></div><div class="small muted">${esc(t('ha.none'))}</div></div>`}
       <button class="linkbtn noprint" data-epcheck style="margin-top:8px">${EP_GLOBE} ${esc(t('ep.check'))}</button></div>
     ${parana ? `<div class="card"><p class="label">${esc(t('v.parana'))}</p><div class="small" style="color:var(--accent);font-weight:700">${esc(greg(addDays(date, 1), { weekday: 'short', day: 'numeric', month: 'short' }))}</div><div style="font-size:20px;font-weight:700">${esc(span(parana))}</div>${parana.dvadashiEnd ? `<div class="small muted">${esc(t('v.dvadashiEnds', clock(parana.dvadashiEnd)))}</div>` : ''}<div class="small muted">${esc(t('v.paranaWhy'))}</div></div>` : ''}
@@ -2235,11 +2264,12 @@ async function epResult() {
   loading();
   const near = async pl => nearestDate((await awayIndex(date, date, pl)).get(id), date);
   const there = await near(place).catch(() => null);
-  const [homeTime, thereTime, how, others] = await Promise.all([
+  const [homeTime, thereTime, how, others, homeHow] = await Promise.all([
     epTime(id, date, S.home),
     there ? epTime(id, there, place) : '',
     there ? festsAt(+there.slice(0, 4), place).then(os => os.find(o => o.id === id && o.date === there)?.how || '').catch(() => '') : '',
     Promise.all(EP.checked.filter(p => p.id !== place.id).map(async p => ({ p, d: await near(p).catch(() => null) }))),
+    there && there !== date ? festsAt(+date.slice(0, 4), S.home).then(os => os.find(o => o.id === id && o.date === date)?.how || '').catch(() => '') : '',
   ]);
   if (n !== epAsked || tab !== 'elsewhere' || EP.step !== 'result') return;
   const full = [place.name, place.region, place.country].filter(Boolean).join(', ');
@@ -2249,7 +2279,7 @@ async function epResult() {
       <div class="harow"><div class="hahead"><span class="label" style="text-transform:none;letter-spacing:0">${AWAY_PIN} ${esc(full)}</span>${there ? `<span class="pill">${esc(relation(date, there))}</span>` : ''}</div>
         ${there ? `<div class="hadate" style="font-size:20px">${esc(greg(there))}</div>
           ${thereTime ? `<div class="hatime">${esc(thereTime)}</div><div class="small muted">${esc(t('ep.ownTime', place.name))}</div>` : ''}
-          ${how ? `<p class="small" style="margin:8px 0 0">${esc(t('ep.why', explainHow(how)))}</p>` : ''}`
+          ${there !== date ? whyDiffersBlock(place, date, homeHow, how) : how ? `<p class="small" style="margin:8px 0 0">${esc(t('ep.why', explainHow(how)))}</p>` : ''}`
         : `<div class="small muted">${esc(t('ha.none'))}</div>`}</div>
       <div class="harow home"><div class="hahead"><span class="label">${esc(t('dual.home'))} · ${esc(S.home.name)}</span></div>
         <div class="hadate">${esc(greg(date))}</div>${homeTime ? `<div class="small">${esc(homeTime)}</div>` : ''}</div></div>
