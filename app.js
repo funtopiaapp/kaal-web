@@ -1,10 +1,10 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart, warm } from './engine.js?v=202611152201';
-import { showGames, GM, gameKey, VIGIL } from './games.js?v=202611152201';
-import * as FAMILY from './family.js?v=202611152201';
-import { translit, hasLatin, scriptLetter } from './translit.js?v=202611152201';
+import { engine, onRestart, warm } from './engine.js?v=202611160342';
+import { showGames, GM, gameKey, VIGIL } from './games.js?v=202611160342';
+import * as FAMILY from './family.js?v=202611160342';
+import { translit, hasLatin, scriptLetter } from './translit.js?v=202611160342';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -967,7 +967,7 @@ async function viewDay() {
       ${fine ? windowsRow('time.amrit', fine.amritKalam, d) : ''}
       ${[['time.brahma', p.brahmaMuhurta]].map(([k, w]) => `<div class="row"><span>${esc(t(k))}</span><span class="v">${esc(span(w))}${calBtn(k, w)}</span></div>`).join('')}
       ${calWins.length ? `<p class="small muted noprint" style="margin-top:8px">🗓 ${esc(t('r3w.alertWeb'))}</p>` : ''}</div>
-    ${fine ? `<div class="card" id="mcard">${muhurtasCard(fine, d)}</div>` : ''}
+    ${fine ? `<div class="card" id="mcard">${muhurtasCard(fine, d, here())}</div>` : ''}
     <button class="btn soft block noprint" onclick="window.print()">${SHARE_ICON} ${esc(t('pdf.share'))}</button>`;
   $('#main').querySelector('[data-dialday]')?.addEventListener('click', () => openDial(d));
   $('#main').querySelectorAll('[data-calw]').forEach(b => b.onclick = () => { const [k, w] = calWins[+b.dataset.calw];
@@ -986,7 +986,7 @@ async function viewDay() {
   wireSky();
   const box = $('#main #daysky');
   if (!skyRead) skyP.then(list => { const sky = skyOf(list); if (sky.length && box.isConnected) { box.innerHTML = obsHead(sky) + skyRows(sky); wireSky(); } });
-  wireMuhurtas(fine, d);
+  wireMuhurtas(fine, d, here());
   wireFestivals();
   wirePlaceChip();
   startTurns($('#main'), '.limb.turn');
@@ -1036,11 +1036,9 @@ function mKind() {
 }
 const mPeriods = (fine, k) => ({ choghadiya: fine.choghadiya, gowri: fine.gowri, hora: fine.hora, lagna: fine.lagnas }[k]);
 const mLabel = (k, key) => k === 'hora' ? name('grahas', key) : k === 'lagna' ? name('rashis', key) : name(k, key);
-// Today at home only: a period's alert can be set (as Rahu Kalam's).
-const mAlertable = d => d === today(S.home.tz) && !dayPlace;
 const todayAlertOn = id => (S.todayAlerts || []).some(a => a.id === id && a.start > Date.now() / 1000);
-function muhurtasCard(fine, d) {
-  const k = mKind(), ps = mPeriods(fine, k), alertable = mAlertable(d);
+function muhurtasCard(fine, d, pl = here()) {
+  const k = mKind(), ps = mPeriods(fine, k);
   const label = key => mLabel(k, key);
   const now = Date.now() / 1000, cur = ps.findIndex(p => now >= p.start && now < p.end);
   const from = mAll ? 0 : Math.max(cur, 0), list = ps.slice(from, mAll ? ps.length : from + 3);
@@ -1054,27 +1052,114 @@ function muhurtasCard(fine, d) {
     ${good ? `<div style="color:var(--accent);font-weight:700;margin:4px 0 6px">✦ ${esc(good)}</div>` : ''}
     ${list.map((p, j) => { const i = from + j, marked = k === 'choghadiya' || k === 'gowri';
       const night = mAll && i > 0 && p.night && !ps[i - 1].night ? `<div class="small muted" style="margin-top:6px;font-weight:700">${esc(t('dm.night'))}</div>` : '';
-      const bell = alertable && todayAlertOn(`today-${k}-${p.key}-${p.start}`) ? ` <span class="mbell" role="img" aria-label="${esc(t('r3.alertSet'))}">🔔</span>` : '';
-      return `${night}<div class="mrow ${i === cur ? 'now' : ''}${alertable ? ' alertable' : ''}" data-mp="${i}"><span class="mdot ${marked ? (FAVOURED.has(p.key) ? 'fav' : 'ring') : ''}"></span><span class="grow">${esc(label(p.key))}${i === cur ? ` <b class="small">${esc(t('dm.now'))}</b>` : ''}</span><span class="muted">${esc(windowText(p.start, p.end, d))}${bell}</span></div>`; }).join('')}
-    <button class="linkbtn" data-mall>${mAll ? '⌃ ' + esc(t('c.done')) : '⌄ ' + esc(t('f.all'))}</button>`;
+      // A bell on every period still to come, at any date and place: a calendar file with a reminder.
+      const on = paOn(k, p.key, pl, p.start), pn = paName(k, p.key);
+      const bell = p.start > now ? `<button class="pabell${on ? ' on' : ''}" data-pab="${i}" aria-label="${esc(t(on ? 'wpa.bellOn' : 'wpa.bell', pn))}" title="${esc(t(on ? 'wpa.bellOn' : 'wpa.bell', pn))}">${paBellIcon(on)}</button>` : '<span class="pabell-sp" aria-hidden="true"></span>';
+      return `${night}<div class="mrow ${i === cur ? 'now' : ''}" data-mp="${i}"><span class="mdot ${marked ? (FAVOURED.has(p.key) ? 'fav' : 'ring') : ''}"></span><span class="grow">${esc(label(p.key))}${i === cur ? ` <b class="small">${esc(t('dm.now'))}</b>` : ''}</span><span class="muted mtime">${esc(windowText(p.start, p.end, d))}</span>${bell}</div>`; }).join('')}
+    <button class="linkbtn" data-mall>${mAll ? '⌃ ' + esc(t('c.done')) : '⌄ ' + esc(t('f.all'))}</button>
+    <p class="small muted noprint pahint">${esc(t('wpa.hint'))}</p>`;
 }
-function wireMuhurtas(fine, d) {
+function wireMuhurtas(fine, d, pl = here()) {
   const c = $('#mcard'); if (!c) return;
-  c.querySelectorAll('[data-mk]').forEach(b => b.onclick = () => { S.mKind = b.dataset.mk; save(); c.innerHTML = muhurtasCard(fine, d); wireMuhurtas(fine, d); });
-  c.querySelector('[data-mall]').onclick = () => { mAll = !mAll; c.innerHTML = muhurtasCard(fine, d); wireMuhurtas(fine, d); };
-  // Today at home: a long press (or right-click) on a period puts it in the user's own calendar, which alerts
-  // 10 minutes before (Guru hora, Amrit choghadiya...), kept as a today-only alert as Rahu Kalam's is.
-  if (!mAlertable(d)) return;
-  const k = mKind(), ps = mPeriods(fine, k), redraw = () => { c.innerHTML = muhurtasCard(fine, d); wireMuhurtas(fine, d); };
-  c.querySelectorAll('[data-mp]').forEach(el => onHold(el, (x, y) => {
-    const p = ps[+el.dataset.mp], id = `today-${k}-${p.key}-${p.start}`, nm = `${mLabel(k, p.key)} · ${t('dm.' + k)}`;
-    if (todayAlertOn(id)) return popMenu(x, y, [{ label: t('r3.alertOff'), icon: 'clock', fn: () => { S.todayAlerts = S.todayAlerts.filter(a => a.id !== id); save(); bellButton(); redraw(); } }]);
-    if (p.start <= Date.now() / 1000) return popMenu(x, y, [{ label: t('r3.alertPast'), icon: 'clock', fn: () => {} }]);
-    popMenu(x, y, [{ label: `${t('r3w.addToCal')} · ${t('r3.alertBefore')}`, icon: 'clock', fn: () => {
-      icsFile(`${nm} ${d}`, [{ uid: `${k}-${p.key}-${d}-${S.home.name}`, start: p.start, end: p.end, title: t('r3.alertTitle', nm, clock(p.start)), text: `${greg(d)} · ${S.home.name}`, alarms: ['-PT10M'] }]);
-      S.todayAlerts = [...(S.todayAlerts || []).filter(a => a.id !== id && a.start > Date.now() / 1000), { id, key: `${k}-${p.key}`, name: nm, start: p.start, date: d }]; save(); bellButton(); redraw();
-    } }]);
-  }));
+  const redraw = () => { c.innerHTML = muhurtasCard(fine, d, pl); wireMuhurtas(fine, d, pl); };
+  c.querySelectorAll('[data-mk]').forEach(b => b.onclick = () => { S.mKind = b.dataset.mk; save(); redraw(); });
+  c.querySelector('[data-mall]').onclick = () => { mAll = !mAll; redraw(); };
+  // The bell on a period: Just this time or Every day, into the user's own calendar with a reminder.
+  const k = mKind(), ps = mPeriods(fine, k);
+  c.querySelectorAll('[data-pab]').forEach(b => b.onclick = () => {
+    const i = b.dataset.pab;
+    paDialog(k, ps[+i], pl, () => { if (!c.isConnected) return; redraw(); c.querySelector(`[data-pab="${i}"]`)?.focus(); });
+  });
+}
+
+// ---------------------------------------------------------------- period alerts
+// A day part (Jupiter hora, Amrit choghadiya, Mesha lagna...) at any date and place, as a calendar file with a
+// reminder some minutes before: this time only, or every one of them there for 30 days (times shift each day,
+// so one event each, not a repeat rule). The web cannot alert once the page is closed; the calendar can.
+// What was added is kept here (S.periodAlerts) so the bell shows filled and Alerts can list it.
+const PA_LEADS = [5, 10, 15, 30], PA_DAYS = 30;
+const paLead = () => PA_LEADS.includes(S.alertLead) ? S.alertLead : 10;
+const placeKey = pl => String(pl?.id ?? `${(+pl?.latitude).toFixed(3)},${(+pl?.longitude).toFixed(3)}`);
+const isHomePlace = pl => !pl || placeKey(pl) === placeKey(S.home);
+// "Jupiter hora", "गुरु होरा": the period's name and its kind, in the reader's language.
+const paName = (k, key) => { const kind = t('dm.' + k); return `${mLabel(k, key)} ${lang() === 'en' ? kind.toLowerCase() : kind}`; };
+// The place named when it is not home: "Jupiter hora · Toronto".
+const paTitle = (k, key, placeName) => placeName ? `${paName(k, key)} · ${placeName}` : paName(k, key);
+// Those with a time still to come (only the times still to come).
+function paLive() {
+  const now = Date.now() / 1000;
+  return (S.periodAlerts || []).map(a => ({ ...a, starts: (a.starts || []).filter(s => s > now) })).filter(a => a.starts.length);
+}
+const paOn = (k, key, pl, start) => (S.periodAlerts || []).some(a => a.k === k && a.key === key && a.place === placeKey(pl) && (a.starts || []).includes(start))
+  || todayAlertOn(`today-${k}-${key}-${start}`);
+const paBellIcon = on => `<svg viewBox="0 0 24 24" width="20" height="20" fill="${on ? 'currentColor' : 'none'}" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg>`;
+function paEvent(k, p, pl, title, lead) {
+  const tz = pl.tz, date = civil(tz).format(new Date(p.start * 1000));
+  return { uid: `${k}-${p.key}-${placeKey(pl)}-${p.start}`.replace(/[^A-Za-z0-9-]+/g, '_'), start: p.start, end: p.end, title,
+    text: `${greg(date)} · ${clockIn(p.start, tz)} – ${clockIn(p.end, tz)} · ${pl.name}`, alarms: [`-PT${lead}M`] };
+}
+// Every period of this kind and name at the place over 30 days from the given date, still to come and not
+// starting between 10 PM and 5 AM there.
+async function paOccurrences(k, key, pl, from) {
+  const now = Date.now() / 1000, seen = new Set(), out = [];
+  const hourAt = u => +intl('en-US', { timeZone: pl.tz, hourCycle: 'h23', hour: '2-digit' }).format(new Date(u * 1000)) % 24;
+  const days = Array.from({ length: PA_DAYS }, (_, i) => addDays(from, i)), end = zonedUnix(addDays(from, PA_DAYS), '00:00', pl.tz);
+  const fines = await Promise.all(days.map(async d => engine({ op: 'timings', handle: await cal(+d.slice(0, 4), pl), date: d }).catch(() => null)));
+  for (const f of fines) for (const p of (f && mPeriods(f, k)) || []) {
+    if (p.key !== key || p.start <= now || p.start >= end || seen.has(p.start)) continue;
+    const h = hourAt(p.start); if (h >= 22 || h < 5) continue;
+    seen.add(p.start); out.push(p);
+  }
+  return out.sort((a, b) => a.start - b.start);
+}
+function paRemember(a) {
+  S.periodAlerts = [...paLive().filter(x => x.id !== a.id), a]; save();
+}
+function paDialog(k, p, pl, onDone) {
+  if (!p || p.start <= Date.now() / 1000) return;
+  const nm = paName(k, p.key), placeName = isHomePlace(pl) ? '' : pl.name, title = paTitle(k, p.key, placeName), tz = pl.tz;
+  const date = civil(tz).format(new Date(p.start * 1000));
+  const when = `${greg(date, { weekday: 'short', day: 'numeric', month: 'short' })} · ${clockIn(p.start, tz)} – ${clockIn(p.end, tz)}${placeName ? ' · ' + placeName : ''}`;
+  const dlg = document.createElement('dialog'); dlg.className = 'padlg';
+  dlg.setAttribute('aria-labelledby', 'pa-h'); dlg.setAttribute('aria-describedby', 'pa-when pa-adds');
+  dlg.innerHTML = `<h2 id="pa-h" class="serif">${esc(t('wpa.bell', nm))}</h2>
+    <p class="small muted" id="pa-when">${esc(when)}</p>
+    <fieldset class="pa-lead"><legend class="small">${esc(t('wpa.lead'))}</legend>${PA_LEADS.map(m => `<label><input type="radio" name="palead" value="${m}"${m === paLead() ? ' checked' : ''}><span>${esc(t('wpa.min', m))}</span></label>`).join('')}</fieldset>
+    <p class="small" id="pa-adds">${esc(t('wpa.adds', paLead()))}</p>
+    <button class="btn block pa-opt" data-once>${esc(t('wpa.once'))}</button>
+    <button class="btn soft block pa-opt" data-daily><b>${esc(t('wpa.daily'))}</b><span class="small pa-sub">${esc(t('wpa.dailyNote', nm, pl.name))}</span></button>
+    <p class="small pa-msg" role="status" aria-live="polite"></p>
+    <button class="btn soft block pa-opt" data-cancel>${esc(t('c.cancel'))}</button>`;
+  document.body.appendChild(dlg);
+  let busy = false;
+  const close = () => { if (!busy && dlg.open) dlg.close(); };
+  dlg.addEventListener('close', () => { dlg.remove(); onDone?.(); });
+  dlg.addEventListener('cancel', e => { if (busy) e.preventDefault(); });
+  // A tap outside the box closes it.
+  dlg.addEventListener('click', e => { const r = dlg.getBoundingClientRect(); if (e.target === dlg && (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom)) close(); });
+  dlg.querySelectorAll('[name=palead]').forEach(r => r.onchange = () => {
+    S.alertLead = +r.value; save(); dlg.querySelector('#pa-adds').textContent = t('wpa.adds', paLead());
+  });
+  dlg.querySelector('[data-cancel]').onclick = close;
+  dlg.querySelector('[data-once]').onclick = () => {
+    const lead = paLead();
+    paRemember({ id: `${k}-${p.key}-${placeKey(pl)}-${p.start}`, k, key: p.key, place: placeKey(pl), placeName, tz, every: false, starts: [p.start], lead });
+    busy = false; dlg.close();
+    icsFile(title, [paEvent(k, p, pl, title, lead)]);
+  };
+  dlg.querySelector('[data-daily]').onclick = async () => {
+    if (busy) return;
+    const lead = paLead(), msg = dlg.querySelector('.pa-msg'), bs = dlg.querySelectorAll('button, input');
+    busy = true; dlg.setAttribute('aria-busy', 'true'); bs.forEach(b => b.disabled = true); msg.textContent = t('wpa.working');
+    const list = await paOccurrences(k, p.key, pl, date).catch(() => []);
+    busy = false; dlg.removeAttribute('aria-busy'); bs.forEach(b => b.disabled = false);
+    if (!list.length) { msg.textContent = t('wpa.none'); dlg.querySelector('[data-cancel]').focus(); return; }
+    paRemember({ id: `${k}-${p.key}-${placeKey(pl)}-daily-${list[0].start}`, k, key: p.key, place: placeKey(pl), placeName, tz, every: true, starts: list.map(x => x.start), lead });
+    dlg.close();
+    icsFile(title, list.map(x => paEvent(k, x, pl, title, lead)));
+  };
+  dlg.showModal();
+  dlg.querySelector('[data-once]').focus();
 }
 function wireFestivals(root = $('#main')) {
   root.querySelectorAll('[data-f]').forEach(el => el.onclick = () => festivalSheet(el.dataset.f, el.dataset.d));
@@ -2348,7 +2433,7 @@ const festBack = (f, date) => { const sum = text(f.content?.summary);
 // With away ({ place, date }), a quiet second line where the festival falls on another day there.
 function festRow(f, date, o, away) {
   const n = daysBetween(today(), date);
-  if (o) return `<div class="frow turn v rise" style="--i:${o.i}" data-f="${esc(f.id)}" data-d="${date}">${festRow(f, date, null, o.away).replace(/^<div class="fest ([^"]*)" data-f="[^"]*" data-d="[^"]*">/, '<div class="fest tfront $1">')}${lacquer(o.back, o.fam, true)}</div>`;
+  if (o) return `<div class="frow turn v rise" style="--i:${o.i}" data-f="${esc(f.id)}" data-d="${o.key || date}">${festRow(f, date, null, o.away).replace(/^<div class="fest ([^"]*)" data-f="[^"]*" data-d="[^"]*">/, '<div class="fest tfront $1">')}${lacquer(o.back, o.fam, true)}</div>`;
   return `<div class="fest ${f.tier === 'major' ? 'major' : ''}" data-f="${esc(f.id)}" data-d="${date}"><div class="bar2"></div>
     <div style="min-width:44px;text-align:center"><b>${+date.slice(8)}</b><div class="small muted">${esc(dtf({ month: 'short', timeZone: 'UTC' }).format(parse(date)))}</div></div>
     <div><b>${esc(fname(f))}</b>${bookmarked(f.id) ? ` <span class="gold" title="${esc(t('r3w.bookmarked', fname(f)))}">★</span>` : ''}<div class="small muted">${esc(fother(f))}</div>${away ? `<div class="small muted faway">${AWAY_PIN}${esc(away.place.name)}${away.date === date ? '' : ` · ${esc(dtf({ day: 'numeric', month: 'short', timeZone: 'UTC' }).format(parse(away.date)))}`} · ${esc(relation(date, away.date))}</div>` : ''}</div>
@@ -2381,15 +2466,21 @@ async function viewFestivals() {
   // The place chosen above the list (else where the user lives now): each festival's date there, read once for the whole list.
   const away = shownPlace() || awayPlace(), idx = away ? await awayIndex(today(), addDays(today(), 370), away).catch(() => null) : null;
   const awayOf = x => { const d = idx && nearestDate(idx.get(x.f.id), x.date); return d ? { place: away, date: d } : null; };
+  // In another place (as on iOS) the list is that place's: its day on each row, in its order and its months,
+  // and home's day on the line below; a row still opens by home's date. On Home, as before.
+  const there = shownWhich() !== 'home' && !!shownPlace();
+  const rows = list.map((x, n) => { const a = !x.obs && awayOf(x);
+    return there && !x.obs ? { ...x, home: x.date, date: a ? a.date : x.date, away: { place: S.home, date: x.date }, n } : { ...x, home: x.date, away: a || null, n }; });
+  if (there) rows.sort((a, b) => a.date < b.date ? -1 : a.date > b.date ? 1 : a.n - b.n);
   // The festivals as kept at home, or in another place: the same list, with that place's day on each row.
   // Quiet chips: the chosen kind filled, the rest outlined.
   let html = `<div class="noprint">${placeChip()}</div><div class="chips noprint fkinds" style="margin:8px 0 12px">${[['major', 'f.major'], ['regional', 'ff.regional'], ['fasting', 'ff.fasting'], ['jayanti', 'ff.jayanti'], ['all', 'f.all']].map(([k, l]) => `<button class="chip ${kind === k ? 'on' : ''}" data-fk="${k}">${esc(t(l))}</button>`).join('')}</div>`;
   let month = '', i = 0;
-  for (const x of list) {
+  for (const x of rows) {
     const mm = x.date.slice(0, 7);
     if (mm !== month) { month = mm; html += `<p class="label" style="margin-top:14px">${esc(dtf({ month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(x.date)))}</p>`; }
     html += x.obs ? `<div class="list-row obs rise" style="--i:${i++}"><span style="color:var(--gold)">☾</span><span class="grow">${esc(recName(x.obs))}</span><span class="small muted">${esc(dtf({ day: 'numeric', month: 'short', timeZone: 'UTC' }).format(parse(x.date)))}</span></div>`
-      : festRow(x.f, x.date, { i: i++, back: festBack(x.f, x.date), fam: KINDS.fasting(x.f) ? 'maroon' : 'gold', away: awayOf(x) });
+      : festRow(x.f, x.date, { i: i++, back: festBack(x.f, x.home), fam: KINDS.fasting(x.f) ? 'maroon' : 'gold', away: x.away, key: x.home });
   }
   $('#main').innerHTML = html + `<button class="btn soft block noprint" onclick="window.print()">${SHARE_ICON} ${esc(t('pdf.share'))}</button>`;
   $('#main').querySelectorAll('[data-fk]').forEach(b => b.onclick = () => { fKind = b.dataset.fk; viewFestivals(); });
@@ -3597,8 +3688,10 @@ function icsFile(label, events) {
     L.push('END:VEVENT');
   }
   L.push('END:VCALENDAR');
+  // Lines longer than 75 bytes folded (RFC 5545), never inside a character.
+  const enc = new TextEncoder(), fold = line => { let out = '', n = 0; for (const ch of line) { const b = enc.encode(ch).length; if (n + b > 75) { out += '\r\n '; n = 1; } out += ch; n += b; } return out; };
   const file = (String(label).normalize('NFC').replace(/[\\/:*?"<>|]+/g, '').trim().replace(/\s+/g, '-') || 'eka-panchang') + '.ics';
-  download(file, L.join('\r\n') + '\r\n', 'text/calendar');
+  download(file, L.map(fold).join('\r\n') + '\r\n', 'text/calendar');
   toast(t('r3w.downloaded', label));
 }
 // A festival as an all-day event, with a reminder a week ahead and on the morning (as the iOS reminder).
@@ -4060,10 +4153,19 @@ async function viewAlerts() {
   const timeRow = (key, label, disabled) => `<label class="list-row al-sub${disabled ? ' dim' : ''}"><span class="grow">${esc(label)}</span><input type="time" data-tm="${key}" value="${hhmm(S[key])}" ${disabled ? 'disabled' : ''}></label>`;
   const festList = (ids, empty) => ids.length ? ids.map(id => festById(id)).filter(Boolean).map(f => `<div class="list-row"><span class="grow">${esc(fname(f))}</span><button class="btn soft" data-unf="${esc(f.id)}" aria-label="${esc(t('fa.standard') + ': ' + fname(f))}">✕</button></div>`).join('') : `<p class="small muted">${esc(empty)}</p>`;
   const todays = (S.todayAlerts || []).filter(a => a.date === td && a.start > Date.now() / 1000);
+  // Period alerts added from a bell: those over are let go.
+  const pas = paLive().sort((a, b) => a.starts[0] - b.starts[0]);
+  if (pas.length !== (S.periodAlerts || []).length) { S.periodAlerts = pas; save(); }
+  const paWhen = (u, tz) => `${greg(civil(tz).format(new Date(u * 1000)), { weekday: 'short', day: 'numeric', month: 'short' })}, ${clockIn(u, tz)}`;
+  const paRows = pas.map(a => `<div class="list-row"><span class="al-ic" aria-hidden="true">${AL_ICON.today}</span><div class="grow"><b>${esc(paTitle(a.k, a.key, a.placeName))}</b>
+      <div class="small muted">${esc(a.every ? t('wpa.dailyRow', a.starts.length, greg(civil(a.tz).format(new Date(a.starts.at(-1) * 1000)), { day: 'numeric', month: 'short' })) : t('wpa.onceRow', paWhen(a.starts[0], a.tz)))}</div>
+      <div class="small muted">${esc(t('wpa.leadRow', a.lead))}</div></div>
+      <button class="btn soft" data-paoff="${esc(a.id)}" aria-label="${esc(t('wpa.remove') + ': ' + paTitle(a.k, a.key, a.placeName))}">${esc(t('wpa.remove'))}</button></div>`).join('');
   $('#main').innerHTML = `<h2 class="serif" style="margin-bottom:4px">${esc(t('al.title'))}</h2>
     <div class="card al-status"><span class="al-bell" aria-hidden="true">${BELL}</span><p class="small" style="margin:0">${esc(t('al.webNote'))}</p></div>
     <p class="label">${esc(t('al.coming'))}</p><div class="card" id="alcoming"><div class="ring mini"><i></i></div></div>
     ${todays.length ? `<p class="label">${esc(t('al.today'))}</p><div class="card">${todays.sort((a, b) => a.start - b.start).map(a => `<div class="list-row"><span class="al-ic" aria-hidden="true">${AL_ICON.today}</span><div class="grow"><b>${esc(a.name || t(a.key))}</b><div class="small muted">${esc(clockIn(a.start, S.home.tz))}</div></div><button class="btn soft" data-todayoff="${esc(a.id)}">${esc(t('r3.alertOff'))}</button></div>`).join('')}</div>` : ''}
+    <p class="label">${esc(t('wpa.list'))}</p><div class="card pacard">${pas.length ? paRows + `<p class="small muted" style="margin:8px 0 0">${esc(t('wpa.listNote'))}</p>` : `<p class="small muted" style="margin:0">${esc(t('wpa.hint'))}</p>`}</div>
     <p class="label">${esc(t('al.switches'))}</p>
     <div class="card">${sw('morningBriefing', t('s.mBriefing'))}
       ${S.morningBriefing ? `<label class="list-row al-sub"><input type="checkbox" data-sw="morningAtSunrise" ${S.morningAtSunrise ? 'checked' : ''}><span class="grow">${esc(t('s.atSunrise'))}</span></label>${timeRow('morningMinutes', t('s.morningTime'), S.morningAtSunrise)}` : ''}
@@ -4094,6 +4196,8 @@ async function viewAlerts() {
   m.querySelectorAll('[data-unf]').forEach(b => b.onclick = () => { setFestAlert(b.dataset.unf, 'standard'); viewAlerts(); });
   m.querySelector('[data-festreset]')?.addEventListener('click', () => { S.followedFestivals = []; S.mutedFestivals = []; save(); viewAlerts(); });
   m.querySelectorAll('[data-todayoff]').forEach(b => b.onclick = () => { S.todayAlerts = (S.todayAlerts || []).filter(a => a.id !== b.dataset.todayoff); save(); viewAlerts(); });
+  // Removing only forgets it here: the calendar's copy is deleted in the calendar (the note says so).
+  m.querySelectorAll('[data-paoff]').forEach(b => b.onclick = () => { S.periodAlerts = (S.periodAlerts || []).filter(a => a.id !== b.dataset.paoff); save(); viewAlerts(); });
   await drawAlerts();
 }
 // The coming alerts, worked out again (after a switch, a skip or a turn-off) without redrawing the rest.
