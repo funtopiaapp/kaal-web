@@ -1,10 +1,10 @@
 // Kaal for the web: the iOS app's screens over the same engine (kaal_wasm),
 // the same content packs and the same interface text. Everything is
 // unlocked here; settings and profiles stay in this browser.
-import { engine, onRestart, warm } from './engine.js?v=202611142356';
-import { showGames, GM, gameKey, VIGIL } from './games.js?v=202611142356';
-import * as FAMILY from './family.js?v=202611142356';
-import { translit, hasLatin, scriptLetter } from './translit.js?v=202611142356';
+import { engine, onRestart, warm } from './engine.js?v=202611152201';
+import { showGames, GM, gameKey, VIGIL } from './games.js?v=202611152201';
+import * as FAMILY from './family.js?v=202611152201';
+import { translit, hasLatin, scriptLetter } from './translit.js?v=202611152201';
 // The build stamp, also put on data files so a new page never reads old data.
 const V = (import.meta.url.match(/v=(\d+)/) || [])[1] || 'dev';
 
@@ -126,9 +126,14 @@ function intl(L, o) {
 }
 const civil = tz => intl('en-CA', { timeZone: tz || undefined, year: 'numeric', month: '2-digit', day: '2-digit' });
 function today(tz = S.home?.tz) { return civil(tz).format(new Date()); }
-// The calendar can be looked at for another city without changing home:
-// monthPlace for the month grid, dayPlace for a day opened from it.
-let monthPlace = null, dayPlace = null;
+// The place Today, the calendar and the festival list are shown for, this visit only (never saved): home, the away
+// place, or another city (where the browser is, or one chosen). Home and away in Settings are never changed by it.
+let viewing = 'home', browsePlace = null;
+const shownWhich = () => viewing === 'away' && awayPlace() ? 'away' : viewing === 'browse' && browsePlace ? 'browse' : 'home';
+// The shown place, or null for home.
+const shownPlace = () => ({ away: awayPlace(), browse: browsePlace })[shownWhich()] || null;
+// The place the screen on show keeps its clocks in: the shown place on Today and the calendar, else home.
+let dayPlace = null;
 const here = () => dayPlace || S.home;
 // Month and weekday names by language (from ICU). Browsers carry little or no date data for some
 // languages (Odia, Nepali), and fall back to English or "2026 M10 23"; Kaal fills in the names itself.
@@ -336,7 +341,7 @@ function shell() {
   const DAILY = ['home', 'today', 'calendar', 'festivals', 'muhurtham'], rest = TABS.filter(([id]) => !DAILY.includes(id) && (id !== 'match' || matchingAvailable()));
   $('#tabs').innerHTML = TABS.filter(([id]) => DAILY.includes(id)).map(([id, k]) => `<button data-tab="${id}" class="${id === tab ? 'on' : ''}">${id === 'home' ? house : ''}${esc(t(k))}</button>`).join('')
     + `<button data-more class="${DAILY.includes(tab) ? '' : 'on'}">${DAILY.includes(tab) ? '' : esc(t(TABS.find(([id]) => id === tab)?.[1] || 'mn.more')) + ' · '}${esc(t('mn.more'))} ▾</button>`;
-  $('#tabs').querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { tab = b.dataset.tab; if (tab === 'today') { dayDate = null; dayPlace = null; } render(); });
+  $('#tabs').querySelectorAll('[data-tab]').forEach(b => b.onclick = () => { tab = b.dataset.tab; if (tab === 'today') dayDate = null; render(); });
   $('#tabs').querySelector('[data-more]').onclick = () => {
     const o = sheet(`<h2 class="serif">${esc(t('mn.more'))}</h2><div class="morehub">${rest.map(([id, k]) => `<button class="tile" data-mt="${id}"><b>${esc(t(k))}</b></button>`).join('')}</div>`);
     o.querySelectorAll('[data-mt]').forEach(b => b.onclick = () => { o.remove(); tab = b.dataset.mt; if (tab === 'games') GM.screen = null; if (tab === 'elsewhere') EP.step = 'list'; if (tab === 'family') FAMILY.FAM.screen = 'hub'; render(); scrollTo(0, 0); });
@@ -358,7 +363,7 @@ function sheet(html, onOpen) {
 }
 
 async function render() {
-  clearTimeout(turnTimer); stopOldTime(); FAMILY.famLeave();
+  clearTimeout(turnTimer); stopOldTime(); FAMILY.famLeave(); dayPlace = null;
   applyTheme(); applyTextSize(); shell();
   if (!S.culture || !S.home) return onboarding();
   if (S.onboardProfile === 'pending') return onboardProfile();
@@ -899,7 +904,8 @@ async function viewHome() {
 
 // ---------------------------------------------------------------- today / day
 async function viewDay() {
-  const d = dayDate || today();
+  dayPlace = shownPlace();
+  const d = dayDate || today(here().tz);
   loading();
   const p = await day(d, here());
   const fine = await engine({ op: 'timings', handle: await cal(+d.slice(0, 4), here()), date: d }).catch(() => null);
@@ -932,12 +938,13 @@ async function viewDay() {
   const obsHead = sky => obsOther || sky.length ? `<p class="label">${esc(t('day.observances'))}</p>` : '';
   const skyRows = sky => sky.map(e => `<div class="rec" data-goto-sky style="cursor:pointer">✦ ${esc(skyTitle(e))} · ${esc(clock(e.at))}</div>`).join('');
   $('#main').innerHTML = `
+    <div class="noprint" style="text-align:center">${placeChip()}</div>
     ${checkIns.slice(0, 3).map(checkInCard).join('')}
     <div class="dayhead"><div class="nav"><button class="arrow" data-shift="-1" aria-label="Previous day">‹</button>
       <div><h1 class="serif">${esc(cultureDate(p.solar, p.lunar))}</h1><div class="muted">${esc(greg(d))}</div><div class="small muted">${esc(yearLabel(p.year))}</div>
-      <div class="small muted">📍 ${esc(t('f.forPlace', here().name))}</div></div>
+      <div class="small muted printonly">📍 ${esc(t('f.forPlace', here().name))}</div></div>
       <button class="arrow" data-shift="1" aria-label="Next day">›</button></div>
-      ${d !== today() ? `<button class="btn soft noprint" data-today>${esc(t('day.jumpToday'))}</button>` : ''}<button class="btn soft noprint" data-dialday>◷ ${esc(t('dial.open'))}</button> <button class="btn soft noprint" data-addnote>＋ ${esc(t('r3.addNote'))}</button></div>
+      ${d !== today(here().tz) ? `<button class="btn soft noprint" data-today>${esc(t('day.jumpToday'))}</button>` : ''}<button class="btn soft noprint" data-dialday>◷ ${esc(t('dial.open'))}</button> <button class="btn soft noprint" data-addnote>＋ ${esc(t('r3.addNote'))}</button></div>
     <div id="daysky" style="display:contents">${obsHead(skyToday)}${skyRows(skyToday)}</div>
     ${fests.map(({ f, o }) => `<div class="fest ${f.tier === 'major' ? 'major' : ''}" data-f="${esc(f.id)}" data-d="${o.date}"><div class="bar2"></div><div><b>${esc(fname(f))}</b><div class="small muted">${esc(fother(f))}</div><div class="small muted">${esc(text(f.content?.summary))}</div></div><div class="when">›</div></div>`).join('')}
     ${people.map(x => `<div class="rec">🎁 <b>${esc(x.title)}</b> <span class="small muted">${esc(x.line)}</span></div>`).join('')}
@@ -981,6 +988,7 @@ async function viewDay() {
   if (!skyRead) skyP.then(list => { const sky = skyOf(list); if (sky.length && box.isConnected) { box.innerHTML = obsHead(sky) + skyRows(sky); wireSky(); } });
   wireMuhurtas(fine, d);
   wireFestivals();
+  wirePlaceChip();
   startTurns($('#main'), '.limb.turn');
 }
 
@@ -1026,9 +1034,14 @@ function mKinds() {
 function mKind() {
   return mKinds().includes(S.mKind) ? S.mKind : mKinds()[0];
 }
+const mPeriods = (fine, k) => ({ choghadiya: fine.choghadiya, gowri: fine.gowri, hora: fine.hora, lagna: fine.lagnas }[k]);
+const mLabel = (k, key) => k === 'hora' ? name('grahas', key) : k === 'lagna' ? name('rashis', key) : name(k, key);
+// Today at home only: a period's alert can be set (as Rahu Kalam's).
+const mAlertable = d => d === today(S.home.tz) && !dayPlace;
+const todayAlertOn = id => (S.todayAlerts || []).some(a => a.id === id && a.start > Date.now() / 1000);
 function muhurtasCard(fine, d) {
-  const k = mKind(), ps = { choghadiya: fine.choghadiya, gowri: fine.gowri, hora: fine.hora, lagna: fine.lagnas }[k];
-  const label = key => k === 'hora' ? name('grahas', key) : k === 'lagna' ? name('rashis', key) : name(k, key);
+  const k = mKind(), ps = mPeriods(fine, k), alertable = mAlertable(d);
+  const label = key => mLabel(k, key);
   const now = Date.now() / 1000, cur = ps.findIndex(p => now >= p.start && now < p.end);
   const from = mAll ? 0 : Math.max(cur, 0), list = ps.slice(from, mAll ? ps.length : from + 3);
   // The favoured period now, or the next one and how soon.
@@ -1041,13 +1054,27 @@ function muhurtasCard(fine, d) {
     ${good ? `<div style="color:var(--accent);font-weight:700;margin:4px 0 6px">✦ ${esc(good)}</div>` : ''}
     ${list.map((p, j) => { const i = from + j, marked = k === 'choghadiya' || k === 'gowri';
       const night = mAll && i > 0 && p.night && !ps[i - 1].night ? `<div class="small muted" style="margin-top:6px;font-weight:700">${esc(t('dm.night'))}</div>` : '';
-      return `${night}<div class="mrow ${i === cur ? 'now' : ''}"><span class="mdot ${marked ? (FAVOURED.has(p.key) ? 'fav' : 'ring') : ''}"></span><span class="grow">${esc(label(p.key))}${i === cur ? ` <b class="small">${esc(t('dm.now'))}</b>` : ''}</span><span class="muted">${esc(windowText(p.start, p.end, d))}</span></div>`; }).join('')}
+      const bell = alertable && todayAlertOn(`today-${k}-${p.key}-${p.start}`) ? ` <span class="mbell" role="img" aria-label="${esc(t('r3.alertSet'))}">🔔</span>` : '';
+      return `${night}<div class="mrow ${i === cur ? 'now' : ''}${alertable ? ' alertable' : ''}" data-mp="${i}"><span class="mdot ${marked ? (FAVOURED.has(p.key) ? 'fav' : 'ring') : ''}"></span><span class="grow">${esc(label(p.key))}${i === cur ? ` <b class="small">${esc(t('dm.now'))}</b>` : ''}</span><span class="muted">${esc(windowText(p.start, p.end, d))}${bell}</span></div>`; }).join('')}
     <button class="linkbtn" data-mall>${mAll ? '⌃ ' + esc(t('c.done')) : '⌄ ' + esc(t('f.all'))}</button>`;
 }
 function wireMuhurtas(fine, d) {
   const c = $('#mcard'); if (!c) return;
   c.querySelectorAll('[data-mk]').forEach(b => b.onclick = () => { S.mKind = b.dataset.mk; save(); c.innerHTML = muhurtasCard(fine, d); wireMuhurtas(fine, d); });
   c.querySelector('[data-mall]').onclick = () => { mAll = !mAll; c.innerHTML = muhurtasCard(fine, d); wireMuhurtas(fine, d); };
+  // Today at home: a long press (or right-click) on a period puts it in the user's own calendar, which alerts
+  // 10 minutes before (Guru hora, Amrit choghadiya...), kept as a today-only alert as Rahu Kalam's is.
+  if (!mAlertable(d)) return;
+  const k = mKind(), ps = mPeriods(fine, k), redraw = () => { c.innerHTML = muhurtasCard(fine, d); wireMuhurtas(fine, d); };
+  c.querySelectorAll('[data-mp]').forEach(el => onHold(el, (x, y) => {
+    const p = ps[+el.dataset.mp], id = `today-${k}-${p.key}-${p.start}`, nm = `${mLabel(k, p.key)} · ${t('dm.' + k)}`;
+    if (todayAlertOn(id)) return popMenu(x, y, [{ label: t('r3.alertOff'), icon: 'clock', fn: () => { S.todayAlerts = S.todayAlerts.filter(a => a.id !== id); save(); bellButton(); redraw(); } }]);
+    if (p.start <= Date.now() / 1000) return popMenu(x, y, [{ label: t('r3.alertPast'), icon: 'clock', fn: () => {} }]);
+    popMenu(x, y, [{ label: `${t('r3w.addToCal')} · ${t('r3.alertBefore')}`, icon: 'clock', fn: () => {
+      icsFile(`${nm} ${d}`, [{ uid: `${k}-${p.key}-${d}-${S.home.name}`, start: p.start, end: p.end, title: t('r3.alertTitle', nm, clock(p.start)), text: `${greg(d)} · ${S.home.name}`, alarms: ['-PT10M'] }]);
+      S.todayAlerts = [...(S.todayAlerts || []).filter(a => a.id !== id && a.start > Date.now() / 1000), { id, key: `${k}-${p.key}`, name: nm, start: p.start, date: d }]; save(); bellButton(); redraw();
+    } }]);
+  }));
 }
 function wireFestivals(root = $('#main')) {
   root.querySelectorAll('[data-f]').forEach(el => el.onclick = () => festivalSheet(el.dataset.f, el.dataset.d));
@@ -2178,15 +2205,16 @@ async function daySummary(d, place) {
   const fd = o.querySelector('[data-famday]');
   if (FAMILY.kulaOn()) FAMILY.kulaMarks(d, d, place || S.home).then(m => { const r = m.get(d); if (r && fd.isConnected) fd.insertAdjacentHTML('afterbegin', `<p><i class="fm-kulamk"></i> ${esc(t('fam.kula.dayNote', '', r, FAMILY.kulaDeityName()).replace(/^\s*·\s*/, ''))}</p>`); }).catch(() => {});
   if (FAMILY.secondOn()) FAMILY.overlayFor(d, d).then(xs => { if (fd.isConnected) fd.insertAdjacentHTML('beforeend', xs.map(x => `<p><i class="fm-sdot"></i> ${FAMILY.secondLabel(x)} <span class="small muted">${esc(FAMILY.secondName())}</span></p>`).join('')); }).catch(() => {});
-  o.querySelector('[data-view]').onclick = () => { o.remove(); dayDate = d; dayPlace = monthPlace; tab = 'today'; render(); };
+  o.querySelector('[data-view]').onclick = () => { o.remove(); dayDate = d; tab = 'today'; render(); };
 }
 async function viewMonth(turn = 0) {
-  const m = monthDate || today().slice(0, 8) + '01';
+  const m = monthDate || today(shownPlace()?.tz).slice(0, 8) + '01';
   // Turning the page keeps the old one (turned away) on screen while the new month is read.
   if (!turn) loading();
   const [y, mo] = m.split('-').map(Number);
   const last = `${y}-${pad(mo)}-${pad(new Date(Date.UTC(y, mo, 0)).getUTCDate())}`;
-  const place = monthPlace || S.home;
+  dayPlace = shownPlace();
+  const place = here();
   const cells = await engine({ op: 'month', handle: await cal(y, place), from: m, to: last });
   const solar = pack.display.primary === 'solar';
   const head = [...new Set(cells.map(c => solar ? name('solarMonths', c.solar?.month) : (c.lunar?.adhika ? name('adhika', 'adhika') + ' ' : '') + name('lunarMonths', c.lunar?.month)))].join(' – ');
@@ -2227,9 +2255,8 @@ async function viewMonth(turn = 0) {
       <div><button class="mtitle" data-jump><h1 class="serif" style="font-size:24px;margin:0">${esc(head)}</h1><div class="muted">${esc(dtf({ month: 'long', year: 'numeric', timeZone: 'UTC' }).format(parse(m)))}</div>${yl ? `<div class="small muted">${esc(yl)}</div>` : ''}</button></div>
       <button class="arrow" data-m="1">›</button></div>
       <div class="navchips"><select id="calstyle" class="placechip noprint" aria-label="${esc(t('cs.title'))}">${[['festive', 'cs.festive'], ['minimal', 'cs.minimal'], ['classic', 'cs.classic']].map(([v, k]) => `<option value="${v}" ${(S.calStyle || 'festive') === v ? 'selected' : ''}>🎨 ${esc(t(k))}</option>`).join('')}</select>
-      ${m !== today().slice(0, 8) + '01' ? `<button class="btn" data-mtoday style="padding:3px 12px;font-size:13px">${esc(t('day.today'))}</button>` : ''}
-      <select class="placechip noprint" aria-label="${esc(t('cal.location'))}"><option value="home" ${!monthPlace ? 'selected' : ''}>📍 ${esc(S.home.name)}</option>
-        ${monthPlace ? `<option value="other" selected>📍 ${esc(monthPlace.name)}</option>` : ''}<option value="pick">${esc(t('cal.other'))}</option></select></div></div>
+      ${m !== today(place.tz).slice(0, 8) + '01' ? `<button class="btn" data-mtoday style="padding:3px 12px;font-size:13px">${esc(t('day.today'))}</button>` : ''}
+      ${placeChip()}</div></div>
     ${S.pdfWatermark !== false ? `<div class="printmark"><img alt="" src="emblems-print/${(items.find(x => x.f.tier === 'major') || items[0])?.f.card || 'lotus'}.svg"></div>` : ''}
     <div class="grid g2 ${turn ? 'pagein' + (turn < 0 ? ' back' : '') : 'fadein'}">${wd.map(w => `<div class="wd">${esc(w)}</div>`).join('')}${'<div></div>'.repeat(lead)}${grid}</div>
     <div class="small muted calleg">${sp ? `<div><span><b class="mk">✦</b> ${esc(t('cal.ring0'))}</span><span><b class="mk">✪</b> ${esc(t('cal.ring1'))}</span></div>
@@ -2261,12 +2288,7 @@ async function viewMonth(turn = 0) {
     const o = sheet(`<h2 class="serif">${esc(t('cal.jump'))}</h2><input type="month" id="mj" value="${m.slice(0, 7)}" style="font-size:18px;padding:8px"><button class="btn block" data-go2 style="margin-top:12px">${esc(t('c.done'))}</button>`);
     o.querySelector('[data-go2]').onclick = () => { const v = o.querySelector('#mj').value; if (v) monthDate = v + '-01'; o.remove(); viewMonth(); };
   };
-  $('#main').querySelector('select.placechip:not(#calstyle)').onchange = e => {
-    if (e.target.value === 'home') { monthPlace = null; viewMonth(); }
-    else if (e.target.value === 'pick') {
-      const o = sheet(`<h2 class="serif">${esc(t('cal.other'))}</h2><div id="mp"></div>`, o => placePicker(o.querySelector('#mp'), p => { monthPlace = p; o.remove(); viewMonth(); }));
-    }
-  };
+  wirePlaceChip();
   wireFestivals();
   // One loop for the screen: a day of the grid or a festival below it, one at a time.
   startTurns($('#main'), '.c2.turn, .frow');
@@ -2356,11 +2378,12 @@ async function viewFestivals() {
     }
     list.sort((a, b) => a.date < b.date ? -1 : a.date > b.date ? 1 : (a.obs ? 1 : 0) - (b.obs ? 1 : 0));
   }
-  // Where the user lives now, each festival's date there, read once for the whole list.
-  const away = awayPlace(), idx = away ? await awayIndex(today(), addDays(today(), 370), away).catch(() => null) : null;
+  // The place chosen above the list (else where the user lives now): each festival's date there, read once for the whole list.
+  const away = shownPlace() || awayPlace(), idx = away ? await awayIndex(today(), addDays(today(), 370), away).catch(() => null) : null;
   const awayOf = x => { const d = idx && nearestDate(idx.get(x.f.id), x.date); return d ? { place: away, date: d } : null; };
+  // The festivals as kept at home, or in another place: the same list, with that place's day on each row.
   // Quiet chips: the chosen kind filled, the rest outlined.
-  let html = `<div class="chips noprint fkinds" style="margin-bottom:12px">${[['major', 'f.major'], ['regional', 'ff.regional'], ['fasting', 'ff.fasting'], ['jayanti', 'ff.jayanti'], ['all', 'f.all']].map(([k, l]) => `<button class="chip ${kind === k ? 'on' : ''}" data-fk="${k}">${esc(t(l))}</button>`).join('')}</div>`;
+  let html = `<div class="noprint">${placeChip()}</div><div class="chips noprint fkinds" style="margin:8px 0 12px">${[['major', 'f.major'], ['regional', 'ff.regional'], ['fasting', 'ff.fasting'], ['jayanti', 'ff.jayanti'], ['all', 'f.all']].map(([k, l]) => `<button class="chip ${kind === k ? 'on' : ''}" data-fk="${k}">${esc(t(l))}</button>`).join('')}</div>`;
   let month = '', i = 0;
   for (const x of list) {
     const mm = x.date.slice(0, 7);
@@ -2371,7 +2394,36 @@ async function viewFestivals() {
   $('#main').innerHTML = html + `<button class="btn soft block noprint" onclick="window.print()">${SHARE_ICON} ${esc(t('pdf.share'))}</button>`;
   $('#main').querySelectorAll('[data-fk]').forEach(b => b.onclick = () => { fKind = b.dataset.fk; viewFestivals(); });
   wireFestivals();
+  // In another city chosen above the list, a festival opens as "Festival in another place" for that city, beside home.
+  if (shownWhich() === 'browse') $('#main').querySelectorAll('[data-f]').forEach(el => el.onclick = () => {
+    epSetThere(browsePlace); Object.assign(EP, { step: 'result', id: el.dataset.f, date: el.dataset.d }); tab = 'elsewhere'; render(); scrollTo(0, 0);
+  });
+  wirePlaceChip();
   startTurns($('#main'), '.frow');
+}
+
+// As on iOS (PlaceMenu): the place Today, the calendar and the festival list are shown for, one choice for the three
+// this visit: home, away, the last other city, where the browser is, or another city. Home and away stay as they are.
+function placeChip() {
+  const w = shownWhich(), a = awayPlace();
+  const opt = (v, label) => `<option value="${v}" ${w === v ? 'selected' : ''}>${label}</option>`;
+  return `<select class="placechip viewchip noprint" aria-label="${esc(t('cal.location'))}">${opt('home', '🏠 ' + esc(S.home.name))}${a ? opt('away', '✈ ' + esc(a.name)) : ''}${browsePlace ? opt('browse', '📍 ' + esc(browsePlace.name)) : ''}
+    <option value="loc">◎ ${esc(t('o.useLocation'))}</option><option value="pick">🔍 ${esc(t('cal.other'))}</option></select>`;
+}
+function wirePlaceChip(root = $('#main')) {
+  const sel = root.querySelector('select.viewchip'); if (!sel) return;
+  const show = p => { browsePlace = p; viewing = 'browse'; render(); };
+  sel.onchange = () => {
+    const v = sel.value;
+    if (v === 'home' || v === 'away' || v === 'browse') { viewing = v; return render(); }
+    sel.value = shownWhich();
+    // Where the browser is: the nearest city's name, at the browser's own spot.
+    if (v === 'loc') navigator.geolocation?.getCurrentPosition(async pos => {
+      const { latitude, longitude } = pos.coords, p = await nearest(latitude, longitude);
+      if (p) show({ ...plain(p), latitude, longitude });
+    });
+    else sheet(`<h2 class="serif">${esc(t('cal.other'))}</h2><div id="mp"></div>`, o => placePicker(o.querySelector('#mp'), p => { o.remove(); show(p); }));
+  };
 }
 
 // ---------------------------------------------------------------- people
@@ -3658,7 +3710,7 @@ function infoButton() {
 
 // ---------------------------------------------------------------- Home's tile menus and dragging
 function tileMenu(k, x, y, ctx) {
-  const go = (tb, after) => async () => { tab = tb; if (tb === 'today') { dayDate = null; dayPlace = null; } if (tb === 'calendar') monthDate = null; await render(); scrollTo(0, 0); after?.(); };
+  const go = (tb, after) => async () => { tab = tb; if (tb === 'today') dayDate = null; if (tb === 'calendar') monthDate = null; await render(); scrollTo(0, 0); after?.(); };
   const guide = TILE_GUIDE[k] && { label: t('r3.what'), icon: 'info', fn: () => explainer(TILE_GUIDE[k]) };
   const f = ctx.fest;
   const items = {
@@ -3680,7 +3732,7 @@ function tileMenu(k, x, y, ctx) {
 function goToDate() {
   const o = sheet(`<h2 class="serif">${esc(t('r3w.goDate'))}</h2><input type="date" id="gd" value="${today()}" style="font-size:18px;padding:8px"><button class="btn block" data-go2 style="margin-top:12px">${esc(t('c.done'))}</button>`);
   o.querySelector('[data-go2]').onclick = async () => { const v = o.querySelector('#gd').value; o.remove(); if (!v) return;
-    monthDate = v.slice(0, 8) + '01'; monthPlace = null; tab = 'calendar'; await render(); daySummary(v, S.home); };
+    monthDate = v.slice(0, 8) + '01'; tab = 'calendar'; await render(); daySummary(v, here()); };
 }
 // Drag a tile onto another: it lifts, the one beneath gives way, and the rest slide to their new places.
 function wireTileDrag(grid) {
@@ -3763,7 +3815,7 @@ function noteEditor(date, note, onDone) {
 
 // ---------------------------------------------------------------- the calendar: a day's menu, the marks, the people
 function dayMenu(date, x, y, fests, place) {
-  const items = [{ label: t('r3.openDay'), icon: 'calendar', fn: () => { dayDate = date; dayPlace = monthPlace; tab = 'today'; render(); } }];
+  const items = [{ label: t('r3.openDay'), icon: 'calendar', fn: () => { dayDate = date; tab = 'today'; render(); } }];
   for (const f of fests.slice(0, 2)) {
     items.push({ label: t(bookmarked(f.id) ? 'r3.unbookmarkFest' : 'r3.bookmarkFest', fname(f)), icon: 'star', fn: () => { toggleBookmark(f.id); toast(bookmarked(f.id) ? t('r3w.bookmarked', fname(f)) : t('r3w.unbookmarked', fname(f))); viewMonth(); } });
     items.push({ label: t('r3w.festToCal', fname(f)), icon: 'calendar', fn: () => festivalIcs(f, date) });
@@ -3966,7 +4018,7 @@ async function alertPlan() {
     body: x.left === 0 ? t('fam.n.bodyNone') : x.left === 1 ? t('fam.n.body1') : t('fam.n.body', x.left), open: { way: x.f.id, date: x.occ } })));
   // Today-only alerts set from Today's timings: ten minutes before.
   for (const a of S.todayAlerts || []) if (a.date === td && a.start > now)
-    push(a.id, Math.max(a.start - 600, now + 1), t('r3.alertTitle', t(a.key), clockIn(a.start, tz)), t('r3.alertBody', S.home.name), { day: td, today: a.id });
+    push(a.id, Math.max(a.start - 600, now + 1), t('r3.alertTitle', a.name || t(a.key), clockIn(a.start, tz)), t('r3.alertBody', S.home.name), { day: td, today: a.id });
   return out.filter(x => x.at > now).sort((a, b) => a.at - b.at);
 }
 
@@ -4011,7 +4063,7 @@ async function viewAlerts() {
   $('#main').innerHTML = `<h2 class="serif" style="margin-bottom:4px">${esc(t('al.title'))}</h2>
     <div class="card al-status"><span class="al-bell" aria-hidden="true">${BELL}</span><p class="small" style="margin:0">${esc(t('al.webNote'))}</p></div>
     <p class="label">${esc(t('al.coming'))}</p><div class="card" id="alcoming"><div class="ring mini"><i></i></div></div>
-    ${todays.length ? `<p class="label">${esc(t('al.today'))}</p><div class="card">${todays.sort((a, b) => a.start - b.start).map(a => `<div class="list-row"><span class="al-ic" aria-hidden="true">${AL_ICON.today}</span><div class="grow"><b>${esc(t(a.key))}</b><div class="small muted">${esc(clockIn(a.start, S.home.tz))}</div></div><button class="btn soft" data-todayoff="${esc(a.id)}">${esc(t('r3.alertOff'))}</button></div>`).join('')}</div>` : ''}
+    ${todays.length ? `<p class="label">${esc(t('al.today'))}</p><div class="card">${todays.sort((a, b) => a.start - b.start).map(a => `<div class="list-row"><span class="al-ic" aria-hidden="true">${AL_ICON.today}</span><div class="grow"><b>${esc(a.name || t(a.key))}</b><div class="small muted">${esc(clockIn(a.start, S.home.tz))}</div></div><button class="btn soft" data-todayoff="${esc(a.id)}">${esc(t('r3.alertOff'))}</button></div>`).join('')}</div>` : ''}
     <p class="label">${esc(t('al.switches'))}</p>
     <div class="card">${sw('morningBriefing', t('s.mBriefing'))}
       ${S.morningBriefing ? `<label class="list-row al-sub"><input type="checkbox" data-sw="morningAtSunrise" ${S.morningAtSunrise ? 'checked' : ''}><span class="grow">${esc(t('s.atSunrise'))}</span></label>${timeRow('morningMinutes', t('s.morningTime'), S.morningAtSunrise)}` : ''}
@@ -4074,7 +4126,7 @@ function alOpen(x) {
   if (o.note) { const n = (S.notes || []).find(n => n.id === o.note); if (n) return noteEditor(o.date, n, () => drawAlerts()); }
   if (o.way) { FAMILY.famRoute('#family/way/' + encodeURIComponent(o.way)); tab = 'family'; render(); return scrollTo(0, 0); }
   if (o.tab) { tab = o.tab; render(); return scrollTo(0, 0); }
-  dayDate = o.day || null; dayPlace = null; tab = 'today'; render(); scrollTo(0, 0);
+  dayDate = o.day || null; tab = 'today'; render(); scrollTo(0, 0);
 }
 // What "Turn off these" turns off for each kind: the setting it comes from (as on iOS), or that one person, note or way.
 function alTurnOff(x) {
